@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jquery 101 | Tester&#39;s Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jquery 语法$(selector).action()
+$ &amp;gt;jQuery
+selector -&amp;gt; HTML element
+action() -&amp;gt; jQuery operation
+
+示例：1234$(this).hide(); // hide current element$(&quot;p&quot;).hide(); //hide p tag$(&quot;.test&quot;).hide(); //hi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery 101">
+<meta property="og:url" content="http://simonpatrick.github.io/2014/12/12/jquery/jquery_101/index.html">
+<meta property="og:site_name" content="Tester's Space">
+<meta property="og:description" content="jquery 语法$(selector).action()
+$ &amp;gt;jQuery
+selector -&amp;gt; HTML element
+action() -&amp;gt; jQuery operation
+
+示例：1234$(this).hide(); // hide current element$(&quot;p&quot;).hide(); //hide p tag$(&quot;.test&quot;).hide(); //hi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery 101">
+<meta name="twitter:description" content="jquery 语法$(selector).action()
+$ &amp;gt;jQuery
+selector -&amp;gt; HTML element
+action() -&amp;gt; jQuery operation
+
+示例：1234$(this).hide(); // hide current element$(&quot;p&quot;).hide(); //hide p tag$(&quot;.test&quot;).hide(); //hi">
+  
+    <link rel="alternative" href="/atom.xml" title="Tester&#39;s Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Simon Patrick</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">software tester&#39;s playground</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Testing/" style="font-size: 15px;">Testing</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 10px;">javascript</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/plan/" style="font-size: 10px;">plan</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/vim/" style="font-size: 10px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Simon Patrick</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Simon Patrick</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">software tester&#39;s playground</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-jquery/jquery_101" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/12/12/jquery/jquery_101/" class="article-date">
+  	<time datetime="2014-12-12T15:52:05.000Z" itemprop="datePublished">2014-12-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jquery 101
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jquery_语法">jquery 语法</h1><h3 id="$(selector)-action()">$(selector).action()</h3><ul>
+<li>$ &gt;jQuery</li>
+<li>selector -&gt; HTML element</li>
+<li>action() -&gt; jQuery operation</li>
+</ul>
+<p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">this</span>).hide(); <span class="comment">// hide current element</span></span><br><span class="line">$(<span class="string">"p"</span>).hide(); <span class="comment">//hide p tag</span></span><br><span class="line">$(<span class="string">".test"</span>).hide(); <span class="comment">//hide class="test" 的元素</span></span><br><span class="line">$(<span class="string">"#test"</span>).hide(); <span class="comment">//hide id="test"的元素</span></span><br></pre></td></tr></table></figure></p>
+<p>选择器：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123;p.intro&#125;; <span class="comment">//所有class=intro的&lt;p&gt; tags</span></span><br><span class="line">$&#123;p#intro&#125;; <span class="comment">//所有id=intro的&lt;p&gt;标签</span></span><br><span class="line">$(<span class="string">"[href]"</span>) <span class="comment">//选取所有带有 href 属性的元素。</span></span><br><span class="line">$(<span class="string">"[href='#']"</span>) <span class="comment">//选取所有带有 href 值等于 "#" 的元素。</span></span><br><span class="line">$(<span class="string">"[href!='#']"</span>) <span class="comment">//选取所有带有 href 值不等于 "#" 的元素。</span></span><br><span class="line">$(<span class="string">"[href$='.jpg']"</span>) <span class="comment">//选取所有 href 值以 ".jpg" 结尾的元素。</span></span><br></pre></td></tr></table></figure>
+<p>选择器参考手册：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>实例</th>
+<th>选取</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>$(“*”)</td>
+<td>所有元素</td>
+</tr>
+<tr>
+<td>#id</td>
+<td>$(“#lastname”)</td>
+<td>id=”lastname” 的元素</td>
+</tr>
+<tr>
+<td>.class</td>
+<td>$(“.intro”)</td>
+<td>所有 class=”intro” 的元素</td>
+</tr>
+<tr>
+<td>element</td>
+<td>$(“p”)</td>
+<td>所有 &lt;p&gt; 元素</td>
+</tr>
+<tr>
+<td>.class.class</td>
+<td>$(“.intro.demo”)</td>
+<td>所有 class=”intro” 且 class=”demo” 的元素</td>
+</tr>
+<tr>
+<td>:first</td>
+<td>$(“p:first”)</td>
+<td>第一个 &lt;p&gt; 元素</td>
+</tr>
+<tr>
+<td>:last</td>
+<td>$(“p:last”)</td>
+<td>最后一个 &lt;p&gt; 元素</td>
+</tr>
+<tr>
+<td>:even</td>
+<td>$(“tr:even”)</td>
+<td>所有偶数 &lt;tr&gt; 元素</td>
+</tr>
+<tr>
+<td>:odd</td>
+<td>$(“tr:odd”)</td>
+<td>所有奇数 &lt;tr&gt; 元素</td>
+</tr>
+<tr>
+<td>:eq(index)</td>
+<td>$(“ul li:eq(3)”)</td>
+<td>列表中的第四个元素（index 从 0 开始）</td>
+</tr>
+<tr>
+<td>:gt(no)</td>
+<td>$(“ul li:gt(3)”)</td>
+<td>列出 index 大于 3 的元素</td>
+</tr>
+<tr>
+<td>:lt(no)</td>
+<td>$(“ul li:lt(3)”)</td>
+<td>列出 index 小于 3 的元素</td>
+</tr>
+<tr>
+<td>:not(selector)</td>
+<td>$(“input:not(:empty)”)</td>
+<td>所有不为空的 input 元素</td>
+</tr>
+<tr>
+<td>:header</td>
+<td>$(“:header”)</td>
+<td>所有标题元素 &lt;h1&gt; - &lt;h6&gt;</td>
+</tr>
+<tr>
+<td>:animated</td>
+<td></td>
+<td>所有动画元素</td>
+</tr>
+<tr>
+<td>:contains(text)</td>
+<td>$(“:contains(‘W3School’)”)</td>
+<td>包含指定字符串的所有元素</td>
+</tr>
+<tr>
+<td>:empty</td>
+<td>$(“:empty”)</td>
+<td>无子（元素）节点的所有元素</td>
+</tr>
+<tr>
+<td>:hidden</td>
+<td>$(“p:hidden”)</td>
+<td>所有隐藏的 &lt;p&gt; 元素</td>
+</tr>
+<tr>
+<td>:visible</td>
+<td>$(“table:visible”)</td>
+<td>所有可见的表格</td>
+</tr>
+<tr>
+<td>s1,s2,s3</td>
+<td>$(“th,td,.intro”)</td>
+<td>所有带有匹配选择的元素</td>
+</tr>
+<tr>
+<td>[attribute]</td>
+<td>$(“[href]”)</td>
+<td>所有带有 href 属性的元素</td>
+</tr>
+<tr>
+<td>[attribute=value]</td>
+<td>$(“[href=’#’]”)</td>
+<td>所有 href 属性的值等于 “#” 的元素</td>
+</tr>
+<tr>
+<td>[attribute!=value]</td>
+<td>$(“[href!=’#’]”)</td>
+<td>所有 href 属性的值不等于 “#” 的元素</td>
+</tr>
+<tr>
+<td>[attribute$=value]</td>
+<td>$(“[href$=’.jpg’]”)</td>
+<td>所有 href 属性的值包含以 “.jpg” 结尾的元素</td>
+</tr>
+<tr>
+<td>:input</td>
+<td>$(“:input”)</td>
+<td>所有 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:text</td>
+<td>$(“:text”)</td>
+<td>所有 type=”text” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:password</td>
+<td>$(“:password”)</td>
+<td>所有 type=”password” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:radio</td>
+<td>$(“:radio”)</td>
+<td>所有 type=”radio” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:checkbox</td>
+<td>$(“:checkbox”)</td>
+<td>所有 type=”checkbox” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:submit</td>
+<td>$(“:submit”)</td>
+<td>所有 type=”submit” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:reset</td>
+<td>$(“:reset”)</td>
+<td>所有 type=”reset” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:button</td>
+<td>$(“:button”)</td>
+<td>所有 type=”button” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:image</td>
+<td>$(“:image”)</td>
+<td>所有 type=”image” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:file</td>
+<td>$(“:file”)</td>
+<td>所有 type=”file” 的 &lt;input&gt; 元素</td>
+</tr>
+<tr>
+<td>:enabled</td>
+<td>$(“:enabled”)</td>
+<td>所有激活的 input 元素</td>
+</tr>
+<tr>
+<td>:disabled</td>
+<td>$(“:disabled”)</td>
+<td>所有禁用的 input 元素</td>
+</tr>
+<tr>
+<td>:selected</td>
+<td>$(“:selected”)</td>
+<td>所有被选取的 input 元素</td>
+</tr>
+<tr>
+<td>:checked</td>
+<td>$(“:checked”)</td>
+<td>所有被选中的 input 元素</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/14/Testing/testing-tools/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Web Testing 简介
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/10/vim/vim-tips-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vim-tips-01</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="jquery/jquery_101" data-title="jquery 101" data-url="http://simonpatrick.github.io/2014/12/12/jquery/jquery_101/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Simon Patrick
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>

@@ -3,22 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>java_regexpression.md | Tester&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+  <meta name="description" content="Java 正则表达式学习 - 1如何替换字符串中括号内的内容
+字符串： |开始元素*|元素内容|介绍标签|
+替换所有的非|字符成———-
+代码如下:12String input =&quot;|开始元素*|元素内容|介绍标签|&quot;;input.replaceAll(&quot;[^|]&quot;,&quot;-&quot;);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/04/21/hello-world/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta property="og:title" content="java_regexpression.md">
+<meta property="og:url" content="http://simonpatrick.github.io/2014/11/16/java-regexpression-md/index.html">
+<meta property="og:site_name" content="Tester's Space">
+<meta property="og:description" content="Java 正则表达式学习 - 1如何替换字符串中括号内的内容
+字符串： |开始元素*|元素内容|介绍标签|
+替换所有的非|字符成———-
+代码如下:12String input =&quot;|开始元素*|元素内容|介绍标签|&quot;;input.replaceAll(&quot;[^|]&quot;,&quot;-&quot;);">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="java_regexpression.md">
+<meta name="twitter:description" content="Java 正则表达式学习 - 1如何替换字符串中括号内的内容
+字符串： |开始元素*|元素内容|介绍标签|
+替换所有的非|字符成———-
+代码如下:12String input =&quot;|开始元素*|元素内容|介绍标签|&quot;;input.replaceAll(&quot;[^|]&quot;,&quot;-&quot;);">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Tester&#39;s Space" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,13 +39,15 @@ Quick">
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img lazy-src="" class="js-avatar">
+			<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
 		</a>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">Simon Patrick</a></h1>
 		</hgroup>
 
+		
+		<p class="header-subtitle">software tester&#39;s playground</p>
 		
 
 		
@@ -52,11 +60,6 @@ Quick">
 						</div>
 						<div class="icon-wrap icon-ribbon hide" data-idx="1">
 							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
 						</div>
 						
 						
@@ -73,8 +76,6 @@ Quick">
 					<ul class="tips-inner">
 						<li>菜单</li>
 						<li>标签</li>
-						
-						<li>友情链接</li>
 						
 						
 						<li>关于我</li>
@@ -94,12 +95,14 @@ Quick">
 				        
 							<li><a href="/archives">所有文章</a></li>
 				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
 						<div class="social">
 							
-								<a class="github" target="_blank" href="/#" title="github">github</a>
+								<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
 					        
 								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
 					        
@@ -114,34 +117,16 @@ Quick">
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/Testing/" style="font-size: 15px;">Testing</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 10px;">javascript</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/plan/" style="font-size: 10px;">plan</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/vim/" style="font-size: 10px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a>
 					</div>
 				</section>
 				
 				
 				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
-			        
-			        </div>
-				</section>
-				
 
 				
 				
-				<section class="switch-part switch-part4">
+				<section class="switch-part switch-part3">
 				
 					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
 				</section>
@@ -155,16 +140,18 @@ Quick">
       <nav id="mobile-nav">
   	<div class="overlay">
   		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">John Doe</h1>
+  		<h1 class="header-author js-mobile-header hide">Simon Patrick</h1>
   	</div>
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img lazy-src="" class="js-avatar">
+				<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author">John Doe</h1>
+			  <h1 class="header-author">Simon Patrick</h1>
 			</hgroup>
+			
+			<p class="header-subtitle">software tester&#39;s playground</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -173,13 +160,15 @@ Quick">
 		        
 					<li><a href="/archives">所有文章</a></li>
 		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/#" title="github">github</a>
+						<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
 			        
 						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
 			        
@@ -192,11 +181,11 @@ Quick">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-java-regexpression-md" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/21/hello-world/" class="article-date">
-  	<time datetime="2015-04-21T00:39:10.000Z" itemprop="datePublished">2015-04-21</time>
+      <a href="/2014/11/16/java-regexpression-md/" class="article-date">
+  	<time datetime="2014-11-16T10:07:41.000Z" itemprop="datePublished">2014-11-16</time>
 </a>
     </div>
   
@@ -209,7 +198,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      java_regexpression.md
     </h1>
   
 
@@ -217,6 +206,10 @@ Quick">
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -225,15 +218,12 @@ Quick">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="Java_正则表达式学习_-_1">Java 正则表达式学习 - 1</h2><h5 id="如何替换字符串中括号内的内容">如何替换字符串中括号内的内容</h5><ul>
+<li>字符串： |开始元素*|元素内容|介绍标签|</li>
+<li>替换所有的非|字符成———-</li>
+<li>代码如下:<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String input =<span class="string">"|开始元素*|元素内容|介绍标签|"</span>;</span><br><span class="line">input.replaceAll(<span class="string">"[^|]"</span>,<span class="string">"-"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -241,6 +231,25 @@ Quick">
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/11/18/Thoughts-on-Tester/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Thoughts on Tester
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/12/start_blog_in_github/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -264,7 +273,7 @@ Quick">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="http://yoursite.com/2015/04/21/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="java-regexpression-md" data-title="java_regexpression.md" data-url="http://simonpatrick.github.io/2014/11/16/java-regexpression-md/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -288,7 +297,7 @@ Quick">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 John Doe
+    		&copy; 2015 Simon Patrick
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

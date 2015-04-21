@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/4 | Tester&#39;s Space</title>
+  <title>SHELL for all git repository | Tester&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="software tester also blogging">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tester's Space">
-<meta property="og:url" content="http://simonpatrick.github.io/archives/2015/04/index.html">
+  <meta name="description" content="更新一个目录下所有的git repository的shell 脚本最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库
+1  &amp;#10;#! /bin/bash&amp;#10;&amp;#10;for file in ./*&amp;#10;do&amp;#10;  if test -d $file&amp;#10;  then  &amp;#10;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SHELL for all git repository">
+<meta property="og:url" content="http://simonpatrick.github.io/2014/12/08/shell/SHELL-for-all-git-repository/index.html">
 <meta property="og:site_name" content="Tester's Space">
-<meta property="og:description" content="software tester also blogging">
+<meta property="og:description" content="更新一个目录下所有的git repository的shell 脚本最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库
+1  &amp;#10;#! /bin/bash&amp;#10;&amp;#10;for file in ./*&amp;#10;do&amp;#10;  if test -d $file&amp;#10;  then  &amp;#10;">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tester's Space">
-<meta name="twitter:description" content="software tester also blogging">
+<meta name="twitter:title" content="SHELL for all git repository">
+<meta name="twitter:description" content="更新一个目录下所有的git repository的shell 脚本最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库
+1  &amp;#10;#! /bin/bash&amp;#10;&amp;#10;for file in ./*&amp;#10;do&amp;#10;  if test -d $file&amp;#10;  then  &amp;#10;">
   
     <link rel="alternative" href="/atom.xml" title="Tester&#39;s Space" type="application/atom+xml">
   
@@ -172,41 +175,113 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-shell/SHELL-for-all-git-repository" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/04/21/designpattern/designpattern_java_abstractfactory/" class="archive-article-date">
-  	<time datetime="2015-04-21T00:30:46.000Z" itemprop="datePublished">Apr 21</time>
+    <div class="article-meta">
+      <a href="/2014/12/08/shell/SHELL-for-all-git-repository/" class="article-date">
+  	<time datetime="2014-12-08T12:36:12.000Z" itemprop="datePublished">2014-12-08</time>
 </a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SHELL for all git repository
+    </h1>
+  
 
-        </div>
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+        
+
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="更新一个目录下所有的git_repository的shell_脚本">更新一个目录下所有的git repository的shell 脚本</h1><p>最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &#10;#! /bin/bash&#10;&#10;for file in ./*&#10;do&#10;  if test -d $file&#10;  then  &#10;    echo $file is directory &#10;    cd $file&#10;    a=$(pwd)&#10;    echo $a&#10;    git pull&#10;    cd ..&#10;    b=$(pwd)&#10;    echo $b&#10;  fi&#10;&#10;done</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/12/08/performance/note_1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          performance testingnote 1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/29/a-plan/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">A plan for learning testing</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="shell/SHELL-for-all-git-repository" data-title="SHELL for all git repository" data-url="http://simonpatrick.github.io/2014/12/08/shell/SHELL-for-all-git-repository/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 </div>
       <footer id="footer">
   <div class="outer">

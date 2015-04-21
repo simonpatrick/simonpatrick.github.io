@@ -3,17 +3,35 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/4 | Tester&#39;s Space</title>
+  <title>shadowsocks | Tester&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="software tester also blogging">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Tester's Space">
-<meta property="og:url" content="http://simonpatrick.github.io/archives/2015/04/index.html">
+  <meta name="description" content="First, set up shadowsocks as usual. Suppose your local is running on 127.0.0.1:1080.
+Install proxychains.
+On Debian/Ubuntu:1apt-get install proxychains
+
+
+On Mac OS X:1brew install proxychains-ng
+Make">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shadowsocks">
+<meta property="og:url" content="http://simonpatrick.github.io/2014/11/25/shadowsocks/index.html">
 <meta property="og:site_name" content="Tester's Space">
-<meta property="og:description" content="software tester also blogging">
+<meta property="og:description" content="First, set up shadowsocks as usual. Suppose your local is running on 127.0.0.1:1080.
+Install proxychains.
+On Debian/Ubuntu:1apt-get install proxychains
+
+
+On Mac OS X:1brew install proxychains-ng
+Make">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tester's Space">
-<meta name="twitter:description" content="software tester also blogging">
+<meta name="twitter:title" content="shadowsocks">
+<meta name="twitter:description" content="First, set up shadowsocks as usual. Suppose your local is running on 127.0.0.1:1080.
+Install proxychains.
+On Debian/Ubuntu:1apt-get install proxychains
+
+
+On Mac OS X:1brew install proxychains-ng
+Make">
   
     <link rel="alternative" href="/atom.xml" title="Tester&#39;s Space" type="application/atom+xml">
   
@@ -172,41 +190,118 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/04/21/designpattern/designpattern_java_abstractfactory/" class="archive-article-date">
-  	<time datetime="2015-04-21T00:30:46.000Z" itemprop="datePublished">Apr 21</time>
+    <div class="article-meta">
+      <a href="/2014/11/25/shadowsocks/" class="article-date">
+  	<time datetime="2014-11-25T13:28:50.000Z" itemprop="datePublished">2014-11-25</time>
 </a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      shadowsocks
+    </h1>
+  
 
-        </div>
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vpn/">vpn</a></li></ul>
+	</div>
+
+        
+
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>First, set up shadowsocks as usual. Suppose your local is running on 127.0.0.1:1080.</p>
+<h3 id="Install_proxychains-">Install proxychains.</h3><ul>
+<li>On Debian/Ubuntu:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install proxychains</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>On Mac OS X:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install proxychains-ng</span><br></pre></td></tr></table></figure></p>
+<p>Make a config file at ~/.proxychains/proxychains.conf with content:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">strict_chain</span><br><span class="line">proxy_dns </span><br><span class="line">remote_dns_subnet <span class="number">224</span></span><br><span class="line">tcp_<span class="built_in">read</span>_time_out <span class="number">15000</span></span><br><span class="line">tcp_connect_time_out <span class="number">8000</span></span><br><span class="line">localnet <span class="number">127.0</span>.<span class="number">0.0</span>/<span class="number">255.0</span>.<span class="number">0.0</span></span><br><span class="line">[ProxyList]</span><br><span class="line">socks5  <span class="number">127.0</span>.<span class="number">0.1</span> <span class="number">1080</span></span><br><span class="line">Then run <span class="built_in">command</span> with proxychains.</span><br><span class="line"></span><br><span class="line">proxychains4 curl https://www.twitter.com/</span><br><span class="line">proxychains4 git push origin master</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/29/a-plan/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          A plan for learning testing
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/25/Testing/testcoverage/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TestCovearge</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="shadowsocks" data-title="shadowsocks" data-url="http://simonpatrick.github.io/2014/11/25/shadowsocks/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 </div>
       <footer id="footer">
   <div class="outer">
