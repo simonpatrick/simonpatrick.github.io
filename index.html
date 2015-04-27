@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Testing/" style="font-size: 15px;">Testing</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 10px;">javascript</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/plan/" style="font-size: 10px;">plan</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/vim/" style="font-size: 10px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a>
+						<a href="/tags/Testing/" style="font-size: 15px;">Testing</a><a href="/tags/editor/" style="font-size: 15px;">editor</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 10px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/plan/" style="font-size: 10px;">plan</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/vim/" style="font-size: 15px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a>
 					</div>
 				</section>
 				
@@ -174,11 +174,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-designpattern/designpattern_java_abstractfactory" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-shell/SHELL控制流" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/21/designpattern/designpattern_java_abstractfactory/" class="article-date">
-  	<time datetime="2015-04-21T00:30:46.000Z" itemprop="datePublished">2015-04-21</time>
+      <a href="/2015/04/27/shell/SHELL控制流/" class="article-date">
+  	<time datetime="2015-04-27T10:08:17.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -187,20 +187,35 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/shell/SHELL控制流/">SHELL控制流</a>
+    </h1>
+  
+
+      </header>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="第一个设计模式学习">第一个设计模式学习</h5><p>设计模式的学习对于一个测试来说，可能不是那么重要。<br>但是如果你需要写自动化测试代码，自动化测试框架，那么学一下这个一定会有帮助。所以我自己学。</p>
-<h5 id="抽象工厂模式">抽象工厂模式</h5><ol>
-<li>先什么都不说，上张图</li>
-</ol>
-<p><img src="../abstract-factory.jpg" alt="img"></p>
+        <h1 id="Shell_controll_flow">Shell controll flow</h1><h3 id="if/test_条件测试">if/test 条件测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line">a=<span class="number">34</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$a</span> = <span class="number">4</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="literal">false</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$a</span> <span class="operator">-eq</span> <span class="number">34</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="literal">false</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Result:</span></span><br><span class="line">h controll_flow.sh</span><br><span class="line"><span class="literal">false</span></span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     
     <div class="article-info article-info-index">
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -219,8 +234,8 @@
     <article id="post-shell/shell_101_variant" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/16/shell/shell_101_variant/" class="article-date">
-  	<time datetime="2014-12-16T11:02:15.000Z" itemprop="datePublished">2014-12-16</time>
+      <a href="/2015/04/27/shell/shell_101_variant/" class="article-date">
+  	<time datetime="2015-04-27T05:10:28.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -231,8 +246,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: shell_101_variant<br>p: shell/shell_101_variant.md<br>date: 2014-12-16 18:38:39</p>
-<h2 id="tags:_shell">tags: shell</h2><h1 id="变量赋值">变量赋值</h1><p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html" target="_blank" rel="external">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
+        <h1 id="变量赋值">变量赋值</h1><p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html" target="_blank" rel="external">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
 <h3 id="变量赋值-1">变量赋值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line">var=value</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br><span class="line">var=<span class="string">'the value'</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br><span class="line">var=<span class="string">"the <span class="variable">$PARAM</span>"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$var</span></span><br><span class="line"><span class="built_in">echo</span> `<span class="built_in">pwd</span>`</span><br><span class="line"><span class="built_in">echo</span> $(<span class="built_in">pwd</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#result:</span></span><br><span class="line">╰─[:)] % sh shell_variant.sh</span><br><span class="line">value</span><br><span class="line">the value</span><br><span class="line">the</span><br><span class="line">the</span><br><span class="line">/Users/patrick/workspace/works/shell_learning</span><br><span class="line">/Users/patrick/workspace/works/shell_learning</span><br></pre></td></tr></table></figure>
 <h3 id="变量分类">变量分类</h3><p>分类</p>
 <pre><code>四种变量：环境变量、本地变量、位置变量、特定变量参数
@@ -284,8 +298,8 @@
     <article id="post-shell/shell_101_script" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/16/shell/shell_101_script/" class="article-date">
-  	<time datetime="2014-12-16T10:42:30.000Z" itemprop="datePublished">2014-12-16</time>
+      <a href="/2015/04/27/shell/shell_101_script/" class="article-date">
+  	<time datetime="2015-04-27T05:09:58.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -296,8 +310,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: shell_101_script<br>p: shell/shell_101_script.md<br>date: 2014-12-16 18:38:39</p>
-<h2 id="tags:_shell">tags: shell</h2><h1 id="Shell_Script">Shell Script</h1><h2 id="Shell_Script_sample">Shell Script sample</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment"># do somthing</span></span><br></pre></td></tr></table></figure>
+        <h1 id="Shell_Script">Shell Script</h1><h2 id="Shell_Script_sample">Shell Script sample</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment"># do somthing</span></span><br></pre></td></tr></table></figure>
 <h2 id="Run_Shell_Script">Run Shell Script</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh script.sh</span><br><span class="line">chmod a+x script.sh</span><br><span class="line">./script.sh</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cmd1;cmd2</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">cmd1</span><br><span class="line">cmd2</span><br></pre></td></tr></table></figure>
 <h2 id="echo">echo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"welcome to bash"</span></span><br><span class="line">ehco welcome to bash</span><br></pre></td></tr></table></figure>
@@ -353,11 +366,11 @@
 
 
   
-    <article id="post-shell/shell_101_operator" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-designpattern/designpattern_java_abstractfactory" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/16/shell/shell_101_operator/" class="article-date">
-  	<time datetime="2014-12-16T10:38:39.000Z" itemprop="datePublished">2014-12-16</time>
+      <a href="/2015/04/27/designpattern/designpattern_java_abstractfactory/" class="article-date">
+  	<time datetime="2015-04-27T01:27:00.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -366,31 +379,27 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/16/shell/shell_101_operator/">shell_101_operator</a>
-    </h1>
-  
-
-      </header>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="operator">operator</h1><p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html" target="_blank" rel="external">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
-<h3 id="计算">计算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line">no_1=<span class="number">4</span></span><br><span class="line">no_2=<span class="number">5</span></span><br><span class="line"><span class="built_in">let</span> result=no_1+no_2</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> result--</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line"><span class="built_in">let</span> result++</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># expr(漏洞之源？？)</span></span><br><span class="line"></span><br><span class="line">result=`expr <span class="number">3</span>+<span class="number">4</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=`expr <span class="variable">$no_1</span>+<span class="number">345</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$[ no_1 + no_2 ]</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$[ <span class="variable">$no_1</span> + <span class="number">5</span> ]</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$(( no_1 + <span class="number">5</span> ))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br></pre></td></tr></table></figure>
+        <h2 id="第一个设计模式学习">第一个设计模式学习</h2><p>设计模式的学习对于一个测试来说，可能不是那么重要。<br>但是如果你需要写自动化测试代码，自动化测试框架，那么学一下这个一定会有帮助。所以我自己学。</p>
+<h2 id="抽象工厂模式">抽象工厂模式</h2><ol>
+<li>先什么都不说，上张图</li>
+</ol>
+<p><img src="../images/abstract-factory.jpg" alt="img"></p>
+<p>通过这个图，大概可以理解抽象工厂模式：</p>
+<ol>
+<li>不同的离散产品</li>
+<li>实现了抽象工厂的离散factory类</li>
+<li>客户端通过不同的工厂去创建产品</li>
+</ol>
+<p>对于抽象工厂模式来说，实现了DI的原则，客户端不和具体的产品打交道，都是通过工厂去完成了</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">To <span class="built_in">create</span> series <span class="operator">of</span> related <span class="operator">or</span> dependent objects </span><br><span class="line"><span class="keyword">without</span> specifying their concrete classes .</span><br><span class="line">Usually <span class="operator">the</span> created classes all implement <span class="operator">the</span> same interface.</span><br><span class="line">The client <span class="operator">of</span> <span class="operator">the</span> abstract factory does <span class="operator">not</span> care about how these objects are created,</span><br><span class="line">he just knows how they go together</span><br></pre></td></tr></table></figure>
 
       
     </div>
     
     <div class="article-info article-info-index">
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
-	</div>
-
       
 
       
@@ -410,8 +419,8 @@
     <article id="post-shell/shell_environment" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/16/shell/shell_environment/" class="article-date">
-  	<time datetime="2014-12-16T10:38:39.000Z" itemprop="datePublished">2014-12-16</time>
+      <a href="/2015/04/27/shell/shell_environment/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -424,7 +433,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/16/shell/shell_environment/">shell_101_environment_setting</a>
+      <a class="article-title" href="/2015/04/27/shell/shell_environment/">SHELL 101 环境变量设置</a>
     </h1>
   
 
@@ -448,10 +457,78 @@
     <div class="article-info article-info-index">
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-shell/shell_linux_101_CDPATH" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/shell/shell_linux_101_CDPATH/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/shell/shell_linux_101_CDPATH/">SHELL 101 CDPATH(CD的起始目录)设置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设置CD_的基础路径">设置CD 的基础路径</h1><p>如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：</p>
+<p>修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> % <span class="built_in">cd</span> blog                                    ~ patrickdeMacBook-Pro</span><br><span class="line"><span class="built_in">cd</span>:<span class="built_in">cd</span>:<span class="number">13</span>: no such file or directory: books</span><br><span class="line"> %                                             ~ patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure></p>
+<p>设置cd的基本目录到workspace：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">export</span> CDPATH=/Users/patrick/workspace</span><br><span class="line"> %</span><br></pre></td></tr></table></figure></p>
+<p>然后直接敲cd blog就可以到blog目录了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cd</span> blog                        workspace/blog patrickdeMacBook-Pro</span><br><span class="line">~/workspace/blog</span><br><span class="line">%                                workspace/blog patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure>
+<p>设置完毕。</p>
+<p>如果想要CDPATH永久生效，可以把配置放到./bashrc.profile里面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.zshrc</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -470,8 +547,8 @@
     <article id="post-shell/shell-101" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/16/shell/shell-101/" class="article-date">
-  	<time datetime="2014-12-16T10:18:50.000Z" itemprop="datePublished">2014-12-16</time>
+      <a href="/2015/04/27/shell/shell-101/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -484,7 +561,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/16/shell/shell-101/">shell_101_basic_conception</a>
+      <a class="article-title" href="/2015/04/27/shell/shell-101/">SHELL 101 BASIC CONCEPT</a>
     </h1>
   
 
@@ -534,10 +611,14 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
     <div class="article-info article-info-index">
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -553,11 +634,11 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
 
 
   
-    <article id="post-Testing/testing-tools" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-editor/sublime-text-basic" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/14/Testing/testing-tools/" class="article-date">
-  	<time datetime="2014-12-13T23:58:49.000Z" itemprop="datePublished">2014-12-14</time>
+      <a href="/2015/04/27/editor/sublime-text-basic/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -570,7 +651,7 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/14/Testing/testing-tools/">Web Testing 简介</a>
+      <a class="article-title" href="/2015/04/27/editor/sublime-text-basic/">sublime_text_basic</a>
     </h1>
   
 
@@ -579,412 +660,40 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-_Cross_Browser(浏览器兼容性测试)">1. Cross Browser(浏览器兼容性测试)</h1><h3 id="Why">Why</h3><pre><code>无数的浏览器，无数的版本，无数的终端。。。。。。。 这个理由就足够需要做兼容性测试了
-测试的悲剧就是这样的，听上去很简单，做起来就要人命，还被人不理解。。。。。。
-</code></pre><h3 id="How">How</h3><pre><code>* 自动化测试：自己写截屏工具，自己比较（需要进一步研究）
-    <span class="number">1.</span> sikuli
-    <span class="number">2.</span> selenium
-    <span class="number">3.</span> <span class="string">http:</span><span class="comment">//testingbot.com</span>
-    <span class="number">4.</span> <span class="string">http:</span><span class="comment">//saucelabs.com</span>
-* 网站：<span class="string">http:</span><span class="comment">//browsershots.org （自己没有验证要如何处理）</span>
-* 标准检查：<span class="string">http:</span><span class="comment">//validator.w3.org</span>
-* 浏览器分类
-    <span class="number">1.</span> WebKit：Chrome/Safari
-    <span class="number">2.</span> <span class="string">Grecko:</span> Firefox
-    <span class="number">3.</span> Trident rendering <span class="string">engine:</span> IE
-</code></pre><h1 id="2-_Web_Accessibility">2. Web Accessibility</h1><h3 id="Why-1">Why</h3><pre><code>更好的使用，更多的有意义的标示
-</code></pre><h3 id="How-1">How</h3><p>This simplest way to check against W3C compliance would be to open up Firefox, install the accessibility checker plug in, open your site to be tested and run a quick scan.<br>Tips:</p>
-<pre><code>*  Firefox accessibility extension - <span class="string">https:</span><span class="comment">//addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/ </span>
-*  Tips on how best to describe the alt attribute -<span class="string">http:</span><span class="comment">//webdesign.about.com/od/beginningtutorials/a/aa122004.htm</span>
-* The W3 standards on accessibility - <span class="string">http:</span><span class="comment">//www.w3.org/standards/webdesign/accessibility </span>
-* Test Partners accessibility testing - <span class="string">http:</span><span class="comment">//www.testpartners.co.uk/accessibility_testing.htm</span>
-</code></pre><h1 id="3-_Is_the_HTML_valid?">3. Is the HTML valid?</h1><h3 id="Why-2">Why</h3><p>  标准化，避免不必要的bug</p>
-<h3 id="How-2">How</h3><ul>
-<li><a href="http://validator.w3.org" target="_blank" rel="external">http://validator.w3.org</a></li>
-<li>Firefox 插件</li>
-<li>Good post on why you should validate - <a href="http://www.stevefenton.co.uk/Content/Blog/Date/201108/Blog/Do-I-" target="_blank" rel="external">http://www.stevefenton.co.uk/Content/Blog/Date/201108/Blog/Do-I-</a> Need-To-Validate-My-HTML</li>
-<li>FireWeasel - <a href="https://addons.mozilla.org/en-US/firefox/addon/fireweasel/" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/fireweasel/</a></li>
-</ul>
-<h1 id="4-_Check_for_Dead-links">4. Check for Dead-links</h1><h3 id="Why-3">Why</h3><p> 保证网站的最新内容，避免过时信息已经的误解。</p>
-<h3 id="How-3">How</h3><ul>
-<li>Link Check Tool: Xenu</li>
-<li>Xenu Link Checker - <a href="http://home.snafu.de/tilman/xenulink.html" target="_blank" rel="external">http://home.snafu.de/tilman/xenulink.html</a> </li>
-<li>W3C Checker - <a href="http://validator.w3.org/checklink" target="_blank" rel="external">http://validator.w3.org/checklink</a></li>
-<li>Broken Link Checker Tool - <a href="http://www.brokenlinkcheck.com/" target="_blank" rel="external">http://www.brokenlinkcheck.com/</a></li>
-</ul>
-<h1 id="5-_One,_Two,_Many">5. One, Two, Many</h1><h3 id="Why-4">Why</h3><pre><code>网站总是有一定并发的，所以可以先使用一个用户测试基本功能，然后使用两个用户检查是否存在简单的并发问题，最后就考虑使用压力测试工具。 这个方法简单的避免一些简单的并发问题
-</code></pre><h3 id="How-4">How</h3><pre><code><span class="bullet">* </span>JMeter -&gt; webservice
-</code></pre><h1 id="6-_Multiple_tabs_and_windows">6. Multiple tabs and windows</h1><h3 id="Why-5">Why</h3><pre><code>主要为了查看安全问题，数据刷新问题已经多cookie的问题
-</code></pre><h3 id="How-5">How</h3><pre><code>* example <span class="number">1</span>:
-    Open Firefox <span class="operator">and</span> <span class="operator">in</span> <span class="constant">one</span> <span class="constant">tab</span> <span class="built_in">log</span> <span class="operator">in</span> <span class="built_in">to</span> your secure application.
-    Then <span class="constant">right</span> click <span class="command"><span class="keyword">on</span> <span class="title">a</span> <span class="title">page</span> <span class="title">and</span> <span class="title">open</span> <span class="title">that</span> <span class="title">new</span> <span class="title">page</span> <span class="title">in</span> <span class="title">a</span> <span class="title">new</span> <span class="title">tab</span>. <span class="title">Both</span> <span class="title">tabs</span> <span class="title">are</span> <span class="title">now</span> <span class="title">considered</span> <span class="title">to</span> <span class="title">be</span> <span class="title">in</span> <span class="title">the</span> <span class="title">same</span> <span class="title">session</span>.</span>
-    Now <span class="built_in">log</span> out <span class="operator">of</span> <span class="operator">the</span> application <span class="operator">in</span> Tab <span class="number">2</span> <span class="operator">and</span> <span class="keyword">try</span> <span class="built_in">to</span> perform some actions <span class="operator">in</span> Tab <span class="number">1.</span>
-    Has <span class="keyword">it</span> logged you out <span class="operator">or</span> let you perform <span class="operator">an</span> action?
-    In most situations <span class="keyword">it</span> would have logged you out.
-    In many instances <span class="keyword">it</span> is possible <span class="built_in">to</span> <span class="built_in">log</span> <span class="operator">in</span> <span class="built_in">to</span> <span class="constant">two</span> different accounts <span class="operator">in</span> <span class="operator">the</span> same browser <span class="operator">and</span> <span class="function"><span class="keyword">end</span> <span class="title">up</span> <span class="title">sharing</span> <span class="title">data</span> <span class="title">across</span> <span class="title">both</span> <span class="title">tabs</span> <span class="title">because</span> <span class="title">of</span> <span class="title">cross</span> <span class="title">authentication</span>.</span>
-
-* example <span class="number">2</span>：
-    I <span class="built_in">log</span> <span class="operator">in</span> <span class="built_in">to</span> my banking application <span class="operator">in</span> Tab <span class="number">1</span> <span class="keyword">as</span> Rob <span class="operator">and</span> <span class="keyword">then</span> <span class="operator">in</span> Tab <span class="number">2</span> <span class="keyword">as</span> Dave.
-    Now when I <span class="keyword">switch</span> <span class="built_in">to</span> <span class="constant">tab</span> <span class="number">1</span> <span class="operator">and</span> follow <span class="operator">a</span> <span class="built_in">new</span> link I might <span class="built_in">get</span> <span class="built_in">to</span> see Dave’s information.
-    In Tab <span class="number">2</span>, Dave might even <span class="built_in">get</span> <span class="built_in">to</span> see my data.
-    This is because <span class="operator">of</span> confused session data stored <span class="operator">in</span> <span class="operator">a</span> single cookie <span class="keyword">for</span> <span class="operator">the</span> browser, which is shared between <span class="constant">two</span> tabs.
-    It’s <span class="operator">not</span> just about authentication though.
-    What about adding things <span class="built_in">to</span> <span class="operator">a</span> shopping basket <span class="operator">in</span> multiple tabs – <span class="built_in">do</span> they persist <span class="operator">in</span> <span class="operator">the</span> basket? What about state changes <span class="operator">in</span> your application across several tabs?
-    Can I login across several browsers <span class="operator">in</span> different sessions?
-    Can I trick browser side validation <span class="operator">and</span> restrictions <span class="keyword">by</span> performing actions across <span class="operator">a</span> <span class="built_in">number</span> <span class="operator">of</span> tabs?
-    The best way <span class="built_in">to</span> test <span class="operator">in</span> multiple browser tabs <span class="operator">and</span> sessions is <span class="built_in">to</span> explore <span class="operator">the</span> application <span class="operator">with</span> multiple tabs <span class="built_in">open</span>, checking what effect <span class="operator">a</span> change <span class="operator">in</span> <span class="constant">one</span> <span class="constant">tab</span> can have <span class="command"><span class="keyword">on</span> <span class="title">the</span> <span class="title">other</span>.</span>
-    As you explore around look <span class="keyword">for</span> data, states <span class="operator">and</span> actions that might be confused <span class="keyword">by</span> bad cookie management, session management <span class="operator">and</span> cross <span class="constant">tab</span> problems.
-
-* Good site about cookies <span class="operator">and</span> sessions - <span class="keyword">http</span>://www.allaboutcookies.org/cookies/session-cookies-used-<span class="keyword">for</span>.html 
-* Session Hijacking - <span class="keyword">http</span>://en.wikipedia.org/wiki/Session_hijacking
-* Security implications <span class="operator">of</span> cookies - <span class="keyword">http</span>://<span class="keyword">it</span>.toolbox.com/blogs/securitymonkey/successful-hacking-<span class="operator">with</span>-xss- cookies-session-ids-<span class="number">11098</span>
-* Burpsuite - <span class="keyword">http</span>://portswigger.net/burp/
-* Firecookie - <span class="keyword">https</span>://addons.mozilla.org/en-us/firefox/addon/firecookie/
-</code></pre><h1 id="7-_Http_and_Https">7. Http and Https</h1><h3 id="Why-6">Why</h3><pre><code>敏感信息如果泄露，容易被人攻击，所以需要检查是否使用了<span class="keyword">http</span>传输了敏感信息，同时有些信息被修改了是否会引起错误，比如<span class="keyword">http</span> header，或者<span class="built_in">post</span>数据。。。。。。
-</code></pre><h3 id="How-6">How</h3><pre><code>* 使用proxy工具：Burpsuite,Charles Proxy/Fiddler 查看请求和返回信息，修改请求信息看是否可以造成问题，比如修改了页面的某个价格，是否还是新价格购买成功；个人信息是否在里面；
-* Good security <span class="keyword">for</span> web checklist –
-<span class="keyword">http</span>://www.techrepublic.com/blog/security/ensure-basic-web-site-security-<span class="operator">with</span>-this-checklist/<span class="number">424</span>
-* Differences between <span class="keyword">http</span> <span class="operator">and</span> <span class="keyword">https</span> - <span class="keyword">http</span>://www.virtu-software.com/ask-doug/QandA.asp?q=<span class="number">7</span>
-* Another differences <span class="built_in">post</span> - <span class="keyword">http</span>://www.wisegeek.com/what-is-<span class="operator">the</span>-difference-between-<span class="keyword">http</span>-<span class="operator">and</span>-<span class="keyword">https</span>.htm 
-* Burpsuite - <span class="keyword">http</span>://portswigger.net/burp/
-</code></pre><h1 id="8-_Client/Server_Watch">8. Client/Server Watch</h1><h3 id="Why-7">Why</h3><pre><code>Web测试仅仅查看页面是远远不够的，所以测试需要知道送出去的请求是什么，得到的返回是什么。以下问题可能需要问以下：
- Is <span class="operator">the</span> data being sent <span class="operator">and</span> received correct?
- Is <span class="operator">the</span> layout working <span class="keyword">as</span> expected?
- Are <span class="operator">the</span> response times satisfactory?
- How <span class="built_in">do</span> timeouts affect <span class="operator">the</span> site?
- Are there <span class="keyword">any</span> errors <span class="operator">in</span> <span class="operator">the</span> code?
- What happens <span class="keyword">if</span> I pass <span class="operator">in</span> X?
- What happens <span class="keyword">if</span> I remove X?
- What happens <span class="keyword">if</span> <span class="operator">the</span> message is lost completely?
-</code></pre><h3 id="How-7">How</h3><pre><code>* Charles Proxy - <span class="string">http:</span><span class="comment">//www.charlesproxy.com/</span>
-* Fiddler - <span class="string">http:</span><span class="comment">//fiddler2.com/fiddler2/</span>
-* Firebug - <span class="string">http:</span><span class="comment">//getfirebug.com/</span>
-* Firecookie - <span class="string">https:</span><span class="comment">//addons.mozilla.org/en-US/firefox/addon/firecookie/</span>
-</code></pre><h1 id="9-_Security">9. Security</h1><h3 id="Why-8">Why</h3><p>  不用多少，听听各种脱库事件就知道了，只是我的能力够吗？：）</p>
-<h3 id="How-8">How</h3><pre><code>* Burpsuite - <span class="string">http:</span><span class="comment">//portswigger.net/burp/</span>
-* Web Scarab - <span class="string">https:</span><span class="comment">//www.owasp.org/index.php/WebScarab_Getting_Started</span>
-* Web Hackers book - <span class="string">http:</span><span class="comment">//www.amazon.co.uk/Web-Application-Hackers-Handbook- Discovering/dp/0470170778</span>
-* OWASP Top Ten - <span class="string">https:</span><span class="comment">//www.owasp.org/index.php/Category:OWASP_Top_Ten_Project </span>
-* Plynt Security Testing Experts - <span class="string">http:</span><span class="comment">//www.plynt.com/</span>
-* Salesforce Burpsuite <span class="keyword">for</span> App Exchange Partners - <span class="string">http:</span><span class="comment">//security.force.com/webappscanner</span>
-* Start with the treat profile - <span class="string">http:</span><span class="comment">//www.securityalliance.co.uk/blog/bid/40335/Web-Application-Security-Testing-Start-with-the-Threat-Profile</span>
-* Firefox add-ons (search <span class="keyword">for</span> “security”)- <span class="string">https:</span><span class="comment">//addons.mozilla.org/en-US/firefox/</span>
-</code></pre><h1 id="10-_Browser_Extentions">10. Browser Extentions</h1><ul>
-<li>Selenium IDE <a href="http://seleniumhq.org/projects/ide/" target="_blank" rel="external">http://seleniumhq.org/projects/ide/</a><br>Selenium is fast becoming an industry standard tool. This is the IDE version. Visit <a href="http://seleniumhq.org/" target="_blank" rel="external">http://seleniumhq.org/</a> for more information on other tools in the set like Selenium Grid.</li>
-<li>IE Tab <a href="https://addons.mozilla.org/en-US/firefox/addon/1419" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/1419</a> Flips your Firefox tab in to Internet Explorer mode.</li>
-<li><a href="https://addons.mozilla.org/en-US/firefox/addon/5792" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/5792</a> Re-sizes your window to different screen sizes</li>
-<li>Fire cookie <a href="https://addons.mozilla.org/en-US/firefox/addon/6683" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/6683</a> Lets you to see and manage cookies through the Firebug add-on.</li>
-<li>Delicious <a href="https://addons.mozilla.org/en-US/firefox/addon/3615" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/3615</a></li>
-<li>Social bookmarking service. Never lose a site of interest again and share them with the community too. Perfect for bookmarking testing sites, information, snippets and blogs.</li>
-<li>Clear Cache <a href="https://addons.mozilla.org/en-US/firefox/addon/1801" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/1801</a> Clears out the cache within the browser at the click of a button.</li>
-<li>Copy Plain Text <a href="https://addons.mozilla.org/en-US/firefox/addon/134" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/134</a><br>Copies any text from the browser in to a plain text format losing all formatting.</li>
-<li>Fiddler Hook <a href="http://www.fiddler2.com/fiddler2/addons/fiddlerhook/" target="_blank" rel="external">http://www.fiddler2.com/fiddler2/addons/fiddlerhook/</a> Firefox add-on for integrating with Fiddler (a debugging tool).</li>
-<li>Download Status <a href="https://addons.mozilla.org/en-US/firefox/addon/26" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/26</a><br>Shows your downloads in a toolbar at the bottom of the browser window. Keeps it nice and tidy and easy access to your downloads.</li>
-<li>Xmarks <a href="https://addons.mozilla.org/en-US/firefox/addon/2410" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/2410</a></li>
-<li>Allow you to save your bookmarks and sync them between browsers on different machines. Works across browsers too. This is great if you test on several different machines. It means you can save your bookmarks once and find them on other browsers you have synched.</li>
-<li>W3C Page Validator <a href="https://addons.mozilla.org/en-US/firefox/addon/2250" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/2250</a><br>Check your page against W3C standards and compliance.</li>
-<li>Pencil <a href="https://addons.mozilla.org/en-US/firefox/addon/8487" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/8487</a><br>Great for screen mocks and notes.</li>
-<li>SQL Injection <a href="https://addons.mozilla.org/en-US/firefox/addon/6727" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/6727</a></li>
-<li>Quick Restart <a href="https://addons.mozilla.org/en-US/firefox/addon/3559" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/3559</a></li>
-<li>Restarts Firefox maintaining all tabs and open docs when it launches it again.</li>
-<li>Firebug <a href="https://addons.mozilla.org/en-US/firefox/addon/1843" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/1843</a> How can you test websites without this one?</li>
-<li>Regular Expressions Tester <a href="https://addons.mozilla.org/en-US/firefox/addon/2077" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/2077</a> Tool for testing regular expressions.</li>
-<li>Quick Locale Switcher <a href="https://addons.mozilla.org/en-US/firefox/addon/1333" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/1333</a></li>
-<li>Good extension allowing for quick switching between browser locales.<br>Http Fox <a href="https://addons.mozilla.org/en-US/firefox/addon/6647" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/6647</a></li>
-<li>Good tool for analyzing the http traffic through your browser.</li>
-<li>TAW3 <a href="https://addons.mozilla.org/en-US/firefox/addon/1158?src=api" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/1158?src=api</a></li>
-<li>Accessibility checking tool. Awesome.</li>
-<li>Firefox Accessibility Tools <a href="https://addons.mozilla.org/en-US/firefox/addon/5809?src=api" target="_blank" rel="external">https://addons.mozilla.org/en-US/firefox/addon/5809?src=api</a> Accessibility compliance checking tool.</li>
-</ul>
-<h1 id="Back_to_the_benginging_again">Back to the benginging again</h1><ul>
-<li>Stack Overflow question on disabling back capability (which you cannot by the way) -</li>
-<li><a href="http://stackoverflow.com/questions/7816195/how-to-disable-back-button-in-browser-when-user-logout-in-" target="_blank" rel="external">http://stackoverflow.com/questions/7816195/how-to-disable-back-button-in-browser-when-user-logout-in-</a> classic-asp</li>
-<li>IE security problem with the Back Button.</li>
-<li><a href="http://www.wired.com/science/discoveries/news/2002/04/51899?currentPage=all" target="_blank" rel="external">http://www.wired.com/science/discoveries/news/2002/04/51899?currentPage=all</a></li>
-</ul>
-<h1 id="其他的一些测试方式">其他的一些测试方式</h1><ul>
-<li>Change the URL</li>
-<li>Tab Order</li>
-<li>See the Source</li>
-<li>UX<pre><code><span class="bullet">* </span>Customer Support
-<span class="bullet">* </span>Release Notes
-<span class="bullet">* </span>Error Tolernt
-<span class="bullet">* </span>Documentation
-<span class="bullet">* </span>Performance
-<span class="bullet">* </span>Security
-<span class="bullet">* </span>Usability and Ease to Use
-<span class="bullet">* </span>Accessibility
-</code></pre></li>
-<li>Change the locale</li>
-<li>Resize the windows and resolution</li>
-<li>Block pop-ups</li>
-<li>Disable CSS</li>
-<li>Text Only</li>
-<li>Disable Javascript</li>
-<li>Refresh during page loads</li>
-<li>Check SEO</li>
-<li>Five second test</li>
-<li>Throttle It (限流处理)</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Testing/">Testing</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-jquery/jquery_101" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/12/12/jquery/jquery_101/" class="article-date">
-  	<time datetime="2014-12-12T15:52:05.000Z" itemprop="datePublished">2014-12-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/12/jquery/jquery_101/">jquery 101</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="jquery_语法">jquery 语法</h1><h3 id="$(selector)-action()">$(selector).action()</h3><ul>
-<li>$ &gt;jQuery</li>
-<li>selector -&gt; HTML element</li>
-<li>action() -&gt; jQuery operation</li>
-</ul>
-<p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">this</span>).hide(); <span class="comment">// hide current element</span></span><br><span class="line">$(<span class="string">"p"</span>).hide(); <span class="comment">//hide p tag</span></span><br><span class="line">$(<span class="string">".test"</span>).hide(); <span class="comment">//hide class="test" 的元素</span></span><br><span class="line">$(<span class="string">"#test"</span>).hide(); <span class="comment">//hide id="test"的元素</span></span><br></pre></td></tr></table></figure></p>
-<p>选择器：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123;p.intro&#125;; <span class="comment">//所有class=intro的&lt;p&gt; tags</span></span><br><span class="line">$&#123;p#intro&#125;; <span class="comment">//所有id=intro的&lt;p&gt;标签</span></span><br><span class="line">$(<span class="string">"[href]"</span>) <span class="comment">//选取所有带有 href 属性的元素。</span></span><br><span class="line">$(<span class="string">"[href='#']"</span>) <span class="comment">//选取所有带有 href 值等于 "#" 的元素。</span></span><br><span class="line">$(<span class="string">"[href!='#']"</span>) <span class="comment">//选取所有带有 href 值不等于 "#" 的元素。</span></span><br><span class="line">$(<span class="string">"[href$='.jpg']"</span>) <span class="comment">//选取所有 href 值以 ".jpg" 结尾的元素。</span></span><br></pre></td></tr></table></figure>
-<p>选择器参考手册：</p>
+        <h1 id="常用sublime_text功能介绍">常用sublime text功能介绍</h1><hr>
+<h2 id="sublime_text插件安装">sublime text插件安装</h2><h3 id="1-_安装package_control">1. 安装package control</h3><p>package controll是sublime text 插件安装工具，sublime txt默认没有安装此工具，需要安装。</p>
+<p>ctrl+~ 打开命令行工具，运行以下安装脚本（sublime text3）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'7183a2d3e96f11eeadd761d777e62404'</span> + <span class="string">'e330c659d4bb41d3bdf022e94cab3cd0'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
+<p>运行完毕之后，使用ctrl+shit+p 查看install package 选项是否存在，如果存在则安装成功。</p>
+<h3 id="2-_安装插件">2. 安装插件</h3><p>使用ctrl+shit+p 输入install，选择install package选项，然后输入需要安装的插件名字，找到插件之后回车就可以安装了</p>
+<p><strong>启动install package</strong><br><img src="../images/install_package.jpg" alt="img"><br><strong>输入plugin名字</strong><br><img src="../images/plugin_install.jpg" alt="img"></p>
+<h5 id="常用编辑方法">常用编辑方法</h5><h5 id="文本编辑">文本编辑</h5><p>码农的常用编辑</p>
+<ol>
+<li>copy and paster (码农最喜欢的)</li>
+</ol>
 <table>
 <thead>
 <tr>
-<th>选择器</th>
-<th>实例</th>
-<th>选取</th>
+<th>快捷键</th>
+<th>功能</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>*</td>
-<td>$(“*”)</td>
-<td>所有元素</td>
+<td>ctrl(command)+c</td>
+<td>复制</td>
 </tr>
 <tr>
-<td>#id</td>
-<td>$(“#lastname”)</td>
-<td>id=”lastname” 的元素</td>
+<td>ctrl(command)+v</td>
+<td>粘贴</td>
 </tr>
 <tr>
-<td>.class</td>
-<td>$(“.intro”)</td>
-<td>所有 class=”intro” 的元素</td>
+<td>ctrl(command)+shift+v</td>
+<td>缩进复制</td>
 </tr>
 <tr>
-<td>element</td>
-<td>$(“p”)</td>
-<td>所有 &lt;p&gt; 元素</td>
-</tr>
-<tr>
-<td>.class.class</td>
-<td>$(“.intro.demo”)</td>
-<td>所有 class=”intro” 且 class=”demo” 的元素</td>
-</tr>
-<tr>
-<td>:first</td>
-<td>$(“p:first”)</td>
-<td>第一个 &lt;p&gt; 元素</td>
-</tr>
-<tr>
-<td>:last</td>
-<td>$(“p:last”)</td>
-<td>最后一个 &lt;p&gt; 元素</td>
-</tr>
-<tr>
-<td>:even</td>
-<td>$(“tr:even”)</td>
-<td>所有偶数 &lt;tr&gt; 元素</td>
-</tr>
-<tr>
-<td>:odd</td>
-<td>$(“tr:odd”)</td>
-<td>所有奇数 &lt;tr&gt; 元素</td>
-</tr>
-<tr>
-<td>:eq(index)</td>
-<td>$(“ul li:eq(3)”)</td>
-<td>列表中的第四个元素（index 从 0 开始）</td>
-</tr>
-<tr>
-<td>:gt(no)</td>
-<td>$(“ul li:gt(3)”)</td>
-<td>列出 index 大于 3 的元素</td>
-</tr>
-<tr>
-<td>:lt(no)</td>
-<td>$(“ul li:lt(3)”)</td>
-<td>列出 index 小于 3 的元素</td>
-</tr>
-<tr>
-<td>:not(selector)</td>
-<td>$(“input:not(:empty)”)</td>
-<td>所有不为空的 input 元素</td>
-</tr>
-<tr>
-<td>:header</td>
-<td>$(“:header”)</td>
-<td>所有标题元素 &lt;h1&gt; - &lt;h6&gt;</td>
-</tr>
-<tr>
-<td>:animated</td>
-<td></td>
-<td>所有动画元素</td>
-</tr>
-<tr>
-<td>:contains(text)</td>
-<td>$(“:contains(‘W3School’)”)</td>
-<td>包含指定字符串的所有元素</td>
-</tr>
-<tr>
-<td>:empty</td>
-<td>$(“:empty”)</td>
-<td>无子（元素）节点的所有元素</td>
-</tr>
-<tr>
-<td>:hidden</td>
-<td>$(“p:hidden”)</td>
-<td>所有隐藏的 &lt;p&gt; 元素</td>
-</tr>
-<tr>
-<td>:visible</td>
-<td>$(“table:visible”)</td>
-<td>所有可见的表格</td>
-</tr>
-<tr>
-<td>s1,s2,s3</td>
-<td>$(“th,td,.intro”)</td>
-<td>所有带有匹配选择的元素</td>
-</tr>
-<tr>
-<td>[attribute]</td>
-<td>$(“[href]”)</td>
-<td>所有带有 href 属性的元素</td>
-</tr>
-<tr>
-<td>[attribute=value]</td>
-<td>$(“[href=’#’]”)</td>
-<td>所有 href 属性的值等于 “#” 的元素</td>
-</tr>
-<tr>
-<td>[attribute!=value]</td>
-<td>$(“[href!=’#’]”)</td>
-<td>所有 href 属性的值不等于 “#” 的元素</td>
-</tr>
-<tr>
-<td>[attribute$=value]</td>
-<td>$(“[href$=’.jpg’]”)</td>
-<td>所有 href 属性的值包含以 “.jpg” 结尾的元素</td>
-</tr>
-<tr>
-<td>:input</td>
-<td>$(“:input”)</td>
-<td>所有 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:text</td>
-<td>$(“:text”)</td>
-<td>所有 type=”text” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:password</td>
-<td>$(“:password”)</td>
-<td>所有 type=”password” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:radio</td>
-<td>$(“:radio”)</td>
-<td>所有 type=”radio” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:checkbox</td>
-<td>$(“:checkbox”)</td>
-<td>所有 type=”checkbox” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:submit</td>
-<td>$(“:submit”)</td>
-<td>所有 type=”submit” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:reset</td>
-<td>$(“:reset”)</td>
-<td>所有 type=”reset” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:button</td>
-<td>$(“:button”)</td>
-<td>所有 type=”button” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:image</td>
-<td>$(“:image”)</td>
-<td>所有 type=”image” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:file</td>
-<td>$(“:file”)</td>
-<td>所有 type=”file” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:enabled</td>
-<td>$(“:enabled”)</td>
-<td>所有激活的 input 元素</td>
-</tr>
-<tr>
-<td>:disabled</td>
-<td>$(“:disabled”)</td>
-<td>所有禁用的 input 元素</td>
-</tr>
-<tr>
-<td>:selected</td>
-<td>$(“:selected”)</td>
-<td>所有被选取的 input 元素</td>
-</tr>
-<tr>
-<td>:checked</td>
-<td>$(“:checked”)</td>
-<td>所有被选中的 input 元素</td>
+<td>ctrl(command)+alt+v</td>
+<td>从历史中复制</td>
 </tr>
 </tbody>
 </table>
@@ -995,10 +704,14 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
     <div class="article-info article-info-index">
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/submline-text/">submline_text</a></li></ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/editor/">editor</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -1014,11 +727,11 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
 
 
   
-    <article id="post-vim/vim-tips-01" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-shell/SHELL-for-all-git-repository" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/10/vim/vim-tips-01/" class="article-date">
-  	<time datetime="2014-12-10T14:51:43.000Z" itemprop="datePublished">2014-12-10</time>
+      <a href="/2015/04/27/shell/SHELL-for-all-git-repository/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -1031,7 +744,7 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/10/vim/vim-tips-01/">vim-tips-01</a>
+      <a class="article-title" href="/2015/04/27/shell/SHELL-for-all-git-repository/">SHELL for update all git repository</a>
     </h1>
   
 
@@ -1040,17 +753,8 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="VIM_小技巧">VIM 小技巧</h1><h3 id="准备工作">准备工作</h3><p>vim 输入</p>
-<pre><code><span class="keyword">this</span> <span class="keyword">is</span> test
-</code></pre><h3 id="查找替换">查找替换</h3><p>用回车替换空格</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/ /\r/g</span><br></pre></td></tr></table></figure>
-<p>结果：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this</span><br><span class="line"><span class="keyword">is</span></span><br><span class="line">test</span><br></pre></td></tr></table></figure></p>
-<h3 id="行拼接">行拼接</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggVG -- 选中所有的文字</span><br><span class="line">:'&lt;,'&gt;j (其实只要输入一个j)</span><br></pre></td></tr></table></figure>
-<p>结果:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this <span class="keyword">is</span> test</span><br></pre></td></tr></table></figure></p>
-<h3 id="复制">复制</h3><pre><code><span class="title">nyy</span>
-np
-</code></pre><p>就可以复制了</p>
-<h3 id="列操作">列操作</h3><p>gg ,ctrl+v, G,I ，输入，esc</p>
+        <h1 id="更新一个目录下所有的git_repository的shell_脚本">更新一个目录下所有的git repository的shell 脚本</h1><p>最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &#10;#! /bin/bash&#10;&#10;for file in ./*&#10;do&#10;  if test -d $file&#10;  then  &#10;    echo $file is directory &#10;    cd $file&#10;    a=$(pwd)&#10;    echo $a&#10;    git pull&#10;    cd ..&#10;    b=$(pwd)&#10;    echo $b&#10;  fi&#10;&#10;done</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1058,10 +762,14 @@ np
     <div class="article-info article-info-index">
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a><a class="article-category-link" href="/categories/linux/shell/">shell</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -1077,11 +785,11 @@ np
 
 
   
-    <article id="post-shell/shell_linux_101_CDPATH" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-shell/shell_101_operator" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2014/12/10/shell/shell_linux_101_CDPATH/" class="article-date">
-  	<time datetime="2014-12-10T13:52:57.000Z" itemprop="datePublished">2014-12-10</time>
+      <a href="/2015/04/27/shell/shell_101_operator/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
   
@@ -1094,7 +802,7 @@ np
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/10/shell/shell_linux_101_CDPATH/">shell-linux-101-CDPATH</a>
+      <a class="article-title" href="/2015/04/27/shell/shell_101_operator/">SHELL 101 OPERATOR</a>
     </h1>
   
 
@@ -1103,14 +811,8 @@ np
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="设置CD_的基础路径">设置CD 的基础路径</h1><p>如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：</p>
-<p>修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> % <span class="built_in">cd</span> blog                                    ~ patrickdeMacBook-Pro</span><br><span class="line"><span class="built_in">cd</span>:<span class="built_in">cd</span>:<span class="number">13</span>: no such file or directory: books</span><br><span class="line"> %                                             ~ patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure></p>
-<p>设置cd的基本目录到workspace：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">export</span> CDPATH=/Users/patrick/workspace</span><br><span class="line"> %</span><br></pre></td></tr></table></figure></p>
-<p>然后直接敲cd blog就可以到blog目录了：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cd</span> blog                        workspace/blog patrickdeMacBook-Pro</span><br><span class="line">~/workspace/blog</span><br><span class="line">%                                workspace/blog patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure>
-<p>设置完毕。</p>
-<p>如果想要CDPATH永久生效，可以把配置放到./bashrc.profile里面</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.zshrc</span><br></pre></td></tr></table></figure>
+        <h1 id="operator">operator</h1><p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html" target="_blank" rel="external">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
+<h3 id="计算">计算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line">no_1=<span class="number">4</span></span><br><span class="line">no_2=<span class="number">5</span></span><br><span class="line"><span class="built_in">let</span> result=no_1+no_2</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> result--</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line"><span class="built_in">let</span> result++</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># expr(漏洞之源？？)</span></span><br><span class="line"></span><br><span class="line">result=`expr <span class="number">3</span>+<span class="number">4</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=`expr <span class="variable">$no_1</span>+<span class="number">345</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$[ no_1 + no_2 ]</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$[ <span class="variable">$no_1</span> + <span class="number">5</span> ]</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$(( no_1 + <span class="number">5</span> ))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1118,10 +820,14 @@ np
     <div class="article-info article-info-index">
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -1139,7 +845,7 @@ np
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
