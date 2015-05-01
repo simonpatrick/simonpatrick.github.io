@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Testing/" style="font-size: 15px;">Testing</a><a href="/tags/editor/" style="font-size: 15px;">editor</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 10px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/plan/" style="font-size: 10px;">plan</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/vim/" style="font-size: 15px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a>
+						<a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/Testing/" style="font-size: 13.33px;">Testing</a><a href="/tags/devops/" style="font-size: 10px;">devops</a><a href="/tags/editor/" style="font-size: 16.67px;">editor</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 13.33px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/plan/" style="font-size: 10px;">plan</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/vim/" style="font-size: 13.33px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,426 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-shell/SHELL-for-all-git-repository" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/shell/SHELL-for-all-git-repository/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/shell/SHELL-for-all-git-repository/">SHELL for update all git repository</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="更新一个目录下所有的git_repository的shell_脚本">更新一个目录下所有的git repository的shell 脚本</h1><p>最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &#10;#! /bin/bash&#10;&#10;for file in ./*&#10;do&#10;  if test -d $file&#10;  then  &#10;    echo $file is directory &#10;    cd $file&#10;    a=$(pwd)&#10;    echo $a&#10;    git pull&#10;    cd ..&#10;    b=$(pwd)&#10;    echo $b&#10;  fi&#10;&#10;done</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a><a class="article-category-link" href="/categories/linux/shell/">shell</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-shell/shell_linux_101_CDPATH" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/shell/shell_linux_101_CDPATH/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/shell/shell_linux_101_CDPATH/">SHELL 101 CDPATH(CD的起始目录)设置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设置CD_的基础路径">设置CD 的基础路径</h1><p>如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：</p>
+<p>修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> % <span class="built_in">cd</span> blog                                    ~ patrickdeMacBook-Pro</span><br><span class="line"><span class="built_in">cd</span>:<span class="built_in">cd</span>:<span class="number">13</span>: no such file or directory: books</span><br><span class="line"> %                                             ~ patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure></p>
+<p>设置cd的基本目录到workspace：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">export</span> CDPATH=/Users/patrick/workspace</span><br><span class="line"> %</span><br></pre></td></tr></table></figure></p>
+<p>然后直接敲cd blog就可以到blog目录了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cd</span> blog                        workspace/blog patrickdeMacBook-Pro</span><br><span class="line">~/workspace/blog</span><br><span class="line">%                                workspace/blog patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure>
+<p>设置完毕。</p>
+<p>如果想要CDPATH永久生效，可以把配置放到./bashrc.profile里面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.zshrc</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-editor/markdown_basic" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/editor/markdown_basic/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/editor/markdown_basic/">mark down basic</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Markdown">Markdown</h1><p>===============</p>
+<h5 id="1-_Title">1. Title</h5><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">title 1</span><br><span class="line">==========</span></span><br><span class="line"><span class="header">titel 2</span><br><span class="line">-------------</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-_Header">2. Header</h5><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># header1</span></span><br><span class="line"><span class="preprocessor">## header2</span></span><br><span class="line"><span class="preprocessor">### ......</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-_Link">3. Link</h5><p><a href="http://www.google.com" target="_blank" rel="external">google</a><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_label">google</span>](<span class="link_url">http://www.google.com</span>)</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://www.google.com" title="google homepage" target="_blank" rel="external">google</a></p>
+<p>it is <a href="url/pathtoimage" title="image reference_name">google reference</a></p>
+<p><a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>  — 自动转换成link</p>
+<h5 id="4-image">4.image</h5><ol>
+<li><p>inline</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">image link</span>](<span class="link_url">url/path/toImage</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>reference￼<br><img src="url/pathtoimage" alt="imagelink" title="image reference_name"></p>
+</li>
+</ol>
+<h5 id="5-_code_block">5. code block</h5><ol>
+<li><p>tab or 4 space and Inline code</p>
+<p> this is code block</p>
+<p> this is inline code <code>inline code</code></p>
+</li>
+<li><figure class="highlight"><figcaption><span>seperate</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```&#10;this is code block</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>define what kind of code, synatx highlight</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String A = <span class="string">"a"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"python"</span></span><br></pre></td></tr></table></figure>
+<h5 id="6-_Tables">6. Tables</h5><table>
+<thead>
+<tr>
+<th>TABLE</th>
+<th style="text-align:center">ARE</th>
+<th style="text-align:right">COOL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col2</td>
+<td style="text-align:center">right aligned</td>
+<td style="text-align:right">yes</td>
+</tr>
+<tr>
+<td>col3</td>
+<td style="text-align:center">center aligned</td>
+<td style="text-align:right">yes</td>
+</tr>
+<tr>
+<td>col4</td>
+<td style="text-align:center">neat</td>
+<td style="text-align:right">yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">markdown</th>
+<th style="text-align:right">less</th>
+<th style="text-align:center">prety</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>still</em></td>
+<td style="text-align:right"><code>render</code></td>
+<td style="text-align:center"><strong>nice</strong></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/editor/">editor</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-editor/sublime-text-basic" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/editor/sublime-text-basic/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/editor/sublime-text-basic/">sublime_text_basic</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="常用sublime_text功能介绍">常用sublime text功能介绍</h1><hr>
+<h2 id="sublime_text插件安装">sublime text插件安装</h2><h3 id="1-_安装package_control">1. 安装package control</h3><p>package controll是sublime text 插件安装工具，sublime txt默认没有安装此工具，需要安装。</p>
+<p>ctrl+~ 打开命令行工具，运行以下安装脚本（sublime text3）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'7183a2d3e96f11eeadd761d777e62404'</span> + <span class="string">'e330c659d4bb41d3bdf022e94cab3cd0'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
+<p>运行完毕之后，使用ctrl+shit+p 查看install package 选项是否存在，如果存在则安装成功。</p>
+<h3 id="2-_安装插件">2. 安装插件</h3><p>使用ctrl+shit+p 输入install，选择install package选项，然后输入需要安装的插件名字，找到插件之后回车就可以安装了</p>
+<p><strong>启动install package</strong><br><img src="../images/install_package.jpg" alt="img"><br><strong>输入plugin名字</strong><br><img src="../images/plugin_install.jpg" alt="img"></p>
+<h5 id="常用编辑方法">常用编辑方法</h5><h5 id="文本编辑">文本编辑</h5><p>码农的常用编辑</p>
+<ol>
+<li>copy and paster (码农最喜欢的)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl(command)+c</td>
+<td>复制</td>
+</tr>
+<tr>
+<td>ctrl(command)+v</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>ctrl(command)+shift+v</td>
+<td>缩进复制</td>
+</tr>
+<tr>
+<td>ctrl(command)+alt+v</td>
+<td>从历史中复制</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/submline-text/">submline_text</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/editor/">editor</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-js_basic" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/js_basic/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/js_basic/">Javascript basic</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Variable_Types">Variable Types</h1><h5 id="Variable_Types-1">Variable Types</h5><pre><code><span class="bullet">. </span>Numbers
+<span class="code">    .Float</span>
+<span class="code">    .Integer</span>
+<span class="code">    . 1 and 1.0 same value</span>
+<span class="bullet">. </span>String
+<span class="bullet">. </span>Boolean
+<span class="bullet">. </span>Arrays
+<span class="bullet">. </span>Objects
+<span class="bullet">. </span>null
+<span class="bullet">. </span>undefined
+</code></pre><h4 id="Operator">Operator</h4><pre><code><span class="string">.</span> <span class="literal">+</span><span class="string">,</span><span class="literal">-</span><span class="string">,</span><span class="comment">*</span><span class="string">,</span><span class="comment">/</span>
+<span class="string">.</span> <span class="comment">%</span><span class="string">,</span><span class="literal">+</span><span class="literal">+</span><span class="string">,</span><span class="literal">-</span><span class="literal">-</span>
+</code></pre><h4 id="String">String</h4><pre><code>. <span class="built_in">String</span> <span class="string">''</span>,<span class="string">""</span>
+</code></pre><h4 id="Condition_Logic">Condition Logic</h4><pre><code>. <span class="keyword">if</span>
+. <span class="keyword">else</span>
+. <span class="keyword">else</span> <span class="keyword">if</span>
+</code></pre><h4 id="Comparators">Comparators</h4><pre><code>. ===  compare both value <span class="keyword">and</span> <span class="class"><span class="keyword">type</span>,<span class="title">recommendation</span></span>
+. &gt;,&lt;,&gt;=,&lt;=,!=,:
+</code></pre><h4 id="For_loop">For loop</h4><pre><code>. <span class="keyword">for</span>(<span class="keyword">condition</span>;end <span class="keyword">condition</span>;change){}
+. <span class="keyword">while</span>(<span class="keyword">condition</span>)
+. <span class="keyword">do</span>{}<span class="keyword">while</span>(<span class="keyword">condition</span>)
+</code></pre><h5 id="function">function</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> double= <span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">function</span><span class="params">(y)</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> x*y;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = double(<span class="number">3</span>)</span><br><span class="line">test(<span class="number">2</span>) =&gt;<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>.High order function</p>
+<h5 id="Object">Object</h5><p>the primitive type is string, true,false, number,null and undefined.others are object which have propertyname,propertyvalue</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FE/">FE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/javascript/">javascript</a><a class="article-category-link" href="/categories/javascript/FE/">FE</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-editor/vim_basic" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -860,340 +1280,6 @@ np
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/performance/">performance</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-a-plan" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/29/a-plan/" class="article-date">
-  	<time datetime="2014-11-29T03:18:57.000Z" itemprop="datePublished">2014-11-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/29/a-plan/">A plan for learning testing</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="learning_plan">learning plan</h3><h4 id="Selenium/WebDriver2_basic_usage">Selenium/WebDriver2 basic usage</h4><h4 id="Create_basic_HTML_site_for_testing_basic_selenium_usage">Create basic HTML site for testing basic selenium usage</h4><h4 id="Learning_Page_Object_conception">Learning Page Object conception</h4><h4 id="Create_some_basic_page_for_page_object_conception_verification">Create some basic page for page object conception verification</h4><h4 id="Learning_Web_Test_Framework">Learning Web Test Framework</h4><h4 id="Learning_Simple_Web_Framework">Learning Simple Web Framework</h4><h4 id="Create_common_libs_for_common_functionalities">Create common libs for common functionalities</h4><pre><code><span class="bullet">1. </span>login
-<span class="bullet">2. </span>registration
-<span class="bullet">3. </span>forget password
-<span class="bullet">4. </span>reset password
-<span class="bullet">5. </span>pagination
-<span class="bullet">6. </span>search and pagination
-<span class="bullet">7. </span>payment integration
-<span class="bullet">8. </span>idcard verification
-<span class="bullet">9. </span>upload file
-</code></pre><h4 id="Unit_testing_learning">Unit testing learning</h4><h4 id="Mobile_Testing_learning">Mobile Testing learning</h4>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plan/">plan</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/25/shadowsocks/" class="article-date">
-  	<time datetime="2014-11-25T13:28:50.000Z" itemprop="datePublished">2014-11-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/25/shadowsocks/">shadowsocks</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>First, set up shadowsocks as usual. Suppose your local is running on 127.0.0.1:1080.</p>
-<h3 id="Install_proxychains-">Install proxychains.</h3><ul>
-<li>On Debian/Ubuntu:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install proxychains</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>On Mac OS X:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install proxychains-ng</span><br></pre></td></tr></table></figure></p>
-<p>Make a config file at ~/.proxychains/proxychains.conf with content:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">strict_chain</span><br><span class="line">proxy_dns </span><br><span class="line">remote_dns_subnet <span class="number">224</span></span><br><span class="line">tcp_<span class="built_in">read</span>_time_out <span class="number">15000</span></span><br><span class="line">tcp_connect_time_out <span class="number">8000</span></span><br><span class="line">localnet <span class="number">127.0</span>.<span class="number">0.0</span>/<span class="number">255.0</span>.<span class="number">0.0</span></span><br><span class="line">[ProxyList]</span><br><span class="line">socks5  <span class="number">127.0</span>.<span class="number">0.1</span> <span class="number">1080</span></span><br><span class="line">Then run <span class="built_in">command</span> with proxychains.</span><br><span class="line"></span><br><span class="line">proxychains4 curl https://www.twitter.com/</span><br><span class="line">proxychains4 git push origin master</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vpn/">vpn</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Testing/testcoverage" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/25/Testing/testcoverage/" class="article-date">
-  	<time datetime="2014-11-24T22:25:23.000Z" itemprop="datePublished">2014-11-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/25/Testing/testcoverage/">TestCovearge</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="自动化测试覆盖率报告">自动化测试覆盖率报告</h3><h3 id="HTTP_Mock_Server">HTTP Mock Server</h3><p>Recording and Replay</p>
-<h3 id="接口自动化测试监控">接口自动化测试监控</h3><h3 id="TestNG+ReportNG">TestNG+ReportNG</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-virtualenv/mac_virtualenv" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/25/virtualenv/mac_virtualenv/" class="article-date">
-  	<time datetime="2014-11-24T16:19:57.000Z" itemprop="datePublished">2014-11-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/25/virtualenv/mac_virtualenv/">Mac 下使用virtualenv</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Install_virtualenv_in_Mac">Install virtualenv in Mac</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenv</span><br></pre></td></tr></table></figure>
-<p>此前确认pip已经安装了</p>
-<h3 id="Install_virtualenvwapper_in_Mac">Install virtualenvwapper in Mac</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenvwapper</span><br></pre></td></tr></table></figure>
-<h3 id="创建python开发环境">创建python开发环境</h3><h4 id="直接使用virtualevn">直接使用virtualevn</h4><ol>
-<li>创建目录</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir python_<span class="built_in">test</span></span><br><span class="line">virtualenv python_<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>使用创建好的目录作为开发环境</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /bin/activate</span><br></pre></td></tr></table></figure>
-<p>启动开发环境之后，可以使用pip安装需要的python依赖库，如selenium</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install selenium</span><br></pre></td></tr></table></figure>
-<p>如果安装好了virtualenvwapper的话，可以使用如下命令使用开发环境：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv python_<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>退出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure></p>
-<p>切换：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workon python-test</span><br></pre></td></tr></table></figure></p>
-<p>删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmvirtualenv python-test</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Thoughts-on-Tester" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/18/Thoughts-on-Tester/" class="article-date">
-  	<time datetime="2014-11-18T09:23:44.000Z" itemprop="datePublished">2014-11-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/18/Thoughts-on-Tester/">Thoughts on Tester</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="引子">引子</h3><p>作为全职测试大概有8年时间了，总体来说整个这8年不是一个愉快的过程。其中辛苦可能没有做过测试的人未必能理解。对于一个职场人来说不够愉快的点个人认为大概可能是以下几点：</p>
-<ol>
-<li>成就感不多</li>
-<li>个人技术积累不多</li>
-<li>可供选择的机会相对较少，转型难度大</li>
-</ol>
-<h2 id="问题分析">问题分析</h2><h3 id="1-_成就感不多"><strong> 1. 成就感不多</strong></h3><h4 id="A-决定产品好坏的不是测试"><em>A.决定产品好坏的不是测试</em></h4><p>大体可以罗列一下一个好的产品的几个要素：</p>
-<ul>
-<li>解决了其他人没有解决的重要问题</li>
-<li>易用，好用</li>
-<li>扩展性好，定制能力强</li>
-<li>稳定，bug少</li>
-<li>性能出色</li>
-<li>交付快，成本低</li>
-</ul>
-<p>个人认为以上几点中测试几乎都无法起到决定因素。测试人可能看到某些新的需求，但是很难从更高层面上来看待产品；可用性上面同样也是一样的问题，可以提出优化的点，但是可能只是点到为止了；扩展性，定制能力，基本上看架构设计和开发的质量；至于稳定，bug少，性能好这个也要看团队了，大体上个人认为还是开发权重高；交付快，成本低，个人认为这块测试有一些权重，而且我认为测试需要投入更多的东西在这个层面</p>
-<hr>
-<h4 id="B-_测试人缺少作品，在公司战略里面地位不突出"><em>B. 测试人缺少作品，在公司战略里面地位不突出</em></h4><p>作为软件行业研发部门的人来说，大体可以认为都是匠人，匠人最重要的是什么？就是作品，那么软件测试人的作品是什么？貌似你做的产品和你关系不大，你几乎没有贡献一行代码；你提出了多少实现了的需求呢？貌似也不多吧，有人说有，那不错，但是站在更高层面上看，你的新需求只是一个点，产品是讲战略的，你和产品战略其实还很远，你当然不服气说，那开发不也就是按照需求开发代码吗，但是有时候有这么一个问题会问开发，这个你能做吗？如果回答是不能，可能暂时就不做了，但是如果问测试，这个你能测吗，如果回答是不能，产品一样做，一样发布;<br>没有作品，那么在公司产品战略里面一定是低的，公司制定产品战略规划，测试其实是没有任何话语权的。没有战略位置，那么测试地位是一定是不高的，所以影响力相对一定低的，那么薪资一定会相对低的，所以成就感自然会少点</p>
-<hr>
-<h4 id="C-_被人认可的机会少"><em>C. 被人认可的机会少</em></h4><p>和开发比较起来，花费同样的精力，测试得到的认可会少点；测试一般是不出事的时候没人知道，出事了才知道；所以得到负面的露脸机会要来的多一点，自然认可的机会就少一点。在大公司里面如果需要outstanding，你需要有额外的看得见的东西，但是测试发现bug不是就是你工作的正常范围吗？</p>
-<hr>
-<h4 id="D-_被放大了的责任范围，造成测试人能力不足问题被放大"><em>D. 被放大了的责任范围，造成测试人能力不足问题被放大</em></h4><p>测试的负面消息为什么会机会大呢？一个产品出现问题，第一个想到的就是测试，即使没有关系但是根本无法脱身，哪怕是需求不对，还是会有人问为什么测试没有质疑；哪怕开发修改了一些代码，但是在讨论范围的时候从来没有提起过，出问题时测试还是认为是第一责任人；测试的责任范围被扩的很大，大到大体上超过了很多测试人的能力范围了。</p>
-<hr>
-<h3 id="2-_技术积累不够"><em>2. 技术积累不够</em></h3><h4 id="A-大部分情况下测试训练的不是熟练技术，而是熟练业务"><em>A.大部分情况下测试训练的不是熟练技术，而是熟练业务</em></h4><p>日常工作当中，大部分测试熟悉的还是业务，而不是技术实现的细节；但是当你换了工作你以前熟悉的业务也就不能算你这家公司的积累了</p>
-<hr>
-<h4 id="B-_锻炼技术的机会少"><em>B. 锻炼技术的机会少</em></h4><p>大部分测试其实很难有机会写工业级的代码，即使你写自动化测试，其实很多什么更多的堆代码；很少做过好好的设计，或者使用一些设计模式；也很少会用算法；同样更加不太可能深入了解那些开源框架的原理；测试一直都是忙于解决那些重要而且紧急的事情，却很少有时间处理那些重要但不紧急的事情，这个一个硬伤。</p>
-<hr>
-<h4 id="C-_开发有design_pattern，测试有_Testing_Pattern吗？"><em>C. 开发有design pattern，测试有 Testing Pattern吗？</em></h4><h4 id="D-_测试接触面比较广，似乎全部有点懂，但是又不太懂，真要解决难题时，测试可能有用的只有理念了，理念是什么呢，那就是流程，哈哈，自嘲一个，可是什么样的流程呢，流程每一步解决什么问题，测试人都清楚吗？技术积累需要专的，至少有一到两个点是专的，否则谈什么积累"><em>D. 测试接触面比较广，似乎全部有点懂，但是又不太懂，真要解决难题时，测试可能有用的只有理念了，理念是什么呢，那就是流程，哈哈，自嘲一个，可是什么样的流程呢，流程每一步解决什么问题，测试人都清楚吗？技术积累需要专的，至少有一到两个点是专的，否则谈什么积累</em></h4><p>反思为什么技术积累不够的时候，我更加相信测试的责任范围被放大了，为何？一个天天挣扎在对公司重要而且紧急的任务上面，同时认为决定了公司产品质量的职位，居然可能是研发部门平均薪资水平最低的职位，似乎这个结论是不是完全不make sense? 如果领导一直认为质量问题是测试的话，我觉的如果这样反过来想想的话，可能觉得问题不一定是测试了。</p>
-<h3 id="3-_机会不多，转型困难"><em>3. 机会不多，转型困难</em></h3><p>其实以上两点分析，自然会造成第三点，积累不够，经常有负面新闻的人，自然机会不多；没有一个突出特点的人，转型自然也困难，往哪里转呢？似乎都可以做做，似乎又都不能做。。。。。。</p>
-<h2 id="改进和实施">改进和实施</h2><p>以上分析了造成测试不愉快的几个原因，以下就想想如何解决这些，未必能解决什么但是想还是要想的：</p>
-<h3 id="1-_积累自己的产品"><em>1. 积累自己的产品</em></h3><ul>
-<li>测试需要有自己的通用代码库，自己的作品，软件业的我相信还是匠人的世界，所以有作品和没有作品就表示你是匠人还不是，所以我自己一定要想想写点通用的测试代码；我常常想到像工厂流水线制造产品的时候，其实他们面对的问题和测试遇到的问题是一样的，工厂可以购买通用机器设备来加快生产效率，同时也有自己构建工具来做，那么测试也可以去构建自己的工具来加快交付，整个交付其实就像工厂在大规模生产。 构建测试的工具产品去加快交付！</li>
-<li>提高自身在交付中的地位，通过自动化测试，持续集成的实施，去加快交付；</li>
-<li>需要提炼Testing Pattern</li>
-</ul>
-<h3 id="2-_更深入的学习"><em>2. 更深入的学习</em></h3><ul>
-<li>深入学习1-2门语言，以及一个数据库</li>
-<li>熟练使用Linux，常用服务器如Apache，tomcat，jboss</li>
-</ul>
-<h3 id="3-_更多的将测试的观点表达"><em>3. 更多的将测试的观点表达</em></h3><ul>
-<li>不停的讲，质量光靠测试是不够的，需要团队的合作；不停的提醒团队，产品是给客户的，不是个测试测的；要站在更高的层面看产品，而不是通过测试就表示任务完成了</li>
-<li>不停的去想如何改进团队效率，如何让需求设计到测试用例的设计，执行更有效率；我相信这里有很多事情可以做，如果去更好效率的做端到端的交付，一定需要更好的产品，而不是什么quality center，rational 。。。。。。</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Testing/">Testing</a></li></ul>
 	</div>
 
       
