@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>tomacat_tuning | Tester&#39;s Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Tomcat Tuning 笔记用来记录一下看的一下关于Tomcat Tuning 的内容
+
+Optimission/Tuning Process
+Tomcat tuning option
+logging
+connectors
+content cache
+JVM
+
+
+Scaling Tomcat
+Hints and tips
+
+The optimistation/tuning processThe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tomacat_tuning">
+<meta property="og:url" content="http://simonpatrick.github.io/2015/05/01/performance/tomacat-tuning/index.html">
+<meta property="og:site_name" content="Tester's Space">
+<meta property="og:description" content="Tomcat Tuning 笔记用来记录一下看的一下关于Tomcat Tuning 的内容
+
+Optimission/Tuning Process
+Tomcat tuning option
+logging
+connectors
+content cache
+JVM
+
+
+Scaling Tomcat
+Hints and tips
+
+The optimistation/tuning processThe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="tomacat_tuning">
+<meta name="twitter:description" content="Tomcat Tuning 笔记用来记录一下看的一下关于Tomcat Tuning 的内容
+
+Optimission/Tuning Process
+Tomcat tuning option
+logging
+connectors
+content cache
+JVM
+
+
+Scaling Tomcat
+Hints and tips
+
+The optimistation/tuning processThe">
+  
+    <link rel="alternative" href="/atom.xml" title="Tester&#39;s Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Simon Patrick</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">software tester&#39;s playground</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/Testing/" style="font-size: 17.5px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/devops/" style="font-size: 10px;">devops</a><a href="/tags/editor/" style="font-size: 15px;">editor</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/vim/" style="font-size: 12.5px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Simon Patrick</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Simon Patrick</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">software tester&#39;s playground</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-performance/tomacat-tuning" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/01/performance/tomacat-tuning/" class="article-date">
+  	<time datetime="2015-05-01T12:48:09.000Z" itemprop="datePublished">2015-05-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tomacat_tuning
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Tomcat_Tuning_笔记">Tomcat Tuning 笔记</h1><p>用来记录一下看的一下关于Tomcat Tuning 的内容</p>
+<ul>
+<li>Optimission/Tuning Process</li>
+<li>Tomcat tuning option<ul>
+<li>logging</li>
+<li>connectors</li>
+<li>content cache</li>
+<li>JVM</li>
+</ul>
+</li>
+<li>Scaling Tomcat</li>
+<li>Hints and tips</li>
+</ul>
+<h2 id="The_optimistation/tuning_process">The optimistation/tuning process</h2><p>The process:</p>
+<ul>
+<li>理解系统架构（understand the system architecture）</li>
+<li>稳定系统(Statbilise the system)</li>
+<li>设置性能目标(Set the performance targets)</li>
+<li>衡量目前系统性能(Measure current performance)</li>
+<li>定位目前的瓶颈(Identify the current bottleneck)</li>
+<li>修正瓶颈的根本原因(Fix the root cause of the bottlenect)</li>
+<li>Repeat util you meet the target</li>
+</ul>
+<h3 id="常见错误(common_errors)">常见错误(common errors)</h3><ul>
+<li>优化不需要的代码</li>
+<li>无效测试(Insufficient testing)</li>
+</ul>
+<ul>
+<li>realistic data volumes</li>
+<li>realistic user load</li>
+</ul>
+<ul>
+<li>缺少清晰的目标(Lack of clear performance targets)</li>
+<li>猜测瓶颈在哪里(Guessing where the bottleneck is)</li>
+<li>修正现象而不是根源(Fixing the symptom rather than the cause)</li>
+</ul>
+<h3 id="Tomcat_Tuning">Tomcat Tuning</h3><h4 id="Logging_简述">Logging 简述</h4><p>默认的配置是通用配置，可能有些配置不适合production</p>
+<ul>
+<li>catch-all logger logs to file and stdout</li>
+<li>no overflow protection</li>
+<li>logging is synchronised(同步日志，一般需要换成异步日志)</li>
+</ul>
+<h4 id="生产日志">生产日志</h4><ul>
+<li>remove duplicate logging(logging.properties)<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.handlers</span> = <span class="number">1</span>catalina<span class="class">.org</span><span class="class">.apache</span><span class="class">.juli</span><span class="class">.FileHandler</span>,</span><br><span class="line">            java<span class="class">.util</span><span class="class">.logging</span><span class="class">.ConsoleHandler</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>To：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.<span class="variable">handlers =</span> <span class="number">1</span>catalina.org.apache.juli.FileHandler</span><br><span class="line"><span class="comment"># add location</span></span><br><span class="line"><span class="number">1</span>catalina.java.util.logging.FileHandler.<span class="variable">pattern =</span></span><br><span class="line">        $&#123;catalina.base&#125;/logs/catalina.%g.log</span><br><span class="line"><span class="number">1</span>catalina.java.util.logging.FileHandler.<span class="variable">limit =</span> <span class="number">20000000</span></span><br><span class="line"><span class="number">1</span>catalina.java.util.logging.FileHandler.<span class="variable">count =</span> <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Synchronous logging/Asynchronous logging</li>
+</ul>
+<ul>
+<li>Synchronous logging can become a bottlenect</li>
+<li>Asynchronous logging,log queue use memory/limit queue size to avoid OOM error</li>
+<li>fall back to synchronised logging and/or drop some logging message</li>
+</ul>
+<h4 id="Connectors_连接器">Connectors 连接器</h4><ul>
+<li>需要先了解一下内容：</li>
+</ul>
+<ul>
+<li>应用使用的模式</li>
+<li>网络情况</li>
+<li>TCP连接情况</li>
+<li>HTTP transactions</li>
+<li>HTTP Keep-alive情况</li>
+<li>SSL(https)</li>
+<li>Layer 4 or Layer 7</li>
+<li>connection pools</li>
+</ul>
+<p>对于connector来说，需要了解，什么样的connector：</p>
+<ul>
+<li>Java Blocking IO</li>
+</ul>
+<ul>
+<li>Oldest-most stable</li>
+<li>JSSE based SSL</li>
+</ul>
+<ul>
+<li>Native(APR)</li>
+</ul>
+<ul>
+<li>Non-Blocking</li>
+<li>Use OpenSSL</li>
+</ul>
+<ul>
+<li>Java Non-Blocking IO</li>
+</ul>
+<ul>
+<li>JSSE based SSL</li>
+</ul>
+<p>connector使用场景(未必正确)：<br>|Requirement|Connector in preference order|<br>|——|——————————————————|<br>|Stability|BIO APR/NIO|<br>|SSL|APR NIO BIO|<br>|Low concurrency|BIO APR NIO|<br>|High concurrency/No Keey live|BIO APR NIO|<br>|High concurrency/Keep Live|APR NIO BIO|</p>
+<p>为什么你要使用NIO connector?? NIO和BIO切换很简单</p>
+<h4 id="Connector_Tuning">Connector Tuning</h4><ul>
+<li>maxThreads<ul>
+<li>最大并发请求数</li>
+<li>for BIO，最大的open/active connections</li>
+<li>一般在200-800</li>
+<li>400是个不错的值</li>
+<li>heavy CPU usage -&gt; decrease</li>
+<li>light CPU usage -&gt; increase</li>
+</ul>
+</li>
+<li>maxKeepAliveRequests<ul>
+<li>typical values 1,100</li>
+<li>maximum number of HTTP requests per TCP connections</li>
+<li>set to 1 to disable keep alive</li>
+<li>disable for BIO with very high concurrency,layer 4 load balance,no sll</li>
+<li>enable for ssl,apr/nio,layer 7 load balancer</li>
+<li>Note BIO connector automatically disables keep alive when concurrent connections<br>reach 75% of max Threads</li>
+</ul>
+</li>
+<li>connection Timeout<ul>
+<li>typical value 3000</li>
+<li>default 20000 is too high for production</li>
+<li>keep alive 使用同样timeout </li>
+<li>increase for slow client</li>
+<li>increase for layer 7 load balancer with connection pools and keep alive on</li>
+<li>decrease for faster time-outs</li>
+</ul>
+</li>
+</ul>
+<h4 id="Content_cache_tuning">Content cache tuning</h4><ul>
+<li>dynamic content is not cached</li>
+<li>static content is cached</li>
+<li>configured using the <context ..=""> element</context></li>
+<li>cacheMaxSize: 10240</li>
+<li>cacheTTL: 5000</li>
+<li>cacheMaxFileSize: 512</li>
+<li>NIO/APR can use SEND_FILE</li>
+</ul>
+<h4 id="JVM_Tuning">JVM Tuning</h4><ul>
+<li>memory<ul>
+<li>JAVA Heap(Xmx,Xms) is not same as process heap, aim to set as low as possible<br> set too high might cause long GC cycles<ul>
+<li>-XX:NewSize/-XX:NewRatio<ul>
+<li>set 25-33% of total java heap</li>
+<li>Setting too high or too low leads to inefficient GC </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>process heap includes:<ul>
+<li>Java Heap</li>
+<li>Permanet Generation</li>
+<li>Threads stacks</li>
+<li>Native code</li>
+<li>Directly allocate memory</li>
+<li>Code generation</li>
+<li>Garbage collection</li>
+<li>TCP buffers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Garbage collection:GC</li>
+</ul>
+<ul>
+<li>Short lived objects never reach the Old Generation</li>
+<li>Short lived objects cleaned up by short minor garbage collections</li>
+<li>Long lived objects promoted to Old Generation</li>
+<li>Long lived objects cleaned up by (rare) full garbage collection</li>
+<li>GC Pause the application - regardless of GC algorithm</li>
+<li>Pause can be from milliseconds to seconds</li>
+<li>The pause will impact your response time</li>
+<li>-XX:MaxGCPauseMillis -XX:MaxGCMinorPauseMillis</li>
+<li>Many More options: <a href="http://blogs.sun.com/watt/resource/jvm-options-list.html" target="_blank" rel="external">http://blogs.sun.com/watt/resource/jvm-options-list.html</a></li>
+<li>Concurrent Mark Sweep<br>  – -XX:+UseConcMarkSweepGC<br>  – Does not use survivor spaces<br>  – Can be forced to; not recommended</li>
+</ul>
+<h3 id="Scaling_Tomcat">Scaling Tomcat</h3><ul>
+<li>Load balancing - routing requests to multiple tomcat instances</li>
+<li>Clustering - sharing state between tomcat instance for fail-over</li>
+<li>Simplest Configuration<ul>
+<li>httpd</li>
+<li>mod_proxy_http</li>
+</ul>
+</li>
+<li>considerations<ul>
+<li>state management</li>
+<li>fail over</li>
+</ul>
+</li>
+<li>stateless<ul>
+<li>requests routed to tomcat instances purely on load balancing algorithm</li>
+<li>http sessions will not work</li>
+</ul>
+</li>
+<li>Http session support<ul>
+<li>tomcat maintains http session </li>
+<li>all requests for a session routed to same tomcat instance</li>
+</ul>
+</li>
+</ul>
+<h3 id="Hints_and_Tips">Hints and Tips</h3><ul>
+<li>load balancing/clustering : at least 3 tomcat instances</li>
+<li>redeployment can expose memory leak issue</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/05/01/performance/tomcat-security/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          tomcat_security
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/29/shell/linux-operation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux 工具使用</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="performance/tomacat-tuning" data-title="tomacat_tuning" data-url="http://simonpatrick.github.io/2015/05/01/performance/tomacat-tuning/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Simon Patrick
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
