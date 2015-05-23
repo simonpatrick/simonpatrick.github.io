@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>iOS 入门 | Tester&#39;s Space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="iOS 入门移动开发如火如荼，测试也必须要跟上，所以必须自己也要学习学习。
+Xcode 使用Xcode打开：1open -a Xcode
+运行刚下载的应用：12# run button# command + R
+Object C工具：
+
+Interface Builder
+Object C
+
+Object C是C的超集，SmallTalk风格：1#import &amp;#60;Foundation/Fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 入门">
+<meta property="og:url" content="http://simonpatrick.github.io/2015/05/10/ios/ios-60-minutes/index.html">
+<meta property="og:site_name" content="Tester's Space">
+<meta property="og:description" content="iOS 入门移动开发如火如荼，测试也必须要跟上，所以必须自己也要学习学习。
+Xcode 使用Xcode打开：1open -a Xcode
+运行刚下载的应用：12# run button# command + R
+Object C工具：
+
+Interface Builder
+Object C
+
+Object C是C的超集，SmallTalk风格：1#import &amp;#60;Foundation/Fo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 入门">
+<meta name="twitter:description" content="iOS 入门移动开发如火如荼，测试也必须要跟上，所以必须自己也要学习学习。
+Xcode 使用Xcode打开：1open -a Xcode
+运行刚下载的应用：12# run button# command + R
+Object C工具：
+
+Interface Builder
+Object C
+
+Object C是C的超集，SmallTalk风格：1#import &amp;#60;Foundation/Fo">
+  
+    <link rel="alternative" href="/atom.xml" title="Tester&#39;s Space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Simon Patrick</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">software tester&#39;s playground</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/随笔">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/Testing/" style="font-size: 17.5px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/devops/" style="font-size: 10px;">devops</a><a href="/tags/editor/" style="font-size: 15px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/vim/" style="font-size: 12.5px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Simon Patrick</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Simon Patrick</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">software tester&#39;s playground</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/随笔">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-ios/ios-60-minutes" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/10/ios/ios-60-minutes/" class="article-date">
+  	<time datetime="2015-05-10T02:09:25.000Z" itemprop="datePublished">2015-05-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      iOS 入门
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/Mobile/">Mobile</a><a class="article-category-link" href="/categories/Mobile/iOS/">iOS</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iOS_入门">iOS 入门</h1><p>移动开发如火如荼，测试也必须要跟上，所以必须自己也要学习学习。</p>
+<h2 id="Xcode_使用">Xcode 使用</h2><p>Xcode打开：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open <span class="operator">-a</span> Xcode</span><br></pre></td></tr></table></figure></p>
+<p>运行刚下载的应用：<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># run button</span></span><br><span class="line"><span class="preprocessor"># command + R</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Object_C">Object C</h2><p>工具：</p>
+<ul>
+<li>Interface Builder</li>
+<li>Object C</li>
+</ul>
+<p>Object C是C的超集，SmallTalk风格：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &#60;Foundation/Foundation.h&#62;&#10;int main(int argc, char *argv[])&#123;&#10;    @autoreleasepool&#123;&#10;        NSLog(@&#34;Hello World!&#34;);&#10;    &#125;&#10;    return 0;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="SmallTalk的消息传递语法风格">SmallTalk的消息传递语法风格</h3><p>Object-C的面向对象语法源自SmallTalk，消息传递(Message Passing)风格。<br>Object-C里面，类型和消息的关系比较松散，消息处理运行时才会动态决定，给类型发送一个无法处理的消息，<br>也只会抛出一个异常。</p>
+<h3 id="字符串">字符串</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title=@&#34;hello world!&#34;&#10;if(title==@&#34;hello world!&#34;)&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="函数调用">函数调用</h3><ul>
+<li><p>不太参数：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">startedBlock();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>带参数：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NSLog(@&#34;decrypted string:%@&#34;,str);&#10;CGRectMake(0,0,0,0);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>传递消息给类/实例方法：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[obj method];&#10;[counter increase:1];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>带多个参数：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void) setColorToRed: (float)red Green: (float)green Blue:(float)blue &#123;...&#125; //&#23450;&#20041;&#26041;&#27861;&#10;[myObj setColorToRed: 1.0 Green: 0.8 Blue: 0.2]; //&#35843;&#29992;&#26041;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>消息嵌套</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UINavigationBar *bar=[[[UINavigationBar alloc]int]autorelease];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>类：接口(Interface)和实现(implementation)<br>Interface: .h file, interface只有一个实现<br>implementation: .m/.mm file</li>
+</ul>
+<p>interface 示例:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@interface MyClass&#123;&#10;&#9;int memberVar1;&#10;&#9;id memberVar2;&#10;&#125;&#10;&#10;-(return_type) instance_method1;&#10;-(return_type) instance_method2: (int) p1;&#10;-(return_type) instance_method3: (int) p1 andPar: (int) p2;&#10;@end</span><br></pre></td></tr></table></figure></p>
+<p>implementation 示例：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@implementation MyClass&#123;&#10;&#9;int memberVar3&#65307;&#10;&#125;&#10;&#10;-(return_type) instance_method1&#123;&#10;&#9;.......&#10;&#125;&#10;-(return_type) instance_method2:(int)p1&#123;&#10;&#9;.......&#10;&#125;&#10;&#10;-(return_type) instance_method3:(int) p1 andPar: (int)p2&#123;&#10;&#9;.......&#10;&#125;&#10;&#10;@end</span><br></pre></td></tr></table></figure></p>
+<h3 id="私有方法和公开方法">私有方法和公开方法</h3><p>Object-C没有私有方法的概念，实现私有方法，需要使用Category</p>
+<h3 id="变量和属性">变量和属性</h3><ul>
+<li><p>类方法和实例方法<br>类方法实例： <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```oc&#10;@interface MyClass&#10;&#9;+(void) sayHello&#123;&#10;&#9;&#9;NSLog(@&#34;Hello World!&#34;);&#10;&#9;&#125;&#10;@end</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>实例方法 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```oc&#10;[MyClass sayHello];</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>实例方法</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@interface MyClass:NSObject&#10;-(void) sayHello;&#10;@end&#10;&#10;@implementation MyClass&#10;&#9;-(void) sayHello&#123;&#10;&#9;&#9;NSLog(@&#34;Hello,World!&#34;);&#10;&#9;&#125;&#10;@end&#10;&#10;##&#20351;&#29992;&#10;mycls=[MyClass new];&#10;[mycls sayHello];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Selector<br>selector就是一个方法指针，类似PHP的动态方法名：<br>PHP示例：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">sayHello</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="variable">$fun_name</span>=<span class="string">"sayHello"</span>;</span><br><span class="line">		<span class="variable">$this</span>-&gt;<span class="variable">$fun_name</span>();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Objective-C里面 selector主要用来做两类事情：<br>绑定控件触动的动作：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@implementation DemoViewController&#10;&#9;-(void)downButtonPressed: (id) sender&#123;&#10;&#9;&#9;UIButton *button =(UIButton*)sender;&#10;&#9;&#9;[button setSelected:YES];&#10;&#9;&#125;&#10;&#9;&#10;&#9;-(void) drawAnButton&#123;&#10;&#9;&#9;UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom]; &#10;&#9;&#9;btn.frame = _frame;&#10;&#9;&#9;btn.tag=1;&#10;&#9;&#9;btn.backgroundColor=[UIColor clearColor];&#10;&#9;&#9;[btn addTarget:self&#10;&#9;&#9;&#9;action:@selector(downButtonPressed:)&#10;&#9;&#9;&#9;forControlEvents:UIControlEventTouchUpInside];&#10;&#9;&#9;&#10;&#9;&#125;&#10;@end</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>延时异步执行</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@implementation ETHotDealViewController&#10;- (void)viewDidLoad &#123;&#10;&#10;    //&#33719;&#21462;&#25968;&#25454;&#28304;&#10;    HotDealDataSource *ds = [[HotDealDataSource alloc]init];&#10;    [ds reload];&#10;    _items = ds.items;&#10;&#10;    [self performSelector: @selector(refreshTable)&#10;          withObject: self&#10;          afterDelay: 0.5];//&#24310;&#36831;0.5&#31186;&#35843;&#29992;refreshTable&#26041;&#27861;&#10;&#125;&#10;&#10;-(void)refreshTable&#10;&#123;&#10;    [self.tableView reloadData];&#10;&#125;&#10;@end</span><br></pre></td></tr></table></figure>
+<h3 id="继承">继承</h3><p>语法：子类在左，父类在右</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@interface MyClass:NSObject&#10;@end</span><br></pre></td></tr></table></figure>
+<h3 id="协议(Protocol)">协议(Protocol)</h3><ul>
+<li><p>协议的定义用@protocol关键字：就是JAVA，PHP的Interface</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@protocol Printable&#10;&#9;-(void) print:(NSString) str;&#10;@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>协议的继承<br>协议本身也可以继承别的协议：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@protocal Printable &#60;NSObject&#62;&#10;&#9;-(void) print:(NSString) str;&#10;@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>协议可选方法</p>
+</li>
+</ul>
+<p>协议可以包含可选方法，可选方法可以不被类实现：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@protocol Printable&#10;@optional&#10;&#9;-(void)print:(NSString) str;&#10;@end</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>协议的实现<br>Printable和Drawable协议的实现</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@interface class MyClass:NSObject &#60;Printable,Drawable&#62;&#10;@end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>分类(Category)</p>
+</li>
+</ul>
+<p>分类可以给一个已经存在的类增加方法，而不是去改它的源码。<br>比如说,NSObject是一个Objective-C内置的系统类，想增加toJson方法：<br>定义 ：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@interface NSObject(json)&#10;&#9;-(NSString) toJson;&#10;@end</span><br></pre></td></tr></table></figure></p>
+<p>实现文件：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@implementation NSObject(json)&#10;- (NSString) toJson()&#123;&#10;&#9;//......&#10;&#125;&#10;@end</span><br></pre></td></tr></table></figure></p>
+<p>使用：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#34;NSOBject+toJson.h&#34;&#10;&#10;@implementation XYZController&#123;&#10;&#9;-(void)test&#123;&#10;&#9;&#9;NSObject *obj = [[NSObject alloc]int];&#10;&#9;&#9;NSString *str = [obj toJson];&#10;&#9;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Cocoa_Touch">Cocoa Touch</h3><p>Cocoa 是Mac OS App的开发框架，最常用的设计模式是Delegate<br>常用控件：</p>
+<ul>
+<li>TableView</li>
+<li>WebView</li>
+<li>Navigation</li>
+<li>按钮</li>
+<li>文本块</li>
+<li>图片</li>
+<li>输入框</li>
+</ul>
+<p>其他：</p>
+<ul>
+<li>触摸屏</li>
+<li>多指手势</li>
+<li>输入法和键盘</li>
+<li>地理位置</li>
+<li>摄像头</li>
+<li>真机测试</li>
+</ul>
+<h3 id="SVN删除含有@符号的文件">SVN删除含有@符号的文件</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">svn del <span class="number">123</span>@<span class="number">2</span>x.png</span><br><span class="line">svn info Default@<span class="number">2</span>x.png@</span><br><span class="line">svn status | awk <span class="string">'($1=="!")&#123;print $2&#125;'</span> | grep -v @ | xargs svn del</span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> `svn status | awk <span class="string">'($1=="!")&#123;print $2&#125;'</span> `; <span class="keyword">do</span> svn del <span class="variable">$file</span><span class="string">"@"</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/05/08/designpattern/designpattern_java_abstractfactory/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ios/ios-60-minutes" data-title="iOS 入门" data-url="http://simonpatrick.github.io/2015/05/10/ios/ios-60-minutes/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Simon Patrick
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
