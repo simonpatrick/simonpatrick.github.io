@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/Testing/" style="font-size: 17.5px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/devops/" style="font-size: 10px;">devops</a><a href="/tags/editor/" style="font-size: 15px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 12.5px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 10px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/vim/" style="font-size: 12.5px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
+						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/CI/" style="font-size: 10px;">CI</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/Static-Check/" style="font-size: 10px;">Static Check</a><a href="/tags/Testing/" style="font-size: 18px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/agularjs/" style="font-size: 10px;">agularjs</a><a href="/tags/devops/" style="font-size: 10px;">devops</a><a href="/tags/editor/" style="font-size: 16px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 14px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 12px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/vim/" style="font-size: 12px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/性能测试，随手记/" style="font-size: 10px;">性能测试，随手记</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
 					</div>
 				</section>
 				
@@ -264,6 +264,150 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
 
 
   
+    <article id="post-shell/shell_environment" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/shell/shell_environment/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/shell/shell_environment/">SHELL 101 环境变量设置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="环境变量">环境变量</h1><p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html" target="_blank" rel="external">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
+<h3 id="env">env</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env |grep keyword</span><br></pre></td></tr></table></figure>
+<h3 id="修改环境变量">修改环境变量</h3><p>未在当前进程中定义，而是从父进程中继承而来的变量<br>export 设置环境变量,之后,从当前shell 执行的任何程序都会继承这个变量</p>
+<p>PATH 查找可执行文件路径, 通常定义在/etc/environment or /ect/profile or ~/.bashrc</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PYTHONPATH=<span class="variable">$PYTHONPATH</span>:/home/ken/workspace</span><br><span class="line"> <span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/new/path/</span><br></pre></td></tr></table></figure>
+<p>常用的环境变量名：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span><br><span class="line"></span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$HOME</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PWD</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$USER</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$UID</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$SHELL</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Result</span></span><br><span class="line">╰─[:)] % sh env_variant.sh</span><br><span class="line">/Users/patrick</span><br><span class="line">/Users/patrick/workspace/works/shell_learning</span><br><span class="line">patrick</span><br><span class="line"><span class="number">501</span></span><br><span class="line">/bin/zsh</span><br></pre></td></tr></table></figure>
+<h3 id="检查是否是root">检查是否是root</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">root的UID=<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$UID</span> <span class="operator">-ne</span> <span class="number">0</span> ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"not root user"</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"root"</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#result:</span></span><br><span class="line">╰─[:)] % sh is_root.sh</span><br><span class="line">not root user</span><br><span class="line">╭─[~/workspace/works/shell_learning]─[patrick@patrickdeMacBook-Pro]─[<span class="number">0</span>]─[<span class="number">10192</span>]</span><br><span class="line">╰─[:)] % su root</span><br><span class="line">Password:</span><br><span class="line">sh-<span class="number">3.2</span><span class="comment"># sh is_root.sh</span></span><br><span class="line">yes I am root</span><br><span class="line">sh-<span class="number">3.2</span><span class="comment">#</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-js_basic" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/js_basic/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/js_basic/">Javascript basic</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Variable_Types">Variable Types</h1><h5 id="Variable_Types-1">Variable Types</h5><pre><code><span class="bullet">. </span>Numbers
+<span class="code">    .Float</span>
+<span class="code">    .Integer</span>
+<span class="code">    . 1 and 1.0 same value</span>
+<span class="bullet">. </span>String
+<span class="bullet">. </span>Boolean
+<span class="bullet">. </span>Arrays
+<span class="bullet">. </span>Objects
+<span class="bullet">. </span>null
+<span class="bullet">. </span>undefined
+</code></pre><h4 id="Operator">Operator</h4><pre><code><span class="string">.</span> <span class="literal">+</span><span class="string">,</span><span class="literal">-</span><span class="string">,</span><span class="comment">*</span><span class="string">,</span><span class="comment">/</span>
+<span class="string">.</span> <span class="comment">%</span><span class="string">,</span><span class="literal">+</span><span class="literal">+</span><span class="string">,</span><span class="literal">-</span><span class="literal">-</span>
+</code></pre><h4 id="String">String</h4><pre><code>. <span class="built_in">String</span> <span class="string">''</span>,<span class="string">""</span>
+</code></pre><h4 id="Condition_Logic">Condition Logic</h4><pre><code>. <span class="keyword">if</span>
+. <span class="keyword">else</span>
+. <span class="keyword">else</span> <span class="keyword">if</span>
+</code></pre><h4 id="Comparators">Comparators</h4><pre><code>. ===  compare both value <span class="keyword">and</span> <span class="class"><span class="keyword">type</span>,<span class="title">recommendation</span></span>
+. &gt;,&lt;,&gt;=,&lt;=,!=,:
+</code></pre><h4 id="For_loop">For loop</h4><pre><code>. <span class="keyword">for</span>(<span class="keyword">condition</span>;end <span class="keyword">condition</span>;change){}
+. <span class="keyword">while</span>(<span class="keyword">condition</span>)
+. <span class="keyword">do</span>{}<span class="keyword">while</span>(<span class="keyword">condition</span>)
+</code></pre><h5 id="function">function</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> double= <span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">function</span><span class="params">(y)</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> x*y;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = double(<span class="number">3</span>)</span><br><span class="line">test(<span class="number">2</span>) =&gt;<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>.High order function</p>
+<h5 id="Object">Object</h5><p>the primitive type is string, true,false, number,null and undefined.others are object which have propertyname,propertyvalue</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FE/">FE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/javascript/">javascript</a><a class="article-category-link" href="/categories/javascript/FE/">FE</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-python_basic" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -375,6 +519,312 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/pthon/">pthon</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-shell/shell_linux_101_CDPATH" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/shell/shell_linux_101_CDPATH/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/shell/shell_linux_101_CDPATH/">SHELL 101 CDPATH(CD的起始目录)设置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设置CD_的基础路径">设置CD 的基础路径</h1><p>如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：</p>
+<p>修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> % <span class="built_in">cd</span> blog                                    ~ patrickdeMacBook-Pro</span><br><span class="line"><span class="built_in">cd</span>:<span class="built_in">cd</span>:<span class="number">13</span>: no such file or directory: books</span><br><span class="line"> %                                             ~ patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure></p>
+<p>设置cd的基本目录到workspace：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">export</span> CDPATH=/Users/patrick/workspace</span><br><span class="line"> %</span><br></pre></td></tr></table></figure></p>
+<p>然后直接敲cd blog就可以到blog目录了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cd</span> blog                        workspace/blog patrickdeMacBook-Pro</span><br><span class="line">~/workspace/blog</span><br><span class="line">%                                workspace/blog patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure>
+<p>设置完毕。</p>
+<p>如果想要CDPATH永久生效，可以把配置放到./bashrc.profile里面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.zshrc</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-shell/SHELL-for-all-git-repository" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/shell/SHELL-for-all-git-repository/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/shell/SHELL-for-all-git-repository/">SHELL for update all git repository</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="更新一个目录下所有的git_repository的shell_脚本">更新一个目录下所有的git repository的shell 脚本</h1><p>最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &#10;#! /bin/bash&#10;&#10;for file in ./*&#10;do&#10;  if test -d $file&#10;  then  &#10;    echo $file is directory &#10;    cd $file&#10;    a=$(pwd)&#10;    echo $a&#10;    git pull&#10;    cd ..&#10;    b=$(pwd)&#10;    echo $b&#10;  fi&#10;&#10;done</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a><a class="article-category-link" href="/categories/linux/shell/">shell</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-editor/markdown_basic" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/editor/markdown_basic/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/editor/markdown_basic/">mark down basic</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Markdown">Markdown</h1><p>===============</p>
+<h5 id="1-_Title">1. Title</h5><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">title 1</span><br><span class="line">==========</span></span><br><span class="line"><span class="header">titel 2</span><br><span class="line">-------------</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-_Header">2. Header</h5><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># header1</span></span><br><span class="line"><span class="preprocessor">## header2</span></span><br><span class="line"><span class="preprocessor">### ......</span></span><br></pre></td></tr></table></figure>
+<h5 id="3-_Link">3. Link</h5><p><a href="http://www.google.com" target="_blank" rel="external">google</a><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_label">google</span>](<span class="link_url">http://www.google.com</span>)</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://www.google.com" title="google homepage" target="_blank" rel="external">google</a></p>
+<p>it is <a href="http://www.google.com" target="_blank" rel="external">google reference</a></p>
+<p><a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>  — 自动转换成link</p>
+<h5 id="4-image">4.image</h5><ol>
+<li><p>inline</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">image link</span>](<span class="link_url">url/path/toImage</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>reference￼</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">imagelink</span>][<span class="link_reference">id</span>]</span><br><span class="line">[<span class="link_reference">id</span>]:<span class="link_url">url/pathtoimage "image reference_name"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="5-_code_block">5. code block</h5><ol>
+<li><p>tab or 4 space and Inline code</p>
+<p> this is code block</p>
+<p> this is inline code <code>inline code</code></p>
+</li>
+<li><figure class="highlight"><figcaption><span>seperate</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```&#10;this is code block</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>define what kind of code, synatx highlight</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String A = <span class="string">"a"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"python"</span></span><br></pre></td></tr></table></figure>
+<h5 id="6-_Tables">6. Tables</h5><table>
+<thead>
+<tr>
+<th>TABLE</th>
+<th style="text-align:center">ARE</th>
+<th style="text-align:right">COOL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col2</td>
+<td style="text-align:center">right aligned</td>
+<td style="text-align:right">yes</td>
+</tr>
+<tr>
+<td>col3</td>
+<td style="text-align:center">center aligned</td>
+<td style="text-align:right">yes</td>
+</tr>
+<tr>
+<td>col4</td>
+<td style="text-align:center">neat</td>
+<td style="text-align:right">yes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">markdown</th>
+<th style="text-align:right">less</th>
+<th style="text-align:center">prety</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><em>still</em></td>
+<td style="text-align:right"><code>render</code></td>
+<td style="text-align:center"><strong>nice</strong></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/editor/">editor</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-shell/shell_101_operator" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/27/shell/shell_101_operator/" class="article-date">
+  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/27/shell/shell_101_operator/">SHELL 101 OPERATOR</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="operator">operator</h1><p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html" target="_blank" rel="external">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
+<h3 id="计算">计算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line">no_1=<span class="number">4</span></span><br><span class="line">no_2=<span class="number">5</span></span><br><span class="line"><span class="built_in">let</span> result=no_1+no_2</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> result--</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line"><span class="built_in">let</span> result++</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># expr(漏洞之源？？)</span></span><br><span class="line"></span><br><span class="line">result=`expr <span class="number">3</span>+<span class="number">4</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=`expr <span class="variable">$no_1</span>+<span class="number">345</span>`</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$[ no_1 + no_2 ]</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$[ <span class="variable">$no_1</span> + <span class="number">5</span> ]</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">result=$(( no_1 + <span class="number">5</span> ))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
 	</div>
 
 
@@ -643,619 +1093,6 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Testing/">Testing</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-jquery/jquery_101" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/12/12/jquery/jquery_101/" class="article-date">
-  	<time datetime="2014-12-12T15:52:05.000Z" itemprop="datePublished">2014-12-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/12/jquery/jquery_101/">jquery 101</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="jquery_语法">jquery 语法</h1><h3 id="$(selector)-action()">$(selector).action()</h3><ul>
-<li>$ &gt;jQuery</li>
-<li>selector -&gt; HTML element</li>
-<li>action() -&gt; jQuery operation</li>
-</ul>
-<p>示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">this</span>).hide(); <span class="comment">// hide current element</span></span><br><span class="line">$(<span class="string">"p"</span>).hide(); <span class="comment">//hide p tag</span></span><br><span class="line">$(<span class="string">".test"</span>).hide(); <span class="comment">//hide class="test" 的元素</span></span><br><span class="line">$(<span class="string">"#test"</span>).hide(); <span class="comment">//hide id="test"的元素</span></span><br></pre></td></tr></table></figure></p>
-<p>选择器：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123;p.intro&#125;; <span class="comment">//所有class=intro的&lt;p&gt; tags</span></span><br><span class="line">$&#123;p#intro&#125;; <span class="comment">//所有id=intro的&lt;p&gt;标签</span></span><br><span class="line">$(<span class="string">"[href]"</span>) <span class="comment">//选取所有带有 href 属性的元素。</span></span><br><span class="line">$(<span class="string">"[href='#']"</span>) <span class="comment">//选取所有带有 href 值等于 "#" 的元素。</span></span><br><span class="line">$(<span class="string">"[href!='#']"</span>) <span class="comment">//选取所有带有 href 值不等于 "#" 的元素。</span></span><br><span class="line">$(<span class="string">"[href$='.jpg']"</span>) <span class="comment">//选取所有 href 值以 ".jpg" 结尾的元素。</span></span><br></pre></td></tr></table></figure>
-<p>选择器参考手册：</p>
-<table>
-<thead>
-<tr>
-<th>选择器</th>
-<th>实例</th>
-<th>选取</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>*</td>
-<td>$(“*”)</td>
-<td>所有元素</td>
-</tr>
-<tr>
-<td>#id</td>
-<td>$(“#lastname”)</td>
-<td>id=”lastname” 的元素</td>
-</tr>
-<tr>
-<td>.class</td>
-<td>$(“.intro”)</td>
-<td>所有 class=”intro” 的元素</td>
-</tr>
-<tr>
-<td>element</td>
-<td>$(“p”)</td>
-<td>所有 &lt;p&gt; 元素</td>
-</tr>
-<tr>
-<td>.class.class</td>
-<td>$(“.intro.demo”)</td>
-<td>所有 class=”intro” 且 class=”demo” 的元素</td>
-</tr>
-<tr>
-<td>:first</td>
-<td>$(“p:first”)</td>
-<td>第一个 &lt;p&gt; 元素</td>
-</tr>
-<tr>
-<td>:last</td>
-<td>$(“p:last”)</td>
-<td>最后一个 &lt;p&gt; 元素</td>
-</tr>
-<tr>
-<td>:even</td>
-<td>$(“tr:even”)</td>
-<td>所有偶数 &lt;tr&gt; 元素</td>
-</tr>
-<tr>
-<td>:odd</td>
-<td>$(“tr:odd”)</td>
-<td>所有奇数 &lt;tr&gt; 元素</td>
-</tr>
-<tr>
-<td>:eq(index)</td>
-<td>$(“ul li:eq(3)”)</td>
-<td>列表中的第四个元素（index 从 0 开始）</td>
-</tr>
-<tr>
-<td>:gt(no)</td>
-<td>$(“ul li:gt(3)”)</td>
-<td>列出 index 大于 3 的元素</td>
-</tr>
-<tr>
-<td>:lt(no)</td>
-<td>$(“ul li:lt(3)”)</td>
-<td>列出 index 小于 3 的元素</td>
-</tr>
-<tr>
-<td>:not(selector)</td>
-<td>$(“input:not(:empty)”)</td>
-<td>所有不为空的 input 元素</td>
-</tr>
-<tr>
-<td>:header</td>
-<td>$(“:header”)</td>
-<td>所有标题元素 &lt;h1&gt; - &lt;h6&gt;</td>
-</tr>
-<tr>
-<td>:animated</td>
-<td></td>
-<td>所有动画元素</td>
-</tr>
-<tr>
-<td>:contains(text)</td>
-<td>$(“:contains(‘W3School’)”)</td>
-<td>包含指定字符串的所有元素</td>
-</tr>
-<tr>
-<td>:empty</td>
-<td>$(“:empty”)</td>
-<td>无子（元素）节点的所有元素</td>
-</tr>
-<tr>
-<td>:hidden</td>
-<td>$(“p:hidden”)</td>
-<td>所有隐藏的 &lt;p&gt; 元素</td>
-</tr>
-<tr>
-<td>:visible</td>
-<td>$(“table:visible”)</td>
-<td>所有可见的表格</td>
-</tr>
-<tr>
-<td>s1,s2,s3</td>
-<td>$(“th,td,.intro”)</td>
-<td>所有带有匹配选择的元素</td>
-</tr>
-<tr>
-<td>[attribute]</td>
-<td>$(“[href]”)</td>
-<td>所有带有 href 属性的元素</td>
-</tr>
-<tr>
-<td>[attribute=value]</td>
-<td>$(“[href=’#’]”)</td>
-<td>所有 href 属性的值等于 “#” 的元素</td>
-</tr>
-<tr>
-<td>[attribute!=value]</td>
-<td>$(“[href!=’#’]”)</td>
-<td>所有 href 属性的值不等于 “#” 的元素</td>
-</tr>
-<tr>
-<td>[attribute$=value]</td>
-<td>$(“[href$=’.jpg’]”)</td>
-<td>所有 href 属性的值包含以 “.jpg” 结尾的元素</td>
-</tr>
-<tr>
-<td>:input</td>
-<td>$(“:input”)</td>
-<td>所有 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:text</td>
-<td>$(“:text”)</td>
-<td>所有 type=”text” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:password</td>
-<td>$(“:password”)</td>
-<td>所有 type=”password” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:radio</td>
-<td>$(“:radio”)</td>
-<td>所有 type=”radio” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:checkbox</td>
-<td>$(“:checkbox”)</td>
-<td>所有 type=”checkbox” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:submit</td>
-<td>$(“:submit”)</td>
-<td>所有 type=”submit” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:reset</td>
-<td>$(“:reset”)</td>
-<td>所有 type=”reset” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:button</td>
-<td>$(“:button”)</td>
-<td>所有 type=”button” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:image</td>
-<td>$(“:image”)</td>
-<td>所有 type=”image” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:file</td>
-<td>$(“:file”)</td>
-<td>所有 type=”file” 的 &lt;input&gt; 元素</td>
-</tr>
-<tr>
-<td>:enabled</td>
-<td>$(“:enabled”)</td>
-<td>所有激活的 input 元素</td>
-</tr>
-<tr>
-<td>:disabled</td>
-<td>$(“:disabled”)</td>
-<td>所有禁用的 input 元素</td>
-</tr>
-<tr>
-<td>:selected</td>
-<td>$(“:selected”)</td>
-<td>所有被选取的 input 元素</td>
-</tr>
-<tr>
-<td>:checked</td>
-<td>$(“:checked”)</td>
-<td>所有被选中的 input 元素</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-editor/vim-tips-01" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/12/10/editor/vim-tips-01/" class="article-date">
-  	<time datetime="2014-12-10T14:51:43.000Z" itemprop="datePublished">2014-12-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/10/editor/vim-tips-01/">vim-tips-01</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="VIM_小技巧">VIM 小技巧</h1><h3 id="准备工作">准备工作</h3><p>vim 输入</p>
-<pre><code><span class="keyword">this</span> <span class="keyword">is</span> test
-</code></pre><h3 id="查找替换">查找替换</h3><p>用回车替换空格</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/ /\r/g</span><br></pre></td></tr></table></figure>
-<p>结果：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this</span><br><span class="line"><span class="keyword">is</span></span><br><span class="line">test</span><br></pre></td></tr></table></figure></p>
-<h3 id="行拼接">行拼接</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ggVG -- 选中所有的文字</span><br><span class="line">:'&lt;,'&gt;j (其实只要输入一个j)</span><br></pre></td></tr></table></figure>
-<p>结果:<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this <span class="keyword">is</span> test</span><br></pre></td></tr></table></figure></p>
-<h3 id="复制">复制</h3><pre><code><span class="title">nyy</span>
-np
-</code></pre><p>就可以复制了</p>
-<h3 id="列操作">列操作</h3><p>gg ,ctrl+v, G,I ，输入，esc</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-performance/note_1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/12/08/performance/note_1/" class="article-date">
-  	<time datetime="2014-12-08T13:13:23.000Z" itemprop="datePublished">2014-12-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/08/performance/note_1/">performance testingnote 1</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="本系列文章的由来">本系列文章的由来</h1><p>本系列文章主要是记录阅读了一些关于性能监控和运维方面后的读书笔记，或者说一些大纲吧。以便后续的学习和跟进。</p>
-<h3 id="什么是高质量的软件研发">什么是高质量的软件研发</h3><ul>
-<li>高可靠性</li>
-<li>高性能</li>
-<li>高可维护性</li>
-<li>高效率研发<ol>
-<li>Plan &amp; Measure</li>
-<li>Dev &amp; Test</li>
-<li>Monitor &amp; Optimize</li>
-<li>Release &amp; Deploy</li>
-</ol>
-</li>
-</ul>
-<h3 id="Baidu_FIS_工具">Baidu FIS 工具</h3><h3 id="测试环境重定向问题和包体保存">测试环境重定向问题和包体保存</h3><h3 id="分布式缓存">分布式缓存</h3><p>页面缓存笨重，这个页面缓存影响吞吐量；只提高了读速度，没有提高写速度</p>
-<h4 id="数据库前段缓存区">数据库前段缓存区</h4><p>BufferArea: 文件系统内核缓冲区：</p>
-<ul>
-<li>读缓冲区</li>
-<li>写缓冲区<h5 id="memcached">memcached</h5></li>
-</ul>
-<p>memcached PHP测试代码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">  <span class="variable">$key</span>=md5(uiqid());</span><br><span class="line">  <span class="variable">$value</span>=md5(uniqid());</span><br><span class="line">  <span class="variable">$memcache</span>=memcache_connect(<span class="string">'10.0.1.12'</span>,<span class="number">11711</span>);</span><br><span class="line">  <span class="variable">$memcache</span>-&gt;set(<span class="variable">$key</span>,<span class="variable">$value</span>,<span class="keyword">false</span>,<span class="number">0</span>);</span><br><span class="line">  <span class="variable">$memcache</span>-&gt;close();</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p>对象序列化测试代码：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"><span class="keyword">var</span> <span class="variable">$name</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">setName</span><span class="params">(<span class="variable">$name</span>)</span></span>&#123;</span><br><span class="line">  <span class="variable">$this</span>-&gt;name=<span class="variable">$name</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$person</span> = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="variable">$person</span>-&gt;setName(<span class="string">'colin'</span>);</span><br><span class="line"><span class="variable">$key</span>=<span class="string">'person.colin'</span>;</span><br><span class="line"><span class="variable">$memcache</span> = memcache_connect(<span class="string">'10.0.1.12'</span>,<span class="number">11711</span>);</span><br><span class="line"><span class="variable">$obj</span>=<span class="variable">$memcache</span>-&gt;get(<span class="variable">$key</span>)</span><br><span class="line"><span class="keyword">echo</span> <span class="variable">$obj</span>-&gt;name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure>
-<p>写操作缓存：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line"><span class="variable">$page</span> = <span class="string">'article_090222.htm'</span>;</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"update page_view set view_count=view_count+1 where page='"</span> . <span class="variable">$page</span> . <span class="string">"'"</span>;</span><br><span class="line"><span class="variable">$conn</span> = mysql_connect(<span class="string">'localhost'</span>, <span class="string">'root'</span>, <span class="string">''</span>, db_page); </span><br><span class="line">mysql_select_db(<span class="string">'db_map_main'</span>, <span class="variable">$conn</span>);</span><br><span class="line">mysql_query(<span class="variable">$sql</span>, <span class="variable">$conn</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>memcache 写操作:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">    <span class="variable">$page</span> = <span class="string">'article_090222.htm'</span>;</span><br><span class="line">    <span class="variable">$memcache</span> = memcache_connect(<span class="string">'10.0.1.12'</span>, <span class="number">11711</span>);</span><br><span class="line">    <span class="variable">$count</span> = <span class="variable">$memcache</span>-&gt;increment(<span class="variable">$page</span>, <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$count</span> === <span class="keyword">false</span>)</span><br><span class="line">    &#123;</span><br><span class="line">            <span class="variable">$memcache</span>-&gt;add(<span class="variable">$page</span>, <span class="number">1</span>, <span class="keyword">false</span>, <span class="number">0</span>);</span><br><span class="line"><span class="keyword">exit</span>(<span class="number">1</span>); &#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$count</span> == <span class="number">1000</span>)</span><br><span class="line">&#123;</span><br><span class="line">&#125; <span class="preprocessor">?&gt;</span></span><br><span class="line"><span class="variable">$memcache</span>-&gt;set(<span class="variable">$page</span>, <span class="number">0</span>, <span class="keyword">false</span>, <span class="number">0</span>);</span><br><span class="line"><span class="variable">$sql</span> = <span class="string">"update page_view set view_count=view_count+"</span> . <span class="variable">$count</span> . <span class="string">" where page='"</span> . <span class="variable">$page</span> . <span class="string">"'"</span>; </span><br><span class="line"><span class="variable">$conn</span> = mysql_connect(<span class="string">'localhost'</span>, <span class="string">'root'</span>, <span class="string">''</span>, <span class="string">'db_page'</span>);</span><br><span class="line">mysql_query(<span class="variable">$sql</span>, <span class="variable">$conn</span>);</span><br></pre></td></tr></table></figure></p>
-<p>memcache 监控状态：cacti<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">    <span class="variable">$memcache</span> = memcache_connect(<span class="string">'10.0.1.12'</span>, <span class="number">11711</span>);</span><br><span class="line">    <span class="variable">$stats</span> = <span class="variable">$memcache</span> -&gt;getStats();</span><br><span class="line">    var_dump(<span class="variable">$stats</span>);</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="前段性能监控">前段性能监控</h3><h4 id="Books">Books</h4><ul>
-<li>High Performance WebSite</li>
-<li>Even Faster Website</li>
-<li>Browser NetWorking</li>
-</ul>
-<p>指标:</p>
-<ul>
-<li>完全加载时间</li>
-<li>DOM Ready</li>
-<li>First Visit</li>
-</ul>
-<p>优化：异步化,静态化,lazyload,bigrender</p>
-<p>优化什么:</p>
-<ul>
-<li>文档生成速度</li>
-<li>资源加载速度</li>
-<li>渲染速度</li>
-<li>用户体验</li>
-</ul>
-<h3 id="前端性能测试工具">前端性能测试工具</h3><ul>
-<li>YSlow</li>
-<li>DynaTrace</li>
-<li>WebPageTest</li>
-<li>mobitest(for mobile)</li>
-<li>Boomerang</li>
-</ul>
-<h3 id="Questions_to_ask_when_performance_dropped">Questions to ask when performance dropped</h3><ul>
-<li>any server outage</li>
-<li>any production push</li>
-<li>data center change</li>
-<li>CDN SLA missing?</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/performance/">performance</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/25/shadowsocks/" class="article-date">
-  	<time datetime="2014-11-25T13:28:50.000Z" itemprop="datePublished">2014-11-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/25/shadowsocks/">shadowsocks</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>First, set up shadowsocks as usual. Suppose your local is running on 127.0.0.1:1080.</p>
-<h3 id="Install_proxychains-">Install proxychains.</h3><ul>
-<li>On Debian/Ubuntu:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install proxychains</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>On Mac OS X:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install proxychains-ng</span><br></pre></td></tr></table></figure></p>
-<p>Make a config file at ~/.proxychains/proxychains.conf with content:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">strict_chain</span><br><span class="line">proxy_dns </span><br><span class="line">remote_dns_subnet <span class="number">224</span></span><br><span class="line">tcp_<span class="built_in">read</span>_time_out <span class="number">15000</span></span><br><span class="line">tcp_connect_time_out <span class="number">8000</span></span><br><span class="line">localnet <span class="number">127.0</span>.<span class="number">0.0</span>/<span class="number">255.0</span>.<span class="number">0.0</span></span><br><span class="line">[ProxyList]</span><br><span class="line">socks5  <span class="number">127.0</span>.<span class="number">0.1</span> <span class="number">1080</span></span><br><span class="line">Then run <span class="built_in">command</span> with proxychains.</span><br><span class="line"></span><br><span class="line">proxychains4 curl https://www.twitter.com/</span><br><span class="line">proxychains4 git push origin master</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vpn/">vpn</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Testing/testcoverage" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/25/Testing/testcoverage/" class="article-date">
-  	<time datetime="2014-11-24T22:25:23.000Z" itemprop="datePublished">2014-11-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/25/Testing/testcoverage/">TestCovearge</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="自动化测试覆盖率报告">自动化测试覆盖率报告</h3><h3 id="HTTP_Mock_Server">HTTP Mock Server</h3><p>Recording and Replay</p>
-<h3 id="接口自动化测试监控">接口自动化测试监控</h3><h3 id="TestNG+ReportNG">TestNG+ReportNG</h3>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-virtualenv/mac_virtualenv" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/25/virtualenv/mac_virtualenv/" class="article-date">
-  	<time datetime="2014-11-24T16:19:57.000Z" itemprop="datePublished">2014-11-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/25/virtualenv/mac_virtualenv/">Mac 下使用virtualenv</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Install_virtualenv_in_Mac">Install virtualenv in Mac</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenv</span><br></pre></td></tr></table></figure>
-<p>此前确认pip已经安装了</p>
-<h3 id="Install_virtualenvwapper_in_Mac">Install virtualenvwapper in Mac</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install virtualenvwapper</span><br></pre></td></tr></table></figure>
-<h3 id="创建python开发环境">创建python开发环境</h3><h4 id="直接使用virtualevn">直接使用virtualevn</h4><ol>
-<li>创建目录</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir python_<span class="built_in">test</span></span><br><span class="line">virtualenv python_<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<ol>
-<li>使用创建好的目录作为开发环境</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /bin/activate</span><br></pre></td></tr></table></figure>
-<p>启动开发环境之后，可以使用pip安装需要的python依赖库，如selenium</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install selenium</span><br></pre></td></tr></table></figure>
-<p>如果安装好了virtualenvwapper的话，可以使用如下命令使用开发环境：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkvirtualenv python_<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<p>退出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure></p>
-<p>切换：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">workon python-test</span><br></pre></td></tr></table></figure></p>
-<p>删除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rmvirtualenv python-test</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
 	</div>
 
       
