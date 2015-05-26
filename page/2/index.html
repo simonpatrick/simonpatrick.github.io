@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/CI/" style="font-size: 10px;">CI</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/Static-Check/" style="font-size: 10px;">Static Check</a><a href="/tags/Testing/" style="font-size: 18px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/agularjs/" style="font-size: 10px;">agularjs</a><a href="/tags/devops/" style="font-size: 10px;">devops</a><a href="/tags/editor/" style="font-size: 16px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 14px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 12px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/vim/" style="font-size: 12px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/性能测试，随手记/" style="font-size: 10px;">性能测试，随手记</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
+						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/CI/" style="font-size: 10px;">CI</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/MAC/" style="font-size: 10px;">MAC</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/Static-Check/" style="font-size: 10px;">Static Check</a><a href="/tags/TIPS/" style="font-size: 10px;">TIPS</a><a href="/tags/Testing/" style="font-size: 18px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/agularjs/" style="font-size: 10px;">agularjs</a><a href="/tags/devops/" style="font-size: 10px;">devops</a><a href="/tags/editor/" style="font-size: 16px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 14px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 12px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/vim/" style="font-size: 12px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/性能测试，随手记/" style="font-size: 10px;">性能测试，随手记</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,270 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Testing/bdd-in-action" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/04/Testing/bdd-in-action/" class="article-date">
+  	<time datetime="2015-05-04T14:56:24.000Z" itemprop="datePublished">2015-05-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/04/Testing/bdd-in-action/">BDD IN ACTION</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="BDD_测试">BDD 测试</h1><p>BDD越来越火热，是时候去了解这个BDD的概念，好处和实现方法了。下面从以下几个方面来了解BDD：</p>
+<ul>
+<li>What is BDD</li>
+<li>What is the typical BDD flow</li>
+<li>What tools is used for BDD</li>
+<li>Effective BDD Automation</li>
+<li>BDD Gotchas</li>
+</ul>
+<h2 id="BDD是什么（Behavior_Development_Driven）">BDD是什么（Behavior Development Driven）</h2><p>BDD is using <strong><em>example</em></strong> in multiple levels to create a <strong><em> shared understanding </em></strong> and suface uncertainty<br> to deliver software that matters.</p>
+<p>example 和 shared understanding是关键字。BDD的目的就是通过几个示例来创建出对于交付软件的一致认识。</p>
+<h2 id="TDD_和_BDD">TDD 和 BDD</h2><p>TDD: Test Driven Development</p>
+<ul>
+<li>TDD is not about writing tests</li>
+<li>TDD is a design strategy:<ul>
+<li>Write better-design code(写更好设计的代码）</li>
+<li>Hava more confidence in our code（对自己的代码更自信）</li>
+<li>Make changes more easily（更容易的改动）</li>
+<li>Write Code that meets user requirements more accurately</li>
+<li>Build up a comprehensive set to automation suites</li>
+</ul>
+</li>
+</ul>
+<p>BDD：Bahaviour Driven Development</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Automation/">Automation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BDD/">BDD</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Testing/">Testing</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/BDD/">BDD</a><a class="article-category-link" href="/categories/BDD/Testing/">Testing</a><a class="article-category-link" href="/categories/BDD/Testing/Automation/">Automation</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-Testing/agile-testing-01" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/02/Testing/agile-testing-01/" class="article-date">
+  	<time datetime="2015-05-02T06:37:46.000Z" itemprop="datePublished">2015-05-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/02/Testing/agile-testing-01/">敏捷测试——01</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="敏捷测试">敏捷测试</h1><p>敏捷已经开始流行，很多情况下，敏捷只是稍微改变了团队的运行情况，本身也没有任何固定的方法论，敏捷到底能够带来什么呢？<br>首先，是思想层面上的，最主要的就是拥抱变化，快速变化。从这个层面出发，有很多的方法也随之而来，但是本质上开发团队需要做的事情<br>被没有改变什么？开发团队需要做的以下内容：</p>
+<ul>
+<li>需求澄清</li>
+<li>开发时间估算</li>
+<li>开发设计</li>
+<li>编码，单元测试</li>
+<li>模块测试，集成测试</li>
+<li>重构<br>。。。。。。。。。。。。。<br>这些内容实际上被没有改变，但是改变的是，团队不需要交付一个完美的产品，但是需要一个在某个时间周期内可以接受的产品。</li>
+</ul>
+<p>在整个开发过程中，一切都可以商量，单元测试是不是必须，长期来看是必须的，但是在一个很短的时间内？测试是不是必须的？<br>个人认为都可以商量，主要看达成什么样的目的？团队是否能够达成一致。</p>
+<p>比如说从单元测试的角度来说，这个其实是必须的，关于一个任务的完成不仅仅表示说代码完成，实际上是开发活动全部完成才算，包括<br>单元测试，模块测试，集成测试，性能测试。。。。。。。。；往往开发不愿意做单元测试，觉得不提供价值或者是测试需要做的，其实<br>如果从这个点出发，那么从敏捷的角度来说，这个团队就不是敏捷团队了。说服开发进行单元测试其实是一个非常困难的事情，往往团队的话语<br>权在开发，但是开发并不见得拥有足够的质量观念，依然停留在测试都是测试的事情上面，那么产品质量肯定会出问题的。更长远一点来说，<br>如果没有单元测试，那么以后遗留系统做重构，开发你敢下手吗？多少这样的事情，当时说单元测试延后，但是一般延后了，就没有然后了。</p>
+<p>好的公司，好的开发其实都是做单元测试的。前面一家公司可以说是我呆过的最好的公司，里面开发都是有单元测试的，<br>一个敏捷team，3个开发1个测试，负责整个网站平台的一个核心业务。线上所有的交易几乎都和这个模块相关，每天交易额也在百万美元级别了。<br>整个team也许交付的东西不需要非常非常多，但是交付的节奏是一定要有的。一个可以预期的交付，比随意交付一堆东西要来的有价值。</p>
+<p>Team的目标是交付高价值，高质量的产品，而不是交付代码给测试，让测试通过。<br>敏捷团队使用的核心实践，其实都是和测试有关系，TDD，CI。。。。。。，所以高效的敏捷团队，离不开敏捷测试。</p>
+<p>那么什么是敏捷测试呢？面向业务的测试，同时也包括了功能，性能，安全。。。。。。。，几乎无所不包。</p>
+<p>测试人员，在里面可以激化更多的需求分析，用例分析，但是对于测试来说，还需要考虑一点，到底是你的技能让你能这样子做呢，还是你的身份？</p>
+<h2 id="敏捷测试有何不同">敏捷测试有何不同</h2><p>从软件测试人员真的能够质量吗？这个问题开始，我的答案是不能，有这样的期望是好事，但是一般都是老板的一厢情愿。同时高估了测试的能力，<br>基本上对于团队不一定有什么好处。所谓测试对质量负责，其实都是假象，一个他没有权利负责，另外可能也在他的能力范围之外了。</p>
+<p>那么既然如此，测试人员在敏捷团队里面能做什么呢？</p>
+<ul>
+<li>需求确认分析</li>
+<li>探索性测试</li>
+<li>不同于单元测试的方法</li>
+<li>反应客户需求的测试</li>
+</ul>
+<p>总之所有测试活动都不应该完全是测试的任务，而是team的任务，每个人都应该把测试观念放到每个环节里面。</p>
+<h2 id="敏捷测试人员10条法则">敏捷测试人员10条法则</h2><ul>
+<li>每一个人都是敏捷测试人员，态度高于技能，关注客户，关注价值</li>
+<li>收集，分析信息，提供反馈，提供关于需求的反馈</li>
+<li>关注最总要的核心功能，关注关键路径</li>
+<li>勇气： 寻求帮助</li>
+<li>总结，反馈，持续改进</li>
+</ul>
+<h2 id="组织文化">组织文化</h2><ul>
+<li>整体团队负责质量，如果质量有单一的部门或者团队负责，都有可能达不到目的</li>
+<li>合适的工作节奏</li>
+<li>沟通挑战， 领域专家，测试沟通</li>
+<li>对于如何实现敏捷达成一致</li>
+<li>测试权利法案：<ul>
+<li>你有权利在任何时候提出关于测试，质量和过程的问题</li>
+<li>你有权利向客户，程序员和其他测试团队提出问题</li>
+<li>你有权利请求并从项目团队中的任何一个人获得帮助</li>
+<li>你有权利评估测试任务并将这些包含到用户故事中</li>
+<li>你有权利及时获得执行测试任务时需要的工具</li>
+<li>你有权利期望你的整个团队，而不是仅仅你自己为质量负责</li>
+</ul>
+</li>
+</ul>
+<h2 id="团队结构">团队结构</h2><ul>
+<li>是否需要独立的测试团队？</li>
+<li>测试任务整合到团队项目中</li>
+<li>测试开发比例：看具体情况而定</li>
+</ul>
+<h2 id="迁移传统过程">迁移传统过程</h2><ul>
+<li>度量标准</li>
+<li>与度量无关的事情</li>
+<li>沟通度量</li>
+<li>度量=》 something happened naturally</li>
+<li>CMMI VS Agile</li>
+</ul>
+<h2 id="敏捷测试象限">敏捷测试象限</h2><ul>
+<li>单元测试<ul>
+<li>单元测试目的：单元测试的目的是通过测试帮助程序员理解代码需要什么同时提供正确的设计思路。<br>  实际上是设计可测试代码的过程。</li>
+<li>效率更高，通过单元测试发现问题，通过单元测试模拟问题，修复Bug    </li>
+<li>让测试人员编写代码可能是个误区</li>
+</ul>
+</li>
+<li>管理技术债务</li>
+<li>上下文环境中的测试（context-driven testing）</li>
+<li>支持团队的面向技术测试</li>
+</ul>
+<h2 id="和需求的斗争">和需求的斗争</h2><ul>
+<li>故事只是业务专家和开发团队交流的起点</li>
+<li>用户故事+实例/自我测试+交流=需求</li>
+<li>多个迭代完善需求</li>
+<li>提问-测试应该是一个非常善于提问的人<ul>
+<li>解决什么问题</li>
+<li>这个问题是什么</li>
+<li>带来什么价值</li>
+<li>最终用户是谁</li>
+<li>用户得到什么好处</li>
+<li>使用该功能之前和之后用户会做什么</li>
+<li>如何判断故事做完了</li>
+<li>最坏的结果是什么？</li>
+</ul>
+</li>
+<li>使用示例</li>
+<li>涟漪效应- 看全局，定测试点，看哪些影响的系统</li>
+<li>FITNESS使用</li>
+<li>测试降低风险<ul>
+<li>什么样的数据会保存</li>
+<li>最坏的情况是什么</li>
+<li>很多严重的问题，通常在探索性测试中发现</li>
+</ul>
+</li>
+<li>可测性和自动化<ul>
+<li>自动化测试策略制定</li>
+<li>工具：easyb,jbehave,cucumber,fitness,crosscheck，watir</li>
+</ul>
+</li>
+</ul>
+<h2 id="面向业务的测试工具包">面向业务的测试工具包</h2><ul>
+<li>面向业务测试的工具策略</li>
+<li>激发示例和需求的工具<ul>
+<li>核对表</li>
+<li>思维导图</li>
+<li>电子表单</li>
+<li>模型</li>
+<li>流程图</li>
+<li>基于软件的工具？？</li>
+</ul>
+</li>
+<li>基于示例的自动化测试工具<ul>
+<li>单元测试</li>
+<li>BDD： easyb,JBehave</li>
+<li>Fit/Fitness</li>
+<li>GUI测试工具</li>
+</ul>
+</li>
+<li>编写测试的策略<ul>
+<li>增量构建测试</li>
+<li>确保测试通过</li>
+<li>使用合适的测试模式？what and how?</li>
+<li>构建/操作/检查</li>
+<li>基于时间的,活动和事件模式</li>
+<li>关键字和数据驱动</li>
+</ul>
+</li>
+</ul>
+<h2 id="探索性测试">探索性测试</h2><p>探索性测试可能是敏捷测试最重要的方法了，那么他是什么呢？可能大家实际做的时候不这么叫他，但是你可能已经用他了。他就在那里。</p>
+<p>探索性测试并不是通过详尽的测试来评估测试，而是通过实际的操作来判断是否完成的用户故事<br>真的满足需求，有没有更好的实现方法。这对于测试人员来说，需要测试人员更加了解被测系统。从后端到前端，从不同的各个子系统，<br>从可用性，交互的角度看。他给测试提供了一个新的维度，一个更全面的维度。但他很难真的说成是什么。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Testing/">Testing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/agile-testing/">agile testing</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/agile-testing/">agile testing</a><a class="article-category-link" href="/categories/agile-testing/Testing/">Testing</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-editor/git_basic" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -904,173 +1168,9 @@
 
 
   
-    <article id="post-shell/shell_101_script" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/04/27/shell/shell_101_script/" class="article-date">
-  	<time datetime="2015-04-27T05:09:58.000Z" itemprop="datePublished">2015-04-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Shell_Script">Shell Script</h1><h2 id="Shell_Script_sample">Shell Script sample</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment"># do somthing</span></span><br></pre></td></tr></table></figure>
-<h2 id="Run_Shell_Script">Run Shell Script</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh script.sh</span><br><span class="line">chmod a+x script.sh</span><br><span class="line">./script.sh</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cmd1;cmd2</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">cmd1</span><br><span class="line">cmd2</span><br></pre></td></tr></table></figure>
-<h2 id="echo">echo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"welcome to bash"</span></span><br><span class="line">ehco welcome to bash</span><br></pre></td></tr></table></figure>
-<p>不对单引号求值：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">╰─[:)] % <span class="built_in">echo</span> <span class="string">'$test'</span></span><br><span class="line"><span class="variable">$test</span></span><br></pre></td></tr></table></figure></p>
-<p>换行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">╰─[:)] % <span class="built_in">echo</span> <span class="string">"test\ntest"</span></span><br><span class="line"><span class="built_in">test</span></span><br><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure></p>
-<p>打印颜色：</p>
-<pre><code>文字颜色码
-    重置<span class="number">0</span>
-    黑色<span class="number">30</span>
-    红色<span class="number">31</span>
-    绿色<span class="number">32</span>
-    黄色<span class="number">33</span>
-    蓝色<span class="number">34</span>
-    洋红<span class="number">35</span>
-    青色<span class="number">36</span>
-    白色<span class="number">37</span>
-
-<span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"\e[1;31m This is red test \e[0m"</span>
-
-背景颜色码
-    重置<span class="number">0</span>
-    黑色<span class="number">40</span>
-    红色<span class="number">41</span>
-    绿色<span class="number">42</span>
-    黄色<span class="number">43</span>
-    蓝色<span class="number">44</span>
-    洋红<span class="number">45</span>
-    青色<span class="number">46</span>
-    白色<span class="number">47</span>
-
-<span class="built_in">echo</span> <span class="operator">-e</span> <span class="string">"\e[1;42m Green Background \e[0m"</span>
-</code></pre><h3 id="printf">printf</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span> <span class="string">"hello world"</span></span><br></pre></td></tr></table></figure>
-<p>format:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">╰─[:)] % <span class="built_in">printf</span> <span class="string">"%-5s %-10s %-4.2f\n"</span> <span class="number">3</span> Jeff <span class="number">77.564</span></span><br><span class="line"><span class="number">3</span>     Jeff       <span class="number">77.56</span></span><br><span class="line">╭─[~/workspace/notes/learning_notes/git]─[patrick@patrickdeMacBook-Pro]─[<span class="number">0</span>]─[<span class="number">10133</span>]</span><br><span class="line">╰─[:)] %</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-editor/sublime-text-basic" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/04/27/editor/sublime-text-basic/" class="article-date">
-  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/27/editor/sublime-text-basic/">sublime_text_basic</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="常用sublime_text功能介绍">常用sublime text功能介绍</h1><hr>
-<h2 id="sublime_text插件安装">sublime text插件安装</h2><h3 id="1-_安装package_control">1. 安装package control</h3><p>package controll是sublime text 插件安装工具，sublime txt默认没有安装此工具，需要安装。</p>
-<p>ctrl+~ 打开命令行工具，运行以下安装脚本（sublime text3）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request,os,hashlib; h = <span class="string">'7183a2d3e96f11eeadd761d777e62404'</span> + <span class="string">'e330c659d4bb41d3bdf022e94cab3cd0'</span>; pf = <span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( <span class="string">'http://packagecontrol.io/'</span> + pf.replace(<span class="string">' '</span>, <span class="string">'%20'</span>)).read(); dh = hashlib.sha256(by).hexdigest(); print(<span class="string">'Error validating download (got %s instead of %s), please try manual install'</span> % (dh, h)) <span class="keyword">if</span> dh != h <span class="keyword">else</span> open(os.path.join( ipp, pf), <span class="string">'wb'</span> ).write(by)</span><br></pre></td></tr></table></figure>
-<p>运行完毕之后，使用ctrl+shit+p 查看install package 选项是否存在，如果存在则安装成功。</p>
-<h3 id="2-_安装插件">2. 安装插件</h3><p>使用ctrl+shit+p 输入install，选择install package选项，然后输入需要安装的插件名字，找到插件之后回车就可以安装了</p>
-<p><strong>启动install package</strong><br><img src="../images/install_package.jpg" alt="img"><br><strong>输入plugin名字</strong><br><img src="../images/plugin_install.jpg" alt="img"></p>
-<h5 id="常用编辑方法">常用编辑方法</h5><h5 id="文本编辑">文本编辑</h5><p>码农的常用编辑</p>
-<ol>
-<li>copy and paster (码农最喜欢的)</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ctrl(command)+c</td>
-<td>复制</td>
-</tr>
-<tr>
-<td>ctrl(command)+v</td>
-<td>粘贴</td>
-</tr>
-<tr>
-<td>ctrl(command)+shift+v</td>
-<td>缩进复制</td>
-</tr>
-<tr>
-<td>ctrl(command)+alt+v</td>
-<td>从历史中复制</td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/submline-text/">submline_text</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/editor/">editor</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
