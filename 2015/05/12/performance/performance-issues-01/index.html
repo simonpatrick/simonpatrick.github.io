@@ -5,21 +5,24 @@
   
   <title>性能测试随手记系列01 | Tester&#39;s Farm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="性能测试随手记-01nginx 配置nginx 默认不开启http keepalive，需要在nginx upstream模块中设置keepalive该参数开启服务器间的连接池，数值为nginx worker可以保持的最大连接数
+  <meta name="description" content="记录下一些看到的关于性能测试的内容
+nginx 配置nginx 默认不开启http keepalive，需要在nginx upstream模块中设置keepalive该参数开启服务器间的连接池，数值为nginx worker可以保持的最大连接数
 keepalive 连接失效机制keepalive，不会一直保持establish状态，keepalive请求次数超过配置，serve会断开
-12345678910111">
+123456">
 <meta property="og:type" content="article">
 <meta property="og:title" content="性能测试随手记系列01">
 <meta property="og:url" content="http://simonpatrick.github.io/2015/05/12/performance/performance-issues-01/index.html">
 <meta property="og:site_name" content="Tester's Farm">
-<meta property="og:description" content="性能测试随手记-01nginx 配置nginx 默认不开启http keepalive，需要在nginx upstream模块中设置keepalive该参数开启服务器间的连接池，数值为nginx worker可以保持的最大连接数
+<meta property="og:description" content="记录下一些看到的关于性能测试的内容
+nginx 配置nginx 默认不开启http keepalive，需要在nginx upstream模块中设置keepalive该参数开启服务器间的连接池，数值为nginx worker可以保持的最大连接数
 keepalive 连接失效机制keepalive，不会一直保持establish状态，keepalive请求次数超过配置，serve会断开
-12345678910111">
+123456">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="性能测试随手记系列01">
-<meta name="twitter:description" content="性能测试随手记-01nginx 配置nginx 默认不开启http keepalive，需要在nginx upstream模块中设置keepalive该参数开启服务器间的连接池，数值为nginx worker可以保持的最大连接数
+<meta name="twitter:description" content="记录下一些看到的关于性能测试的内容
+nginx 配置nginx 默认不开启http keepalive，需要在nginx upstream模块中设置keepalive该参数开启服务器间的连接池，数值为nginx worker可以保持的最大连接数
 keepalive 连接失效机制keepalive，不会一直保持establish状态，keepalive请求次数超过配置，serve会断开
-12345678910111">
+123456">
   
     <link rel="alternative" href="/atom.xml" title="Tester&#39;s Farm" type="application/atom+xml">
   
@@ -44,7 +47,7 @@ keepalive 连接失效机制keepalive，不会一直保持establish状态，keep
 		</hgroup>
 
 		
-		<p class="header-subtitle">software tester&#39;s playground</p>
+		<p class="header-subtitle">software tester&#39;s playground，三言两语说技术</p>
 		
 
 		
@@ -114,7 +117,7 @@ keepalive 连接失效机制keepalive，不会一直保持establish状态，keep
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/CI/" style="font-size: 10px;">CI</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/Git/" style="font-size: 10px;">Git</a><a href="/tags/MAC/" style="font-size: 10px;">MAC</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/SCM/" style="font-size: 10px;">SCM</a><a href="/tags/Static-Check/" style="font-size: 10px;">Static Check</a><a href="/tags/TIPS/" style="font-size: 10px;">TIPS</a><a href="/tags/Testing/" style="font-size: 18px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/agularjs/" style="font-size: 10px;">agularjs</a><a href="/tags/devops/" style="font-size: 10px;">devops</a><a href="/tags/editor/" style="font-size: 16px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 14px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 12px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/submline-text/" style="font-size: 10px;">submline_text</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/vim/" style="font-size: 12px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/性能测试，随手记/" style="font-size: 10px;">性能测试，随手记</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
+						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/CI/" style="font-size: 10px;">CI</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/GIT/" style="font-size: 10px;">GIT</a><a href="/tags/MAC/" style="font-size: 10px;">MAC</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/SCM/" style="font-size: 12.5px;">SCM</a><a href="/tags/Static-Check/" style="font-size: 10px;">Static Check</a><a href="/tags/TIPS/" style="font-size: 10px;">TIPS</a><a href="/tags/Testing/" style="font-size: 17.5px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/agularjs/" style="font-size: 10px;">agularjs</a><a href="/tags/devops/" style="font-size: 12.5px;">devops</a><a href="/tags/editor/" style="font-size: 12.5px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 15px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/nginx/" style="font-size: 10px;">nginx</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 15px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/tutorial/" style="font-size: 12.5px;">tutorial</a><a href="/tags/vim/" style="font-size: 12.5px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/性能测试，随手记/" style="font-size: 10px;">性能测试，随手记</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
 					</div>
 				</section>
 				
@@ -148,7 +151,7 @@ keepalive 连接失效机制keepalive，不会一直保持establish状态，keep
 			  <h1 class="header-author">Simon Patrick</h1>
 			</hgroup>
 			
-			<p class="header-subtitle">software tester&#39;s playground</p>
+			<p class="header-subtitle">software tester&#39;s playground，三言两语说技术</p>
 			
 			<nav class="header-menu">
 				<ul>
@@ -219,10 +222,11 @@ keepalive 连接失效机制keepalive，不会一直保持establish状态，keep
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="性能测试随手记-01">性能测试随手记-01</h1><h2 id="nginx_配置">nginx 配置</h2><p>nginx 默认不开启http keepalive，需要在nginx upstream模块中设置keepalive<br>该参数开启服务器间的连接池，数值为nginx worker可以保持的最大连接数</p>
+        <p>记录下一些看到的关于性能测试的内容</p>
+<h2 id="nginx_配置">nginx 配置</h2><p>nginx 默认不开启http keepalive，需要在nginx upstream模块中设置keepalive<br>该参数开启服务器间的连接池，数值为nginx worker可以保持的最大连接数</p>
 <h2 id="keepalive_连接失效机制">keepalive 连接失效机制</h2><p>keepalive，不会一直保持establish状态，keepalive请求次数超过配置，serve会断开</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 端口范围</span></span><br><span class="line"> cat /proc/sys/net/ipv4/ip_<span class="built_in">local</span>_port_range</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## HttpClient使用不当Bug</span></span><br><span class="line">HttpClient在高并发下出现<span class="number">500</span> InternalError，</span><br><span class="line">- 原因：</span><br><span class="line">Httpclinent向后端请求，没有连接池管理，每个请求都建立新的连接，连接关闭有一定耗时。</span><br><span class="line">大量并发请求端口被耗尽，新连接无法建立，导致服务异常。</span><br><span class="line"></span><br><span class="line">- 解决：</span><br><span class="line">nginx采用httpclient 连接池来处理请求</span><br><span class="line"></span><br><span class="line">- Bug原因详解</span><br><span class="line">|服务器|连接数|</span><br><span class="line">|测试机|<span class="number">200</span>|</span><br><span class="line">|图片处理服务器 B1、B2|<span class="number">391</span>|</span><br><span class="line">|后端 nginx|<span class="number">971</span>|</span><br><span class="line">|前端 nginx+ 应用服务器 A|<span class="number">36514</span>|</span><br><span class="line"></span><br><span class="line">```sh</span><br><span class="line">netstat</span><br></pre></td></tr></table></figure>
-<h2 id="TPS上不去">TPS上不去</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"> //端口范围</span><br><span class="line"> cat /proc/sys/net/ipv4/ip_<span class="built_in">local</span>_port_range</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## HttpClient使用不当Bug</span></span><br><span class="line">HttpClient在高并发下出现<span class="number">500</span> InternalError，</span><br><span class="line">- 原因：</span><br><span class="line">Httpclinent向后端请求，没有连接池管理，每个请求都建立新的连接，连接关闭有一定耗时。</span><br><span class="line">大量并发请求端口被耗尽，新连接无法建立，导致服务异常。</span><br><span class="line"></span><br><span class="line">- 解决：</span><br><span class="line">nginx采用httpclient 连接池来处理请求</span><br><span class="line"></span><br><span class="line">- Bug原因详解</span><br><span class="line"></span><br><span class="line">|服务器|连接数|</span><br><span class="line">|测试机|<span class="number">200</span>|</span><br><span class="line">|图片处理服务器 B1、B2|<span class="number">391</span>|</span><br><span class="line">|后端 nginx|<span class="number">971</span>|</span><br><span class="line">|前端 nginx+ 应用服务器 A|<span class="number">36514</span>|</span><br><span class="line"></span><br><span class="line">使用netstat 命令查看多口情况</span><br><span class="line"></span><br><span class="line">```sh</span><br><span class="line">netstat</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -231,7 +235,7 @@ keepalive 连接失效机制keepalive，不会一直保持establish状态，keep
     
 <nav id="article-nav">
   
-    <a href="/2015/05/12/tester-note/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/05/12/Testing/tester-note/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
@@ -241,8 +245,8 @@ keepalive 连接失效机制keepalive，不会一直保持establish状态，keep
     </a>
   
   
-    <a href="/2015/05/12/crowd-testing/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">crowd_testing</div>
+    <a href="/2015/05/10/scm/static-check-CI/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">static_check_CI</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
