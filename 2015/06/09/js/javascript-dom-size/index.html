@@ -3,20 +3,56 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SHELL 101 CDPATH(CD的起始目录)设置 | Tester&#39;s Farm</title>
+  <title>javascript_dom_size | Tester&#39;s Farm</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="设置CD 的基础路径如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：
-修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：123 % cd blog                                    ~ patrickde">
+  <meta name="description" content="javascript 可以获得DOM元素的位置，大小。这在有些自动化测试的调试时候有点作用 
+基础概念
+为了方便理解，我们需要了解几个基础概念，每个HTML元素都有下列属性
+
+offsetWidth
+clientWidth
+scrollWidth
+offsetHeight
+clientHeight
+scrollHeight
+offsetLeft
+clientLeft
+scrollLeft
+offs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SHELL 101 CDPATH(CD的起始目录)设置">
-<meta property="og:url" content="http://simonpatrick.github.io/2015/04/27/shell/shell_linux_101_CDPATH/index.html">
+<meta property="og:title" content="javascript_dom_size">
+<meta property="og:url" content="http://simonpatrick.github.io/2015/06/09/js/javascript-dom-size/index.html">
 <meta property="og:site_name" content="Tester's Farm">
-<meta property="og:description" content="设置CD 的基础路径如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：
-修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：123 % cd blog                                    ~ patrickde">
+<meta property="og:description" content="javascript 可以获得DOM元素的位置，大小。这在有些自动化测试的调试时候有点作用 
+基础概念
+为了方便理解，我们需要了解几个基础概念，每个HTML元素都有下列属性
+
+offsetWidth
+clientWidth
+scrollWidth
+offsetHeight
+clientHeight
+scrollHeight
+offsetLeft
+clientLeft
+scrollLeft
+offs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SHELL 101 CDPATH(CD的起始目录)设置">
-<meta name="twitter:description" content="设置CD 的基础路径如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：
-修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：123 % cd blog                                    ~ patrickde">
+<meta name="twitter:title" content="javascript_dom_size">
+<meta name="twitter:description" content="javascript 可以获得DOM元素的位置，大小。这在有些自动化测试的调试时候有点作用 
+基础概念
+为了方便理解，我们需要了解几个基础概念，每个HTML元素都有下列属性
+
+offsetWidth
+clientWidth
+scrollWidth
+offsetHeight
+clientHeight
+scrollHeight
+offsetLeft
+clientLeft
+scrollLeft
+offs">
   
     <link rel="alternative" href="/atom.xml" title="Tester&#39;s Farm" type="application/atom+xml">
   
@@ -175,11 +211,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-shell/shell_linux_101_CDPATH" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js/javascript-dom-size" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/27/shell/shell_linux_101_CDPATH/" class="article-date">
-  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
+      <a href="/2015/06/09/js/javascript-dom-size/" class="article-date">
+  	<time datetime="2015-06-09T13:26:29.000Z" itemprop="datePublished">2015-06-09</time>
 </a>
     </div>
   
@@ -192,7 +228,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SHELL 101 CDPATH(CD的起始目录)设置
+      javascript_dom_size
     </h1>
   
 
@@ -201,12 +237,12 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
 	</div>
 
 
@@ -216,14 +252,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="设置CD_的基础路径">设置CD 的基础路径</h1><p>如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：</p>
-<p>修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> % <span class="built_in">cd</span> blog                                    ~ patrickdeMacBook-Pro</span><br><span class="line"><span class="built_in">cd</span>:<span class="built_in">cd</span>:<span class="number">13</span>: no such file or directory: books</span><br><span class="line"> %                                             ~ patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure></p>
-<p>设置cd的基本目录到workspace：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">export</span> CDPATH=/Users/patrick/workspace</span><br><span class="line"> %</span><br></pre></td></tr></table></figure></p>
-<p>然后直接敲cd blog就可以到blog目录了：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cd</span> blog                        workspace/blog patrickdeMacBook-Pro</span><br><span class="line">~/workspace/blog</span><br><span class="line">%                                workspace/blog patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure>
-<p>设置完毕。</p>
-<p>如果想要CDPATH永久生效，可以把配置放到./bashrc.profile里面</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.zshrc</span><br></pre></td></tr></table></figure>
+        <p>javascript 可以获得DOM元素的位置，大小。这在有些自动化测试的调试时候有点作用 </p>
+<p>基础概念</p>
+<p>为了方便理解，我们需要了解几个基础概念，每个HTML元素都有下列属性</p>
+<ul>
+<li>offsetWidth</li>
+<li>clientWidth</li>
+<li>scrollWidth</li>
+<li>offsetHeight</li>
+<li>clientHeight</li>
+<li>scrollHeight</li>
+<li>offsetLeft</li>
+<li>clientLeft</li>
+<li>scrollLeft</li>
+<li>offsetTop</li>
+<li>clientTop</li>
+<li>scrollTop</li>
+</ul>
+<p>说明：</p>
+<ol>
+<li>clientHeight和clientWidth用于描述元素内尺寸，是指 元素内容+内边距 大小，不包括边框（IE下实际包括）、外边距、滚动条部分</li>
+<li>offsetHeight和offsetWidth用于描述元素外尺寸，是指 元素内容+内边距+边框，不包括外边距和滚动条部分</li>
+<li>clientTop和clientLeft返回内边距的边缘和边框的外边缘之间的水平和垂直距离，也就是左，上边框宽度</li>
+<li>offsetTop和offsetLeft表示该元素的左上角（边框外边缘）与已定位的父容器（offsetParent对象）左上角的距离</li>
+<li>offsetParent对象是指元素最近的定位（relative,absolute）祖先元素，递归上溯，如果没有祖先元素是定位的话，会返回null</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"divParent"</span> style=<span class="string">"padding: 8px; background-color: #aaa; position: relative;"</span>&gt;</span><br><span class="line">        <span class="xml"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"divDisplay"</span> <span class="attribute">style</span>=<span class="value">"background-color: #0f0; margin: 30px; padding: 10px;</span><br><span class="line">            height: 200px; width: 200px; border: solid 3px #f00;"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="delphi"></span><br><span class="line">        <span class="keyword">var</span> <span class="keyword">div</span> = document.getElementById(<span class="string">'divDisplay'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> clientHeight = <span class="keyword">div</span>.clientHeight;</span><br><span class="line">        <span class="keyword">var</span> clientWidth = <span class="keyword">div</span>.clientWidth;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'clientHeight: '</span> + clientHeight + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'clientWidth: '</span> + clientWidth + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> clientLeft = <span class="keyword">div</span>.clientLeft;</span><br><span class="line">        <span class="keyword">var</span> clientTop = <span class="keyword">div</span>.clientTop;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'clientLeft: '</span> + clientLeft + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'clientTop: '</span> + clientTop + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> offsetHeight = <span class="keyword">div</span>.offsetHeight;</span><br><span class="line">        <span class="keyword">var</span> offsetWidth = <span class="keyword">div</span>.offsetWidth;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'offsetHeight: '</span> + offsetHeight + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'offsetWidth: '</span> + offsetWidth + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> offsetLeft = <span class="keyword">div</span>.offsetLeft;</span><br><span class="line">        <span class="keyword">var</span> offsetTop = <span class="keyword">div</span>.offsetTop;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'offsetLeft: '</span> + offsetLeft + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'offsetTop: '</span> + offsetTop + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> offsetParent = <span class="keyword">div</span>.offsetParent;</span><br><span class="line">        <span class="keyword">div</span>.innerHTML += <span class="string">'offsetParent: '</span> + offsetParent.id + <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -233,18 +287,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/27/shell/shell_101_script/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/04/27/shell/shell_101_operator/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">SHELL 101 OPERATOR</div>
+    <a href="/2015/06/09/Testing/xpath-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xpath_01</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -273,7 +318,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="shell/shell_linux_101_CDPATH" data-title="SHELL 101 CDPATH(CD的起始目录)设置" data-url="http://simonpatrick.github.io/2015/04/27/shell/shell_linux_101_CDPATH/"></div>
+	<div class="ds-thread" data-thread-key="js/javascript-dom-size" data-title="javascript_dom_size" data-url="http://simonpatrick.github.io/2015/06/09/js/javascript-dom-size/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
