@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/CI/" style="font-size: 10px;">CI</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/GIT/" style="font-size: 10px;">GIT</a><a href="/tags/MAC/" style="font-size: 10px;">MAC</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/SCM/" style="font-size: 12.5px;">SCM</a><a href="/tags/Static-Check/" style="font-size: 10px;">Static Check</a><a href="/tags/TIPS/" style="font-size: 10px;">TIPS</a><a href="/tags/Testing/" style="font-size: 17.5px;">Testing</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/agularjs/" style="font-size: 10px;">agularjs</a><a href="/tags/devops/" style="font-size: 12.5px;">devops</a><a href="/tags/editor/" style="font-size: 12.5px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 15px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/nginx/" style="font-size: 10px;">nginx</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 15px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/tutorial/" style="font-size: 12.5px;">tutorial</a><a href="/tags/vim/" style="font-size: 12.5px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/性能测试，随手记/" style="font-size: 10px;">性能测试，随手记</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
+						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/CI/" style="font-size: 10px;">CI</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/GIT/" style="font-size: 10px;">GIT</a><a href="/tags/MAC/" style="font-size: 10px;">MAC</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/SCM/" style="font-size: 13.33px;">SCM</a><a href="/tags/Static-Check/" style="font-size: 10px;">Static Check</a><a href="/tags/TIPS/" style="font-size: 10px;">TIPS</a><a href="/tags/Testing/" style="font-size: 20px;">Testing</a><a href="/tags/XPATH/" style="font-size: 10px;">XPATH</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/agularjs/" style="font-size: 10px;">agularjs</a><a href="/tags/devops/" style="font-size: 13.33px;">devops</a><a href="/tags/editor/" style="font-size: 13.33px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/nginx/" style="font-size: 10px;">nginx</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/python/" style="font-size: 16.67px;">python</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 20px;">shell</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/tutorial/" style="font-size: 13.33px;">tutorial</a><a href="/tags/vim/" style="font-size: 13.33px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/性能测试，随手记/" style="font-size: 10px;">性能测试，随手记</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,248 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-performance/tomacat-tuning" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/01/performance/tomacat-tuning/" class="article-date">
+  	<time datetime="2015-05-01T12:48:09.000Z" itemprop="datePublished">2015-05-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/01/performance/tomacat-tuning/">tomacat_tuning</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Tomcat_Tuning_笔记">Tomcat Tuning 笔记</h1><p>用来记录一下看的一下关于Tomcat Tuning 的内容</p>
+<ul>
+<li>Optimission/Tuning Process</li>
+<li>Tomcat tuning option<ul>
+<li>logging</li>
+<li>connectors</li>
+<li>content cache</li>
+<li>JVM</li>
+</ul>
+</li>
+<li>Scaling Tomcat</li>
+<li>Hints and tips</li>
+</ul>
+<h2 id="The_optimistation/tuning_process">The optimistation/tuning process</h2><p>The process:</p>
+<ul>
+<li>理解系统架构（understand the system architecture）</li>
+<li>稳定系统(Statbilise the system)</li>
+<li>设置性能目标(Set the performance targets)</li>
+<li>衡量目前系统性能(Measure current performance)</li>
+<li>定位目前的瓶颈(Identify the current bottleneck)</li>
+<li>修正瓶颈的根本原因(Fix the root cause of the bottlenect)</li>
+<li>Repeat util you meet the target</li>
+</ul>
+<h3 id="常见错误(common_errors)">常见错误(common errors)</h3><ul>
+<li>优化不需要的代码</li>
+<li>无效测试(Insufficient testing)</li>
+</ul>
+<ul>
+<li>realistic data volumes</li>
+<li>realistic user load</li>
+</ul>
+<ul>
+<li>缺少清晰的目标(Lack of clear performance targets)</li>
+<li>猜测瓶颈在哪里(Guessing where the bottleneck is)</li>
+<li>修正现象而不是根源(Fixing the symptom rather than the cause)</li>
+</ul>
+<h3 id="Tomcat_Tuning">Tomcat Tuning</h3><h4 id="Logging_简述">Logging 简述</h4><p>默认的配置是通用配置，可能有些配置不适合production</p>
+<ul>
+<li>catch-all logger logs to file and stdout</li>
+<li>no overflow protection</li>
+<li>logging is synchronised(同步日志，一般需要换成异步日志)</li>
+</ul>
+<h4 id="生产日志">生产日志</h4><ul>
+<li>remove duplicate logging(logging.properties)<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.handlers</span> = <span class="number">1</span>catalina<span class="class">.org</span><span class="class">.apache</span><span class="class">.juli</span><span class="class">.FileHandler</span>,</span><br><span class="line">            java<span class="class">.util</span><span class="class">.logging</span><span class="class">.ConsoleHandler</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>To：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.<span class="variable">handlers =</span> <span class="number">1</span>catalina.org.apache.juli.FileHandler</span><br><span class="line"><span class="comment"># add location</span></span><br><span class="line"><span class="number">1</span>catalina.java.util.logging.FileHandler.<span class="variable">pattern =</span></span><br><span class="line">        $&#123;catalina.base&#125;/logs/catalina.%g.log</span><br><span class="line"><span class="number">1</span>catalina.java.util.logging.FileHandler.<span class="variable">limit =</span> <span class="number">20000000</span></span><br><span class="line"><span class="number">1</span>catalina.java.util.logging.FileHandler.<span class="variable">count =</span> <span class="number">5</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Synchronous logging/Asynchronous logging</li>
+</ul>
+<ul>
+<li>Synchronous logging can become a bottlenect</li>
+<li>Asynchronous logging,log queue use memory/limit queue size to avoid OOM error</li>
+<li>fall back to synchronised logging and/or drop some logging message</li>
+</ul>
+<h4 id="Connectors_连接器">Connectors 连接器</h4><ul>
+<li>需要先了解一下内容：</li>
+</ul>
+<ul>
+<li>应用使用的模式</li>
+<li>网络情况</li>
+<li>TCP连接情况</li>
+<li>HTTP transactions</li>
+<li>HTTP Keep-alive情况</li>
+<li>SSL(https)</li>
+<li>Layer 4 or Layer 7</li>
+<li>connection pools</li>
+</ul>
+<p>对于connector来说，需要了解，什么样的connector：</p>
+<ul>
+<li>Java Blocking IO</li>
+</ul>
+<ul>
+<li>Oldest-most stable</li>
+<li>JSSE based SSL</li>
+</ul>
+<ul>
+<li>Native(APR)</li>
+</ul>
+<ul>
+<li>Non-Blocking</li>
+<li>Use OpenSSL</li>
+</ul>
+<ul>
+<li>Java Non-Blocking IO</li>
+</ul>
+<ul>
+<li>JSSE based SSL</li>
+</ul>
+<p>connector使用场景(未必正确)：<br>|Requirement|Connector in preference order|<br>|——|——————————————————|<br>|Stability|BIO APR/NIO|<br>|SSL|APR NIO BIO|<br>|Low concurrency|BIO APR NIO|<br>|High concurrency/No Keey live|BIO APR NIO|<br>|High concurrency/Keep Live|APR NIO BIO|</p>
+<p>为什么你要使用NIO connector?? NIO和BIO切换很简单</p>
+<h4 id="Connector_Tuning">Connector Tuning</h4><ul>
+<li>maxThreads<ul>
+<li>最大并发请求数</li>
+<li>for BIO，最大的open/active connections</li>
+<li>一般在200-800</li>
+<li>400是个不错的值</li>
+<li>heavy CPU usage -&gt; decrease</li>
+<li>light CPU usage -&gt; increase</li>
+</ul>
+</li>
+<li>maxKeepAliveRequests<ul>
+<li>typical values 1,100</li>
+<li>maximum number of HTTP requests per TCP connections</li>
+<li>set to 1 to disable keep alive</li>
+<li>disable for BIO with very high concurrency,layer 4 load balance,no sll</li>
+<li>enable for ssl,apr/nio,layer 7 load balancer</li>
+<li>Note BIO connector automatically disables keep alive when concurrent connections<br>reach 75% of max Threads</li>
+</ul>
+</li>
+<li>connection Timeout<ul>
+<li>typical value 3000</li>
+<li>default 20000 is too high for production</li>
+<li>keep alive 使用同样timeout </li>
+<li>increase for slow client</li>
+<li>increase for layer 7 load balancer with connection pools and keep alive on</li>
+<li>decrease for faster time-outs</li>
+</ul>
+</li>
+</ul>
+<h4 id="Content_cache_tuning">Content cache tuning</h4><ul>
+<li>dynamic content is not cached</li>
+<li>static content is cached</li>
+<li>configured using the <context ..=""> element</context></li>
+<li>cacheMaxSize: 10240</li>
+<li>cacheTTL: 5000</li>
+<li>cacheMaxFileSize: 512</li>
+<li>NIO/APR can use SEND_FILE</li>
+</ul>
+<h4 id="JVM_Tuning">JVM Tuning</h4><ul>
+<li>memory<ul>
+<li>JAVA Heap(Xmx,Xms) is not same as process heap, aim to set as low as possible<br> set too high might cause long GC cycles<ul>
+<li>-XX:NewSize/-XX:NewRatio<ul>
+<li>set 25-33% of total java heap</li>
+<li>Setting too high or too low leads to inefficient GC </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>process heap includes:<ul>
+<li>Java Heap</li>
+<li>Permanet Generation</li>
+<li>Threads stacks</li>
+<li>Native code</li>
+<li>Directly allocate memory</li>
+<li>Code generation</li>
+<li>Garbage collection</li>
+<li>TCP buffers</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Garbage collection:GC</li>
+</ul>
+<ul>
+<li>Short lived objects never reach the Old Generation</li>
+<li>Short lived objects cleaned up by short minor garbage collections</li>
+<li>Long lived objects promoted to Old Generation</li>
+<li>Long lived objects cleaned up by (rare) full garbage collection</li>
+<li>GC Pause the application - regardless of GC algorithm</li>
+<li>Pause can be from milliseconds to seconds</li>
+<li>The pause will impact your response time</li>
+<li>-XX:MaxGCPauseMillis -XX:MaxGCMinorPauseMillis</li>
+<li>Many More options: <a href="http://blogs.sun.com/watt/resource/jvm-options-list.html" target="_blank" rel="external">http://blogs.sun.com/watt/resource/jvm-options-list.html</a></li>
+<li>Concurrent Mark Sweep<br>  – -XX:+UseConcMarkSweepGC<br>  – Does not use survivor spaces<br>  – Can be forced to; not recommended</li>
+</ul>
+<h3 id="Scaling_Tomcat">Scaling Tomcat</h3><ul>
+<li>Load balancing - routing requests to multiple tomcat instances</li>
+<li>Clustering - sharing state between tomcat instance for fail-over</li>
+<li>Simplest Configuration<ul>
+<li>httpd</li>
+<li>mod_proxy_http</li>
+</ul>
+</li>
+<li>considerations<ul>
+<li>state management</li>
+<li>fail over</li>
+</ul>
+</li>
+<li>stateless<ul>
+<li>requests routed to tomcat instances purely on load balancing algorithm</li>
+<li>http sessions will not work</li>
+</ul>
+</li>
+<li>Http session support<ul>
+<li>tomcat maintains http session </li>
+<li>all requests for a session routed to same tomcat instance</li>
+</ul>
+</li>
+</ul>
+<h3 id="Hints_and_Tips">Hints and Tips</h3><ul>
+<li>load balancing/clustering : at least 3 tomcat instances</li>
+<li>redeployment can expose memory leak issue</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-shell/linux-operation" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -510,10 +752,10 @@
 
 
   
-    <article id="post-shell/SHELL-for-all-git-repository" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-python/python_basic" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/27/shell/SHELL-for-all-git-repository/" class="article-date">
+      <a href="/2015/04/27/python/python_basic/" class="article-date">
   	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
@@ -527,7 +769,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/27/shell/SHELL-for-all-git-repository/">SHELL for update all git repository</a>
+      <a class="article-title" href="/2015/04/27/python/python_basic/">Python Basic</a>
     </h1>
   
 
@@ -536,8 +778,78 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="更新一个目录下所有的git_repository的shell_脚本">更新一个目录下所有的git repository的shell 脚本</h1><p>最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &#10;#! /bin/bash&#10;&#10;for file in ./*&#10;do&#10;  if test -d $file&#10;  then  &#10;    echo $file is directory &#10;    cd $file&#10;    a=$(pwd)&#10;    echo $a&#10;    git pull&#10;    cd ..&#10;    b=$(pwd)&#10;    echo $b&#10;  fi&#10;&#10;done</span><br></pre></td></tr></table></figure>
+        <h3 id="1-Python基础常识">1.Python基础常识</h3><ol>
+<li>安装python（windows基本就是下载后安装，linux和mac自带</li>
+<li>添加python到windows 的path中</li>
+<li><p>执行python文件： <figure class="highlight python"><figcaption><span><file>```</file></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4.</span> python 文件 encoding</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">    <span class="string">'#_*_coding:utf-8_*_'</span></span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>注释</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">""" docs """</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-Python_注释和#号">2.Python 注释和#号</h3><ul>
+<li><h1 id="A_comment">A comment</h1></li>
+</ul>
+<h3 id="3-数字和数字计算">3.数字和数字计算</h3><ul>
+<li>+，-，/,*,%,&lt;,&gt;,&lt;=,&gt;=</li>
+</ul>
+<h3 id="4-_变量和命名">4. 变量<variable>和命名</variable></h3><ol>
+<li>car = 100</li>
+<li>space_in_a_car = 4.0</li>
+<li>和java的常用规范还是有点不同，python不用驼峰</li>
+</ol>
+<h3 id="5-_打印更多的变量">5. 打印更多的变量</h3><ol>
+<li>格式化打印<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> <span class="string">"this is for %s"</span>, %test</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="6-字符串和文本">6.字符串和文本</h3><ol>
+<li><p>可以带格式参数赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x= <span class="string">"%s,%s"</span> % (s1,s2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>%r-用来debug raw data会打印,%s</p>
+</li>
+</ol>
+<h3 id="7-_转义字符">7. 转义字符</h3><h3 id="8-_raw_input(“XXXXX”)">8. raw_input(“XXXXX”)</h3><h3 id="9-_参数，解包，变量">9. 参数，解包，变量</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sys <span class="keyword">import</span> argv</span><br><span class="line">   script,first, second, third = argv</span><br></pre></td></tr></table></figure>
+<h3 id="10-_IO">10. IO</h3><ol>
+<li>close–关闭文件。跟你编辑器的文件-&gt;保存..一个意思</li>
+<li>read – 读取文件内容。你可以把结果赋给一个变量</li>
+<li>readline–读取文本文件中的一行</li>
+<li>truncate–清空文件,请小心使用该命令</li>
+<li>write(stuff) – 将 stuff 写入文件</li>
+<li>open(“”,a/w/r), read, write, append</li>
+</ol>
+<h3 id="11-_Function_and_Variants">11. Function and Variants</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functionName</span><span class="params">()</span> :</span></span><br></pre></td></tr></table></figure>
+<h3 id="12-_return_of_Function">12. return of Function</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function1</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="13-逻辑关系">13.逻辑关系</h3><h3 id="14-布尔表达式">14.布尔表达式</h3><h3 id="15-if,_if-else,if-elif-else">15.if, if-else,if-elif-else</h3><h3 id="16-循环，列表">16.循环，列表</h3><h3 id="17-_列表">17. 列表</h3><ol>
+<li>定义 ：[]</li>
+<li>append： element.append()</li>
+<li>访问index x[0]….</li>
+</ol>
+<h3 id="18-_关键字">18. 关键字</h3><p>• and<br>• del<br>• from • not<br>• while • as<br>• elif<br>• global<br>• or<br>• with<br>• assert<br>• else<br>• if<br>• pass<br>• yield<br>• break<br>• except<br>• import<br>• print<br>• class<br>• exec<br>• in<br>• raise<br>• continue • finally • is<br>• return<br>• def<br>• for<br>• lambda/try</p>
+<h3 id="19-_数据类型">19. 数据类型</h3><p>• True<br>• False<br>• None<br>• strings • numbers • floats • lists</p>
+<h3 id="20-_list_and_dictionary">20. list and dictionary</h3><ol>
+<li>list : []</li>
+<li>dictionary :{“key” :”value”}</li>
+</ol>
+<h3 id="21-_module,class,object">21. module,class,object</h3><ol>
+<li>module: 不是类，里面可以定义函数，变量，大体可以看做一个静态类或者一个单例类</li>
+<li>class：和JAVA里面的类相似<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">__author__ = <span class="string">'simon'</span></span><br><span class="line"><span class="comment"># _*_ coding:utf-8 _*_</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyStuff</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>  <span class="comment"># 初始化类，构造器</span></span><br><span class="line">        self.target = <span class="string">"Andriod"</span></span><br><span class="line"><span class="comment"># self 就是 this</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">apple</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> self.target</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"test apple"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实例化</span></span><br><span class="line">myStuff = MyStuff()</span><br><span class="line">myStuff.apple()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="22-_is-a/has-a">22. is-a/has-a</h3><h3 id="23-_继承(Inheritance)VS合成(composition)">23. 继承(Inheritance)VS合成(composition)</h3><ol>
+<li><p>隐身继承</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#隐身继承</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Parent</span><span class="params">(object)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">implicit</span><span class="params">(self)</span>:</span></span><br><span class="line">         print(<span class="string">"implicit class!"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Child</span><span class="params">(Parent)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示继承</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##显示继承</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">override</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"parent override"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestChild</span><span class="params">(Test)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">override</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"child override"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>super（）</p>
+</li>
+<li>多重继承（multiple inheritance）</li>
+<li>composition组合<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># _*_ coding=utf-8 _*_</span></span><br><span class="line">__author__ = <span class="string">'patrick'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Other</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">overrider</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"override"</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">altered</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"other alter!"</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.other =Other()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">override</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.other.overrider()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">altered</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.other.altered()</span><br><span class="line"></span><br><span class="line">child = Child()</span><br><span class="line">child.altered()</span><br><span class="line">child.override()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="24-Python风格">24.Python风格</h3><p>1.类名:camel case/method 名字： underscore format<br>2.class name（object）<br>3.注释说为什么这样子做，而不是怎么做</p>
 
       
     </div>
@@ -545,12 +857,12 @@
     <div class="article-info article-info-index">
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
 	</div>
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/linux/">linux</a><a class="article-category-link" href="/categories/linux/shell/">shell</a>
+	<a class="article-category-link" href="/categories/Python/">Python</a>
 	</div>
 
 
@@ -648,10 +960,10 @@
 
 
   
-    <article id="post-shell/shell-101" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-shell/shell_linux_101_CDPATH" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/27/shell/shell-101/" class="article-date">
+      <a href="/2015/04/27/shell/shell_linux_101_CDPATH/" class="article-date">
   	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
@@ -665,7 +977,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/27/shell/shell-101/">SHELL 101 BASIC CONCEPT</a>
+      <a class="article-title" href="/2015/04/27/shell/shell_linux_101_CDPATH/">SHELL 101 CDPATH(CD的起始目录)设置</a>
     </h1>
   
 
@@ -674,41 +986,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="basic_conception">basic conception</h1><p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html" target="_blank" rel="external">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
-<h3 id="标准IO">标准IO</h3><pre><code>文件描述符
-0 标准输入 默认键盘
-1 标准输出 默认终端
-2 标准错误 默认终端
-</code></pre><h3 id="重定向">重定向</h3><pre><code>&gt; 输出重定向
-<span class="prompt">&gt;&gt;</span> 追加到输出重定向
-&lt; 输入重定向
-&lt;&lt; 追加到输入重定向
+        <h1 id="设置CD_的基础路径">设置CD 的基础路径</h1><p>如果常用一个工作目录，可以设置这个常用目录最为CD的基础目录，比如workpace是我常用的目录，那我可以设置workspace为cd的基础目录，请看实例：</p>
+<p>修改cd 目录前，blog目录在workspace目录下面，直接cd books显然不能直接到此目录：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> % <span class="built_in">cd</span> blog                                    ~ patrickdeMacBook-Pro</span><br><span class="line"><span class="built_in">cd</span>:<span class="built_in">cd</span>:<span class="number">13</span>: no such file or directory: books</span><br><span class="line"> %                                             ~ patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure></p>
+<p>设置cd的基本目录到workspace：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">export</span> CDPATH=/Users/patrick/workspace</span><br><span class="line"> %</span><br></pre></td></tr></table></figure></p>
+<p>然后直接敲cd blog就可以到blog目录了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">% <span class="built_in">cd</span> blog                        workspace/blog patrickdeMacBook-Pro</span><br><span class="line">~/workspace/blog</span><br><span class="line">%                                workspace/blog patrickdeMacBook-Pro</span><br></pre></td></tr></table></figure>
+<p>设置完毕。</p>
+<p>如果想要CDPATH永久生效，可以把配置放到./bashrc.profile里面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.bash_profile</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">export</span>=/Users/patrick/workspace &gt;&gt;~/.zshrc</span><br></pre></td></tr></table></figure>
 
-ls -l &gt; <span class="regexp">/tmp/a</span>
-
-cmd &gt;<span class="regexp">/dev/null</span> <span class="comment">#输出到垃圾桶</span>
-</code></pre><p>dev是设备(device)的英文缩写。/dev这个目录对所有的用户都十分重要。因为在这个目录中包含了所有Linux系统中使用的外部设备。但是这里并不是放的外部设备的驱动程序，这一点和windows,dos操作系统不一样。它实际上是一个访问这些外部设备的端口。我们可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。</p>
-<p>/dev/null 它是空设备，也称为位桶（bit bucket）或者黑洞(black hole)。你可以向它输入任何数据，但任何写入它的数据都会被抛弃。通常用于处理不需要的输出流。（当然，它也可以作为空的输入流</p>
-<p>dev/zero 该设备无穷尽地提供空字符（ASCII NUL, 0x00），可以使用任何你需要的数目。它通常用于向设备或文件写入字符串0，用于初始化数据存储。（当然，也可作为输出流的接受容器）</p>
-<h3 id="管道">管道</h3><p>前后连接两个命令</p>
-<pre><code><span class="keyword">ls</span> -<span class="keyword">l</span> | grep <span class="keyword">test</span>
-</code></pre><h3 id="引号">引号</h3><pre><code>双引号：可以除了字符<span class="variable">$`</span>\外地任何字符或字符串
-单引号：忽略任何引用值，将引号里的所有字符作为一个字符串 <span class="variable">$var</span> 不能被解析
-反引号：设置系统命令输出到变量
-</code></pre><h3 id="命令执行">命令执行</h3><p>shell脚本识别三种基本命令：内建命令，shell函数和外部命令</p>
-<p>基本的命令查找:shell会沿着查找路径$PATH来寻找命令</p>
-<pre><code><span class="built_in">echo</span> <span class="variable">$PATH</span>
-</code></pre><p>可以在.profile文件中修改</p>
-<pre><code><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$HOME</span>/bin
-</code></pre><p>and/or</p>
-<pre><code>expressio<span class="label">n1</span> &amp;&amp; expressio<span class="label">n2</span> &amp;&amp; expressio<span class="label">n3</span>
-只有前面一条命令执行成功，才执行下一条
-expressio<span class="label">n1</span>执行成功，才执行expressio<span class="label">n2</span>
-串联的
-
-expressio<span class="label">n1</span> || expressio<span class="label">n2</span> || expressio<span class="label">n3</span>
-执行命令，直到有一条成功为止
-</code></pre>
       
     </div>
     
@@ -720,7 +1006,7 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/linux/">linux</a>
+	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
 	</div>
 
 
@@ -785,131 +1071,6 @@ expressio<span class="label">n1</span> || expressio<span class="label">n2</span>
       
 	<div class="article-category tagcloud">
 	<a class="article-category-link" href="/categories/shell/">shell</a><a class="article-category-link" href="/categories/shell/linux/">linux</a>
-	</div>
-
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-editor/markdown_basic" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/04/27/editor/markdown_basic/" class="article-date">
-  	<time datetime="2015-04-27T01:23:53.000Z" itemprop="datePublished">2015-04-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/27/editor/markdown_basic/">mark down basic</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Markdown">Markdown</h1><p>===============</p>
-<h5 id="1-_Title">1. Title</h5><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="header">title 1</span><br><span class="line">==========</span></span><br><span class="line"><span class="header">titel 2</span><br><span class="line">-------------</span></span><br></pre></td></tr></table></figure>
-<h5 id="2-_Header">2. Header</h5><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># header1</span></span><br><span class="line"><span class="preprocessor">## header2</span></span><br><span class="line"><span class="preprocessor">### ......</span></span><br></pre></td></tr></table></figure>
-<h5 id="3-_Link">3. Link</h5><p><a href="http://www.google.com" target="_blank" rel="external">google</a><br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="link_label">google</span>](<span class="link_url">http://www.google.com</span>)</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://www.google.com" title="google homepage" target="_blank" rel="external">google</a></p>
-<p>it is <a href="url/pathtoimage" title="image reference_name">google reference</a></p>
-<p><a href="http://www.google.com" target="_blank" rel="external">http://www.google.com</a>  — 自动转换成link</p>
-<h5 id="4-image">4.image</h5><ol>
-<li><p>inline</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="link_label">image link</span>](<span class="link_url">url/path/toImage</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>reference￼<br><img src="url/pathtoimage" alt="imagelink" title="image reference_name"></p>
-</li>
-</ol>
-<h5 id="5-_code_block">5. code block</h5><ol>
-<li><p>tab or 4 space and Inline code</p>
-<p> this is code block</p>
-<p> this is inline code <code>inline code</code></p>
-</li>
-<li><figure class="highlight"><figcaption><span>seperate</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">```&#10;this is code block</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>define what kind of code, synatx highlight</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JavaClass</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> String A = <span class="string">"a"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">"python"</span></span><br></pre></td></tr></table></figure>
-<h5 id="6-_Tables">6. Tables</h5><table>
-<thead>
-<tr>
-<th>TABLE</th>
-<th style="text-align:center">ARE</th>
-<th style="text-align:right">COOL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>col2</td>
-<td style="text-align:center">right aligned</td>
-<td style="text-align:right">yes</td>
-</tr>
-<tr>
-<td>col3</td>
-<td style="text-align:center">center aligned</td>
-<td style="text-align:right">yes</td>
-</tr>
-<tr>
-<td>col4</td>
-<td style="text-align:center">neat</td>
-<td style="text-align:right">yes</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">markdown</th>
-<th style="text-align:right">less</th>
-<th style="text-align:center">prety</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><em>still</em></td>
-<td style="text-align:right"><code>render</code></td>
-<td style="text-align:center"><strong>nice</strong></td>
-</tr>
-</tbody>
-</table>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/editor/">editor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/editor/">editor</a>
 	</div>
 
 
