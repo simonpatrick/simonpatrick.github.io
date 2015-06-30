@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Bower 介绍 | Tester&#39;s Farm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bower是一个客户端技术的软件包管理器，它可用于搜索、安装和卸载如JavaScript、HTML、CSS之类的网络资源。其他一些建立在Bower基础之上的开发工具，如Yeoman和Grunt.
+Bower的好处
+方便安装开发中需要的第三方依赖，不用再去往常查找
+脱机工具，下载下来的第三发依赖会存放在本地，类似于JAVA MAVEN的本地仓库(Local Repository)
+方便的定义依赖关系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bower 介绍">
+<meta property="og:url" content="http://simonpatrick.github.io/2015/06/30/js/bower-instroduction/index.html">
+<meta property="og:site_name" content="Tester's Farm">
+<meta property="og:description" content="Bower是一个客户端技术的软件包管理器，它可用于搜索、安装和卸载如JavaScript、HTML、CSS之类的网络资源。其他一些建立在Bower基础之上的开发工具，如Yeoman和Grunt.
+Bower的好处
+方便安装开发中需要的第三方依赖，不用再去往常查找
+脱机工具，下载下来的第三发依赖会存放在本地，类似于JAVA MAVEN的本地仓库(Local Repository)
+方便的定义依赖关系">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bower 介绍">
+<meta name="twitter:description" content="Bower是一个客户端技术的软件包管理器，它可用于搜索、安装和卸载如JavaScript、HTML、CSS之类的网络资源。其他一些建立在Bower基础之上的开发工具，如Yeoman和Grunt.
+Bower的好处
+方便安装开发中需要的第三方依赖，不用再去往常查找
+脱机工具，下载下来的第三发依赖会存放在本地，类似于JAVA MAVEN的本地仓库(Local Repository)
+方便的定义依赖关系">
+  
+    <link rel="alternative" href="/atom.xml" title="Tester&#39;s Farm" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Simon Patrick</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">software tester&#39;s playground，三言两语说技术</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/tags/软件测试">随笔</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Automation/" style="font-size: 10px;">Automation</a><a href="/tags/BDD/" style="font-size: 10px;">BDD</a><a href="/tags/CI/" style="font-size: 10px;">CI</a><a href="/tags/FE/" style="font-size: 10px;">FE</a><a href="/tags/GIT/" style="font-size: 10px;">GIT</a><a href="/tags/MAC/" style="font-size: 10px;">MAC</a><a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a><a href="/tags/Python/" style="font-size: 10px;">Python</a><a href="/tags/SCM/" style="font-size: 12.5px;">SCM</a><a href="/tags/Static-Check/" style="font-size: 10px;">Static Check</a><a href="/tags/TIPS/" style="font-size: 10px;">TIPS</a><a href="/tags/Testing/" style="font-size: 17.5px;">Testing</a><a href="/tags/XPATH/" style="font-size: 10px;">XPATH</a><a href="/tags/agile-testing/" style="font-size: 10px;">agile testing</a><a href="/tags/agularjs/" style="font-size: 10px;">agularjs</a><a href="/tags/api/" style="font-size: 10px;">api</a><a href="/tags/devops/" style="font-size: 12.5px;">devops</a><a href="/tags/docker/" style="font-size: 10px;">docker</a><a href="/tags/documents/" style="font-size: 10px;">documents</a><a href="/tags/editor/" style="font-size: 12.5px;">editor</a><a href="/tags/iOS/" style="font-size: 10px;">iOS</a><a href="/tags/java/" style="font-size: 10px;">java</a><a href="/tags/java-performance/" style="font-size: 10px;">java performance</a><a href="/tags/javadoc/" style="font-size: 10px;">javadoc</a><a href="/tags/javascript/" style="font-size: 15px;">javascript</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/markdown/" style="font-size: 10px;">markdown</a><a href="/tags/network/" style="font-size: 10px;">network</a><a href="/tags/nginx/" style="font-size: 10px;">nginx</a><a href="/tags/performance/" style="font-size: 10px;">performance</a><a href="/tags/pip/" style="font-size: 10px;">pip</a><a href="/tags/postgres/" style="font-size: 10px;">postgres</a><a href="/tags/python/" style="font-size: 15px;">python</a><a href="/tags/restful/" style="font-size: 10px;">restful</a><a href="/tags/restful-api/" style="font-size: 10px;">restful api</a><a href="/tags/security/" style="font-size: 10px;">security</a><a href="/tags/shell/" style="font-size: 17.5px;">shell</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/tutorial/" style="font-size: 12.5px;">tutorial</a><a href="/tags/vim/" style="font-size: 12.5px;">vim</a><a href="/tags/vpn/" style="font-size: 10px;">vpn</a><a href="/tags/webservice/" style="font-size: 10px;">webservice</a><a href="/tags/性能测试，随手记/" style="font-size: 10px;">性能测试，随手记</a><a href="/tags/软件测试/" style="font-size: 10px;">软件测试</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Simon Patrick</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars2.githubusercontent.com/u/1321692?v=3&amp;u=866123e13e7009e772a0e904e278f81d84bf1fef&amp;s=140" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Simon Patrick</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">software tester&#39;s playground，三言两语说技术</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/tags/软件测试">随笔</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/simonpatrick" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js/bower-instroduction" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/30/js/bower-instroduction/" class="article-date">
+  	<time datetime="2015-06-30T11:31:02.000Z" itemprop="datePublished">2015-06-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Bower 介绍
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Bower是一个客户端技术的软件包管理器，<br>它可用于搜索、安装和卸载如JavaScript、HTML、CSS之类的网络资源。<br>其他一些建立在Bower基础之上的开发工具，如Yeoman和Grunt.</p>
+<h2 id="Bower的好处">Bower的好处</h2><ul>
+<li>方便安装开发中需要的第三方依赖，不用再去往常查找</li>
+<li>脱机工具，下载下来的第三发依赖会存放在本地，类似于JAVA MAVEN的本地仓库(Local Repository)</li>
+<li>方便的定义依赖关系</li>
+<li>升级更加简单，只需要改变依赖包版本就可以了</li>
+</ul>
+<h2 id="Bower的使用">Bower的使用</h2><p>下面介绍Bower的使用，首先需要安装Bower,bower需要安装node/npm(如何安装就不介绍了)，然后使用npm安装就可以了</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -g 表示全局安装</span></span><br><span class="line">npm install -g bower</span><br></pre></td></tr></table></figure>
+<p>使用bower help:</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">bower <span class="built_in">help</span></span><br><span class="line">usage:</span><br><span class="line"></span><br><span class="line">    bower &lt;<span class="built_in">command</span>&gt; [&lt;args&gt;] [&lt;options&gt;]</span><br><span class="line">Commands:</span><br><span class="line"></span><br><span class="line">    cache                   Manage bower cache</span><br><span class="line">    <span class="built_in">help</span>                    Display <span class="built_in">help</span> information about Bower</span><br><span class="line">    home                    Opens a package homepage into your favorite browser</span><br><span class="line">    info                    Info of a particular package</span><br><span class="line">    init                    Interactively create a bower.json file</span><br><span class="line">    install                 Install a package locally</span><br><span class="line">    link                    Symlink a package folder</span><br><span class="line">    list                    List <span class="built_in">local</span> packages - and possible updates</span><br><span class="line">    login                   Authenticate with GitHub and store credentials</span><br><span class="line">    lookup                  Look up a package URL by name</span><br><span class="line">    prune                   Removes <span class="built_in">local</span> extraneous packages</span><br><span class="line">    register                Register a package</span><br><span class="line">    search                  Search <span class="keyword">for</span> a package by name</span><br><span class="line">    update                  Update a <span class="built_in">local</span> package</span><br><span class="line">    uninstall               Remove a <span class="built_in">local</span> package</span><br><span class="line">    unregister              Remove a package from the registry</span><br><span class="line">    version                 Bump a package version</span><br><span class="line">Options:</span><br><span class="line"></span><br><span class="line">    <span class="operator">-f</span>, --force             Makes various commands more forceful</span><br><span class="line">    -j, --json              Output consumable JSON</span><br><span class="line">    <span class="operator">-l</span>, --log-level         What level of logs to report</span><br><span class="line">    -o, --offline           Do not hit the network</span><br><span class="line">    -q, --quiet             Only output important information</span><br><span class="line">    <span class="operator">-s</span>, --silent            Do not output anything, besides errors</span><br><span class="line">    -V, --verbose           Makes output more verbose</span><br><span class="line">    --allow-root            Allows running commands as root</span><br><span class="line">    --version               Output Bower version</span><br><span class="line">    --no-color              Disable colors</span><br><span class="line">See <span class="string">'bower help &lt;command&gt;'</span> <span class="keyword">for</span> more information on a specific command.</span><br></pre></td></tr></table></figure>
+<h3 id="Bower_安装第三方依赖">Bower 安装第三方依赖</h3><p>使用bower 安装第三方依赖很方便：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower install bootstrap</span><br></pre></td></tr></table></figure>
+<p>bootstrap 就安装好了，默认情况下，bower会把第三方包放在当前目录相面的bower_components的目录</p>
+<h3 id="查看bower安装的包">查看bower安装的包</h3><p>使用如下命令：<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower lsit</span><br></pre></td></tr></table></figure></p>
+<h3 id="搜索bower_安装包">搜索bower 安装包</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower search angular</span><br></pre></td></tr></table></figure>
+<h3 id="查看bower_包信息">查看bower 包信息</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower info bootstrap</span><br></pre></td></tr></table></figure>
+<h3 id="卸载bower包">卸载bower包</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bower uninstall bootstrap</span><br></pre></td></tr></table></figure>
+<h3 id="bower-json文件的使用">bower.json文件的使用</h3><p>bower.json的作用是记录下个所有安装的包的记录，类似于JAVA MAVEN的pom文件<br>每次使用bower install/uninstall 命令都会相应的更新此文件</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/06/29/api-documents/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">api_documents</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js/bower-instroduction" data-title="Bower 介绍" data-url="http://simonpatrick.github.io/2015/06/30/js/bower-instroduction/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 Simon Patrick
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/mobile.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+<! -- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  </div>
+</body>
+</html>
