@@ -1,0 +1,786 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+    <meta name="description" content="there is a will, there is a way!" />
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/1321692?v=3&u=866123e13e7009e772a0e904e278f81d84bf1fef&s=140?v=0.4.4" />
+
+
+<meta name="description" content="python常用包介绍
+Network Application
+HTTP
+Requests
+
+Distrbuted systems
+ZeroMQ
+RabbitMQ
+
+Web applications
+WSGI
+Flask
+URL routing
+Template Engine
+development Web Server
+Django
+Werkzeug
+Tornado
+Pyramid
+Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python_libs">
+<meta property="og:url" content="http://simonpatrick.github.io/2015/07/05/python/python-libs/index.html">
+<meta property="og:site_name" content="Tester makes hassle play">
+<meta property="og:description" content="python常用包介绍
+Network Application
+HTTP
+Requests
+
+Distrbuted systems
+ZeroMQ
+RabbitMQ
+
+Web applications
+WSGI
+Flask
+URL routing
+Template Engine
+development Web Server
+Django
+Werkzeug
+Tornado
+Pyramid
+Nginx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python_libs">
+<meta name="twitter:description" content="python常用包介绍
+Network Application
+HTTP
+Requests
+
+Distrbuted systems
+ZeroMQ
+RabbitMQ
+
+Web applications
+WSGI
+Flask
+URL routing
+Template Engine
+development Web Server
+Django
+Werkzeug
+Tornado
+Pyramid
+Nginx">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> python_libs // Tester makes hassle play </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c7a74a7d6a5a13f58cd33dc3df4ecf92";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Tester makes hassle play</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              python_libs
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-05T12:12:55+08:00" content="2015-07-05">
+            2015-07-05
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>python常用包介绍</p>
+<h1 id="Network_Application">Network Application</h1><ul>
+<li>HTTP</li>
+<li>Requests</li>
+</ul>
+<h1 id="Distrbuted_systems">Distrbuted systems</h1><ul>
+<li>ZeroMQ</li>
+<li>RabbitMQ</li>
+</ul>
+<h1 id="Web_applications">Web applications</h1><ul>
+<li>WSGI</li>
+<li>Flask</li>
+<li>URL routing</li>
+<li>Template Engine</li>
+<li>development Web Server</li>
+<li>Django</li>
+<li>Werkzeug</li>
+<li>Tornado</li>
+<li>Pyramid</li>
+<li>Nginx</li>
+<li>WSGI Server</li>
+<li>Gunicorn</li>
+<li>uWSGI</li>
+</ul>
+<p>The majority of self-hosted Python applications today are hosted with a WSGI server such as Gunicorn, either directly or behind a lightweight web server such as nginx.<br>The WSGI servers serve the Python applications while the web server handles tasks better suited for it such as static file serving, request routing, DDoS protection, and basic authentication.</p>
+<ul>
+<li>Jinja2</li>
+<li>Chameleon</li>
+<li>lxml and Requests</li>
+<li>curl</li>
+<li>grep</li>
+<li>httpie</li>
+<li>git</li>
+<li>clint</li>
+<li>click</li>
+<li>docopt</li>
+<li>plac</li>
+<li>cliff</li>
+<li>camelot</li>
+<li>cocoa</li>
+<li>GTK</li>
+<li>kivy</li>
+<li>pyobjc</li>
+<li>pyside</li>
+<li>pyqt</li>
+<li>pyjamasDesktop</li>
+<li>DB-API</li>
+<li>SQLAlchemy</li>
+<li>Django ORM</li>
+<li>peewee</li>
+<li>ponyORM</li>
+<li>SQLObject</li>
+</ul>
+<h2 id="Networking">Networking</h2><ul>
+<li>twisted</li>
+<li>pyzmq</li>
+<li>gevent</li>
+</ul>
+<h2 id="System_Administration">System Administration</h2><ul>
+<li>Fabric</li>
+<li>Salt</li>
+<li>Psutil</li>
+<li>Ansible</li>
+<li>Chef</li>
+<li>Puppet</li>
+<li>BluePrint</li>
+<li>Buildout</li>
+</ul>
+<h2 id="CI">CI</h2><ul>
+<li>Jenkins</li>
+<li>Tox</li>
+<li>Buildout</li>
+<li>Mule</li>
+<li>Travis-CI</li>
+</ul>
+<h2 id="Context_And_Tools">Context And Tools</h2><ul>
+<li>the GIL</li>
+<li>Numba</li>
+<li>NumberPy</li>
+<li>matplotlib</li>
+<li>Pandas</li>
+<li>Rpy2</li>
+<li>PsychoPy</li>
+</ul>
+<h2 id="Threading">Threading</h2><ul>
+<li>Threading</li>
+<li>Spawning Processes</li>
+<li>Multiprocessing</li>
+</ul>
+<h2 id="Resource">Resource</h2><ul>
+<li>Anacoda</li>
+<li>Canopy</li>
+</ul>
+<h2 id="Image_Manipulation">Image Manipulation</h2><ul>
+<li>PIL Python Imaging Library</li>
+<li>Pillow</li>
+</ul>
+<h2 id="XML_Paring">XML Paring</h2><ul>
+<li>untangle</li>
+<li>xmltodict</li>
+</ul>
+<h2 id="JSON">JSON</h2><ul>
+<li>JSON</li>
+<li>simplejson</li>
+</ul>
+<h2 id="Cryptography">Cryptography</h2><ul>
+<li>Cryptography</li>
+<li>PyCrypto</li>
+</ul>
+<h2 id="Packing_your_code">Packing your code</h2><ul>
+<li>PIP</li>
+<li>pypiserver</li>
+<li>bbfreeze</li>
+<li>py2exe</li>
+<li>pyinstaller</li>
+<li>py2app</li>
+</ul>
+<h2 id="Virtual_Enviroment">Virtual Enviroment</h2><ul>
+<li>virtualenv</li>
+<li>virtualenvwrapper</li>
+<li>autoenv</li>
+</ul>
+<h2 id="PEP">PEP</h2><p>here are a few PEPs that could be considered required reading:<br>• PEP 8: The Python Style Guide. Read this. All of it. Follow it.<br>• PEP 20: The Zen of Python. A list of 19 statements that briefly explain the philosophy behind Python.<br>• PEP 257: Docstring Conventions. Gives guidelines for semantics and conventions associated with Python docstrings.<br>You can read more at The PEP Index.</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/28/hello-world/" rel="prev">Hello World</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/05/python/python-guide/" rel="next">python_guide</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Damn Patrick" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Damn Patrick</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">there is a will, there is a way!</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">57</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">47</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">47</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Network_Application"><span class="nav-number">1.</span> <span class="nav-text">Network Application</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Distrbuted_systems"><span class="nav-number">2.</span> <span class="nav-text">Distrbuted systems</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web_applications"><span class="nav-number">3.</span> <span class="nav-text">Web applications</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Networking"><span class="nav-number">3.1.</span> <span class="nav-text">Networking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System_Administration"><span class="nav-number">3.2.</span> <span class="nav-text">System Administration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CI"><span class="nav-number">3.3.</span> <span class="nav-text">CI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Context_And_Tools"><span class="nav-number">3.4.</span> <span class="nav-text">Context And Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Threading"><span class="nav-number">3.5.</span> <span class="nav-text">Threading</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Resource"><span class="nav-number">3.6.</span> <span class="nav-text">Resource</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image_Manipulation"><span class="nav-number">3.7.</span> <span class="nav-text">Image Manipulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML_Paring"><span class="nav-number">3.8.</span> <span class="nav-text">XML Paring</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSON"><span class="nav-number">3.9.</span> <span class="nav-text">JSON</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cryptography"><span class="nav-number">3.10.</span> <span class="nav-text">Cryptography</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Packing_your_code"><span class="nav-number">3.11.</span> <span class="nav-text">Packing your code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtual_Enviroment"><span class="nav-number">3.12.</span> <span class="nav-text">Virtual Enviroment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PEP"><span class="nav-number">3.13.</span> <span class="nav-text">PEP</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Damn Patrick</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>
