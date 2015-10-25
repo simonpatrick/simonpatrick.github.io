@@ -3,11 +3,11 @@
     <channel>
         <title>All things about testing </title>
         <description></description>
-        <link>http://testless.github.io/</link>
-        <atom:link href="http://testless.github.io/feed.xml" rel="self"
+        <link>http://simonpatrick.github.io/</link>
+        <atom:link href="http://simonpatrick.github.io/feed.xml" rel="self"
         type="application/rss+xml" />
-        <pubDate>Sun, 25 Oct 2015 02:49:17 +0000</pubDate>
-        <lastBuildDate>Sun, 25 Oct 2015 02:49:17 +0000</lastBuildDate>
+        <pubDate>Sun, 25 Oct 2015 10:08:37 +0000</pubDate>
+        <lastBuildDate>Sun, 25 Oct 2015 10:08:37 +0000</lastBuildDate>
         <generator>Jekyll v2.5.3</generator>
         
         <item>
@@ -46,8 +46,8 @@
 有些知道确实没有挑战而有些只是不知道其实自己写的代码挺烂的而已。我无意攻击任何人只是说说我真实的想法。&lt;/p&gt;
 </description>
             <pubDate>Sat, 24 Oct 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/truestories/return-flag/</link>
-            <guid isPermaLink="true">http://testless.github.io/truestories/return-flag/</guid>
+            <link>http://simonpatrick.github.io/truestories/return-flag/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/truestories/return-flag/</guid>
             
             <category>truestories</category>
             
@@ -244,8 +244,8 @@ success
 &lt;a href=&quot;http://phantomjs.org/related-projects.html&quot;&gt;projects&lt;/a&gt;&lt;/p&gt;
 </description>
             <pubDate>Sat, 24 Oct 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/automation/phantomjs-usage/</link>
-            <guid isPermaLink="true">http://testless.github.io/automation/phantomjs-usage/</guid>
+            <link>http://simonpatrick.github.io/automation/phantomjs-usage/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/automation/phantomjs-usage/</guid>
             
             <category>automation</category>
             
@@ -314,8 +314,8 @@ success
 &lt;p&gt;来获得，完全没有必要写这些函数，这些函数基本上和上面代码没有区别.&lt;/p&gt;
 </description>
             <pubDate>Sat, 24 Oct 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/truestories/interesting-methods/</link>
-            <guid isPermaLink="true">http://testless.github.io/truestories/interesting-methods/</guid>
+            <link>http://simonpatrick.github.io/truestories/interesting-methods/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/truestories/interesting-methods/</guid>
             
             <category>truestories</category>
             
@@ -489,8 +489,27 @@ set of cash value + set of cheque value+ set of credit card value&lt;/li&gt;
 &lt;p&gt;￼&lt;/p&gt;
 </description>
             <pubDate>Fri, 23 Oct 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/designpattern/Functional-Programming-pattern/</link>
-            <guid isPermaLink="true">http://testless.github.io/designpattern/Functional-Programming-pattern/</guid>
+            <link>http://simonpatrick.github.io/designpattern/Functional-Programming-pattern/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/designpattern/Functional-Programming-pattern/</guid>
+            
+            <category>designpattern</category>
+            
+            
+            <category>designpattern</category>
+            
+        </item>
+        
+        <item>
+            <title>Design Patterns 15 Years Later: An Interview with Erich Gamma, Richard Helm, and Ralph Johnson</title>
+            <description>&lt;p&gt;&lt;a href=&quot;http://www.informit.com/articles/article.aspx?p=1404056&quot;&gt;Design Patterns 15 Years Later: An Interview with Erich Gamma, Richard Helm, and Ralph Johnson&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;figure1-1.bmp&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;准备翻译一下，留个记录&lt;/p&gt;
+</description>
+            <pubDate>Fri, 23 Oct 2015 02:31:11 +0000</pubDate>
+            <link>http://simonpatrick.github.io/designpattern/Design_Patterns-After15/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/designpattern/Design_Patterns-After15/</guid>
             
             <category>designpattern</category>
             
@@ -587,8 +606,8 @@ set of cash value + set of cheque value+ set of credit card value&lt;/li&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
             <pubDate>Thu, 22 Oct 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/python/java/interview/python_interview_questions/</link>
-            <guid isPermaLink="true">http://testless.github.io/python/java/interview/python_interview_questions/</guid>
+            <link>http://simonpatrick.github.io/python/java/interview/python_interview_questions/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/python/java/interview/python_interview_questions/</guid>
             
             <category>python</category>
             
@@ -715,8 +734,8 @@ set of cash value + set of cheque value+ set of credit card value&lt;/li&gt;
 很多宏大名词的解答.&lt;/p&gt;
 </description>
             <pubDate>Thu, 22 Oct 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/testing/thoughts/Random-TestCaseDesign/</link>
-            <guid isPermaLink="true">http://testless.github.io/testing/thoughts/Random-TestCaseDesign/</guid>
+            <link>http://simonpatrick.github.io/testing/thoughts/Random-TestCaseDesign/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/testing/thoughts/Random-TestCaseDesign/</guid>
             
             <category>testing</category>
             
@@ -850,8 +869,8 @@ set of cash value + set of cheque value+ set of credit card value&lt;/li&gt;
 &lt;span class=&quot;n&quot;&gt;failed&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_failed&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
             <pubDate>Thu, 24 Sep 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/automation/testng-simple-report/</link>
-            <guid isPermaLink="true">http://testless.github.io/automation/testng-simple-report/</guid>
+            <link>http://simonpatrick.github.io/automation/testng-simple-report/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/automation/testng-simple-report/</guid>
             
             <category>automation</category>
             
@@ -1034,8 +1053,8 @@ element = this.locator.findElement();
 一套方法,同时加入自己特殊的实现&lt;/p&gt;
 </description>
             <pubDate>Thu, 24 Sep 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/automation/page-factory/</link>
-            <guid isPermaLink="true">http://testless.github.io/automation/page-factory/</guid>
+            <link>http://simonpatrick.github.io/automation/page-factory/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/automation/page-factory/</guid>
             
             <category>automation</category>
             
@@ -1258,8 +1277,8 @@ Request Review Id |Summary  | Status | Changed File List
 (****** RB Client)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
             <pubDate>Sat, 16 May 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/scm/python/svn_reviewboard_python/</link>
-            <guid isPermaLink="true">http://testless.github.io/scm/python/svn_reviewboard_python/</guid>
+            <link>http://simonpatrick.github.io/scm/python/svn_reviewboard_python/</link>
+            <guid isPermaLink="true">http://simonpatrick.github.io/scm/python/svn_reviewboard_python/</guid>
             
             <category>SCM</category>
             
@@ -1269,30 +1288,6 @@ Request Review Id |Summary  | Status | Changed File List
             <category>scm</category>
             
             <category>python</category>
-            
-        </item>
-        
-        <item>
-            <title>API Document Generation Tools</title>
-            <description>&lt;p&gt;some source of Restful  API documents generation:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&quot;https://apiary.io/&quot;&gt;apiary&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://jashkenas.github.io/docco/&quot;&gt;docco&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.dexy.it/&quot;&gt;dexy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://swagger.io/&quot;&gt;swagger&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://restunited.com/&quot;&gt;restunited&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://jsondoc.org/examples-flows.html&quot;&gt;jsondoc&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-            <pubDate>Sat, 24 Jan 2015 02:31:11 +0000</pubDate>
-            <link>http://testless.github.io/tools/api_as_document_tool/</link>
-            <guid isPermaLink="true">http://testless.github.io/tools/api_as_document_tool/</guid>
-            
-            <category>tools</category>
-            
-            
-            <category>tools</category>
             
         </item>
         
