@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>All things about testing  - Shell Learning - Variant 变量</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/font.css">
+  <link rel="stylesheet" href="/assets/css/landing.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="stylesheet" href="/assets/css/highlight.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="canonical" href="http://testless.github.io/shell/shell_101_variant/">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2a0b4ff607e6b93936545c8c43551dc6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+<header id="header" class="navbar navbar-fixed-top bg-white box-shadow b-b b-light"  data-spy="affix" data-offset-top="1">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand"><img src="/assets/images/logo.ico" class="m-r-sm"><span class="text-muted">Colored Hedwig</span></a>
+      <button class="btn btn-link visible-xs" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tags/">Tags</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section id="content">
+  <div class="container m-t-lg m-b-lg" >
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="blog-post">
+          <!-- Begin Post -->
+          <div class="post-item">
+            <div class="caption wrapper-lg">
+              <h2 class="post-title">Shell Learning - Variant 变量</h2>
+              <div class="progress progress-xxs m-t-sm">
+                <div class="progress-bar progress-bar-success" data-toggle="tooltip" style="width: 100%"></div>
+              </div>
+              <div class="post-sum">
+                <p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
+
+<h3>变量赋值</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
+<span class="nv">var</span><span class="o">=</span>value
+<span class="nb">echo</span> <span class="nv">$var</span>
+<span class="nv">var</span><span class="o">=</span><span class="s1">&#39;the value&#39;</span>
+<span class="nb">echo</span> <span class="nv">$var</span>
+<span class="nv">var</span><span class="o">=</span><span class="s2">&quot;the $PARAM&quot;</span>
+<span class="nb">echo</span> <span class="nv">$var</span>
+<span class="nb">echo</span> <span class="nv">$var</span>
+<span class="nb">echo</span> <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
+
+<span class="c">#result:</span>
+╰─<span class="o">[</span>:<span class="o">)]</span> % sh shell_variant.sh
+value
+the value
+the
+the
+/Users/patrick/workspace/works/shell_learning
+/Users/patrick/workspace/works/shell_learning
+</code></pre></div>
+<h3>变量分类</h3>
+
+<p>四种变量：环境变量、本地变量、位置变量、特定变量参数</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">* 环境变量可作用于所有子进程
+* 本地变量在用户现在的shell 生命期的脚本中使用，仅存在于当前进程
+* 位置变量：作为程序参数
+* 特定变量：特殊作用
+</code></pre></div>
+<h3>环境变量</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">    设置
+    <span class="nv">MYVAR</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+    expirt MYVAR
+    or
+    <span class="nb">export </span><span class="nv">MYVAR</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+
+    只读
+    <span class="nv">MYVAR</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+    <span class="nb">readonly </span>MYVAR
+    or
+    <span class="nb">readonly </span><span class="nv">MYVAR</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+
+    显示
+    <span class="nb">export</span> -p
+    env <span class="c">#查看所有环境变量</span>
+    <span class="nv">$MYVAR</span> <span class="c">#获取</span>
+
+    消除
+    <span class="nb">unset </span>MYVAR
+</code></pre></div>
+<h3>本地变量</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">设置
+<span class="nv">LOCAL_VAR</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+or
+<span class="nv">LOCAL_VAR</span><span class="o">=</span><span class="s2">&quot;test&quot;</span>
+<span class="nb">readonly </span>LOCAL_VAR <span class="c">#设置只读</span>
+
+还可以使用declare命令定义
+</code></pre></div>
+<h3>位置变量</h3>
+
+<ul>
+<li>$0 脚本名称</li>
+<li>$# 传递到脚本参数个数</li>
+<li>$$ shell脚本运行当前进程ID</li>
+<li>$? 退出状态</li>
+<li>$N N&gt;=1，第n个参数</li>
+</ul>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/bin/bash</span>
+
+<span class="nb">echo</span> <span class="nv">$#</span>
+<span class="nb">echo</span> <span class="nv">$0</span>
+<span class="nb">echo</span> <span class="nv">$1</span> <span class="nv">$2</span>
+<span class="nb">echo</span> <span class="nv">$$</span>
+
+<span class="c"># result:</span>
+2
+read_parameter.sh
+<span class="m">1</span> 2
+24171
+</code></pre></div>
+<h3>字符串处理</h3>
+
+<ul>
+<li><code>${#VARIABLE_NAME}</code> 可以给出字符串的长度</li>
+</ul>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="nv">$#</span>
+<span class="nb">echo</span> <span class="nv">$0</span>
+<span class="nb">echo</span> <span class="nv">$1</span> <span class="nv">$2</span>
+<span class="nb">echo</span> <span class="nv">$$</span>
+
+<span class="nv">p</span><span class="o">=</span><span class="nv">$2</span>
+<span class="nb">echo</span> <span class="nv">$p</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="k">${#</span><span class="nv">p</span><span class="k">}</span> !<span class="o">=</span> <span class="m">2</span> <span class="o">]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;wrong input&quot;</span>
+<span class="k">fi</span>
+
+<span class="c"># Result</span>
+
+h read_parameter.sh <span class="m">1</span> 2
+2
+read_parameter.sh
+<span class="m">1</span> 2
+24217
+2
+wrong input
+</code></pre></div>
+<h3>拼接字符串</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&quot;$x$y&quot;</span>
+</code></pre></div>
+<h3>字符串切片</h3>
+
+<p>${变量名:起始:长度}得到子字符串</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">test</span><span class="o">=</span><span class="s1">&#39;I love china&#39;</span>
+<span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">test</span><span class="p">:</span><span class="nv">5</span><span class="k">}</span>
+e china
+<span class="nv">$ </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">test</span><span class="p">:</span><span class="nv">5</span><span class="p">:</span><span class="nv">10</span><span class="k">}</span>
+e china
+
+<span class="nv">str</span><span class="o">=</span><span class="s2">&quot;hello world&quot;</span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">str</span><span class="p">:</span><span class="nv">6</span><span class="k">}</span>  <span class="c"># ${var:offset:length}</span>
+</code></pre></div>
+<h3>字符串替换</h3>
+
+<p>${变量/查找/替换值}</p>
+
+<p>一个“/”表示替换第一个，”//”表示替换所有,当查找中出现了：”/”请加转义符”\/”表示</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="k">${</span><span class="nv">str</span><span class="p">/foo/bar</span><span class="k">}</span> <span class="c">#首个</span>
+<span class="nb">echo</span> <span class="k">${</span><span class="nv">str</span><span class="p">//foo/bar</span><span class="k">}</span> <span class="c">#所有</span>
+</code></pre></div>
+<h3>正则匹配</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="k">if</span> <span class="o">[[</span> <span class="nv">$str</span> <span class="o">=</span>~ <span class="o">[</span>0-9<span class="o">]</span>+<span class="se">\.</span><span class="o">[</span>0-9<span class="o">]</span>+ <span class="o">]]</span>
+</code></pre></div>
+<h3>数值处理</h3>
+
+<p>自增</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">a</span><span class="o">=</span>1
+<span class="nv">a</span><span class="o">=</span><span class="sb">`</span>expr a + 1<span class="sb">`</span>
+
+or
+
+<span class="nv">a</span><span class="o">=</span>1
+<span class="nb">let </span>a++
+<span class="nb">let </span>a+<span class="o">=</span>2
+<span class="nb">let</span>
+
+<span class="nv">no1</span><span class="o">=</span>4
+<span class="nv">no2</span><span class="o">=</span>5
+<span class="nb">let </span><span class="nv">result</span><span class="o">=</span>no1+no2
+expr
+
+<span class="nv">result</span><span class="o">=</span><span class="sb">`</span>expr <span class="m">3</span> + 4<span class="sb">`</span>
+<span class="nv">result</span><span class="o">=</span><span class="k">$(</span>expr <span class="nv">$no1</span> + 5<span class="k">)</span>
+</code></pre></div>
+<h3>其他</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">result</span><span class="o">=</span><span class="nv">$[</span> no1 + no2 <span class="o">]</span>
+<span class="nv">result</span><span class="o">=</span><span class="nv">$[</span> <span class="nv">$no</span> + <span class="m">5</span> <span class="o">]</span>
+
+<span class="nv">result</span><span class="o">=</span><span class="k">$((</span> no1 <span class="o">+</span> <span class="m">5</span> <span class="k">))</span>
+浮点数
+
+<span class="nb">echo</span> <span class="s2">&quot;4 * 0.56&quot;</span> <span class="p">|</span> bc
+设定精度
+<span class="nb">echo</span> <span class="s2">&quot;scale=2;3/8&quot;</span> <span class="p">|</span> bc
+进制转换
+<span class="nb">echo</span> <span class="s2">&quot;obase=2;100&quot;</span> <span class="p">|</span> bc
+平方
+<span class="nb">echo</span> <span class="s2">&quot;sqrt(100)&quot;</span> <span class="p">|</span> bc
+数组和map
+</code></pre></div>
+              </div>
+              <div class="line line-lg"></div>
+              <div class="text-muted">
+                
+                <i class="fa fa-clock-o icon-muted"></i> Aug 24, 2014
+                
+              </div>
+            </div>
+          </div>
+          <!-- End Post -->
+          <!-- 多说评论框 start -->
+          	<div class="ds-thread" data-thread-key="/shell/shell_101_variant"
+            data-title="Shell Learning - Variant 变量" data-url="/shell/shell_101_variant/"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+          var duoshuoQuery = {short_name:"testless"};
+          	(function() {
+          		var ds = document.createElement('script');
+          		ds.type = 'text/javascript';ds.async = true;
+          		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          		ds.charset = 'UTF-8';
+          		(document.getElementsByTagName('head')[0]
+          		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+          	})();
+          	</script>
+          <!-- 多说公共JS代码 end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
+</html>

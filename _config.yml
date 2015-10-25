@@ -1,0 +1,19 @@
+# Site settings
+title: "All things about testing "
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://simonpatrick.github.io" # the base hostname & protocol for your site
+github_username: testless
+
+timezone: Beijing
+# Build settings
+highlighter: pygments
+permalink: /:categories/:title/
+
+# markdown: kramdown
+markdown: redcarpet
+redcarpet:
+  extensions:
+    - fenced_code_blocks
+    - tables
+
+paginate: 20

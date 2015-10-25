@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>All things about testing  - Web Testing Tools list</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/font.css">
+  <link rel="stylesheet" href="/assets/css/landing.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="stylesheet" href="/assets/css/highlight.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="canonical" href="http://testless.github.io/tools/web_testing_tools/">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2a0b4ff607e6b93936545c8c43551dc6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+<header id="header" class="navbar navbar-fixed-top bg-white box-shadow b-b b-light"  data-spy="affix" data-offset-top="1">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand"><img src="/assets/images/logo.ico" class="m-r-sm"><span class="text-muted">Colored Hedwig</span></a>
+      <button class="btn btn-link visible-xs" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tags/">Tags</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section id="content">
+  <div class="container m-t-lg m-b-lg" >
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="blog-post">
+          <!-- Begin Post -->
+          <div class="post-item">
+            <div class="caption wrapper-lg">
+              <h2 class="post-title">Web Testing Tools list</h2>
+              <div class="progress progress-xxs m-t-sm">
+                <div class="progress-bar progress-bar-success" data-toggle="tooltip" style="width: 100%"></div>
+              </div>
+              <div class="post-sum">
+                <h1>1. Cross Browser(浏览器兼容性测试)</h1>
+
+<h3>Why</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">无数的浏览器，无数的版本，无数的终端。。。。。。。 这个理由就足够需要做兼容性测试了
+测试的悲剧就是这样的，听上去很简单，做起来就要人命，还被人不理解。。。。。。
+</code></pre></div>
+<h3>How</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">* 自动化测试：自己写截屏工具，自己比较（需要进一步研究）
+    1. sikuli
+    2. selenium
+    3. http://testingbot.com
+    4. http://saucelabs.com
+* 网站：http://browsershots.org （自己没有验证要如何处理）
+* 标准检查：http://validator.w3.org
+* 浏览器分类
+    1. WebKit：Chrome/Safari
+    2. Grecko: Firefox
+    3. Trident rendering engine: IE
+</code></pre></div>
+<h1>2. Web Accessibility</h1>
+
+<h3>Why</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">更好的使用，更多的有意义的标示
+</code></pre></div>
+<h3>How</h3>
+
+<p>This simplest way to check against W3C compliance would be to open up Firefox, install the accessibility checker plug in, open your site to be tested and run a quick scan.
+Tips:
+    *  Firefox accessibility extension - https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/ 
+    *  Tips on how best to describe the alt attribute -http://webdesign.about.com/od/beginningtutorials/a/aa122004.htm
+    * The W3 standards on accessibility - http://www.w3.org/standards/webdesign/accessibility 
+    * Test Partners accessibility testing - http://www.testpartners.co.uk/accessibility_testing.htm</p>
+
+<h1>3. Is the HTML valid?</h1>
+
+<h3>Why</h3>
+
+<p>标准化，避免不必要的bug</p>
+
+<h3>How</h3>
+
+<ul>
+<li>http://validator.w3.org</li>
+<li>Firefox 插件</li>
+<li>Good post on why you should validate - http://www.stevefenton.co.uk/Content/Blog/Date/201108/Blog/Do-I- Need-To-Validate-My-HTML</li>
+<li>FireWeasel - https://addons.mozilla.org/en-US/firefox/addon/fireweasel/</li>
+</ul>
+
+<h1>4. Check for Dead-links</h1>
+
+<h3>Why</h3>
+
+<p>保证网站的最新内容，避免过时信息已经的误解。</p>
+
+<h3>How</h3>
+
+<ul>
+<li>Link Check Tool: Xenu</li>
+<li>Xenu Link Checker - http://home.snafu.de/tilman/xenulink.html </li>
+<li>W3C Checker - http://validator.w3.org/checklink</li>
+<li>Broken Link Checker Tool - http://www.brokenlinkcheck.com/</li>
+</ul>
+
+<h1>5. One, Two, Many</h1>
+
+<h3>Why</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">网站总是有一定并发的，所以可以先使用一个用户测试基本功能，然后使用两个用户检查是否存在简单的并发问题，最后就考虑使用压力测试工具。 这个方法简单的避免一些简单的并发问题
+</code></pre></div>
+<h3>How</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">* JMeter -&gt; webservice
+</code></pre></div>
+<h1>6. Multiple tabs and windows</h1>
+
+<h3>Why</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">主要为了查看安全问题，数据刷新问题已经多cookie的问题
+</code></pre></div>
+<h3>How</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">* example 1:
+    Open Firefox and in one tab log in to your secure application.
+    Then right click on a page and open that new page in a new tab. Both tabs are now considered to be in the same session.
+    Now log out of the application in Tab 2 and try to perform some actions in Tab 1.
+    Has it logged you out or let you perform an action?
+    In most situations it would have logged you out.
+    In many instances it is possible to log in to two different accounts in the same browser and end up sharing data across both tabs because of cross authentication.
+
+* example 2：
+    I log in to my banking application in Tab 1 as Rob and then in Tab 2 as Dave.
+    Now when I switch to tab 1 and follow a new link I might get to see Dave’s information.
+    In Tab 2, Dave might even get to see my data.
+    This is because of confused session data stored in a single cookie for the browser, which is shared between two tabs.
+    It’s not just about authentication though.
+    What about adding things to a shopping basket in multiple tabs – do they persist in the basket? What about state changes in your application across several tabs?
+    Can I login across several browsers in different sessions?
+    Can I trick browser side validation and restrictions by performing actions across a number of tabs?
+    The best way to test in multiple browser tabs and sessions is to explore the application with multiple tabs open, checking what effect a change in one tab can have on the other.
+    As you explore around look for data, states and actions that might be confused by bad cookie management, session management and cross tab problems.
+
+* Good site about cookies and sessions - http://www.allaboutcookies.org/cookies/session-cookies-used-for.html 
+* Session Hijacking - http://en.wikipedia.org/wiki/Session_hijacking
+* Security implications of cookies - http://it.toolbox.com/blogs/securitymonkey/successful-hacking-with-xss- cookies-session-ids-11098
+* Burpsuite - http://portswigger.net/burp/
+* Firecookie - https://addons.mozilla.org/en-us/firefox/addon/firecookie/
+</code></pre></div>
+<h1>7. Http and Https</h1>
+
+<h3>Why</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">敏感信息如果泄露，容易被人攻击，所以需要检查是否使用了http传输了敏感信息，同时有些信息被修改了是否会引起错误，比如http header，或者post数据。。。。。。
+</code></pre></div>
+<h3>How</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">* 使用proxy工具：Burpsuite,Charles Proxy/Fiddler 查看请求和返回信息，修改请求信息看是否可以造成问题，比如修改了页面的某个价格，是否还是新价格购买成功；个人信息是否在里面；
+* Good security for web checklist –
+http://www.techrepublic.com/blog/security/ensure-basic-web-site-security-with-this-checklist/424
+* Differences between http and https - http://www.virtu-software.com/ask-doug/QandA.asp?q=7
+* Another differences post - http://www.wisegeek.com/what-is-the-difference-between-http-and-https.htm 
+* Burpsuite - http://portswigger.net/burp/
+</code></pre></div>
+<h1>8. Client/Server Watch</h1>
+
+<h3>Why</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Web测试仅仅查看页面是远远不够的，所以测试需要知道送出去的请求是什么，得到的返回是什么。以下问题可能需要问以下：
+ Is the data being sent and received correct?
+ Is the layout working as expected?
+ Are the response times satisfactory?
+ How do timeouts affect the site?
+ Are there any errors in the code?
+ What happens if I pass in X?
+ What happens if I remove X?
+ What happens if the message is lost completely?
+</code></pre></div>
+<h3>How</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">* Charles Proxy - http://www.charlesproxy.com/
+* Fiddler - http://fiddler2.com/fiddler2/
+* Firebug - http://getfirebug.com/
+* Firecookie - https://addons.mozilla.org/en-US/firefox/addon/firecookie/
+</code></pre></div>
+<h1>9. Security</h1>
+
+<h3>Why</h3>
+
+<p>不用多少，听听各种脱库事件就知道了，只是我的能力够吗？：）</p>
+
+<h3>How</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">* Burpsuite - http://portswigger.net/burp/
+* Web Scarab - https://www.owasp.org/index.php/WebScarab_Getting_Started
+* Web Hackers book - http://www.amazon.co.uk/Web-Application-Hackers-Handbook- Discovering/dp/0470170778
+* OWASP Top Ten - https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project 
+* Plynt Security Testing Experts - http://www.plynt.com/
+* Salesforce Burpsuite for App Exchange Partners - http://security.force.com/webappscanner
+* Start with the treat profile - http://www.securityalliance.co.uk/blog/bid/40335/Web-Application-Security-Testing-Start-with-the-Threat-Profile
+* Firefox add-ons (search for “security”)- https://addons.mozilla.org/en-US/firefox/
+</code></pre></div>
+<h1>10. Browser Extentions</h1>
+
+<ul>
+<li>Selenium IDE http://seleniumhq.org/projects/ide/
+Selenium is fast becoming an industry standard tool. This is the IDE version. Visit http://seleniumhq.org/ for more information on other tools in the set like Selenium Grid.</li>
+<li>IE Tab https://addons.mozilla.org/en-US/firefox/addon/1419 Flips your Firefox tab in to Internet Explorer mode.</li>
+<li>https://addons.mozilla.org/en-US/firefox/addon/5792 Re-sizes your window to different screen sizes</li>
+<li>Fire cookie https://addons.mozilla.org/en-US/firefox/addon/6683 Lets you to see and manage cookies through the Firebug add-on.</li>
+<li>Delicious https://addons.mozilla.org/en-US/firefox/addon/3615</li>
+<li>Social bookmarking service. Never lose a site of interest again and share them with the community too. Perfect for bookmarking testing sites, information, snippets and blogs.</li>
+<li>Clear Cache https://addons.mozilla.org/en-US/firefox/addon/1801 Clears out the cache within the browser at the click of a button.</li>
+<li>Copy Plain Text https://addons.mozilla.org/en-US/firefox/addon/134
+Copies any text from the browser in to a plain text format losing all formatting.</li>
+<li>Fiddler Hook http://www.fiddler2.com/fiddler2/addons/fiddlerhook/ Firefox add-on for integrating with Fiddler (a debugging tool).</li>
+<li>Download Status https://addons.mozilla.org/en-US/firefox/addon/26
+Shows your downloads in a toolbar at the bottom of the browser window. Keeps it nice and tidy and easy access to your downloads.</li>
+<li>Xmarks https://addons.mozilla.org/en-US/firefox/addon/2410</li>
+<li>Allow you to save your bookmarks and sync them between browsers on different machines. Works across browsers too. This is great if you test on several different machines. It means you can save your bookmarks once and find them on other browsers you have synched.</li>
+<li>W3C Page Validator https://addons.mozilla.org/en-US/firefox/addon/2250
+Check your page against W3C standards and compliance.</li>
+<li>Pencil https://addons.mozilla.org/en-US/firefox/addon/8487
+Great for screen mocks and notes.</li>
+<li>SQL Injection https://addons.mozilla.org/en-US/firefox/addon/6727</li>
+<li>Quick Restart https://addons.mozilla.org/en-US/firefox/addon/3559</li>
+<li>Restarts Firefox maintaining all tabs and open docs when it launches it again.</li>
+<li>Firebug https://addons.mozilla.org/en-US/firefox/addon/1843 How can you test websites without this one?</li>
+<li>Regular Expressions Tester https://addons.mozilla.org/en-US/firefox/addon/2077 Tool for testing regular expressions.</li>
+<li>Quick Locale Switcher https://addons.mozilla.org/en-US/firefox/addon/1333</li>
+<li>Good extension allowing for quick switching between browser locales.
+Http Fox https://addons.mozilla.org/en-US/firefox/addon/6647</li>
+<li>Good tool for analyzing the http traffic through your browser.</li>
+<li>TAW3 https://addons.mozilla.org/en-US/firefox/addon/1158?src=api</li>
+<li>Accessibility checking tool. Awesome.</li>
+<li>Firefox Accessibility Tools https://addons.mozilla.org/en-US/firefox/addon/5809?src=api Accessibility compliance checking tool.</li>
+</ul>
+
+<h3>Back to the benginging again</h3>
+
+<ul>
+<li>Stack Overflow question on disabling back capability (which you cannot by the way) -</li>
+<li>http://stackoverflow.com/questions/7816195/how-to-disable-back-button-in-browser-when-user-logout-in- classic-asp</li>
+<li>IE security problem with the Back Button.</li>
+<li>http://www.wired.com/science/discoveries/news/2002/04/51899?currentPage=all</li>
+</ul>
+
+<h3>其他的一些测试方式</h3>
+
+<ul>
+<li>Change the URL</li>
+<li>Tab Order</li>
+<li>See the Source</li>
+<li>UX
+    * Customer Support
+    * Release Notes
+    * Error Tolernt
+    * Documentation
+    * Performance
+    * Security
+    * Usability and Ease to Use
+    * Accessibility</li>
+<li>Change the locale</li>
+<li>Resize the windows and resolution</li>
+<li>Block pop-ups</li>
+<li>Disable CSS</li>
+<li>Text Only</li>
+<li>Disable Javascript</li>
+<li>Refresh during page loads</li>
+<li>Check SEO</li>
+<li>Five second test</li>
+<li>Throttle It (限流处理)</li>
+</ul>
+
+<h3>兼容性测试</h3>
+
+<p><a href="www.supportdetails.com">support detail</a>
+<a href="http://www.adobe.com/software/flash/about/">adobe flash version</a>. 
+<a href="java.com/en/download/installed.jsp">java version</a></p>
+
+<h3>工具</h3>
+
+<p><a href="http://www.techsmith.com/download/jing/">video record</a><a href="http://faststone.org/FSCaptureDetail.htm">FastStone Capture</a>
+<a href="http://www.xtra-rant.com/gennames/">test data</a>
+<a href="http://www.markrichman.com/2007/09/26/generating-random-names-as-test-data/">test data tool</a>
+<a href="http://www.satisfice.com/tools.shtml">perlclip test-data</a>
+<a href="http://hexawise.com/">combination tools</a>
+<a href="http://testing.gershon.info/reporter/.">Rapid Reporter</a></p>
+
+<h3>自动化测试工具</h3>
+
+<ul>
+<li>SauceLabs</li>
+<li>BrowserStack </li>
+</ul>
+
+              </div>
+              <div class="line line-lg"></div>
+              <div class="text-muted">
+                
+                <i class="fa fa-clock-o icon-muted"></i> Sep 24, 2012
+                
+              </div>
+            </div>
+          </div>
+          <!-- End Post -->
+          <!-- 多说评论框 start -->
+          	<div class="ds-thread" data-thread-key="/tools/web_testing_tools"
+            data-title="Web Testing Tools list" data-url="/tools/web_testing_tools/"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+          var duoshuoQuery = {short_name:"testless"};
+          	(function() {
+          		var ds = document.createElement('script');
+          		ds.type = 'text/javascript';ds.async = true;
+          		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          		ds.charset = 'UTF-8';
+          		(document.getElementsByTagName('head')[0]
+          		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+          	})();
+          	</script>
+          <!-- 多说公共JS代码 end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
+</html>

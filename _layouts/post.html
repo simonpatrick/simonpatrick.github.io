@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+{% include header.html %}
+<section id="content">
+  <div class="container m-t-lg m-b-lg" >
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="blog-post">
+          <!-- Begin Post -->
+          <div class="post-item">
+            <div class="caption wrapper-lg">
+              <h2 class="post-title">{{ page.title }}</h2>
+              <div class="progress progress-xxs m-t-sm">
+                <div class="progress-bar progress-bar-success" data-toggle="tooltip" style="width: 100%"></div>
+              </div>
+              <div class="post-sum">
+                {{ content }}
+              </div>
+              <div class="line line-lg"></div>
+              <div class="text-muted">
+                {% if page.author %}<i class="fa fa-user icon-muted"></i> by <a href="https://github.com/{{ site.github_username }}" class="m-r-sm">{{ page.author }}</a>{% endif %}
+                <i class="fa fa-clock-o icon-muted"></i> {{ page.date | date: "%b %-d, %Y" }}
+                {% if page.meta %}<a href="#" class="m-l-sm"><i class="fa fa-comment-o icon-muted"></i> {{ page.meta }}{% endif %}
+              </div>
+            </div>
+          </div>
+          <!-- End Post -->
+          <!-- 多说评论框 start -->
+          	<div class="ds-thread" data-thread-key="{{ page.id }}"
+            data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+          var duoshuoQuery = {short_name:"testless"};
+          	(function() {
+          		var ds = document.createElement('script');
+          		ds.type = 'text/javascript';ds.async = true;
+          		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          		ds.charset = 'UTF-8';
+          		(document.getElementsByTagName('head')[0]
+          		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+          	})();
+          	</script>
+          <!-- 多说公共JS代码 end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
+</html>

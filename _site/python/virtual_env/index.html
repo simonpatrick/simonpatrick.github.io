@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>All things about testing  - Python virtualenv in Mac</title>
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/assets/css/bootstrap.css">
+  <link rel="stylesheet" href="/assets/css/animate.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/css/font.css">
+  <link rel="stylesheet" href="/assets/css/landing.css">
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="stylesheet" href="/assets/css/highlight.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="canonical" href="http://testless.github.io/python/virtual_env/">
+  <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?2a0b4ff607e6b93936545c8c43551dc6";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+
+<body>
+<header id="header" class="navbar navbar-fixed-top bg-white box-shadow b-b b-light"  data-spy="affix" data-offset-top="1">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="/" class="navbar-brand"><img src="/assets/images/logo.ico" class="m-r-sm"><span class="text-muted">Colored Hedwig</span></a>
+      <button class="btn btn-link visible-xs" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tags/">Tags</a></li>
+        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section id="content">
+  <div class="container m-t-lg m-b-lg" >
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="blog-post">
+          <!-- Begin Post -->
+          <div class="post-item">
+            <div class="caption wrapper-lg">
+              <h2 class="post-title">Python virtualenv in Mac</h2>
+              <div class="progress progress-xxs m-t-sm">
+                <div class="progress-bar progress-bar-success" data-toggle="tooltip" style="width: 100%"></div>
+              </div>
+              <div class="post-sum">
+                <p>virtualenv是一个创建python虚拟环境的工具,主要的解决的问题是,让在一个干净的Python环境中开发,不需要被不同的python
+安装包烦恼,python3中实际已经内置了venv的,可以不使用virtualenv,以下是简要说明以下安装使用方法:</p>
+
+<p>ps: 关于Python3和Python2很有可能在同一台机器上都有安装,所以注意python命令对应的是那个版本.have fun :)</p>
+
+<h2>Python3 in Mac</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">python3 -m venv todo_mvc
+</code></pre></div>
+<p>Done ..........</p>
+
+<h2>Python2 in Mac</h2>
+
+<h3>Install virtualenv in Mac</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">    sudo pip install virtualenv
+</code></pre></div>
+<p>此前确认pip已经安装了</p>
+
+<h3>Install virtualenvwapper in Mac</h3>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"> sudo pip install virtualenvwapper
+</code></pre></div>
+<h3>创建python开发环境</h3>
+
+<h4>直接使用virtualevn</h4>
+
+<ol>
+<li>创建目录</li>
+</ol>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">    mkdir python_test
+    virtualenv python_test
+</code></pre></div>
+<ol>
+<li>使用创建好的目录作为开发环境</li>
+</ol>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">    <span class="nb">source</span> /bin/activate
+</code></pre></div>
+<p>启动开发环境之后，可以使用pip安装需要的python依赖库，如selenium</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">pip install selenium
+</code></pre></div>
+<p>如果安装好了virtualenvwapper的话，可以使用如下命令使用开发环境：</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">mkvirtualenv python_test
+</code></pre></div>
+<p>退出：</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">deactivate
+</code></pre></div>
+<p>切换：</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">    workon python-test
+</code></pre></div>
+<p>删除</p>
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">rm virtualenv python-test
+</code></pre></div>
+              </div>
+              <div class="line line-lg"></div>
+              <div class="text-muted">
+                
+                <i class="fa fa-clock-o icon-muted"></i> Nov 24, 2014
+                
+              </div>
+            </div>
+          </div>
+          <!-- End Post -->
+          <!-- 多说评论框 start -->
+          	<div class="ds-thread" data-thread-key="/python/virtual_env"
+            data-title="Python virtualenv in Mac" data-url="/python/virtual_env/"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+          var duoshuoQuery = {short_name:"testless"};
+          	(function() {
+          		var ds = document.createElement('script');
+          		ds.type = 'text/javascript';ds.async = true;
+          		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          		ds.charset = 'UTF-8';
+          		(document.getElementsByTagName('head')[0]
+          		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+          	})();
+          	</script>
+          <!-- 多说公共JS代码 end -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
+</html>
