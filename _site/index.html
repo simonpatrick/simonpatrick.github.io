@@ -57,6 +57,84 @@ var _hmt = _hmt || [];
 <!-- old home -->
 <div class="post-item" style="display:none;">
   <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/ruby/ruby-basic-dependecy-management/">Ruby Dependency Management</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>在接触了一些语言之后,一般每一个语言都有工具来管理第三方包 的安装和管理. 比如: - Java Maven/Gradle - Python pip - NodeJS NPM 而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法 安装Bundler 一句话安装 bundler gem install bundler...<br>
+        <!-- <p><p>在接触了一些语言之后,一般每一个语言都有工具来管理第三方包 的安装和管理. 比如: - Java Maven/Gradle - Python pip - NodeJS NPM</p> <p>而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法</p> <h2>安装Bundler</h2> <p>一句话安装 bundler</p> <div class="highlight"><pre><code class="language-bash"...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 3, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/refactoring/remove-god-class/">Refactoring-8-remove God Class</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>God Class 就是一个类里面有一大堆不相干的方法放在一起,一般
+情况下很多的工具类，或者manager有可能会有这样的情况.不是说不能有
+工具类或者manager类，这个的关键是不相干的放在一个类里面。
+
+不相干就违反了Single Responsibility的原则.
+<br>
+        <!-- <p><p>God Class 就是一个类里面有一大堆不相干的方法放在一起,一般
+情况下很多的工具类，或者manager有可能会有这样的情况.不是说不能有
+工具类或者manager类，这个的关键是不相干的放在一个类里面。</p>
+
+<p>不相干就违反了Single Responsibility的原则.</p>
+<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 3, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/refactoring/refactoring-introduce-method-object-and-replace-conditions-with-poly/">Refactoring-10-introduce method object, replace conditions with polymorphism</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。 public class Registration { public void create(double amount,String name, double credits){ //do work } } 重构后: //instroduce new...<br>
+        <!-- <p><h2>将方法参数转化为类</h2> <p>有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。</p> <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Registration</span> <span class="o">{</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">(</span><span...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 3, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/refactoring/refactoring-arrowhead-and-double-negative/">Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>Arrowhead AntiPattern 一下代码有一系列的if 判断，我们可以重新思考判断逻辑,合并一些逻辑判断 来让代码更可读: public boolean hasAccess(User user, Permission permission, List&lt;Permission&gt; exemptions) { boolean hasPermission = false; if (user...<br>
+        <!-- <p><h2>Arrowhead AntiPattern</h2> <p>一下代码有一系列的if 判断，我们可以重新思考判断逻辑,合并一些逻辑判断 来让代码更可读:</p> <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasAccess</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">,</span> <span...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 3, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
     <h2 class="post-title"><a class="post-link" href="/refactoring/replace-inheritance-with-delegation/">Refactoring-6-Replace Inheritance with Delegation</a></h2>
     <div class="line line-lg"></div>
     <div class="post-sum">
@@ -80,26 +158,10 @@ var _hmt = _hmt || [];
       <p>rename也是一个重构方式，对的，你没有看错，他确实是个重构的方法.
 不要小看了命名，命名不是个简单活哦，他背后可能包含了历史，人文，幽默，
 风格，立场。。。。。。。， 起个让大部分人都懂的名字可不是个容易活。
-
-以下是收集关于命名的一些文章共查阅。
-
-文章
-
-
-[] todo
-
 <br>
         <!-- <p><p>rename也是一个重构方式，对的，你没有看错，他确实是个重构的方法.
 不要小看了命名，命名不是个简单活哦，他背后可能包含了历史，人文，幽默，
 风格，立场。。。。。。。， 起个让大部分人都懂的名字可不是个容易活。</p>
-
-<p>以下是收集关于命名的一些文章共查阅。</p>
-
-<h2>文章</h2>
-
-<ul>
-<li>[] todo</li>
-</ul>
 <br> -->
     </div>
     <div class="text-muted">
@@ -164,13 +226,11 @@ var _hmt = _hmt || [];
 <!-- old home -->
 <div class="post-item" style="display:none;">
   <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/refactoring/refactoring-Extract-Interface-Method/">Refactoring-7-Extract-Interface or Method</a></h2>
+    <h2 class="post-title"><a class="post-link" href="/refactoring/refactoring-Extract-Interface-Method/">Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class</a></h2>
     <div class="line line-lg"></div>
     <div class="post-sum">
-      <p>Extract Interface,Method
-<br>
-        <!-- <p><p>Extract Interface,Method</p>
-<br> -->
+      <p>Extract-Interface,Method,Sub Class,Supper Class 以上重构的方式主要是通过提起接口,方法,为了让代码有更好的可读性,可测性. 开始:实例代码 以下是一个需要重构的实例代码： public class Receipt { private List&lt;Double&gt; discounts= Lists.newArrayList(); private List&lt;Double&gt; itemTotals=Lists.newArrayList(); public double calculateGradTotal(){...<br>
+        <!-- <p><p>Extract-Interface,Method,Sub Class,Supper Class</p> <p>以上重构的方式主要是通过提起接口,方法,为了让代码有更好的可读性,可测性.</p> <h2>开始:实例代码</h2> <p>以下是一个需要重构的实例代码：</p> <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Receipt</span> <span class="o">{</span> <span class="kd">private</span> <span...<br> -->
     </div>
     <div class="text-muted">
       
@@ -355,101 +415,116 @@ var _hmt = _hmt || [];
   </div>
 </div>
 
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/scm/python/svn_reviewboard_python/">Python完成简单的SVN Reviewboard Precommit的客户端</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>最近公司需要使用review board进行代码pre-commit review(pre-commit:正式提交前review)，而公司的现状是： 1. 使用SVN作为代码版本管理工具 2. 开发工具有eclipse，idea 3. MAC 和windows 机器居多 考虑到开发eclipse和idea插件，连接review board我一个人无法完成，同时能力也不够来开发这两种插件， 所以就准备python写一个命令行工具，期间研究了一下taobao review board的插件，感觉有点复杂，这个也是 使用python来些命令行工具的一个理由,也考虑过使用node-webkit来写个客户端，不过由于时间上的限制也就先放弃了 实现 实现过程中，使用到主要的包和工具是： RBTools,review...<br>
-        <!-- <p><p>最近公司需要使用review board进行代码pre-commit review(pre-commit:正式提交前review)，而公司的现状是： 1. 使用SVN作为代码版本管理工具 2. 开发工具有eclipse，idea 3. MAC 和windows 机器居多</p> <p>考虑到开发eclipse和idea插件，连接review board我一个人无法完成，同时能力也不够来开发这两种插件， 所以就准备python写一个命令行工具，期间研究了一下taobao review board的插件，感觉有点复杂，这个也是 使用python来些命令行工具的一个理由,也考虑过使用node-webkit来写个客户端，不过由于时间上的限制也就先放弃了</p> <h2>实现</h2> <p>实现过程中，使用到主要的包和工具是：</p> <ol>...<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> May 16, 2015
-      
-    </div>
-  </div>
-</div>
-
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/tools/api_as_document_tool/">API Document Generation Tools</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>some source of Restful  API documents generation:
-
-
-apiary
-docco
-dexy
-swagger
-restunited
-jsondoc
-
-<br>
-        <!-- <p><p>some source of Restful API documents generation:</p> <ol> <li><a href="https://apiary.io/">apiary</a></li> <li><a href="http://jashkenas.github.io/docco/">docco</a></li> <li><a href="http://www.dexy.it/">dexy</a></li> <li><a href="http://swagger.io/">swagger</a></li> <li><a href="http://restunited.com/">restunited</a></li> <li><a href="http://jsondoc.org/examples-flows.html">jsondoc</a></li>...<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Jan 24, 2015
-      
-    </div>
-  </div>
-</div>
-
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/python/virtual_env/">Python virtualenv in Mac</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>virtualenv是一个创建python虚拟环境的工具,主要的解决的问题是,让在一个干净的Python环境中开发,不需要被不同的python 安装包烦恼,python3中实际已经内置了venv的,可以不使用virtualenv,以下是简要说明以下安装使用方法: ps: 关于Python3和Python2很有可能在同一台机器上都有安装,所以注意python命令对应的是那个版本.have fun :) Python3 in Mac python3 -m venv todo_mvc Done .......... Python2 in Mac Install virtualenv...<br>
-        <!-- <p><p>virtualenv是一个创建python虚拟环境的工具,主要的解决的问题是,让在一个干净的Python环境中开发,不需要被不同的python 安装包烦恼,python3中实际已经内置了venv的,可以不使用virtualenv,以下是简要说明以下安装使用方法:</p> <p>ps: 关于Python3和Python2很有可能在同一台机器上都有安装,所以注意python命令对应的是那个版本.have fun :)</p> <h2>Python3 in Mac</h2> <div class="highlight"><pre><code class="language-bash" data-lang="bash">python3 -m venv todo_mvc </code></pre></div> <p>Done ..........</p> <h2>Python2...<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Nov 24, 2014
-      
-    </div>
-  </div>
-</div>
-
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/python/python_mirror/">Python PIP mirror设置</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>使用默认的pip mirror速度实在太慢了，所以使用douban的pypi镜像.如何使用呢？很简单，以下几步：
-- 修改~/.pip/pip.conf 文件，将index_url改成douban镜像地址:http://pypi.douban.com/simple
-[global]
-index-url=http://pypi.douban.com/simple
-timeout = 30
-require-virtualenv = false
-download-cache = /tmp
-
-当然记得把require-virtualenv 值改为false
-
-
-关闭终端，重新使用pip命令就可以使用douban镜像了，速度超快
-
-<br>
-        <!-- <p><p>使用默认的pip mirror速度实在太慢了，所以使用douban的pypi镜像.如何使用呢？很简单，以下几步： - 修改~/.pip/pip.conf 文件，将index_url改成douban镜像地址:<code>http://pypi.douban.com/simple</code></p> <div class="highlight"><pre><code class="language-python" data-lang="python"><span class="p">[</span><span class="k">global</span><span class="p">]</span> <span class="n">index</span><span class="o">-</span><span class="n">url</span><span class="o">=</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span...<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Nov 24, 2014
-      
-    </div>
-  </div>
-</div>
-
 
 <section class="panel panel-default portlet-item">
   <header class="panel-heading"><strong>Article List</strong></header>
   <section class="panel-body">
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/ruby/ruby-basic-dependecy-management/" class="h4 text-success">Ruby Dependency Management</a>
+        <small class="block m-t-xs">
+            
+            ruby
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Nov 3, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-leaf fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/refactoring/remove-god-class/" class="h4 text-success">Refactoring-8-remove God Class</a>
+        <small class="block m-t-xs">
+            
+            refactoring
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Nov 3, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-leaf fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/refactoring/refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="h4 text-success">Refactoring-10-introduce method object, replace conditions with polymorphism</a>
+        <small class="block m-t-xs">
+            
+            refactoring
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Nov 3, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-leaf fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/refactoring/refactoring-arrowhead-and-double-negative/" class="h4 text-success">Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</a>
+        <small class="block m-t-xs">
+            
+            refactoring
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Nov 3, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
     
     <article class="media">
     <div class="pull-left">
@@ -597,7 +672,7 @@ download-cache = /tmp
 </div>
 
     <div class="media-body">
-        <a href="/refactoring/refactoring-Extract-Interface-Method/" class="h4 text-success">Refactoring-7-Extract-Interface or Method</a>
+        <a href="/refactoring/refactoring-Extract-Interface-Method/" class="h4 text-success">Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class</a>
         <small class="block m-t-xs">
             
             refactoring
@@ -873,109 +948,6 @@ download-cache = /tmp
     </div>
 </article>
 
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/scm/python/svn_reviewboard_python/" class="h4 text-success">Python完成简单的SVN Reviewboard Precommit的客户端</a>
-        <small class="block m-t-xs">
-            
-            SCM
-            , 
-            
-            python
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">May 16, 2015</span>
-        </em>
-    </div>
-</article>
-
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/tools/api_as_document_tool/" class="h4 text-success">API Document Generation Tools</a>
-        <small class="block m-t-xs">
-            
-            tools
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">Jan 24, 2015</span>
-        </em>
-    </div>
-</article>
-
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/python/virtual_env/" class="h4 text-success">Python virtualenv in Mac</a>
-        <small class="block m-t-xs">
-            
-            python
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">Nov 24, 2014</span>
-        </em>
-    </div>
-</article>
-
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/python/python_mirror/" class="h4 text-success">Python PIP mirror设置</a>
-        <small class="block m-t-xs">
-            
-            python
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">Nov 24, 2014</span>
-        </em>
-    </div>
-</article>
-
     
   </section>
 </section>
@@ -1099,7 +1071,7 @@ download-cache = /tmp
     
     <li>
         <a href="/categories/ruby/" class="dk">
-            <span class="badge pull-right">1</span>
+            <span class="badge pull-right">2</span>
             Ruby
         </a>
     </li>
@@ -1183,7 +1155,7 @@ download-cache = /tmp
     
     <li>
         <a href="/categories/refactoring/" class="dk">
-            <span class="badge pull-right">7</span>
+            <span class="badge pull-right">10</span>
             Refactoring
         </a>
     </li>
@@ -1235,6 +1207,72 @@ download-cache = /tmp
   <span class="fa-stack fa-lg">
     <i class="fa fa-circle fa-stack-2x"></i>
     
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/ruby/ruby-basic-dependecy-management/" class="font-semibold">Ruby Dependency Management</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Victor</a> 03 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-leaf fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/refactoring/remove-god-class/" class="font-semibold">Refactoring-8-remove God Class</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Victor</a> 03 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-leaf fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/refactoring/refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="font-semibold">Refactoring-10-introduce method object, replace conditions with polymorphism</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Victor</a> 03 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-leaf fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/refactoring/refactoring-arrowhead-and-double-negative/" class="font-semibold">Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Victor</a> 03 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
       <i class="fa fa-leaf fa-stack-1x text-white"></i>
     
   </span>
@@ -1264,79 +1302,30 @@ download-cache = /tmp
     </article>
     <div class="line"></div>
     
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-leaf fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/refactoring/refactoring-PullUpField-PushDownField/" class="font-semibold">Refactoring-4-Push Down Method and Pull Up and Posh Down Field</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Victor</a> 26 Oct 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-leaf fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/refactoring/refactoring-Pull-Up-Method/" class="font-semibold">Refactoring-3-Pull Up Method</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Victor</a> 26 Oct 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-leaf fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/refactoring/refactoring-Move-Method/" class="font-semibold">Refactoring-2-Move Method</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Victor</a> 26 Oct 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-leaf fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/refactoring/refactoring-Extract-Interface-Method/" class="font-semibold">Refactoring-7-Extract-Interface or Method</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Victor</a> 26 Oct 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
 </div>
 
     <h5 class="font-semibold">Archives</h5>
 <div class="line line-dashed"></div>
 <ul class="list-unstyled">
+    
+    
+    
+    
+    <li><a href="/archives#112015" class="dk">November 2015</a></li>
+    <li class="line"></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
