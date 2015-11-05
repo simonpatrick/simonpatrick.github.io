@@ -57,6 +57,57 @@ var _hmt = _hmt || [];
 <!-- old home -->
 <div class="post-item" style="display:none;">
   <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/testing/thoughts/Random-TestCaseDesign/">测试用例设计- 随机指定一个产品的测试</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>有时面试的时候会随机指定一个产品进行测试,比如一个电梯,你会如何设计测试用例？这个问题很发散,更多的是看应聘者的条理 和分析能力. 本质上一个电梯是一个太大的范畴，实际测试的过程中很少一下子会有这么巨大的功能让你测试的。 与其说让你设计测试用例，其实好不如说让你想一个电梯有什么功能,然后根据功能再来考虑测试用例,所以更多的 是考察思路,在实际的测试工作中,如果突然有个人说我今天完成了一个电梯的功能,找个人给我测一下吧。 那么多半这个项目就是个让测试欲哭无泪的项目。 不过既然面试有人问这样的问题，那么就分析分析吧，以下我是把电梯转化为类似互联网产品来做的分析， 完全是个人想法,一定有非常多欠缺。 后端服务组件和客户端分离(Client-Server/MVC) 首先其实对把一个电梯分成不同的组件： 驱动服务: 可以使电梯上下行(后台服务) 门: 开门关门(后台服务) 电梯操作面板: 人机界面,担当用户和电梯的一个中间人作用,将用户操作转化为指令来控制电梯 (app/web page) (如果简单的话可能操作命令转换就都在这个地方了，如果复杂可能还有一个控制系统层) 指令控制系统(调度系统,监听器或者Queue)...<br>
+        <!-- <p><p>有时面试的时候会随机指定一个产品进行测试,比如一个电梯,你会如何设计测试用例？这个问题很发散,更多的是看应聘者的条理 和分析能力.</p> <p>本质上一个电梯是一个太大的范畴，实际测试的过程中很少一下子会有这么巨大的功能让你测试的。 与其说让你设计测试用例，其实好不如说让你想一个电梯有什么功能,然后根据功能再来考虑测试用例,所以更多的 是考察思路,在实际的测试工作中,如果突然有个人说我今天完成了一个电梯的功能,找个人给我测一下吧。 那么多半这个项目就是个让测试欲哭无泪的项目。</p> <p>不过既然面试有人问这样的问题，那么就分析分析吧，以下我是把电梯转化为类似互联网产品来做的分析， 完全是个人想法,一定有非常多欠缺。</p> <h2>后端服务组件和客户端分离(Client-Server/MVC)</h2> <p>首先其实对把一个电梯分成不同的组件：</p> <ul> <li>驱动服务: 可以使电梯上下行(后台服务)</li> <li>门: 开门关门(后台服务)</li> <li>电梯操作面板: 人机界面,担当用户和电梯的一个中间人作用,将用户操作转化为指令来控制电梯 (app/web page) (如果简单的话可能操作命令转换就都在这个地方了，如果复杂可能还有一个控制系统层)</li>...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Oct 22, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/automation/testng-simple-report/">TestNG 报告定制最简单的原理</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>如果需要定制TestNG的测试报告,可以先想一下首先需要什么的数据,其实最简单的数据就是测试用例成功失败的数据, 那么实际上TestNG提供了ITestListener的接口可以让你获取这些测试数据. 同时IReporter 接口可以让用户在调用最后自己生成测试报告. 所以其实只要用一个类实现ITestListener,IReporter就可以了. ITestListener,IReporter实现 一下是我一个最简单的实现, 实际上TestNG开放出来的这些监听器,主要是让你可以获取TestNG 测试容器中运行测试的数据,上下文. 关于代码里面的ITestResult, xmlSuites,suites 可以自行查找 public class TestNGSimpleReport implements ITestListener, IReporter { private...<br>
+        <!-- <p><p>如果需要定制TestNG的测试报告,可以先想一下首先需要什么的数据,其实最简单的数据就是测试用例成功失败的数据, 那么实际上TestNG提供了ITestListener的接口可以让你获取这些测试数据. 同时IReporter 接口可以让用户在调用最后自己生成测试报告.</p> <p>所以其实只要用一个类实现ITestListener,IReporter就可以了.</p> <h2>ITestListener,IReporter实现</h2> <p>一下是我一个最简单的实现, 实际上TestNG开放出来的这些监听器,主要是让你可以获取TestNG 测试容器中运行测试的数据,上下文. 关于代码里面的ITestResult, xmlSuites,suites 可以自行查找</p> <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Sep 24, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/automation/page-factory/">Page Factory in Selenium</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>本文主要用来分析Page Factory实现的原理以及一些扩展的可能性。 Page Factory 的例子 Selenium Page Factory Wiki 首先解释一下这个例子： 使用注解描述元素定位 使用 PageFactory.initElements(driver, page); public class GoogleSearchPage { // The...<br>
+        <!-- <p><p>本文主要用来分析Page Factory实现的原理以及一些扩展的可能性。</p> <h2>Page Factory 的例子</h2> <p><a href="https://code.google.com/p/selenium/wiki/PageFactory">Selenium Page Factory Wiki</a></p> <p>首先解释一下这个例子：</p> <ul> <li>使用注解描述元素定位</li> <li>使用 <code>PageFactory.initElements(driver, page);</code></li> </ul> <div class="highlight"><pre><code class="language-java"...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Sep 24, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
     <h2 class="post-title"><a class="post-link" href="/scm/python/svn_reviewboard_python/">Python完成简单的SVN Reviewboard Precommit的客户端</a></h2>
     <div class="line line-lg"></div>
     <div class="post-sum">
@@ -366,27 +417,90 @@ download-cache = /tmp
   </div>
 </div>
 
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/tools/web_testing_tools/">Web Testing Tools list</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>1. Cross Browser(浏览器兼容性测试) Why 无数的浏览器，无数的版本，无数的终端。。。。。。。 这个理由就足够需要做兼容性测试了 测试的悲剧就是这样的，听上去很简单，做起来就要人命，还被人不理解。。。。。。 How * 自动化测试：自己写截屏工具，自己比较（需要进一步研究） 1. sikuli 2. selenium 3. http://testingbot.com 4. http://saucelabs.com * 网站：http://browsershots.org...<br>
-        <!-- <p><h1>1. Cross Browser(浏览器兼容性测试)</h1> <h3>Why</h3> <div class="highlight"><pre><code class="language-text" data-lang="text">无数的浏览器，无数的版本，无数的终端。。。。。。。 这个理由就足够需要做兼容性测试了 测试的悲剧就是这样的，听上去很简单，做起来就要人命，还被人不理解。。。。。。 </code></pre></div> <h3>How</h3> <div class="highlight"><pre><code class="language-text" data-lang="text">* 自动化测试：自己写截屏工具，自己比较（需要进一步研究） 1. sikuli 2....<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Sep 24, 2012
-      
-    </div>
-  </div>
-</div>
-
 
 <section class="panel panel-default portlet-item">
   <header class="panel-heading"><strong>Article List</strong></header>
   <section class="panel-body">
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-magic fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/testing/thoughts/Random-TestCaseDesign/" class="h4 text-success">测试用例设计- 随机指定一个产品的测试</a>
+        <small class="block m-t-xs">
+            
+            testing
+            , 
+            
+            thoughts
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Oct 22, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/automation/testng-simple-report/" class="h4 text-success">TestNG 报告定制最简单的原理</a>
+        <small class="block m-t-xs">
+            
+            automation
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Sep 24, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/automation/page-factory/" class="h4 text-success">Page Factory in Selenium</a>
+        <small class="block m-t-xs">
+            
+            automation
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Sep 24, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
     
     <article class="media">
     <div class="pull-left">
@@ -821,31 +935,6 @@ download-cache = /tmp
     </div>
 </article>
 
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/tools/web_testing_tools/" class="h4 text-success">Web Testing Tools list</a>
-        <small class="block m-t-xs">
-            
-            tools
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">Sep 24, 2012</span>
-        </em>
-    </div>
-</article>
-
     
   </section>
 </section>
@@ -866,9 +955,13 @@ download-cache = /tmp
         <li class="active"><a href="/page2">2</a></li>
         
         
+        
+        <li><a href="/page3">3</a></li>
+        
+        
 
         
-        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+        <li><a href="/page3"><i class="fa fa-chevron-right"></i></a></li>
         
     </ul>
 </div>
@@ -935,7 +1028,7 @@ download-cache = /tmp
     
     <li>
         <a href="/categories/thoughts/" class="dk">
-            <span class="badge pull-right">2</span>
+            <span class="badge pull-right">3</span>
             Thoughts
         </a>
     </li>
@@ -959,7 +1052,7 @@ download-cache = /tmp
     
     <li>
         <a href="/categories/shell/" class="dk">
-            <span class="badge pull-right">7</span>
+            <span class="badge pull-right">8</span>
             Shell
         </a>
     </li>
@@ -995,7 +1088,7 @@ download-cache = /tmp
     
     <li>
         <a href="/categories/testing/" class="dk">
-            <span class="badge pull-right">1</span>
+            <span class="badge pull-right">2</span>
             Testing
         </a>
     </li>
@@ -1062,6 +1155,18 @@ download-cache = /tmp
     <li class="line"></li>
     
     
+    
+    
+    
+    <li>
+        <a href="/categories/microservice/" class="dk">
+            <span class="badge pull-right">1</span>
+            Microservice
+        </a>
+    </li>
+    <li class="line"></li>
+    
+    
 </ul>
 
     <div class="tags m-b-lg">
@@ -1096,11 +1201,60 @@ download-cache = /tmp
     
     <a href="/tags/#refactoring" class="label bg-success">Refactoring</a>
     
+    <a href="/tags/#microservice" class="label bg-success">Microservice</a>
+    
 </div>
 
     <h5 class="font-semibold">Recent Posts</h5>
 <div class="line line-dashed"></div>
 <div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/shell/generate-jekyll-post-file/" class="font-semibold">shell来自动生成Jekyll post文件</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 05 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-magic fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/testing/thoughts/Test-Tools/" class="font-semibold">测试用例-一些有意思的工具</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 04 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/microservice/Docker-Notes/" class="font-semibold">Docker 解释</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 04 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
     
     <article class="media">
         <div class="pull-left">
@@ -1151,57 +1305,6 @@ download-cache = /tmp
     </article>
     <div class="line"></div>
     
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-leaf fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/refactoring/refactoring-arrowhead-and-double-negative/" class="font-semibold">Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 03 Nov 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-leaf fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/refactoring/replace-inheritance-with-delegation/" class="font-semibold">Refactoring-6-Replace Inheritance with Delegation</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 26 Oct 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-leaf fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/refactoring/refactoring-rename/" class="font-semibold">Refactoring-5-rename</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 26 Oct 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
 </div>
 
     <h5 class="font-semibold">Archives</h5>
@@ -1213,6 +1316,18 @@ download-cache = /tmp
     
     <li><a href="/archives#112015" class="dk">November 2015</a></li>
     <li class="line"></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

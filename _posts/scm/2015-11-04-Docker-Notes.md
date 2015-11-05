@@ -2,9 +2,9 @@
 layout: post
 title: "Docker 解释"
 modified:
-categories: [MICROSERVICE,DOCKER]
+categories: [microservice]
 excerpt:
-tags: [MICROSERVICE,DOCKER]
+tags: [microservice]
 image:
   feature:
 date: 2015-11-04T10:31:11+08:00
@@ -47,7 +47,7 @@ Docker Dictionary - Registry
 
 ## Docker Building Images
 
-[img](../pics/docker_building.jpg)
+![img](../../assets/images/pics/docker_building.jpg)
 
 ## How Containers run
 - Docker daemon runs as root and starts containers
