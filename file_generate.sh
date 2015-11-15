@@ -6,6 +6,21 @@ echo "current location: $PWD"
 echo "category: $CAT"
 echo "file_name: $TITLE"
 
+if [ ${#1} -le 0 ]
+then 
+    echo "please input your file category"
+    exit
+fi
+
+if [ ${#2} -le 0 ]
+then 
+    echo "please input your blog's title"
+    exit
+fi
+
+
+# add parameter validation 
+
 FilePrefix=`date "+%Y-%m-%d-"`
 FILE_NAME="$FilePrefix$TITLE.md"
 echo "target file name is $FILE_NAME"
