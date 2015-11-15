@@ -1,2 +1,4 @@
+*.ppt
+*.pdf
 _site/
 .DS_Store
