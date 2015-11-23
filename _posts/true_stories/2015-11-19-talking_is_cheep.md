@@ -131,3 +131,29 @@ sql 如下， 我的疑问是难道totalCount，totalMoney不能用一个SQL取�
      </select>
 </sqlMap>
 ```
+
+## Another Duplicated DB Calls
+
+```java
+PropertyEntrustApply aEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.A);
+PropertyEntrustApply bEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.B);
+PropertyEntrustApply cRentEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.C);
+PropertyEntrustApply dSellEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.D);
+PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.E);
+
+```
+
+```java
+public PropertyEntrustApply selectPropertyEntrustApply(String propertyId, EntrustType entrustType) {
+			 List<PropertyEntrustApply> propertyEntrustApplyList = propertyEntrustApplyDao.listByPropertyId(propertyId);
+			 for (PropertyEntrustApply propertyEntrustApply : propertyEntrustApplyList) {
+					 if (entrustType.getValue().equals(propertyEntrustApply.getEntrustType())) {
+							 return propertyEntrustApply;
+					 }
+			 }
+			 return null;
+	 }
+```
+
+问开发说这里5次数据库访问没有必要，开发说参数不同，需要的5次访问，其实测试也那么好糊弄，the code never lies.
+然后再仔细一看说没时间改，其实改这个需用5分钟吗？
