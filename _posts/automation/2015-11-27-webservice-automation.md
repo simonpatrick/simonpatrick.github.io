@@ -34,7 +34,7 @@ date: 2015-11-27-11:10:00
 - 可以查看测试结果，这个其实可以理解为某种测试框架的一个功能，不如JUNIT，TESTNG，他们
 
 总体上我自己的总结是如下图:
-![../../assets/images/pics/api_testing.png]
+![img](../../assets/images/pics/api_testing.png)
 
 ### 接口自动化测试脚手架的构建
 
@@ -119,6 +119,7 @@ Service的描述实际上就是一个JSON文件，只不过自己规定了一下
 构建requestData实际上就是设计测试用例，那么这里也是使用Excel的方式，将不同的值填写到excel里面，不过为了减少set值这样的操作，这个脚手架就提供了一些工具，可以直接将数据设置到RequestData实例，具体的操作如下:
 
 Excel是如下格式的：
+
 |变量名|测试用例1|测试用例2|
 |--- |---|----|
 |data.queryParameters(username)|1|1|
