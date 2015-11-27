@@ -40,6 +40,7 @@ date: 2015-11-27-11:10:00
 ### 接口自动化测试脚手架的构建
 
 根据以上的分析如果自己需要实现的话，最主要需要实现一下其实就是请求的构建，请求构建包括了:
+
 - 发起请求的客户端
 - 请求数据的构建
 
@@ -50,10 +51,12 @@ date: 2015-11-27-11:10:00
 - Spring RestTemplate所在的包还有其他一些接口的支持，以后如果使用其他接口可以不需要换包也可以做
 
 在实际的使用过程中，其实也遇到了一些问题，比如如下的内容:
+
 - HTTPS的访问
 - 开发接口定义不够准确的问题,造成使用RestTemplate时候出现了一些不在开始预期范中的问题
 
 如何解决这些问题,在后面再详细介绍，这里说明一下使用RestTemplate的一个主要流程：
+
 - 1. 构建请求，设置请求的Header，URL，Accept，ContextType，Token等等
 - 2. 调用请求获取返回的Response，
   这个ResponseRestTemplate中实际上封装了一个ResponseEntity的类，里面包括了请求状态，Body之类
@@ -110,6 +113,7 @@ Service的描述实际上就是一个JSON文件，只不过自己规定了一下
   ResponseEntity response = RestTemplateHelper.build(serviceDescriptionPath,requestData).call();
 ```
 说明一下的是：
+
 - serviceDescriptionPath就是接口的描述
 - requestData就是需要进行测试的数据
 
@@ -173,6 +177,7 @@ Excel是如下格式的：
 
 当封装好这些东西之后，发现所有的接口都类似了，然后就做了代码生成的工具了,代码生成器的入口实际上个就是那个服务描述文件开始的，
 所以代码生成器的参数就是服务描述文件，在实际的使用的过程中，接口描述这个文件也可以自动生成，目前总共支持以下几种:
+
 - 手动编写描述文件
 - 抓取开发API规格网站接口的描述，自动生成描述文件
 - 解析HAR文件自动生成描述文件，解析HAR其实不难，就是繁琐一点字段有点多
@@ -180,6 +185,7 @@ Excel是如下格式的：
 后续想打通和POSTMAN的连接，可以接收POSTMAN的导出文件，然后也可以导出POSTMANT的，以后开BUG就什么也不说，直接放一个POSTMAN文件其实也挺帅的
 
 至此一个接口测试的脚手架就大致完成了.总结起来就是:
+
 - 封装了RestTemplate，让他接受一个接口的描述文件，一个请求的数据
 - 通过Excel传数据给请求的数据进行数据驱动
 - 相同类似的代码进行代码生成
@@ -269,6 +275,7 @@ public class ModifiedFastJsonHttpMessageConverter extends AbstractHttpMessageCon
 ## 后续的一些想法
 
 后续希望在这个基础上再做点其他的一些事情:
+
 - 增加POSTMAN的代码生成的支持
 - 探索能不能通过API接口描述直接生成JMETER的JMX文件，可以讲基础的JMETER性能测试的基础代码也生成好
 - 整理一下放到GITHUB上面，其实整个脚手架自己也就是几个文件而已，:)
