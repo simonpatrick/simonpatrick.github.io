@@ -9,6 +9,7 @@ date: 2015-11-15-16:56:08
 ---
 
 Tomcat JMX Monitoring
+
 - Access Data Via JMX "MBeans"
 - Read/Write Bean Attributes
 - Invoke Operations
@@ -17,24 +18,28 @@ Tomcat JMX Monitoring
 - Tomcat Exposes certain status
 
 ## Monitoring JVM
+
 - Head status
 - Total,Free Used Memory
 - GC(Garbage Collection)
 - GC Pause Time
 
 ## Monitoring Tomcat
+
 - Status of Connector
 - Status of request-processor thread pool
 - Status of data sources
 - Request performance
 
 ## JMX Tools
+
 - jconsole (jdk)
 - VisualVM (jdk)
 - Most Profiles (Yourkit,etc.)
 - Custom tools using javax.management
 
 ## Monitoring Your Application
+
 - Monitor Application Processes
 - Performance Metrics
 - On-the-fly re-configuration
@@ -48,6 +53,7 @@ Tomcat JMX Monitoring
 
 
 ## Example MBean
+
 - Servlet Filter that captures total request processing time
   - Timestamp prior to request
   - Timestamp after request
@@ -55,6 +61,7 @@ Tomcat JMX Monitoring
 
 
 ## Automated Monitoring
+
 - Remote Access
 - Large Scale
 - Constant
