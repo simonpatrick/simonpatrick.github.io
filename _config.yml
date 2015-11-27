@@ -9,7 +9,7 @@ timezone: Beijing
 # Build settings
 highlighter: pygments
 permalink: /:categories/:title/
-
+gems: [jekyll-paginate]
 # markdown: kramdown
 markdown: redcarpet
 redcarpet:

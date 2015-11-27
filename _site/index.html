@@ -57,6 +57,74 @@ var _hmt = _hmt || [];
 <!-- old home -->
 <div class="post-item" style="display:none;">
   <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/true_stories/talking_is_cheep/">Talking is Cheap,show me the code</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>当看到如下的代码出现在production代码库的时候，不知道做何想法？无数的人动辄就谈客户需求，要触动痛点,是的没错，但是软件工程师还是要点工程追求的吧？如果这样的代码存在一些时候也就罢了，结果存在来Controller里面3-4年之久，情何以堪呀？指望用这样的代码去触动痛点？你是认真的吗？ 工程师首先是个匠人,先写好自己的代码，再去谈论这些虚幻的东西.看几本抽象的书，谁都可以高谈阔论，so what? Talking is Cheap,right? show me the code. protected String formatUserJSON(VSalary newSalary){ SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); String...<br>
+        <!-- <p><p>当看到如下的代码出现在production代码库的时候，不知道做何想法？无数的人动辄就谈客户需求，要触动痛点,是的没错，但是软件工程师还是要点工程追求的吧？如果这样的代码存在一些时候也就罢了，结果存在来Controller里面3-4年之久，情何以堪呀？指望用这样的代码去触动痛点？你是认真的吗？ 工程师首先是个匠人,先写好自己的代码，再去谈论这些虚幻的东西.看几本抽象的书，谁都可以高谈阔论，so what? Talking is Cheap,right? show me the code.</p> <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">protected</span> <span class="n">String</span> <span class="nf">formatUserJSON</span><span class="o">(</span><span...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 19, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/java/concurrence_dead_lock/">Java 并发死锁实践－1</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>写点学习Java 并发死锁实践的来记录一下学习JAVA 并发的经历. ## 什么是JAVA的死锁(dead lock) 死锁就是两个线程一直相互等待. 实例代码如下: public class ThreadDeadlock { public static void main(String[] args) throws InterruptedException {...<br>
+        <!-- <p><p>写点学习Java 并发死锁实践的来记录一下学习JAVA 并发的经历.</p> <p>## 什么是JAVA的死锁(dead lock) 死锁就是两个线程一直相互等待. <img src="http://www.importnew.com/10661.html/deadlock_flat_reentrant_locks" alt="img"></p> <p>实例代码如下:</p> <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ThreadDeadlock</span>...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 18, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/testing/error_toleration/">软件容错</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>软件的世界已经变的及其复杂，在互联网的世界中一个个知道不知道的API将世界连接起来，如蜘蛛网一般,一个看的到的功能可能依赖了好几个看不到的API,所以中间出点错误实在不能说是个意外了。但是出错归出错，出错了软件也是一样要处理这些问题，下面就讲讲我学到遇到的一点容错的小知识。 容错的目标 降低或者最小化对系统可用性，可靠性的影响，举个例子来说就是单点故障，如果一个地方出现错误 而把整个系统网络都拖垮了，这个显然是不能接受的。可以用一下几个来形容错误： fault(缺陷) 一些bug error(错误) 一些业务无法正常执行 failure(故障) 业务较长时间无法正常执行 容错的方法 硬件容错：多备份,系统冗余，主备 软件容错：避免严重业务错误，降级，异常处理,侦测，监控，重启...... 系统容错 常见机遇鲁棒性 Process Pairs Graceful Degradation:降级 Selective...<br>
+        <!-- <p><p>软件的世界已经变的及其复杂，在互联网的世界中一个个知道不知道的API将世界连接起来，如蜘蛛网一般,一个看的到的功能可能依赖了好几个看不到的API,所以中间出点错误实在不能说是个意外了。但是出错归出错，出错了软件也是一样要处理这些问题，下面就讲讲我学到遇到的一点容错的小知识。</p> <h2>容错的目标</h2> <p>降低或者最小化对系统可用性，可靠性的影响，举个例子来说就是单点故障，如果一个地方出现错误 而把整个系统网络都拖垮了，这个显然是不能接受的。可以用一下几个来形容错误：</p> <ul> <li>fault(缺陷) 一些bug</li> <li>error(错误) 一些业务无法正常执行</li> <li>failure(故障) 业务较长时间无法正常执行</li> </ul> <h2>容错的方法</h2> <ul> <li>硬件容错：多备份,系统冗余，主备</li> <li>软件容错：避免严重业务错误，降级，异常处理,侦测，监控，重启......</li> <li>系统容错</li> </ul> <h2>常见机遇鲁棒性</h2> <ul>...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 16, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/java/tomcat-jmx-monitoring/">tomcat-jmx-monitoring</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>Tomcat JMX Monitoring - Access Data Via JMX &quot;MBeans&quot; - Read/Write Bean Attributes - Invoke Operations - Receive Notifications -...<br>
+        <!-- <p><p>Tomcat JMX Monitoring - Access Data Via JMX &quot;MBeans&quot; - Read/Write Bean Attributes - Invoke Operations - Receive Notifications -...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 15, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
     <h2 class="post-title"><a class="post-link" href="/python/String-Format-in-Python/">Python 中String的格式化</a></h2>
     <div class="line line-lg"></div>
     <div class="post-sum">
@@ -83,6 +151,23 @@ var _hmt = _hmt || [];
     <div class="text-muted">
       
       <i class="fa fa-clock-o icon-muted"></i> Nov 5, 2015
+      
+    </div>
+  </div>
+</div>
+
+<!-- old home -->
+<div class="post-item" style="display:none;">
+  <div class="caption wrapper-lg">
+    <h2 class="post-title"><a class="post-link" href="/microservice/Docker-Notes/">Docker 解释</a></h2>
+    <div class="line line-lg"></div>
+    <div class="post-sum">
+      <p>Docker 基本概念的解释 Docker dictionary - Container Docker Container is: A running instance of your app and it’s complete software stack...<br>
+        <!-- <p><p>Docker 基本概念的解释</p> <h2>Docker dictionary - Container</h2> <p>Docker Container is:</p> <ul> <li>A running instance of your app and it’s complete software...<br> -->
+    </div>
+    <div class="text-muted">
+      
+      <i class="fa fa-clock-o icon-muted"></i> Nov 4, 2015
       
     </div>
   </div>
@@ -120,15 +205,15 @@ link
 <!-- old home -->
 <div class="post-item" style="display:none;">
   <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/microservice/Docker-Notes/">Docker 解释</a></h2>
+    <h2 class="post-title"><a class="post-link" href="/ruby/ruby-basic-dependecy-management/">Ruby Dependency Management</a></h2>
     <div class="line line-lg"></div>
     <div class="post-sum">
-      <p>Docker 基本概念的解释 Docker dictionary - Container Docker Container is: A running instance of your app and it’s complete software stack...<br>
-        <!-- <p><p>Docker 基本概念的解释</p> <h2>Docker dictionary - Container</h2> <p>Docker Container is:</p> <ul> <li>A running instance of your app and it’s complete software...<br> -->
+      <p>在接触了一些语言之后,一般每一个语言都有工具来管理第三方包 的安装和管理. 比如: - Java Maven/Gradle - Python pip - NodeJS NPM 而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法 安装Bundler 一句话安装 bundler gem install bundler...<br>
+        <!-- <p><p>在接触了一些语言之后,一般每一个语言都有工具来管理第三方包 的安装和管理. 比如: - Java Maven/Gradle - Python pip - NodeJS NPM</p> <p>而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法</p> <h2>安装Bundler</h2> <p>一句话安装 bundler</p> <div class="highlight"><pre><code class="language-bash"...<br> -->
     </div>
     <div class="text-muted">
       
-      <i class="fa fa-clock-o icon-muted"></i> Nov 4, 2015
+      <i class="fa fa-clock-o icon-muted"></i> Nov 3, 2015
       
     </div>
   </div>
@@ -137,11 +222,11 @@ link
 <!-- old home -->
 <div class="post-item" style="display:none;">
   <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/ruby/ruby-basic-dependecy-management/">Ruby Dependency Management</a></h2>
+    <h2 class="post-title"><a class="post-link" href="/refactoring/refactoring-introduce-method-object-and-replace-conditions-with-poly/">Refactoring-10-introduce method object, replace conditions with polymorphism</a></h2>
     <div class="line line-lg"></div>
     <div class="post-sum">
-      <p>在接触了一些语言之后,一般每一个语言都有工具来管理第三方包 的安装和管理. 比如: - Java Maven/Gradle - Python pip - NodeJS NPM 而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法 安装Bundler 一句话安装 bundler gem install bundler...<br>
-        <!-- <p><p>在接触了一些语言之后,一般每一个语言都有工具来管理第三方包 的安装和管理. 比如: - Java Maven/Gradle - Python pip - NodeJS NPM</p> <p>而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法</p> <h2>安装Bundler</h2> <p>一句话安装 bundler</p> <div class="highlight"><pre><code class="language-bash"...<br> -->
+      <p>将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。 public class Registration { public void create(double amount,String name, double credits){ //do work } } 重构后: //instroduce new...<br>
+        <!-- <p><h2>将方法参数转化为类</h2> <p>有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。</p> <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Registration</span> <span class="o">{</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">(</span><span...<br> -->
     </div>
     <div class="text-muted">
       
@@ -169,23 +254,6 @@ link
 
 <p>不相干就违反了Single Responsibility的原则.</p>
 <br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Nov 3, 2015
-      
-    </div>
-  </div>
-</div>
-
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/refactoring/refactoring-introduce-method-object-and-replace-conditions-with-poly/">Refactoring-10-introduce method object, replace conditions with polymorphism</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。 public class Registration { public void create(double amount,String name, double credits){ //do work } } 重构后: //instroduce new...<br>
-        <!-- <p><h2>将方法参数转化为类</h2> <p>有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。</p> <div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Registration</span> <span class="o">{</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">(</span><span...<br> -->
     </div>
     <div class="text-muted">
       
@@ -354,83 +422,112 @@ link
   </div>
 </div>
 
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/automation/phantomjs-usage/">Phantomjs Tutorial</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>自己学习Phatomjs的教程,分享之. Quick Start 首先phantomjs是个什么? 以下是官方网站的解释: PhantomJS is a headless WebKit scriptable with a JavaScript API. It has fast and native...<br>
-        <!-- <p><p>自己学习Phatomjs的教程,分享之.</p> <h2>Quick Start</h2> <p>首先phantomjs是个什么? 以下是官方网站的解释:</p> <div class="highlight"><pre><code class="language-text" data-lang="text">PhantomJS is a headless WebKit scriptable with a JavaScript API. It has...<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Oct 24, 2015
-      
-    </div>
-  </div>
-</div>
-
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/truestories/interesting-methods/">True Stories: 有趣的函数</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>有趣的函数 下面是一些有趣而真实的函数，自己的感受是： 此刻的想法是复杂的 不敢想象 这是认真的吗? 为什么会这样? 如果4个key－value对是不是还要再写函数？ 这样的代码放在Controller层？你是认真的吗？ 测试有时真的很难改变什么,这样的代码其实已经无力吐槽了. // json方法 public String json(Map&lt;String,Object&gt; map){ JsonString jsonString = new JsonString();...<br>
-        <!-- <p><h2>有趣的函数</h2> <p>下面是一些有趣而真实的函数，自己的感受是：</p> <ul> <li>此刻的想法是复杂的</li> <li>不敢想象</li> <li>这是认真的吗?</li> <li>为什么会这样?</li> <li>如果4个key－value对是不是还要再写函数？</li> <li>这样的代码放在Controller层？你是认真的吗？</li> </ul> <p>测试有时真的很难改变什么,这样的代码其实已经无力吐槽了.</p> <div class="highlight"><pre><code class="language-java" data-lang="java"> <span class="c1">// json方法</span> <span class="kd">public</span>...<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Oct 24, 2015
-      
-    </div>
-  </div>
-</div>
-
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/designpattern/Functional-Programming-pattern/">Functional Patterns</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>记录一个关于函数式设计模式 Functional patterns Core Principles of FP design Functions Types Composition Functions as parameters Abstraction,Dependency injection Partial application, Continuations,Folds Chaining...<br>
-        <!-- <p><p>记录一个关于函数式设计模式</p> <h2>Functional patterns</h2> <ul> <li>Core Principles of FP design <ul> <li>Functions</li> <li>Types</li> <li>Composition</li> </ul></li> <li>Functions as parameters <ul> <li>Abstraction,Dependency injection</li>...<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Oct 23, 2015
-      
-    </div>
-  </div>
-</div>
-
-<!-- old home -->
-<div class="post-item" style="display:none;">
-  <div class="caption wrapper-lg">
-    <h2 class="post-title"><a class="post-link" href="/designpattern/Design_Patterns-After15/">Design Patterns 15 Years Later: An Interview with Erich Gamma, Richard Helm, and Ralph Johnson</a></h2>
-    <div class="line line-lg"></div>
-    <div class="post-sum">
-      <p>Design Patterns 15 Years Later: An Interview with Erich Gamma, Richard Helm, and Ralph Johnson
-
-
-
-准备翻译一下，留个记录
-<br>
-        <!-- <p><p><a href="http://www.informit.com/articles/article.aspx?p=1404056">Design Patterns 15 Years Later: An Interview with Erich Gamma, Richard Helm, and Ralph Johnson</a></p> <p><img src="figure1-1.bmp" alt="img"></p> <p>准备翻译一下，留个记录</p>...<br> -->
-    </div>
-    <div class="text-muted">
-      
-      <i class="fa fa-clock-o icon-muted"></i> Oct 23, 2015
-      
-    </div>
-  </div>
-</div>
-
 
 <section class="panel panel-default portlet-item">
   <header class="panel-heading"><strong>Article List</strong></header>
   <section class="panel-body">
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/true_stories/talking_is_cheep/" class="h4 text-success">Talking is Cheap,show me the code</a>
+        <small class="block m-t-xs">
+            
+            true_stories
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Nov 19, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/java/concurrence_dead_lock/" class="h4 text-success">Java 并发死锁实践－1</a>
+        <small class="block m-t-xs">
+            
+            java
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Nov 18, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-magic fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/testing/error_toleration/" class="h4 text-success">软件容错</a>
+        <small class="block m-t-xs">
+            
+            testing
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Nov 16, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
+    
+    <article class="media">
+    <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+    <div class="media-body">
+        <a href="/java/tomcat-jmx-monitoring/" class="h4 text-success">tomcat-jmx-monitoring</a>
+        <small class="block m-t-xs">
+            
+            java
+            
+            
+        </small>
+        <em class="text-xs">
+            Posted on <span class="text-danger">Nov 15, 2015</span>
+        </em>
+    </div>
+</article>
+
+<div class="line pull-in"></div>
+
     
     <article class="media">
     <div class="pull-left">
@@ -487,19 +584,14 @@ link
   <span class="fa-stack fa-lg">
     <i class="fa fa-circle fa-stack-2x"></i>
     
-      <i class="fa fa-magic fa-stack-1x text-white"></i>
-    
   </span>
 </div>
 
     <div class="media-body">
-        <a href="/testing/thoughts/Test-Tools/" class="h4 text-success">测试用例-一些有意思的工具</a>
+        <a href="/microservice/Docker-Notes/" class="h4 text-success">Docker 解释</a>
         <small class="block m-t-xs">
             
-            testing
-            , 
-            
-            thoughts
+            microservice
             
             
         </small>
@@ -517,14 +609,19 @@ link
   <span class="fa-stack fa-lg">
     <i class="fa fa-circle fa-stack-2x"></i>
     
+      <i class="fa fa-magic fa-stack-1x text-white"></i>
+    
   </span>
 </div>
 
     <div class="media-body">
-        <a href="/microservice/Docker-Notes/" class="h4 text-success">Docker 解释</a>
+        <a href="/testing/thoughts/Test-Tools/" class="h4 text-success">测试用例-一些有意思的工具</a>
         <small class="block m-t-xs">
             
-            microservice
+            testing
+            , 
+            
+            thoughts
             
             
         </small>
@@ -573,7 +670,7 @@ link
 </div>
 
     <div class="media-body">
-        <a href="/refactoring/remove-god-class/" class="h4 text-success">Refactoring-8-remove God Class</a>
+        <a href="/refactoring/refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="h4 text-success">Refactoring-10-introduce method object, replace conditions with polymorphism</a>
         <small class="block m-t-xs">
             
             refactoring
@@ -600,7 +697,7 @@ link
 </div>
 
     <div class="media-body">
-        <a href="/refactoring/refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="h4 text-success">Refactoring-10-introduce method object, replace conditions with polymorphism</a>
+        <a href="/refactoring/remove-god-class/" class="h4 text-success">Refactoring-8-remove God Class</a>
         <small class="block m-t-xs">
             
             refactoring
@@ -854,106 +951,6 @@ link
     </div>
 </article>
 
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/automation/phantomjs-usage/" class="h4 text-success">Phantomjs Tutorial</a>
-        <small class="block m-t-xs">
-            
-            automation
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">Oct 24, 2015</span>
-        </em>
-    </div>
-</article>
-
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/truestories/interesting-methods/" class="h4 text-success">True Stories: 有趣的函数</a>
-        <small class="block m-t-xs">
-            
-            truestories
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">Oct 24, 2015</span>
-        </em>
-    </div>
-</article>
-
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/designpattern/Functional-Programming-pattern/" class="h4 text-success">Functional Patterns</a>
-        <small class="block m-t-xs">
-            
-            designpattern
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">Oct 23, 2015</span>
-        </em>
-    </div>
-</article>
-
-<div class="line pull-in"></div>
-
-    
-    <article class="media">
-    <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-    <div class="media-body">
-        <a href="/designpattern/Design_Patterns-After15/" class="h4 text-success">Design Patterns 15 Years Later: An Interview with Erich Gamma, Richard Helm, and Ralph Johnson</a>
-        <small class="block m-t-xs">
-            
-            designpattern
-            
-            
-        </small>
-        <em class="text-xs">
-            Posted on <span class="text-danger">Oct 23, 2015</span>
-        </em>
-    </div>
-</article>
-
     
   </section>
 </section>
@@ -1033,7 +1030,7 @@ link
     
     <li>
         <a href="/categories/scm/" class="dk">
-            <span class="badge pull-right">2</span>
+            <span class="badge pull-right">1</span>
             Scm
         </a>
     </li>
@@ -1068,6 +1065,18 @@ link
     
     
     <li>
+        <a href="/categories/ruby/" class="dk">
+            <span class="badge pull-right">2</span>
+            Ruby
+        </a>
+    </li>
+    <li class="line"></li>
+    
+    
+    
+    
+    
+    <li>
         <a href="/categories/shell/" class="dk">
             <span class="badge pull-right">8</span>
             Shell
@@ -1080,9 +1089,9 @@ link
     
     
     <li>
-        <a href="/categories/ruby/" class="dk">
-            <span class="badge pull-right">2</span>
-            Ruby
+        <a href="/categories/SCM/" class="dk">
+            <span class="badge pull-right">1</span>
+            Scm
         </a>
     </li>
     <li class="line"></li>
@@ -1105,7 +1114,7 @@ link
     
     <li>
         <a href="/categories/testing/" class="dk">
-            <span class="badge pull-right">2</span>
+            <span class="badge pull-right">3</span>
             Testing
         </a>
     </li>
@@ -1117,7 +1126,7 @@ link
     
     <li>
         <a href="/categories/java/" class="dk">
-            <span class="badge pull-right">1</span>
+            <span class="badge pull-right">3</span>
             Java
         </a>
     </li>
@@ -1184,6 +1193,18 @@ link
     <li class="line"></li>
     
     
+    
+    
+    
+    <li>
+        <a href="/categories/true_stories/" class="dk">
+            <span class="badge pull-right">1</span>
+            True_stories
+        </a>
+    </li>
+    <li class="line"></li>
+    
+    
 </ul>
 
     <div class="tags m-b-lg">
@@ -1198,9 +1219,9 @@ link
     
     <a href="/tags/#python" class="label bg-success">Python</a>
     
-    <a href="/tags/#shell" class="label bg-success">Shell</a>
-    
     <a href="/tags/#ruby" class="label bg-success">Ruby</a>
+    
+    <a href="/tags/#shell" class="label bg-success">Shell</a>
     
     <a href="/tags/#SCM" class="label bg-success">Scm</a>
     
@@ -1220,11 +1241,75 @@ link
     
     <a href="/tags/#microservice" class="label bg-success">Microservice</a>
     
+    <a href="/tags/#true_stories" class="label bg-success">True_stories</a>
+    
 </div>
 
     <h5 class="font-semibold">Recent Posts</h5>
 <div class="line line-dashed"></div>
 <div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/true_stories/talking_is_cheep/" class="font-semibold">Talking is Cheap,show me the code</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 19 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/java/concurrence_dead_lock/" class="font-semibold">Java 并发死锁实践－1</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 18 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+      <i class="fa fa-magic fa-stack-1x text-white"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/testing/error_toleration/" class="font-semibold">软件容错</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 16 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
+    
+    <article class="media">
+        <div class="pull-left">
+  <span class="fa-stack fa-lg">
+    <i class="fa fa-circle fa-stack-2x"></i>
+    
+  </span>
+</div>
+
+        <div class="media-body">
+            <a href="/java/tomcat-jmx-monitoring/" class="font-semibold">tomcat-jmx-monitoring</a>
+            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 15 Nov 2015</div>
+        </div>
+    </article>
+    <div class="line"></div>
     
     <article class="media">
         <div class="pull-left">
@@ -1256,70 +1341,6 @@ link
     </article>
     <div class="line"></div>
     
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-magic fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/testing/thoughts/Test-Tools/" class="font-semibold">测试用例-一些有意思的工具</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 04 Nov 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/microservice/Docker-Notes/" class="font-semibold">Docker 解释</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 04 Nov 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/ruby/ruby-basic-dependecy-management/" class="font-semibold">Ruby Dependency Management</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 03 Nov 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
-    <article class="media">
-        <div class="pull-left">
-  <span class="fa-stack fa-lg">
-    <i class="fa fa-circle fa-stack-2x"></i>
-    
-      <i class="fa fa-leaf fa-stack-1x text-white"></i>
-    
-  </span>
-</div>
-
-        <div class="media-body">
-            <a href="/refactoring/remove-god-class/" class="font-semibold">Refactoring-8-remove God Class</a>
-            <div class="text-xs block m-t-xs"><a href="https://github.com/testless">Hedwig</a> 03 Nov 2015</div>
-        </div>
-    </article>
-    <div class="line"></div>
-    
 </div>
 
     <h5 class="font-semibold">Archives</h5>
@@ -1331,6 +1352,22 @@ link
     
     <li><a href="/archives#112015" class="dk">November 2015</a></li>
     <li class="line"></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
