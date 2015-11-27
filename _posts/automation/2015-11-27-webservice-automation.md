@@ -34,7 +34,8 @@ date: 2015-11-27-11:10:00
 - 可以查看测试结果，这个其实可以理解为某种测试框架的一个功能，不如JUNIT，TESTNG，他们
 
 总体上我自己的总结是如下图:
-![img](../../assets/images/pics/api_testing.png)
+
+![img](../assets/images/pics/api_testing.png)
 
 ### 接口自动化测试脚手架的构建
 
