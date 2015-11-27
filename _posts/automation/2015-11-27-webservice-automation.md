@@ -35,7 +35,7 @@ date: 2015-11-27-11:10:00
 
 总体上我自己的总结是如下图:
 
-![img](/assets/images/pics/api_testing.png)
+![img](../../assets/images/pics/api_testing.png)
 
 ### 接口自动化测试脚手架的构建
 
