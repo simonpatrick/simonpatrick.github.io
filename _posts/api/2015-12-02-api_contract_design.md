@@ -36,6 +36,7 @@ http://domain.org/api/v4/app/{appCode}/user/course/
 原来的URL里面coursePassed上太具体了，可能本来这个接口其实是获取course的考核状态，如果写上这个coursePassed的话，或许只能返回true or false了，是不是有点太具体了，实际的实现和扩展非常有可能和这个有区别，而且如果有时需要一个接口提供的知识course考核的状态，那么难道再写一个API的接口来给状态，如果不是，那么coursePassed叫法就是值得商量的.
 
 然后自己查了一下关于REST API设计原则的文章:
+
 - [rest api](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
 
 虽然没有直接说明如何设计，但是看完之后我自己觉得我的想法没有太大错误.感觉好的原则就是应该合乎一个常理的，通顺的，有上下文逻辑的.
