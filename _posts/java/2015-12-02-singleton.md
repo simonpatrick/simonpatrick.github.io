@@ -105,3 +105,7 @@ public enum EasySingleton{
     INSTANCE;
 }
 ```
+
+## source
+
+- [English](http://javarevisited.blogspot.sg/2014/05/double-checked-locking-on-singleton-in-java.html)
