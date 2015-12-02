@@ -22,6 +22,7 @@ http://domain.org/api/v4/app/{appCode}/user/course/{courseId}
 ```
 
 感觉这样的URL说清楚了：
+
 － 哪个APP
 － 是用户的course的状态
 － usercode可能不需要，应为已经使用了oAuth认证了
