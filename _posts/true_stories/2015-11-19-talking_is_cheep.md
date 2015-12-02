@@ -2,9 +2,9 @@
 layout: post
 title: "Talking is Cheap,show me the code"
 modified:
-categories: [true_stories]
+categories: [truestories]
 excerpt:
-tags: [true_stories]
+tags: [truestories]
 date: 2015-11-19-23:27:56
 ---
 
