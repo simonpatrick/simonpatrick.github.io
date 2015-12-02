@@ -53,7 +53,7 @@ Tomcat JMX Monitoring
 
 
 ## Example MBean
-
+  ttern
 - Servlet Filter that captures total request processing time
   - Timestamp prior to request
   - Timestamp after request
