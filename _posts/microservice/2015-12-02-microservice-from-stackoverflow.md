@@ -15,7 +15,7 @@ date: 2015-12-02-23:49:28
 
  - 有一张图：
 
- ![img](![img](../../assets/images/pics/micorservice_diagram.png)
+ ![img](![img](../../assets/images/pics/microservice_diagram.png)
  - 非HTTP协议的通信(AMQP......)
  - HATEOAS pattern
  - Service Registries like Zookeeper,Eureka
