@@ -83,4 +83,34 @@
   border: solid 1px #9f9f9f;
 }
 
-
+.highlight {
+  width: 97%;
+  margin: 10px auto;
+  font-size: 16px;
+  line-height: 1.2em;
+  background-color: #383830;
+  color: #eeeeee;
+  padding: 10px;
+  box-shadow: 3px 3px 12px 3px #383830;
+  border-radius: 10px; }
+  .highlight .lineno {
+    margin: 3px;
+    font-size: 16px;
+    color: #e6e6e6; }
+  .highlight .c, .highlight .cm, .highlight .cp, .highlight .c1, .highlight .cs {
+    /* comment */
+    color: #595959; }
+  .highlight .k, .highlight .kc, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .o, .highlight .nt {
+    /* key word*/
+    color: #f92672; }
+  .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo {
+    /*number*/
+    color: #ae81ff; }
+  .highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss {
+    /*string*/
+    color: #e6db74; }
+  .highlight .nf, .highlight .na, .highlight .nc {
+    color: #a6e22a; }
+  .highlight .css .k, .highlight .nb, .highlight .kd, .highlight .n {
+    font-style: italic;
+    color: #84d7ec; }
