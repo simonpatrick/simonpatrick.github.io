@@ -9,6 +9,7 @@ date: 2015-12-22-23:00:24
 ---
 
 Design Pattern overview, from GoF:
+
 - Creational
 Abstract Factory, Builder, Factory method, Prototype, Singleton
 - Structural
