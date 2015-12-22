@@ -26,4 +26,3 @@ Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Obse
 ![img](../../assets/images/pics/designpattern_6.jpg)
 ![img](../../assets/images/pics/designpattern_7.jpg)
 ![img](../../assets/images/pics/designpattern_8.jpg)
-![img](../../assets/images/pics/designpattern_9.jpg)
