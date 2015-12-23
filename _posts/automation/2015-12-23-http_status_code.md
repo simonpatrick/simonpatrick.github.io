@@ -10,18 +10,6 @@ date: 2015-12-23-22:59:16
 
 HTTP Status Codes
 This page is created from HTTP status code information found at ietf.org and Wikipedia. Click on the category heading or the status code link to read more.
----
-layout: post
-title: "http_status_code"
-modified:
-categories: [automation]
-excerpt:
-tags: [automation]
-date: 2015-12-23-22:59:16
----
-
-HTTP Status Codes
-This page is created from HTTP status code information found at ietf.org and Wikipedia. Click on the category heading or the status code link to read more.
 
 ## 1xx Informational
 
