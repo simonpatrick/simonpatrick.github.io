@@ -1,0 +1,1 @@
+FROM docker.cn/docker/ubuntu:latest

@@ -1,0 +1,23 @@
+# connect all activity
+- automation
+- quality dashboard
+- test case management
+- tests analysis
+- code review: phabricator
+- enviroment: docker/cloud
+- testing as service against cloud service
+- secuirty
+- performance testing
+- performance monitor
+- performance automation
+- mobile testing
+- mobile testing automation
+- screenshot comparison as a service
+- slack/other simillar products
+- if everything on cloud ,everything is possible
+- everything connected
+- git hosts
+- travis CI
+- jenkins service
+- sonar service/static analysis
+
