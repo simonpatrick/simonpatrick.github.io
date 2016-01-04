@@ -1,0 +1,19 @@
+{
+  "name": "simonpatrick.github.io",
+  "version": "1.0.0",
+  "description": "This is my place for learning, sharing. No matter you like or not like it, it is my house,:). In this blog, there are my true thoughts, true stories, and true emotions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonpatrick/simonpatrick.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonpatrick/simonpatrick.github.io/issues"
+  },
+  "homepage": "https://github.com/simonpatrick/simonpatrick.github.io#readme"
+}
