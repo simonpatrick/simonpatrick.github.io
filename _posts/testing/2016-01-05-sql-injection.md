@@ -75,4 +75,7 @@ ResultSet rs = prepStmt.executeQuery();
 - Hibernate native SQL
 - order by 没法使用绑定变量
 - 动态表名也无法使用
-  
+
+## OWASP JAVA Project
+
+[OWASP_Java_Project](https://www.owasp.org/index.php/Category:OWASP_Java_Project#tab=Project_and_OWASP_Resources)
