@@ -51,6 +51,7 @@ select * from user where username='admin' OR '1'='1' and password=' '
 ## 防范措施 Defense Strategy
 
 prevent SQL injection:
+
 - All queries should be parametrized.
 - All dynamic data should be explicitly bound to parametrized queries.
 - String concatenation should never be used to create dynamic SQL.
