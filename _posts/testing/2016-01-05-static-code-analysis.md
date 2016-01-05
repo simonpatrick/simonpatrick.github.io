@@ -13,11 +13,9 @@ checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检�
 
 ## checkstyle,PMD,findbugs 的是使用介绍
 
-|工具|使用场景介绍|
-|--|--------|
-|checkstyle|enforce coding conventions and standards in code|
-|PMD|detect bad practices,PMD 支持不同语言，如JAVA，Ruby，XML|
-|findbugs|ind potential bugs,比如NPE，equals，hashcode等的用法|
+- **checkstyle** enforce coding conventions and standards in code, missing/improper javadoc, naming conventions, placement of braces and parentheses, whitespace, line length, etc
+- **PMD** detect bad practices,PMD 支持不同语言，如JAVA，Ruby，XML|
+- **findbugs** really find potential bugs,比如NPE，equals，hashcode等的用法
 
 
 参考文章：
