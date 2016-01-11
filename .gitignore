@@ -3,3 +3,5 @@
 *.pdf
 _site/
 .DS_Store
+ppt/
+book/
