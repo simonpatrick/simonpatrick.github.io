@@ -12,7 +12,9 @@ python 的责任链模式.
 
 ***方法链：***
 
-```python
+上代码吧： 其实就死return 了一个self，java里面可能是this
+
+``` python
 
 class Person(object):
     def __init__(self, name, action):
@@ -43,6 +45,12 @@ if __name__ == '__main__':
 ```
 
 *** 责任链: ***
+
+这是一个责任链的模式，一个handler叠加，下例中：
+ConcreteHandler1->ConcreteHandler3->ConcreteHandler2->DefaultHandler,
+那么如果第一个request满足了ConcreteHandler1的条件，就结束了，如果没有怎尝试ConcreteHandler3，知道满足了就退出.
+这样就把一大批if else 转化成不同的handler了.
+
 ```python
 class Handler:
     def __init__(self, successor):
