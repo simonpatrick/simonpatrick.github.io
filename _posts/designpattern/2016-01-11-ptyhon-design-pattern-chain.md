@@ -44,7 +44,7 @@ if __name__ == '__main__':
     person.do_action().amount('5m').stop
 ```
 
-***责任链: ***
+***责任链:***
 
 这是一个责任链的模式，一个handler叠加，下例中：
 ConcreteHandler1->ConcreteHandler3->ConcreteHandler2->DefaultHandler,
