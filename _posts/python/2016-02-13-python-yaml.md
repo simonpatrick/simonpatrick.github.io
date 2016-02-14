@@ -115,31 +115,32 @@ def dump_file():
 ## 复杂一点的YAML格式
 
 下面一个yaml文件表示了一个JAVA maven项目里面主要的一些目录
-```yaml
-main:
-  - config
-  - domain
-  - repository
-  - service
-  - rest:
-    - controller
-    - dto
-    - exception
-  - exceptions
-  - utils
-resources:
-  - config
-test:
-  - config
-  - domain
-  - repository
-  - service
-  - rest:
-    - controller
-    - dto
-    - exception
-  - exceptions
-  - utils
+
+```java
+      main:
+        - config
+        - domain
+        - repository
+        - service
+        - rest:
+          - controller
+          - dto
+          - exception
+        - exceptions
+        - utils
+      resources:
+        - config
+      test:
+        - config
+        - domain
+        - repository
+        - service
+        - rest:
+          - controller
+          - dto
+          - exception
+        - exceptions
+        - utils
 ```
 
 读取此文件的python代码：

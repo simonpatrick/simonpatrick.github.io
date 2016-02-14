@@ -28,7 +28,7 @@ JAVA开发离不开IDE，IDE使用也离不开快捷键，一下是一些常用�
 
 ## refactor 快捷键对比
 
-![img](../../assets/images/pics/refactoring_shortkeys.jpg)
+![img](../../assets/images/pics/refactoring_shotkeys.jpg)
 
 ## universary access 快捷键对比
 

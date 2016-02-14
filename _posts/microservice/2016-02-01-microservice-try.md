@@ -16,6 +16,7 @@ date: 2016-02-01-23:57:29
 
 - Create a SpringBoot Application entry point
 - add Beans into springboot startup life cycle
+
   ```
   利用command-line runner的这个特性，再配合依赖注入，可以在应用程序启动时后首先引入一些依赖bean，例如data source、rpc服务或者其他模块等等，这些对象的初始化可以放在run方法中。不过，需要注意的是，在run方法中执行初始化动作的时候一旦遇到任何异常，都会使得应用程序停止运行，因此最好利用try/catch语句处理可能遇到的异常。
   ```
