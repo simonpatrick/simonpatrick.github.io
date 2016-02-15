@@ -7,14 +7,14 @@ poster: Hedwig
 
 timezone: Beijing
 # Build settings
-highlighter: pygments
+highlighter: rouge
 permalink: /:categories/:title/
 gems: [jekyll-paginate]
 # markdown: kramdown
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - fenced_code_blocks
-    - tables
+markdown: kramdown
+# redcarpet:
+#   extensions:
+#     - fenced_code_blocks
+#     - tables
 
 paginate: 20
