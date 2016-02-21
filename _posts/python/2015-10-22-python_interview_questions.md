@@ -66,8 +66,7 @@ def f(n):
     for i in range(n - 2):
         append_num = temp1 + temp2
         nums.append(append_num)
-        temp1 = temp2
-        temp2 = append_num
+        temp1,temp2=temp2,append_num
 
     return nums
 
