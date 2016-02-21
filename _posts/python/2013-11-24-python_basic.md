@@ -1,5 +1,5 @@
 ---
-layout: page 
+layout: page
 title: "Python 基础-语法"
 modified:
 categories: [python]
@@ -29,7 +29,7 @@ date: 2013-11-24T10:31:11+08:00
 	- 整数， 如2
 	- 浮点数，如2.22
 	- 长整数，如2.222222222222L
-	- 其他如：十进制，还有二进制、八进制、十六进制 
+	- 其他如：十进制，还有二进制、八进制、十六进制
 
 2. python 变量
 
@@ -37,7 +37,9 @@ date: 2013-11-24T10:31:11+08:00
 
 3. 四则运算
 运算符号：
+```
 #- +,-,*,/#
+```
 
 看一下例子就可以了解基本的运算和类型了：
 
@@ -78,19 +80,21 @@ ZeroDivisionError: long division or modulo by zero
 ```
 
 对于数值计算来说,以下内容供参考
-> 
+>
 对于需要非常精确的情况，可以使用 decimal 模块，它实现的十进制运算适合会计方面的应用和高精度要求的应用。另外 fractions 模块支持另外一种形式的运算，它实现的运算基于有理数（因此像1/3这样的数字可以精确地表示）。最高要求则可是使用由 SciPy提供的 Numerical Python 包和其它用于数学和统计学的包。列出这些东西，仅仅是让看官能明白，解决问题的方式很多，后面会用这些中的某些方式解决上述问题。
 [浮点数算法：争议和限制](https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues)
 
 ## 使用计算模块 ```division```
 
 使用python的模块来作除法：```from __future__ import division``` 所有的除法就都是浮点数了:
+
 ```python
 	from __future__ import division
 	print 5/2  # 2.5 如果不用division，则为2
 ```
 整除方法：
-```
+
+```python
 print divmod(5,2) # 返回元组（2，1）
 print divmod(10,3)[0],divmod(10,3)[1],divmod(10,3)
 # 结果是：
@@ -108,6 +112,7 @@ print round(10.0 / 3, 4)
 ```
 
 结果是：
+
 ```
 1.23
 1.235
@@ -115,6 +120,7 @@ print round(10.0 / 3, 4)
 ```
 
 以下结果不要惊慌,这是正常的！！！！
+
 ```python
 round(1.2345,3)
 1.234               #应该是：1.235
@@ -137,7 +143,7 @@ for x in functions:
 ```
 ## 优先级
 
-以下是优先级从低到高的顺序： 
+以下是优先级从低到高的顺序：
 
 |运算符|描述|
 |------|----|
@@ -164,8 +170,10 @@ for x in functions:
 |(experession,...)|绑定或元组显示|
 |[expression,...]|列表显示|
 |{key:datum,...}|字典显示|
-|'expression,...'|字符串转换| 
+|'expression,...'|字符串转换|
+
 ### 1.Python基础常识
+
 1. 安装python（windows基本就是下载后安装，linux和mac自带
 2. 添加python到windows 的path中
 3. 执行python文件： ```python <file>```
@@ -174,31 +182,40 @@ for x in functions:
 ```python
     '#_*_coding:utf-8_*_'
 ```
+
 5. 注释
 
-```
+```python
 """ docs """
 ```
 
 ### 2.Python 注释和#号
+
 - # A comment
 
 ### 3.数字和数字计算
+
+```
 - +，-，/,*,%,<,>,<=,>=
+```
 
 ### 4. 变量<variable>和命名
+
 1. car = 100
 2. space_in_a_car = 4.0
 3. 和java的常用规范还是有点不同，python不用驼峰
 
 ### 5. 打印更多的变量
 1. 格式化打印
+
 ```python
 print "this is for %s", %test
 ```
 
 ### 6.字符串和文本
+
 1. 可以带格式参数赋值
+
 ```python
  x= "%s,%s" % (s1,s2)
 ```
@@ -214,6 +231,7 @@ print "this is for %s", %test
 ```
 
 ### 10. IO
+
 1. close–关闭文件。跟你编辑器的文件->保存..一个意思
 2. read – 读取文件内容。你可以把结果赋给一个变量
 3. readline–读取文本文件中的一行
@@ -222,11 +240,13 @@ print "this is for %s", %test
 6. open("",a/w/r), read, write, append
 
 ### 11. Function and Variants
+
 ```python
 def functionName() :
 ```
 
 ### 12. return of Function
+
 ```python
 def function1():
     return 1;
@@ -237,11 +257,13 @@ def function1():
 ###15.if, if-else,if-elif-else
 ###16.循环，列表
 ###17. 列表
+
 1. 定义 ：[]
 2. append： element.append()
 3. 访问index x[0]....
 
 ###18. 关键字
+
 • and
 • del
 • from • not
@@ -270,18 +292,22 @@ def function1():
 • lambda/try
 
 ###19. 数据类型
+
 • True
 • False
 • None
 • strings • numbers • floats • lists
 
 ###20. list and dictionary
+
 1. list : []
 2. dictionary :{"key" :"value"}
 
 ###21. module,class,object
+
 1. module: 不是类，里面可以定义函数，变量，大体可以看做一个静态类或者一个单例类
 2. class：和JAVA里面的类相似
+
 ```python
     __author__ = 'simon'
     # _*_ coding:utf-8 _*_
@@ -302,7 +328,9 @@ def function1():
 
 ###22. is-a/has-a
 ###23. 继承(Inheritance)VS合成(composition)
+
 1. 隐身继承
+
 ```python
 #隐身继承
     class Parent(object):
@@ -312,7 +340,9 @@ def function1():
     class Child(Parent):
         pass
 ```
+
 2. 显示继承
+
 ```python
     ##显示继承
     class Test(object):
@@ -323,9 +353,11 @@ def function1():
         def override(self):
             print "child override"
 ```
+
 3. super（）
 4. 多重继承（multiple inheritance）
 5. composition组合
+
 ```python
     # _*_ coding=utf-8 _*_
     __author__ = 'patrick'
@@ -353,6 +385,7 @@ def function1():
 ```
 
 ###24.Python风格
+
 1.类名:camel case/method 名字： underscore format
 2.class name（object）
 3.注释说为什么这样子做，而不是怎么做
@@ -360,6 +393,7 @@ def function1():
 以下是学习python guide时候的一些笔记，同时应该是满足所有的编程语言的。
 
 ## 1. Writing Great Code
+
 - structuring your project
 - code style
 - reading great codes
@@ -369,6 +403,7 @@ def function1():
 - common gotchas
 
 ### 1.1 structuring your project
+
 不要小看了这个项目结构，好的结构可以让项目一目了然。好的项目结构可能就回答了以下几个问题：
 - which function should go into which modules
 - how does the data flow through the project
@@ -382,6 +417,7 @@ def function1():
 
 对于python来说，处理这些组织代码的事情可以使用modules，package(__init__.py),还有一些重用的方法如：
 - decorators
+
 ```python
 def foo():
   # do something
@@ -400,6 +436,7 @@ def bar():
 ```
 
 - dynamic typing
+
 变量可以不是固定类型，Variables are not a segment of the computer’s memory where some value is written, they are ‘tags’ or ‘names’ pointing to objects.
 
 - mutable and immutable types
@@ -427,6 +464,7 @@ foobar = '{foo}{bar}'.format(foo=foo, bar=bar) # It is best
 ## 1.2 code style
 
 - Explicit code
+
 ```python
 # Bad
 ￼def make_complex(*args):
@@ -440,28 +478,35 @@ def make_complex(x,y):
 
 - function arguments
 * positonal arguments
+
 ```python
 send(message, recipient)
 ```
+
 * keywords arguments
+
 ```python
 send(message, to, cc=None, bcc=None)
 ```
 * arbitrary argument list
+
 ```python
 send(message, *args)
 ```
 
 * arbitrary keyword argument dictionary
+
 ```python
 send(message, **args)
 ```
+
 - Avoid the magical wand/all responsible users
 The main convention for private properties and implementation details is to prefix all “internals” with an underscore.
 - return values
 raising exception or return None/False
 - Idioms
 * unpacking
+
 ```python
 for index,item in enumerate(some_list):
   # do something
@@ -475,24 +520,29 @@ b,*middle,c=[1,2,3,4,5]
 ```
 
 - create an ignored Variables
+
 ```python
 ￼filename = 'foobar.txt'
 basename, __, ext = filename.rpar
 ```
 
 - PEP8
+
 ```sh
 pep8 optparse.py
 ```
 - convertions
+
 ```python
 # don't use has_key in dictionary
 d ={'hello':'world'}
-print d.get('hello','default_value')
+print d.get('hello',default_value)
 if 'hello' in d:
   print d['hello']
 ```
+
 - short ways to manipulate lists
+
 ```python
 # bad
 a = [3, 4, 5]
@@ -517,6 +567,7 @@ for i, item in enumerate(a):
 ```
 
 - read from a file
+
 ```python
 ￼with open('file.txt') as f:
   for line in f:
@@ -524,6 +575,7 @@ for i, item in enumerate(a):
 ```
 
 - line continuations
+
 ```python
 # bad
 my_very_big_string = """For a long time I used to go to bed early. Sometimes, \
@@ -540,6 +592,7 @@ my_very_big_string = (
 ```
 
 ## 1.3 read great codes
+
 - Howdoi Howdoi is a code search tool, written in Python.
 - Flask Flask is a microframework for Python based on Werkzeug and Jinja2. It’s intended for getting started very
 quickly and was developed with best intentions in mind.
@@ -548,12 +601,14 @@ quickly and was developed with best intentions in mind.
 - Tablib Tablib is a format-agnostic tabular dataset library, written in Python.
 
 ## 1.4 ducomentation
+
 - readme
 - project documentation
 - api reference
 - tutorial
 - reStructuredText documentation
 - code documentation advice
+
 ```python
 ￼def square_and_rooter(x):
 """Returns the square root of self times self."""
@@ -564,6 +619,7 @@ PEP 257
 
 
 ## 1.5 Testing your codes
+
 - unittest/unittest2
 - doctest
 
@@ -576,12 +632,15 @@ Doctests have a different use case than proper unit tests: they are usually less
 - mock
 
 ## 1.6 logging
+
 - diagnositic logging
 - audit logging
 
 ## 1.7 common gotchas
+
 - mutable  default arguments
 default argumant is mutable, python的方法每次被访问时不是重新建立，所以一定要小心，除非你是exploit(user as intended)
+
 ```python
 def append_to(element,to=[]):
   to.append(element)
@@ -602,12 +661,14 @@ print my_list
 [12,42]
 
 # so
+
 def append_to(element,to=None):
   to.append(element)
   return to
 ```
 
 - late binding closure
+
 ```python
 def create_mulipliers():
   return [lambda x : i * x for i in range(5)]
@@ -618,8 +679,3 @@ for n in create_mulipliers():
 
 Python’s closures are late binding. This means that the values of variables used in closures are looked up at the time
 the inner function is called.
-
-
-
-
-
