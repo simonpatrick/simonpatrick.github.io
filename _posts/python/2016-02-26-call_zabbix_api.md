@@ -180,7 +180,8 @@ class TestZabbixTemplateClient(unittest.TestCase):
 ```
 
 补充一句，就是其实可以看到：
+
 - ZabbixClient这个类没有定义template，可是他去可以使用？写了JAVA人是不是感觉有点惊喜的感觉
 - template也没有create这个方法呀，他是怎么做到的？？
 
-这个例子很好的说明了使用__getattr__可以做一些魔法的事情
+这个例子很好的说明了使用```__getattr__```可以做一些魔法的事情

@@ -28,6 +28,7 @@ Zabbix 是一个开源的监控系统，由于需要帮助运维写一些调用Z
 ## Configuration:HOST
 HOST 就是Zabbix监控的对象，创建HOST可以通过一些预先定义好的模版来实现.
 以Linux Group来说的话，HOST可能还有以下的一些属性：
+
 - Agent Interface
 - SNMP Interface
 - JMX Interface
@@ -39,21 +40,23 @@ HOST 就是Zabbix监控的对象，创建HOST可以通过一些预先定义好�
 创建HOST的同时可以创建一个HOST GROUP，HOST GROUP实际上就是不同的HOST组合起来成一组.
 
 ## Configuration: Templates
-Templates 就是一些HOST的模版，相似的HOST可以通过模版不知，组合的方式创建
+Templates 就是一些HOST的模版，相似的HOST可以通过模版继承，组合的方式创建
 
 ## Monitor
 从监控的层级来看，监控HOST的层级逻辑是：
+
 - HOSTGROUP: HOST GROUP是可以认为不同HOST的容器
 - HOST: 监控的实体,监控的实体实际上有不同的监控模版组合而成
 
-以下的APPLICATION，ITEM,TRIGGER,Graph 其实都是继承了模版的，
+以下的APPLICATION，ITEM,TRIGGER,Graph 其实都是继承了模版的：
+
 - APPLICATION,可以认为是一组监控的内容
 - ITEM: item就是监控的具体的一个数值,比如```cl Loaded Class Count```他的key是```jmx["java.lang:type=ClassLoading",LoadedClassCount]```
 这个ITEM就是具体监控LoadedClass数目的一项，那么多个项目就可以组合成一个Application，ITEM 其实可以认为是采样数据的一个项
 
 一个Template可以通过多个Application来组合而成，一个Application可以由Items来组合而成，一个HOST包含有多个监控的Template，一个HOST Group可以有多个HOST.
 
-关于TEMPLATE的继承关系是： HOST 继承HOST GROUP的TEMPLATEs
+关于TEMPLATE的继承关系是： HOST 继承HOST GROUP的TEMPLATE
 
 - Graph： 图表
 - Trigger： 触发器
@@ -61,7 +64,7 @@ Templates 就是一些HOST的模版，相似的HOST可以通过模版不知，�
 
 
 ## Monitor: Application
-
+Application 可以认为是监控的一个大的项目，里面可能包括了不同的采样项目(item)
 create Application，可以参考一下API文档就可以
 
 ## Monitor: Item
