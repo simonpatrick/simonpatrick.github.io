@@ -1,9 +1,7 @@
 ---
 layout: post
 title: "Java 并发死锁实践－1"
-modified:
 categories: [java]
-excerpt:
 tags: [java]
 date: 2015-11-18-08:57:44
 ---
@@ -12,7 +10,7 @@ date: 2015-11-18-08:57:44
 
  ## 什么是JAVA的死锁(dead lock)
  死锁就是两个线程一直相互等待.
- 
+
 ![img](http://incdn1.b0.upaiyun.com/2014/04/c9a8bba45f37b6dcfe1684867cb2a3e9-300x207.png)
 
 实例代码如下:

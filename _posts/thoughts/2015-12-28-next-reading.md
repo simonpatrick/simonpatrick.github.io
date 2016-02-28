@@ -2,9 +2,9 @@
 layout: post
 title: "下一步的技术了解"
 modified:
-categories: [personal_thoughts]
+categories: [thoughts]
 excerpt:
-tags: [personal_thoughts]
+tags: [thoughts]
 date: 2015-12-28-19:49:29
 ---
 

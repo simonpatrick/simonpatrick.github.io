@@ -1,12 +1,8 @@
 ---
 layout: post
 title: "NodeJS - Module"
-modified:
 categories: [js]
-excerpt:
 tags: [js]
-image:
-  feature:
 date: 2012-09-24T10:31:11+08:00
 ---
 

@@ -2,9 +2,9 @@
 layout: post
 title: "2016-looking-forword"
 modified:
-categories: [personal_thoughts]
+categories: [thoughts]
 excerpt:
-tags: [personal_thoughts]
+tags: [thoughts]
 date: 2016-01-01-17:42:38
 ---
 

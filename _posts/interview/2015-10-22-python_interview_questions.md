@@ -2,9 +2,9 @@
 layout: post
 title: "Python 面试题"
 modified:
-categories: [python,java,interview]
+categories: [interview]
 excerpt:
-tags: [python,java,interview]
+tags: [interview]
 image:
   feature:
 date: 2015-10-22T10:31:11+08:00

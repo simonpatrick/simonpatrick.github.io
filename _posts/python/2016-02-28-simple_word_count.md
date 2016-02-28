@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "简单面试题：统计字符串中的相同字符数量"
+title: "Simple Word Counter"
 modified:
-categories: [interview]
+categories: [python]
 excerpt:
-tags: [interview]
+tags: [python]
 date: 2016-02-28-10:41:15
 ---
 
@@ -32,7 +32,7 @@ print(letter_count)
 
 JAVA 8 中给Map加入了getOrDefault的方法，下面就分别介绍一下JAVA8之前和使用JAVA8的方法：
 
-- JAVA8 之前：
+### JAVA8 之前：
 
 ```java
 public Map<String,Integer> countCharacters(String source){
@@ -48,9 +48,10 @@ public Map<String,Integer> countCharacters(String source){
    }
 ```
 
-- JAVA8
+### JAVA8 解法
 
 ```java
+
 public Map<String,Integer> countCharacters_JAVA8(String source){
     char[] chars = source.toCharArray();
     Map<String,Integer> result = new HashMap<>();
@@ -59,4 +60,5 @@ public Map<String,Integer> countCharacters_JAVA8(String source){
     }
     return result;
 }
+
 ```

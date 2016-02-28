@@ -2,9 +2,9 @@
 layout: post
 title: "restful_api_verbs"
 modified:
-categories: [api]
+categories: api
 excerpt:
-tags: [api]
+tags: api
 date: 2015-12-03-10:28:14
 ---
 

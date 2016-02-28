@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "python 面向对象，以及访问对象属性基础"
+title: "Python 面向对象，以及访问对象属性基础"
 modified:
 categories: [python]
 excerpt:
@@ -41,7 +41,7 @@ date: 2016-02-28-14:57:44
 - ```name```, 类的一个属性;```eat()```,也可以看成是类的一个属性，实际上它是一个dog的一个行为(behavior)
 - ``` dog = Dog()``` 是创建了一个Dog(class)的新的的对象(object), 按照我们上面说的，dog是类Dog(class)的一个实例(instance)
 
-```Python
+```python
   class Dog:
     def __init__(self):
       self.name='dog'
@@ -113,7 +113,7 @@ crazy_dog.why_crazy()
 
 以下是一个创建了一个CrazyDog的类，继承了Dog，python中继承就是在类声明语句的()中加入需要继承的类.运行上面的程序，可以看到：
 
-```Python
+```python
 Dog is created .....
 eating .....
 dog
@@ -247,6 +247,7 @@ setattr(self,key,value)
 setattr(Dog,key,value)
 setattr(CrazyDog,key,value)
 ```
+
 都可以成功，相信这里面python语言再lookup method的时候有一套自己的方法.
 
 回顾一下这个__getattr__,_setattr__ 两个方法，可以动态创建属性，这个机制会减少不少的代码量.和java比起来会减少很多的反射的代码.

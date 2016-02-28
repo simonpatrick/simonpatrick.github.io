@@ -2,9 +2,9 @@
 layout: post
 title: "Python完成简单的SVN Reviewboard Precommit的客户端"
 modified:
-categories: [SCM,python]
+categories: [python]
 excerpt:
-tags: [SCM,python]
+tags: [python]
 image:
   feature:
 date: 2015-05-16T10:31:11+08:00

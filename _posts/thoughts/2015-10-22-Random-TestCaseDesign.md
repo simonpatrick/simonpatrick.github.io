@@ -1,12 +1,8 @@
 ---
 layout: post
 title: "测试用例设计- 随机指定一个产品的测试"
-modified:
 categories: [testing,thoughts]
-excerpt:
 tags: [testing,thoughts]
-image:
-  feature:
 date: 2015-10-22T10:31:11+08:00
 ---
 
