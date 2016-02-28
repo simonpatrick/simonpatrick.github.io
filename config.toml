@@ -1,3 +1,5 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseurl = "http://simonpatrick.github.io"
+title = "Colored Hedwig"
+
+[params]
+  author="simonpatrick"
