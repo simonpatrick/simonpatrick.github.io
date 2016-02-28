@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "jmeter_distribution_testing"
+title: "JMETER 分布式测试"
 modified:
 categories: [performance]
 excerpt:

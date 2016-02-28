@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "访问Zabbix API"
+title: "Python 访问Zabbix API"
 modified:
 categories: [python]
 excerpt:

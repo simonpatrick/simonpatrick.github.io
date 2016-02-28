@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "mobile_perf_testing.md"
+title: "Mobile 性能测试关键点"
 modified:
 categories: [performance]
 excerpt:
