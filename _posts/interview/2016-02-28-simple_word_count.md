@@ -2,9 +2,9 @@
 layout: post
 title: "简单面试题：统计字符串中的相同字符数量"
 modified:
-categories: [interview，python, java]
+categories: [interview]
 excerpt:
-tags: [interview，python, java]
+tags: [interview]
 date: 2016-02-28-10:41:15
 ---
 
