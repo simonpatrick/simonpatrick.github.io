@@ -128,11 +128,6 @@
   </url>
   
   <url>
-    <loc>http://simonpatrick.github.io/posts/api/2015-12-03-restful_api_verbs/</loc>
-    <lastmod>2015-12-03T10:28:14+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://simonpatrick.github.io/posts/microservice/2015-12-02-microservice-from-stackoverflow/</loc>
     <lastmod>2015-12-02T23:49:28+00:00</lastmod>
   </url>
@@ -190,6 +185,16 @@
   <url>
     <loc>http://simonpatrick.github.io/posts/thoughts/2015-11-03-Test-Tools/</loc>
     <lastmod>2015-11-04T10:31:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://simonpatrick.github.io/posts/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/</loc>
+    <lastmod>2015-11-03T10:31:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/</loc>
+    <lastmod>2015-11-03T10:31:11+00:00</lastmod>
   </url>
   
   <url>
@@ -370,14 +375,6 @@
   <url>
     <loc>http://simonpatrick.github.io/posts/2012-08-24-web_testing_tools/</loc>
     <lastmod>2012-09-24T10:31:11+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://simonpatrick.github.io/posts/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/</loc>
-  </url>
-  
-  <url>
-    <loc>http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/</loc>
   </url>
   
 </urlset>

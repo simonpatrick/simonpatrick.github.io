@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io//index.xml">
 
     
     <title>Posts - Colored Hedwig</title>
@@ -29,7 +29,7 @@
   <body>
 
     <header class="site">
-      <div class="title"><a href="http://simonpatrick.github.io">Colored Hedwig</a></div>
+      <div class="title"><a href="http://simonpatrick.github.io/">Colored Hedwig</a></div>
     </header>
 
     <div class="container site">
@@ -45,22 +45,8 @@
           
           <div class="col-sm-4">
             <article class="li">
-  <a href="http://simonpatrick.github.io/posts/java/2015-11-18-concurrence_dead_lock/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
-    <div class="detail">
-      <time>Wed, Nov 18, 2015</time>
-      <h2 class="title">Java 并发死锁实践－1</h2>
-      <div class="summary">写点学习Java 并发死锁实践的来记录一下学习JAVA 并发的经历. ## 什么是JAVA的死锁(dead lock) 死锁就是两个线程一直相互等待. 实例代码如下: public class ThreadDeadlock { public static void main(String[] args) throws InterruptedException { Object obj1 = new Object(); Object obj2 = new Object(); Thread t1 = new Thread(new SyncThread(obj1, obj2), &quot;t1&quot;); Thread t2 = new Thread(new SyncThread(obj2, obj1), &quot;t2&quot;); t1.start(); Thread.sleep(1000); t2.start(); } } public class SyncThread implements Runnable{ private Object obj1; private Object obj2; public SyncThread(Object o1, Object o2){ this.obj1=o1; this.obj2=o2; } @Override public void run() { String name = Thread.currentThread().getName(); System.out.println(name + &quot; acquiring lock on object 1&quot;+obj1); synchronized (obj1) { System.out.println(name + &quot; acquired lock on object 1&quot;+obj1); work(); System.out.println(name + &quot; acquiring lock on object 2&quot;+obj2); synchronized (obj2) { System.out.println(name + &quot; acquired lock on object 2&quot;+obj2); work(); } System.out.println(name + &quot; released lock on object 2&quot;+obj2); } System.out.println(name + &quot; released lock on object 1&quot;+obj1); System.out.println(name + &quot; finished execution.&quot;); } private void work() { try { Thread.sleep(3000); } catch (InterruptedException e) { e.printStackTrace(); } } } running result: t1 acquiring lock on java.lang.Object@370cd189 t1 acquired lock on java.lang.Object@370cd189 -- lock object1 t2 acquiring lock on java.lang.Object@509afc84 t2 acquired lock on java.lang.Object@509afc84 -- lock object2 t1 acquiring lock on java.lang.Object@509afc84 -- try to lock object 2 waiting object 2 released t2 acquiring lock on java.lang.Object@3165be7c -- try to lock object1 waiting object 1 released Thread1 lock object1 waiting object2 released to release object1 Thread2 lock object2 waiting object1 released to release object2 Thread1-&gt;Thread2-&gt;Thread1 所以死循环了，所以这就是死锁了。出现死锁后，线程就停止在那里一致等待了。 容器里面可能就有一只无法释放的线程堆积 使用JVisualVM可以看到如下的ThreadDump: Found one Java-level deadlock: ============================= &quot;t2&quot;: waiting to lock monitor 0x00007ff1288332a8 (object 0x000000074001d9a8, a java.lang.Object), which is held by &quot;t1&quot; &quot;t1&quot;: waiting to lock monitor 0x00007ff128830758 (object 0x000000074001d9b8, a java.lang.Object), which is held by &quot;t2&quot; Java stack information for the threads listed above: =================================================== &quot;t2&quot;: at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20) - waiting to lock &lt;0x000000074001d9a8&gt; (a java.lang.Object) - locked &lt;0x000000074001d9b8&gt; (a java.lang.Object) at java.lang.Thread.run(Thread.java:745) &quot;t1&quot;: at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20) - waiting to lock &lt;0x000000074001d9b8&gt; (a java.lang.Object) - locked &lt;0x000000074001d9a8&gt; (a java.lang.Object) at java.lang.Thread.run(Thread.java:745) Found 1 deadlock.</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
-          <div class="col-sm-4">
-            <article class="li">
   <a href="http://simonpatrick.github.io/posts/testing/2015-11-16-error_toleration/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Nov 16, 2015</time>
       <h2 class="title">软件容错</h2>
@@ -74,7 +60,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/java/2015-11-15-tomcat-jmx-monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Sun, Nov 15, 2015</time>
       <h2 class="title">tomcat-jmx-monitoring</h2>
@@ -88,7 +74,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2015-11-15-String-Format-in-Python/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Sun, Nov 15, 2015</time>
       <h2 class="title">Python 中String的格式化</h2>
@@ -102,7 +88,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/shell/2015-11-05-generate-jekyll-post-file/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Thu, Nov 5, 2015</time>
       <h2 class="title">shell来自动生成Jekyll post文件</h2>
@@ -116,7 +102,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/microservice/2015-11-04-Docker-Notes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/map[feature:%3cnil%3e]);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/map[feature:%3cnil%3e]);"></div>
     <div class="detail">
       <time>Wed, Nov 4, 2015</time>
       <h2 class="title">Docker 解释</h2>
@@ -130,7 +116,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/thoughts/2015-11-03-Test-Tools/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/map[feature:%3cnil%3e]);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/map[feature:%3cnil%3e]);"></div>
     <div class="detail">
       <time>Wed, Nov 4, 2015</time>
       <h2 class="title">测试用例-一些有意思的工具</h2>
@@ -143,8 +129,36 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://simonpatrick.github.io/posts/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Refactoring-10-introduce method object, replace conditions with polymorphism</h2>
+      <div class="summary">将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。 public class Registration { public void create(double amount,String name, double credits){ //do work } } 重构后: //instroduce new Class public class RegistrationContext { double amount; String name; double credits; } //modify the method public void createRefactored(RegistrationContext context){ //do work } 多态替代条件判断 有时通过If&hellip;Else来判断不同的类型进行不同的处理，代码可读性不是很强，通过多态来替代这些 条件判断，同时抽取方法后，代码就会更加的具有可读性. public class OrderProcessor { public double processOrder(Customer cu,List&lt;Product&gt; products){ double orderTotal = products.parallelStream().mapToDouble(Product::getPrice).sum(); if(cu instanceof Employee){ orderTotal-=orderTotal*0.15; } if (cu instanceof NonEmployee){ orderTotal-=orderTotal*0.10; } return</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</h2>
+      <div class="summary">Arrowhead AntiPattern 一下代码有一系列的if 判断，我们可以重新思考判断逻辑,合并一些逻辑判断 来让代码更可读: public boolean hasAccess(User user, Permission permission, List&lt;Permission&gt; exemptions) { boolean hasPermission = false; if (user != null) { if (permission != null) { if (exemptions.Count() == 0) { if (SecurityChecker.CheckPermission(user,permission) || exemptions.Contains(permission)) { hasPermission = true; } } return hasPermission; } 重构后: if (user == null || permission == null) return false; if (exemptions.Contains(permission)) return true; return SecurityChecker.CheckPermission(user, permission); Remove Double Negative remove double negative</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-remove-god-class/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Tue, Nov 3, 2015</time>
       <h2 class="title">Refactoring-8-remove God Class</h2>
@@ -158,25 +172,11 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/ruby/2015-11-3-ruby-basic-dependecy-management/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Tue, Nov 3, 2015</time>
       <h2 class="title">Ruby Dependency Management</h2>
       <div class="summary">在接触了一些语言之后,一般每一个语言都有工具来管理第三方包 的安装和管理. 比如: - Java Maven/Gradle - Python pip - NodeJS NPM 而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法 安装Bundler 一句话安装 bundler gem install bundler 开始使用Bundler 管理项目 首先初始化一个Bundler管理的项目: bundle init 运行以上命令之后,项目中会生成一个Gemfile文件. 安装第一个包 将rspec写入Gemfile echo 'gem &quot;rspec&quot;' &gt;&gt; Gemfile bundle install 至此一个简单的使用bundler 管理的项目就已经可以使用了.</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-EncapsulateCollection/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Oct 26, 2015</time>
-      <h2 class="title">Refactoring-1-Encapsulate Collection</h2>
-      <div class="summary">关于重构的第一篇，后续会在这个话题继续讨论 What is Encapsulate Collection In certain scenarios it is beneficial to not expose a full collection to consumers of a class. Some of these circumstances is when there is additional logic associated with adding/removing items from a collection. Because of this reason, it is a good idea to only expose the collection as something you can iterate over without modifying the collection. Let’s take a look at some code</div>
     </div>
   </a>
 </article>
@@ -214,7 +214,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -226,7 +226,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -238,7 +238,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -250,7 +250,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -262,7 +262,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -274,7 +274,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -286,7 +286,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -298,7 +298,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -310,7 +310,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -322,7 +322,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -339,14 +339,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iocategories/python">python</a><a href="http://simonpatrick.github.iocategories/refactoring">refactoring</a><a href="http://simonpatrick.github.iocategories/shell">shell</a><a href="http://simonpatrick.github.iocategories/automation">automation</a><a href="http://simonpatrick.github.iocategories/testing">testing</a><a href="http://simonpatrick.github.iocategories/microservice">microservice</a><a href="http://simonpatrick.github.iocategories/thoughts">thoughts</a><a href="http://simonpatrick.github.iocategories/designpattern">designpattern</a><a href="http://simonpatrick.github.iocategories/truestories">truestories</a><a href="http://simonpatrick.github.iocategories/java">java</a>
+      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/java">java</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iotags/python">python</a><a href="http://simonpatrick.github.iotags/refactoring">refactoring</a><a href="http://simonpatrick.github.iotags/shell">shell</a><a href="http://simonpatrick.github.iotags/automation">automation</a><a href="http://simonpatrick.github.iotags/testing">testing</a><a href="http://simonpatrick.github.iotags/microservice">microservice</a><a href="http://simonpatrick.github.iotags/thoughts">thoughts</a><a href="http://simonpatrick.github.iotags/java">java</a><a href="http://simonpatrick.github.iotags/truestories">truestories</a><a href="http://simonpatrick.github.iotags/designpattern">designpattern</a>
+      <a href="http://simonpatrick.github.io/tags/python">python</a><a href="http://simonpatrick.github.io/tags/refactoring">refactoring</a><a href="http://simonpatrick.github.io/tags/automation">automation</a><a href="http://simonpatrick.github.io/tags/shell">shell</a><a href="http://simonpatrick.github.io/tags/testing">testing</a><a href="http://simonpatrick.github.io/tags/thoughts">thoughts</a><a href="http://simonpatrick.github.io/tags/microservice">microservice</a><a href="http://simonpatrick.github.io/tags/designpattern">designpattern</a><a href="http://simonpatrick.github.io/tags/java">java</a><a href="http://simonpatrick.github.io/tags/truestories">truestories</a>
     </div>
   </div>
   
