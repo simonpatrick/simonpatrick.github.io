@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Colored Hedwig</title>
+    <link>http://simonpatrick.github.io/categories/automation/</link>
+    <description>Recent content in Automation on Colored Hedwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 01 Feb 2016 23:48:35 +0000</lastBuildDate>
+    <atom:link href="http://simonpatrick.github.io/categories/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>assertions</title>
+      <link>http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/</link>
+      <pubDate>Mon, 01 Feb 2016 23:48:35 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/</guid>
+      <description>
+
+&lt;p&gt;由于一直都在进行测试的工作，所以会关注Assertion的工具，发现两个不错的Assertion 第三方包，准备在实践中使用. 这两个分别是：
+- Google Truth(&lt;a href=&#34;http://google.github.io/truth/usage/&#34;&gt;http://google.github.io/truth/usage/&lt;/a&gt;)
+- &lt;a href=&#34;http://joel-costigliola.github.io/assertj/&#34;&gt;assertj&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;这个里面有很多自己想实现的比较的功能。一下是一些简单的试用的代码。&lt;/p&gt;
+
+&lt;h2 id=&#34;google-truth:62f3f66b6738b4dd3d6ba85aeb557c94&#34;&gt;Google Truth&lt;/h2&gt;
+
+&lt;p&gt;基础的验证：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Test
+  public void test_basic_truth(){
+       Set&amp;lt;String&amp;gt; foo = Sets.newHashSet();
+       assertThat(foo).isEmpty();
+       assertThat(foo).isNotNull();
+       assertThat(5).isEqualTo(5L);
+       assertThat(5L).isEqualTo(5);
+       assert_().that(50).isEqualTo(50);
+       assertThat(&amp;quot;test&amp;quot;).isEqualTo(&amp;quot;test&amp;quot;);
+       assertThat(&amp;quot;test&amp;quot;).contains(&amp;quot;te&amp;quot;);
+   }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Collections/Maps的验证:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Test
+   public void test_basic_truth_maps_collections(){
+       Set&amp;lt;String&amp;gt; foo = Sets.newHashSet();
+       assertThat(foo).isEmpty();
+       assertThat(foo).isNotNull();
+       foo.add(&amp;quot;test&amp;quot;);
+       foo.add(&amp;quot;test1&amp;quot;);
+       foo.add(&amp;quot;test2&amp;quot;);
+       assertThat(foo).contains(&amp;quot;test&amp;quot;);
+       assertThat(foo).containsAllOf(&amp;quot;test&amp;quot;, &amp;quot;test1&amp;quot;);
+       assertThat(foo).containsExactly(&amp;quot;test2&amp;quot;, &amp;quot;test&amp;quot;, &amp;quot;test1&amp;quot;);
+       assertThat(foo).containsNoneOf(&amp;quot;test889&amp;quot;, &amp;quot;test10&amp;quot;);
+
+       Map&amp;lt;String,String&amp;gt; maps = Maps.newHashMap();
+       maps.put(&amp;quot;test&amp;quot;, &amp;quot;test1&amp;quot;);
+       maps.put(&amp;quot;test1&amp;quot;, &amp;quot;test2&amp;quot;);
+       maps.put(&amp;quot;test2&amp;quot;, &amp;quot;test3&amp;quot;);
+       assertThat(maps).containsKey(&amp;quot;test1&amp;quot;);
+       assertThat(maps).containsEntry(&amp;quot;test1&amp;quot;, &amp;quot;test2&amp;quot;);
+       assertThat(maps).doesNotContainEntry(&amp;quot;test0&amp;quot;, &amp;quot;test0&amp;quot;);
+   }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;assertj:62f3f66b6738b4dd3d6ba85aeb557c94&#34;&gt;assertj&lt;/h2&gt;
+
+&lt;p&gt;基础的验证：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Test
+ public void test_contains(){
+     assertThat(&amp;quot;aaa&amp;quot;).contains(&amp;quot;aa&amp;quot;);
+ }
+
+ @Test
+ public void test_list_contains(){
+     List&amp;lt;String&amp;gt; result = Lists.newArrayList(&amp;quot;abcd&amp;quot;,&amp;quot;ddds&amp;quot;,&amp;quot;ttest&amp;quot;);
+     assertThat(result).contains(&amp;quot;ddds&amp;quot;);
+ }
+ @Test
+ public void test_list_contains_onlyonce(){
+     List&amp;lt;String&amp;gt; result = Lists.newArrayList(&amp;quot;abcd&amp;quot;,&amp;quot;ddds&amp;quot;,&amp;quot;ttest&amp;quot;);
+     assertThat(result).containsOnlyOnce(&amp;quot;ddds&amp;quot;);
+ }
+
+ @Test
+     public void test_list_contains_ELementOf(){
+     List&amp;lt;String&amp;gt; result = Lists.newArrayList(&amp;quot;abcd&amp;quot;,&amp;quot;ddds&amp;quot;,&amp;quot;ttest&amp;quot;);
+     assertThat(result).containsExactlyElementsOf(Lists.newArrayList(&amp;quot;abcd&amp;quot;, &amp;quot;ddds&amp;quot;, &amp;quot;ttest&amp;quot;));
+ }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Guava 的验证：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Test
+   public void MultiMap_assertions() {
+       Multimap&amp;lt;String, String&amp;gt; actual = ArrayListMultimap.create();
+       actual.putAll(&amp;quot;Lakers&amp;quot;, newArrayList(&amp;quot;Kobe Bryant&amp;quot;, &amp;quot;Magic Johnson&amp;quot;, &amp;quot;Kareem Abdul Jabbar&amp;quot;));
+       actual.putAll(&amp;quot;Spurs&amp;quot;, newArrayList(&amp;quot;Tony Parker&amp;quot;, &amp;quot;Tim Duncan&amp;quot;, &amp;quot;Manu Ginobili&amp;quot;));
+
+       assertThat(actual).containsKeys(&amp;quot;Lakers&amp;quot;, &amp;quot;Spurs&amp;quot;);
+       assertThat(actual).contains(entry(&amp;quot;Lakers&amp;quot;, &amp;quot;Kobe Bryant&amp;quot;),
+               entry(&amp;quot;Spurs&amp;quot;, &amp;quot;Tim Duncan&amp;quot;));
+   }
+
+   @Test
+   public void multiple_set_assertions() {
+       Multimap&amp;lt;String, String&amp;gt; listMultimap = ArrayListMultimap.create();
+       listMultimap.putAll(&amp;quot;Spurs&amp;quot;, newArrayList(&amp;quot;Tony Parker&amp;quot;, &amp;quot;Tim Duncan&amp;quot;, &amp;quot;Manu Ginobili&amp;quot;));
+       listMultimap.putAll(&amp;quot;Bulls&amp;quot;, newArrayList(&amp;quot;Michael Jordan&amp;quot;, &amp;quot;Scottie Pippen&amp;quot;, &amp;quot;Derrick Rose&amp;quot;));
+
+       Multimap&amp;lt;String, String&amp;gt; setMultimap = TreeMultimap.create();
+       setMultimap.putAll(&amp;quot;Spurs&amp;quot;, newHashSet(&amp;quot;Tony Parker&amp;quot;, &amp;quot;Tim Duncan&amp;quot;, &amp;quot;Manu Ginobili&amp;quot;));
+       setMultimap.putAll(&amp;quot;Bulls&amp;quot;, newHashSet(&amp;quot;Michael Jordan&amp;quot;, &amp;quot;Scottie Pippen&amp;quot;, &amp;quot;Derrick Rose&amp;quot;));
+
+// assertion will pass as listMultimap and setMultimap have the same content
+       assertThat(listMultimap).hasSameEntriesAs(setMultimap);
+
+// this assertion FAILS even though both multimaps have the same content
+       assertThat(listMultimap).isEqualTo(setMultimap);
+   }
+
+
+   @Test
+   public void range_assertions() {
+       Range&amp;lt;Integer&amp;gt; range = Range.closed(10, 12);
+       assertThat(range).isNotEmpty()
+               .contains(10, 11, 12)
+               .hasClosedLowerBound()
+               .hasLowerEndpointEqualTo(10)
+               .hasUpperEndpointEqualTo(12);
+   }
+
+   @Test
+   public void table_assertion() {
+       // Table assertions
+       Table&amp;lt;Integer, String, String&amp;gt; bestMovies = HashBasedTable.create();
+
+       bestMovies.put(1970, &amp;quot;Palme d&#39;Or&amp;quot;, &amp;quot;M.A.S.H&amp;quot;);
+       bestMovies.put(1994, &amp;quot;Palme d&#39;Or&amp;quot;, &amp;quot;Pulp Fiction&amp;quot;);
+       bestMovies.put(2008, &amp;quot;Palme d&#39;Or&amp;quot;, &amp;quot;Entre les murs&amp;quot;);
+       bestMovies.put(2000, &amp;quot;Best picture Oscar&amp;quot;, &amp;quot;American Beauty&amp;quot;);
+       bestMovies.put(2011, &amp;quot;Goldene Bär&amp;quot;, &amp;quot;A Separation&amp;quot;);
+
+       assertThat(bestMovies).hasRowCount(5).hasColumnCount(3).hasSize(5)
+               .containsValues(&amp;quot;American Beauty&amp;quot;, &amp;quot;A Separation&amp;quot;, &amp;quot;Pulp Fiction&amp;quot;)
+               .containsCell(1994, &amp;quot;Palme d&#39;Or&amp;quot;, &amp;quot;Pulp Fiction&amp;quot;)
+               .containsColumns(&amp;quot;Palme d&#39;Or&amp;quot;, &amp;quot;Best picture Oscar&amp;quot;, &amp;quot;Goldene Bär&amp;quot;)
+               .containsRows(1970, 1994, 2000, 2008, 2011);
+   }
+
+   @Test
+   public void test_opotions() {
+       // Optional assertions
+       Optional&amp;lt;String&amp;gt; optional = Optional.of(&amp;quot;Test&amp;quot;);
+       assertThat(optional).isPresent().contains(&amp;quot;Test&amp;quot;);
+
+       Optional&amp;lt;Long&amp;gt; optionalNum = Optional.of(12L);
+       assertThat(optionalNum).extractingValue()
+               .isInstanceOf(Long.class)
+               .isEqualTo(12L);
+
+        optional = Optional.of(&amp;quot;Bill&amp;quot;);
+// extractingCharSequence allows to chain String specific assertion
+       assertThat(optional).extractingCharSequence()
+               .startsWith(&amp;quot;Bi&amp;quot;);
+
+   }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;日期的验证：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@Test
+   public void date_before(){
+
+       DateTime dateTime = new DateTime();
+       DateTime firstDateTime = new DateTime();
+       firstDateTime.plus(10000L);
+       assertThat(dateTime).isBefore(firstDateTime);
+       assertThat(dateTime).isAfter(&amp;quot;2004-12-13T21:39:45.618-08:00&amp;quot;);
+       assertThat(dateTime).isAfter(&amp;quot;2004-12-13T21:39:00&amp;quot;);
+       assertThat(dateTime).isAfter(&amp;quot;2004-12-13T21:39:00&amp;quot;);
+
+   }
+
+   @Test
+   public void joda_datetime_compare(){
+
+       DateTime utcTime = new DateTime(2013, 6, 10, 0, 0, DateTimeZone.UTC);
+       DateTime cestTime = new DateTime(2013, 6, 10, 2, 0, DateTimeZone.forID(&amp;quot;Europe/Berlin&amp;quot;));
+
+       assertThat(utcTime).as(&amp;quot;in UTC time&amp;quot;).isEqualTo(cestTime);
+   }
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WEB 开发的几个重点</title>
+      <link>http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/</link>
+      <pubDate>Wed, 27 Jan 2016 22:47:28 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/</guid>
+      <description>&lt;p&gt;再试用了Web 开发的框架之后，归纳一下大致的一个基础Web 开发需要的那些元素:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;URL Router，如何定义URL的访问&lt;/li&gt;
+&lt;li&gt;Request Handler/Response Handler， HTTP请求/返回的处理
+
+&lt;ul&gt;
+&lt;li&gt;如果组织这些Request Handler/Response Handler&lt;/li&gt;
+&lt;li&gt;如何定义全局/局部的URL拦截器&lt;/li&gt;
+&lt;li&gt;如何处理特殊的HTTP Header&lt;/li&gt;
+&lt;li&gt;如何处理Session/Cookie&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Database Access Layer/ORM， 数据操作CRUD
+
+&lt;ul&gt;
+&lt;li&gt;如何CRUD&lt;/li&gt;
+&lt;li&gt;如何进行分页，排序，filterByCriteria&amp;hellip;..等数据库的常见操作&lt;/li&gt;
+&lt;li&gt;如何管理事务&lt;/li&gt;
+&lt;li&gt;如何定义，初始化数据库表&lt;/li&gt;
+&lt;li&gt;如何组织不同的数据库操作成不同的业务动作&lt;/li&gt;
+&lt;li&gt;详细，复杂的ORM操作可以不用太在意&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Template Render,模版渲染
+
+&lt;ul&gt;
+&lt;li&gt;不同模版的试用&lt;/li&gt;
+&lt;li&gt;静态资源的访问&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;单元测试
+
+&lt;ul&gt;
+&lt;li&gt;断言，EXCEPTION检查&lt;/li&gt;
+&lt;li&gt;Mock&lt;/li&gt;
+&lt;li&gt;数据，内存数据库的使用&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Web Application部署
+
+&lt;ul&gt;
+&lt;li&gt;不同环境的配置管理&lt;/li&gt;
+&lt;li&gt;不同语言的打包工具，如MAVEN，GRADLE&lt;/li&gt;
+&lt;li&gt;不同的构建工具,GULP&lt;/li&gt;
+&lt;li&gt;不同的服务器，NGINX，TOMCAT，JBOSS&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>为什么自动化，如何自动化</title>
+      <link>http://simonpatrick.github.io/posts/automation/2016-01-10-why_how_automation/</link>
+      <pubDate>Sun, 10 Jan 2016 19:14:11 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/automation/2016-01-10-why_how_automation/</guid>
+      <description>
+
+&lt;p&gt;在做一件事情之前，问一句为什么是必要的.做自动化测试之前也是一样，不管如何总是要有一个理由的吗，哪怕是所有的人都做，我也要做这样的理由. 以下说说我觉得要做自动化的理由.&lt;/p&gt;
+
+&lt;h2 id=&#34;为什么自动化-why-automation-testing:f49549e192c371c0accd826ee3754a08&#34;&gt;为什么自动化(Why Automation Testing)&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;为什么自动化,对于测试的而言的理由 VS 实际情况&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;自动化可以减少重复的回归测试(实际中的我问题:那么回归测试在你日常的测试中比例是多少)&lt;/li&gt;
+&lt;li&gt;自动化测试可以提高自己的编码能力(这个原因无论如何是成立的)&lt;/li&gt;
+&lt;li&gt;自动化测试可以进行更快的迭代（实际中的问题：自动化测试的不稳定可能不一定起到预想的作用）&lt;/li&gt;
+&lt;li&gt;自动化测试可以做更多的回归测试内容，减少风险(实际中的问题：不稳定的测试可能不一定能够达到目的)&lt;/li&gt;
+&lt;li&gt;不同的测试环境可以运行相同的测试(实际的问题： 可能没有那么多的环境，一般情况下都有测试环境，集成环境，预发布环境，生产环境，其实不是没个公司都需要这样做的&amp;hellip;&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;对于被测系统有更深刻的理解.由于需要编写代码，有时需要更深刻的理解内部的代码实现原理(实际中因人而异&amp;hellip;&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;自动化测试不仅仅包括进行测试，还包括一切去提高交付产品效率质量的东西，对于测试而言提出了新要求(always true if QA really does this)&lt;/li&gt;
+&lt;li&gt;功能测试的业务知识可能在这家公司有用，到别家就没用了，但是会写代码可以积累自己(always true)&lt;/li&gt;
+&lt;li&gt;无论是性能测试和安全测试都需要代码能力，通过自动化代码的编写可以更好的了解，掌握性能测试或者安全测试(实际情况：不是没个人都对编码感兴趣的)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;为什么自动化,对于公司的而言的理由 VS 实际情况&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;测试用例通过代码的方式积累下来，自动化测试可能不会立竿见影，但是他有复利的效果（实际情况：遗留的测试代码真的有用吗？）&lt;/li&gt;
+&lt;li&gt;系统如果重构那么通过自动化测试来完成很大一部分的功能测试（实际情况：遗留的测试代码真的有用吗？）&lt;/li&gt;
+&lt;li&gt;减少回归测试少测漏测风险（实际情况：遗留的测试代码真的有用吗？）&lt;/li&gt;
+&lt;li&gt;可以加速交付(交付流水线中不同的环境可以通过代码来跑，实际情况：遗留的测试代码真的有用吗？)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-to-automation-test:f49549e192c371c0accd826ee3754a08&#34;&gt;How to automation test&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;有统一的框架(框架一定要有IoC／DI的概念使用)&lt;/li&gt;
+&lt;li&gt;有扩展性的框架&lt;/li&gt;
+&lt;li&gt;方便实用，可以代码生产的工具链&lt;/li&gt;
+&lt;li&gt;安装自动化测试金字塔（单元，接口，UI）方式&lt;/li&gt;
+&lt;li&gt;千万不要使用自动化测试的anti-pattern&lt;/li&gt;
+&lt;li&gt;有规划，一步一步优化，不要贪多&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>http status code HTTP 状态码</title>
+      <link>http://simonpatrick.github.io/posts/automation/2015-12-23-http_status_code/</link>
+      <pubDate>Wed, 23 Dec 2015 22:59:16 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/automation/2015-12-23-http_status_code/</guid>
+      <description>
+
+&lt;h2 id=&#34;http-status-codes:a1bd7b0527ef402aa53836e9d8bcac54&#34;&gt;HTTP Status Codes&lt;/h2&gt;
+
+&lt;p&gt;This page is created from HTTP status code information found at ietf.org and Wikipedia. Click on the category heading or the status code link to read more.&lt;/p&gt;
+
+&lt;h2 id=&#34;1xx-informational:a1bd7b0527ef402aa53836e9d8bcac54&#34;&gt;1xx Informational&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;100 Continue&lt;/li&gt;
+&lt;li&gt;101 Switching Protocols&lt;/li&gt;
+&lt;li&gt;102 Processing (WebDAV)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;2xx-success:a1bd7b0527ef402aa53836e9d8bcac54&#34;&gt;2xx Success&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;200 OK&lt;/li&gt;
+&lt;li&gt;201 Created&lt;/li&gt;
+&lt;li&gt;202 Accepted&lt;/li&gt;
+&lt;li&gt;203 Non-Authoritative Information&lt;/li&gt;
+&lt;li&gt;204 No Content&lt;/li&gt;
+&lt;li&gt;205 Reset Content&lt;/li&gt;
+&lt;li&gt;206 Partial Content&lt;/li&gt;
+&lt;li&gt;207 Multi-Status (WebDAV)&lt;/li&gt;
+&lt;li&gt;208 Already Reported (WebDAV)&lt;/li&gt;
+&lt;li&gt;226 IM Used&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;3xx-redirection:a1bd7b0527ef402aa53836e9d8bcac54&#34;&gt;3xx Redirection&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;300 Multiple Choices&lt;/li&gt;
+&lt;li&gt;301 Moved Permanently&lt;/li&gt;
+&lt;li&gt;302 Found&lt;/li&gt;
+&lt;li&gt;303 See Other&lt;/li&gt;
+&lt;li&gt;304 Not Modified&lt;/li&gt;
+&lt;li&gt;305 Use Proxy&lt;/li&gt;
+&lt;li&gt;306 (Unused)&lt;/li&gt;
+&lt;li&gt;307 Temporary Redirect&lt;/li&gt;
+&lt;li&gt;308 Permanent Redirect (experiemental)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;4xx-client-error:a1bd7b0527ef402aa53836e9d8bcac54&#34;&gt;4xx Client Error&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;401 Unauthorized&lt;/li&gt;
+&lt;li&gt;402 Payment Required&lt;/li&gt;
+&lt;li&gt;403 Forbidden&lt;/li&gt;
+&lt;li&gt;404 Not Found&lt;/li&gt;
+&lt;li&gt;405 Method Not Allowed&lt;/li&gt;
+&lt;li&gt;406 Not Acceptable&lt;/li&gt;
+&lt;li&gt;407 Proxy Authentication Required&lt;/li&gt;
+&lt;li&gt;408 Request Timeout&lt;/li&gt;
+&lt;li&gt;409 Conflict&lt;/li&gt;
+&lt;li&gt;410 Gone&lt;/li&gt;
+&lt;li&gt;411 Length Required&lt;/li&gt;
+&lt;li&gt;412 Precondition Failed&lt;/li&gt;
+&lt;li&gt;413 Request Entity Too Large&lt;/li&gt;
+&lt;li&gt;414 Request-URI Too Long&lt;/li&gt;
+&lt;li&gt;415 Unsupported Media Type&lt;/li&gt;
+&lt;li&gt;416 Requested Range Not Satisfiable&lt;/li&gt;
+&lt;li&gt;417 Expectation Failed&lt;/li&gt;
+&lt;li&gt;418 I&amp;rsquo;m a teapot (RFC 2324)&lt;/li&gt;
+&lt;li&gt;420 Enhance Your Calm (Twitter)&lt;/li&gt;
+&lt;li&gt;422 Unprocessable Entity (WebDAV)&lt;/li&gt;
+&lt;li&gt;423 Locked (WebDAV)&lt;/li&gt;
+&lt;li&gt;424 Failed Dependency (WebDAV)&lt;/li&gt;
+&lt;li&gt;425 Reserved for WebDAV&lt;/li&gt;
+&lt;li&gt;426 Upgrade Required&lt;/li&gt;
+&lt;li&gt;428 Precondition Required&lt;/li&gt;
+&lt;li&gt;429 Too Many Requests&lt;/li&gt;
+&lt;li&gt;431 Request Header Fields Too Large&lt;/li&gt;
+&lt;li&gt;444 No Response (Nginx)&lt;/li&gt;
+&lt;li&gt;449 Retry With (Microsoft)&lt;/li&gt;
+&lt;li&gt;450 Blocked by Windows Parental Controls (Microsoft)&lt;/li&gt;
+&lt;li&gt;499 Client Closed Request (Nginx)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;5xx-server-error:a1bd7b0527ef402aa53836e9d8bcac54&#34;&gt;5xx Server Error&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;500 Internal Server Error&lt;/li&gt;
+&lt;li&gt;501 Not Implemented&lt;/li&gt;
+&lt;li&gt;502 Bad Gateway&lt;/li&gt;
+&lt;li&gt;503 Service Unavailable&lt;/li&gt;
+&lt;li&gt;504 Gateway Timeout&lt;/li&gt;
+&lt;li&gt;505 HTTP Version Not Supported&lt;/li&gt;
+&lt;li&gt;506 Variant Also Negotiates (Experimental)&lt;/li&gt;
+&lt;li&gt;507 Insufficient Storage (WebDAV)&lt;/li&gt;
+&lt;li&gt;508 Loop Detected (WebDAV)&lt;/li&gt;
+&lt;li&gt;509 Bandwidth Limit Exceeded (Apache)&lt;/li&gt;
+&lt;li&gt;510 Not Extended&lt;/li&gt;
+&lt;li&gt;511 Network Authentication Required&lt;/li&gt;
+&lt;li&gt;598 Network read timeout error&lt;/li&gt;
+&lt;li&gt;599 Network connect timeout error&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>自动化测试－接口测试</title>
+      <link>http://simonpatrick.github.io/posts/automation/2015-11-27-webservice-automation/</link>
+      <pubDate>Fri, 27 Nov 2015 11:10:00 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/automation/2015-11-27-webservice-automation/</guid>
+      <description>
+
+&lt;p&gt;在敏捷开发交付的流程中，自动化测试实际上被放在一个看起来挺重要的位置，而自动化测试中，接口测试是一个投入产出比比较高的
+一种自动化测试的形式，而我自己也做了一个这样的脚手架一样的东西可以方便进行自动化测试，关键是在一些现有第三包的基础上做实现，其实一个脚手架不需要几个JAVA类就可以完成了，至少我自己的这个在10个文件以内.要论行数估计也没有多少代码量，主要时间其实都是在想怎么更方便的写自动化测试，怎么使用以后的开源代码了。&lt;/p&gt;
+
+&lt;p&gt;下面介绍一下我自己如何完成这个自动化接口测试
+脚手架设计和实现的，以及我自己实现过程中的种种发现。主要从以下几个方面来讲：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;如何构建接口自动化测试的脚手架&lt;/li&gt;
+&lt;li&gt;关于接口测试参考的一些资源&lt;/li&gt;
+&lt;li&gt;关于接口测试的后续的一些想法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;如何构建接口自动化测试的脚手架:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;如何构建接口自动化测试的脚手架&lt;/h2&gt;
+
+&lt;p&gt;接口测试本文中主要是指HTTP的请求，构建接口自动化测试脚手架的时候，首先先看看平常接口测试，测试人员时如何做的，我了解主要是以下几种方式：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;通过操作页面/APP来触发接口调用&lt;/li&gt;
+&lt;li&gt;使用诸如SOAPYUI/JMETER/POSTMAN 或者其他的客户端工具来进行接口测试&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;我自己都使用过SOAPUI/JMETER/POSTMAN,不能说使用的多么深入，但是常用的功能也都有用过，比如SOAPUI构建一个项目完整的接口自动化测试用例，大概有200+以上的用例，可以支持不同的测试环境，检查点中可以检查数据库,使用XPATH/XQUERY来检查／获取指定的值，进行不同API的数据传递等等，这些工具(指功能测试方面)大体的逻辑我觉得是类似的,基本上都有:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;发起请求的客户端,需要测试人员构建，也有通过WSDL/WADL自己生成的，不过数据都是需要测试人员输入的&lt;/li&gt;
+&lt;li&gt;根据表达式进行取值的Resolver,就是可以根据XPATH/XQUERY语法，或者其他的语法来获取指定的值，
+就是用来传递上下文数据的一种方式&lt;/li&gt;
+&lt;li&gt;外部可以参数话数据，比如环境配置&lt;/li&gt;
+&lt;li&gt;可以查看测试结果，这个其实可以理解为某种测试框架的一个功能，不如JUNIT，TESTNG，他们&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;总体上我自己的总结是如下图:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../assets/images/pics/api_testing.png&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;接口自动化测试脚手架的构建:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;接口自动化测试脚手架的构建&lt;/h3&gt;
+
+&lt;p&gt;根据以上的分析如果自己需要实现的话，最主要需要实现一下其实就是请求的构建，请求构建包括了:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;发起请求的客户端&lt;/li&gt;
+&lt;li&gt;请求数据的构建&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;对于发起请求的客户端就直接使用了Spring RestTemplate,考虑的主要原因如下:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用相对比较方便,模块化比较清晰&lt;/li&gt;
+&lt;li&gt;可以使用HTTPClient的实现&lt;/li&gt;
+&lt;li&gt;Spring RestTemplate所在的包还有其他一些接口的支持，以后如果使用其他接口可以不需要换包也可以做&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在实际的使用过程中，其实也遇到了一些问题，比如如下的内容:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTPS的访问&lt;/li&gt;
+&lt;li&gt;开发接口定义不够准确的问题,造成使用RestTemplate时候出现了一些不在开始预期范中的问题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如何解决这些问题,在后面再详细介绍，这里说明一下使用RestTemplate的一个主要流程：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1. 构建请求，设置请求的Header，URL，Accept，ContextType，Token等等&lt;/li&gt;
+&lt;li&gt;2. 调用请求获取返回的Response，
+这个ResponseRestTemplate中实际上封装了一个ResponseEntity的类，里面包括了请求状态，Body之类
+RestTemplate 有个好处就是如果给RestTemplate设定了MessageConverter的话，他可以自动把请求的返回类型直接转换，比如你发起请求的时候设置了JOSN的Message Converter，他可以帮你把类，或者字符串自己转化为JSON来发送，同样如果是返回值是JSON的话，也可以帮你自己将JSON转换成你指定类型的JAVA BEAN&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;说完这个流程，我们就说说如何通过RestTemplate构建一个简单的HTTP请求:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;  Map&amp;lt;String,String&amp;gt; urlVariable = new Map&amp;lt;String,String&amp;gt; ();
+  urlVariable.put(&amp;quot;q&amp;quot;,&amp;quot;test&amp;quot;);
+  JavaBean javaBean = restTemplate.getForObject(&amp;quot;http://www.baidu.com&amp;quot;,JavaBean.class,urlVariable);
+  JavaBean javaBean1 = restTemplate.postForObject(&amp;quot;http://www.baidu.com&amp;quot;,JavaBean.class,urlVariable);
+  ResponseEntity e =  restTemplate.getForEntity(&amp;quot;http://www.baidu.com&amp;quot;,JavaBean.class,urlVariable);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;实际上使用RestTemplate还是挺简单的，不过为了让使测试更为方便一点，然后每个人的代码更统一点，自己重新封装了一下RestTemplate的使用，主要分为三个概念:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Service 的描述&lt;/li&gt;
+&lt;li&gt;测试数据&lt;/li&gt;
+&lt;li&gt;客户端调用&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;接口服务描述:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;接口服务描述&lt;/h3&gt;
+
+&lt;p&gt;Service的描述实际上就是一个JSON文件，只不过自己规定了一下，格式类似于,这个文件描述了API的定义，当然API的body没有在这个里面，不过为了不把事情搞复杂，就暂时不放在这个里面.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;apiDomainName&amp;quot;: &amp;quot;applicationName&amp;quot;,
+  &amp;quot;contentType&amp;quot;: &amp;quot;application/x-www-form-urlencoded&amp;quot;,
+  &amp;quot;headers&amp;quot;: {
+    &amp;quot;Accept&amp;quot;: &amp;quot;application/json, text/javascript, */*&amp;quot;
+  },
+  &amp;quot;method&amp;quot;: &amp;quot;POST&amp;quot;,
+  &amp;quot;pathParameters&amp;quot;: [],
+  &amp;quot;queryParameters&amp;quot;: [
+    &amp;quot;username&amp;quot;,
+  ],
+  &amp;quot;resourceURL&amp;quot;: &amp;quot;/application/subdomain&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;测试数据类：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt; private Map&amp;lt;String, String&amp;gt; queryParameters = Maps.newHashMap();
+ private Map&amp;lt;String, String&amp;gt; pathParameters = Maps.newHashMap();
+ private Map&amp;lt;String, String&amp;gt; headers = Maps.newHashMap();
+ private T body;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;而如何调用客户端就变成,而且其实每一个API的访问其实都可以这样子来做，&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;  ResponseEntity response = RestTemplateHelper.build(serviceDescriptionPath,requestData).call();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;说明一下的是：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;serviceDescriptionPath就是接口的描述&lt;/li&gt;
+&lt;li&gt;requestData就是需要进行测试的数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;然后实际上接口的描述是开发还没有开发好的时候就已经定了的，所以这里的变量就变成如何构建requestData了&lt;/p&gt;
+
+&lt;h3 id=&#34;构建requestdata:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;构建RequestData&lt;/h3&gt;
+
+&lt;p&gt;构建requestData实际上就是设计测试用例，那么这里也是使用Excel的方式，将不同的值填写到excel里面，不过为了减少set值这样的操作，这个脚手架就提供了一些工具，可以直接将数据设置到RequestData实例，具体的操作如下:&lt;/p&gt;
+
+&lt;p&gt;Excel是如下格式的：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;变量名&lt;/th&gt;
+&lt;th&gt;测试用例1&lt;/th&gt;
+&lt;th&gt;测试用例2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;data.queryParameters(username)&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;data.queryParameters(year)&lt;/td&gt;
+&lt;td&gt;2015&lt;/td&gt;
+&lt;td&gt;2014&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;data.queryParameters(month)&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;说明一下，通过反射的方式，可以直接生成一个requestData的实例,同时queryParameters中值已经设置好了，这样调用代码中就不需要写类似于：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;  RequestData data = new RequestData();
+  data.queryParameters.put(&amp;quot;username&amp;quot;,&amp;quot;1&amp;quot;);
+  data.queryParameters.put(&amp;quot;year&amp;quot;,&amp;quot;2015&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这里有兴趣的同学可以参考这个包:里面其实已经有很方便的通过反射去赋值了,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;dependency&amp;gt;
+    &amp;lt;groupId&amp;gt;org.jodd&amp;lt;/groupId&amp;gt;
+    &amp;lt;artifactId&amp;gt;jodd-bean&amp;lt;/artifactId&amp;gt;
+    &amp;lt;version&amp;gt;3.6.6&amp;lt;/version&amp;gt;
+&amp;lt;/dependency&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;使用testng的dataprovider:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;使用TestNG的DataProvider&lt;/h3&gt;
+
+&lt;p&gt;刚才讲述了如何发生生成数据，那么通过Excel的方式提供不同的数据，就可以通过TestNG的DataProvider了
+所以测试数据通过，TestNG data provider的实现在这里就不多少了，网上其实有很多内容了.&lt;/p&gt;
+
+&lt;h3 id=&#34;接口测试的代码看起来就是这个样子了:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;接口测试的代码看起来就是这个样子了&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;@DataProvider(name = &amp;quot;data&amp;quot;)
+  public Iterator&amp;lt;Object[]&amp;gt; getAPITestData(Method m) throws Exception {
+      Map&amp;lt;String, Class&amp;gt; clazz = new HashMap&amp;lt;String, Class&amp;gt;();
+      clazz.put(&amp;quot;RequestData&amp;quot;, RequestData.class);
+      Iterator&amp;lt;Object[]&amp;gt; y = TestData.provider(&amp;quot;testcase/api1.xls&amp;quot;, m, clazzMap);
+
+      return y;
+  }
+
+  @Test(dataProvider = &amp;quot;data&amp;quot;)
+  public void testAPITest(RequestData data) {
+    ResponseEntity response = RestTemplateHelper.build(serviceDescriptionPath,requestData).call();
+    Assert.assertEqual(response.getStatus,200); // response 的期望值实际可以通过dataprovider传入
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;而且几乎所有的代码都差不多成这个样子了，那么获取可以写个代码生成的东西,当然最后通过了JsonPath写了一些获取JSON值的工具，这个暂时也就不说了.&lt;/p&gt;
+
+&lt;h3 id=&#34;那么代码生成吧:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;那么代码生成吧&lt;/h3&gt;
+
+&lt;p&gt;当封装好这些东西之后，发现所有的接口都类似了，然后就做了代码生成的工具了,代码生成器的入口实际上个就是那个服务描述文件开始的，
+所以代码生成器的参数就是服务描述文件，在实际的使用的过程中，接口描述这个文件也可以自动生成，目前总共支持以下几种:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;手动编写描述文件&lt;/li&gt;
+&lt;li&gt;抓取开发API规格网站接口的描述，自动生成描述文件&lt;/li&gt;
+&lt;li&gt;解析HAR文件自动生成描述文件，解析HAR其实不难，就是繁琐一点字段有点多&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;后续想打通和POSTMAN的连接，可以接收POSTMAN的导出文件，然后也可以导出POSTMANT的，以后开BUG就什么也不说，直接放一个POSTMAN文件其实也挺帅的&lt;/p&gt;
+
+&lt;p&gt;至此一个接口测试的脚手架就大致完成了.总结起来就是:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;封装了RestTemplate，让他接受一个接口的描述文件，一个请求的数据&lt;/li&gt;
+&lt;li&gt;通过Excel传数据给请求的数据进行数据驱动&lt;/li&gt;
+&lt;li&gt;相同类似的代码进行代码生成&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最后其实这样子使用下来,接口构建几个简单一点的自动化测试用例，其实也就是几分钟的事情.&lt;/p&gt;
+
+&lt;h3 id=&#34;一些细节:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;一些细节&lt;/h3&gt;
+
+&lt;p&gt;在实现过程中，实际上还有一些特殊情况，比如说需要token，认证信息，这些通过一个公用函数的方式就可以解决，然后在代码生成的时候
+直接讲这个放在实际测试的接口前面调用. 后有就是上面说到的的:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;HTTPS的访问&lt;/li&gt;
+&lt;li&gt;开发接口定义不够准确的问题,造成使用RestTemplate时候出现了一些不在开始预期范中的问题&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;HTTPS的访问是通过如下代码解决的,创建一个略SSL的httpclient就可以了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static RestTemplateClientHelper getHttpClientImplInstance(){
+       RestTemplateClientHelper client = new RestTemplateClientHelper();
+       HttpClient httpClient = getIgnoreSSLHttpClient();
+       client.setTemplate(new RestTemplate(new HttpComponentsClientHttpRequestFactory(httpClient)));
+       return client;
+   }
+
+   /**
+    * 获取忽略SSL的httpclient，支持https的请求
+    * @return
+    */
+   private static HttpClient getIgnoreSSLHttpClient() {
+       CloseableHttpClient httpClient = null;
+       try {
+
+           httpClient = HttpClients.custom().
+                   setHostnameVerifier(new AllowAllHostnameVerifier()).
+                   setSslcontext(new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
+                       public boolean isTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
+                           return true;
+                       }
+                   }).build()).build();
+       } catch (NoSuchAlgorithmException | KeyManagementException | KeyStoreException e) {
+           logger.error(e);
+       }
+       return httpClient;
+   }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;还有一个就是有时开发的接口返回类型(accept type)不能让RestTemplate处理，那么其实添加自己定义个MessageConverter就好了:
+下面是一个修改阿里自己的FastJSON的MessageConverter的例子,
+其实也没改什么，就是捕捉了一个异常，主要是不知道什么原因调用时候readInternal就抛出和编码格式有关系的异常，然后就捕捉了一下异常反正也就把那个问题就没有了，不过这个改法应该也是有问题的.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class ModifiedFastJsonHttpMessageConverter extends AbstractHttpMessageConverter&amp;lt;Object&amp;gt; {
+   ........
+    public ModifiedFastJsonHttpMessageConverter() {
+        super(new MediaType(&amp;quot;application&amp;quot;, &amp;quot;json&amp;quot;, UTF8), new MediaType(&amp;quot;application&amp;quot;, &amp;quot;*+json&amp;quot;, UTF8));
+        this.charset = UTF8;
+        this.features = new SerializerFeature[0];
+    }
+
+    ............
+
+    protected Object readInternal(Class&amp;lt;?&amp;gt; clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        InputStream in = inputMessage.getBody();
+        byte[] buf = new byte[1024];
+
+        while(true) {
+            int bytes = in.read(buf);
+            if(bytes == -1) {
+                byte[] bytes1 = baos.toByteArray();
+                try {
+                    return JSON.parseObject(bytes1, 0, bytes1.length, this.charset.newDecoder(), clazz);
+                }catch (Exception e){
+                    return baos.toString(&amp;quot;UTF-8&amp;quot;);
+                }
+            }
+
+            if(bytes &amp;gt; 0) {
+                baos.write(buf, 0, bytes);
+            }
+        }
+    }
+      ........
+  }  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;后续的一些想法:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;后续的一些想法&lt;/h2&gt;
+
+&lt;p&gt;后续希望在这个基础上再做点其他的一些事情:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;增加POSTMAN的代码生成的支持&lt;/li&gt;
+&lt;li&gt;探索能不能通过API接口描述直接生成JMETER的JMX文件，可以讲基础的JMETER性能测试的基础代码也生成好&lt;/li&gt;
+&lt;li&gt;整理一下放到GITHUB上面，其实整个脚手架自己也就是几个文件而已，:)&lt;/li&gt;
+&lt;li&gt;建立一个MOCK SERVER，方便模拟一些API调用的方式&lt;/li&gt;
+&lt;li&gt;做一个简单点获取JSON中指定字段，然后传递给下一个API使用的工具&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;一些资源:ea63f1aa465fc53cb054c51422143d4b&#34;&gt;一些资源&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://unirest.io&#34;&gt;unitest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jsonplaceholder.typicode.com&#34;&gt;json-placeholder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://wiremock.org/&#34;&gt;wiremock&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Mashape/mockbin.git&#34;&gt;mockbin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Phantomjs Tutorial</title>
+      <link>http://simonpatrick.github.io/posts/automation/2015-10-24-phantomjs-usage/</link>
+      <pubDate>Sat, 24 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/automation/2015-10-24-phantomjs-usage/</guid>
+      <description>
+
+&lt;p&gt;自己学习Phatomjs的教程,分享之.&lt;/p&gt;
+
+&lt;h2 id=&#34;quick-start:3e613a790936ffbb3bdf5d75f97a4024&#34;&gt;Quick Start&lt;/h2&gt;
+
+&lt;p&gt;首先phantomjs是个什么? 以下是官方网站的解释:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PhantomJS is a headless WebKit scriptable with a JavaScript API.
+It has fast and native support for various web standards:
+DOM handling, CSS selector, JSON, Canvas, and SVG.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;phantomjs可以用来做什么?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://phantomjs.org/headless-testing.html&#34;&gt;HEADLESS WEBSITETESTING&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phantomjs.org/screen-capture.html&#34;&gt;SCREENSHOT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phantomjs.org/page-automation.html&#34;&gt;PAGE AUTOMATION&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://phantomjs.org/network-monitoring.html&#34;&gt;NETWORK MONITORING&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&amp;hellip; depends on your imagination&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这里主要来介绍一下PhantomJS的基础用法,包括了:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;基础语法&lt;/li&gt;
+&lt;li&gt;HEADLESS WEB TESTING&lt;/li&gt;
+&lt;li&gt;SCREEN Capture&lt;/li&gt;
+&lt;li&gt;Network Monitoring&lt;/li&gt;
+&lt;li&gt;Page Automation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;安装PhantomJS请参考: &lt;a href=&#34;http://phantomjs.org/download.html&#34;&gt;http://phantomjs.org/download.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;基础语法:3e613a790936ffbb3bdf5d75f97a4024&#34;&gt;基础语法&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hello World&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;console.log(&#39;Hello World!&#39;);
+phantom.exit();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;phantomjs hello_world.js
+Hello World!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Page Loading
+一下代码是访问百度首页,计算页面加载时间并且截屏的例子:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var page = require(&#39;webpage&#39;).create();
+var url = &#39;http://www.baidu.com&#39;;
+t = Date.now();
+page.open(url, function (status) {
+    console.log(&amp;quot;Status:&amp;quot; + status);
+    if (status !== &#39;success&#39;) {
+        console.log(&#39;FAIL to load the address&#39;);
+    } else {
+        t = Date.now() - t;
+        console.log(&#39;Loading &#39; + url);
+        console.log(&#39;Loading time &#39; + t + &#39; msec&#39;);
+        page.render(&#39;baidu.png&#39;); //capture the screenshot
+    }
+
+    phantom.exit();
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;●✚  phantomjs pageload.js                              [10:43:41]
+Status:success
+Loading http://www.baidu.com
+Loading time 699 msec
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;是不是很简单，只要几行代码就可以实现了,这里主要使用了:&lt;code&gt;webpage&lt;/code&gt; 这个模块&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Code Evaluation&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;通过evaluate 方法可以在当前页面运行js程序，但是也仅限于当前页面的范围&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var page = require(&#39;webpage&#39;).create();
+page.onConsoleMessage = function(msg) {
+    console.log(&#39;Page title is &#39; + msg);
+};
+page.open(&amp;quot;http://www.baidu.com&amp;quot;, function(status) {
+    page.evaluate(function() {
+        console.log(document.title);
+        var element = document.getElementById(&#39;kw&#39;);
+        console.log(element.getAttribute(&#39;name&#39;));
+    });
+    phantom.exit();
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;phantomjs code_evaluation.js                       [10:51:55]
+Page title is 一张网页，要经历怎样的过程，才能抵达用户面前？
+一位新人，要经历怎样的成长，才能站在技术之巅？
+探寻这里的秘密；
+体验这里的挑战；
+成为这里的主人；
+加入百度，加入网页搜索，你，可以影响世界。
+
+Page title is 请将简历发送至 %c ps_recruiter@baidu.com（ 邮件标题请以“姓名-应聘XX职位-来自console”命名） color:red
+Page title is 职位介绍：http://dwz.cn/hr2013
+Page title is 百度一下，你就知道
+Page title is wd
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;On request and Response&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;通过phantomjs 监听request和response，代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var page = require(&#39;webpage&#39;).create();
+var url=&amp;quot;http://www.baidu.com&amp;quot;
+page.onResourceRequested = function(request) {
+    console.log(&#39;Request &#39; + JSON.stringify(request, undefined, 4));
+};
+page.onResourceReceived = function(response) {
+    console.log(&#39;Receive &#39; + JSON.stringify(response, undefined, 4));
+};
+page.open(url,function(){
+    console.log(&amp;quot;success&amp;quot;);
+    phantom.exit()
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;运行结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt; ...............
+}
+],
+&amp;quot;id&amp;quot;: 18,
+&amp;quot;redirectURL&amp;quot;: null,
+&amp;quot;stage&amp;quot;: &amp;quot;end&amp;quot;,
+&amp;quot;status&amp;quot;: 200,
+&amp;quot;statusText&amp;quot;: &amp;quot;OK&amp;quot;,
+&amp;quot;time&amp;quot;: &amp;quot;2015-10-24T04:05:39.086Z&amp;quot;,
+&amp;quot;url&amp;quot;: &amp;quot;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=&amp;amp;json=1&amp;amp;p=3&amp;amp;sid=17521_1455_17619_13245_17640_17001_17470_17072_15640_11634_17051&amp;amp;req=2&amp;amp;csor=0&amp;amp;cb=jQuery110209065551124513149_1445659538702&amp;amp;_=1445659538703&amp;quot;
+}
+success
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;headless-web-testing:3e613a790936ffbb3bdf5d75f97a4024&#34;&gt;HEADLESS WEB TESTING&lt;/h2&gt;
+
+&lt;p&gt;please refer here:&lt;a href=&#34;http://phantomjs.org/headless-testing.html&#34;&gt;http://phantomjs.org/headless-testing.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;screenshot:3e613a790936ffbb3bdf5d75f97a4024&#34;&gt;SCREENSHOT&lt;/h2&gt;
+
+&lt;p&gt;screen capture is quite simple,just use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var page = require(&#39;webpage&#39;).create();
+var url = &#39;http://www.baidu.com&#39;;
+t = Date.now();
+page.open(url, function (status) {
+    console.log(&amp;quot;Status:&amp;quot; + status);
+    if (status !== &#39;success&#39;) {
+        console.log(&#39;FAIL to load the address&#39;);
+    } else {
+        t = Date.now() - t;
+        console.log(&#39;Loading &#39; + url);
+        console.log(&#39;Loading time &#39; + t + &#39; msec&#39;);
+        page.render(&#39;baidu.png&#39;); //capture the screenshot
+    }
+
+    phantom.exit();
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;also actual use &lt;code&gt;page.render(&#39;baidu.pdf&#39;)&lt;/code&gt; to generate a PDF file&lt;/p&gt;
+
+&lt;h2 id=&#34;page-automation:3e613a790936ffbb3bdf5d75f97a4024&#34;&gt;page-automation&lt;/h2&gt;
+
+&lt;p&gt;操作&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var page = require(&#39;webpage&#39;).create();
+var url =&amp;quot;http://www.baidu.com&amp;quot;;
+var cdn_url= &#39;http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js&#39;;
+
+page.open(url, function() {
+    page.includeJs(cdn_url, function() {
+        page.evaluate(function() {
+
+            $(&amp;quot;button&amp;quot;).click();
+        });
+        phantom.exit()
+    });
+    page.render(&#39;baidu.png&#39;);
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;related-projects:3e613a790936ffbb3bdf5d75f97a4024&#34;&gt;Related Projects&lt;/h2&gt;
+
+&lt;p&gt;相关的项目请参考：
+&lt;a href=&#34;http://phantomjs.org/related-projects.html&#34;&gt;projects&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Page Factory in Selenium</title>
+      <link>http://simonpatrick.github.io/posts/automation/2015-09-24-page-factory/</link>
+      <pubDate>Thu, 24 Sep 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/automation/2015-09-24-page-factory/</guid>
+      <description>
+
+&lt;p&gt;本文主要用来分析Page Factory实现的原理以及一些扩展的可能性。&lt;/p&gt;
+
+&lt;h2 id=&#34;page-factory-的例子:a38b0b0f0c92c15f5ce55e9a150de670&#34;&gt;Page Factory 的例子&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://code.google.com/p/selenium/wiki/PageFactory&#34;&gt;Selenium Page Factory Wiki&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;首先解释一下这个例子：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;使用注解描述元素定位&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;PageFactory.initElements(driver, page);&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+public class GoogleSearchPage {
+    // The element is now looked up using the name attribute
+    @FindBy(how = How.NAME, using = &amp;quot;q&amp;quot;)
+    private WebElement searchBox;
+
+    public void searchFor(String text) {
+        // We continue using the element just as before
+        searchBox.sendKeys(text);
+        searchBox.submit();
+    }
+
+    public void searchFor(String text) {
+    GoogleSearchPage page＝ PageFactory.initElements(new ChromeDriver(), GoogleSearchPage.class);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上一个显而易见的好处就是减少了查找元素的代码量，比如类似于一下的代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;  driver.findElement(By.id(&amp;quot;q&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是只有这样的好处吗？我们先从分析Selenium Page Factory实现的原理说起&lt;/p&gt;
+
+&lt;p&gt;##Page Factory 实现的原理&lt;/p&gt;
+
+&lt;p&gt;PageFactory 是使用反射(Reflection)和动态代理(dynamic proxies)的方式来创建页面的每
+每个元素:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PageFactory: initElements and proxyFields&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static void initElements(FieldDecorator decorator, Object page) {
+    for(Class proxyIn = page.getClass(); proxyIn != Object.class; proxyIn = proxyIn.getSuperclass()) {
+        proxyFields(decorator, page, proxyIn);
+    }
+
+}
+
+private static void proxyFields(FieldDecorator decorator, Object page, Class&amp;lt;?&amp;gt; proxyIn) {
+    Field[] fields = proxyIn.getDeclaredFields();
+    Field[] arr$ = fields;
+    int len$ = fields.length;
+
+    for(int i$ = 0; i$ &amp;lt; len$; ++i$) {
+        Field field = arr$[i$];
+        Object value = decorator.decorate(page.getClass().getClassLoader(), field);
+        if(value != null) {
+            try {
+                field.setAccessible(true);
+                field.set(page, value);
+            } catch (IllegalAccessException var10) {
+                throw new RuntimeException(var10);
+            }
+        }
+    }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FieldDecorator：DefaultFieldDecorator 源码
+从DefaultFieldDecorator的源码看:&lt;/li&gt;
+&lt;li&gt;实现decorate方法,WebElement 和List&lt;WebElement&gt; 都是通过proxy的方式创建的&lt;/li&gt;
+&lt;li&gt;每个Proxy的方式都有一个对应的invocationHandler处理
+Selenium的源码有两个invocationHandler：
+
+&lt;ul&gt;
+&lt;li&gt;LocatingElementHandler&lt;/li&gt;
+&lt;li&gt;LocatingElementListHandler&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public Object decorate(ClassLoader loader, Field field) {
+        if(!WebElement.class.isAssignableFrom(field.getType()) &amp;amp;&amp;amp; !this.isDecoratableList(field)) {
+            return null;
+        } else {
+            ElementLocator locator = this.factory.createLocator(field);
+            return locator == null?null:(WebElement.class.isAssignableFrom(field.getType())?this.proxyForLocator(loader, locator):(List.class.isAssignableFrom(field.getType())?this.proxyForListLocator(loader, locator):null));
+        }
+    }
+
+    private boolean isDecoratableList(Field field) {
+        if(!List.class.isAssignableFrom(field.getType())) {
+            return false;
+        } else {
+            Type genericType = field.getGenericType();
+            if(!(genericType instanceof ParameterizedType)) {
+                return false;
+            } else {
+                Type listType = ((ParameterizedType)genericType).getActualTypeArguments()[0];
+                return !WebElement.class.equals(listType)?false:field.getAnnotation(FindBy.class) != null || field.getAnnotation(FindBys.class) != null || field.getAnnotation(FindAll.class) != null;
+            }
+        }
+    }
+
+    protected WebElement proxyForLocator(ClassLoader loader, ElementLocator locator) {
+        LocatingElementHandler handler = new LocatingElementHandler(locator);
+        WebElement proxy = (WebElement)Proxy.newProxyInstance(loader, new Class[]{WebElement.class, WrapsElement.class, Locatable.class}, handler);
+        return proxy;
+    }
+
+    protected List&amp;lt;WebElement&amp;gt; proxyForListLocator(ClassLoader loader, ElementLocator locator) {
+        LocatingElementListHandler handler = new LocatingElementListHandler(locator);
+        List proxy = (List)Proxy.newProxyInstance(loader, new Class[]{List.class}, handler);
+        return proxy;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我们再看一下LocatingElementHandler,可以看到实际在待用PageFactory创建的元素时候
+都是通过这个掉用LocatingElementHandler:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class LocatingElementHandler implements InvocationHandler {
+    private final ElementLocator locator;
+
+    public LocatingElementHandler(ElementLocator locator) {
+        this.locator = locator;
+    }
+
+    public Object invoke(Object object, Method method, Object[] objects) throws Throwable {
+        WebElement element;
+        try {
+            element = this.locator.findElement();
+        } catch (NoSuchElementException var7) {
+            if(&amp;quot;toString&amp;quot;.equals(method.getName())) {
+                return &amp;quot;Proxy element for: &amp;quot; + this.locator.toString();
+            }
+
+            throw var7;
+        }
+
+        if(&amp;quot;getWrappedElement&amp;quot;.equals(method.getName())) {
+            return element;
+        } else {
+            try {
+                return method.invoke(element, objects);
+            } catch (InvocationTargetException var6) {
+                throw var6.getCause();
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;以上Selenium PageFactory大致的实现，从过程来看：
+PageFaction-&amp;gt; initElements-&amp;gt; proxyFields&lt;/p&gt;
+
+&lt;h2 id=&#34;page-factory-有什么好处:a38b0b0f0c92c15f5ce55e9a150de670&#34;&gt;Page Factory 有什么好处&lt;/h2&gt;
+
+&lt;p&gt;个人理解的好处:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;可以通过修改InvocationHandler里面的处理,比如
+&lt;code&gt;java
+element = this.locator.findElement();
+&lt;/code&gt;
+如果都使用wait().util的方式,这样可以使所有查找的元素更加稳定&lt;/li&gt;
+&lt;li&gt;使用了proxy的方式,在实例化WebElement的时候，实际上不管WebElement存在不存在都可以创建
+而实际findElement都会延迟到真的调用这个元素时执行,这带来一个好处就是如果WebElement的实例创建后
+页面DOM刷新后,需要重新查找WebElement,否则可能抛出StaleElementReferenceException,而Proxy之后每次都会自动
+查找,这样就减少了代码处理&lt;/li&gt;
+&lt;li&gt;工厂的设计模式同时也带了了灵活程度,在创建页面或者页面元素的时候,可以开始添加统一的前置或者后置的处理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;但是可惜的是Selenium并没有提供开发的接口来让用户定制,所以如果自己定制PageFactory模式,则需要自己去实现Selenium这
+一套方法,同时加入自己特殊的实现&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>TestNG 报告定制最简单的原理</title>
+      <link>http://simonpatrick.github.io/posts/automation/2015-09-24-testng-simple-report/</link>
+      <pubDate>Thu, 24 Sep 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/automation/2015-09-24-testng-simple-report/</guid>
+      <description>
+
+&lt;p&gt;如果需要定制TestNG的测试报告,可以先想一下首先需要什么的数据,其实最简单的数据就是测试用例成功失败的数据,
+那么实际上TestNG提供了ITestListener的接口可以让你获取这些测试数据.
+同时IReporter 接口可以让用户在调用最后自己生成测试报告.&lt;/p&gt;
+
+&lt;p&gt;所以其实只要用一个类实现ITestListener,IReporter就可以了.&lt;/p&gt;
+
+&lt;h2 id=&#34;itestlistener-ireporter实现:c28d9d5c6f55c954788902c0ecee0cb3&#34;&gt;ITestListener,IReporter实现&lt;/h2&gt;
+
+&lt;p&gt;一下是我一个最简单的实现, 实际上TestNG开放出来的这些监听器,主要是让你可以获取TestNG 测试容器中运行测试的数据,上下文.
+关于代码里面的ITestResult, xmlSuites,suites 可以自行查找&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class TestNGSimpleReport implements ITestListener, IReporter {
+    private List&amp;lt;String&amp;gt; testPassed = Lists.newArrayList();
+    private List&amp;lt;String&amp;gt; testFailed = Lists.newArrayList();
+    private List&amp;lt;String&amp;gt; testSkipped = Lists.newArrayList();
+
+    @Override
+    public void generateReport(List&amp;lt;XmlSuite&amp;gt; xmlSuites, List&amp;lt;ISuite&amp;gt; suites,
+                               String outputDirectory) {
+        System.out.println(&amp;quot;Passed Case: &amp;quot; + testPassed.size());
+        System.out.println(&amp;quot;testFailed Case: &amp;quot; + testFailed.size());
+        System.out.println(&amp;quot;testSkipped Case: &amp;quot; + testSkipped.size());
+
+        for (String passed : testPassed) {
+            System.out.println(&amp;quot;passed case:&amp;quot; + passed);
+        }
+        for (String passed : testFailed) {
+            System.out.println(&amp;quot;failed case:&amp;quot; + passed);
+        }
+
+        for (String passed : testSkipped) {
+            System.out.println(&amp;quot;skipped case:&amp;quot; + passed);
+        }
+
+    }
+
+    @Override
+    public void onTestStart(ITestResult result) {
+
+    }
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        testPassed.add(result.getMethod().getMethodName());
+    }
+
+    @Override
+    public void onTestFailure(ITestResult result) {
+        testFailed.add(result.getMethod().getMethodName());
+    }
+
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        testSkipped.add(result.getMethod().getMethodName());
+    }
+
+    @Override
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+
+    }
+
+    @Override
+    public void onStart(ITestContext context) {
+
+    }
+
+    @Override
+    public void onFinish(ITestContext context) {
+
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;编写testng的测试:c28d9d5c6f55c954788902c0ecee0cb3&#34;&gt;编写TestNG的测试&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class TestNGTest {
+
+    @Test
+    public void test_pass(){
+        System.out.println(&amp;quot;passed_case&amp;quot;);
+    }
+
+    @Test
+    public void test_failed(){
+        Assert.assertTrue(false);
+    }
+
+    @Test
+    public void test_pass_2(){
+        System.out.println(&amp;quot;passed_case_2&amp;quot;);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;将监听器放入testng-xml文件:c28d9d5c6f55c954788902c0ecee0cb3&#34;&gt;将监听器放入Testng.xml文件&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;   &amp;lt;suite name=&amp;quot;SimpleReport&amp;quot;&amp;gt;
+       &amp;lt;listeners&amp;gt;
+           &amp;lt;listener class-name=&amp;quot;com.hedwig.testng.TestNGSimpleReport&amp;quot;/&amp;gt;
+       &amp;lt;/listeners&amp;gt;
+       &amp;lt;test verbose=&amp;quot;1&amp;quot; name=&amp;quot;simple test&amp;quot; &amp;gt;
+           &amp;lt;classes&amp;gt;
+               &amp;lt;class name=&amp;quot;com.hedwig.testng.TestNGTest&amp;quot;/&amp;gt;
+           &amp;lt;/classes&amp;gt;
+       &amp;lt;/test&amp;gt;
+
+   &amp;lt;/suite&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;运行testng-xml文件-查看结果:c28d9d5c6f55c954788902c0ecee0cb3&#34;&gt;运行Testng.xml文件,查看结果&lt;/h2&gt;
+
+&lt;p&gt;结果如下,是不是很简单? 如果想做的cool一点,可以将这些数据写到一个html模版,写入文件就可以了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;===============================================
+SimpleReport
+Total tests run: 3, Failures: 1, Skips: 0
+===============================================
+
+Passed Case: 2
+testFailed Case: 1
+testSkipped Case: 0
+passed case:test_pass
+passed case:test_pass_2
+failed case:test_failed
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

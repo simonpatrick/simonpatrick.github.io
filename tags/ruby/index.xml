@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby on Colored Hedwig</title>
+    <link>http://simonpatrick.github.io/tags/ruby/</link>
+    <description>Recent content in Ruby on Colored Hedwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 03 Nov 2015 10:31:11 +0800</lastBuildDate>
+    <atom:link href="http://simonpatrick.github.io/tags/ruby/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ruby Dependency Management</title>
+      <link>http://simonpatrick.github.io/posts/ruby/2015-11-3-ruby-basic-dependecy-management/</link>
+      <pubDate>Tue, 03 Nov 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/ruby/2015-11-3-ruby-basic-dependecy-management/</guid>
+      <description>
+
+&lt;p&gt;在接触了一些语言之后,一般每一个语言都有工具来管理第三方包
+的安装和管理. 比如:
+- Java Maven/Gradle
+- Python pip
+- NodeJS NPM&lt;/p&gt;
+
+&lt;p&gt;而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法&lt;/p&gt;
+
+&lt;h2 id=&#34;安装bundler:19961197a3c737c574b297b46ea8e08c&#34;&gt;安装Bundler&lt;/h2&gt;
+
+&lt;p&gt;一句话安装 bundler&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;gem install bundler
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;开始使用bundler-管理项目:19961197a3c737c574b297b46ea8e08c&#34;&gt;开始使用Bundler 管理项目&lt;/h2&gt;
+
+&lt;p&gt;首先初始化一个Bundler管理的项目:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;  bundle init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;运行以上命令之后,项目中会生成一个Gemfile文件.&lt;/p&gt;
+
+&lt;h2 id=&#34;安装第一个包:19961197a3c737c574b297b46ea8e08c&#34;&gt;安装第一个包&lt;/h2&gt;
+
+&lt;p&gt;将rspec写入Gemfile&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &#39;gem &amp;quot;rspec&amp;quot;&#39; &amp;gt;&amp;gt; Gemfile
+bundle install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;至此一个简单的使用bundler 管理的项目就已经可以使用了.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Simple Sorting in Python And Ruby</title>
+      <link>http://simonpatrick.github.io/posts/2014-08-24-simple_sorting_in_python_ruby/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/2014-08-24-simple_sorting_in_python_ruby/</guid>
+      <description>
+
+&lt;p&gt;不同语言的排序&lt;/p&gt;
+
+&lt;h2 id=&#34;python:d479efe8838a50e9cf62b923783883d0&#34;&gt;Python&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a=[5,3,2,2,90,12]
+sorted(a)
+sorted(a,reverse=True)
+a.sort()
+a.sort(reserve=True)
+
+f = [&#39;abcd&#39;,&#39;CCCC&#39;]
+sorted(c,key=len)
+sorted(c,key=str.lower)
+sorted(c,key=lastchar)
+
+f = [{&#39;name&#39;:&#39;abc&#39;,&#39;age&#39;:20},{&#39;name&#39;:&#39;def&#39;,&#39;age&#39;:30}]
+def age(s):
+  return s[&#39;age&#39;]
+
+ff=sorted(f,key=age)
+f2=sorted(f,key=lambda x:x[&#39;age&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ruby:d479efe8838a50e9cf62b923783883d0&#34;&gt;Ruby&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;a = [ &amp;quot;d&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;e&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot; ]
+a.sort                    #=&amp;gt; [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;e&amp;quot;]
+a.sort { |x,y| y &amp;lt;=&amp;gt; x }  #=&amp;gt; [&amp;quot;e&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;]
+a.sort { |x,y| x &amp;lt;=&amp;gt; Y }  #=&amp;gt; [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;e&amp;quot;]
+
+a = [ &amp;quot;d&amp;quot;, &amp;quot;a&amp;quot;, &amp;quot;e&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot; ]
+a.sort!                    #=&amp;gt; [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;e&amp;quot;]
+a.sort! { |x,y| y &amp;lt;=&amp;gt; x }  #=&amp;gt; [&amp;quot;e&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;a&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

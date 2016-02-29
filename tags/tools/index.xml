@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on Colored Hedwig</title>
+    <link>http://simonpatrick.github.io/tags/tools/</link>
+    <description>Recent content in Tools on Colored Hedwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 24 Jan 2015 10:31:11 +0800</lastBuildDate>
+    <atom:link href="http://simonpatrick.github.io/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>API Document Generation Tools</title>
+      <link>http://simonpatrick.github.io/posts/api/2015-01-24-api_as_document_tool/</link>
+      <pubDate>Sat, 24 Jan 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/api/2015-01-24-api_as_document_tool/</guid>
+      <description>&lt;p&gt;some source of Restful  API documents generation:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://apiary.io/&#34;&gt;apiary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jashkenas.github.io/docco/&#34;&gt;docco&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.dexy.it/&#34;&gt;dexy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://swagger.io/&#34;&gt;swagger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://restunited.com/&#34;&gt;restunited&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jsondoc.org/examples-flows.html&#34;&gt;jsondoc&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Web Testing Tools list</title>
+      <link>http://simonpatrick.github.io/posts/2012-08-24-web_testing_tools/</link>
+      <pubDate>Mon, 24 Sep 2012 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/2012-08-24-web_testing_tools/</guid>
+      <description>
+
+&lt;p&gt;#1. Cross Browser(浏览器兼容性测试)&lt;/p&gt;
+
+&lt;h3 id=&#34;why:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;无数的浏览器，无数的版本，无数的终端。。。。。。。 这个理由就足够需要做兼容性测试了
+测试的悲剧就是这样的，听上去很简单，做起来就要人命，还被人不理解。。。。。。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;how:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;* 自动化测试：自己写截屏工具，自己比较（需要进一步研究）
+    1. sikuli
+    2. selenium
+    3. http://testingbot.com
+    4. http://saucelabs.com
+* 网站：http://browsershots.org （自己没有验证要如何处理）
+* 标准检查：http://validator.w3.org
+* 浏览器分类
+    1. WebKit：Chrome/Safari
+    2. Grecko: Firefox
+    3. Trident rendering engine: IE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#2. Web Accessibility&lt;/p&gt;
+
+&lt;h3 id=&#34;why-1:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;更好的使用，更多的有意义的标示
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;how-1:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;p&gt;This simplest way to check against W3C compliance would be to open up Firefox, install the accessibility checker plug in, open your site to be tested and run a quick scan.
+Tips:
+    *  Firefox accessibility extension - &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/&lt;/a&gt;
+    *  Tips on how best to describe the alt attribute -&lt;a href=&#34;http://webdesign.about.com/od/beginningtutorials/a/aa122004.htm&#34;&gt;http://webdesign.about.com/od/beginningtutorials/a/aa122004.htm&lt;/a&gt;
+    * The W3 standards on accessibility - &lt;a href=&#34;http://www.w3.org/standards/webdesign/accessibility&#34;&gt;http://www.w3.org/standards/webdesign/accessibility&lt;/a&gt;
+    * Test Partners accessibility testing - &lt;a href=&#34;http://www.testpartners.co.uk/accessibility_testing.htm&#34;&gt;http://www.testpartners.co.uk/accessibility_testing.htm&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;#3. Is the HTML valid?&lt;/p&gt;
+
+&lt;h3 id=&#34;why-2:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;p&gt;标准化，避免不必要的bug&lt;/p&gt;
+
+&lt;h3 id=&#34;how-2:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://validator.w3.org&#34;&gt;http://validator.w3.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Firefox 插件&lt;/li&gt;
+&lt;li&gt;Good post on why you should validate - &lt;a href=&#34;http://www.stevefenton.co.uk/Content/Blog/Date/201108/Blog/Do-I-&#34;&gt;http://www.stevefenton.co.uk/Content/Blog/Date/201108/Blog/Do-I-&lt;/a&gt; Need-To-Validate-My-HTML&lt;/li&gt;
+&lt;li&gt;FireWeasel - &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/fireweasel/&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/fireweasel/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#4. Check for Dead-links&lt;/p&gt;
+
+&lt;h3 id=&#34;why-3:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;p&gt;保证网站的最新内容，避免过时信息已经的误解。&lt;/p&gt;
+
+&lt;h3 id=&#34;how-3:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Link Check Tool: Xenu&lt;/li&gt;
+&lt;li&gt;Xenu Link Checker - &lt;a href=&#34;http://home.snafu.de/tilman/xenulink.html&#34;&gt;http://home.snafu.de/tilman/xenulink.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;W3C Checker - &lt;a href=&#34;http://validator.w3.org/checklink&#34;&gt;http://validator.w3.org/checklink&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Broken Link Checker Tool - &lt;a href=&#34;http://www.brokenlinkcheck.com/&#34;&gt;http://www.brokenlinkcheck.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#5. One, Two, Many&lt;/p&gt;
+
+&lt;h3 id=&#34;why-4:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;网站总是有一定并发的，所以可以先使用一个用户测试基本功能，然后使用两个用户检查是否存在简单的并发问题，最后就考虑使用压力测试工具。 这个方法简单的避免一些简单的并发问题
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;how-4:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;* JMeter -&amp;gt; webservice
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#6. Multiple tabs and windows&lt;/p&gt;
+
+&lt;h3 id=&#34;why-5:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;主要为了查看安全问题，数据刷新问题已经多cookie的问题
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;how-5:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;* example 1:
+    Open Firefox and in one tab log in to your secure application.
+    Then right click on a page and open that new page in a new tab. Both tabs are now considered to be in the same session.
+    Now log out of the application in Tab 2 and try to perform some actions in Tab 1.
+    Has it logged you out or let you perform an action?
+    In most situations it would have logged you out.
+    In many instances it is possible to log in to two different accounts in the same browser and end up sharing data across both tabs because of cross authentication.
+
+* example 2：
+    I log in to my banking application in Tab 1 as Rob and then in Tab 2 as Dave.
+    Now when I switch to tab 1 and follow a new link I might get to see Dave’s information.
+    In Tab 2, Dave might even get to see my data.
+    This is because of confused session data stored in a single cookie for the browser, which is shared between two tabs.
+    It’s not just about authentication though.
+    What about adding things to a shopping basket in multiple tabs – do they persist in the basket? What about state changes in your application across several tabs?
+    Can I login across several browsers in different sessions?
+    Can I trick browser side validation and restrictions by performing actions across a number of tabs?
+    The best way to test in multiple browser tabs and sessions is to explore the application with multiple tabs open, checking what effect a change in one tab can have on the other.
+    As you explore around look for data, states and actions that might be confused by bad cookie management, session management and cross tab problems.
+
+* Good site about cookies and sessions - http://www.allaboutcookies.org/cookies/session-cookies-used-for.html 
+* Session Hijacking - http://en.wikipedia.org/wiki/Session_hijacking
+* Security implications of cookies - http://it.toolbox.com/blogs/securitymonkey/successful-hacking-with-xss- cookies-session-ids-11098
+* Burpsuite - http://portswigger.net/burp/
+* Firecookie - https://addons.mozilla.org/en-us/firefox/addon/firecookie/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#7. Http and Https&lt;/p&gt;
+
+&lt;h3 id=&#34;why-6:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;敏感信息如果泄露，容易被人攻击，所以需要检查是否使用了http传输了敏感信息，同时有些信息被修改了是否会引起错误，比如http header，或者post数据。。。。。。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;how-6:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;* 使用proxy工具：Burpsuite,Charles Proxy/Fiddler 查看请求和返回信息，修改请求信息看是否可以造成问题，比如修改了页面的某个价格，是否还是新价格购买成功；个人信息是否在里面；
+* Good security for web checklist –
+http://www.techrepublic.com/blog/security/ensure-basic-web-site-security-with-this-checklist/424
+* Differences between http and https - http://www.virtu-software.com/ask-doug/QandA.asp?q=7
+* Another differences post - http://www.wisegeek.com/what-is-the-difference-between-http-and-https.htm 
+* Burpsuite - http://portswigger.net/burp/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#8. Client/Server Watch&lt;/p&gt;
+
+&lt;h3 id=&#34;why-7:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;Web测试仅仅查看页面是远远不够的，所以测试需要知道送出去的请求是什么，得到的返回是什么。以下问题可能需要问以下：
+ Is the data being sent and received correct?
+ Is the layout working as expected?
+ Are the response times satisfactory?
+ How do timeouts affect the site?
+ Are there any errors in the code?
+ What happens if I pass in X?
+ What happens if I remove X?
+ What happens if the message is lost completely?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;how-7:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;* Charles Proxy - http://www.charlesproxy.com/
+* Fiddler - http://fiddler2.com/fiddler2/
+* Firebug - http://getfirebug.com/
+* Firecookie - https://addons.mozilla.org/en-US/firefox/addon/firecookie/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#9. Security&lt;/p&gt;
+
+&lt;h3 id=&#34;why-8:503ae51879b707b0c29f233dff927c51&#34;&gt;Why&lt;/h3&gt;
+
+&lt;p&gt;不用多少，听听各种脱库事件就知道了，只是我的能力够吗？：）&lt;/p&gt;
+
+&lt;h3 id=&#34;how-8:503ae51879b707b0c29f233dff927c51&#34;&gt;How&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;* Burpsuite - http://portswigger.net/burp/
+* Web Scarab - https://www.owasp.org/index.php/WebScarab_Getting_Started
+* Web Hackers book - http://www.amazon.co.uk/Web-Application-Hackers-Handbook- Discovering/dp/0470170778
+* OWASP Top Ten - https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project 
+* Plynt Security Testing Experts - http://www.plynt.com/
+* Salesforce Burpsuite for App Exchange Partners - http://security.force.com/webappscanner
+* Start with the treat profile - http://www.securityalliance.co.uk/blog/bid/40335/Web-Application-Security-Testing-Start-with-the-Threat-Profile
+* Firefox add-ons (search for “security”)- https://addons.mozilla.org/en-US/firefox/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#10. Browser Extentions
+* Selenium IDE &lt;a href=&#34;http://seleniumhq.org/projects/ide/&#34;&gt;http://seleniumhq.org/projects/ide/&lt;/a&gt;
+Selenium is fast becoming an industry standard tool. This is the IDE version. Visit &lt;a href=&#34;http://seleniumhq.org/&#34;&gt;http://seleniumhq.org/&lt;/a&gt; for more information on other tools in the set like Selenium Grid.
+* IE Tab &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/1419&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/1419&lt;/a&gt; Flips your Firefox tab in to Internet Explorer mode.
+* &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/5792&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/5792&lt;/a&gt; Re-sizes your window to different screen sizes
+* Fire cookie &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/6683&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/6683&lt;/a&gt; Lets you to see and manage cookies through the Firebug add-on.
+* Delicious &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/3615&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/3615&lt;/a&gt;
+* Social bookmarking service. Never lose a site of interest again and share them with the community too. Perfect for bookmarking testing sites, information, snippets and blogs.
+* Clear Cache &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/1801&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/1801&lt;/a&gt; Clears out the cache within the browser at the click of a button.
+* Copy Plain Text &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/134&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/134&lt;/a&gt;
+Copies any text from the browser in to a plain text format losing all formatting.
+* Fiddler Hook &lt;a href=&#34;http://www.fiddler2.com/fiddler2/addons/fiddlerhook/&#34;&gt;http://www.fiddler2.com/fiddler2/addons/fiddlerhook/&lt;/a&gt; Firefox add-on for integrating with Fiddler (a debugging tool).
+* Download Status &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/26&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/26&lt;/a&gt;
+Shows your downloads in a toolbar at the bottom of the browser window. Keeps it nice and tidy and easy access to your downloads.
+* Xmarks &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/2410&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/2410&lt;/a&gt;
+* Allow you to save your bookmarks and sync them between browsers on different machines. Works across browsers too. This is great if you test on several different machines. It means you can save your bookmarks once and find them on other browsers you have synched.
+* W3C Page Validator &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/2250&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/2250&lt;/a&gt;
+ Check your page against W3C standards and compliance.
+* Pencil &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/8487&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/8487&lt;/a&gt;
+Great for screen mocks and notes.
+* SQL Injection &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/6727&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/6727&lt;/a&gt;
+* Quick Restart &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/3559&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/3559&lt;/a&gt;
+* Restarts Firefox maintaining all tabs and open docs when it launches it again.
+* Firebug &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/1843&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/1843&lt;/a&gt; How can you test websites without this one?
+* Regular Expressions Tester &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/2077&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/2077&lt;/a&gt; Tool for testing regular expressions.
+* Quick Locale Switcher &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/1333&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/1333&lt;/a&gt;
+* Good extension allowing for quick switching between browser locales.
+ Http Fox &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/6647&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/6647&lt;/a&gt;
+* Good tool for analyzing the http traffic through your browser.
+* TAW3 &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/1158?src=api&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/1158?src=api&lt;/a&gt;
+* Accessibility checking tool. Awesome.
+* Firefox Accessibility Tools &lt;a href=&#34;https://addons.mozilla.org/en-US/firefox/addon/5809?src=api&#34;&gt;https://addons.mozilla.org/en-US/firefox/addon/5809?src=api&lt;/a&gt; Accessibility compliance checking tool.&lt;/p&gt;
+
+&lt;h3 id=&#34;back-to-the-benginging-again:503ae51879b707b0c29f233dff927c51&#34;&gt;Back to the benginging again&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Stack Overflow question on disabling back capability (which you cannot by the way) -&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/7816195/how-to-disable-back-button-in-browser-when-user-logout-in-&#34;&gt;http://stackoverflow.com/questions/7816195/how-to-disable-back-button-in-browser-when-user-logout-in-&lt;/a&gt; classic-asp&lt;/li&gt;
+&lt;li&gt;IE security problem with the Back Button.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.wired.com/science/discoveries/news/2002/04/51899?currentPage=all&#34;&gt;http://www.wired.com/science/discoveries/news/2002/04/51899?currentPage=all&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;其他的一些测试方式:503ae51879b707b0c29f233dff927c51&#34;&gt;其他的一些测试方式&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Change the URL&lt;/li&gt;
+&lt;li&gt;Tab Order&lt;/li&gt;
+&lt;li&gt;See the Source&lt;/li&gt;
+&lt;li&gt;UX
+    * Customer Support
+    * Release Notes
+    * Error Tolernt
+    * Documentation
+    * Performance
+    * Security
+    * Usability and Ease to Use
+    * Accessibility&lt;/li&gt;
+&lt;li&gt;Change the locale&lt;/li&gt;
+&lt;li&gt;Resize the windows and resolution&lt;/li&gt;
+&lt;li&gt;Block pop-ups&lt;/li&gt;
+&lt;li&gt;Disable CSS&lt;/li&gt;
+&lt;li&gt;Text Only&lt;/li&gt;
+&lt;li&gt;Disable Javascript&lt;/li&gt;
+&lt;li&gt;Refresh during page loads&lt;/li&gt;
+&lt;li&gt;Check SEO&lt;/li&gt;
+&lt;li&gt;Five second test&lt;/li&gt;
+&lt;li&gt;Throttle It (限流处理)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;兼容性测试:503ae51879b707b0c29f233dff927c51&#34;&gt;兼容性测试&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;www.supportdetails.com&#34;&gt;support detail&lt;/a&gt;
+&lt;a href=&#34;http://www.adobe.com/software/flash/about/&#34;&gt;adobe flash version&lt;/a&gt;.
+&lt;a href=&#34;java.com/en/download/installed.jsp&#34;&gt;java version&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;工具:503ae51879b707b0c29f233dff927c51&#34;&gt;工具&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.techsmith.com/download/jing/&#34;&gt;video record&lt;/a&gt;&lt;a href=&#34;http://faststone.org/FSCaptureDetail.htm&#34;&gt;FastStone Capture&lt;/a&gt;
+&lt;a href=&#34;http://www.xtra-rant.com/gennames/&#34;&gt;test data&lt;/a&gt;
+&lt;a href=&#34;http://www.markrichman.com/2007/09/26/generating-random-names-as-test-data/&#34;&gt;test data tool&lt;/a&gt;
+&lt;a href=&#34;http://www.satisfice.com/tools.shtml&#34;&gt;perlclip test-data&lt;/a&gt;
+&lt;a href=&#34;http://hexawise.com/&#34;&gt;combination tools&lt;/a&gt;
+&lt;a href=&#34;http://testing.gershon.info/reporter/.&#34;&gt;Rapid Reporter&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;自动化测试工具:503ae51879b707b0c29f233dff927c51&#34;&gt;自动化测试工具&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;SauceLabs&lt;/li&gt;
+&lt;li&gt;BrowserStack&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
