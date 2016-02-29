@@ -1,0 +1,375 @@
+<div class="index">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Marcellus+SC'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io//index.xml">
+
+    
+    <title>Colored Hedwig</title>
+    <meta property='og:title' content="Colored Hedwig">
+    <meta property="og:type" content="website">
+    
+
+    <meta property="og:url" content="http://simonpatrick.github.io/">
+    
+    
+
+  </head>
+
+  <body>
+
+    <header class="site">
+      <div class="title"><a href="http://simonpatrick.github.io/">Colored Hedwig</a></div>
+    </header>
+
+    <div class="container site">
+
+
+  <div class="row">
+    <div class="col-sm-9">
+
+      <div class="articles">
+        <div class="row">
+          
+          <div class="col-sm-6">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/testing/2015-11-16-error_toleration/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Nov 16, 2015</time>
+      <h2 class="title">软件容错</h2>
+      <div class="summary">软件的世界已经变的及其复杂，在互联网的世界中一个个知道不知道的API将世界连接起来，如蜘蛛网一般,一个看的到的功能可能依赖了好几个看不到的API,所以中间出点错误实在不能说是个意外了。但是出错归出错，出错了软件也是一样要处理这些问题，下面就讲讲我学到遇到的一点容错的小知识。 容错的目标 降低或者最小化对系统可用性，可靠性的影响，举个例子来说就是单点故障，如果一个地方出现错误 而把整个系统网络都拖垮了，这个显然是不能接受的。可以用一下几个来形容错误： fault(缺陷) 一些bug error(错误) 一些业务无法正常执行 failure(故障) 业务较长时间无法正常执行 容错的方法 硬件容错：多备份,系统冗余，主备 软件容错：避免严重业务错误，降级，异常处理,侦测，监控，重启&hellip;&hellip; 系统容错 常见机遇鲁棒性 Process Pairs Graceful Degradation:降级 Selective Retry state handling Linking Process Rejuvenation: 不可重现问题 Checkpoint update lost application state scrubbing process pools recovery block micro reboot state correction</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-6">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/java/2015-11-15-tomcat-jmx-monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Nov 15, 2015</time>
+      <h2 class="title">tomcat-jmx-monitoring</h2>
+      <div class="summary">Tomcat JMX Monitoring Access Data Via JMX &ldquo;MBeans&rdquo; Read/Write Bean Attributes Invoke Operations Receive Notifications JVM Exposes certain status Tomcat Exposes certain status Monitoring JVM Head status Total,Free Used Memory GC(Garbage Collection) GC Pause Time Monitoring Tomcat Status of Connector Status of request-processor thread pool Status of data sources Request performance JMX Tools jconsole (jdk) VisualVM (jdk) Most Profiles (Yourkit,etc.) Custom tools using javax.management Monitoring Your Application Monitor Application Processes</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-6">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/python/2015-11-15-String-Format-in-Python/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Nov 15, 2015</time>
+      <h2 class="title">Python 中String的格式化</h2>
+      <div class="summary">python中对于string有些挺有意思操作,现在把他记录如下： output = 'Hello {0}!'.format('World!') output1 = 'Hello {0} {1} !'.format('Mr.','World!') output2 = 'Hello {name} !'.format(name='World') print(output) print(output1) print(output2) 以上可读性最好的，个人认为是: output2 = 'Hello {name} !'.format(name='World') 时间，urlparser的一起使用 print('It\'s {0:%H:%M}'.format(datetime.today())) url = urlparse('http://pocoo.org/') print('{0.netloc} [{0.scheme}]'.format(url)) 结果： It's 15:16 pocoo.org [http] 是不是很方便的.</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-6">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/shell/2015-11-05-generate-jekyll-post-file/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Thu, Nov 5, 2015</time>
+      <h2 class="title">shell来自动生成Jekyll post文件</h2>
+      <div class="summary">通过以下代码可以生成jekyll 的post 文件 #! /bin/bash CAT=$1 TITLE=$2 echo &quot;current location: $PWD&quot; echo &quot;category: $CAT&quot; echo &quot;file_name: $TITLE&quot; FilePrefix=`date &quot;+%Y-%m-%d-&quot;` FILE_NAME=&quot;$FilePrefix$TITLE.md&quot; echo &quot;target file name is $FILE_NAME&quot; echo &quot;generate file.......&quot; POST_LOCATION=_posts/$CAT FILE_LOCATION=$POST_LOCATION/$FILE_NAME if [ -d $POST_LOCATION ] then cp template.md $FILE_LOCATION else echo &quot;create folder $CAT&quot; mkdir -p $POST_LOCATION cp template.md $FILE_LOCATION fi cd $POST_LOCATION echo &quot;current location: $PWD&quot; TODAY=`date &quot;+%Y-%m-%d-%H:%M:%S&quot;` echo &quot;today:$TODAY&quot; # replace keyword in template sed -i ''</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/microservice/2015-11-04-Docker-Notes/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/map[feature:%3cnil%3e]);"></div>
+    <div class="detail">
+      <time>Wed, Nov 4, 2015</time>
+      <h2 class="title">Docker 解释</h2>
+      <div class="summary">Docker 基本概念的解释 Docker dictionary - Container Docker Container is: A running instance of your app and it’s complete software stack Often runs just one process You might have many identical containers running Docker dictionary - image Docker Image is: Docker uses a layering system to optimize storage Each line in your Dockerfile is a layer Many layers make up an image Images share common layers where possible Docker dictionary -</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/thoughts/2015-11-03-Test-Tools/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/map[feature:%3cnil%3e]);"></div>
+    <div class="detail">
+      <time>Wed, Nov 4, 2015</time>
+      <h2 class="title">测试用例-一些有意思的工具</h2>
+      <div class="summary">Automation Test Case Generate Tools Korat(structurally complex tests) Randoop (random testing) CERT Basic Fuzzing Framework ZZUF cert.org osate link</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Refactoring-10-introduce method object, replace conditions with polymorphism</h2>
+      <div class="summary">将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。 public class Registration { public void create(double amount,String name, double credits){ //do work } } 重构后: //instroduce new Class public class RegistrationContext { double amount; String name; double credits; } //modify the method public void createRefactored(RegistrationContext context){ //do work } 多态替代条件判断 有时通过If&hellip;Else来判断不同的类型进行不同的处理，代码可读性不是很强，通过多态来替代这些 条件判断，同时抽取方法后，代码就会更加的具有可读性. public class OrderProcessor { public double processOrder(Customer cu,List&lt;Product&gt; products){ double orderTotal = products.parallelStream().mapToDouble(Product::getPrice).sum(); if(cu instanceof Employee){ orderTotal-=orderTotal*0.15; } if (cu instanceof NonEmployee){ orderTotal-=orderTotal*0.10; } return</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</h2>
+      <div class="summary">Arrowhead AntiPattern 一下代码有一系列的if 判断，我们可以重新思考判断逻辑,合并一些逻辑判断 来让代码更可读: public boolean hasAccess(User user, Permission permission, List&lt;Permission&gt; exemptions) { boolean hasPermission = false; if (user != null) { if (permission != null) { if (exemptions.Count() == 0) { if (SecurityChecker.CheckPermission(user,permission) || exemptions.Contains(permission)) { hasPermission = true; } } return hasPermission; } 重构后: if (user == null || permission == null) return false; if (exemptions.Contains(permission)) return true; return SecurityChecker.CheckPermission(user, permission); Remove Double Negative remove double negative</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-remove-god-class/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Refactoring-8-remove God Class</h2>
+      <div class="summary">God Class 就是一个类里面有一大堆不相干的方法放在一起,一般 情况下很多的工具类，或者manager有可能会有这样的情况.不是说不能有 工具类或者manager类，这个的关键是不相干的放在一个类里面。 不相干就违反了Single Responsibility的原则.</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/ruby/2015-11-3-ruby-basic-dependecy-management/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Ruby Dependency Management</h2>
+      <div class="summary">在接触了一些语言之后,一般每一个语言都有工具来管理第三方包 的安装和管理. 比如: - Java Maven/Gradle - Python pip - NodeJS NPM 而Ruby则用Bundler来做类似的事情. 以下是介绍一下Bundler的基本用法 安装Bundler 一句话安装 bundler gem install bundler 开始使用Bundler 管理项目 首先初始化一个Bundler管理的项目: bundle init 运行以上命令之后,项目中会生成一个Gemfile文件. 安装第一个包 将rspec写入Gemfile echo 'gem &quot;rspec&quot;' &gt;&gt; Gemfile bundle install 至此一个简单的使用bundler 管理的项目就已经可以使用了.</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+        </div>
+      </div>
+
+      
+<nav class="paging">
+  
+  <a href="/page/3" class="left" rel="prev">PREV</a>
+  
+
+  
+  <a href="/page/5" class="right" rel="next">NEXT</a>
+  
+</nav>
+
+
+
+    </div>
+
+    <div class="col-sm-3">
+      <aside class="site">
+
+  
+
+  
+
+  <div class="section">
+    <header><div class="title">LatestPosts</div></header>
+    <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Feb 28, 2016</time>
+      <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
+      <div class="summary">在前面的Zabbix API调用中我们看到了python的__getattr__的妙用，下面就探索一下这里面的道理,所以就聊聊python面向对象的基础知识. Python 面向对象 说到面向对象，就会说到类(class)，对象(object),那么什么是Class，Object呢？ Object： Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors -wagging, barking, eating. An object is an instance of a class. Class: A class can be defined as a template/blue print that describes the behaviors/states that object of its type support. 那么综合起来，class就是用来描述一系列对象的一个模版，抽象出了共同的东西(class)，object就是具体的某种情况下的一个例子(instance) 面向对象有如下基础概念： Polymorphism Inheritance Encapsulation Abstraction Classes Objects Instance Method Message Parsing Python Class and Object 的使用 看下例： - class Dog 定义了一个类 - __init__ 构造这个类的方法，就是创建出一个Dog的对象是通过这个方法 - name, 类的一个属性;eat(),也可以看成是类的一个属性，实际上它是一个dog的一个行为(behavior) - dog = Dog() 是创建了一个Dog(class)的新的的对象(object), 按照我们上面说的，dog是类Dog(class)的一个实例(instance) class Dog: def __init__(self): self.name='dog' def eat(): print('eating......') dog = Dog() print(dog.name) Python 对象的创建 参考上例，分别来说明对象的创建，访问.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Feb 28, 2016</time>
+      <h2 class="title">Simple Word Counter</h2>
+      <div class="summary">有时测试的面试题中会考点编程的内容，比如统计字符串中的相同字符数量，具体题目如下： 给定一个字符串，如MIssissippi 计算字符串中每一个不同字符出现的数量 Python 的解法 letter_count={} for letter in 'MIssissippi': letter[letter]=letter_count.get(letter,0)+1 print(letter_count) 运行结果： {'s': 4, 'M': 1, 'i': 3, 'I': 1, 'p': 2} Java 的解法 JAVA 8 中给Map加入了getOrDefault的方法，下面就分别介绍一下JAVA8之前和使用JAVA8的方法： JAVA8 之前： public Map&lt;String,Integer&gt; countCharacters(String source){ char[] chars = source.toCharArray(); Map&lt;String,Integer&gt; result = new HashMap&lt;&gt;(); for (char aChar : chars) { Integer existing_counter = result.get(String.valueOf(aChar)); int counter = existing_counter==null?0:existing_counter; result.put(String.valueOf(aChar),counter+1); } return result; } JAVA8 解法 public Map&lt;String,Integer&gt; countCharacters_JAVA8(String source){ char[] chars</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Fri, Feb 26, 2016</time>
+      <h2 class="title">Python 访问Zabbix API</h2>
+      <div class="summary">Zabbix API 访问 准备使用Python来访问一下Zabbix，首先当然阅读一下Zabbix的API Manual,抛开什么json rpc这样的问题之外，zabbix的API的分类还是很工整的，所以看起来比较舒服，在一定了解了zabbix基础之后，基本上就可以上手来写了，网上查了一下，找个一个python zabbix的调用的一个客户段代码，感觉不错，就开始行动了。 Zabbix API 客户端代码的实现 Zabbix API的主要的两个参数其实是method，params，params基本上就可以看作一些可变的参数，其实就是一个json或者map， 对于method来说，一般就是 resource.action 这种方式，所以python客户端使用重写了一个getattr来做,返回一个可以访问不同资源名称的客户端,具体的代码如下： class ZabbixClient: &quot;&quot;&quot; Generic Zabbix API Client - login - get auth &quot;&quot;&quot; globale_header = { &quot;Content-Type&quot;: &quot;application/json-rpc&quot; } def __init__(self, session=None, timeout=None): self.user_name, self.default_user_name = '1', '1' self.password, self.default_password = '123456', '123456' self.zabbix_api_url = 'http://{0}/api_jsonrpc.php'.format('abcd.http') if session: self.session = session else: self.session = requests.session() self.session.headers.update({ 'Content-Type': 'application/json-rpc', 'User-Agent': 'python-zabbix-client', 'Cache-Control': 'no-cache' }) self.auth = '' self.id = 0 self.timeout = timeout logger.info('JSON-RPC Server EndPoint: %s', self.zabbix_api_url) def login_in(self, user_name=None, password=None): &quot;&quot;&quot; login with given user_name and password, if None, use default user :param user_name: :param password: :return: result,auth key &quot;&quot;&quot; if user_name: self.user_name = user_name if password: self.password = password self.auth = self.user.login(user=self.user_name, password=self.password) def api_version(self): return self.apiinfo.version() # def confimport(self, format='', source='', rules=''): # &quot;&quot;&quot;Alias for configuration.import because it clashes with # Python's import reserved keyword&quot;&quot;&quot; # # return self.do_request( # method=&quot;configuration.import&quot;, # params={&quot;format&quot;: format, &quot;source&quot;: source, &quot;rules&quot;: rules} # )['result'] def do_request(self, method, params=None): request_json = { 'jsonrpc': '2.0', 'method': method, 'params': params or {}, 'id': self.id, } if method != 'apiinfo.version' and self.auth: request_json['auth'] = self.auth logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(',', ':'))) response = self.session.post( self.zabbix_api_url, data=json.dumps(request_json), timeout=self.timeout ) logger.debug(&quot;Response Code : %s&quot;, str(response.status_code)) response.raise_for_status() if not len(response.text): raise ZabbixAPIException(&quot;没有返回值&quot;) try: response_json = json.loads(response.text) except ValueError: raise ZabbixAPIException(&quot;不能解析JSON %s&quot; % response.text) logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(',', ':'))) self.id += 1 if 'error' in response_json: if 'data' not in response_json['error']: response_json['error']['data'] = 'No Data' msg = &quot;Error {code}: {message},{data}&quot;.format( code=response_json['error']['code'], message=response_json['error']['message'], data=response_json['error']['data'] ) raise ZabbixAPIException(msg, response_json['error']['code']) return response_json def __getattr__(self, item): &quot;&quot;&quot; auto create Zabbix API Client :param item: :return: &quot;&quot;&quot; return ZabbixAPIObjectClass(item, self) class ZabbixAPIObjectClass(object): def __init__(self, name, parent): self.name = name self.parent = parent def __getattr__(self, item): &quot;&quot;&quot; dynamic create a method (get,create,update,delete) :param item: :return: &quot;&quot;&quot; def fn(*args, **kwargs): if args and kwargs: raise TypeError('Found Both args and kwargs') return self.parent.do_request('{0}.{1}'.format(self.name, item), args or kwargs)['result'] return fn 基本上一个文件就搞定了，不过这个基本上参考了网上的一个代码实现的，这里使用getattr这种方式可以非常简洁的处理了这种请求非常类似的情况，这也是python的魅力吧.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Fri, Feb 26, 2016</time>
+      <h2 class="title">zabbix 基础</h2>
+      <div class="summary">抽空花了1个小时看了一下Zabbix的界面和简单的手册，了解了一下Zabbix的基础知识，下面是一个小小的记录,后面就写一些Python的脚本来直接调用Zabbix的API在进行一些自动化的操作. Zabbix 基础 Zabbix 是一个开源的监控系统，由于需要帮助运维写一些调用ZABBIX API的代码，所以就开始了解一下ZABBIX的一些基本概念. 简单的看了一下Zabbix的一个手册，大致了解Zabbix监控的一些概念，以下是Zabbix中比较重要的概念或者可以认为一些抽象的实体资源: Configuration HOST HOST GROUP Templates Monitor Application Items: keys Triggers Graphs Configuration:HOST HOST 就是Zabbix监控的对象，创建HOST可以通过一些预先定义好的模版来实现. 以Linux Group来说的话，HOST可能还有以下的一些属性： Agent Interface SNMP Interface JMX Interface IPMI Interface Monitory proxy Status Configuration: HOST GROUP 创建HOST的同时可以创建一个HOST GROUP，HOST GROUP实际上就是不同的HOST组合起来成一组. Configuration: Templates Templates 就是一些HOST的模版，相似的HOST可以通过模版继承，组合的方式创建 Monitor 从监控的层级来看，监控HOST的层级逻辑是： HOSTGROUP: HOST GROUP是可以认为不同HOST的容器 HOST: 监控的实体,监控的实体实际上有不同的监控模版组合而成 以下的APPLICATION，ITEM,TRIGGER,Graph 其实都是继承了模版的： APPLICATION,可以认为是一组监控的内容 ITEM: item就是监控的具体的一个数值,比如cl Loaded Class Count他的key是jmx[&quot;java.lang:type=ClassLoading&quot;,LoadedClassCount] 这个ITEM就是具体监控LoadedClass数目的一项，那么多个项目就可以组合成一个Application，ITEM 其实可以认为是采样数据的一个项 一个Template可以通过多个Application来组合而成，一个Application可以由Items来组合而成，一个HOST包含有多个监控的Template，一个HOST Group可以有多个HOST. 关于TEMPLATE的继承关系是： HOST 继承HOST GROUP的TEMPLATE Graph： 图表 Trigger： 触发器 这两个可以设置到模版级别的 Monitor: Application Application 可以认为是监控的一个大的项目，里面可能包括了不同的采样项目(item) create Application，可以参考一下API文档就可以 Monitor: Item Item创建首先需要创建一个key(在创建KEY之前可以先创建一个TEMPLATE)，key 相当于需要监控什么，如何设置？ - 监控客户端设置, 在zabbix_agentd.conf中需要添加UserParameter grep -v '#' /etc/zabbix/zabbix_agentd.conf|grep -v &quot;^$&quot; export UserParameter=&lt;key_name&gt;,&lt;shell_command&gt; &gt;&gt; &lt;configure_file_location&gt; ITEM的设置，可以设置ITEM的类型，同时使用一些表达是来完成需要的采样内容的设置 Graphs graph 就是图标，那么很明显，一个graph有x,y 轴，x轴一般总是时间序列，另外一个轴对应不同的item（采样项目），同时又一些graph的类型选择，以及图表大小的设置 Triggers Trigger 就是一个触发器，对于单独的一个item来说，如果设置了一些阀值,那么如果超过这个阀值，那么就会报警了.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Feb 22, 2016</time>
+      <h2 class="title">Mobile 性能测试关键点</h2>
+      <div class="summary">移动端性能测试的一些关键点 阅读了一些人的PPT，再这里记录一些移动端性能测试的一些关键点，每个关键点会在后续润色，细化. 移动端性能测试的方方面面 Android Monkey Memory Usage: /system/build.prop dalvik.vm.heapstartsize=8m # 堆分配的初始大小 dalvik.vm.heapgrowthlimit=64m adb shell procrank DDMS adb shell top 启动性能(首次，多次) 流量 应用占用量，cachesize，datasize，codesize 电量 CPU: active, idel memory leak, hprof, ddms dump hprof GPU 过度绘制 1.蓝色1x过度绘制 2.绿色2x过度绘制 3.淡红色3x过度绘制 4.红色超过4x过度绘制 gfxinfo systrace traceview tracer for OpenGL ES IOS instruments api business flow/scenario Performance Baseline comparison 颗粒度 Business flow Automation supporting poor network condition Security 混淆 加固 权限 本地数据库安全 ContentProvider共享 Activity注入风险 Tools Fiddler</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Feb 22, 2016</time>
+      <h2 class="title">JMETER 分布式测试</h2>
+      <div class="summary">JMETER DISTRIBUTION TESTING JMETER有时进行压力测试时，生成压力的机器性能不够，不能产生足够的压力，不过JMETER可以使用多个系统进行JMETER的压力测试，来解决这个问题. 使用多系统测试时需要注意： 关闭防火墙 client in the same subnet 服务器在同一个字网 Jmeter可以访问服务器 JMeter是同一版本的 JMETER Distribution Setting Master Setup config remote address: jmeter.properties: remote_host=ip1,ip2,ip3&hellip;.. salve setup running jmeter-server.bat/.sh 文件 modify jmeter-server file to change the rmiregistry location start TESTING Additional Resources JMETER FAQ REMOTE-TEST</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Sat, Feb 13, 2016</time>
+      <h2 class="title">python yaml 使用介绍</h2>
+      <div class="summary">Python YAML 应用 YAML由于其可读性，越来越多的地方用它来做配置文件了来代替XML文件.下面就是用来介绍如何使用PYTHON来进行YAML的操作. 读取yaml或者写yaml，主要是用的是两个方法： load 读 dump 写 Read YAML to List 以下是读YAML 内容到python的list import yaml def load_list(): content = &quot;&quot;&quot; - config - domain - repository &quot;&quot;&quot; return yaml.load(content) Read YAML TO DICT load yaml to dict or a nest dict: import yaml def load_dict(): content = &quot;&quot;&quot; hello1: test hello2: test2 &quot;&quot;&quot; return yaml.load(content) def load_all_dict(): contents = &quot;&quot;&quot; hero: hp: 34 sp: 8 level: 4 orc: hp: 12 sp: 0 level: 2 &quot;&quot;&quot; return yaml.load(contents) print(load_dict()) print(load_all_dict()) Read YAML: auto type conversation yaml 对于格式要求比较严格的，： 后面注意加空格，同时python的原始类型通过load函数可以自动转化的.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Feb 1, 2016</time>
+      <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
+      <div class="summary">现在有很多的微服务框架，这里试用一下Java Springboot和Python的Flask. 本文分别试用SpringBoot和Flask完成了一个简单的Hello World服务来展示如何使用Springboot和Flask构建 一个简单的服务. 同时用AB进行了一个简单的压力测试。 SpringBoot Hello World Web Application Create a SpringBoot Application entry point add Beans into springboot startup life cycle 利用command-line runner的这个特性，再配合依赖注入，可以在应用程序启动时后首先引入一些依赖bean，例如data source、rpc服务或者其他模块等等，这些对象的初始化可以放在run方法中。不过，需要注意的是，在run方法中执行初始化动作的时候一旦遇到任何异常，都会使得应用程序停止运行，因此最好利用try/catch语句处理可能遇到的异常。 create HelloWorld Service All Codes for the simple hello world Service 以下代码的一些说明： - Web 应用的执行入口： main方法，里面的SpringApplication.run - StartupRunner 可以在SpringBoot Application启动过程中一些事情 - RestController注解表示了这个类是个Rest 风格的Controller pom.xml 中的唯一依赖，请指定版本或者parent指定为 &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;/dependencies&gt; @SpringBootApplication @RestController public class HelloWorldEndPoint { public static void main(String[] args) { SpringApplication.run(HelloWorldEndPoint.class,args); } public static class StartupRunner implements CommandLineRunner{ protected final Logger logger = LoggerFactory.getLogger(StartupRunner.class); @Override public void run(String...</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Feb 1, 2016</time>
+      <h2 class="title">assertions</h2>
+      <div class="summary">由于一直都在进行测试的工作，所以会关注Assertion的工具，发现两个不错的Assertion 第三方包，准备在实践中使用. 这两个分别是： - Google Truth(http://google.github.io/truth/usage/) - assertj 这个里面有很多自己想实现的比较的功能。一下是一些简单的试用的代码。 Google Truth 基础的验证： @Test public void test_basic_truth(){ Set&lt;String&gt; foo = Sets.newHashSet(); assertThat(foo).isEmpty(); assertThat(foo).isNotNull(); assertThat(5).isEqualTo(5L); assertThat(5L).isEqualTo(5); assert_().that(50).isEqualTo(50); assertThat(&quot;test&quot;).isEqualTo(&quot;test&quot;); assertThat(&quot;test&quot;).contains(&quot;te&quot;); } Collections/Maps的验证: @Test public void test_basic_truth_maps_collections(){ Set&lt;String&gt; foo = Sets.newHashSet(); assertThat(foo).isEmpty(); assertThat(foo).isNotNull(); foo.add(&quot;test&quot;); foo.add(&quot;test1&quot;); foo.add(&quot;test2&quot;); assertThat(foo).contains(&quot;test&quot;); assertThat(foo).containsAllOf(&quot;test&quot;, &quot;test1&quot;); assertThat(foo).containsExactly(&quot;test2&quot;, &quot;test&quot;, &quot;test1&quot;); assertThat(foo).containsNoneOf(&quot;test889&quot;, &quot;test10&quot;); Map&lt;String,String&gt; maps = Maps.newHashMap(); maps.put(&quot;test&quot;, &quot;test1&quot;); maps.put(&quot;test1&quot;, &quot;test2&quot;); maps.put(&quot;test2&quot;, &quot;test3&quot;); assertThat(maps).containsKey(&quot;test1&quot;); assertThat(maps).containsEntry(&quot;test1&quot;, &quot;test2&quot;); assertThat(maps).doesNotContainEntry(&quot;test0&quot;, &quot;test0&quot;); } assertj 基础的验证： @Test public</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Wed, Jan 27, 2016</time>
+      <h2 class="title">WEB 开发的几个重点</h2>
+      <div class="summary">再试用了Web 开发的框架之后，归纳一下大致的一个基础Web 开发需要的那些元素: URL Router，如何定义URL的访问 Request Handler/Response Handler， HTTP请求/返回的处理 如果组织这些Request Handler/Response Handler 如何定义全局/局部的URL拦截器 如何处理特殊的HTTP Header 如何处理Session/Cookie Database Access Layer/ORM， 数据操作CRUD 如何CRUD 如何进行分页，排序，filterByCriteria&hellip;..等数据库的常见操作 如何管理事务 如何定义，初始化数据库表 如何组织不同的数据库操作成不同的业务动作 详细，复杂的ORM操作可以不用太在意 Template Render,模版渲染 不同模版的试用 静态资源的访问 单元测试 断言，EXCEPTION检查 Mock 数据，内存数据库的使用 Web Application部署 不同环境的配置管理 不同语言的打包工具，如MAVEN，GRADLE 不同的构建工具,GULP 不同的服务器，NGINX，TOMCAT，JBOSS</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+    </div>
+  </div>
+
+  
+  <div class="section taxonomies">
+    <header><div class="title">category</div></header>
+    <div class="content">
+      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/java">java</a>
+    </div>
+  </div>
+  
+  <div class="section taxonomies">
+    <header><div class="title">tag</div></header>
+    <div class="content">
+      <a href="http://simonpatrick.github.io/tags/python">python</a><a href="http://simonpatrick.github.io/tags/refactoring">refactoring</a><a href="http://simonpatrick.github.io/tags/automation">automation</a><a href="http://simonpatrick.github.io/tags/shell">shell</a><a href="http://simonpatrick.github.io/tags/testing">testing</a><a href="http://simonpatrick.github.io/tags/thoughts">thoughts</a><a href="http://simonpatrick.github.io/tags/microservice">microservice</a><a href="http://simonpatrick.github.io/tags/designpattern">designpattern</a><a href="http://simonpatrick.github.io/tags/java">java</a><a href="http://simonpatrick.github.io/tags/truestories">truestories</a>
+    </div>
+  </div>
+  
+
+</aside>
+
+    </div>
+
+  </div>
+      </div>
+
+    <footer class="site">
+      <p>&copy; 2016 Colored Hedwig</p>
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+      <p>Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+
+  </body>
+</html>
+
+</div>

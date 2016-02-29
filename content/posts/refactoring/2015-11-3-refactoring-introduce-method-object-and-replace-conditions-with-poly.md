@@ -5,7 +5,7 @@ modified:
 categories: [refactoring]
 excerpt:
 tags: [refactoring]
-date: 2015-11-3T10:31:11+08:00
+date: 2015-11-03T10:31:11
 ---
 
 ## 将方法参数转化为类

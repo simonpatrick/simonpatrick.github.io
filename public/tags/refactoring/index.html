@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io//index.xml">
 
     
     <title>Refactoring - Colored Hedwig</title>
@@ -29,7 +29,7 @@
   <body>
 
     <header class="site">
-      <div class="title"><a href="http://simonpatrick.github.io">Colored Hedwig</a></div>
+      <div class="title"><a href="http://simonpatrick.github.io/">Colored Hedwig</a></div>
     </header>
 
     <div class="container site">
@@ -45,8 +45,36 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://simonpatrick.github.io/posts/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Refactoring-10-introduce method object, replace conditions with polymorphism</h2>
+      <div class="summary">将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。 public class Registration { public void create(double amount,String name, double credits){ //do work } } 重构后: //instroduce new Class public class RegistrationContext { double amount; String name; double credits; } //modify the method public void createRefactored(RegistrationContext context){ //do work } 多态替代条件判断 有时通过If&hellip;Else来判断不同的类型进行不同的处理，代码可读性不是很强，通过多态来替代这些 条件判断，同时抽取方法后，代码就会更加的具有可读性. public class OrderProcessor { public double processOrder(Customer cu,List&lt;Product&gt; products){ double orderTotal = products.parallelStream().mapToDouble(Product::getPrice).sum(); if(cu instanceof Employee){ orderTotal-=orderTotal*0.15; } if (cu instanceof NonEmployee){ orderTotal-=orderTotal*0.10; } return</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</h2>
+      <div class="summary">Arrowhead AntiPattern 一下代码有一系列的if 判断，我们可以重新思考判断逻辑,合并一些逻辑判断 来让代码更可读: public boolean hasAccess(User user, Permission permission, List&lt;Permission&gt; exemptions) { boolean hasPermission = false; if (user != null) { if (permission != null) { if (exemptions.Count() == 0) { if (SecurityChecker.CheckPermission(user,permission) || exemptions.Contains(permission)) { hasPermission = true; } } return hasPermission; } 重构后: if (user == null || permission == null) return false; if (exemptions.Contains(permission)) return true; return SecurityChecker.CheckPermission(user, permission); Remove Double Negative remove double negative</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-remove-god-class/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Tue, Nov 3, 2015</time>
       <h2 class="title">Refactoring-8-remove God Class</h2>
@@ -60,7 +88,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-EncapsulateCollection/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Oct 26, 2015</time>
       <h2 class="title">Refactoring-1-Encapsulate Collection</h2>
@@ -74,7 +102,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-Move-Method/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Oct 26, 2015</time>
       <h2 class="title">Refactoring-2-Move Method</h2>
@@ -88,7 +116,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-Pull-Up-Method/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Oct 26, 2015</time>
       <h2 class="title">Refactoring-3-Pull Up Method</h2>
@@ -102,7 +130,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-PullUpField-PushDownField/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Oct 26, 2015</time>
       <h2 class="title">Refactoring-4-Push Down Method and Pull Up and Posh Down Field</h2>
@@ -116,7 +144,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-rename/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Oct 26, 2015</time>
       <h2 class="title">Refactoring-5-rename</h2>
@@ -130,7 +158,7 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-replace-inheritance-with-delegation/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Oct 26, 2015</time>
       <h2 class="title">Refactoring-6-Replace Inheritance with Delegation</h2>
@@ -144,39 +172,11 @@
           <div class="col-sm-4">
             <article class="li">
   <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-Extract-Interface-Method/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Oct 26, 2015</time>
       <h2 class="title">Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class</h2>
       <div class="summary">Extract-Interface,Method,Sub Class,Supper Class 以上重构的方式主要是通过提起接口,方法,为了让代码有更好的可读性,可测性. 开始:实例代码 以下是一个需要重构的实例代码： public class Receipt { private List&lt;Double&gt; discounts= Lists.newArrayList(); private List&lt;Double&gt; itemTotals=Lists.newArrayList(); public double calculateGradTotal(){ double subTotal =0; for (Double itemTotal : itemTotals) { subTotal+=itemTotal; } if(discounts.size()&gt;0){ for (Double discount : discounts) { subTotal-=discount; } } double tax=subTotal*0.065; subTotal+=tax; return subTotal; } } 抽取方法 阅读代码,根据计算方法的步骤,可以通过如下尝试抽取方法: - calculateSubTotal - calculateDiscounts - calculateTax 最后calculateGrandTotal 调用着三个方法. 由于实例代码比较简单,所以还看不出有多少优点. 但是如果想像calculateGrandTotal这个方法是很长的话，那么通过这种方式重构可以让计算calculateGrandTotal 的逻辑更加清晰. public double calculateGrandTotal(){ double subTotal=calculateSubTotal(); subTotal=calculateDiscounts(subTotal); subTotal=calculateTax(subTotal); return subTotal;</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://simonpatrick.github.io/posts/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Jan 1, 0001</time>
-      <h2 class="title">Refactoring-10-introduce method object, replace conditions with polymorphism</h2>
-      <div class="summary">将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。 public class Registration { public void create(double amount,String name, double credits){ //do work } } 重构后: //instroduce new Class public class RegistrationContext { double amount; String name; double credits; } //modify the method public void createRefactored(RegistrationContext context){ //do work } 多态替代条件判断 有时通过If&hellip;Else来判断不同的类型进行不同的处理，代码可读性不是很强，通过多态来替代这些 条件判断，同时抽取方法后，代码就会更加的具有可读性. public class OrderProcessor { public double processOrder(Customer cu,List&lt;Product&gt; products){ double orderTotal = products.parallelStream().mapToDouble(Product::getPrice).sum(); if(cu instanceof Employee){ orderTotal-=orderTotal*0.15; } if (cu instanceof NonEmployee){ orderTotal-=orderTotal*0.10; } return</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://simonpatrick.github.io/posts/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Jan 1, 0001</time>
-      <h2 class="title">Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</h2>
-      <div class="summary">Arrowhead AntiPattern 一下代码有一系列的if 判断，我们可以重新思考判断逻辑,合并一些逻辑判断 来让代码更可读: public boolean hasAccess(User user, Permission permission, List&lt;Permission&gt; exemptions) { boolean hasPermission = false; if (user != null) { if (permission != null) { if (exemptions.Count() == 0) { if (SecurityChecker.CheckPermission(user,permission) || exemptions.Contains(permission)) { hasPermission = true; } } return hasPermission; } 重构后: if (user == null || permission == null) return false; if (exemptions.Contains(permission)) return true; return SecurityChecker.CheckPermission(user, permission); Remove Double Negative remove double negative</div>
     </div>
   </a>
 </article>
@@ -204,7 +204,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -216,7 +216,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -228,7 +228,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -240,7 +240,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -252,7 +252,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -264,7 +264,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -276,7 +276,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -288,7 +288,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -300,7 +300,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -312,7 +312,7 @@
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -329,14 +329,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iocategories/python">python</a><a href="http://simonpatrick.github.iocategories/refactoring">refactoring</a><a href="http://simonpatrick.github.iocategories/shell">shell</a><a href="http://simonpatrick.github.iocategories/automation">automation</a><a href="http://simonpatrick.github.iocategories/testing">testing</a><a href="http://simonpatrick.github.iocategories/microservice">microservice</a><a href="http://simonpatrick.github.iocategories/thoughts">thoughts</a><a href="http://simonpatrick.github.iocategories/designpattern">designpattern</a><a href="http://simonpatrick.github.iocategories/truestories">truestories</a><a href="http://simonpatrick.github.iocategories/java">java</a>
+      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a><a href="http://simonpatrick.github.io/categories/java">java</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iotags/python">python</a><a href="http://simonpatrick.github.iotags/refactoring">refactoring</a><a href="http://simonpatrick.github.iotags/shell">shell</a><a href="http://simonpatrick.github.iotags/automation">automation</a><a href="http://simonpatrick.github.iotags/testing">testing</a><a href="http://simonpatrick.github.iotags/microservice">microservice</a><a href="http://simonpatrick.github.iotags/thoughts">thoughts</a><a href="http://simonpatrick.github.iotags/java">java</a><a href="http://simonpatrick.github.iotags/truestories">truestories</a><a href="http://simonpatrick.github.iotags/designpattern">designpattern</a>
+      <a href="http://simonpatrick.github.io/tags/python">python</a><a href="http://simonpatrick.github.io/tags/refactoring">refactoring</a><a href="http://simonpatrick.github.io/tags/automation">automation</a><a href="http://simonpatrick.github.io/tags/shell">shell</a><a href="http://simonpatrick.github.io/tags/testing">testing</a><a href="http://simonpatrick.github.io/tags/microservice">microservice</a><a href="http://simonpatrick.github.io/tags/thoughts">thoughts</a><a href="http://simonpatrick.github.io/tags/designpattern">designpattern</a><a href="http://simonpatrick.github.io/tags/java">java</a><a href="http://simonpatrick.github.io/tags/truestories">truestories</a>
     </div>
   </div>
   

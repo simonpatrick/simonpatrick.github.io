@@ -1,12 +1,8 @@
 ---
 layout: post
 title: "API Document Generation Tools"
-modified:
-categories: tools
-excerpt:
-tags: tools
-image:
-  feature:
+categories: [tools]
+tags: [tools]
 date: 2015-01-24T10:31:11+08:00
 ---
 

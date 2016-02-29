@@ -1,1 +1,0 @@
-echo "Generating site content......"
