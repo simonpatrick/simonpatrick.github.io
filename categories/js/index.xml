@@ -1,49 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Js on Colored Hedwig</title>
+    <title>Colored Hedwig </title>
     <link>http://simonpatrick.github.io/categories/js/</link>
-    <description>Recent content in Js on Colored Hedwig</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 24 Sep 2012 10:31:11 +0800</lastBuildDate>
-    <atom:link href="http://simonpatrick.github.io/categories/js/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2016</rights>
+    <updated>2012-09-24 10:31:11 &#43;0800 CST</updated>
+
     
-    <item>
-      <title>NodeJS - Module</title>
-      <link>http://simonpatrick.github.io/posts/js/nodejs_module/</link>
-      <pubDate>Mon, 24 Sep 2012 10:31:11 +0800</pubDate>
       
-      <guid>http://simonpatrick.github.io/posts/js/nodejs_module/</guid>
-      <description>
-
-&lt;p&gt;NodeJS Module 简单使用&lt;/p&gt;
-
-&lt;h2 id=&#34;require:65993a66c9ba35b0418b0807d0bf9951&#34;&gt;require&lt;/h2&gt;
-
-&lt;p&gt;require 是用来加载模块&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-Javascript&#34;&gt;var foo1= require(&#39;./foo&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;exports:65993a66c9ba35b0418b0807d0bf9951&#34;&gt;exports&lt;/h2&gt;
-
-&lt;p&gt;当前模块的导出对象&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt; exports.hello=function(){
-    console.log(&#39;Hello world!&#39;);
- }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;调用导出对象的方法：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;Javascript
-var hello = require(&#39;./hello&#39;);
-hello.hello();
-&lt;/code&gt;`&lt;/p&gt;
-
-&lt;p&gt;从调用的方法来看，module的使用是不是很像java的工厂模式？&lt;/p&gt;
-</description>
-    </item>
     
+
   </channel>
 </rss>

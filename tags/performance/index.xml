@@ -1,159 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Performance on Colored Hedwig</title>
+    <title>Colored Hedwig </title>
     <link>http://simonpatrick.github.io/tags/performance/</link>
-    <description>Recent content in Performance on Colored Hedwig</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 22 Feb 2016 09:40:07 +0000</lastBuildDate>
-    <atom:link href="http://simonpatrick.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2016</rights>
+    <updated>2016-02-22 09:40:07 &#43;0000 UTC</updated>
+
     
-    <item>
-      <title>Mobile 性能测试关键点</title>
-      <link>http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/</link>
-      <pubDate>Mon, 22 Feb 2016 09:40:07 +0000</pubDate>
       
-      <guid>http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/</guid>
-      <description>
-
-&lt;h1 id=&#34;移动端性能测试的一些关键点:2202e7560ce8ebc9e9a46ee2cc007ed5&#34;&gt;移动端性能测试的一些关键点&lt;/h1&gt;
-
-&lt;p&gt;阅读了一些人的PPT，再这里记录一些移动端性能测试的一些关键点，每个关键点会在后续润色，细化.&lt;/p&gt;
-
-&lt;h2 id=&#34;移动端性能测试的方方面面:2202e7560ce8ebc9e9a46ee2cc007ed5&#34;&gt;移动端性能测试的方方面面&lt;/h2&gt;
-
-&lt;h3 id=&#34;android:2202e7560ce8ebc9e9a46ee2cc007ed5&#34;&gt;Android&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Monkey&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Memory Usage:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/system/build.prop
-dalvik.vm.heapstartsize=8m
-# 堆分配的初始大小
-dalvik.vm.heapgrowthlimit=64m
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;adb shell procrank&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;DDMS&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;adb shell top&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;启动性能(首次，多次)&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;流量&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;应用占用量，cachesize，datasize，codesize&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;电量&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;CPU: active, idel&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;memory leak, hprof, ddms dump hprof&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;GPU 过度绘制
-1.蓝色1x过度绘制
-2.绿色2x过度绘制
-3.淡红色3x过度绘制
-4.红色超过4x过度绘制&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;gfxinfo&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;systrace&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;traceview&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;tracer for OpenGL ES&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;ios:2202e7560ce8ebc9e9a46ee2cc007ed5&#34;&gt;IOS&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;instruments&lt;/li&gt;
-&lt;li&gt;api&lt;/li&gt;
-&lt;li&gt;business flow/scenario&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;performance-baseline:2202e7560ce8ebc9e9a46ee2cc007ed5&#34;&gt;Performance Baseline&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;comparison&lt;/li&gt;
-&lt;li&gt;颗粒度&lt;/li&gt;
-&lt;li&gt;Business flow&lt;/li&gt;
-&lt;li&gt;Automation supporting&lt;/li&gt;
-&lt;li&gt;poor network condition&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;security:2202e7560ce8ebc9e9a46ee2cc007ed5&#34;&gt;Security&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;混淆&lt;/li&gt;
-&lt;li&gt;加固&lt;/li&gt;
-&lt;li&gt;权限&lt;/li&gt;
-&lt;li&gt;本地数据库安全&lt;/li&gt;
-&lt;li&gt;ContentProvider共享&lt;/li&gt;
-&lt;li&gt;Activity注入风险&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;tools:2202e7560ce8ebc9e9a46ee2cc007ed5&#34;&gt;Tools&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Fiddler&lt;/li&gt;
-&lt;li&gt;Charles&lt;/li&gt;
-&lt;li&gt;Burpsuites&lt;/li&gt;
-&lt;li&gt;Anyproxy&lt;/li&gt;
-&lt;li&gt;lint&lt;/li&gt;
-&lt;li&gt;findbugs&lt;/li&gt;
-&lt;li&gt;PMD&lt;/li&gt;
-&lt;li&gt;oclint&lt;/li&gt;
-&lt;li&gt;scan-build&lt;/li&gt;
-&lt;li&gt;pro-guarded&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
     
-    <item>
-      <title>JMETER 分布式测试</title>
-      <link>http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/</link>
-      <pubDate>Mon, 22 Feb 2016 09:33:59 +0000</pubDate>
       
-      <guid>http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/</guid>
-      <description>
-
-&lt;h1 id=&#34;jmeter-distribution-testing:47e09e012cb1af401091cc1822be73b2&#34;&gt;JMETER DISTRIBUTION TESTING&lt;/h1&gt;
-
-&lt;p&gt;JMETER有时进行压力测试时，生成压力的机器性能不够，不能产生足够的压力，不过JMETER可以使用多个系统进行JMETER的压力测试，来解决这个问题. 使用多系统测试时需要注意：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;关闭防火墙&lt;/li&gt;
-&lt;li&gt;client in the same subnet&lt;/li&gt;
-&lt;li&gt;服务器在同一个字网&lt;/li&gt;
-&lt;li&gt;Jmeter可以访问服务器&lt;/li&gt;
-&lt;li&gt;JMeter是同一版本的&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;jmeter-distribution-setting:47e09e012cb1af401091cc1822be73b2&#34;&gt;JMETER Distribution Setting&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Master Setup
-config remote address:
-jmeter.properties: remote_host=ip1,ip2,ip3&amp;hellip;..&lt;/li&gt;
-&lt;li&gt;salve setup
-
-&lt;ul&gt;
-&lt;li&gt;running jmeter-server.bat/.sh 文件&lt;/li&gt;
-&lt;li&gt;modify jmeter-server file to change the rmiregistry location&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;start TESTING&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;additional-resources:47e09e012cb1af401091cc1822be73b2&#34;&gt;Additional Resources&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://wiki.apache.org/jmeter/JMeterFAQ#How_to_do_remote_testing_the_.27proper_way.27.3F&#34;&gt;JMETER FAQ&lt;/a&gt; &lt;a href=&#34;http://jmeter.apache.org/usermanual/remote-test.html&#34;&gt;REMOTE-TEST&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
     
+
   </channel>
 </rss>
