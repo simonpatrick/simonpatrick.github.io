@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interview on Colored Hedwig</title>
+    <link>http://simonpatrick.github.io/categories/interview/</link>
+    <description>Recent content in Interview on Colored Hedwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 22 Oct 2015 10:31:11 +0800</lastBuildDate>
+    <atom:link href="http://simonpatrick.github.io/categories/interview/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Python 面试题</title>
+      <link>http://simonpatrick.github.io/posts/interview/2015-10-22-python_interview_questions/</link>
+      <pubDate>Thu, 22 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/interview/2015-10-22-python_interview_questions/</guid>
+      <description>
+
+&lt;p&gt;测试有的时候出去会遇到一些编程面试题,以下是用python来解决两个简单面试题.&lt;/p&gt;
+
+&lt;h2 id=&#34;倒转字符串中的单词的排列:3de7fe0f3d23211f3a5c58df5ce05c06&#34;&gt;倒转字符串中的单词的排列&lt;/h2&gt;
+
+&lt;p&gt;给定字符串“Hello World!”,经过一段程序运行之后,得到输出结果“World! Hello”,也就是以单词
+为单位,倒转输入“Hello World!”&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;python解法: 不考虑编码格式&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;words = &amp;quot;Hello World!&amp;quot;
+print(&amp;quot; &amp;quot;.join(reversed(words)))
+print(&amp;quot; &amp;quot;.join(words.split(&amp;quot; &amp;quot;)[::-1]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Java 解法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public class ReverseWords {
+
+    public static String reverseWords(String input){
+        String[] words = input.split(&amp;quot; &amp;quot;);
+        StringBuilder sb = new StringBuilder();
+        for (int i = words.length-1; i &amp;gt;=0 ; i--) {
+            sb.append(words[i]);
+            sb.append(&amp;quot; &amp;quot;);
+        }
+
+        return sb.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(reverseWords(&amp;quot;Hello World!&amp;quot;));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;输出斐波那契数列:3de7fe0f3d23211f3a5c58df5ce05c06&#34;&gt;输出斐波那契数列&lt;/h2&gt;
+
+&lt;p&gt;根据给定的值,输出相同数目的斐波那契列， 如如果给定是1， 则输出1;给定2,输出1,1;
+给定3，输出1,1,2, 依次类推。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;python 解法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def f(n):
+    if n &amp;lt;= 0:
+        return 0
+    if n == 1:
+        return [1]
+    if n == 2:
+        return [1, 1]
+    nums = [1, 1]
+    temp1 = 1
+    temp2 = 1
+    for i in range(n - 2):
+        append_num = temp1 + temp2
+        nums.append(append_num)
+        temp1,temp2=temp2,append_num
+
+    return nums
+
+print(f(3))
+print(f(5))
+print(f(10))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;java 解法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public static String getFibListByNum(int n){
+    if (n&amp;lt;=0) throw new RuntimeException(&amp;quot;invalid input&amp;quot;);
+    if(n==1) return &amp;quot;1&amp;quot;;
+    if(n==2) return &amp;quot;1,1&amp;quot;;
+    int temp1=1;
+    int temp2=1;
+    String result = &amp;quot;1,1&amp;quot;;
+    for (int i = 3; i &amp;lt;=n ; i++) {
+        int appendNum = temp1+temp2;
+        temp1=temp2;
+        temp2=appendNum;
+        result=result+&amp;quot;,&amp;quot;+appendNum;
+    }
+
+    return result;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

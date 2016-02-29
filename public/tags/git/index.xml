@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Colored Hedwig</title>
+    <link>http://simonpatrick.github.io/tags/git/</link>
+    <description>Recent content in Git on Colored Hedwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 24 Feb 2013 10:31:11 +0800</lastBuildDate>
+    <atom:link href="http://simonpatrick.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Git 基本使用</title>
+      <link>http://simonpatrick.github.io/posts/git/2013-02-24-git/</link>
+      <pubDate>Sun, 24 Feb 2013 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/git/2013-02-24-git/</guid>
+      <description>
+
+&lt;p&gt;git是个分布式版本控制系统，所谓分布式版本控制就是任何一个在自己其实上就可以进行版本控制管理而无需连接中央服务器，这样提交代码就无需收到联网的限制。同时GIT提供了更好的branch等功能，也是目前最流行的工具.&lt;/p&gt;
+
+&lt;h2 id=&#34;git-配置:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;Git 配置&lt;/h2&gt;
+
+&lt;p&gt;全局变量设置：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git config --global user.name &amp;quot;Your name&amp;quot;
+git config --global user.email &amp;quot;emailname@example.com&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;创建版本库:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;创建版本库&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;//不是必须在空目录中使用git init命令
+git init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;建立成功之后，当前目录会多一个.git目录，有些代码库很大，其实大的就是这个.git文件夹&lt;/p&gt;
+
+&lt;h2 id=&#34;提交改动:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;提交改动&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git add .
+git commit . -m &amp;quot;add new changes&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;查看当前仓库状态:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;查看当前仓库状态&lt;/h2&gt;
+
+&lt;p&gt;查看当前仓库状态的命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;查看git-日志:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;查看git 日志&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git log
+git log --pretty=oneline
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;回滚git的提交:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;回滚git的提交&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git rest --hard
+git rest --hard XXXXX-changeId
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;git-workspace-stage-head:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;git workspace，stage，head&lt;/h2&gt;
+
+&lt;p&gt;git里面又工作区，版本库（stage），head，git add命令将改动放到stage，最后提交则提交到head&lt;/p&gt;
+
+&lt;h2 id=&#34;git-checkout:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;git checkout&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git checkout --file
+git checkout
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;远程仓库:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;远程仓库&lt;/h2&gt;
+
+&lt;p&gt;创建远程仓库，以github为例，一般步骤是：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;github注册用户&lt;/li&gt;
+&lt;li&gt;github创建一个仓库&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ssh-keygen -t rsa -C &amp;quot;emailaddrss&amp;quot;
+git remote add origin &amp;lt;github addrss&amp;gt;
+git push -u origin master //关联远程仓库和本地仓库
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;多人合作模式，一般的工作流程如下：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;clone git Repository&lt;/li&gt;
+&lt;li&gt;创建本地分支&lt;/li&gt;
+&lt;li&gt;提交改动到远程相对应的分支&lt;/li&gt;
+&lt;li&gt;解决冲突&lt;/li&gt;
+&lt;li&gt;建立分支关系(如果出现 no tracking information就需要此步骤)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以下是对应的命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git clone &amp;lt;branch-path&amp;gt;
+git checkout -b branch_name
+git push origin branch-name
+git branch --set-upstream branch-name origin/branch-name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;分支管理:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;分支管理&lt;/h2&gt;
+
+&lt;p&gt;分支的实际作用，假设需要开发一个新的版本，需要两周完成，那么中间可能会提交不工作的代码，为了避免影响其他人，所以就开一个分支.
+不过现在有些公司提倡主干开发，直接在主干上开发，通过单元测试等等保证功能不会出现大问题。&lt;/p&gt;
+
+&lt;p&gt;创建分支，创建分支时，也就是将当前head指向了新分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;//-b 就是创建一个新分支
+git checkout -b dev
+//创建分支但是不checkout
+git branch dev
+//查看branch 列表
+git branch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;合并分支&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;//切换到主干
+git checkout master
+//合并分支
+git merge dev
+//删除dev 分支
+git branch -d dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;解决冲突:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;解决冲突&lt;/h2&gt;
+
+&lt;p&gt;提交时发生冲突，需要手动修正&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git log --graph  //查看分支合并图
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;合并分支-不使用fastforward:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;合并分支- 不使用fastforward&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git merge --no-ff -m &amp;quot;merge with no-ff&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;bug 分支,可能某时需要紧急修改一个bug，但是当前又有没有测试
+这是可以使用git stash 保存当前工作情况&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git stash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;当修改完毕之后，恢复保存的内容,丢弃之前的内容都可以以下命令做到：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# list all stash info
+git stash list
+# 你也可以运行 git stash pop 来重新应用储藏，同时立刻将其从堆栈中移走
+git stash pop
+# 应用存储的内容
+git stash apply stash@{0}
+# 丢弃存储的内容
+git stash drop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;git-tag标签管理:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;Git Tag标签管理&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git tag v1.0
+git tag
+git tag v0.6 change_id
+git show v0.6
+git tag -s v0.2 //采用PGP签名
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;git-配置-1:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;Git 配置&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git config --global alias.lg &amp;quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&amp;lt;%an&amp;gt;%Creset&#39; --abbrev-commit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;git-cheat-sheet:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;git cheat-sheet&lt;/h5&gt;
+
+&lt;h6 id=&#34;configuration:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;configuration&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git config --global user.name &amp;quot;&amp;quot;
+git config --global user.email &amp;quot;&amp;quot;
+git config --global color.ui auto
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;create-repositories:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;create repositories&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git init [project-name]
+git clone [url]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;make-changes:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;make changes&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git status  # list all new or modified files to be commited
+git diff  # show file differences not yet staged
+git add [file_name] #snapshots the file in preperation of versioning
+git diff --staged # show files dofferences between staging files and the last file version
+git reset [file] # unstages the files but preserve it content
+git commit -m &amp;quot;descriptive comments&amp;quot; #records the snapshot file permanently into version history
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;group-changes:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;group changes&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git branch ## list all branches in local repository
+git branch [branch-name] # create new branch
+git checkout [branch-name] #switches to the specified branch
+git branch -d [branch-name] # delete the branch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;refactor-filenames:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;refactor filenames&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git rm [file] # remove file
+git rm --cached [file] # remove the files from version control but preservers the file locally
+git mv [original-file] [file-renamed]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;suppress-tracking:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;suppress tracking&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git ls-files --other --ignore --exclude-standard  
+#list all ignored fiels in this project
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;save-fragment:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;save fragment&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git statsh # temporily stores all modified tracked files
+git stash pop # restores the most recently stashed files
+git stash list # list all stashed changesets
+git stash drop #discards the most recently stashed changeset
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;review-history:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;review history&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git log #list version hsitory for the current branch
+git log --follow [file] # list version history for a file, include renames
+gut diff [first-branch]...[second branch]
+git show [commit]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h6 id=&#34;redo-commits:6ae1212fd28aa0be53eb08a07e2b49e3&#34;&gt;redo commits&lt;/h6&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git reset # undoes all commits after commit
+git reset --hard # discard all history and changes back to specified commit
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;####### synchronize changes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;git fetch [bookmark] #downloads all history from the repository bookmark
+git merge [bookmark]/[branch] # combine into one
+git push [alias] [branch] # upload all local branch commits to github
+git pull # download bookmark history and incorporated changes
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

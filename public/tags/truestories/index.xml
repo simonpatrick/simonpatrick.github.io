@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Truestories on Colored Hedwig</title>
+    <link>http://simonpatrick.github.io/tags/truestories/</link>
+    <description>Recent content in Truestories on Colored Hedwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 02 Dec 2015 13:26:07 +0000</lastBuildDate>
+    <atom:link href="http://simonpatrick.github.io/tags/truestories/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>True Stories: 从API的URL定义想到的</title>
+      <link>http://simonpatrick.github.io/posts/api/2015-12-02-api_contract_design/</link>
+      <pubDate>Wed, 02 Dec 2015 13:26:07 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/api/2015-12-02-api_contract_design/</guid>
+      <description>&lt;p&gt;关于REST API接口的设计没有了解太多，不过实际的测试中看到一些这样设计的接口资源路径URL，自己感觉就是怪怪的，
+感觉这样的接口URL总是哪里不太对劲，所以自己就分析了一下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://domain.org/api/v4/＊＊/coursePassed/{appCode}/{courseId}/{userCode}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;自己的思考是感觉这个东西不是很理想，无法通过一个路径了解大概是个什么事情，自己的感觉或许这样会更清楚一点&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://domain.org/api/v4/app/{appCode}/user/course/{courseId}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;感觉这样的URL说清楚了：&lt;/p&gt;
+
+&lt;p&gt;－ 哪个APP
+－ 是用户的course的状态
+－ usercode可能不需要，应为已经使用了oAuth认证了&lt;/p&gt;
+
+&lt;p&gt;通过这样的命名的话，如果想获取一个用户所有的course的状态，或许就是：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;http://domain.org/api/v4/app/{appCode}/user/course/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;而我加上user的目的是表示这个是用户的课程考核状态，而不是course本身的状态。&lt;/p&gt;
+
+&lt;p&gt;原来的URL里面coursePassed上太具体了，可能本来这个接口其实是获取course的考核状态，如果写上这个coursePassed的话，或许只能返回true or false了，是不是有点太具体了，实际的实现和扩展非常有可能和这个有区别，而且如果有时需要一个接口提供的知识course考核的状态，那么难道再写一个API的接口来给状态，如果不是，那么coursePassed叫法就是值得商量的.&lt;/p&gt;
+
+&lt;p&gt;然后自己查了一下关于REST API设计原则的文章:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2014/05/restful_api.html&#34;&gt;rest api&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;虽然没有直接说明如何设计，但是看完之后我自己觉得我的想法没有太大错误.感觉好的原则就是应该合乎一个常理的，通顺的，有上下文逻辑的.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Talking is Cheap,show me the code</title>
+      <link>http://simonpatrick.github.io/posts/true_stories/2015-11-19-talking_is_cheep/</link>
+      <pubDate>Thu, 19 Nov 2015 23:27:56 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/true_stories/2015-11-19-talking_is_cheep/</guid>
+      <description>
+
+&lt;p&gt;当看到如下的代码出现在production代码库的时候，不知道做何想法？无数的人动辄就谈客户需求，要触动痛点,是的没错，但是软件工程师还是要点工程追求的吧？如果这样的代码存在一些时候也就罢了，结果存在来Controller里面3-4年之久，情何以堪呀？指望用这样的代码去触动痛点？你是认真的吗？
+工程师首先是个匠人,先写好自己的代码，再去谈论这些虚幻的东西.看几本抽象的书，谁都可以高谈阔论，so what? Talking is Cheap,right? show me the code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;protected String formatUserJSON(VSalary newSalary){
+		SimpleDateFormat sdf = new SimpleDateFormat(&amp;quot;yyyy-MM-dd&amp;quot;);
+		String info = &amp;quot;{\&amp;quot;msg\&amp;quot;:\&amp;quot;&amp;quot;+Constants.SUCCESS+&amp;quot;\&amp;quot;,\&amp;quot;usercode\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getUsercode()+&amp;quot;\&amp;quot;,\&amp;quot;username\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getUsername()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;orgname\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getOrgname()+&amp;quot;\&amp;quot;,\&amp;quot;positionname\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getPositionname()+&amp;quot;\&amp;quot;,\&amp;quot;hasexperience\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getHasexperience()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;joindate\&amp;quot;:\&amp;quot;&amp;quot;+sdf.format(newSalary.getJoindate())+&amp;quot;\&amp;quot;,\&amp;quot;leavedate\&amp;quot;:\&amp;quot;&amp;quot;+(newSalary.getLeavedate()==null?&amp;quot;&amp;quot;:sdf.format(newSalary.getLeavedate()))+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;lastmonthwage\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLastmonthwagestr()+&amp;quot;\&amp;quot;,\&amp;quot;allowance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getAllowancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;basewage\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getBasewagestr()+&amp;quot;\&amp;quot;,\&amp;quot;totalwage\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getTotalwagestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;transferdays\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getTransferdaysstr()+&amp;quot;\&amp;quot;,\&amp;quot;paiddays\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getPaiddaysstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;leavehours\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLeavehoursstr()+&amp;quot;\&amp;quot;,\&amp;quot;leavecost\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLeavecoststr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;illdaystotal\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getIlldaystotalstr()+&amp;quot;\&amp;quot;,\&amp;quot;illdays\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getIlldaysstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;illcost\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getIllcoststr()+&amp;quot;\&amp;quot;,\&amp;quot;latefreecount\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLatefreecountstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;latecostcount\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLatecostcountstr()+&amp;quot;\&amp;quot;,\&amp;quot;latecost\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLatecoststr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;leaveearly\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLeaveearlystr()+&amp;quot;\&amp;quot;,\&amp;quot;leaveearlycost\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLeaveearlycoststr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;missclockfreecount\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getMissclockfreecountstr()+&amp;quot;\&amp;quot;,\&amp;quot;missclockcostcount\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getMissclockcostcountstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;missclockcost\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getMissclockcoststr()+&amp;quot;\&amp;quot;,\&amp;quot;absentcount\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getAbsentcountstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;absentcost\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getAbsentcoststr()+&amp;quot;\&amp;quot;,\&amp;quot;leavetotalcost\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getLeavetotalcoststr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;bussallowance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getBussallowancestr()+&amp;quot;\&amp;quot;,\&amp;quot;olderallowance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getOlderallowancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;petrolallowance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getPetrolallowancestr()+&amp;quot;\&amp;quot;,\&amp;quot;otheradd\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getOtheraddstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;otheraddremark\&amp;quot;:\&amp;quot;&amp;quot;+(newSalary.getOtheraddremark()==null?&amp;quot;&amp;quot;:newSalary.getOtheraddremark())+&amp;quot;\&amp;quot;,\&amp;quot;othertotal\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getOthertotalstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;firededuction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getFiredeductionstr()+&amp;quot;\&amp;quot;,\&amp;quot;notfulldeduction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getNotfulldeductionstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;punishdeduction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getPunishdeductionstr()+&amp;quot;\&amp;quot;,\&amp;quot;otherdeduction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getOtherdeductionstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;otherdeductionremark\&amp;quot;:\&amp;quot;&amp;quot;+(newSalary.getOtherdeductionremark()==null?&amp;quot;&amp;quot;:newSalary.getOtherdeductionremark())+&amp;quot;\&amp;quot;,\&amp;quot;deductiontotal\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getDeductiontotalstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;shouldtotal\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getShouldtotalstr()+&amp;quot;\&amp;quot;,\&amp;quot;commission\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCommissionstr()+&amp;quot;\&amp;quot;,\&amp;quot;commissionDecu\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCommissionDecustr()+&amp;quot;\&amp;quot;,\&amp;quot;status\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getStatus()+&amp;quot;\&amp;quot;,&amp;quot;+
+				&amp;quot;\&amp;quot;insuredtype\&amp;quot;:\&amp;quot;&amp;quot;+(newSalary.getInsuredtype()==null?&amp;quot;&amp;quot;:newSalary.getInsuredtype())+&amp;quot;\&amp;quot;,\&amp;quot;insuredbase\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getInsuredbasestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;oldageinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getOldageinsurancestr()+&amp;quot;\&amp;quot;,\&amp;quot;medicalinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getMedicalinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;unemployedinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getUnemployedinsurancestr()+&amp;quot;\&amp;quot;,\&amp;quot;accufundtype\&amp;quot;:\&amp;quot;&amp;quot;+(newSalary.getAccufundtype()==null?&amp;quot;&amp;quot;:newSalary.getAccufundtype())+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;accufundbase\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getAccufundbasestr()+&amp;quot;\&amp;quot;,\&amp;quot;accufund\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getAccufundstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;socialinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getSocialinsurancestr()+&amp;quot;\&amp;quot;,\&amp;quot;taxtotal\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getTaxtotalstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;persontax\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getPersontaxstr()+&amp;quot;\&amp;quot;,\&amp;quot;financialdeduction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getFinancialdeductionstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;finalwage\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getFinalwagestr()+&amp;quot;\&amp;quot;,\&amp;quot;reward\&amp;quot;:\&amp;quot;&amp;quot;+ newSalary.getRewardstr()+ &amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;otherdeductionList\&amp;quot;:&amp;quot;+JSONArray.fromObject(newSalary.getOtherdeductionList()).toString()+ &amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;negativeAmount\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getNegativeAmountstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;currentsocialinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCurrentsocialinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;surplussocialinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getSurplussocialinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;currentaccufund\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCurrentaccufundstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;surplusaccufund\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getSurplusaccufundstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;currentoldageinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCurrentoldageinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;surplusoldageinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getSurplusoldageinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;currentmedicalinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCurrentmedicalinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;surplusmedicalinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getSurplusmedicalinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;currentunemployedinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCurrentunemployedinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;surplusunemployedinsurance\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getSurplusunemployedinsurancestr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;withholdingAdd\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getWithholdingAddstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;withholdingDeduction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getWithholdingDeductionstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;withholdingAddRemark\&amp;quot;:\&amp;quot;&amp;quot;+(newSalary.getWithholdingAddRemark() == null ? &amp;quot;&amp;quot; : newSalary.getWithholdingAddRemark())+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;commissionDecRemark\&amp;quot;:\&amp;quot;&amp;quot;+(newSalary.getCommissionDecRemark() == null ? &amp;quot;&amp;quot; : newSalary.getCommissionDecRemark())+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;withholdingDeductionRemark\&amp;quot;:\&amp;quot;&amp;quot;+(newSalary.getWithholdingDeductionRemark() == null ? &amp;quot;&amp;quot; : newSalary.getWithholdingDeductionRemark())+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;currentwithholdingdeduction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCurrentwithholdingdeductionstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;surpluswithholdingdeduction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getSurpluswithholdingdeductionstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;currentfinancialdeduction\&amp;quot;:\&amp;quot;&amp;quot;+newSalary.getCurrentfinancialdeductionstr()+&amp;quot;\&amp;quot;,&amp;quot; +
+				&amp;quot;\&amp;quot;partnerallowance\&amp;quot;:\&amp;quot;&amp;quot; + newSalary.getPartnerallowancestr() + &amp;quot;\&amp;quot;}&amp;quot;;
+		return info;
+	}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其实还有一些好玩的例子，不过没有这个极端而已。不过也可以来说说，可能是常见的不用心写出来的代码:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;m.put(&amp;quot;totalCount&amp;quot;, apiSalaryService.totalCount(pMap));
+m.put(&amp;quot;totalMoney&amp;quot;, apiSalaryService.totalMoney(pMap));
+m.put(&amp;quot;payList&amp;quot;,apiSalaryService.querySalaries(pMap));
+m.put(&amp;quot;isHistory&amp;quot;,!SalaryHelper.isCurrent(year,month));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样的开销真的好吗？&lt;/p&gt;
+
+&lt;p&gt;sql 如下， 我的疑问是难道totalCount，totalMoney不能用一个SQL取吗？或许list都取出来了，直接计算一下可能会更快，至少节省了
+数据库服务器的资源. 数据库是最难水平扩展的资源.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-xml&#34;&gt;&amp;lt;sqlMap namespace=&amp;quot;VApiSalary&amp;quot;&amp;gt;
+     &amp;lt;select id=&amp;quot;querySalary&amp;quot; parameterClass=&amp;quot;hashMap&amp;quot; resultClass=&amp;quot;vApiSalary&amp;quot;&amp;gt;
+        select userCode, isnull(taxtotal,0) as pay,isnull(persontax,0) as tax from
+       &amp;lt;isEqual property=&amp;quot;isHistory&amp;quot; compareValue=&amp;quot;true&amp;quot;&amp;gt;
+          T_Employee_SalaryHistory WITH(NOLOCK)
+       &amp;lt;/isEqual&amp;gt;
+       &amp;lt;isEqual property=&amp;quot;isHistory&amp;quot; compareValue=&amp;quot;false&amp;quot;&amp;gt;
+             T_Employee_Salary WITH(NOLOCK)
+       &amp;lt;/isEqual&amp;gt;
+        &amp;lt;isNotEqual property=&amp;quot;userCode&amp;quot; prepend=&amp;quot;and&amp;quot; compareValue=&amp;quot;0&amp;quot;&amp;gt;
+          userCode = $userCode$
+        &amp;lt;/isNotEqual&amp;gt;
+        &amp;lt;isNotEqual property=&amp;quot;year&amp;quot; prepend=&amp;quot;and&amp;quot; compareValue=&amp;quot;0&amp;quot;&amp;gt;
+            year = $year$ and month = $month$
+        &amp;lt;/isNotEqual&amp;gt;
+     &amp;lt;/select&amp;gt;
+
+    &amp;lt;select id=&amp;quot;totalCount&amp;quot; parameterClass=&amp;quot;hashMap&amp;quot; resultClass=&amp;quot;double&amp;quot;&amp;gt;
+        select count(1) from
+        &amp;lt;isEqual property=&amp;quot;isHistory&amp;quot; compareValue=&amp;quot;true&amp;quot;&amp;gt;
+            T_Employee_SalaryHistory WITH(NOLOCK)
+        &amp;lt;/isEqual&amp;gt;
+        &amp;lt;isEqual property=&amp;quot;isHistory&amp;quot; compareValue=&amp;quot;false&amp;quot;&amp;gt;
+            T_Employee_Salary WITH(NOLOCK)
+        &amp;lt;/isEqual&amp;gt;
+        &amp;lt;isNotEqual property=&amp;quot;userCode&amp;quot; prepend=&amp;quot;and&amp;quot; compareValue=&amp;quot;0&amp;quot;&amp;gt;
+            userCode = $userCode$
+        &amp;lt;/isNotEqual&amp;gt;
+        &amp;lt;isNotEqual property=&amp;quot;year&amp;quot; prepend=&amp;quot;and&amp;quot; compareValue=&amp;quot;0&amp;quot;&amp;gt;
+            year = $year$ and month = $month$
+        &amp;lt;/isNotEqual&amp;gt;
+     &amp;lt;/select&amp;gt;
+
+    &amp;lt;select id=&amp;quot;totalMoney&amp;quot; parameterClass=&amp;quot;hashMap&amp;quot; resultClass=&amp;quot;double&amp;quot;&amp;gt;
+        select isnull(sum(taxtotal),0) from
+        &amp;lt;isEqual property=&amp;quot;isHistory&amp;quot; compareValue=&amp;quot;true&amp;quot;&amp;gt;
+            T_Employee_SalaryHistory WITH(NOLOCK)
+        &amp;lt;/isEqual&amp;gt;
+        &amp;lt;isEqual property=&amp;quot;isHistory&amp;quot; compareValue=&amp;quot;false&amp;quot;&amp;gt;
+            T_Employee_Salary WITH(NOLOCK)
+        &amp;lt;/isEqual&amp;gt;
+        &amp;lt;isNotEqual property=&amp;quot;userCode&amp;quot; prepend=&amp;quot;and&amp;quot; compareValue=&amp;quot;0&amp;quot;&amp;gt;
+            userCode = $userCode$
+        &amp;lt;/isNotEqual&amp;gt;
+        &amp;lt;isNotEqual property=&amp;quot;year&amp;quot; prepend=&amp;quot;and&amp;quot; compareValue=&amp;quot;0&amp;quot;&amp;gt;
+            year = $year$ and month = $month$
+        &amp;lt;/isNotEqual&amp;gt;
+     &amp;lt;/select&amp;gt;
+&amp;lt;/sqlMap&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;another-duplicated-db-calls:822d3521e51857ae13f084f5d8b2827c&#34;&gt;Another Duplicated DB Calls&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;PropertyEntrustApply aEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.A);
+PropertyEntrustApply bEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.B);
+PropertyEntrustApply cRentEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.C);
+PropertyEntrustApply dSellEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.D);
+PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, IConst.EntrustType.E);
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;public PropertyEntrustApply selectPropertyEntrustApply(String propertyId, EntrustType entrustType) {
+			 List&amp;lt;PropertyEntrustApply&amp;gt; propertyEntrustApplyList = propertyEntrustApplyDao.listByPropertyId(propertyId);
+			 for (PropertyEntrustApply propertyEntrustApply : propertyEntrustApplyList) {
+					 if (entrustType.getValue().equals(propertyEntrustApply.getEntrustType())) {
+							 return propertyEntrustApply;
+					 }
+			 }
+			 return null;
+	 }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;问开发说这里5次数据库访问没有必要，开发说参数不同，需要的5次访问，其实测试也那么好糊弄，the code never lies.
+然后再仔细一看说没时间改，其实改这个需用5分钟吗？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>True Stories: About Return Flag</title>
+      <link>http://simonpatrick.github.io/posts/true_stories/2015-10-24-return-flag/</link>
+      <pubDate>Sat, 24 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/true_stories/2015-10-24-return-flag/</guid>
+      <description>
+
+&lt;h2 id=&#34;return-flag:081a6705e25a8c1a4cb7eb415ba38a3e&#34;&gt;Return Flag&lt;/h2&gt;
+
+&lt;p&gt;真实的一段代码片段：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;
+public boolean update(Inquiry inquiry) {
+    boolean bUpdBaseInf = super.update(inquiry);
+    solrService.syncUpdate(new SolrInquiry(inquiry.getInquiryId()));
+    return bUpdBaseInfo;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;自己的思考：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;这个返回的状态值没有完全体现整个函数的状态&lt;/li&gt;
+&lt;li&gt;如果solrService是个异步还可以理解这个返回值，但是名字是syncUpdate
+直接是不是应该怀疑这是个异步更新？&lt;/li&gt;
+&lt;li&gt;solr的更新真的需要同步吗？solr的更新可能直接影响到整个业务的处理了&amp;hellip;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;这里也许是留了点坑关于这个flag的&lt;/li&gt;
+&lt;li&gt;这个flag的命名是不是有点那个啥?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;代码review-流程的思考:081a6705e25a8c1a4cb7eb415ba38a3e&#34;&gt;代码REVIEW 流程的思考&lt;/h2&gt;
+
+&lt;p&gt;这样的代码,个人觉得代码REVIEW是需要检查出来的。也许这样的代码永远也不会出现问题，但是他的味道就是不好。
+就算我是一个测试，也看出这里面不严谨的地方了,很多时候我们总是讲流程,流程，流程，但是有了流程又怎么样呢？&lt;/p&gt;
+
+&lt;p&gt;一个好的技术团队是有他自己的品味的.呆过技术很好的公司,也呆过技术比较一般的公司,比较不同类别公司的开发，
+很好的公司的开发更加注重这些细节,你可能觉得他们其实都在写差不多的代码,但是这种细节的常年累积,一个产品是否好维护就会出现很明显的差距了.
+不容易维护的产品,有时可能已经资不抵债了.&lt;/p&gt;
+
+&lt;p&gt;如果想的更远一点的话,关于开发经常说到的工作无聊没有挑战的话题，
+好公司的开发说的工作无聊和一般公司一些开发说的工作无聊可能是两个不同层次的无聊。
+有些知道确实没有挑战而有些只是不知道其实自己写的代码挺烂的而已。我无意攻击任何人只是说说我真实的想法。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>True Stories: 有趣的函数</title>
+      <link>http://simonpatrick.github.io/posts/true_stories/2015-10-24-interesting-methods/</link>
+      <pubDate>Sat, 24 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/true_stories/2015-10-24-interesting-methods/</guid>
+      <description>
+
+&lt;h2 id=&#34;有趣的函数:c3bc3b8c96c19bb6a061de79791fc3f0&#34;&gt;有趣的函数&lt;/h2&gt;
+
+&lt;p&gt;下面是一些有趣而真实的函数，自己的感受是：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;此刻的想法是复杂的&lt;/li&gt;
+&lt;li&gt;不敢想象&lt;/li&gt;
+&lt;li&gt;这是认真的吗?&lt;/li&gt;
+&lt;li&gt;为什么会这样?&lt;/li&gt;
+&lt;li&gt;如果4个key－value对是不是还要再写函数？&lt;/li&gt;
+&lt;li&gt;这样的代码放在Controller层？你是认真的吗？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;测试有时真的很难改变什么,这样的代码其实已经无力吐槽了.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;    //    json方法
+    public String json(Map&amp;lt;String,Object&amp;gt; map){
+        JsonString jsonString = new JsonString();
+        Set&amp;lt;String&amp;gt; set = map.keySet();
+        for (String key : set) {
+            //spring内置的对象去掉
+            if (key.contains(&amp;quot;org.springframework&amp;quot;)) {
+                continue;
+            }
+            jsonString.put(key, map.get(key));
+        }
+        return jsonString.toString();
+    }
+
+    public String json(Model model){
+        return json(model.asMap());
+    }
+
+    public String json(String key, Object value){
+        return new JsonString().put(key, value).toString();
+    }
+
+    public String json(String key, Object value,String key2, Object value2){
+        return new JsonString().put(key, value).put(key2,value2).toString();
+    }
+
+    public String json(String key, Object value,String key2, Object value2,String key3, Object value3){
+        return new JsonString().put(key, value).put(key2,value2).put(key3, value3).toString();
+    }
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;自己的思考:c3bc3b8c96c19bb6a061de79791fc3f0&#34;&gt;自己的思考&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JOSN转换方法不应该放到Controller层&lt;/li&gt;
+&lt;li&gt;这几个json的函数其实没有必要,完全可以通过&lt;/li&gt;
+&lt;li&gt;使用了keySet,再使用map.get(key) 有点浪费，应该直接使用Map.Entry&lt;/li&gt;
+&lt;li&gt;Map 转Json应该直接使用第三方库&lt;/li&gt;
+&lt;li&gt;不理解org.springframework的东西怎么会到Map里面？&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;new JsonString().put(key,value).put(key,value).toString();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;来获得，完全没有必要写这些函数，这些函数基本上和上面代码没有区别.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

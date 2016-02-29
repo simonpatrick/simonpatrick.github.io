@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Api on Colored Hedwig</title>
+    <link>http://simonpatrick.github.io/tags/api/</link>
+    <description>Recent content in Api on Colored Hedwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 03 Dec 2015 10:28:14 +0000</lastBuildDate>
+    <atom:link href="http://simonpatrick.github.io/tags/api/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>restful_api_verbs</title>
+      <link>http://simonpatrick.github.io/posts/api/2015-12-03-restful_api_verbs/</link>
+      <pubDate>Thu, 03 Dec 2015 10:28:14 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/api/2015-12-03-restful_api_verbs/</guid>
+      <description>&lt;p&gt;关于Restful API Verbs的几篇文章&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/2001773/understanding-rest-verbs-error-codes-and-authentication&#34;&gt;understanding-rest-verbs-error-codes-and-authentication&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven&#34;&gt;rest-apis-must-be-hypertext-driven&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/630453/put-vs-post-in-rest?rq=1&#34;&gt;put-vs-post-in-rest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.steveklabnik.com/posts/2011-07-03-nobody-understands-rest-or-http&#34;&gt;understand-rest-or-http&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;wiki-restful&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://spring.io/understanding/REST&#34;&gt;REST&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

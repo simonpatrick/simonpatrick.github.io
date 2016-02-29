@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Designpattern on Colored Hedwig</title>
+    <link>http://simonpatrick.github.io/categories/designpattern/</link>
+    <description>Recent content in Designpattern on Colored Hedwig</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 11 Jan 2016 23:35:45 +0000</lastBuildDate>
+    <atom:link href="http://simonpatrick.github.io/categories/designpattern/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ptyhon design pattern: chain of responsibility</title>
+      <link>http://simonpatrick.github.io/posts/designpattern/2016-01-11-ptyhon-design-pattern-chain/</link>
+      <pubDate>Mon, 11 Jan 2016 23:35:45 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/designpattern/2016-01-11-ptyhon-design-pattern-chain/</guid>
+      <description>&lt;p&gt;python 的责任链模式.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;方法链：&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;上代码吧： 其实就死return 了一个self，java里面可能是this&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;
+class Person(object):
+    def __init__(self, name, action):
+        self.name = name
+        self.action = action
+
+    def do_action(self):
+        print(self.name, self.action.name, end=&#39; &#39;)
+        return self.action
+
+
+class Action(object):
+    def __init__(self, name):
+        self.name = name
+
+    def amount(self, val):
+        print(val, end=&#39; &#39;)
+        return self
+
+    def stop(self):
+        print(&#39;then stop&#39;)
+
+
+if __name__ == &#39;__main__&#39;:
+    move = Action(&#39;move&#39;)
+    person=Person(&#39;Jack&#39;,move)
+    person.do_action().amount(&#39;5m&#39;).stop
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;责任链:&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这是一个责任链的模式，一个handler叠加，下例中：
+ConcreteHandler1-&amp;gt;ConcreteHandler3-&amp;gt;ConcreteHandler2-&amp;gt;DefaultHandler,
+那么如果第一个request满足了ConcreteHandler1的条件，就结束了，如果没有怎尝试ConcreteHandler3，知道满足了就退出.
+这样就把一大批if else 转化成不同的handler了.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Handler:
+    def __init__(self, successor):
+        self._successor = successor;
+
+    def handle(self, request):
+        i = self._handle(request)
+        if not i:
+            self._successor.handle(request)
+
+    def _handle(self, request):
+        raise NotImplementedError(&#39;Must provide implementation in subclass.&#39;)
+
+
+class ConcreteHandler1(Handler):
+    def _handle(self, request):
+        if 0 &amp;lt; request &amp;lt;= 10:
+            print(&#39;request {} handled in handler 1&#39;.format(request))
+            return True
+
+
+class ConcreteHandler2(Handler):
+    def _handle(self, request):
+        if 10 &amp;lt; request &amp;lt;= 20:
+            print(&#39;request {} handled in handler 2&#39;.format(request))
+            return True
+
+
+class ConcreteHandler3(Handler):
+    def _handle(self, request):
+        if 20 &amp;lt; request &amp;lt;= 30:
+            print(&#39;request {} handled in handler 3&#39;.format(request))
+            return True
+
+
+class DefaultHandler(Handler):
+    def _handle(self, request):
+        print(&#39;end of chain, no handler for {}&#39;.format(request))
+        return True
+
+
+class Client:
+    def __init__(self):
+        self.handler = ConcreteHandler1(ConcreteHandler3(ConcreteHandler2(DefaultHandler(None))))
+
+    def delegate(self, requests):
+        for request in requests:
+            self.handler.handle(request)
+
+
+if __name__ == &amp;quot;__main__&amp;quot;:
+    client = Client()
+    requests = [2, 5, 14, 22, 18, 3, 35, 27, 20]
+    client.delegate(requests)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python-borg-design-pattern</title>
+      <link>http://simonpatrick.github.io/posts/designpattern/2016-01-11-python-design-pattern-borg/</link>
+      <pubDate>Mon, 11 Jan 2016 23:05:26 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/designpattern/2016-01-11-python-design-pattern-borg/</guid>
+      <description>
+
+&lt;p&gt;Python Design Pattern: Borg&lt;/p&gt;
+
+&lt;h2 id=&#34;borg:55f4fe74eecacc8a05b13cb7793b0531&#34;&gt;Borg&lt;/h2&gt;
+
+&lt;p&gt;Borg 模式实际上就是一个类的多个实例共享一个相同的状态.
+简单的代码实现如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;__author__ = &#39;patrick&#39;
+
+
+class Borg:
+    _share_state = {}
+
+    def __init__(self):
+        self.__dict__ = self._share_state
+        self.state = &#39;Init&#39;
+
+    def __str__(self):
+        return self.state
+
+
+class YourBorg(Borg):
+    pass
+
+
+if __name__ == &#39;__main__&#39;:
+    rm1 = Borg()
+    rm2 = Borg()
+    rm1.state = &#39;Idle&#39;
+    rm2.state = &#39;Running&#39;
+
+    print(&#39;rm1: {0}&#39;.format(rm1))
+    print(&#39;rm2: {0}&#39;.format(rm2))
+
+    rm2.state = &#39;Zombie&#39;
+
+    print(&#39;rm1: {0}&#39;.format(rm1))
+    print(&#39;rm2: {0}&#39;.format(rm2))
+
+    print(&#39;rm1 id: {0}&#39;.format(id(rm1)))
+    print(&#39;rm2 id: {0}&#39;.format(id(rm2)))
+
+    rm3 = YourBorg()
+
+    print(&#39;rm1: {0}&#39;.format(rm1))
+    print(&#39;rm2: {0}&#39;.format(rm2))
+    print(&#39;rm3: {0}&#39;.format(rm3))
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>design pattern overview</title>
+      <link>http://simonpatrick.github.io/posts/designpattern/2015-12-22-design_pattern_overview/</link>
+      <pubDate>Tue, 22 Dec 2015 23:00:24 +0000</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/designpattern/2015-12-22-design_pattern_overview/</guid>
+      <description>
+
+&lt;p&gt;Design Pattern overview, from GoF:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Creational
+Abstract Factory, Builder, Factory method, Prototype, Singleton&lt;/li&gt;
+&lt;li&gt;Structural
+Adapter, Bridge, Composite, Decorator, Façade, Flyweight, Proxy&lt;/li&gt;
+&lt;li&gt;Behavioural
+Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;design-pattern:121f442088bdf9997c8eaf188f40b46a&#34;&gt;Design Pattern&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../assets/images/pics/designpattern_1.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;img src=&#34;../../assets/images/pics/designpattern_2.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;img src=&#34;../../assets/images/pics/designpattern_3.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;img src=&#34;../../assets/images/pics/designpattern_4.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;img src=&#34;../../assets/images/pics/designpattern_5.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;img src=&#34;../../assets/images/pics/designpattern_6.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;img src=&#34;../../assets/images/pics/designpattern_7.jpg&#34; alt=&#34;img&#34; /&gt;
+&lt;img src=&#34;../../assets/images/pics/designpattern_8.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Functional Patterns</title>
+      <link>http://simonpatrick.github.io/posts/designpattern/2015-10-22-Functional-Programming-pattern/</link>
+      <pubDate>Fri, 23 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>http://simonpatrick.github.io/posts/designpattern/2015-10-22-Functional-Programming-pattern/</guid>
+      <description>
+
+&lt;p&gt;记录一个关于函数式设计模式&lt;/p&gt;
+
+&lt;h2 id=&#34;functional-patterns:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Functional patterns&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Core Principles of FP design
+
+&lt;ul&gt;
+&lt;li&gt;Functions&lt;/li&gt;
+&lt;li&gt;Types&lt;/li&gt;
+&lt;li&gt;Composition&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Functions as parameters
+
+&lt;ul&gt;
+&lt;li&gt;Abstraction,Dependency injection&lt;/li&gt;
+&lt;li&gt;Partial application, Continuations,Folds&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Chaining Functions
+
+&lt;ul&gt;
+&lt;li&gt;Error handling, Async&lt;/li&gt;
+&lt;li&gt;Monads&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Dealing with wrapped data
+
+&lt;ul&gt;
+&lt;li&gt;Lifting,Functors&lt;/li&gt;
+&lt;li&gt;Validation with applicatives&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Aggregating data and operations
+
+&lt;ul&gt;
+&lt;li&gt;Monoids&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;functional-programming-is-scary:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Functional programming is scary&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Functors&lt;/li&gt;
+&lt;li&gt;applicatives&lt;/li&gt;
+&lt;li&gt;currying&lt;/li&gt;
+&lt;li&gt;catamorphism&lt;/li&gt;
+&lt;li&gt;Monad&lt;/li&gt;
+&lt;li&gt;Monoid&lt;/li&gt;
+&lt;li&gt;chainable&lt;/li&gt;
+&lt;li&gt;aggregatable&lt;/li&gt;
+&lt;li&gt;mappable&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;object-oriented-programming-is-scary:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Object oriented programming is scary&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generic&lt;/li&gt;
+&lt;li&gt;Polymorphism&lt;/li&gt;
+&lt;li&gt;Interface&lt;/li&gt;
+&lt;li&gt;Inheritance&lt;/li&gt;
+&lt;li&gt;SOLID: SRP,OCP,LSP,ISP,DIP,&amp;hellip;&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Covariance&lt;/li&gt;
+&lt;li&gt;IOC,DI,MVC&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;oo-patterns-vs-fp-patterns:e85369958178eff0a51191ad1b06f5ed&#34;&gt;OO Patterns VS FP Patterns&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;OO pattern/principle
+• Single Responsibility Principle
+• Open/Closed principle
+• Dependency Inversion Principle
+• Interface Segregation Principle
+• Factory pattern
+• Strategy pattern
+• Decorator pattern
+• Visitor pattern&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;FP pattern/principle
+• Functions
+• Functions
+• Functions, also
+• Functions
+• Yes, functions
+• Oh my, functions again! • Functions
+• Functions&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;:)&lt;/p&gt;
+
+&lt;h2 id=&#34;functional-programming:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Functional programming&lt;/h2&gt;
+
+&lt;p&gt;Haskell,OCaml, etc&lt;/p&gt;
+
+&lt;h2 id=&#34;core-principles-of-fp-design:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Core Principles of FP Design&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Steal from mathematics&lt;/li&gt;
+&lt;li&gt;Types are not classes&lt;/li&gt;
+&lt;li&gt;Functions are things&lt;/li&gt;
+&lt;li&gt;Composition everytwhere&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;mathematics-functions:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Mathematics functions&lt;/h3&gt;
+
+&lt;p&gt;• Input and output values already exist
+• A function is not a calculation, just a mapping
+• Input and output values are unchanged (immutable)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;let add1 x = x+1
+va1 add1: int-&amp;gt;int
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;guideline-strive-for-purity:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Guideline: Strive for purity&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;￼let x = doSomething()
+let y = doSomethingElse(x)
+return y + 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;let helper() =
+￼   let x = doSomething()
+   let y = doSomethingElse(x)
+   return y
+return helper() + 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Laziness: only evaluate when I need output&lt;/li&gt;
+&lt;li&gt;Cacheable results
+same answer every time – &amp;ldquo;memoization&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;No order dependencies&lt;/li&gt;
+&lt;li&gt;Parallelizable&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;No Side Effects&lt;/li&gt;
+&lt;li&gt;Immutable data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Haskell/Clojure&lt;/p&gt;
+
+&lt;h3 id=&#34;types-are-not-classes:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Types are not classes&lt;/h3&gt;
+
+&lt;p&gt;set of valid inputs and sets of valid output&lt;/p&gt;
+
+&lt;p&gt;Data Behavior Data&lt;/p&gt;
+
+&lt;h3 id=&#34;functions-are-things:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Functions are things&lt;/h3&gt;
+
+&lt;p&gt;A function is a standalone thing, not attached to a class.
+Functions as inputs and outputs&lt;/p&gt;
+
+&lt;h3 id=&#34;composition-everywhere:e85369958178eff0a51191ad1b06f5ed&#34;&gt;Composition everywhere&lt;/h3&gt;
+
+&lt;p&gt;Types can be composed too
+“algebraic types&amp;rdquo;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Product type: *
+set of people * set of dates&lt;/li&gt;
+&lt;li&gt;Sum type: +
+set of cash value + set of cheque value+ set of credit card value&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;ddd-domain-modeling:e85369958178eff0a51191ad1b06f5ed&#34;&gt;DDD &amp;amp; DOMAIN MODELING&lt;/h3&gt;
+
+&lt;p&gt;to be continue &amp;hellip;&amp;hellip;&amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;发现函数式编程其实挺有意思的，函数式我觉的可以比面向对象更为抽象，所以他的代码少
+是有道理的。&lt;/p&gt;
+
+&lt;p&gt;￼&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
