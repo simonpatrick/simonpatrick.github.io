@@ -1,4 +1,4 @@
-baseurl = "http://testless.github.io"
+baseurl = "http://testless.github.io/"
 title = "Colored Hedwig: less is more"
 
 [params]
