@@ -12,24 +12,24 @@
     <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io/index.xml">
 
     
-    <title>Refactoring-6-Replace Inheritance with Delegation - Colored Hedwig</title>
-    <meta property='og:title' content="Refactoring-6-Replace Inheritance with Delegation - Colored Hedwig">
+    <title>Refactoring-6-Replace Inheritance with Delegation - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Refactoring-6-Replace Inheritance with Delegation - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://simonpatrick.github.io/posts/refactoring/2015-10-26-replace-inheritance-with-delegation/">
+    <meta property="og:url" content="http://testless.github.io/posts/refactoring/2015-10-26-replace-inheritance-with-delegation/">
     
-    <meta property="og:image" content="http://simonpatrick.github.ioimages/10.jpg">
+    <meta property="og:image" content="http://testless.github.ioimages/10.jpg">
 
   </head>
 
   <body>
 
     <header class="site">
-      <div class="title"><a href="http://simonpatrick.github.io">Colored Hedwig</a></div>
+      <div class="title"><a href="http://testless.github.io">Colored Hedwig: less is more</a></div>
     </header>
 
     <div class="container site">
@@ -40,29 +40,29 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io"/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io"/>
         <meta itemprop="dateModified" content="2015-10-26T10:31:11&#43;08:00">
         <meta itemprop="headline" content="Refactoring-6-Replace Inheritance with Delegation">
         <meta itemprop="description" content="Replace Inheritance with Delegation, 这种重构方式主要是继承有时 看起来不是那么合理，同时继承可能让程序的扩展性不好，所以可以改用委托 或者组合的形式重构。 代码实例 Refactor前: public class Sanitation { public String washHands(){ return &quot;Cleaned!&quot;; } } class Child extends Sanitation{ public static void main(String[] args) { System.out.println(new Child().washHands()); } } Refactor之后: 把继承关系拿掉，才有委托的方式: class ChildRefactor{ Sanitation s; public ChildRefactor() { s = new Sanitation(); } public String washHands(){ return s.washHands(); } } 好处的思考 逻辑上Sanitation(公共卫生)和Child没有那种继承关系,修改之后表达更加准确 Child的washHand方法实际更加灵活了 更加容易通过使用Dependency Injection注入">
-        <meta itemprop="url" content="http://simonpatrick.github.io/posts/refactoring/2015-10-26-replace-inheritance-with-delegation/">
+        <meta itemprop="url" content="http://testless.github.io/posts/refactoring/2015-10-26-replace-inheritance-with-delegation/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://simonpatrick.github.ioimages/10.jpg" />
+          <meta itemprop="url" content="http://testless.github.ioimages/10.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="http://simonpatrick.github.ioimages/logo.jpg">
+            <meta itemprop="url" content="http://testless.github.ioimages/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
-          <meta itemprop="name" content="Colored Hedwig">
+          <meta itemprop="name" content="Colored Hedwig: less is more">
         </div>
         <div itemprop="author" itemscope itemtype="https://schema.org/Person">
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+        <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2015-10-26T10:31:11&#43;08:00">Mon, Oct 26, 2015</time>
@@ -127,7 +127,7 @@ class Child extends Sanitation{
 
         <aside>
           <div class="section">
-            <a href="http://simonpatrick.github.iotags/refactoring" class="tag">refactoring</a>
+            <a href="http://testless.github.iotags/refactoring" class="tag">refactoring</a>
             </div>
 
           <div class="section share">
@@ -170,8 +170,8 @@ class Child extends Sanitation{
     <div class="content">
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/7.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -182,8 +182,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/18.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -194,8 +194,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -206,8 +206,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/25.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -218,8 +218,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -230,8 +230,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/6.jpg);"></div>
+  <a href="http://testless.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -242,8 +242,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/4.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -254,8 +254,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/19.jpg);"></div>
+  <a href="http://testless.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -266,8 +266,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/11.jpg);"></div>
+  <a href="http://testless.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -278,8 +278,8 @@ class Child extends Sanitation{
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -296,14 +296,14 @@ class Child extends Sanitation{
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iocategories/python">python</a><a href="http://simonpatrick.github.iocategories/refactoring">refactoring</a><a href="http://simonpatrick.github.iocategories/automation">automation</a><a href="http://simonpatrick.github.iocategories/shell">shell</a><a href="http://simonpatrick.github.iocategories/testing">testing</a><a href="http://simonpatrick.github.iocategories/microservice">microservice</a><a href="http://simonpatrick.github.iocategories/thoughts">thoughts</a><a href="http://simonpatrick.github.iocategories/java">java</a><a href="http://simonpatrick.github.iocategories/designpattern">designpattern</a><a href="http://simonpatrick.github.iocategories/truestories">truestories</a><a href="http://simonpatrick.github.iocategories/interview">interview</a><a href="http://simonpatrick.github.iocategories/tools">tools</a><a href="http://simonpatrick.github.iocategories/performance">performance</a><a href="http://simonpatrick.github.iocategories/ruby">ruby</a><a href="http://simonpatrick.github.iocategories/js">js</a><a href="http://simonpatrick.github.iocategories/git">git</a>
+      <a href="http://testless.github.iocategories/python">python</a><a href="http://testless.github.iocategories/refactoring">refactoring</a><a href="http://testless.github.iocategories/automation">automation</a><a href="http://testless.github.iocategories/shell">shell</a><a href="http://testless.github.iocategories/testing">testing</a><a href="http://testless.github.iocategories/microservice">microservice</a><a href="http://testless.github.iocategories/thoughts">thoughts</a><a href="http://testless.github.iocategories/truestories">truestories</a><a href="http://testless.github.iocategories/designpattern">designpattern</a><a href="http://testless.github.iocategories/java">java</a><a href="http://testless.github.iocategories/performance">performance</a><a href="http://testless.github.iocategories/tools">tools</a><a href="http://testless.github.iocategories/interview">interview</a><a href="http://testless.github.iocategories/js">js</a><a href="http://testless.github.iocategories/ruby">ruby</a><a href="http://testless.github.iocategories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iotags/python">python</a><a href="http://simonpatrick.github.iotags/refactoring">refactoring</a><a href="http://simonpatrick.github.iotags/shell">shell</a><a href="http://simonpatrick.github.iotags/automation">automation</a><a href="http://simonpatrick.github.iotags/testing">testing</a><a href="http://simonpatrick.github.iotags/thoughts">thoughts</a><a href="http://simonpatrick.github.iotags/microservice">microservice</a><a href="http://simonpatrick.github.iotags/truestories">truestories</a><a href="http://simonpatrick.github.iotags/java">java</a><a href="http://simonpatrick.github.iotags/designpattern">designpattern</a><a href="http://simonpatrick.github.iotags/interview">interview</a><a href="http://simonpatrick.github.iotags/performance">performance</a><a href="http://simonpatrick.github.iotags/tools">tools</a><a href="http://simonpatrick.github.iotags/ruby">ruby</a><a href="http://simonpatrick.github.iotags/git">git</a><a href="http://simonpatrick.github.iotags/js">js</a>
+      <a href="http://testless.github.iotags/python">python</a><a href="http://testless.github.iotags/refactoring">refactoring</a><a href="http://testless.github.iotags/shell">shell</a><a href="http://testless.github.iotags/automation">automation</a><a href="http://testless.github.iotags/testing">testing</a><a href="http://testless.github.iotags/thoughts">thoughts</a><a href="http://testless.github.iotags/microservice">microservice</a><a href="http://testless.github.iotags/java">java</a><a href="http://testless.github.iotags/truestories">truestories</a><a href="http://testless.github.iotags/designpattern">designpattern</a><a href="http://testless.github.iotags/interview">interview</a><a href="http://testless.github.iotags/tools">tools</a><a href="http://testless.github.iotags/performance">performance</a><a href="http://testless.github.iotags/ruby">ruby</a><a href="http://testless.github.iotags/js">js</a><a href="http://testless.github.iotags/git">git</a>
     </div>
   </div>
   
@@ -317,7 +317,7 @@ class Child extends Sanitation{
       </div>
 
     <footer class="site">
-      <p>&copy; 2016 Colored Hedwig</p>
+      <p>&copy; 2016 Colored Hedwig: less is more</p>
       <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
       <p>Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
     </footer>

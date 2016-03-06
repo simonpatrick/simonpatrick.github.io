@@ -12,24 +12,24 @@
     <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io/index.xml">
 
     
-    <title>Singleton 的不同写法 - Colored Hedwig</title>
-    <meta property='og:title' content="Singleton 的不同写法 - Colored Hedwig">
+    <title>Singleton 的不同写法 - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Singleton 的不同写法 - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://simonpatrick.github.io/posts/java/2015-12-02-singleton/">
+    <meta property="og:url" content="http://testless.github.io/posts/java/2015-12-02-singleton/">
     
-    <meta property="og:image" content="http://simonpatrick.github.ioimages/23.jpg">
+    <meta property="og:image" content="http://testless.github.ioimages/23.jpg">
 
   </head>
 
   <body>
 
     <header class="site">
-      <div class="title"><a href="http://simonpatrick.github.io">Colored Hedwig</a></div>
+      <div class="title"><a href="http://testless.github.io">Colored Hedwig: less is more</a></div>
     </header>
 
     <div class="container site">
@@ -40,29 +40,29 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io"/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io"/>
         <meta itemprop="dateModified" content="2015-12-02T12:42:18&#43;00:00">
         <meta itemprop="headline" content="Singleton 的不同写法">
         <meta itemprop="description" content="Singleton是JAVA的一个非常常见的方式，不过不同写的方式会有不同的想法，下面就介绍一下这个模式 Singleton 懒汉式模式，线程不安全 一个基本的写法如下: private static LazySingleton instance; private LazySingleton(){} public static LazySingleton getInstance(){ if(instance==null){ instance=new LazySingleton(); } return instance; } 这个的一个问题是线程不安全，就是当instance是null的时候，可能有两个线程同时满足，这样就是两个实例产生 那么一个改进就是,加入synchronized public static LazySingleton getInstance(){ if(instance==null){ synchronized (LazySingleton.class){ instance=new LazySingleton(); } } return instance; } 来自网上的解释说这个也是有问题的: 这段代码看起来很完美，很可惜，它是有问题。主要在于instance = new Singleton()这句，这并非是一个原子操作，事实上在 JVM 中这句话大概做了下面 3 件事情。 给 instance 分配内存 调用 Singleton 的构造函数来初始化成员变量 将instance对象指向分配的内存空间（执行完这步 instance 就为非 null 了） 但是在 JVM 的即时编译器中存在指令重排序的优化。也就是说上面的第二步和第三步的顺序是不能保证的，最终的执行顺序可能是 1-2-3 也可能是 1-3-2。如果是后者，则在 3 执行完毕、2 未执行之前，被线程二抢占了，这时 instance 已经是非 null 了（但却没有初始化），所以线程二会直接返回 instance，然后使用，然后顺理成章地报错。 那么将instace定义为: private volatile static Singleton instance; //声明成 volatile 使用 volatile 的原因是可见性，也就是可以保证线程在本地不会存有instance 的副本，每次都是去主内存中读取。但其实是不对的。使用 volatile 的主要原因是其另一个特性：禁止指令重排序优化 读操作不会被重排序到内存屏障之前,从「先行发生原则」的角度理解的话，就是对于一个 volatile 变量的写操作都先行发生于后面对这个变量的读操作（这里的“后面”是时间上的先后顺序.">
-        <meta itemprop="url" content="http://simonpatrick.github.io/posts/java/2015-12-02-singleton/">
+        <meta itemprop="url" content="http://testless.github.io/posts/java/2015-12-02-singleton/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://simonpatrick.github.ioimages/23.jpg" />
+          <meta itemprop="url" content="http://testless.github.ioimages/23.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="http://simonpatrick.github.ioimages/logo.jpg">
+            <meta itemprop="url" content="http://testless.github.ioimages/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
-          <meta itemprop="name" content="Colored Hedwig">
+          <meta itemprop="name" content="Colored Hedwig: less is more">
         </div>
         <div itemprop="author" itemscope itemtype="https://schema.org/Person">
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/23.jpg);"></div>
+        <div class="image" style="background-image: url(http://testless.github.ioimages/23.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2015-12-02T12:42:18&#43;00:00">Wed, Dec 2, 2015</time>
@@ -175,7 +175,7 @@ public class SingletonHolderModel {
 
         <aside>
           <div class="section">
-            <a href="http://simonpatrick.github.iotags/java" class="tag">java</a>
+            <a href="http://testless.github.iotags/java" class="tag">java</a>
             </div>
 
           <div class="section share">
@@ -221,8 +221,8 @@ public class SingletonHolderModel {
     <div class="content">
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/7.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -233,8 +233,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/18.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -245,8 +245,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -257,8 +257,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/25.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -269,8 +269,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -281,8 +281,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/6.jpg);"></div>
+  <a href="http://testless.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -293,8 +293,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/4.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -305,8 +305,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/19.jpg);"></div>
+  <a href="http://testless.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -317,8 +317,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/11.jpg);"></div>
+  <a href="http://testless.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -329,8 +329,8 @@ public class SingletonHolderModel {
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -347,14 +347,14 @@ public class SingletonHolderModel {
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iocategories/python">python</a><a href="http://simonpatrick.github.iocategories/refactoring">refactoring</a><a href="http://simonpatrick.github.iocategories/automation">automation</a><a href="http://simonpatrick.github.iocategories/shell">shell</a><a href="http://simonpatrick.github.iocategories/testing">testing</a><a href="http://simonpatrick.github.iocategories/microservice">microservice</a><a href="http://simonpatrick.github.iocategories/thoughts">thoughts</a><a href="http://simonpatrick.github.iocategories/java">java</a><a href="http://simonpatrick.github.iocategories/truestories">truestories</a><a href="http://simonpatrick.github.iocategories/designpattern">designpattern</a><a href="http://simonpatrick.github.iocategories/interview">interview</a><a href="http://simonpatrick.github.iocategories/tools">tools</a><a href="http://simonpatrick.github.iocategories/performance">performance</a><a href="http://simonpatrick.github.iocategories/ruby">ruby</a><a href="http://simonpatrick.github.iocategories/js">js</a><a href="http://simonpatrick.github.iocategories/git">git</a>
+      <a href="http://testless.github.iocategories/python">python</a><a href="http://testless.github.iocategories/refactoring">refactoring</a><a href="http://testless.github.iocategories/shell">shell</a><a href="http://testless.github.iocategories/automation">automation</a><a href="http://testless.github.iocategories/testing">testing</a><a href="http://testless.github.iocategories/microservice">microservice</a><a href="http://testless.github.iocategories/thoughts">thoughts</a><a href="http://testless.github.iocategories/designpattern">designpattern</a><a href="http://testless.github.iocategories/java">java</a><a href="http://testless.github.iocategories/truestories">truestories</a><a href="http://testless.github.iocategories/tools">tools</a><a href="http://testless.github.iocategories/interview">interview</a><a href="http://testless.github.iocategories/performance">performance</a><a href="http://testless.github.iocategories/js">js</a><a href="http://testless.github.iocategories/ruby">ruby</a><a href="http://testless.github.iocategories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iotags/python">python</a><a href="http://simonpatrick.github.iotags/refactoring">refactoring</a><a href="http://simonpatrick.github.iotags/shell">shell</a><a href="http://simonpatrick.github.iotags/automation">automation</a><a href="http://simonpatrick.github.iotags/testing">testing</a><a href="http://simonpatrick.github.iotags/thoughts">thoughts</a><a href="http://simonpatrick.github.iotags/microservice">microservice</a><a href="http://simonpatrick.github.iotags/designpattern">designpattern</a><a href="http://simonpatrick.github.iotags/truestories">truestories</a><a href="http://simonpatrick.github.iotags/java">java</a><a href="http://simonpatrick.github.iotags/interview">interview</a><a href="http://simonpatrick.github.iotags/performance">performance</a><a href="http://simonpatrick.github.iotags/tools">tools</a><a href="http://simonpatrick.github.iotags/git">git</a><a href="http://simonpatrick.github.iotags/js">js</a><a href="http://simonpatrick.github.iotags/ruby">ruby</a>
+      <a href="http://testless.github.iotags/python">python</a><a href="http://testless.github.iotags/refactoring">refactoring</a><a href="http://testless.github.iotags/shell">shell</a><a href="http://testless.github.iotags/automation">automation</a><a href="http://testless.github.iotags/testing">testing</a><a href="http://testless.github.iotags/thoughts">thoughts</a><a href="http://testless.github.iotags/microservice">microservice</a><a href="http://testless.github.iotags/java">java</a><a href="http://testless.github.iotags/truestories">truestories</a><a href="http://testless.github.iotags/designpattern">designpattern</a><a href="http://testless.github.iotags/interview">interview</a><a href="http://testless.github.iotags/tools">tools</a><a href="http://testless.github.iotags/performance">performance</a><a href="http://testless.github.iotags/ruby">ruby</a><a href="http://testless.github.iotags/js">js</a><a href="http://testless.github.iotags/git">git</a>
     </div>
   </div>
   
@@ -368,7 +368,7 @@ public class SingletonHolderModel {
       </div>
 
     <footer class="site">
-      <p>&copy; 2016 Colored Hedwig</p>
+      <p>&copy; 2016 Colored Hedwig: less is more</p>
       <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
       <p>Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
     </footer>
