@@ -54,9 +54,17 @@ code:not(.hljs) {
 }
 
 code, pre {
-  font-size: .8rem;
-  line-height: 1rem;
+  font-size: .14rem;
+  /*line-height: 1rem;*/
+  display: block;
+  background: #2d2d2d;
+  color: #cccccc;
+  font-family: Menlo, Monaco, Consolas, monospace;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
+
 
 img {
   width: 100%;
@@ -475,4 +483,3 @@ nav.paging .right {
   color: #999;
   padding: 0 .5rem;
 }
-
