@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io//index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/simonpatrick.github.io/index.xml">
 
     
     <title>zabbix 基础 - Colored Hedwig</title>
@@ -20,16 +20,16 @@
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/">
+    <meta property="og:url" content="/simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/">
     
-    <meta property="og:image" content="http://simonpatrick.github.io/images/25.jpg">
+    <meta property="og:image" content="/simonpatrick.github.ioimages/25.jpg">
 
   </head>
 
   <body>
 
     <header class="site">
-      <div class="title"><a href="http://simonpatrick.github.io/">Colored Hedwig</a></div>
+      <div class="title"><a href="/simonpatrick.github.io">Colored Hedwig</a></div>
     </header>
 
     <div class="container site">
@@ -40,19 +40,19 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io/"/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="/simonpatrick.github.io"/>
         <meta itemprop="dateModified" content="2016-02-26T16:48:54&#43;00:00">
         <meta itemprop="headline" content="zabbix 基础">
         <meta itemprop="description" content="抽空花了1个小时看了一下Zabbix的界面和简单的手册，了解了一下Zabbix的基础知识，下面是一个小小的记录,后面就写一些Python的脚本来直接调用Zabbix的API在进行一些自动化的操作. Zabbix 基础 Zabbix 是一个开源的监控系统，由于需要帮助运维写一些调用ZABBIX API的代码，所以就开始了解一下ZABBIX的一些基本概念. 简单的看了一下Zabbix的一个手册，大致了解Zabbix监控的一些概念，以下是Zabbix中比较重要的概念或者可以认为一些抽象的实体资源: Configuration HOST HOST GROUP Templates Monitor Application Items: keys Triggers Graphs Configuration:HOST HOST 就是Zabbix监控的对象，创建HOST可以通过一些预先定义好的模版来实现. 以Linux Group来说的话，HOST可能还有以下的一些属性： Agent Interface SNMP Interface JMX Interface IPMI Interface Monitory proxy Status Configuration: HOST GROUP 创建HOST的同时可以创建一个HOST GROUP，HOST GROUP实际上就是不同的HOST组合起来成一组. Configuration: Templates Templates 就是一些HOST的模版，相似的HOST可以通过模版继承，组合的方式创建 Monitor 从监控的层级来看，监控HOST的层级逻辑是： HOSTGROUP: HOST GROUP是可以认为不同HOST的容器 HOST: 监控的实体,监控的实体实际上有不同的监控模版组合而成 以下的APPLICATION，ITEM,TRIGGER,Graph 其实都是继承了模版的： APPLICATION,可以认为是一组监控的内容 ITEM: item就是监控的具体的一个数值,比如cl Loaded Class Count他的key是jmx[&quot;java.lang:type=ClassLoading&quot;,LoadedClassCount] 这个ITEM就是具体监控LoadedClass数目的一项，那么多个项目就可以组合成一个Application，ITEM 其实可以认为是采样数据的一个项 一个Template可以通过多个Application来组合而成，一个Application可以由Items来组合而成，一个HOST包含有多个监控的Template，一个HOST Group可以有多个HOST. 关于TEMPLATE的继承关系是： HOST 继承HOST GROUP的TEMPLATE Graph： 图表 Trigger： 触发器 这两个可以设置到模版级别的 Monitor: Application Application 可以认为是监控的一个大的项目，里面可能包括了不同的采样项目(item) create Application，可以参考一下API文档就可以 Monitor: Item Item创建首先需要创建一个key(在创建KEY之前可以先创建一个TEMPLATE)，key 相当于需要监控什么，如何设置？ - 监控客户端设置, 在zabbix_agentd.conf中需要添加UserParameter grep -v &#39;#&#39; /etc/zabbix/zabbix_agentd.conf|grep -v &quot;^$&quot; export UserParameter=&lt;key_name&gt;,&lt;shell_command&gt; &gt;&gt; &lt;configure_file_location&gt; ITEM的设置，可以设置ITEM的类型，同时使用一些表达是来完成需要的采样内容的设置 Graphs graph 就是图标，那么很明显，一个graph有x,y 轴，x轴一般总是时间序列，另外一个轴对应不同的item（采样项目），同时又一些graph的类型选择，以及图表大小的设置 Triggers Trigger 就是一个触发器，对于单独的一个item来说，如果设置了一些阀值,那么如果超过这个阀值，那么就会报警了.">
-        <meta itemprop="url" content="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/">
+        <meta itemprop="url" content="/simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://simonpatrick.github.io/images/25.jpg" />
+          <meta itemprop="url" content="/simonpatrick.github.ioimages/25.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="http://simonpatrick.github.io/images/logo.jpg">
+            <meta itemprop="url" content="/simonpatrick.github.ioimages/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
@@ -62,7 +62,7 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://simonpatrick.github.io/images/25.jpg);"></div>
+        <div class="image" style="background-image: url(/simonpatrick.github.ioimages/25.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2016-02-26T16:48:54&#43;00:00">Fri, Feb 26, 2016</time>
@@ -185,7 +185,7 @@ create Application，可以参考一下API文档就可以</p>
 
         <aside>
           <div class="section">
-            <a href="http://simonpatrick.github.io/tags/python" class="tag">python</a>
+            <a href="/simonpatrick.github.iotags/python" class="tag">python</a>
             </div>
 
           <div class="section share">
@@ -234,8 +234,8 @@ create Application，可以参考一下API文档就可以</p>
     <div class="content">
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/7.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -246,8 +246,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/18.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -258,8 +258,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -270,8 +270,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/25.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -282,8 +282,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -294,8 +294,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/6.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -306,8 +306,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/4.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -318,8 +318,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/19.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -330,8 +330,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/11.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -342,8 +342,8 @@ create Application，可以参考一下API文档就可以</p>
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -360,14 +360,14 @@ create Application，可以参考一下API文档就可以</p>
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/java">java</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a><a href="http://simonpatrick.github.io/categories/tools">tools</a><a href="http://simonpatrick.github.io/categories/performance">performance</a><a href="http://simonpatrick.github.io/categories/interview">interview</a><a href="http://simonpatrick.github.io/categories/ruby">ruby</a><a href="http://simonpatrick.github.io/categories/git">git</a><a href="http://simonpatrick.github.io/categories/js">js</a>
+      <a href="/simonpatrick.github.iocategories/python">python</a><a href="/simonpatrick.github.iocategories/refactoring">refactoring</a><a href="/simonpatrick.github.iocategories/automation">automation</a><a href="/simonpatrick.github.iocategories/shell">shell</a><a href="/simonpatrick.github.iocategories/testing">testing</a><a href="/simonpatrick.github.iocategories/thoughts">thoughts</a><a href="/simonpatrick.github.iocategories/microservice">microservice</a><a href="/simonpatrick.github.iocategories/truestories">truestories</a><a href="/simonpatrick.github.iocategories/java">java</a><a href="/simonpatrick.github.iocategories/designpattern">designpattern</a><a href="/simonpatrick.github.iocategories/tools">tools</a><a href="/simonpatrick.github.iocategories/interview">interview</a><a href="/simonpatrick.github.iocategories/performance">performance</a><a href="/simonpatrick.github.iocategories/ruby">ruby</a><a href="/simonpatrick.github.iocategories/git">git</a><a href="/simonpatrick.github.iocategories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.io/tags/python">python</a><a href="http://simonpatrick.github.io/tags/refactoring">refactoring</a><a href="http://simonpatrick.github.io/tags/automation">automation</a><a href="http://simonpatrick.github.io/tags/shell">shell</a><a href="http://simonpatrick.github.io/tags/testing">testing</a><a href="http://simonpatrick.github.io/tags/microservice">microservice</a><a href="http://simonpatrick.github.io/tags/thoughts">thoughts</a><a href="http://simonpatrick.github.io/tags/java">java</a><a href="http://simonpatrick.github.io/tags/truestories">truestories</a><a href="http://simonpatrick.github.io/tags/designpattern">designpattern</a><a href="http://simonpatrick.github.io/tags/tools">tools</a><a href="http://simonpatrick.github.io/tags/performance">performance</a><a href="http://simonpatrick.github.io/tags/interview">interview</a><a href="http://simonpatrick.github.io/tags/ruby">ruby</a><a href="http://simonpatrick.github.io/tags/js">js</a><a href="http://simonpatrick.github.io/tags/git">git</a>
+      <a href="/simonpatrick.github.iotags/python">python</a><a href="/simonpatrick.github.iotags/refactoring">refactoring</a><a href="/simonpatrick.github.iotags/automation">automation</a><a href="/simonpatrick.github.iotags/shell">shell</a><a href="/simonpatrick.github.iotags/testing">testing</a><a href="/simonpatrick.github.iotags/microservice">microservice</a><a href="/simonpatrick.github.iotags/thoughts">thoughts</a><a href="/simonpatrick.github.iotags/java">java</a><a href="/simonpatrick.github.iotags/designpattern">designpattern</a><a href="/simonpatrick.github.iotags/truestories">truestories</a><a href="/simonpatrick.github.iotags/tools">tools</a><a href="/simonpatrick.github.iotags/performance">performance</a><a href="/simonpatrick.github.iotags/interview">interview</a><a href="/simonpatrick.github.iotags/ruby">ruby</a><a href="/simonpatrick.github.iotags/git">git</a><a href="/simonpatrick.github.iotags/js">js</a>
     </div>
   </div>
   

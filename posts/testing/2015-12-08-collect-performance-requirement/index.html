@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io//index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/simonpatrick.github.io/index.xml">
 
     
     <title>收集性能测试需求 - Colored Hedwig</title>
@@ -20,16 +20,16 @@
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://simonpatrick.github.io/posts/testing/2015-12-08-collect-performance-requirement/">
+    <meta property="og:url" content="/simonpatrick.github.io/posts/testing/2015-12-08-collect-performance-requirement/">
     
-    <meta property="og:image" content="http://simonpatrick.github.io/images/22.jpg">
+    <meta property="og:image" content="/simonpatrick.github.ioimages/22.jpg">
 
   </head>
 
   <body>
 
     <header class="site">
-      <div class="title"><a href="http://simonpatrick.github.io/">Colored Hedwig</a></div>
+      <div class="title"><a href="/simonpatrick.github.io">Colored Hedwig</a></div>
     </header>
 
     <div class="container site">
@@ -40,19 +40,19 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io/"/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="/simonpatrick.github.io"/>
         <meta itemprop="dateModified" content="2015-12-08T13:36:27&#43;00:00">
         <meta itemprop="headline" content="收集性能测试需求">
         <meta itemprop="description" content="很多时候遇到一些关于性能测试的需求的时候，需求方实际上是给不出任何具体的需求，更多的是一下如下的抱怨: 速度慢(具体哪个操作慢又很难给出) 经常会出现系统过载(一般也不会自己看看监控的) 反正就是慢，我也不知道哪里慢 有一天突然系统响应时间慢，监控报警了 遇到这样的问题时,突然发现测试其实挺悲惨的,因为和这样的同事打交道其实压力挺大了.按照这样的逻辑 其实背后的含义就是所有和测试有关的事情都是你测试的事情，然后当坐下来和他们沟通的时候，他们具体 的问题时，一般也很难收集到信息，我一般会问一下如下的问题： 这个慢是经常出现的吗，还是那天突然有些运维的改动或者有些其他系统故障造成的？ 我至少遇到过几次犹豫数据库的原因造成了整个系统都出问题了,然而还是会有人会提出这样的不叫思考的要求，响应慢了，你一定要去测性能。 回到问题本身来说，我已经遇到无数次问这样的问题的时候，答案是不知道；我一般还会去查看一个月，或者更长的时间来看应用的响应时间分布，看看有没有明显的变慢点 同时会问能不能具体到那个API或者页面访问的时候慢，同样没有答案；答案就是确实慢，但是不知道那个业务慢，所以才要你来测试一下，然一个应用可能有数十个API，我们总是要了解客户使用场景的吧 相关业务在某个时间段有没有特殊的并发操作，比如可能每个月底的时候需要突击一个什么东西，然后突然访问量就变大了，这样好歹也能推测一些访问的场景来看看，然获取的答案还是不知道 你对于你自己应用大概需要的吞吐量是多少，或者具体到某些具体的API是多少？ 然还是没有答案 诸如此类的问题其实经常是得不到回答的，而你有需要完成相关的性能测试和排查.唯一的好处就是你不要太当真，大家只是在踢这个球而已。不过既然做了技术，而且想做这个性能测试的话，只能自己想想办法去获得了一些数据了.一般需要如下数据： 最高峰1个小时的访问量 最高峰一个小时的PAGE VIEW 最高峰一个小时的交易量(transaction量)，converation rate from visits APIs最高峰1个小时的访问量 业务方对于活动人数的估计 当然还有一些其他的应用的访问量，就不一一说明了,后面会再用一些数据计算来说明输入估算性能需求.">
-        <meta itemprop="url" content="http://simonpatrick.github.io/posts/testing/2015-12-08-collect-performance-requirement/">
+        <meta itemprop="url" content="/simonpatrick.github.io/posts/testing/2015-12-08-collect-performance-requirement/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://simonpatrick.github.io/images/22.jpg" />
+          <meta itemprop="url" content="/simonpatrick.github.ioimages/22.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="http://simonpatrick.github.io/images/logo.jpg">
+            <meta itemprop="url" content="/simonpatrick.github.ioimages/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
@@ -62,7 +62,7 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://simonpatrick.github.io/images/22.jpg);"></div>
+        <div class="image" style="background-image: url(/simonpatrick.github.ioimages/22.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2015-12-08T13:36:27&#43;00:00">Tue, Dec 8, 2015</time>
@@ -108,7 +108,7 @@
 
         <aside>
           <div class="section">
-            <a href="http://simonpatrick.github.io/tags/testing" class="tag">testing</a>
+            <a href="/simonpatrick.github.iotags/testing" class="tag">testing</a>
             </div>
 
           <div class="section share">
@@ -143,8 +143,8 @@
     <div class="content">
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/7.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -155,8 +155,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/18.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -167,8 +167,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -179,8 +179,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/25.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -191,8 +191,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -203,8 +203,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/6.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -215,8 +215,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/4.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -227,8 +227,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/19.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -239,8 +239,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/11.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -251,8 +251,8 @@
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
+  <a href="/simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -269,14 +269,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/java">java</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a><a href="http://simonpatrick.github.io/categories/tools">tools</a><a href="http://simonpatrick.github.io/categories/performance">performance</a><a href="http://simonpatrick.github.io/categories/interview">interview</a><a href="http://simonpatrick.github.io/categories/ruby">ruby</a><a href="http://simonpatrick.github.io/categories/git">git</a><a href="http://simonpatrick.github.io/categories/js">js</a>
+      <a href="/simonpatrick.github.iocategories/python">python</a><a href="/simonpatrick.github.iocategories/refactoring">refactoring</a><a href="/simonpatrick.github.iocategories/shell">shell</a><a href="/simonpatrick.github.iocategories/automation">automation</a><a href="/simonpatrick.github.iocategories/testing">testing</a><a href="/simonpatrick.github.iocategories/microservice">microservice</a><a href="/simonpatrick.github.iocategories/thoughts">thoughts</a><a href="/simonpatrick.github.iocategories/truestories">truestories</a><a href="/simonpatrick.github.iocategories/java">java</a><a href="/simonpatrick.github.iocategories/designpattern">designpattern</a><a href="/simonpatrick.github.iocategories/interview">interview</a><a href="/simonpatrick.github.iocategories/performance">performance</a><a href="/simonpatrick.github.iocategories/tools">tools</a><a href="/simonpatrick.github.iocategories/js">js</a><a href="/simonpatrick.github.iocategories/ruby">ruby</a><a href="/simonpatrick.github.iocategories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.io/tags/python">python</a><a href="http://simonpatrick.github.io/tags/refactoring">refactoring</a><a href="http://simonpatrick.github.io/tags/automation">automation</a><a href="http://simonpatrick.github.io/tags/shell">shell</a><a href="http://simonpatrick.github.io/tags/testing">testing</a><a href="http://simonpatrick.github.io/tags/thoughts">thoughts</a><a href="http://simonpatrick.github.io/tags/microservice">microservice</a><a href="http://simonpatrick.github.io/tags/truestories">truestories</a><a href="http://simonpatrick.github.io/tags/designpattern">designpattern</a><a href="http://simonpatrick.github.io/tags/java">java</a><a href="http://simonpatrick.github.io/tags/performance">performance</a><a href="http://simonpatrick.github.io/tags/tools">tools</a><a href="http://simonpatrick.github.io/tags/interview">interview</a><a href="http://simonpatrick.github.io/tags/git">git</a><a href="http://simonpatrick.github.io/tags/ruby">ruby</a><a href="http://simonpatrick.github.io/tags/js">js</a>
+      <a href="/simonpatrick.github.iotags/python">python</a><a href="/simonpatrick.github.iotags/refactoring">refactoring</a><a href="/simonpatrick.github.iotags/shell">shell</a><a href="/simonpatrick.github.iotags/automation">automation</a><a href="/simonpatrick.github.iotags/testing">testing</a><a href="/simonpatrick.github.iotags/thoughts">thoughts</a><a href="/simonpatrick.github.iotags/microservice">microservice</a><a href="/simonpatrick.github.iotags/java">java</a><a href="/simonpatrick.github.iotags/truestories">truestories</a><a href="/simonpatrick.github.iotags/designpattern">designpattern</a><a href="/simonpatrick.github.iotags/interview">interview</a><a href="/simonpatrick.github.iotags/performance">performance</a><a href="/simonpatrick.github.iotags/tools">tools</a><a href="/simonpatrick.github.iotags/git">git</a><a href="/simonpatrick.github.iotags/js">js</a><a href="/simonpatrick.github.iotags/ruby">ruby</a>
     </div>
   </div>
   
