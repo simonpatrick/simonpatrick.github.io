@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/simonpatrick.github.io/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io/index.xml">
 
     
     <title>Python 访问Zabbix API - Colored Hedwig</title>
@@ -20,16 +20,16 @@
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="/simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/">
+    <meta property="og:url" content="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/">
     
-    <meta property="og:image" content="/simonpatrick.github.ioimages/10.jpg">
+    <meta property="og:image" content="http://simonpatrick.github.ioimages/10.jpg">
 
   </head>
 
   <body>
 
     <header class="site">
-      <div class="title"><a href="/simonpatrick.github.io">Colored Hedwig</a></div>
+      <div class="title"><a href="http://simonpatrick.github.io">Colored Hedwig</a></div>
     </header>
 
     <div class="container site">
@@ -40,19 +40,19 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="/simonpatrick.github.io"/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io"/>
         <meta itemprop="dateModified" content="2016-02-26T16:51:20&#43;00:00">
         <meta itemprop="headline" content="Python 访问Zabbix API">
         <meta itemprop="description" content="Zabbix API 访问 准备使用Python来访问一下Zabbix，首先当然阅读一下Zabbix的API Manual,抛开什么json rpc这样的问题之外，zabbix的API的分类还是很工整的，所以看起来比较舒服，在一定了解了zabbix基础之后，基本上就可以上手来写了，网上查了一下，找个一个python zabbix的调用的一个客户段代码，感觉不错，就开始行动了。 Zabbix API 客户端代码的实现 Zabbix API的主要的两个参数其实是method，params，params基本上就可以看作一些可变的参数，其实就是一个json或者map， 对于method来说，一般就是 resource.action 这种方式，所以python客户端使用重写了一个getattr来做,返回一个可以访问不同资源名称的客户端,具体的代码如下： class ZabbixClient: &quot;&quot;&quot; Generic Zabbix API Client - login - get auth &quot;&quot;&quot; globale_header = { &quot;Content-Type&quot;: &quot;application/json-rpc&quot; } def __init__(self, session=None, timeout=None): self.user_name, self.default_user_name = &#39;1&#39;, &#39;1&#39; self.password, self.default_password = &#39;123456&#39;, &#39;123456&#39; self.zabbix_api_url = &#39;http://{0}/api_jsonrpc.php&#39;.format(&#39;abcd.http&#39;) if session: self.session = session else: self.session = requests.session() self.session.headers.update({ &#39;Content-Type&#39;: &#39;application/json-rpc&#39;, &#39;User-Agent&#39;: &#39;python-zabbix-client&#39;, &#39;Cache-Control&#39;: &#39;no-cache&#39; }) self.auth = &#39;&#39; self.id = 0 self.timeout = timeout logger.info(&#39;JSON-RPC Server EndPoint: %s&#39;, self.zabbix_api_url) def login_in(self, user_name=None, password=None): &quot;&quot;&quot; login with given user_name and password, if None, use default user :param user_name: :param password: :return: result,auth key &quot;&quot;&quot; if user_name: self.user_name = user_name if password: self.password = password self.auth = self.user.login(user=self.user_name, password=self.password) def api_version(self): return self.apiinfo.version() # def confimport(self, format=&#39;&#39;, source=&#39;&#39;, rules=&#39;&#39;): # &quot;&quot;&quot;Alias for configuration.import because it clashes with # Python&#39;s import reserved keyword&quot;&quot;&quot; # # return self.do_request( # method=&quot;configuration.import&quot;, # params={&quot;format&quot;: format, &quot;source&quot;: source, &quot;rules&quot;: rules} # )[&#39;result&#39;] def do_request(self, method, params=None): request_json = { &#39;jsonrpc&#39;: &#39;2.0&#39;, &#39;method&#39;: method, &#39;params&#39;: params or {}, &#39;id&#39;: self.id, } if method != &#39;apiinfo.version&#39; and self.auth: request_json[&#39;auth&#39;] = self.auth logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(&#39;,&#39;, &#39;:&#39;))) response = self.session.post( self.zabbix_api_url, data=json.dumps(request_json), timeout=self.timeout ) logger.debug(&quot;Response Code : %s&quot;, str(response.status_code)) response.raise_for_status() if not len(response.text): raise ZabbixAPIException(&quot;没有返回值&quot;) try: response_json = json.loads(response.text) except ValueError: raise ZabbixAPIException(&quot;不能解析JSON %s&quot; % response.text) logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(&#39;,&#39;, &#39;:&#39;))) self.id &#43;= 1 if &#39;error&#39; in response_json: if &#39;data&#39; not in response_json[&#39;error&#39;]: response_json[&#39;error&#39;][&#39;data&#39;] = &#39;No Data&#39; msg = &quot;Error {code}: {message},{data}&quot;.format( code=response_json[&#39;error&#39;][&#39;code&#39;], message=response_json[&#39;error&#39;][&#39;message&#39;], data=response_json[&#39;error&#39;][&#39;data&#39;] ) raise ZabbixAPIException(msg, response_json[&#39;error&#39;][&#39;code&#39;]) return response_json def __getattr__(self, item): &quot;&quot;&quot; auto create Zabbix API Client :param item: :return: &quot;&quot;&quot; return ZabbixAPIObjectClass(item, self) class ZabbixAPIObjectClass(object): def __init__(self, name, parent): self.name = name self.parent = parent def __getattr__(self, item): &quot;&quot;&quot; dynamic create a method (get,create,update,delete) :param item: :return: &quot;&quot;&quot; def fn(*args, **kwargs): if args and kwargs: raise TypeError(&#39;Found Both args and kwargs&#39;) return self.parent.do_request(&#39;{0}.{1}&#39;.format(self.name, item), args or kwargs)[&#39;result&#39;] return fn 基本上一个文件就搞定了，不过这个基本上参考了网上的一个代码实现的，这里使用getattr这种方式可以非常简洁的处理了这种请求非常类似的情况，这也是python的魅力吧.">
-        <meta itemprop="url" content="/simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/">
+        <meta itemprop="url" content="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="/simonpatrick.github.ioimages/10.jpg" />
+          <meta itemprop="url" content="http://simonpatrick.github.ioimages/10.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="/simonpatrick.github.ioimages/logo.jpg">
+            <meta itemprop="url" content="http://simonpatrick.github.ioimages/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
@@ -62,7 +62,7 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+        <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2016-02-26T16:51:20&#43;00:00">Fri, Feb 26, 2016</time>
@@ -256,7 +256,7 @@ class ZabbixAPIObjectClass(object):
 
         <aside>
           <div class="section">
-            <a href="/simonpatrick.github.iotags/python" class="tag">python</a>
+            <a href="http://simonpatrick.github.iotags/python" class="tag">python</a>
             </div>
 
           <div class="section share">
@@ -300,8 +300,8 @@ class ZabbixAPIObjectClass(object):
     <div class="content">
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/7.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -312,8 +312,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/18.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -324,8 +324,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -336,8 +336,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/25.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -348,8 +348,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -360,8 +360,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/6.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -372,8 +372,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/4.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -384,8 +384,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/19.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -396,8 +396,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/11.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -408,8 +408,8 @@ class ZabbixAPIObjectClass(object):
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -426,14 +426,14 @@ class ZabbixAPIObjectClass(object):
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="/simonpatrick.github.iocategories/python">python</a><a href="/simonpatrick.github.iocategories/refactoring">refactoring</a><a href="/simonpatrick.github.iocategories/automation">automation</a><a href="/simonpatrick.github.iocategories/shell">shell</a><a href="/simonpatrick.github.iocategories/testing">testing</a><a href="/simonpatrick.github.iocategories/thoughts">thoughts</a><a href="/simonpatrick.github.iocategories/microservice">microservice</a><a href="/simonpatrick.github.iocategories/truestories">truestories</a><a href="/simonpatrick.github.iocategories/designpattern">designpattern</a><a href="/simonpatrick.github.iocategories/java">java</a><a href="/simonpatrick.github.iocategories/tools">tools</a><a href="/simonpatrick.github.iocategories/interview">interview</a><a href="/simonpatrick.github.iocategories/performance">performance</a><a href="/simonpatrick.github.iocategories/ruby">ruby</a><a href="/simonpatrick.github.iocategories/git">git</a><a href="/simonpatrick.github.iocategories/js">js</a>
+      <a href="http://simonpatrick.github.iocategories/python">python</a><a href="http://simonpatrick.github.iocategories/refactoring">refactoring</a><a href="http://simonpatrick.github.iocategories/shell">shell</a><a href="http://simonpatrick.github.iocategories/automation">automation</a><a href="http://simonpatrick.github.iocategories/testing">testing</a><a href="http://simonpatrick.github.iocategories/microservice">microservice</a><a href="http://simonpatrick.github.iocategories/thoughts">thoughts</a><a href="http://simonpatrick.github.iocategories/designpattern">designpattern</a><a href="http://simonpatrick.github.iocategories/truestories">truestories</a><a href="http://simonpatrick.github.iocategories/java">java</a><a href="http://simonpatrick.github.iocategories/tools">tools</a><a href="http://simonpatrick.github.iocategories/interview">interview</a><a href="http://simonpatrick.github.iocategories/performance">performance</a><a href="http://simonpatrick.github.iocategories/git">git</a><a href="http://simonpatrick.github.iocategories/ruby">ruby</a><a href="http://simonpatrick.github.iocategories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="/simonpatrick.github.iotags/python">python</a><a href="/simonpatrick.github.iotags/refactoring">refactoring</a><a href="/simonpatrick.github.iotags/automation">automation</a><a href="/simonpatrick.github.iotags/shell">shell</a><a href="/simonpatrick.github.iotags/testing">testing</a><a href="/simonpatrick.github.iotags/microservice">microservice</a><a href="/simonpatrick.github.iotags/thoughts">thoughts</a><a href="/simonpatrick.github.iotags/java">java</a><a href="/simonpatrick.github.iotags/designpattern">designpattern</a><a href="/simonpatrick.github.iotags/truestories">truestories</a><a href="/simonpatrick.github.iotags/tools">tools</a><a href="/simonpatrick.github.iotags/performance">performance</a><a href="/simonpatrick.github.iotags/interview">interview</a><a href="/simonpatrick.github.iotags/ruby">ruby</a><a href="/simonpatrick.github.iotags/git">git</a><a href="/simonpatrick.github.iotags/js">js</a>
+      <a href="http://simonpatrick.github.iotags/python">python</a><a href="http://simonpatrick.github.iotags/refactoring">refactoring</a><a href="http://simonpatrick.github.iotags/shell">shell</a><a href="http://simonpatrick.github.iotags/automation">automation</a><a href="http://simonpatrick.github.iotags/testing">testing</a><a href="http://simonpatrick.github.iotags/thoughts">thoughts</a><a href="http://simonpatrick.github.iotags/microservice">microservice</a><a href="http://simonpatrick.github.iotags/designpattern">designpattern</a><a href="http://simonpatrick.github.iotags/java">java</a><a href="http://simonpatrick.github.iotags/truestories">truestories</a><a href="http://simonpatrick.github.iotags/interview">interview</a><a href="http://simonpatrick.github.iotags/performance">performance</a><a href="http://simonpatrick.github.iotags/tools">tools</a><a href="http://simonpatrick.github.iotags/git">git</a><a href="http://simonpatrick.github.iotags/js">js</a><a href="http://simonpatrick.github.iotags/ruby">ruby</a>
     </div>
   </div>
   

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/simonpatrick.github.io/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io/index.xml">
 
     
     <title>Python完成简单的SVN Reviewboard Precommit的客户端 - Colored Hedwig</title>
@@ -20,16 +20,16 @@
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="/simonpatrick.github.io/posts/python/2015-05-16-svn_reviewboard_python/">
+    <meta property="og:url" content="http://simonpatrick.github.io/posts/python/2015-05-16-svn_reviewboard_python/">
     
-    <meta property="og:image" content="/simonpatrick.github.ioimages/22.jpg">
+    <meta property="og:image" content="http://simonpatrick.github.ioimages/22.jpg">
 
   </head>
 
   <body>
 
     <header class="site">
-      <div class="title"><a href="/simonpatrick.github.io">Colored Hedwig</a></div>
+      <div class="title"><a href="http://simonpatrick.github.io">Colored Hedwig</a></div>
     </header>
 
     <div class="container site">
@@ -40,19 +40,19 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="/simonpatrick.github.io"/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io"/>
         <meta itemprop="dateModified" content="2015-05-16T10:31:11&#43;08:00">
         <meta itemprop="headline" content="Python完成简单的SVN Reviewboard Precommit的客户端">
         <meta itemprop="description" content="最近公司需要使用review board进行代码pre-commit review(pre-commit:正式提交前review)，而公司的现状是： 1. 使用SVN作为代码版本管理工具 2. 开发工具有eclipse，idea 3. MAC 和windows 机器居多 考虑到开发eclipse和idea插件，连接review board我一个人无法完成，同时能力也不够来开发这两种插件， 所以就准备python写一个命令行工具，期间研究了一下taobao review board的插件，感觉有点复杂，这个也是 使用python来些命令行工具的一个理由,也考虑过使用node-webkit来写个客户端，不过由于时间上的限制也就先放弃了 实现 实现过程中，使用到主要的包和工具是： RBTools,review board 自带的工具，但是支持中文能力让人有点困惑 python，cmd 包(python自带)，requests包使用 pip install requests 安装 ConEmuPack(windows CMD的替代),主要为了支持window系统 SVN 最后实现了如下功能 - 选择更改的文件，提交Review Board 作为pre-commit review - 根据review request id 提交代码到SVN - python直接操作svn命令,可以通过简单的命令就提交代码(由于使用习惯的问题,个人觉得命令行比UI效率更高) svn命令有个问题就是如果操作delete或者add这种的话,如果文件没有直接放到svn work copy的话,提交需要两步操作, 而这个工具也解决了这个问题 Review Board 功能介绍 review board 是进行代码review的一个工具，目前公司主要用来做pre-commit的review，在review board针对pre-主要有如下概念： review request draft, draft里面包含了differ文件，描述，review的人等等 review request，在这个review request上面review review完毕，才可以提交代码 安装和配置 1.安装Python 和Requests包 下载安装最新版本的Python，确保在命令行中可以执行Python命令，如果打开命令行工具，执行python -v 失败，需要在环境变量中设置Python的执行路径 安装Python完成之后，在命令行中执行 pip install requests 安装requests包到全局。MAC可能需要使用: sudo pip install requests 2.">
-        <meta itemprop="url" content="/simonpatrick.github.io/posts/python/2015-05-16-svn_reviewboard_python/">
+        <meta itemprop="url" content="http://simonpatrick.github.io/posts/python/2015-05-16-svn_reviewboard_python/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="/simonpatrick.github.ioimages/22.jpg" />
+          <meta itemprop="url" content="http://simonpatrick.github.ioimages/22.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="/simonpatrick.github.ioimages/logo.jpg">
+            <meta itemprop="url" content="http://simonpatrick.github.ioimages/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
@@ -62,7 +62,7 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(/simonpatrick.github.ioimages/22.jpg);"></div>
+        <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/22.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2015-05-16T10:31:11&#43;08:00">Sat, May 16, 2015</time>
@@ -313,7 +313,7 @@ Request Review Id |Summary  | Status | Changed File List
 
         <aside>
           <div class="section">
-            <a href="/simonpatrick.github.iotags/python" class="tag">python</a>
+            <a href="http://simonpatrick.github.iotags/python" class="tag">python</a>
             </div>
 
           <div class="section share">
@@ -365,8 +365,8 @@ Request Review Id |Summary  | Status | Changed File List
     <div class="content">
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/7.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -377,8 +377,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/18.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -389,8 +389,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -401,8 +401,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/25.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -413,8 +413,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -425,8 +425,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/6.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -437,8 +437,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/4.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -449,8 +449,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/19.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -461,8 +461,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/11.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -473,8 +473,8 @@ Request Review Id |Summary  | Status | Changed File List
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -491,14 +491,14 @@ Request Review Id |Summary  | Status | Changed File List
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="/simonpatrick.github.iocategories/python">python</a><a href="/simonpatrick.github.iocategories/refactoring">refactoring</a><a href="/simonpatrick.github.iocategories/automation">automation</a><a href="/simonpatrick.github.iocategories/shell">shell</a><a href="/simonpatrick.github.iocategories/testing">testing</a><a href="/simonpatrick.github.iocategories/thoughts">thoughts</a><a href="/simonpatrick.github.iocategories/microservice">microservice</a><a href="/simonpatrick.github.iocategories/designpattern">designpattern</a><a href="/simonpatrick.github.iocategories/java">java</a><a href="/simonpatrick.github.iocategories/truestories">truestories</a><a href="/simonpatrick.github.iocategories/tools">tools</a><a href="/simonpatrick.github.iocategories/interview">interview</a><a href="/simonpatrick.github.iocategories/performance">performance</a><a href="/simonpatrick.github.iocategories/git">git</a><a href="/simonpatrick.github.iocategories/js">js</a><a href="/simonpatrick.github.iocategories/ruby">ruby</a>
+      <a href="http://simonpatrick.github.iocategories/python">python</a><a href="http://simonpatrick.github.iocategories/refactoring">refactoring</a><a href="http://simonpatrick.github.iocategories/shell">shell</a><a href="http://simonpatrick.github.iocategories/automation">automation</a><a href="http://simonpatrick.github.iocategories/testing">testing</a><a href="http://simonpatrick.github.iocategories/microservice">microservice</a><a href="http://simonpatrick.github.iocategories/thoughts">thoughts</a><a href="http://simonpatrick.github.iocategories/designpattern">designpattern</a><a href="http://simonpatrick.github.iocategories/truestories">truestories</a><a href="http://simonpatrick.github.iocategories/java">java</a><a href="http://simonpatrick.github.iocategories/interview">interview</a><a href="http://simonpatrick.github.iocategories/tools">tools</a><a href="http://simonpatrick.github.iocategories/performance">performance</a><a href="http://simonpatrick.github.iocategories/git">git</a><a href="http://simonpatrick.github.iocategories/ruby">ruby</a><a href="http://simonpatrick.github.iocategories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="/simonpatrick.github.iotags/python">python</a><a href="/simonpatrick.github.iotags/refactoring">refactoring</a><a href="/simonpatrick.github.iotags/automation">automation</a><a href="/simonpatrick.github.iotags/shell">shell</a><a href="/simonpatrick.github.iotags/testing">testing</a><a href="/simonpatrick.github.iotags/microservice">microservice</a><a href="/simonpatrick.github.iotags/thoughts">thoughts</a><a href="/simonpatrick.github.iotags/java">java</a><a href="/simonpatrick.github.iotags/designpattern">designpattern</a><a href="/simonpatrick.github.iotags/truestories">truestories</a><a href="/simonpatrick.github.iotags/tools">tools</a><a href="/simonpatrick.github.iotags/performance">performance</a><a href="/simonpatrick.github.iotags/interview">interview</a><a href="/simonpatrick.github.iotags/ruby">ruby</a><a href="/simonpatrick.github.iotags/js">js</a><a href="/simonpatrick.github.iotags/git">git</a>
+      <a href="http://simonpatrick.github.iotags/python">python</a><a href="http://simonpatrick.github.iotags/refactoring">refactoring</a><a href="http://simonpatrick.github.iotags/automation">automation</a><a href="http://simonpatrick.github.iotags/shell">shell</a><a href="http://simonpatrick.github.iotags/testing">testing</a><a href="http://simonpatrick.github.iotags/microservice">microservice</a><a href="http://simonpatrick.github.iotags/thoughts">thoughts</a><a href="http://simonpatrick.github.iotags/designpattern">designpattern</a><a href="http://simonpatrick.github.iotags/java">java</a><a href="http://simonpatrick.github.iotags/truestories">truestories</a><a href="http://simonpatrick.github.iotags/tools">tools</a><a href="http://simonpatrick.github.iotags/performance">performance</a><a href="http://simonpatrick.github.iotags/interview">interview</a><a href="http://simonpatrick.github.iotags/git">git</a><a href="http://simonpatrick.github.iotags/js">js</a><a href="http://simonpatrick.github.iotags/ruby">ruby</a>
     </div>
   </div>
   
