@@ -12,24 +12,24 @@
     <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io/index.xml">
 
     
-    <title>Talking is Cheap,show me the code - Colored Hedwig</title>
-    <meta property='og:title' content="Talking is Cheap,show me the code - Colored Hedwig">
+    <title>Talking is Cheap,show me the code - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Talking is Cheap,show me the code - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://simonpatrick.github.io/posts/true_stories/2015-11-19-talking_is_cheep/">
+    <meta property="og:url" content="http://testless.github.io/posts/true_stories/2015-11-19-talking_is_cheep/">
     
-    <meta property="og:image" content="http://simonpatrick.github.ioimages/25.jpg">
+    <meta property="og:image" content="http://testless.github.ioimages/25.jpg">
 
   </head>
 
   <body>
 
     <header class="site">
-      <div class="title"><a href="http://simonpatrick.github.io">Colored Hedwig</a></div>
+      <div class="title"><a href="http://testless.github.io">Colored Hedwig: less is more</a></div>
     </header>
 
     <div class="container site">
@@ -40,29 +40,29 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io"/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io"/>
         <meta itemprop="dateModified" content="2015-11-19T23:27:56&#43;00:00">
         <meta itemprop="headline" content="Talking is Cheap,show me the code">
         <meta itemprop="description" content="当看到如下的代码出现在production代码库的时候，不知道做何想法？无数的人动辄就谈客户需求，要触动痛点,是的没错，但是软件工程师还是要点工程追求的吧？如果这样的代码存在一些时候也就罢了，结果存在来Controller里面3-4年之久，情何以堪呀？指望用这样的代码去触动痛点？你是认真的吗？ 工程师首先是个匠人,先写好自己的代码，再去谈论这些虚幻的东西.看几本抽象的书，谁都可以高谈阔论，so what? Talking is Cheap,right? show me the code. protected String formatUserJSON(VSalary newSalary){ SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); String info = &quot;{\&quot;msg\&quot;:\&quot;&quot;&#43;Constants.SUCCESS&#43;&quot;\&quot;,\&quot;usercode\&quot;:\&quot;&quot;&#43;newSalary.getUsercode()&#43;&quot;\&quot;,\&quot;username\&quot;:\&quot;&quot;&#43;newSalary.getUsername()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;orgname\&quot;:\&quot;&quot;&#43;newSalary.getOrgname()&#43;&quot;\&quot;,\&quot;positionname\&quot;:\&quot;&quot;&#43;newSalary.getPositionname()&#43;&quot;\&quot;,\&quot;hasexperience\&quot;:\&quot;&quot;&#43;newSalary.getHasexperience()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;joindate\&quot;:\&quot;&quot;&#43;sdf.format(newSalary.getJoindate())&#43;&quot;\&quot;,\&quot;leavedate\&quot;:\&quot;&quot;&#43;(newSalary.getLeavedate()==null?&quot;&quot;:sdf.format(newSalary.getLeavedate()))&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;lastmonthwage\&quot;:\&quot;&quot;&#43;newSalary.getLastmonthwagestr()&#43;&quot;\&quot;,\&quot;allowance\&quot;:\&quot;&quot;&#43;newSalary.getAllowancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;basewage\&quot;:\&quot;&quot;&#43;newSalary.getBasewagestr()&#43;&quot;\&quot;,\&quot;totalwage\&quot;:\&quot;&quot;&#43;newSalary.getTotalwagestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;transferdays\&quot;:\&quot;&quot;&#43;newSalary.getTransferdaysstr()&#43;&quot;\&quot;,\&quot;paiddays\&quot;:\&quot;&quot;&#43;newSalary.getPaiddaysstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;leavehours\&quot;:\&quot;&quot;&#43;newSalary.getLeavehoursstr()&#43;&quot;\&quot;,\&quot;leavecost\&quot;:\&quot;&quot;&#43;newSalary.getLeavecoststr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;illdaystotal\&quot;:\&quot;&quot;&#43;newSalary.getIlldaystotalstr()&#43;&quot;\&quot;,\&quot;illdays\&quot;:\&quot;&quot;&#43;newSalary.getIlldaysstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;illcost\&quot;:\&quot;&quot;&#43;newSalary.getIllcoststr()&#43;&quot;\&quot;,\&quot;latefreecount\&quot;:\&quot;&quot;&#43;newSalary.getLatefreecountstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;latecostcount\&quot;:\&quot;&quot;&#43;newSalary.getLatecostcountstr()&#43;&quot;\&quot;,\&quot;latecost\&quot;:\&quot;&quot;&#43;newSalary.getLatecoststr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;leaveearly\&quot;:\&quot;&quot;&#43;newSalary.getLeaveearlystr()&#43;&quot;\&quot;,\&quot;leaveearlycost\&quot;:\&quot;&quot;&#43;newSalary.getLeaveearlycoststr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;missclockfreecount\&quot;:\&quot;&quot;&#43;newSalary.getMissclockfreecountstr()&#43;&quot;\&quot;,\&quot;missclockcostcount\&quot;:\&quot;&quot;&#43;newSalary.getMissclockcostcountstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;missclockcost\&quot;:\&quot;&quot;&#43;newSalary.getMissclockcoststr()&#43;&quot;\&quot;,\&quot;absentcount\&quot;:\&quot;&quot;&#43;newSalary.getAbsentcountstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;absentcost\&quot;:\&quot;&quot;&#43;newSalary.getAbsentcoststr()&#43;&quot;\&quot;,\&quot;leavetotalcost\&quot;:\&quot;&quot;&#43;newSalary.getLeavetotalcoststr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;bussallowance\&quot;:\&quot;&quot;&#43;newSalary.getBussallowancestr()&#43;&quot;\&quot;,\&quot;olderallowance\&quot;:\&quot;&quot;&#43;newSalary.getOlderallowancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;petrolallowance\&quot;:\&quot;&quot;&#43;newSalary.getPetrolallowancestr()&#43;&quot;\&quot;,\&quot;otheradd\&quot;:\&quot;&quot;&#43;newSalary.getOtheraddstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;otheraddremark\&quot;:\&quot;&quot;&#43;(newSalary.getOtheraddremark()==null?&quot;&quot;:newSalary.getOtheraddremark())&#43;&quot;\&quot;,\&quot;othertotal\&quot;:\&quot;&quot;&#43;newSalary.getOthertotalstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;firededuction\&quot;:\&quot;&quot;&#43;newSalary.getFiredeductionstr()&#43;&quot;\&quot;,\&quot;notfulldeduction\&quot;:\&quot;&quot;&#43;newSalary.getNotfulldeductionstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;punishdeduction\&quot;:\&quot;&quot;&#43;newSalary.getPunishdeductionstr()&#43;&quot;\&quot;,\&quot;otherdeduction\&quot;:\&quot;&quot;&#43;newSalary.getOtherdeductionstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;otherdeductionremark\&quot;:\&quot;&quot;&#43;(newSalary.getOtherdeductionremark()==null?&quot;&quot;:newSalary.getOtherdeductionremark())&#43;&quot;\&quot;,\&quot;deductiontotal\&quot;:\&quot;&quot;&#43;newSalary.getDeductiontotalstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;shouldtotal\&quot;:\&quot;&quot;&#43;newSalary.getShouldtotalstr()&#43;&quot;\&quot;,\&quot;commission\&quot;:\&quot;&quot;&#43;newSalary.getCommissionstr()&#43;&quot;\&quot;,\&quot;commissionDecu\&quot;:\&quot;&quot;&#43;newSalary.getCommissionDecustr()&#43;&quot;\&quot;,\&quot;status\&quot;:\&quot;&quot;&#43;newSalary.getStatus()&#43;&quot;\&quot;,&quot;&#43; &quot;\&quot;insuredtype\&quot;:\&quot;&quot;&#43;(newSalary.getInsuredtype()==null?&quot;&quot;:newSalary.getInsuredtype())&#43;&quot;\&quot;,\&quot;insuredbase\&quot;:\&quot;&quot;&#43;newSalary.getInsuredbasestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;oldageinsurance\&quot;:\&quot;&quot;&#43;newSalary.getOldageinsurancestr()&#43;&quot;\&quot;,\&quot;medicalinsurance\&quot;:\&quot;&quot;&#43;newSalary.getMedicalinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;unemployedinsurance\&quot;:\&quot;&quot;&#43;newSalary.getUnemployedinsurancestr()&#43;&quot;\&quot;,\&quot;accufundtype\&quot;:\&quot;&quot;&#43;(newSalary.getAccufundtype()==null?&quot;&quot;:newSalary.getAccufundtype())&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;accufundbase\&quot;:\&quot;&quot;&#43;newSalary.getAccufundbasestr()&#43;&quot;\&quot;,\&quot;accufund\&quot;:\&quot;&quot;&#43;newSalary.getAccufundstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;socialinsurance\&quot;:\&quot;&quot;&#43;newSalary.getSocialinsurancestr()&#43;&quot;\&quot;,\&quot;taxtotal\&quot;:\&quot;&quot;&#43;newSalary.getTaxtotalstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;persontax\&quot;:\&quot;&quot;&#43;newSalary.getPersontaxstr()&#43;&quot;\&quot;,\&quot;financialdeduction\&quot;:\&quot;&quot;&#43;newSalary.getFinancialdeductionstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;finalwage\&quot;:\&quot;&quot;&#43;newSalary.getFinalwagestr()&#43;&quot;\&quot;,\&quot;reward\&quot;:\&quot;&quot;&#43; newSalary.getRewardstr()&#43; &quot;\&quot;,&quot; &#43; &quot;\&quot;otherdeductionList\&quot;:&quot;&#43;JSONArray.fromObject(newSalary.getOtherdeductionList()).toString()&#43; &quot;,&quot; &#43; &quot;\&quot;negativeAmount\&quot;:\&quot;&quot;&#43;newSalary.getNegativeAmountstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;currentsocialinsurance\&quot;:\&quot;&quot;&#43;newSalary.getCurrentsocialinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;surplussocialinsurance\&quot;:\&quot;&quot;&#43;newSalary.getSurplussocialinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;currentaccufund\&quot;:\&quot;&quot;&#43;newSalary.getCurrentaccufundstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;surplusaccufund\&quot;:\&quot;&quot;&#43;newSalary.getSurplusaccufundstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;currentoldageinsurance\&quot;:\&quot;&quot;&#43;newSalary.getCurrentoldageinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;surplusoldageinsurance\&quot;:\&quot;&quot;&#43;newSalary.getSurplusoldageinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;currentmedicalinsurance\&quot;:\&quot;&quot;&#43;newSalary.getCurrentmedicalinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;surplusmedicalinsurance\&quot;:\&quot;&quot;&#43;newSalary.getSurplusmedicalinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;currentunemployedinsurance\&quot;:\&quot;&quot;&#43;newSalary.getCurrentunemployedinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;surplusunemployedinsurance\&quot;:\&quot;&quot;&#43;newSalary.getSurplusunemployedinsurancestr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;withholdingAdd\&quot;:\&quot;&quot;&#43;newSalary.getWithholdingAddstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;withholdingDeduction\&quot;:\&quot;&quot;&#43;newSalary.getWithholdingDeductionstr()&#43;&quot;\&quot;,&quot; &#43; &quot;\&quot;withholdingAddRemark\&quot;:\&quot;&quot;&#43;(newSalary.getWithholdingAddRemark() == null ?">
-        <meta itemprop="url" content="http://simonpatrick.github.io/posts/true_stories/2015-11-19-talking_is_cheep/">
+        <meta itemprop="url" content="http://testless.github.io/posts/true_stories/2015-11-19-talking_is_cheep/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://simonpatrick.github.ioimages/25.jpg" />
+          <meta itemprop="url" content="http://testless.github.ioimages/25.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="http://simonpatrick.github.ioimages/logo.jpg">
+            <meta itemprop="url" content="http://testless.github.ioimages/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
-          <meta itemprop="name" content="Colored Hedwig">
+          <meta itemprop="name" content="Colored Hedwig: less is more">
         </div>
         <div itemprop="author" itemscope itemtype="https://schema.org/Person">
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/25.jpg);"></div>
+        <div class="image" style="background-image: url(http://testless.github.ioimages/25.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2015-11-19T23:27:56&#43;00:00">Thu, Nov 19, 2015</time>
@@ -223,7 +223,7 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 
         <aside>
           <div class="section">
-            <a href="http://simonpatrick.github.iotags/truestories" class="tag">truestories</a>
+            <a href="http://testless.github.iotags/truestories" class="tag">truestories</a>
             </div>
 
           <div class="section share">
@@ -265,8 +265,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
     <div class="content">
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/7.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -277,8 +277,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/18.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -289,8 +289,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -301,8 +301,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/25.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -313,8 +313,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -325,8 +325,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/6.jpg);"></div>
+  <a href="http://testless.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -337,8 +337,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/4.jpg);"></div>
+  <a href="http://testless.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -349,8 +349,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/19.jpg);"></div>
+  <a href="http://testless.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -361,8 +361,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/11.jpg);"></div>
+  <a href="http://testless.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -373,8 +373,8 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
 </div>
       
       <div class="sm"><article class="li">
-  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://testless.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -391,14 +391,14 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iocategories/python">python</a><a href="http://simonpatrick.github.iocategories/refactoring">refactoring</a><a href="http://simonpatrick.github.iocategories/shell">shell</a><a href="http://simonpatrick.github.iocategories/automation">automation</a><a href="http://simonpatrick.github.iocategories/testing">testing</a><a href="http://simonpatrick.github.iocategories/microservice">microservice</a><a href="http://simonpatrick.github.iocategories/thoughts">thoughts</a><a href="http://simonpatrick.github.iocategories/designpattern">designpattern</a><a href="http://simonpatrick.github.iocategories/truestories">truestories</a><a href="http://simonpatrick.github.iocategories/java">java</a><a href="http://simonpatrick.github.iocategories/interview">interview</a><a href="http://simonpatrick.github.iocategories/tools">tools</a><a href="http://simonpatrick.github.iocategories/performance">performance</a><a href="http://simonpatrick.github.iocategories/git">git</a><a href="http://simonpatrick.github.iocategories/ruby">ruby</a><a href="http://simonpatrick.github.iocategories/js">js</a>
+      <a href="http://testless.github.iocategories/python">python</a><a href="http://testless.github.iocategories/refactoring">refactoring</a><a href="http://testless.github.iocategories/shell">shell</a><a href="http://testless.github.iocategories/automation">automation</a><a href="http://testless.github.iocategories/testing">testing</a><a href="http://testless.github.iocategories/thoughts">thoughts</a><a href="http://testless.github.iocategories/microservice">microservice</a><a href="http://testless.github.iocategories/java">java</a><a href="http://testless.github.iocategories/truestories">truestories</a><a href="http://testless.github.iocategories/designpattern">designpattern</a><a href="http://testless.github.iocategories/interview">interview</a><a href="http://testless.github.iocategories/performance">performance</a><a href="http://testless.github.iocategories/tools">tools</a><a href="http://testless.github.iocategories/ruby">ruby</a><a href="http://testless.github.iocategories/git">git</a><a href="http://testless.github.iocategories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.iotags/python">python</a><a href="http://simonpatrick.github.iotags/refactoring">refactoring</a><a href="http://simonpatrick.github.iotags/shell">shell</a><a href="http://simonpatrick.github.iotags/automation">automation</a><a href="http://simonpatrick.github.iotags/testing">testing</a><a href="http://simonpatrick.github.iotags/thoughts">thoughts</a><a href="http://simonpatrick.github.iotags/microservice">microservice</a><a href="http://simonpatrick.github.iotags/java">java</a><a href="http://simonpatrick.github.iotags/truestories">truestories</a><a href="http://simonpatrick.github.iotags/designpattern">designpattern</a><a href="http://simonpatrick.github.iotags/performance">performance</a><a href="http://simonpatrick.github.iotags/tools">tools</a><a href="http://simonpatrick.github.iotags/interview">interview</a><a href="http://simonpatrick.github.iotags/ruby">ruby</a><a href="http://simonpatrick.github.iotags/git">git</a><a href="http://simonpatrick.github.iotags/js">js</a>
+      <a href="http://testless.github.iotags/python">python</a><a href="http://testless.github.iotags/refactoring">refactoring</a><a href="http://testless.github.iotags/shell">shell</a><a href="http://testless.github.iotags/automation">automation</a><a href="http://testless.github.iotags/testing">testing</a><a href="http://testless.github.iotags/thoughts">thoughts</a><a href="http://testless.github.iotags/microservice">microservice</a><a href="http://testless.github.iotags/java">java</a><a href="http://testless.github.iotags/truestories">truestories</a><a href="http://testless.github.iotags/designpattern">designpattern</a><a href="http://testless.github.iotags/interview">interview</a><a href="http://testless.github.iotags/tools">tools</a><a href="http://testless.github.iotags/performance">performance</a><a href="http://testless.github.iotags/ruby">ruby</a><a href="http://testless.github.iotags/js">js</a><a href="http://testless.github.iotags/git">git</a>
     </div>
   </div>
   
@@ -412,7 +412,7 @@ PropertyEntrustApply eEntrust = aService.selectPropertyEntrustApply(propertyId, 
       </div>
 
     <footer class="site">
-      <p>&copy; 2016 Colored Hedwig</p>
+      <p>&copy; 2016 Colored Hedwig: less is more</p>
       <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
       <p>Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
     </footer>

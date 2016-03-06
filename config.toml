@@ -1,5 +1,5 @@
-baseurl = "http://simonpatrick.github.io"
-title = "Colored Hedwig"
+baseurl = "http://testless.github.io"
+title = "Colored Hedwig: less is more"
 
 [params]
   author="simonpatrick"
