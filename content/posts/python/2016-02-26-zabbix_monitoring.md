@@ -3,7 +3,7 @@ layout: post
 title: "zabbix 基础"
 modified:
 categories: [python]
-excerpt:
+image: 25.jpg
 tags: [python]
 date: 2016-02-26T16:48:54
 ---

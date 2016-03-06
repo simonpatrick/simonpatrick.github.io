@@ -3,7 +3,7 @@ layout: post
 title: "下一步的技术了解"
 modified:
 categories: [thoughts]
-excerpt:
+image: 3.jpg
 tags: [thoughts]
 date: 2015-12-28T19:49:29
 ---

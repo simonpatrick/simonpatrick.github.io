@@ -5,8 +5,7 @@ modified:
 categories: [python]
 excerpt:
 tags: [python]
-image:
-  feature:
+image: 12.jpg
 date: 2013-11-24T10:31:11+08:00
 ---
 
@@ -29,7 +28,7 @@ date: 2013-11-24T10:31:11+08:00
 	- 整数， 如2
 	- 浮点数，如2.22
 	- 长整数，如2.222222222222L
-	- 其他如：十进制，还有二进制、八进制、十六进制 
+	- 其他如：十进制，还有二进制、八进制、十六进制
 
 2. python 变量
 
@@ -78,7 +77,7 @@ ZeroDivisionError: long division or modulo by zero
 ```
 
 对于数值计算来说,以下内容供参考
-> 
+>
 对于需要非常精确的情况，可以使用 decimal 模块，它实现的十进制运算适合会计方面的应用和高精度要求的应用。另外 fractions 模块支持另外一种形式的运算，它实现的运算基于有理数（因此像1/3这样的数字可以精确地表示）。最高要求则可是使用由 SciPy提供的 Numerical Python 包和其它用于数学和统计学的包。列出这些东西，仅仅是让看官能明白，解决问题的方式很多，后面会用这些中的某些方式解决上述问题。
 [浮点数算法：争议和限制](https://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues)
 
@@ -137,7 +136,7 @@ for x in functions:
 ```
 ## 优先级
 
-以下是优先级从低到高的顺序： 
+以下是优先级从低到高的顺序：
 
 |运算符|描述|
 |------|----|
@@ -164,11 +163,4 @@ for x in functions:
 |(experession,...)|绑定或元组显示|
 |[expression,...]|列表显示|
 |{key:datum,...}|字典显示|
-|'expression,...'|字符串转换| 
-
-
-
-
-
-
-
+|'expression,...'|字符串转换|

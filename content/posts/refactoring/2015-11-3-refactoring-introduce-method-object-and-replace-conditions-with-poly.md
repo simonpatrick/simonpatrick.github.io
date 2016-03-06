@@ -3,7 +3,7 @@ layout: post
 title: "Refactoring-10-introduce method object, replace conditions with polymorphism"
 modified:
 categories: [refactoring]
-excerpt:
+image: 9.jpg
 tags: [refactoring]
 date: 2015-11-03T10:31:11
 ---

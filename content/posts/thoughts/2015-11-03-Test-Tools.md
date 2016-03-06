@@ -5,8 +5,7 @@ modified:
 categories: [testing,thoughts]
 excerpt:
 tags: [testing,thoughts]
-image:
-  feature:
+image: 1.jpg
 date: 2015-11-04T10:31:11+08:00
 ---
 

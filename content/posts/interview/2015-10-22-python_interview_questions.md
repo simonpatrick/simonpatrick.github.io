@@ -5,8 +5,7 @@ modified:
 categories: [interview]
 excerpt:
 tags: [interview]
-image:
-  feature:
+image: 20.jpg
 date: 2015-10-22T10:31:11+08:00
 ---
 

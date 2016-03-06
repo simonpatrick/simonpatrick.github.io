@@ -3,7 +3,7 @@ layout: post
 title: "Refactoring-8-remove God Class"
 modified:
 categories: [refactoring]
-excerpt:
+image: 8.jpg
 tags: [refactoring]
 date: 2015-11-03T10:31:11+08:00
 ---

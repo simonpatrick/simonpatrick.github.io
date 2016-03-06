@@ -3,7 +3,7 @@ layout: post
 title: "Python 访问Zabbix API"
 modified:
 categories: [python]
-excerpt:
+image: 10.jpg
 tags: [python]
 date: 2016-02-26T16:51:20
 ---

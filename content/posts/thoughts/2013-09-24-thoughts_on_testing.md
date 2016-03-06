@@ -5,8 +5,7 @@ modified:
 categories: [thoughts]
 excerpt:
 tags: [thoughts]
-image:
-  feature:
+image: 26.jpg
 date: 2013-09-24T10:31:11+08:00
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: "sql injection, sql 注入"
 modified:
 categories: [testing]
-excerpt:
+image: 24.jpg
 tags: [testing]
 date: 2016-01-05T23:37:49
 ---

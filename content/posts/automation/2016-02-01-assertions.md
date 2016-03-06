@@ -3,7 +3,7 @@ layout: post
 title: "assertions"
 modified:
 categories: [automation]
-excerpt:
+image: 11.jpg
 tags: [automation]
 date: 2016-02-01T23:48:35
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "JMETER 分布式测试"
 modified:
 categories: [performance]
-excerpt:
+image: 6.jpg
 tags: [performance]
 date: 2016-02-22T09:33:59
 ---

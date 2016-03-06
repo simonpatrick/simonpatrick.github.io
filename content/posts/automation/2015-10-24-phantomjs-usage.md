@@ -5,8 +5,7 @@ modified:
 categories: [automation]
 excerpt:
 tags: [automation]
-image:
-  feature:
+image: 6.jpg:
 date: 2015-10-24T10:31:11+08:00
 ---
 

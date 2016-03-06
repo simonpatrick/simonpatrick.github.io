@@ -3,7 +3,7 @@ layout: post
 title: "Refactoring-4-Push Down Method and Pull Up and Posh Down Field"
 modified:
 categories: [refactoring]
-excerpt:
+image: 5.jpg
 tags: [refactoring]
 date: 2015-10-26T10:31:11+08:00
 ---

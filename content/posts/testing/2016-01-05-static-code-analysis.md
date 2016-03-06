@@ -3,7 +3,7 @@ layout: post
 title: "静态代码检查"
 modified:
 categories: [testing]
-excerpt:
+image: 25.jpg
 tags: [testing]
 date: 2016-01-05T23:00:55
 ---

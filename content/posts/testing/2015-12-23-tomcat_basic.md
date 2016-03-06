@@ -3,7 +3,7 @@ layout: post
 title: "tomcat_basic"
 modified:
 categories: [testing]
-excerpt:
+image: 23.jpg
 tags: [testing]
 date: 2015-12-23T20:46:28
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class"
 modified:
 categories: [refactoring]
-excerpt:
+image: 3.jpg
 tags: [refactoring]
 date: 2015-10-26T10:31:11+08:00
 ---

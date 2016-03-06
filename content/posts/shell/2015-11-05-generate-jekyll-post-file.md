@@ -3,7 +3,7 @@ layout: post
 title: "shell来自动生成Jekyll post文件"
 modified:
 categories: [shell]
-excerpt:
+image: 19.jpg
 tags: [shell]
 date: 2015-11-05T18:31:42
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "Python 面向对象，以及访问对象属性基础"
 modified:
 categories: [python]
-excerpt:
+image: 7.jpg
 tags: [python]
 date: 2016-02-28T14:57:44
 ---

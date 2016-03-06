@@ -3,7 +3,7 @@ layout: post
 title: "ptyhon design pattern: chain of responsibility"
 modified:
 categories: [designpattern,python]
-excerpt:
+image: 16.jpg
 tags: [designpattern,python]
 date: 2016-01-11T23:35:45
 ---

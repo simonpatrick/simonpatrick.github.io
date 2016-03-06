@@ -3,7 +3,7 @@ layout: post
 title: "为什么自动化，如何自动化"
 modified:
 categories: [automation]
-excerpt:
+image: 9.jpg
 tags: [automation]
 date: 2016-01-10T19:14:11
 ---

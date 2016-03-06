@@ -3,7 +3,7 @@ layout: post
 title: "Refactoring-1-Encapsulate Collection"
 modified:
 categories: [refactoring]
-excerpt:
+image: 2.jpg
 tags: [refactoring]
 date: 2015-10-26T10:31:11+08:00
 ---

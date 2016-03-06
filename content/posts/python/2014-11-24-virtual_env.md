@@ -5,8 +5,7 @@ modified:
 categories: [python]
 excerpt:
 tags: [python]
-image:
-  feature:
+image: 21.jpg
 date: 2014-11-24T10:31:11+08:00
 ---
 

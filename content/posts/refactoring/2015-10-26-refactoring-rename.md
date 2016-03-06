@@ -3,7 +3,7 @@ layout: post
 title: "Refactoring-5-rename"
 modified:
 categories: [refactoring]
-excerpt:
+image: 7.jpg
 tags: [refactoring]
 date: 2015-10-26T10:31:11+08:00
 ---

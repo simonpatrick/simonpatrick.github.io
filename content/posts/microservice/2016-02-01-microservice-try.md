@@ -3,7 +3,7 @@ layout: post
 title: "01-微服务框架－Springboot/Flask,Hello World"
 modified:
 categories: [microservice]
-excerpt:
+image: 19.jpg
 tags: [microservice]
 date: 2016-02-01T23:57:29
 ---

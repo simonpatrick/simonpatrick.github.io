@@ -3,7 +3,7 @@ layout: post
 title: "docker usage: images"
 modified:
 categories: [microservice]
-excerpt:
+image: 14.jpg
 tags: [microservice]
 date: 2015-12-28T21:49:22
 ---

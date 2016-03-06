@@ -3,7 +3,7 @@ layout: post
 title: "Refactoring-9-ArrowHead AntiPattern and Remove Double Negative"
 modified:
 categories: [refactoring]
-excerpt:
+image: 1.jpg
 tags: [refactoring]
 date: 2015-11-03T10:31:11
 ---

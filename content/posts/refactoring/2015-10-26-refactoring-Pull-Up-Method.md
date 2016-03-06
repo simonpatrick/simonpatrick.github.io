@@ -3,7 +3,7 @@ layout: post
 title: "Refactoring-3-Pull Up Method"
 modified:
 categories: [refactoring]
-excerpt:
+image: 6.jpg
 tags: [refactoring]
 date: 2015-10-26T10:31:11+08:00
 ---

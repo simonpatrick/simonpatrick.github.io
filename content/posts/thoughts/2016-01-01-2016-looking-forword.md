@@ -3,7 +3,7 @@ layout: post
 title: "2016-looking-forword"
 modified:
 categories: [thoughts]
-excerpt:
+image: 22.jpg
 tags: [thoughts]
 date: 2016-01-01T17:42:38
 ---

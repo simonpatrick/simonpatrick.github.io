@@ -3,6 +3,7 @@ layout: post
 title: "NodeJS - Module"
 categories: [js]
 tags: [js]
+image: 26.jpg
 date: 2012-09-24T10:31:11+08:00
 ---
 

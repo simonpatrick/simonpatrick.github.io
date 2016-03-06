@@ -3,7 +3,7 @@ layout: post
 title: "design pattern overview"
 modified:
 categories: [designpattern]
-excerpt:
+image: 15.jpg
 tags: [designpattern]
 date: 2015-12-22T23:00:24
 ---

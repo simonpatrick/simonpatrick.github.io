@@ -5,8 +5,7 @@ modified:
 categories: [shell]
 excerpt:
 tags: [shell]
-image:
-  feature:
+image: 14.jpg
 date: 2014-08-24T10:31:11+08:00
 ---
 

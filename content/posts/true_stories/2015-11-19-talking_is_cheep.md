@@ -3,7 +3,7 @@ layout: post
 title: "Talking is Cheap,show me the code"
 modified:
 categories: [truestories]
-excerpt:
+image: 25.jpg
 tags: [truestories]
 date: 2015-11-19T23:27:56
 ---

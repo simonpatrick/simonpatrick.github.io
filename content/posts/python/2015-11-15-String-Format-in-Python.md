@@ -3,7 +3,7 @@ layout: post
 title: "Python 中String的格式化"
 modified:
 categories: [python]
-excerpt:
+image: 17.jpg
 tags: [python]
 date: 2015-11-15T15:12:56
 ---

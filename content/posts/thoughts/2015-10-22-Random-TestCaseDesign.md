@@ -4,6 +4,7 @@ title: "测试用例设计- 随机指定一个产品的测试"
 categories: [testing,thoughts]
 tags: [testing,thoughts]
 date: 2015-10-22T10:31:11+08:00
+image: 25.jpg
 ---
 
 有时面试的时候会随机指定一个产品进行测试,比如一个电梯,你会如何设计测试用例？这个问题很发散,更多的是看应聘者的条理

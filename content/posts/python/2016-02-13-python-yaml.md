@@ -3,7 +3,7 @@ layout: post
 title: "python yaml 使用介绍"
 modified:
 categories: [python]
-excerpt:
+image: 4.jpg
 tags: [python]
 date: 2016-02-13T18:38:43
 ---

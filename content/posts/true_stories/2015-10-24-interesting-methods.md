@@ -5,8 +5,7 @@ modified:
 categories: [truestories]
 excerpt:
 tags: [truestories]
-image:
-  feature:
+image: 26.jpg
 date: 2015-10-24T10:31:11+08:00
 ---
 

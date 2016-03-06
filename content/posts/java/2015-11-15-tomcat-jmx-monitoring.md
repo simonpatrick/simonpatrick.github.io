@@ -3,7 +3,7 @@ layout: post
 title: "tomcat-jmx-monitoring"
 modified:
 categories: [java]
-excerpt:
+image: 21.jpg
 tags: [java]
 date: 2015-11-15T16:56:08
 ---

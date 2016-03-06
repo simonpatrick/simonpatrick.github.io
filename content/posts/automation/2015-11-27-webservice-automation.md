@@ -3,7 +3,7 @@ layout: post
 title: "自动化测试－接口测试"
 modified:
 categories: [automation]
-excerpt:
+image: 7.jpg
 tags: [automation]
 date: 2015-11-27T11:10:00
 ---

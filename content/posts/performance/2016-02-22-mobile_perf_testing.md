@@ -3,7 +3,7 @@ layout: post
 title: "Mobile 性能测试关键点"
 modified:
 categories: [performance]
-excerpt:
+image: 10.jpg
 tags: [performance]
 date: 2016-02-22T09:40:07
 ---

@@ -5,8 +5,7 @@ modified:
 categories: [designpattern]
 excerpt:
 tags: [designpattern]
-image:
-  feature:
+image: 12.jpg
 date: 2015-10-23T10:31:11+08:00
 ---
 

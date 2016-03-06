@@ -3,7 +3,7 @@ layout: post
 title: "Simple Word Counter"
 modified:
 categories: [python]
-excerpt:
+image: 18.jpg
 tags: [python]
 date: 2016-02-28T10:41:15
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "收集性能测试需求"
 modified:
 categories: [testing]
-excerpt:
+image: 22.jpg
 tags: [testing]
 date: 2015-12-08T13:36:27
 ---

@@ -3,7 +3,7 @@ layout: post
 title: "http status code HTTP 状态码"
 modified:
 categories: [automation]
-excerpt:
+image: 8.jpg
 tags: [automation]
 date: 2015-12-23T22:59:16
 ---

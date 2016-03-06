@@ -6,10 +6,10 @@
     <meta name="generator" content="Hugo 0.15" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans|Marcellus+SC'>
+    <link rel='stylesheet' href='http://fonts.useso.com/css?family=Open+Sans|Marcellus+SC'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io//index.xml">
@@ -22,7 +22,7 @@
 
     <meta property="og:url" content="http://simonpatrick.github.io/posts/2012-08-24-web_testing_tools/">
     
-    <meta property="og:image" content="http://simonpatrick.github.io/images/map[feature:&lt;nil&gt;]">
+    <meta property="og:image" content="http://simonpatrick.github.io/images/communication-icons-black-and-white-vector.jpg">
 
   </head>
 
@@ -35,19 +35,18 @@
     <div class="container site">
 
 
-
   <div class="row">
     <div class="col-sm-9">
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
         <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io/"/>
-        <meta itemprop="dateModified" content="2012-09-24T10:31:11&#43;08:00">
+        <meta itemprop="dateModified" content="2012-09-24T10:31:11&#43;00:00">
         <meta itemprop="headline" content="Web Testing Tools list">
         <meta itemprop="description" content="#1. Cross Browser(浏览器兼容性测试) Why 无数的浏览器，无数的版本，无数的终端。。。。。。。 这个理由就足够需要做兼容性测试了 测试的悲剧就是这样的，听上去很简单，做起来就要人命，还被人不理解。。。。。。 How * 自动化测试：自己写截屏工具，自己比较（需要进一步研究） 1. sikuli 2. selenium 3. http://testingbot.com 4. http://saucelabs.com * 网站：http://browsershots.org （自己没有验证要如何处理） * 标准检查：http://validator.w3.org * 浏览器分类 1. WebKit：Chrome/Safari 2. Grecko: Firefox 3. Trident rendering engine: IE #2. Web Accessibility Why 更好的使用，更多的有意义的标示 How This simplest way to check against W3C compliance would be to open up Firefox, install the accessibility checker plug in, open your site to be tested and run a quick scan.">
         <meta itemprop="url" content="http://simonpatrick.github.io/posts/2012-08-24-web_testing_tools/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://simonpatrick.github.io/images/map[feature:&lt;nil&gt;]" />
+          <meta itemprop="url" content="http://simonpatrick.github.io/images/communication-icons-black-and-white-vector.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -63,10 +62,10 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://simonpatrick.github.io/images/map[feature:%3cnil%3e]);"></div>
+        <div class="image" style="background-image: url(http://simonpatrick.github.io/images/communication-icons-black-and-white-vector.jpg);"></div>
 
         <header class="article-header">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2012-09-24T10:31:11&#43;08:00">Mon, Sep 24, 2012</time>
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2012-09-24T10:31:11&#43;00:00">Mon, Sep 24, 2012</time>
           <h1 class="article-title">Web Testing Tools list</h1>
         </header>
 
@@ -106,11 +105,13 @@
 <h3 id="how-1:503ae51879b707b0c29f233dff927c51">How</h3>
 
 <p>This simplest way to check against W3C compliance would be to open up Firefox, install the accessibility checker plug in, open your site to be tested and run a quick scan.
-Tips:
-    *  Firefox accessibility extension - <a href="https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/">https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/</a>
-    *  Tips on how best to describe the alt attribute -<a href="http://webdesign.about.com/od/beginningtutorials/a/aa122004.htm">http://webdesign.about.com/od/beginningtutorials/a/aa122004.htm</a>
-    * The W3 standards on accessibility - <a href="http://www.w3.org/standards/webdesign/accessibility">http://www.w3.org/standards/webdesign/accessibility</a>
-    * Test Partners accessibility testing - <a href="http://www.testpartners.co.uk/accessibility_testing.htm">http://www.testpartners.co.uk/accessibility_testing.htm</a></p>
+Tips:</p>
+
+<pre><code>*  Firefox accessibility extension - https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/
+*  Tips on how best to describe the alt attribute -http://webdesign.about.com/od/beginningtutorials/a/aa122004.htm
+* The W3 standards on accessibility - http://www.w3.org/standards/webdesign/accessibility
+* Test Partners accessibility testing - http://www.testpartners.co.uk/accessibility_testing.htm
+</code></pre>
 
 <p>#3. Is the HTML valid?</p>
 
@@ -183,7 +184,7 @@ Tips:
     The best way to test in multiple browser tabs and sessions is to explore the application with multiple tabs open, checking what effect a change in one tab can have on the other.
     As you explore around look for data, states and actions that might be confused by bad cookie management, session management and cross tab problems.
 
-* Good site about cookies and sessions - http://www.allaboutcookies.org/cookies/session-cookies-used-for.html 
+* Good site about cookies and sessions - http://www.allaboutcookies.org/cookies/session-cookies-used-for.html
 * Session Hijacking - http://en.wikipedia.org/wiki/Session_hijacking
 * Security implications of cookies - http://it.toolbox.com/blogs/securitymonkey/successful-hacking-with-xss- cookies-session-ids-11098
 * Burpsuite - http://portswigger.net/burp/
@@ -203,7 +204,7 @@ Tips:
 * Good security for web checklist –
 http://www.techrepublic.com/blog/security/ensure-basic-web-site-security-with-this-checklist/424
 * Differences between http and https - http://www.virtu-software.com/ask-doug/QandA.asp?q=7
-* Another differences post - http://www.wisegeek.com/what-is-the-difference-between-http-and-https.htm 
+* Another differences post - http://www.wisegeek.com/what-is-the-difference-between-http-and-https.htm
 * Burpsuite - http://portswigger.net/burp/
 </code></pre>
 
@@ -212,6 +213,7 @@ http://www.techrepublic.com/blog/security/ensure-basic-web-site-security-with-th
 <h3 id="why-7:503ae51879b707b0c29f233dff927c51">Why</h3>
 
 <pre><code>Web测试仅仅查看页面是远远不够的，所以测试需要知道送出去的请求是什么，得到的返回是什么。以下问题可能需要问以下：
+
  Is the data being sent and received correct?
  Is the layout working as expected?
  Are the response times satisfactory?
@@ -241,45 +243,48 @@ http://www.techrepublic.com/blog/security/ensure-basic-web-site-security-with-th
 <pre><code>* Burpsuite - http://portswigger.net/burp/
 * Web Scarab - https://www.owasp.org/index.php/WebScarab_Getting_Started
 * Web Hackers book - http://www.amazon.co.uk/Web-Application-Hackers-Handbook- Discovering/dp/0470170778
-* OWASP Top Ten - https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project 
+* OWASP Top Ten - https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
 * Plynt Security Testing Experts - http://www.plynt.com/
 * Salesforce Burpsuite for App Exchange Partners - http://security.force.com/webappscanner
 * Start with the treat profile - http://www.securityalliance.co.uk/blog/bid/40335/Web-Application-Security-Testing-Start-with-the-Threat-Profile
 * Firefox add-ons (search for “security”)- https://addons.mozilla.org/en-US/firefox/
 </code></pre>
 
-<p>#10. Browser Extentions
-* Selenium IDE <a href="http://seleniumhq.org/projects/ide/">http://seleniumhq.org/projects/ide/</a>
-Selenium is fast becoming an industry standard tool. This is the IDE version. Visit <a href="http://seleniumhq.org/">http://seleniumhq.org/</a> for more information on other tools in the set like Selenium Grid.
-* IE Tab <a href="https://addons.mozilla.org/en-US/firefox/addon/1419">https://addons.mozilla.org/en-US/firefox/addon/1419</a> Flips your Firefox tab in to Internet Explorer mode.
-* <a href="https://addons.mozilla.org/en-US/firefox/addon/5792">https://addons.mozilla.org/en-US/firefox/addon/5792</a> Re-sizes your window to different screen sizes
-* Fire cookie <a href="https://addons.mozilla.org/en-US/firefox/addon/6683">https://addons.mozilla.org/en-US/firefox/addon/6683</a> Lets you to see and manage cookies through the Firebug add-on.
-* Delicious <a href="https://addons.mozilla.org/en-US/firefox/addon/3615">https://addons.mozilla.org/en-US/firefox/addon/3615</a>
-* Social bookmarking service. Never lose a site of interest again and share them with the community too. Perfect for bookmarking testing sites, information, snippets and blogs.
-* Clear Cache <a href="https://addons.mozilla.org/en-US/firefox/addon/1801">https://addons.mozilla.org/en-US/firefox/addon/1801</a> Clears out the cache within the browser at the click of a button.
-* Copy Plain Text <a href="https://addons.mozilla.org/en-US/firefox/addon/134">https://addons.mozilla.org/en-US/firefox/addon/134</a>
-Copies any text from the browser in to a plain text format losing all formatting.
-* Fiddler Hook <a href="http://www.fiddler2.com/fiddler2/addons/fiddlerhook/">http://www.fiddler2.com/fiddler2/addons/fiddlerhook/</a> Firefox add-on for integrating with Fiddler (a debugging tool).
-* Download Status <a href="https://addons.mozilla.org/en-US/firefox/addon/26">https://addons.mozilla.org/en-US/firefox/addon/26</a>
-Shows your downloads in a toolbar at the bottom of the browser window. Keeps it nice and tidy and easy access to your downloads.
-* Xmarks <a href="https://addons.mozilla.org/en-US/firefox/addon/2410">https://addons.mozilla.org/en-US/firefox/addon/2410</a>
-* Allow you to save your bookmarks and sync them between browsers on different machines. Works across browsers too. This is great if you test on several different machines. It means you can save your bookmarks once and find them on other browsers you have synched.
-* W3C Page Validator <a href="https://addons.mozilla.org/en-US/firefox/addon/2250">https://addons.mozilla.org/en-US/firefox/addon/2250</a>
- Check your page against W3C standards and compliance.
-* Pencil <a href="https://addons.mozilla.org/en-US/firefox/addon/8487">https://addons.mozilla.org/en-US/firefox/addon/8487</a>
-Great for screen mocks and notes.
-* SQL Injection <a href="https://addons.mozilla.org/en-US/firefox/addon/6727">https://addons.mozilla.org/en-US/firefox/addon/6727</a>
-* Quick Restart <a href="https://addons.mozilla.org/en-US/firefox/addon/3559">https://addons.mozilla.org/en-US/firefox/addon/3559</a>
-* Restarts Firefox maintaining all tabs and open docs when it launches it again.
-* Firebug <a href="https://addons.mozilla.org/en-US/firefox/addon/1843">https://addons.mozilla.org/en-US/firefox/addon/1843</a> How can you test websites without this one?
-* Regular Expressions Tester <a href="https://addons.mozilla.org/en-US/firefox/addon/2077">https://addons.mozilla.org/en-US/firefox/addon/2077</a> Tool for testing regular expressions.
-* Quick Locale Switcher <a href="https://addons.mozilla.org/en-US/firefox/addon/1333">https://addons.mozilla.org/en-US/firefox/addon/1333</a>
-* Good extension allowing for quick switching between browser locales.
- Http Fox <a href="https://addons.mozilla.org/en-US/firefox/addon/6647">https://addons.mozilla.org/en-US/firefox/addon/6647</a>
-* Good tool for analyzing the http traffic through your browser.
-* TAW3 <a href="https://addons.mozilla.org/en-US/firefox/addon/1158?src=api">https://addons.mozilla.org/en-US/firefox/addon/1158?src=api</a>
-* Accessibility checking tool. Awesome.
-* Firefox Accessibility Tools <a href="https://addons.mozilla.org/en-US/firefox/addon/5809?src=api">https://addons.mozilla.org/en-US/firefox/addon/5809?src=api</a> Accessibility compliance checking tool.</p>
+<p>#10. Browser Extentions</p>
+
+<ul>
+<li>Selenium IDE <a href="http://seleniumhq.org/projects/ide/">http://seleniumhq.org/projects/ide/</a>
+Selenium is fast becoming an industry standard tool. This is the IDE version. Visit <a href="http://seleniumhq.org/">http://seleniumhq.org/</a> for more information on other tools in the set like Selenium Grid.</li>
+<li>IE Tab <a href="https://addons.mozilla.org/en-US/firefox/addon/1419">https://addons.mozilla.org/en-US/firefox/addon/1419</a> Flips your Firefox tab in to Internet Explorer mode.</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/5792">https://addons.mozilla.org/en-US/firefox/addon/5792</a> Re-sizes your window to different screen sizes</li>
+<li>Fire cookie <a href="https://addons.mozilla.org/en-US/firefox/addon/6683">https://addons.mozilla.org/en-US/firefox/addon/6683</a> Lets you to see and manage cookies through the Firebug add-on.</li>
+<li>Delicious <a href="https://addons.mozilla.org/en-US/firefox/addon/3615">https://addons.mozilla.org/en-US/firefox/addon/3615</a></li>
+<li>Social bookmarking service. Never lose a site of interest again and share them with the community too. Perfect for bookmarking testing sites, information, snippets and blogs.</li>
+<li>Clear Cache <a href="https://addons.mozilla.org/en-US/firefox/addon/1801">https://addons.mozilla.org/en-US/firefox/addon/1801</a> Clears out the cache within the browser at the click of a button.</li>
+<li>Copy Plain Text <a href="https://addons.mozilla.org/en-US/firefox/addon/134">https://addons.mozilla.org/en-US/firefox/addon/134</a>
+Copies any text from the browser in to a plain text format losing all formatting.</li>
+<li>Fiddler Hook <a href="http://www.fiddler2.com/fiddler2/addons/fiddlerhook/">http://www.fiddler2.com/fiddler2/addons/fiddlerhook/</a> Firefox add-on for integrating with Fiddler (a debugging tool).</li>
+<li>Download Status <a href="https://addons.mozilla.org/en-US/firefox/addon/26">https://addons.mozilla.org/en-US/firefox/addon/26</a>
+Shows your downloads in a toolbar at the bottom of the browser window. Keeps it nice and tidy and easy access to your downloads.</li>
+<li>Xmarks <a href="https://addons.mozilla.org/en-US/firefox/addon/2410">https://addons.mozilla.org/en-US/firefox/addon/2410</a></li>
+<li>Allow you to save your bookmarks and sync them between browsers on different machines. Works across browsers too. This is great if you test on several different machines. It means you can save your bookmarks once and find them on other browsers you have synched.</li>
+<li>W3C Page Validator <a href="https://addons.mozilla.org/en-US/firefox/addon/2250">https://addons.mozilla.org/en-US/firefox/addon/2250</a>
+Check your page against W3C standards and compliance.</li>
+<li>Pencil <a href="https://addons.mozilla.org/en-US/firefox/addon/8487">https://addons.mozilla.org/en-US/firefox/addon/8487</a>
+Great for screen mocks and notes.</li>
+<li>SQL Injection <a href="https://addons.mozilla.org/en-US/firefox/addon/6727">https://addons.mozilla.org/en-US/firefox/addon/6727</a></li>
+<li>Quick Restart <a href="https://addons.mozilla.org/en-US/firefox/addon/3559">https://addons.mozilla.org/en-US/firefox/addon/3559</a></li>
+<li>Restarts Firefox maintaining all tabs and open docs when it launches it again.</li>
+<li>Firebug <a href="https://addons.mozilla.org/en-US/firefox/addon/1843">https://addons.mozilla.org/en-US/firefox/addon/1843</a> How can you test websites without this one?</li>
+<li>Regular Expressions Tester <a href="https://addons.mozilla.org/en-US/firefox/addon/2077">https://addons.mozilla.org/en-US/firefox/addon/2077</a> Tool for testing regular expressions.</li>
+<li>Quick Locale Switcher <a href="https://addons.mozilla.org/en-US/firefox/addon/1333">https://addons.mozilla.org/en-US/firefox/addon/1333</a></li>
+<li>Good extension allowing for quick switching between browser locales.
+Http Fox <a href="https://addons.mozilla.org/en-US/firefox/addon/6647">https://addons.mozilla.org/en-US/firefox/addon/6647</a></li>
+<li>Good tool for analyzing the http traffic through your browser.</li>
+<li>TAW3 <a href="https://addons.mozilla.org/en-US/firefox/addon/1158?src=api">https://addons.mozilla.org/en-US/firefox/addon/1158?src=api</a></li>
+<li>Accessibility checking tool. Awesome.</li>
+<li>Firefox Accessibility Tools <a href="https://addons.mozilla.org/en-US/firefox/addon/5809?src=api">https://addons.mozilla.org/en-US/firefox/addon/5809?src=api</a> Accessibility compliance checking tool.</li>
+</ul>
 
 <h3 id="back-to-the-benginging-again:503ae51879b707b0c29f233dff927c51">Back to the benginging again</h3>
 
@@ -537,7 +542,7 @@ Great for screen mocks and notes.
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/java">java</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a>
+      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/java">java</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a>
     </div>
   </div>
   

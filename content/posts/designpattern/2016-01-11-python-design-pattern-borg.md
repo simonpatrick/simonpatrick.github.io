@@ -3,7 +3,7 @@ layout: post
 title: "python-borg-design-pattern"
 modified:
 categories: [designpattern,python]
-excerpt:
+image: 17.jpg
 tags: [designpattern,python]
 date: 2016-01-11T23:05:26
 ---

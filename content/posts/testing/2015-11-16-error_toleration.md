@@ -3,7 +3,7 @@ layout: post
 title: "软件容错"
 modified:
 categories: [testing]
-excerpt:
+image: 21.jpg
 tags: [testing]
 date: 2015-11-16T23:24:33
 ---

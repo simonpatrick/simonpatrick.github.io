@@ -3,7 +3,7 @@ layout: post
 title: "Ruby Dependency Management"
 modified:
 categories: [ruby]
-excerpt:
+image: 11.jpg
 tags: [ruby]
 date: 2015-11-03T10:31:11+08:00
 ---

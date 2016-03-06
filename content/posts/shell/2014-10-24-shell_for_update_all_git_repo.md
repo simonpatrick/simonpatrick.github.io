@@ -5,8 +5,7 @@ modified:
 categories: [shell]
 excerpt:
 tags: [shell]
-image:
-  feature:
+image: 17.jpg
 date: 2014-10-24T10:31:11+08:00
 ---
 
@@ -21,7 +20,7 @@ for file in ./*
 do
   if test -d $file
   then  
-    echo $file is directory 
+    echo $file is directory
     cd $file
     a=$(pwd)
     echo $a
@@ -34,5 +33,3 @@ do
 done
 
 ```
-
-

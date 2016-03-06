@@ -5,18 +5,19 @@ modified:
 categories: [tools]
 excerpt:
 tags: [tools]
-image:
-  feature:
-date: 2012-09-24T10:31:11+08:00
+image: communication-icons-black-and-white-vector.jpg
+date: 2012-09-24T10:31:11
 ---
 
 #1. Cross Browser(浏览器兼容性测试)
 
-### Why 
+### Why
+
 	无数的浏览器，无数的版本，无数的终端。。。。。。。 这个理由就足够需要做兼容性测试了
 	测试的悲剧就是这样的，听上去很简单，做起来就要人命，还被人不理解。。。。。。
 
 ### How
+
 	* 自动化测试：自己写截屏工具，自己比较（需要进一步研究）
 		1. sikuli
 		2. selenium
@@ -37,9 +38,10 @@ date: 2012-09-24T10:31:11+08:00
 ### How
 This simplest way to check against W3C compliance would be to open up Firefox, install the accessibility checker plug in, open your site to be tested and run a quick scan.
 Tips:
-	*  Firefox accessibility extension - https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/ 
+
+	*  Firefox accessibility extension - https://addons.mozilla.org/en-US/firefox/addon/accessibility-evaluation-toolb/
 	*  Tips on how best to describe the alt attribute -http://webdesign.about.com/od/beginningtutorials/a/aa122004.htm
-	* The W3 standards on accessibility - http://www.w3.org/standards/webdesign/accessibility 
+	* The W3 standards on accessibility - http://www.w3.org/standards/webdesign/accessibility
 	* Test Partners accessibility testing - http://www.testpartners.co.uk/accessibility_testing.htm
 
 #3. Is the HTML valid?
@@ -48,19 +50,21 @@ Tips:
   标准化，避免不必要的bug
 
 ### How
+
   * http://validator.w3.org
   * Firefox 插件
   * Good post on why you should validate - http://www.stevefenton.co.uk/Content/Blog/Date/201108/Blog/Do-I- Need-To-Validate-My-HTML
   * FireWeasel - https://addons.mozilla.org/en-US/firefox/addon/fireweasel/
- 
+
 #4. Check for Dead-links
 
 ### Why
  保证网站的最新内容，避免过时信息已经的误解。
 
 ### How
+
   * Link Check Tool: Xenu
-  * Xenu Link Checker - http://home.snafu.de/tilman/xenulink.html 
+  * Xenu Link Checker - http://home.snafu.de/tilman/xenulink.html
   * W3C Checker - http://validator.w3.org/checklink
   * Broken Link Checker Tool - http://www.brokenlinkcheck.com/
 
@@ -70,6 +74,7 @@ Tips:
 	网站总是有一定并发的，所以可以先使用一个用户测试基本功能，然后使用两个用户检查是否存在简单的并发问题，最后就考虑使用压力测试工具。 这个方法简单的避免一些简单的并发问题
 
 ### How
+
 	* JMeter -> webservice
 
 #6. Multiple tabs and windows
@@ -78,6 +83,7 @@ Tips:
 	主要为了查看安全问题，数据刷新问题已经多cookie的问题
 
 ### How
+
 	* example 1:
 		Open Firefox and in one tab log in to your secure application.
 		Then right click on a page and open that new page in a new tab. Both tabs are now considered to be in the same session.
@@ -85,7 +91,7 @@ Tips:
 		Has it logged you out or let you perform an action?
 		In most situations it would have logged you out.
 		In many instances it is possible to log in to two different accounts in the same browser and end up sharing data across both tabs because of cross authentication.
-	
+
 	* example 2：
 		I log in to my banking application in Tab 1 as Rob and then in Tab 2 as Dave.
 		Now when I switch to tab 1 and follow a new link I might get to see Dave’s information.
@@ -98,7 +104,7 @@ Tips:
 		The best way to test in multiple browser tabs and sessions is to explore the application with multiple tabs open, checking what effect a change in one tab can have on the other.
 		As you explore around look for data, states and actions that might be confused by bad cookie management, session management and cross tab problems.
 
-	* Good site about cookies and sessions - http://www.allaboutcookies.org/cookies/session-cookies-used-for.html 
+	* Good site about cookies and sessions - http://www.allaboutcookies.org/cookies/session-cookies-used-for.html
 	* Session Hijacking - http://en.wikipedia.org/wiki/Session_hijacking
 	* Security implications of cookies - http://it.toolbox.com/blogs/securitymonkey/successful-hacking-with-xss- cookies-session-ids-11098
 	* Burpsuite - http://portswigger.net/burp/
@@ -115,13 +121,14 @@ Tips:
 	* Good security for web checklist –
 	http://www.techrepublic.com/blog/security/ensure-basic-web-site-security-with-this-checklist/424
 	* Differences between http and https - http://www.virtu-software.com/ask-doug/QandA.asp?q=7
-	* Another differences post - http://www.wisegeek.com/what-is-the-difference-between-http-and-https.htm 
+	* Another differences post - http://www.wisegeek.com/what-is-the-difference-between-http-and-https.htm
 	* Burpsuite - http://portswigger.net/burp/
 
 #8. Client/Server Watch
 
 ### Why
 	Web测试仅仅查看页面是远远不够的，所以测试需要知道送出去的请求是什么，得到的返回是什么。以下问题可能需要问以下：
+
 	 Is the data being sent and received correct?
 	 Is the layout working as expected?
 	 Are the response times satisfactory?
@@ -132,6 +139,7 @@ Tips:
 	 What happens if the message is lost completely?
 
 ### How
+
 	* Charles Proxy - http://www.charlesproxy.com/
 	* Fiddler - http://fiddler2.com/fiddler2/
 	* Firebug - http://getfirebug.com/
@@ -143,16 +151,18 @@ Tips:
   不用多少，听听各种脱库事件就知道了，只是我的能力够吗？：）
 
 ### How
+
 	* Burpsuite - http://portswigger.net/burp/
 	* Web Scarab - https://www.owasp.org/index.php/WebScarab_Getting_Started
 	* Web Hackers book - http://www.amazon.co.uk/Web-Application-Hackers-Handbook- Discovering/dp/0470170778
-	* OWASP Top Ten - https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project 
+	* OWASP Top Ten - https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
 	* Plynt Security Testing Experts - http://www.plynt.com/
 	* Salesforce Burpsuite for App Exchange Partners - http://security.force.com/webappscanner
 	* Start with the treat profile - http://www.securityalliance.co.uk/blog/bid/40335/Web-Application-Security-Testing-Start-with-the-Threat-Profile
 	* Firefox add-ons (search for “security”)- https://addons.mozilla.org/en-US/firefox/
 
 #10. Browser Extentions
+
 * Selenium IDE http://seleniumhq.org/projects/ide/
 Selenium is fast becoming an industry standard tool. This is the IDE version. Visit http://seleniumhq.org/ for more information on other tools in the set like Selenium Grid.
 * IE Tab https://addons.mozilla.org/en-US/firefox/addon/1419 Flips your Firefox tab in to Internet Explorer mode.
@@ -186,12 +196,14 @@ Great for screen mocks and notes.
 * Firefox Accessibility Tools https://addons.mozilla.org/en-US/firefox/addon/5809?src=api Accessibility compliance checking tool.
 
 ### Back to the benginging again
+
 * Stack Overflow question on disabling back capability (which you cannot by the way) -
 * http://stackoverflow.com/questions/7816195/how-to-disable-back-button-in-browser-when-user-logout-in- classic-asp
 * IE security problem with the Back Button.
 * http://www.wired.com/science/discoveries/news/2002/04/51899?currentPage=all
 
 ### 其他的一些测试方式
+
 * Change the URL
 * Tab Order
 * See the Source
@@ -216,8 +228,9 @@ Great for screen mocks and notes.
 * Throttle It (限流处理)
 
 ### 兼容性测试
+
 [support detail](www.supportdetails.com)
-[adobe flash version](http://www.adobe.com/software/flash/about/). 
+[adobe flash version](http://www.adobe.com/software/flash/about/).
 [java version](java.com/en/download/installed.jsp)
 ### 工具
 [video record](http://www.techsmith.com/download/jing/)[FastStone Capture](http://faststone.org/FSCaptureDetail.htm)
@@ -228,5 +241,6 @@ Great for screen mocks and notes.
 [Rapid Reporter](http://testing.gershon.info/reporter/. )
 
 ### 自动化测试工具
+
 - SauceLabs
-- BrowserStack 
+- BrowserStack

@@ -3,7 +3,7 @@ layout: post
 title: "JAVA IDE 快捷键指南"
 modified:
 categories: [java]
-excerpt:
+image: 24.jpg
 tags: [java]
 date: 2015-12-23T23:28:22
 ---

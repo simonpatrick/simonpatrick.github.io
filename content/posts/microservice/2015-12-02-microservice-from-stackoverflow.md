@@ -3,7 +3,7 @@ layout: post
 title: "microservice-from-stackoverflow"
 modified:
 categories: [microservice]
-excerpt:
+image: 6.jpg
 tags: [microservice]
 date: 2015-12-02T23:49:28
 ---

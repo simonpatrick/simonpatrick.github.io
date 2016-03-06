@@ -3,7 +3,7 @@ layout: post
 title: "True Stories: 从API的URL定义想到的"
 modified:
 categories: [truestories]
-excerpt:
+image: 2.jpg 
 tags: [truestories]
 date: 2015-12-02T13:26:07
 ---

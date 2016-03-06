@@ -3,7 +3,7 @@ layout: post
 title: "Singleton 的不同写法"
 modified:
 categories: [java]
-excerpt:
+image: 23.jpg
 tags: [java]
 date: 2015-12-02T12:42:18
 ---
