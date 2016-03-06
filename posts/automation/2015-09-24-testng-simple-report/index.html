@@ -22,7 +22,7 @@
 
     <meta property="og:url" content="http://simonpatrick.github.io/posts/automation/2015-09-24-testng-simple-report/">
     
-    <meta property="og:image" content="http://simonpatrick.github.io/images/map[feature:&lt;nil&gt;]">
+    <meta property="og:image" content="http://simonpatrick.github.io/images/5.jpg">
 
   </head>
 
@@ -46,7 +46,7 @@
         <meta itemprop="description" content="如果需要定制TestNG的测试报告,可以先想一下首先需要什么的数据,其实最简单的数据就是测试用例成功失败的数据, 那么实际上TestNG提供了ITestListener的接口可以让你获取这些测试数据. 同时IReporter 接口可以让用户在调用最后自己生成测试报告. 所以其实只要用一个类实现ITestListener,IReporter就可以了. ITestListener,IReporter实现 一下是我一个最简单的实现, 实际上TestNG开放出来的这些监听器,主要是让你可以获取TestNG 测试容器中运行测试的数据,上下文. 关于代码里面的ITestResult, xmlSuites,suites 可以自行查找 public class TestNGSimpleReport implements ITestListener, IReporter { private List&lt;String&gt; testPassed = Lists.newArrayList(); private List&lt;String&gt; testFailed = Lists.newArrayList(); private List&lt;String&gt; testSkipped = Lists.newArrayList(); @Override public void generateReport(List&lt;XmlSuite&gt; xmlSuites, List&lt;ISuite&gt; suites, String outputDirectory) { System.out.println(&quot;Passed Case: &quot; &#43; testPassed.size()); System.out.println(&quot;testFailed Case: &quot; &#43; testFailed.size()); System.out.println(&quot;testSkipped Case: &quot; &#43; testSkipped.size()); for (String passed : testPassed) { System.out.println(&quot;passed case:&quot; &#43; passed); } for (String passed : testFailed) { System.out.println(&quot;failed case:&quot; &#43; passed); } for (String passed : testSkipped) { System.out.println(&quot;skipped case:&quot; &#43; passed); } } @Override public void onTestStart(ITestResult result) { } @Override public void onTestSuccess(ITestResult result) { testPassed.add(result.getMethod().getMethodName()); } @Override public void onTestFailure(ITestResult result) { testFailed.add(result.getMethod().getMethodName()); } @Override public void onTestSkipped(ITestResult result) { testSkipped.add(result.getMethod().getMethodName()); } @Override public void onTestFailedButWithinSuccessPercentage(ITestResult result) { } @Override public void onStart(ITestContext context) { } @Override public void onFinish(ITestContext context) { } } 编写TestNG的测试 public class TestNGTest { @Test public void test_pass(){ System.out.println(&quot;passed_case&quot;); } @Test public void test_failed(){ Assert.assertTrue(false); } @Test public void test_pass_2(){ System.out.println(&quot;passed_case_2&quot;); } } 将监听器放入Testng.xml文件 &lt;suite name=&quot;SimpleReport&quot;&gt; &lt;listeners&gt; &lt;listener class-name=&quot;com.hedwig.testng.TestNGSimpleReport&quot;/&gt; &lt;/listeners&gt; &lt;test verbose=&quot;1&quot; name=&quot;simple test&quot; &gt; &lt;classes&gt; &lt;class name=&quot;com.hedwig.testng.TestNGTest&quot;/&gt; &lt;/classes&gt; &lt;/test&gt; &lt;/suite&gt; 运行Testng.xml文件,查看结果 结果如下,是不是很简单?">
         <meta itemprop="url" content="http://simonpatrick.github.io/posts/automation/2015-09-24-testng-simple-report/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://simonpatrick.github.io/images/map[feature:&lt;nil&gt;]" />
+          <meta itemprop="url" content="http://simonpatrick.github.io/images/5.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -62,7 +62,7 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://simonpatrick.github.io/images/map[feature:%3cnil%3e]);"></div>
+        <div class="image" style="background-image: url(http://simonpatrick.github.io/images/5.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2015-09-24T10:31:11&#43;08:00">Thu, Sep 24, 2015</time>
@@ -250,7 +250,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -262,7 +262,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -274,7 +274,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -286,7 +286,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -298,7 +298,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -310,7 +310,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -322,7 +322,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -334,7 +334,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -346,7 +346,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -358,7 +358,7 @@ failed case:test_failed
       
       <div class="sm"><article class="li">
   <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/default.jpg);"></div>
+    <div class="image" style="background-image: url(http://simonpatrick.github.io/images/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -375,14 +375,14 @@ failed case:test_failed
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a><a href="http://simonpatrick.github.io/categories/java">java</a>
+      <a href="http://simonpatrick.github.io/categories/python">python</a><a href="http://simonpatrick.github.io/categories/refactoring">refactoring</a><a href="http://simonpatrick.github.io/categories/shell">shell</a><a href="http://simonpatrick.github.io/categories/automation">automation</a><a href="http://simonpatrick.github.io/categories/testing">testing</a><a href="http://simonpatrick.github.io/categories/thoughts">thoughts</a><a href="http://simonpatrick.github.io/categories/microservice">microservice</a><a href="http://simonpatrick.github.io/categories/java">java</a><a href="http://simonpatrick.github.io/categories/designpattern">designpattern</a><a href="http://simonpatrick.github.io/categories/truestories">truestories</a><a href="http://simonpatrick.github.io/categories/tools">tools</a><a href="http://simonpatrick.github.io/categories/performance">performance</a><a href="http://simonpatrick.github.io/categories/interview">interview</a><a href="http://simonpatrick.github.io/categories/git">git</a><a href="http://simonpatrick.github.io/categories/js">js</a><a href="http://simonpatrick.github.io/categories/ruby">ruby</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://simonpatrick.github.io/tags/python">python</a><a href="http://simonpatrick.github.io/tags/refactoring">refactoring</a><a href="http://simonpatrick.github.io/tags/shell">shell</a><a href="http://simonpatrick.github.io/tags/automation">automation</a><a href="http://simonpatrick.github.io/tags/testing">testing</a><a href="http://simonpatrick.github.io/tags/microservice">microservice</a><a href="http://simonpatrick.github.io/tags/thoughts">thoughts</a><a href="http://simonpatrick.github.io/tags/truestories">truestories</a><a href="http://simonpatrick.github.io/tags/designpattern">designpattern</a><a href="http://simonpatrick.github.io/tags/java">java</a>
+      <a href="http://simonpatrick.github.io/tags/python">python</a><a href="http://simonpatrick.github.io/tags/refactoring">refactoring</a><a href="http://simonpatrick.github.io/tags/automation">automation</a><a href="http://simonpatrick.github.io/tags/shell">shell</a><a href="http://simonpatrick.github.io/tags/testing">testing</a><a href="http://simonpatrick.github.io/tags/microservice">microservice</a><a href="http://simonpatrick.github.io/tags/thoughts">thoughts</a><a href="http://simonpatrick.github.io/tags/java">java</a><a href="http://simonpatrick.github.io/tags/truestories">truestories</a><a href="http://simonpatrick.github.io/tags/designpattern">designpattern</a><a href="http://simonpatrick.github.io/tags/performance">performance</a><a href="http://simonpatrick.github.io/tags/tools">tools</a><a href="http://simonpatrick.github.io/tags/interview">interview</a><a href="http://simonpatrick.github.io/tags/ruby">ruby</a><a href="http://simonpatrick.github.io/tags/js">js</a><a href="http://simonpatrick.github.io/tags/git">git</a>
     </div>
   </div>
   
