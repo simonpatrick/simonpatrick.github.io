@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/custom.css">
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="/simonpatrick.github.io/index.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simonpatrick.github.io/index.xml">
 
     
     <title>shell来自动生成Jekyll post文件 - Colored Hedwig</title>
@@ -20,16 +20,16 @@
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="/simonpatrick.github.io/posts/shell/2015-11-05-generate-jekyll-post-file/">
+    <meta property="og:url" content="http://simonpatrick.github.io/posts/shell/2015-11-05-generate-jekyll-post-file/">
     
-    <meta property="og:image" content="/simonpatrick.github.ioimages/19.jpg">
+    <meta property="og:image" content="http://simonpatrick.github.ioimages/19.jpg">
 
   </head>
 
   <body>
 
     <header class="site">
-      <div class="title"><a href="/simonpatrick.github.io">Colored Hedwig</a></div>
+      <div class="title"><a href="http://simonpatrick.github.io">Colored Hedwig</a></div>
     </header>
 
     <div class="container site">
@@ -40,19 +40,19 @@
 
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="/simonpatrick.github.io"/>
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://simonpatrick.github.io"/>
         <meta itemprop="dateModified" content="2015-11-05T18:31:42&#43;00:00">
         <meta itemprop="headline" content="shell来自动生成Jekyll post文件">
         <meta itemprop="description" content="通过以下代码可以生成jekyll 的post 文件 #! /bin/bash CAT=$1 TITLE=$2 echo &quot;current location: $PWD&quot; echo &quot;category: $CAT&quot; echo &quot;file_name: $TITLE&quot; FilePrefix=`date &quot;&#43;%Y-%m-%d-&quot;` FILE_NAME=&quot;$FilePrefix$TITLE.md&quot; echo &quot;target file name is $FILE_NAME&quot; echo &quot;generate file.......&quot; POST_LOCATION=_posts/$CAT FILE_LOCATION=$POST_LOCATION/$FILE_NAME if [ -d $POST_LOCATION ] then cp template.md $FILE_LOCATION else echo &quot;create folder $CAT&quot; mkdir -p $POST_LOCATION cp template.md $FILE_LOCATION fi cd $POST_LOCATION echo &quot;current location: $PWD&quot; TODAY=`date &quot;&#43;%Y-%m-%d-%H:%M:%S&quot;` echo &quot;today:$TODAY&quot; # replace keyword in template sed -i &#39;&#39;">
-        <meta itemprop="url" content="/simonpatrick.github.io/posts/shell/2015-11-05-generate-jekyll-post-file/">
+        <meta itemprop="url" content="http://simonpatrick.github.io/posts/shell/2015-11-05-generate-jekyll-post-file/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="/simonpatrick.github.ioimages/19.jpg" />
+          <meta itemprop="url" content="http://simonpatrick.github.ioimages/19.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
         <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
           <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-            <meta itemprop="url" content="/simonpatrick.github.ioimages/logo.jpg">
+            <meta itemprop="url" content="http://simonpatrick.github.ioimages/logo.jpg">
             <meta itemprop="width" content="100">
             <meta itemprop="height" content="100">
           </div>
@@ -62,7 +62,7 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(/simonpatrick.github.ioimages/19.jpg);"></div>
+        <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/19.jpg);"></div>
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2015-11-05T18:31:42&#43;00:00">Thu, Nov 5, 2015</time>
@@ -163,7 +163,7 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 
         <aside>
           <div class="section">
-            <a href="/simonpatrick.github.iotags/shell" class="tag">shell</a>
+            <a href="http://simonpatrick.github.iotags/shell" class="tag">shell</a>
             </div>
 
           <div class="section share">
@@ -207,8 +207,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
     <div class="content">
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/7.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/7.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
@@ -219,8 +219,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/18.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/18.jpg);"></div>
     <div class="detail">
       <time>Sun, Feb 28, 2016</time>
       <h2 class="title">Simple Word Counter</h2>
@@ -231,8 +231,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">Python 访问Zabbix API</h2>
@@ -243,8 +243,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/25.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/25.jpg);"></div>
     <div class="detail">
       <time>Fri, Feb 26, 2016</time>
       <h2 class="title">zabbix 基础</h2>
@@ -255,8 +255,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">Mobile 性能测试关键点</h2>
@@ -267,8 +267,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/6.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/6.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 22, 2016</time>
       <h2 class="title">JMETER 分布式测试</h2>
@@ -279,8 +279,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/4.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/4.jpg);"></div>
     <div class="detail">
       <time>Sat, Feb 13, 2016</time>
       <h2 class="title">python yaml 使用介绍</h2>
@@ -291,8 +291,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/19.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/19.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
@@ -303,8 +303,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/11.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/11.jpg);"></div>
     <div class="detail">
       <time>Mon, Feb 1, 2016</time>
       <h2 class="title">assertions</h2>
@@ -315,8 +315,8 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
 </div>
       
       <div class="sm"><article class="li">
-  <a href="/simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(/simonpatrick.github.ioimages/10.jpg);"></div>
+  <a href="http://simonpatrick.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
+    <div class="image" style="background-image: url(http://simonpatrick.github.ioimages/10.jpg);"></div>
     <div class="detail">
       <time>Wed, Jan 27, 2016</time>
       <h2 class="title">WEB 开发的几个重点</h2>
@@ -333,14 +333,14 @@ sed -i '' &quot;s/_DATE/$TODAY/g&quot; $FILE_NAME
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="/simonpatrick.github.iocategories/python">python</a><a href="/simonpatrick.github.iocategories/refactoring">refactoring</a><a href="/simonpatrick.github.iocategories/automation">automation</a><a href="/simonpatrick.github.iocategories/shell">shell</a><a href="/simonpatrick.github.iocategories/testing">testing</a><a href="/simonpatrick.github.iocategories/thoughts">thoughts</a><a href="/simonpatrick.github.iocategories/microservice">microservice</a><a href="/simonpatrick.github.iocategories/designpattern">designpattern</a><a href="/simonpatrick.github.iocategories/java">java</a><a href="/simonpatrick.github.iocategories/truestories">truestories</a><a href="/simonpatrick.github.iocategories/tools">tools</a><a href="/simonpatrick.github.iocategories/interview">interview</a><a href="/simonpatrick.github.iocategories/performance">performance</a><a href="/simonpatrick.github.iocategories/git">git</a><a href="/simonpatrick.github.iocategories/js">js</a><a href="/simonpatrick.github.iocategories/ruby">ruby</a>
+      <a href="http://simonpatrick.github.iocategories/python">python</a><a href="http://simonpatrick.github.iocategories/refactoring">refactoring</a><a href="http://simonpatrick.github.iocategories/automation">automation</a><a href="http://simonpatrick.github.iocategories/shell">shell</a><a href="http://simonpatrick.github.iocategories/testing">testing</a><a href="http://simonpatrick.github.iocategories/microservice">microservice</a><a href="http://simonpatrick.github.iocategories/thoughts">thoughts</a><a href="http://simonpatrick.github.iocategories/java">java</a><a href="http://simonpatrick.github.iocategories/truestories">truestories</a><a href="http://simonpatrick.github.iocategories/designpattern">designpattern</a><a href="http://simonpatrick.github.iocategories/interview">interview</a><a href="http://simonpatrick.github.iocategories/tools">tools</a><a href="http://simonpatrick.github.iocategories/performance">performance</a><a href="http://simonpatrick.github.iocategories/ruby">ruby</a><a href="http://simonpatrick.github.iocategories/js">js</a><a href="http://simonpatrick.github.iocategories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="/simonpatrick.github.iotags/python">python</a><a href="/simonpatrick.github.iotags/refactoring">refactoring</a><a href="/simonpatrick.github.iotags/automation">automation</a><a href="/simonpatrick.github.iotags/shell">shell</a><a href="/simonpatrick.github.iotags/testing">testing</a><a href="/simonpatrick.github.iotags/microservice">microservice</a><a href="/simonpatrick.github.iotags/thoughts">thoughts</a><a href="/simonpatrick.github.iotags/java">java</a><a href="/simonpatrick.github.iotags/designpattern">designpattern</a><a href="/simonpatrick.github.iotags/truestories">truestories</a><a href="/simonpatrick.github.iotags/tools">tools</a><a href="/simonpatrick.github.iotags/interview">interview</a><a href="/simonpatrick.github.iotags/performance">performance</a><a href="/simonpatrick.github.iotags/ruby">ruby</a><a href="/simonpatrick.github.iotags/git">git</a><a href="/simonpatrick.github.iotags/js">js</a>
+      <a href="http://simonpatrick.github.iotags/python">python</a><a href="http://simonpatrick.github.iotags/refactoring">refactoring</a><a href="http://simonpatrick.github.iotags/shell">shell</a><a href="http://simonpatrick.github.iotags/automation">automation</a><a href="http://simonpatrick.github.iotags/testing">testing</a><a href="http://simonpatrick.github.iotags/thoughts">thoughts</a><a href="http://simonpatrick.github.iotags/microservice">microservice</a><a href="http://simonpatrick.github.iotags/java">java</a><a href="http://simonpatrick.github.iotags/truestories">truestories</a><a href="http://simonpatrick.github.iotags/designpattern">designpattern</a><a href="http://simonpatrick.github.iotags/performance">performance</a><a href="http://simonpatrick.github.iotags/tools">tools</a><a href="http://simonpatrick.github.iotags/interview">interview</a><a href="http://simonpatrick.github.iotags/ruby">ruby</a><a href="http://simonpatrick.github.iotags/git">git</a><a href="http://simonpatrick.github.iotags/js">js</a>
     </div>
   </div>
   

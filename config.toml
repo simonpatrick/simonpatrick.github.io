@@ -1,4 +1,4 @@
-baseurl = "simonpatrick.github.io"
+baseurl = "http://simonpatrick.github.io"
 title = "Colored Hedwig"
 
 [params]
