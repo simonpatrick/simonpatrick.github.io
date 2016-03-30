@@ -3,7 +3,7 @@ layout: post
 title: "Jenkins API的简单介绍"
 modified:
 categories: [automation]
-image: jenkins.jpg
+image: jenkins.png
 tags: [automation]
 date: 2016-03-30T13:15:11+08:00
 ---
