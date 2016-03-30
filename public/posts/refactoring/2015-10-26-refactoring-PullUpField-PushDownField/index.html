@@ -167,6 +167,18 @@ class Cat extends Animal{
     <div class="content">
       
       <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/jenkins.jpg);"></div>
+    <div class="detail">
+      <time>Wed, Mar 30, 2016</time>
+      <h2 class="title">Jenkins API的简单介绍</h2>
+      <div class="summary">Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情. From Jenkins Home Page Jenkins is an automation engine with an unparalleled plugin ecosystem to support all of your favorite tools in your delivery pipelines, whether your goal is continuous integration, automated testing, or continuous delivery. Jenkins 使用 关于Jenkins的基本使用网上有很多的教程，基本使用其事没有太多说的，它是个平台，可以集成很多不同的工具，脚本等等. 总结下来这些东西包括： jenkins parameter setting, string, choice, &hellip;&hellip; JAVA 的maven, ant, gradle 等打包工具，其他语言也有类似的build，deploy，依赖管理的工具 定制化的脚本，可以在一个Jenkins的build步骤中运行这些脚本如shell命令，python脚本 定制插件来完成自己的特殊的目的 这些内容非常庞大，自己也不可能完全都知道，如果遇到实际的一些问题需要解决的话, 大体的逻辑就是，如果遇到一些特殊需求，那么先去找插件看能不能完成，如果没有插件就再想shell，python脚本等不同的事情，或者自己开发插件. Jenkins 的实践问题 随着Jenkins里面的任务越来越多，管理的环境越来越多，变更越来愈多，手工管理就会遇到一些问题： 比如为了改一个IP地址，可能需要没一个任务都去改具体的配置，比如部署同一个war到不同的测试环境，就需要给不同的job改IP 为了不同的环境配置不同的任务，需要很多的人工的配置修改等等 如果需要迁移一个多应用的测试环境，那么需要很多的复制，修改工作 那么为了解决这些问题，个人觉得可以改善的地方是： - 定义一些类型项目的模版，抽象一些参数出来给Jenkins里面的Job做参数话，当然有时需要修改的是默认值 - 在定义了一些模版之后，就可以通过操作Jenkins API的方式来操作 - 在尝试了一些Jenkins API之后，感觉纯粹通过API的方式去操作，不一定比复制Jenkins 任务，然后修改来的快，但是通过Jenkins API的方式 来操作Jenkins 的好处是，如果这些东西融入到运维的流程中，那么它会提高生产率 一些体会是，可能代码方式的操作单个单个来看不一定会提高多少生产率(参数一样要设)，但是如果放在一个流程的角度看，那么他的效率是高的，比如你如果需要运维帮你建环境，那么你需要提供一些信息，而这些信息就可以直接建立Jenkins的Job了，那么作为用户你只提供一次信息，就可以完成你需要的所有事情，这样效率就高了.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/7.jpg);"></div>
     <div class="detail">
@@ -274,18 +286,6 @@ class Cat extends Animal{
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/automation/2016-01-27-web-dev/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
-    <div class="detail">
-      <time>Wed, Jan 27, 2016</time>
-      <h2 class="title">WEB 开发的几个重点</h2>
-      <div class="summary">再试用了Web 开发的框架之后，归纳一下大致的一个基础Web 开发需要的那些元素: URL Router，如何定义URL的访问 Request Handler/Response Handler， HTTP请求/返回的处理 如果组织这些Request Handler/Response Handler 如何定义全局/局部的URL拦截器 如何处理特殊的HTTP Header 如何处理Session/Cookie Database Access Layer/ORM， 数据操作CRUD 如何CRUD 如何进行分页，排序，filterByCriteria&hellip;..等数据库的常见操作 如何管理事务 如何定义，初始化数据库表 如何组织不同的数据库操作成不同的业务动作 详细，复杂的ORM操作可以不用太在意 Template Render,模版渲染 不同模版的试用 静态资源的访问 单元测试 断言，EXCEPTION检查 Mock 数据，内存数据库的使用 Web Application部署 不同环境的配置管理 不同语言的打包工具，如MAVEN，GRADLE 不同的构建工具,GULP 不同的服务器，NGINX，TOMCAT，JBOSS</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -293,14 +293,14 @@ class Cat extends Animal{
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   
