@@ -1,4 +1,4 @@
-<div class="list">
+<div class="single">
   <!DOCTYPE html>
 <html>
   <head>
@@ -15,14 +15,14 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
 
     
-    <title>Categories - Colored Hedwig: less is more</title>
-    <meta property='og:title' content="Categories - Colored Hedwig: less is more">
+    <title>Jenkins API的简单介绍 - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Jenkins API的简单介绍 - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://testless.github.io/categories/">
+    <meta property="og:url" content="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/">
     
-    
+    <meta property="og:image" content="http://testless.github.io/images/jenkins.jpg">
 
   </head>
 
@@ -34,50 +34,253 @@
 
     <div class="container site">
 
+
   <div class="row">
     <div class="col-sm-9">
 
-      <header class="title"><h1>Categories</h1></header>
+      <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
-      
-      <a href="/categories/automation/" class="category">automation</a>
-      
-      <a href="/categories/designpattern/" class="category">designpattern</a>
-      
-      <a href="/categories/git/" class="category">git</a>
-      
-      <a href="/categories/interview/" class="category">interview</a>
-      
-      <a href="/categories/java/" class="category">java</a>
-      
-      <a href="/categories/js/" class="category">js</a>
-      
-      <a href="/categories/microservice/" class="category">microservice</a>
-      
-      <a href="/categories/performance/" class="category">performance</a>
-      
-      <a href="/categories/python/" class="category">python</a>
-      
-      <a href="/categories/refactoring/" class="category">refactoring</a>
-      
-      <a href="/categories/ruby/" class="category">ruby</a>
-      
-      <a href="/categories/shell/" class="category">shell</a>
-      
-      <a href="/categories/testing/" class="category">testing</a>
-      
-      <a href="/categories/thoughts/" class="category">thoughts</a>
-      
-      <a href="/categories/tools/" class="category">tools</a>
-      
-      <a href="/categories/truestories/" class="category">truestories</a>
-      
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
+        <meta itemprop="dateModified" content="2016-03-30T13:15:11&#43;08:00">
+        <meta itemprop="headline" content="Jenkins API的简单介绍">
+        <meta itemprop="description" content="Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情. From Jenkins Home Page Jenkins is an automation engine with an unparalleled plugin ecosystem to support all of your favorite tools in your delivery pipelines, whether your goal is continuous integration, automated testing, or continuous delivery. Jenkins 使用 关于Jenkins的基本使用网上有很多的教程，基本使用其事没有太多说的，它是个平台，可以集成很多不同的工具，脚本等等. 总结下来这些东西包括： jenkins parameter setting, string, choice, &hellip;&hellip; JAVA 的maven, ant, gradle 等打包工具，其他语言也有类似的build，deploy，依赖管理的工具 定制化的脚本，可以在一个Jenkins的build步骤中运行这些脚本如shell命令，python脚本 定制插件来完成自己的特殊的目的 这些内容非常庞大，自己也不可能完全都知道，如果遇到实际的一些问题需要解决的话, 大体的逻辑就是，如果遇到一些特殊需求，那么先去找插件看能不能完成，如果没有插件就再想shell，python脚本等不同的事情，或者自己开发插件. Jenkins 的实践问题 随着Jenkins里面的任务越来越多，管理的环境越来越多，变更越来愈多，手工管理就会遇到一些问题： 比如为了改一个IP地址，可能需要没一个任务都去改具体的配置，比如部署同一个war到不同的测试环境，就需要给不同的job改IP 为了不同的环境配置不同的任务，需要很多的人工的配置修改等等 如果需要迁移一个多应用的测试环境，那么需要很多的复制，修改工作 那么为了解决这些问题，个人觉得可以改善的地方是： - 定义一些类型项目的模版，抽象一些参数出来给Jenkins里面的Job做参数话，当然有时需要修改的是默认值 - 在定义了一些模版之后，就可以通过操作Jenkins API的方式来操作 - 在尝试了一些Jenkins API之后，感觉纯粹通过API的方式去操作，不一定比复制Jenkins 任务，然后修改来的快，但是通过Jenkins API的方式 来操作Jenkins 的好处是，如果这些东西融入到运维的流程中，那么它会提高生产率 一些体会是，可能代码方式的操作单个单个来看不一定会提高多少生产率(参数一样要设)，但是如果放在一个流程的角度看，那么他的效率是高的，比如你如果需要运维帮你建环境，那么你需要提供一些信息，而这些信息就可以直接建立Jenkins的Job了，那么作为用户你只提供一次信息，就可以完成你需要的所有事情，这样效率就高了.">
+        <meta itemprop="url" content="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/">
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://testless.github.io/images/jenkins.jpg" />
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="800">
+        </div>
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+          <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://testless.github.io/images/logo.jpg">
+            <meta itemprop="width" content="100">
+            <meta itemprop="height" content="100">
+          </div>
+          <meta itemprop="name" content="Colored Hedwig: less is more">
+        </div>
+        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <meta itemprop="name" content="">
+        </div>
 
+        <div class="image" style="background-image: url(http://testless.github.io/images/jenkins.jpg);"></div>
+
+        <header class="article-header">
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-03-30T13:15:11&#43;08:00">Wed, Mar 30, 2016</time>
+          <h1 class="article-title">Jenkins API的简单介绍</h1>
+        </header>
+
+        <div class="article-body" itemprop="articleBody">
+          
+
+<h1 id="jenkins-介绍:dea782d2df024adad2e4b28b82bcf25b">Jenkins 介绍</h1>
+
+<p>Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情.</p>
+
+<p>From Jenkins Home Page</p>
+
+<pre><code>Jenkins is an automation engine with an unparalleled plugin ecosystem to support all of your favorite tools in your delivery pipelines, whether your goal is continuous integration, automated testing, or continuous delivery.
+</code></pre>
+
+<h2 id="jenkins-使用:dea782d2df024adad2e4b28b82bcf25b">Jenkins 使用</h2>
+
+<p>关于Jenkins的基本使用网上有很多的教程，基本使用其事没有太多说的，它是个平台，可以集成很多不同的工具，脚本等等.
+总结下来这些东西包括：</p>
+
+<ul>
+<li>jenkins parameter setting, string, choice, &hellip;&hellip;</li>
+<li>JAVA 的maven, ant, gradle 等打包工具，其他语言也有类似的build，deploy，依赖管理的工具</li>
+<li>定制化的脚本，可以在一个Jenkins的build步骤中运行这些脚本如shell命令，python脚本</li>
+<li>定制插件来完成自己的特殊的目的</li>
+</ul>
+
+<p>这些内容非常庞大，自己也不可能完全都知道，如果遇到实际的一些问题需要解决的话,
+大体的逻辑就是，如果遇到一些特殊需求，那么先去找插件看能不能完成，如果没有插件就再想shell，python脚本等不同的事情，或者自己开发插件.</p>
+
+<h2 id="jenkins-的实践问题:dea782d2df024adad2e4b28b82bcf25b">Jenkins 的实践问题</h2>
+
+<p>随着Jenkins里面的任务越来越多，管理的环境越来越多，变更越来愈多，手工管理就会遇到一些问题：</p>
+
+<ul>
+<li>比如为了改一个IP地址，可能需要没一个任务都去改具体的配置，比如部署同一个war到不同的测试环境，就需要给不同的job改IP</li>
+<li>为了不同的环境配置不同的任务，需要很多的人工的配置修改等等</li>
+<li>如果需要迁移一个多应用的测试环境，那么需要很多的复制，修改工作</li>
+</ul>
+
+<p>那么为了解决这些问题，个人觉得可以改善的地方是：
+- 定义一些类型项目的模版，抽象一些参数出来给Jenkins里面的Job做参数话，当然有时需要修改的是默认值
+- 在定义了一些模版之后，就可以通过操作Jenkins API的方式来操作
+- 在尝试了一些Jenkins API之后，感觉纯粹通过API的方式去操作，不一定比复制Jenkins 任务，然后修改来的快，但是通过Jenkins API的方式
+  来操作Jenkins 的好处是，如果这些东西融入到运维的流程中，那么它会提高生产率</p>
+
+<p>一些体会是，可能代码方式的操作单个单个来看不一定会提高多少生产率(参数一样要设)，但是如果放在一个流程的角度看，那么他的效率是高的，比如你如果需要运维帮你建环境，那么你需要提供一些信息，而这些信息就可以直接建立Jenkins的Job了，那么作为用户你只提供一次信息，就可以完成你需要的所有事情，这样效率就高了.</p>
+
+<p>我对于自动化一切的看法是，也许对于单个任务来说，通过写代码的方式不一定是最优方式，但是如果放在一个流程中来看，那么一定是.所以平常可以积累点不同类型的脚本，代码，然后在某个时间点，也许连接你的这些脚本，代码，就可以流水线化一些你的工作了，不要以为这不会带来，我觉得这一天一定会有的。</p>
+
+<h2 id="jenkins-api-的使用:dea782d2df024adad2e4b28b82bcf25b">Jenkins API 的使用</h2>
+
+<p>对于Jenkins API来说，我使用过Java和Python的，总结下来大同小异，逻辑上可以分为几个层次：</p>
+
+<ul>
+<li>Job: 不同类型的Job
+
+<ul>
+<li>添加，修改，删除Job</li>
+<li>Job的详细信息</li>
+<li>可以通过Job的config.xml文件来修改配置</li>
+<li>Job创建属于哪个父类和Jenkins的URL有关系</li>
+</ul></li>
+<li>View
+基本功能和Job类似</li>
+</ul>
+
+<h3 id="jenkins-api-java:dea782d2df024adad2e4b28b82bcf25b">Jenkins API - JAVA</h3>
+
+<p>我自己使用的是这个Jenkins的这个API client.</p>
+
+<pre><code class="language-xml">    &lt;dependency&gt;
+        &lt;groupId&gt;com.offbytwo.jenkins&lt;/groupId&gt;
+        &lt;artifactId&gt;jenkins-client&lt;/artifactId&gt;
+        &lt;version&gt;0.3.3&lt;/version&gt;
+    &lt;/dependency&gt;
+</code></pre>
+
+<p>这个包中最主要的两个类是：</p>
+
+<ul>
+<li>JenkinsServer: JenkinsServer 可以认为是一个JenkinsHttpClient的一个Wrapper，封装了一些常用的方法，如getJob，getJobXml等等，具体可以参考他<a href="https://github.com/RisingOak/jenkins-client">github</a></li>
+<li>JenkinsHttpClient：可以通过这个HttpClient组装URL和参数来达到完成调用其他API的方法，提供的一些方法主要包括了:
+
+<ul>
+<li>post</li>
+<li>post_xml: 主要用来修改job的config.xml</li>
+</ul></li>
+</ul>
+
+<p>大体的东西就是这些，那么通过这个Jenkins的API client，完成了一些一些功能：</p>
+
+<ul>
+<li>复制Job,根据参数修改复制出来的Job</li>
+<li>复制View，根据参数修改复制出来的View，同时包括了所有的子Job</li>
+<li>查询到使用了某个shell 命令或者某个配置的任务</li>
+</ul>
+
+<p>一些实例代码如下：</p>
+
+<p>复制任务：</p>
+
+<pre><code class="language-java">public class JenkinsReplicator {
+  private final String COPY_FROM_VIEW_URL = &quot;/view/%s/createItem?&quot;;
+  private final String DEFAULT_VIEW = &quot;All&quot;;
+  private JenkinsInstance instance;
+  private JenkinsHttpClient client;
+
+  public JenkinsReplicator(JenkinsInstance instance) {
+      this.instance = instance;
+      this.client = instance.getJenkinsHttpClient();
+  }
+
+  /**
+   * @param fromName: copied from issue
+   * @param toName:   new Name
+   * @param parentName: to View name
+   */
+  public void copyItem(String fromName, String toName, String parentName) {
+      Map&lt;String, String&gt; formData = new HashMap&lt;&gt;();
+      formData.put(&quot;name&quot;, toName);
+      formData.put(&quot;mode&quot;, &quot;copy&quot;);
+      formData.put(&quot;from&quot;, fromName);
+      formData.put(&quot;json&quot;, String.format(&quot;{\&quot;name\&quot;: \&quot;%s\&quot;, \&quot;mode\&quot;: \&quot;copy\&quot;, \&quot;from\&quot;: \&quot;%s\&quot;}&quot;, toName, fromName));
+      formData.put(&quot;Submit&quot;, &quot;OK&quot;);
+      try {
+          this.client.post_form(String.format(COPY_FROM_VIEW_URL, parentName), formData, false);
+      } catch (IOException e) {
+          throw new JenkinsBaseException(&quot;copy item &quot;+ fromName+ &quot;to &quot; + toName+&quot; in view &quot; + parentName + &quot; failed&quot;, e);
+      }
+  }
+}
+</code></pre>
+
+<p>update config file:</p>
+
+<pre><code class="language-java">String configXml = jobDescription.jobConfigXml();
+this.getJenkins().updateJob(jobDescription.getJobName(),configXml,false);
+</code></pre>
+
+<p>复制整个view下面同时包括了不同的子Job:</p>
+
+<pre><code class="language-java">@Override
+   public View copy(String fromName, String toName, String parentNameOrNull) {
+       View fromView = getByName(fromName);
+       if (fromView == null) throw new JenkinsViewException(fromName + &quot;view is not found,can't copy from it!&quot;);
+       View toView = getOrCreate(toName, fromName, parentNameOrNull);
+       Map&lt;String, Job&gt; viewJobs = jobController.getJobsByViewName(fromName);
+       for (Map.Entry&lt;String, Job&gt; entry : viewJobs.entrySet()) {
+           jobController.copy(entry.getKey(), toName + &quot;_&quot; + entry.getKey(), toView.getName());
+       }
+
+       return getByName(toName);
+   }
+
+</code></pre>
+
+<h2 id="python-api-使用:dea782d2df024adad2e4b28b82bcf25b">Python API 使用</h2>
+
+<p>Python的Jenkins API client 可以通过以下命令安装：</p>
+
+<pre><code class="language-sh">  pip install jenkinsapi
+</code></pre>
+
+<p>基本的python jenkins api client 和JAVA的概念比较类似，不过python 的这个jenkinsapi很明显要比java的这个客户端功能要丰富的多的多，后面会详细介绍这个python client api的使用.</p>
+
+<h2 id="代码:dea782d2df024adad2e4b28b82bcf25b">代码</h2>
+
+<p><a href="https://github.com/testless/jenkins-controller.git">GITHUB</a></p>
+
+        </div>
+
+
+        <aside>
+          <div class="section">
+            <a href="http://testless.github.io/tags/automation" class="tag">automation</a>
+            </div>
+
+          <div class="section share">
+            
+            
+            
+            
+          </div>
+
+          
+          
+          
+        </aside>
+
+      </article>
     </div>
 
     <div class="col-sm-3">
       <aside class="site">
 
+  
+  <div class="section">
+    <header><div class="title">TableOfContents</div></header>
+    <div class="list-default"><nav id="TableOfContents">
+<ul>
+<li><a href="#jenkins-介绍:dea782d2df024adad2e4b28b82bcf25b">Jenkins 介绍</a>
+<ul>
+<li><a href="#jenkins-使用:dea782d2df024adad2e4b28b82bcf25b">Jenkins 使用</a></li>
+<li><a href="#jenkins-的实践问题:dea782d2df024adad2e4b28b82bcf25b">Jenkins 的实践问题</a></li>
+<li><a href="#jenkins-api-的使用:dea782d2df024adad2e4b28b82bcf25b">Jenkins API 的使用</a>
+<ul>
+<li><a href="#jenkins-api-java:dea782d2df024adad2e4b28b82bcf25b">Jenkins API - JAVA</a></li>
+</ul></li>
+<li><a href="#python-api-使用:dea782d2df024adad2e4b28b82bcf25b">Python API 使用</a></li>
+<li><a href="#代码:dea782d2df024adad2e4b28b82bcf25b">代码</a></li>
+</ul></li>
+</ul>
+</nav></div>
+  </div>
   
 
   
@@ -213,14 +416,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a>
     </div>
   </div>
   
@@ -230,6 +433,7 @@
     </div>
 
   </div>
+
       </div>
 
     <footer class="site">
