@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/refactoring/2015-10-26-remove-god-class/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/8.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Nov 3, 2015</time>
+      <h2 class="title">Refactoring-8-remove God Class</h2>
+      <div class="summary">God Class 就是一个类里面有一大堆不相干的方法放在一起,一般 情况下很多的工具类，或者manager有可能会有这样的情况.不是说不能有 工具类或者manager类，这个的关键是不相干的放在一个类里面。 不相干就违反了Single Responsibility的原则.</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/ruby/2015-11-3-ruby-basic-dependecy-management/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/11.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/true_stories/2015-10-24-return-flag/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/27.jpg);"></div>
-    <div class="detail">
-      <time>Sat, Oct 24, 2015</time>
-      <h2 class="title">True Stories: About Return Flag</h2>
-      <div class="summary">Return Flag 真实的一段代码片段： public boolean update(Inquiry inquiry) { boolean bUpdBaseInf = super.update(inquiry); solrService.syncUpdate(new SolrInquiry(inquiry.getInquiryId())); return bUpdBaseInfo; } 自己的思考： 这个返回的状态值没有完全体现整个函数的状态 如果solrService是个异步还可以理解这个返回值，但是名字是syncUpdate 直接是不是应该怀疑这是个异步更新？ solr的更新真的需要同步吗？solr的更新可能直接影响到整个业务的处理了&hellip;&hellip; 这里也许是留了点坑关于这个flag的 这个flag的命名是不是有点那个啥? 代码REVIEW 流程的思考 这样的代码,个人觉得代码REVIEW是需要检查出来的。也许这样的代码永远也不会出现问题，但是他的味道就是不好。 就算我是一个测试，也看出这里面不严谨的地方了,很多时候我们总是讲流程,流程，流程，但是有了流程又怎么样呢？ 一个好的技术团队是有他自己的品味的.呆过技术很好的公司,也呆过技术比较一般的公司,比较不同类别公司的开发， 很好的公司的开发更加注重这些细节,你可能觉得他们其实都在写差不多的代码,但是这种细节的常年累积,一个产品是否好维护就会出现很明显的差距了. 不容易维护的产品,有时可能已经资不抵债了. 如果想的更远一点的话,关于开发经常说到的工作无聊没有挑战的话题， 好公司的开发说的工作无聊和一般公司一些开发说的工作无聊可能是两个不同层次的无聊。 有些知道确实没有挑战而有些只是不知道其实自己写的代码挺烂的而已。我无意攻击任何人只是说说我真实的想法。</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -210,6 +210,18 @@
   <div class="section">
     <header><div class="title">LatestPosts</div></header>
     <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/ansible.png);"></div>
+    <div class="detail">
+      <time>Wed, Mar 30, 2016</time>
+      <h2 class="title">Ansible简单介绍</h2>
+      <div class="summary">Ansible 介绍 Ansible 目前都是使用在python2上面. installation 在MAC 上面安装ansible有两种方式： * pip pip install ansible brew brew install ansible ansible playbook 的简单使用 ansible 大概的一个框架图如下： 下面简单介绍一个使用ansible的例子： 配置hosts文件 在当前目录创建一个hosts文件： [jenkins] 192.168.3.50 配置ansible yml playbook文件 配置当前一个yml文件: - hosts: jenkins user: root accelerate:true tasks: - name: restart_nginx shell: sh /root/auto_publish_qadoc.sh 运行命令 ansible-playbook playbook.yml -i hosts -vv 就可以运行这些命令了,最简单的ansible就是这样上手非常容易. 不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实 过一下这个document估计也就是1天时间就可以上手干活了.</div>
+    </div>
+  </a>
+</article>
+</div>
       
       <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/" class="clearfix">
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/11.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Feb 1, 2016</time>
-      <h2 class="title">assertions</h2>
-      <div class="summary">由于一直都在进行测试的工作，所以会关注Assertion的工具，发现两个不错的Assertion 第三方包，准备在实践中使用. 这两个分别是： - Google Truth(http://google.github.io/truth/usage/) - assertj 这个里面有很多自己想实现的比较的功能。一下是一些简单的试用的代码。 Google Truth 基础的验证： @Test public void test_basic_truth(){ Set&lt;String&gt; foo = Sets.newHashSet(); assertThat(foo).isEmpty(); assertThat(foo).isNotNull(); assertThat(5).isEqualTo(5L); assertThat(5L).isEqualTo(5); assert_().that(50).isEqualTo(50); assertThat(&quot;test&quot;).isEqualTo(&quot;test&quot;); assertThat(&quot;test&quot;).contains(&quot;te&quot;); } Collections/Maps的验证: @Test public void test_basic_truth_maps_collections(){ Set&lt;String&gt; foo = Sets.newHashSet(); assertThat(foo).isEmpty(); assertThat(foo).isNotNull(); foo.add(&quot;test&quot;); foo.add(&quot;test1&quot;); foo.add(&quot;test2&quot;); assertThat(foo).contains(&quot;test&quot;); assertThat(foo).containsAllOf(&quot;test&quot;, &quot;test1&quot;); assertThat(foo).containsExactly(&quot;test2&quot;, &quot;test&quot;, &quot;test1&quot;); assertThat(foo).containsNoneOf(&quot;test889&quot;, &quot;test10&quot;); Map&lt;String,String&gt; maps = Maps.newHashMap(); maps.put(&quot;test&quot;, &quot;test1&quot;); maps.put(&quot;test1&quot;, &quot;test2&quot;); maps.put(&quot;test2&quot;, &quot;test3&quot;); assertThat(maps).containsKey(&quot;test1&quot;); assertThat(maps).containsEntry(&quot;test1&quot;, &quot;test2&quot;); assertThat(maps).doesNotContainEntry(&quot;test0&quot;, &quot;test0&quot;); } assertj 基础的验证： @Test public</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   
