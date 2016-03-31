@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/python/2014-11-24-virtual_env/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/21.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Nov 24, 2014</time>
+      <h2 class="title">Python virtualenv in Mac</h2>
+      <div class="summary">virtualenv是一个创建python虚拟环境的工具,主要的解决的问题是,让在一个干净的Python环境中开发,不需要被不同的python 安装包烦恼,python3中实际已经内置了venv的,可以不使用virtualenv,以下是简要说明以下安装使用方法: ps: 关于Python3和Python2很有可能在同一台机器上都有安装,所以注意python命令对应的是那个版本.have fun :) Python3 in Mac python3 -m venv todo_mvc Done &hellip;&hellip;&hellip;. Python2 in Mac Install virtualenv in Mac sudo pip install virtualenv 此前确认pip已经安装了 Install virtualenvwapper in Mac sudo pip install virtualenvwapper 创建python开发环境 直接使用virtualevn 创建目录 mkdir python_test virtualenv python_test 使用创建好的目录作为开发环境 source /bin/activate 启动开发环境之后，可以使用pip安装需要的python依赖库，如selenium pip install selenium 如果安装好了virtualenvwapper的话，可以使用如下命令使用开发环境： mkvirtualenv python_test 退出： deactivate 切换： workon python-test 删除 rm virtualenv python-test</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/shell/2014-10-24-shell_for_update_all_git_repo/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/17.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/python/2013-11-24-python_basic/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/11.jpg);"></div>
-    <div class="detail">
-      <time>Sun, Nov 24, 2013</time>
-      <h2 class="title">Python 基础-语法</h2>
-      <div class="summary">学习一门语言，就当多一门手艺。虽然是个测试，被人唾弃，但是相信自己比什么都重要。 卷起袖子，dirty your hand。以下是学习https://github.com/qiwsir/StarterLearningPython的笔记. python 运行 以下是python运行命令，同时带了两个不同的参数： python &lt;filename&gt;.py # pyc 文件生成 python &lt;filename&gt;.py # pyo 文件生成，优化了的python字节码 数字，变量，计算 python里面的数字主要又以下几种： 整数， 如2 浮点数，如2.22 长整数，如2.222222222222L 其他如：十进制，还有二进制、八进制、十六进制 python 变量 对象有类型，变量无类型， 如何理解 x=5, x 没有赋值时没有类型，当=5时就是int了，如果x=&lsquo;str&rsquo;时，就是String了 四则运算 运算符号： #- +,-,*,/# 看一下例子就可以了解基本的运算和类型了： a=4+2 b=4.0+2 #自动处理整数溢出 x= 123456789870987654321122343445567678890098876*1233455667789990099876543332387665443345566999999999999 print a,b,x print(type(a)) print(type(b)) print(type(x)) print a/b print a/2 #不管是被除数还是除数，只要有一个数是浮点数，结果就是浮点数 print a/2.0 print x/0 以上预算的结果,出错信息也显而易见 6 6.0 152278477193527562870044352587576277277562451818822315203216690188373592848234522837124321109901124 &lt;type 'int'&gt; &lt;type 'float'&gt; &lt;type 'long'&gt; 1.0 3 3.0 ZeroDivisionError: long division or modulo by zero 对于数值计算来说,以下内容供参考 &gt; 对于需要非常精确的情况，可以使用 decimal 模块，它实现的十进制运算适合会计方面的应用和高精度要求的应用。另外 fractions 模块支持另外一种形式的运算，它实现的运算基于有理数（因此像1/3这样的数字可以精确地表示）。最高要求则可是使用由 SciPy提供的 Numerical Python 包和其它用于数学和统计学的包。列出这些东西，仅仅是让看官能明白，解决问题的方式很多，后面会用这些中的某些方式解决上述问题。 浮点数算法：争议和限制 使用计算模块 division 使用python的模块来作除法：from __future__ import division 所有的除法就都是浮点数了: from __future__ import division print 5/2 # 2.5 如果不用division，则为2 整除方法： print divmod(5,2) # 返回元组（2，1） print divmod(10,3)[0],divmod(10,3)[1],divmod(10,3) # 结果是： 3 1 (3, 1) 四舍五入 round 四舍五入取位数： print round(1.2345567, 2) print round(1.23456677, 3) print round(10.0 / 3, 4) 结果是： 1.23 1.235 3.3333 以下结果不要惊慌,这是正常的！！！！ round(1.2345,3) 1.234 #应该是：1.235 round(2.235,2) 2.23 #应该是：2.24 Math 模块小试 以下代码小试以下Math模块： print math.pi functions = dir(math) print pow(4, 2) for x in functions: print x print help(x) 优先级 以下是优先级从低到高的顺序： 运算符 描述 lambda Lambda表达式 or 布尔“或” and 布尔“与” not x 布尔“非” in，not in 成员测试 is，is not 同一性测试 &lt;，&lt;=，&gt;，&gt;=，!=，== 比较 |按位或 ^ 按位异或 &amp; 按位与 &lt;&lt;，&gt;&gt; 移位 +，- 加法与减法 *，/，% 乘法、除法与取余 +x，-x 正负号 ~x 按位翻转 ** 指数 x.attribute 属性参考 x[index] 下标 x[index:index] 寻址段 f(arguments&hellip;) 函数调用 (experession,&hellip;) 绑定或元组显示 [expression,&hellip;] 列表显示 {key:datum,&hellip;} 字典显示 &lsquo;expression,&hellip;&rsquo; 字符串转换 1.Python基础常识 安装python（windows基本就是下载后安装，linux和mac自带 添加python到windows 的path中 执行python文件： python &lt;file&gt; python 文件 encoding '#_*_coding:utf-8_*_' 注释 &quot;&quot;&quot; docs &quot;&quot;&quot; 2.Python 注释和#号 # A comment 3.数字和数字计算 - +，-，/,*,%,&lt;,&gt;,&lt;=,&gt;= 4.</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -210,6 +210,18 @@
   <div class="section">
     <header><div class="title">LatestPosts</div></header>
     <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/ansible.png);"></div>
+    <div class="detail">
+      <time>Wed, Mar 30, 2016</time>
+      <h2 class="title">Ansible简单介绍</h2>
+      <div class="summary">Ansible 介绍 Ansible 目前都是使用在python2上面. installation 在MAC 上面安装ansible有两种方式： * pip pip install ansible brew brew install ansible ansible playbook 的简单使用 ansible 大概的一个框架图如下： 下面简单介绍一个使用ansible的例子： 配置hosts文件 在当前目录创建一个hosts文件： [jenkins] 192.168.3.50 配置ansible yml playbook文件 配置当前一个yml文件: - hosts: jenkins user: root accelerate:true tasks: - name: restart_nginx shell: sh /root/auto_publish_qadoc.sh 运行命令 ansible-playbook playbook.yml -i hosts -vv 就可以运行这些命令了,最简单的ansible就是这样上手非常容易. 不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实 过一下这个document估计也就是1天时间就可以上手干活了.</div>
+    </div>
+  </a>
+</article>
+</div>
       
       <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/" class="clearfix">
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/11.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Feb 1, 2016</time>
-      <h2 class="title">assertions</h2>
-      <div class="summary">由于一直都在进行测试的工作，所以会关注Assertion的工具，发现两个不错的Assertion 第三方包，准备在实践中使用. 这两个分别是： - Google Truth(http://google.github.io/truth/usage/) - assertj 这个里面有很多自己想实现的比较的功能。一下是一些简单的试用的代码。 Google Truth 基础的验证： @Test public void test_basic_truth(){ Set&lt;String&gt; foo = Sets.newHashSet(); assertThat(foo).isEmpty(); assertThat(foo).isNotNull(); assertThat(5).isEqualTo(5L); assertThat(5L).isEqualTo(5); assert_().that(50).isEqualTo(50); assertThat(&quot;test&quot;).isEqualTo(&quot;test&quot;); assertThat(&quot;test&quot;).contains(&quot;te&quot;); } Collections/Maps的验证: @Test public void test_basic_truth_maps_collections(){ Set&lt;String&gt; foo = Sets.newHashSet(); assertThat(foo).isEmpty(); assertThat(foo).isNotNull(); foo.add(&quot;test&quot;); foo.add(&quot;test1&quot;); foo.add(&quot;test2&quot;); assertThat(foo).contains(&quot;test&quot;); assertThat(foo).containsAllOf(&quot;test&quot;, &quot;test1&quot;); assertThat(foo).containsExactly(&quot;test2&quot;, &quot;test&quot;, &quot;test1&quot;); assertThat(foo).containsNoneOf(&quot;test889&quot;, &quot;test10&quot;); Map&lt;String,String&gt; maps = Maps.newHashMap(); maps.put(&quot;test&quot;, &quot;test1&quot;); maps.put(&quot;test1&quot;, &quot;test2&quot;); maps.put(&quot;test2&quot;, &quot;test3&quot;); assertThat(maps).containsKey(&quot;test1&quot;); assertThat(maps).containsEntry(&quot;test1&quot;, &quot;test2&quot;); assertThat(maps).doesNotContainEntry(&quot;test0&quot;, &quot;test0&quot;); } assertj 基础的验证： @Test public</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a>
     </div>
   </div>
   

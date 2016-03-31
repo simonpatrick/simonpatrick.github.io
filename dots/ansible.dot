@@ -1,0 +1,55 @@
+digraph ansible {
+  fontname="Monoco";
+    fontsize=14
+    dir=LR;
+  splines=false;
+    graph [dpi=180]
+    node [shape=record,fontname="Consolas",fontsize=10]
+    edge [color="#94052c",fontname="Consolas",fontsize=10];
+
+    subgraph cluster_controller{
+      label="Master Controller"
+      color="#2dd0c8";
+
+      inventory [label="inventory",color="#F88D19"];
+      playbook [label="playbook",color="#F88D19"];
+      modules [shape="component",label="core|customer",color="#F88D19"];
+      }
+
+    subgraph cluster_plugins{
+      label="插件";
+      color="#3C7CCC";
+
+      SSH [label="SSH" ,shape="component", color="#3C7CCC"];
+      ZeroMQ [label="ZeroMQ" ,shape="component", color="#3C7CCC"];
+      Local [label="Local" ,shape="component", color="#3C7CCC"];
+      KerberosLDAP [label="Kerberos LDAP" ,shape="component", color="#3C7CCC"];
+      EmailLogging [label="Email-Logging" ,shape="component", color="#3C7CCC"];
+
+    }
+
+    subgraph cluster_hosts{
+        label="hosts"
+        color="#a83b5f"
+
+        host1 [label="host1", shape="note"]
+        host2 [label="host2", shape="note"]
+        host3 [label="host3", shape="note"]
+        host4 [label="host4", shape="note"]
+        host5 [label="host5", shape="note"]
+    }
+
+    playbook->ZeroMQ [label="调用"]
+    playbook->SSH[label="调用"]
+    playbook->Local[label="调用"]
+    ZeroMQ->host1 [lable="操作"]
+    ZeroMQ->host2 [lable="操作"]
+    ZeroMQ->host3 [lable="操作"]
+    ZeroMQ->host4 [lable="操作"]
+    ZeroMQ->host5 [lable="操作"]
+    SSH->host1 [lable="操作"]
+    SSH->host2 [lable="操作"]
+    SSH->host3 [lable="操作"]
+    SSH->host4 [lable="操作"]
+    SSH->host5 [lable="操作"]
+}

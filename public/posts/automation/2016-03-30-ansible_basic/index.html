@@ -1,0 +1,344 @@
+<div class="single">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='http://fonts.useso.com/css?family=Open+Sans|Marcellus+SC'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
+
+    
+    <title>Ansible简单介绍 - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Ansible简单介绍 - Colored Hedwig: less is more">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/">
+    
+    <meta property="og:image" content="http://testless.github.io/images/ansible.png">
+
+  </head>
+
+  <body>
+
+    <header class="site">
+      <div class="title"><a href="http://testless.github.io/">Colored Hedwig: less is more</a></div>
+    </header>
+
+    <div class="container site">
+
+
+  <div class="row">
+    <div class="col-sm-9">
+
+      <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
+        <meta itemprop="dateModified" content="2016-03-30T13:15:11&#43;08:00">
+        <meta itemprop="headline" content="Ansible简单介绍">
+        <meta itemprop="description" content="Ansible 介绍 Ansible 目前都是使用在python2上面. installation 在MAC 上面安装ansible有两种方式： * pip pip install ansible brew brew install ansible ansible playbook 的简单使用 ansible 大概的一个框架图如下： 下面简单介绍一个使用ansible的例子： 配置hosts文件 在当前目录创建一个hosts文件： [jenkins] 192.168.3.50 配置ansible yml playbook文件 配置当前一个yml文件: - hosts: jenkins user: root accelerate:true tasks: - name: restart_nginx shell: sh /root/auto_publish_qadoc.sh 运行命令 ansible-playbook playbook.yml -i hosts -vv 就可以运行这些命令了,最简单的ansible就是这样上手非常容易. 不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实 过一下这个document估计也就是1天时间就可以上手干活了.">
+        <meta itemprop="url" content="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/">
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://testless.github.io/images/ansible.png" />
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="800">
+        </div>
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+          <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://testless.github.io/images/logo.jpg">
+            <meta itemprop="width" content="100">
+            <meta itemprop="height" content="100">
+          </div>
+          <meta itemprop="name" content="Colored Hedwig: less is more">
+        </div>
+        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <meta itemprop="name" content="">
+        </div>
+
+        <div class="image" style="background-image: url(http://testless.github.io/images/ansible.png);"></div>
+
+        <header class="article-header">
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-03-30T13:15:11&#43;08:00">Wed, Mar 30, 2016</time>
+          <h1 class="article-title">Ansible简单介绍</h1>
+        </header>
+
+        <div class="article-body" itemprop="articleBody">
+          
+
+<h1 id="ansible-介绍:255e96d28f562dab51b6164b8457fdbc">Ansible 介绍</h1>
+
+<p>Ansible 目前都是使用在python2上面.</p>
+
+<h2 id="installation:255e96d28f562dab51b6164b8457fdbc">installation</h2>
+
+<p>在MAC 上面安装ansible有两种方式：
+* pip</p>
+
+<pre><code class="language-shell">pip install ansible
+</code></pre>
+
+<ul>
+<li>brew</li>
+</ul>
+
+<pre><code class="language-shell">brew install ansible
+</code></pre>
+
+<h2 id="ansible-playbook-的简单使用:255e96d28f562dab51b6164b8457fdbc">ansible playbook 的简单使用</h2>
+
+<p>ansible 大概的一个框架图如下：
+<img src="ansible.png" alt="img" /></p>
+
+<p>下面简单介绍一个使用ansible的例子：</p>
+
+<ul>
+<li>配置hosts文件
+在当前目录创建一个hosts文件：</li>
+</ul>
+
+<pre><code class="language-shell">    [jenkins]
+    192.168.3.50
+</code></pre>
+
+<ul>
+<li>配置ansible yml playbook文件
+配置当前一个yml文件:</li>
+</ul>
+
+<pre><code class="language-shell">  - hosts: jenkins
+    user: root
+    accelerate:true
+    tasks:
+      - name: restart_nginx
+        shell: sh /root/auto_publish_qadoc.sh
+</code></pre>
+
+<ul>
+<li>运行命令</li>
+</ul>
+
+<pre><code class="language-shell">    ansible-playbook playbook.yml -i hosts -vv
+</code></pre>
+
+<p>就可以运行这些命令了,最简单的ansible就是这样上手非常容易.
+  不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实
+  过一下这个document估计也就是1天时间就可以上手干活了.</p>
+
+        </div>
+
+
+        <aside>
+          <div class="section">
+            <a href="http://testless.github.io/tags/automation" class="tag">automation</a>
+            </div>
+
+          <div class="section share">
+            
+            
+            
+            
+          </div>
+
+          
+          
+          
+        </aside>
+
+      </article>
+    </div>
+
+    <div class="col-sm-3">
+      <aside class="site">
+
+  
+  <div class="section">
+    <header><div class="title">TableOfContents</div></header>
+    <div class="list-default"><nav id="TableOfContents">
+<ul>
+<li><a href="#ansible-介绍:255e96d28f562dab51b6164b8457fdbc">Ansible 介绍</a>
+<ul>
+<li><a href="#installation:255e96d28f562dab51b6164b8457fdbc">installation</a></li>
+<li><a href="#ansible-playbook-的简单使用:255e96d28f562dab51b6164b8457fdbc">ansible playbook 的简单使用</a></li>
+</ul></li>
+</ul>
+</nav></div>
+  </div>
+  
+
+  
+
+  <div class="section">
+    <header><div class="title">LatestPosts</div></header>
+    <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/ansible.png);"></div>
+    <div class="detail">
+      <time>Wed, Mar 30, 2016</time>
+      <h2 class="title">Ansible简单介绍</h2>
+      <div class="summary">Ansible 介绍 Ansible 目前都是使用在python2上面. installation 在MAC 上面安装ansible有两种方式： * pip pip install ansible brew brew install ansible ansible playbook 的简单使用 ansible 大概的一个框架图如下： 下面简单介绍一个使用ansible的例子： 配置hosts文件 在当前目录创建一个hosts文件： [jenkins] 192.168.3.50 配置ansible yml playbook文件 配置当前一个yml文件: - hosts: jenkins user: root accelerate:true tasks: - name: restart_nginx shell: sh /root/auto_publish_qadoc.sh 运行命令 ansible-playbook playbook.yml -i hosts -vv 就可以运行这些命令了,最简单的ansible就是这样上手非常容易. 不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实 过一下这个document估计也就是1天时间就可以上手干活了.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/jenkins.png);"></div>
+    <div class="detail">
+      <time>Wed, Mar 30, 2016</time>
+      <h2 class="title">Jenkins API的简单介绍</h2>
+      <div class="summary">Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情. From Jenkins Home Page Jenkins is an automation engine with an unparalleled plugin ecosystem to support all of your favorite tools in your delivery pipelines, whether your goal is continuous integration, automated testing, or continuous delivery. Jenkins 使用 关于Jenkins的基本使用网上有很多的教程，基本使用其事没有太多说的，它是个平台，可以集成很多不同的工具，脚本等等. 总结下来这些东西包括： jenkins parameter setting, string, choice, &hellip;&hellip; JAVA 的maven, ant, gradle 等打包工具，其他语言也有类似的build，deploy，依赖管理的工具 定制化的脚本，可以在一个Jenkins的build步骤中运行这些脚本如shell命令，python脚本 定制插件来完成自己的特殊的目的 这些内容非常庞大，自己也不可能完全都知道，如果遇到实际的一些问题需要解决的话, 大体的逻辑就是，如果遇到一些特殊需求，那么先去找插件看能不能完成，如果没有插件就再想shell，python脚本等不同的事情，或者自己开发插件. Jenkins 的实践问题 随着Jenkins里面的任务越来越多，管理的环境越来越多，变更越来愈多，手工管理就会遇到一些问题： 比如为了改一个IP地址，可能需要没一个任务都去改具体的配置，比如部署同一个war到不同的测试环境，就需要给不同的job改IP 为了不同的环境配置不同的任务，需要很多的人工的配置修改等等 如果需要迁移一个多应用的测试环境，那么需要很多的复制，修改工作 那么为了解决这些问题，个人觉得可以改善的地方是： - 定义一些类型项目的模版，抽象一些参数出来给Jenkins里面的Job做参数话，当然有时需要修改的是默认值 - 在定义了一些模版之后，就可以通过操作Jenkins API的方式来操作 - 在尝试了一些Jenkins API之后，感觉纯粹通过API的方式去操作，不一定比复制Jenkins 任务，然后修改来的快，但是通过Jenkins API的方式 来操作Jenkins 的好处是，如果这些东西融入到运维的流程中，那么它会提高生产率 一些体会是，可能代码方式的操作单个单个来看不一定会提高多少生产率(参数一样要设)，但是如果放在一个流程的角度看，那么他的效率是高的，比如你如果需要运维帮你建环境，那么你需要提供一些信息，而这些信息就可以直接建立Jenkins的Job了，那么作为用户你只提供一次信息，就可以完成你需要的所有事情，这样效率就高了.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/7.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Feb 28, 2016</time>
+      <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
+      <div class="summary">在前面的Zabbix API调用中我们看到了python的__getattr__的妙用，下面就探索一下这里面的道理,所以就聊聊python面向对象的基础知识. Python 面向对象 说到面向对象，就会说到类(class)，对象(object),那么什么是Class，Object呢？ Object： Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors -wagging, barking, eating. An object is an instance of a class. Class: A class can be defined as a template/blue print that describes the behaviors/states that object of its type support. 那么综合起来，class就是用来描述一系列对象的一个模版，抽象出了共同的东西(class)，object就是具体的某种情况下的一个例子(instance) 面向对象有如下基础概念： Polymorphism Inheritance Encapsulation Abstraction Classes Objects Instance Method Message Parsing Python Class and Object 的使用 看下例： - class Dog 定义了一个类 - __init__ 构造这个类的方法，就是创建出一个Dog的对象是通过这个方法 - name, 类的一个属性;eat(),也可以看成是类的一个属性，实际上它是一个dog的一个行为(behavior) - dog = Dog() 是创建了一个Dog(class)的新的的对象(object), 按照我们上面说的，dog是类Dog(class)的一个实例(instance) class Dog: def __init__(self): self.name='dog' def eat(): print('eating......') dog = Dog() print(dog.name) Python 对象的创建 参考上例，分别来说明对象的创建，访问.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/18.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Feb 28, 2016</time>
+      <h2 class="title">Simple Word Counter</h2>
+      <div class="summary">有时测试的面试题中会考点编程的内容，比如统计字符串中的相同字符数量，具体题目如下： 给定一个字符串，如MIssissippi 计算字符串中每一个不同字符出现的数量 Python 的解法 letter_count={} for letter in 'MIssissippi': letter[letter]=letter_count.get(letter,0)+1 print(letter_count) 运行结果： {'s': 4, 'M': 1, 'i': 3, 'I': 1, 'p': 2} Java 的解法 JAVA 8 中给Map加入了getOrDefault的方法，下面就分别介绍一下JAVA8之前和使用JAVA8的方法： JAVA8 之前： public Map&lt;String,Integer&gt; countCharacters(String source){ char[] chars = source.toCharArray(); Map&lt;String,Integer&gt; result = new HashMap&lt;&gt;(); for (char aChar : chars) { Integer existing_counter = result.get(String.valueOf(aChar)); int counter = existing_counter==null?0:existing_counter; result.put(String.valueOf(aChar),counter+1); } return result; } JAVA8 解法 public Map&lt;String,Integer&gt; countCharacters_JAVA8(String source){ char[] chars</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
+    <div class="detail">
+      <time>Fri, Feb 26, 2016</time>
+      <h2 class="title">Python 访问Zabbix API</h2>
+      <div class="summary">Zabbix API 访问 准备使用Python来访问一下Zabbix，首先当然阅读一下Zabbix的API Manual,抛开什么json rpc这样的问题之外，zabbix的API的分类还是很工整的，所以看起来比较舒服，在一定了解了zabbix基础之后，基本上就可以上手来写了，网上查了一下，找个一个python zabbix的调用的一个客户段代码，感觉不错，就开始行动了。 Zabbix API 客户端代码的实现 Zabbix API的主要的两个参数其实是method，params，params基本上就可以看作一些可变的参数，其实就是一个json或者map， 对于method来说，一般就是 resource.action 这种方式，所以python客户端使用重写了一个getattr来做,返回一个可以访问不同资源名称的客户端,具体的代码如下： class ZabbixClient: &quot;&quot;&quot; Generic Zabbix API Client - login - get auth &quot;&quot;&quot; globale_header = { &quot;Content-Type&quot;: &quot;application/json-rpc&quot; } def __init__(self, session=None, timeout=None): self.user_name, self.default_user_name = '1', '1' self.password, self.default_password = '123456', '123456' self.zabbix_api_url = 'http://{0}/api_jsonrpc.php'.format('abcd.http') if session: self.session = session else: self.session = requests.session() self.session.headers.update({ 'Content-Type': 'application/json-rpc', 'User-Agent': 'python-zabbix-client', 'Cache-Control': 'no-cache' }) self.auth = '' self.id = 0 self.timeout = timeout logger.info('JSON-RPC Server EndPoint: %s', self.zabbix_api_url) def login_in(self, user_name=None, password=None): &quot;&quot;&quot; login with given user_name and password, if None, use default user :param user_name: :param password: :return: result,auth key &quot;&quot;&quot; if user_name: self.user_name = user_name if password: self.password = password self.auth = self.user.login(user=self.user_name, password=self.password) def api_version(self): return self.apiinfo.version() # def confimport(self, format='', source='', rules=''): # &quot;&quot;&quot;Alias for configuration.import because it clashes with # Python's import reserved keyword&quot;&quot;&quot; # # return self.do_request( # method=&quot;configuration.import&quot;, # params={&quot;format&quot;: format, &quot;source&quot;: source, &quot;rules&quot;: rules} # )['result'] def do_request(self, method, params=None): request_json = { 'jsonrpc': '2.0', 'method': method, 'params': params or {}, 'id': self.id, } if method != 'apiinfo.version' and self.auth: request_json['auth'] = self.auth logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(',', ':'))) response = self.session.post( self.zabbix_api_url, data=json.dumps(request_json), timeout=self.timeout ) logger.debug(&quot;Response Code : %s&quot;, str(response.status_code)) response.raise_for_status() if not len(response.text): raise ZabbixAPIException(&quot;没有返回值&quot;) try: response_json = json.loads(response.text) except ValueError: raise ZabbixAPIException(&quot;不能解析JSON %s&quot; % response.text) logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(',', ':'))) self.id += 1 if 'error' in response_json: if 'data' not in response_json['error']: response_json['error']['data'] = 'No Data' msg = &quot;Error {code}: {message},{data}&quot;.format( code=response_json['error']['code'], message=response_json['error']['message'], data=response_json['error']['data'] ) raise ZabbixAPIException(msg, response_json['error']['code']) return response_json def __getattr__(self, item): &quot;&quot;&quot; auto create Zabbix API Client :param item: :return: &quot;&quot;&quot; return ZabbixAPIObjectClass(item, self) class ZabbixAPIObjectClass(object): def __init__(self, name, parent): self.name = name self.parent = parent def __getattr__(self, item): &quot;&quot;&quot; dynamic create a method (get,create,update,delete) :param item: :return: &quot;&quot;&quot; def fn(*args, **kwargs): if args and kwargs: raise TypeError('Found Both args and kwargs') return self.parent.do_request('{0}.{1}'.format(self.name, item), args or kwargs)['result'] return fn 基本上一个文件就搞定了，不过这个基本上参考了网上的一个代码实现的，这里使用getattr这种方式可以非常简洁的处理了这种请求非常类似的情况，这也是python的魅力吧.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/25.jpg);"></div>
+    <div class="detail">
+      <time>Fri, Feb 26, 2016</time>
+      <h2 class="title">zabbix 基础</h2>
+      <div class="summary">抽空花了1个小时看了一下Zabbix的界面和简单的手册，了解了一下Zabbix的基础知识，下面是一个小小的记录,后面就写一些Python的脚本来直接调用Zabbix的API在进行一些自动化的操作. Zabbix 基础 Zabbix 是一个开源的监控系统，由于需要帮助运维写一些调用ZABBIX API的代码，所以就开始了解一下ZABBIX的一些基本概念. 简单的看了一下Zabbix的一个手册，大致了解Zabbix监控的一些概念，以下是Zabbix中比较重要的概念或者可以认为一些抽象的实体资源: Configuration HOST HOST GROUP Templates Monitor Application Items: keys Triggers Graphs Configuration:HOST HOST 就是Zabbix监控的对象，创建HOST可以通过一些预先定义好的模版来实现. 以Linux Group来说的话，HOST可能还有以下的一些属性： Agent Interface SNMP Interface JMX Interface IPMI Interface Monitory proxy Status Configuration: HOST GROUP 创建HOST的同时可以创建一个HOST GROUP，HOST GROUP实际上就是不同的HOST组合起来成一组. Configuration: Templates Templates 就是一些HOST的模版，相似的HOST可以通过模版继承，组合的方式创建 Monitor 从监控的层级来看，监控HOST的层级逻辑是： HOSTGROUP: HOST GROUP是可以认为不同HOST的容器 HOST: 监控的实体,监控的实体实际上有不同的监控模版组合而成 以下的APPLICATION，ITEM,TRIGGER,Graph 其实都是继承了模版的： APPLICATION,可以认为是一组监控的内容 ITEM: item就是监控的具体的一个数值,比如cl Loaded Class Count他的key是jmx[&quot;java.lang:type=ClassLoading&quot;,LoadedClassCount] 这个ITEM就是具体监控LoadedClass数目的一项，那么多个项目就可以组合成一个Application，ITEM 其实可以认为是采样数据的一个项 一个Template可以通过多个Application来组合而成，一个Application可以由Items来组合而成，一个HOST包含有多个监控的Template，一个HOST Group可以有多个HOST. 关于TEMPLATE的继承关系是： HOST 继承HOST GROUP的TEMPLATE Graph： 图表 Trigger： 触发器 这两个可以设置到模版级别的 Monitor: Application Application 可以认为是监控的一个大的项目，里面可能包括了不同的采样项目(item) create Application，可以参考一下API文档就可以 Monitor: Item Item创建首先需要创建一个key(在创建KEY之前可以先创建一个TEMPLATE)，key 相当于需要监控什么，如何设置？ - 监控客户端设置, 在zabbix_agentd.conf中需要添加UserParameter grep -v '#' /etc/zabbix/zabbix_agentd.conf|grep -v &quot;^$&quot; export UserParameter=&lt;key_name&gt;,&lt;shell_command&gt; &gt;&gt; &lt;configure_file_location&gt; ITEM的设置，可以设置ITEM的类型，同时使用一些表达是来完成需要的采样内容的设置 Graphs graph 就是图标，那么很明显，一个graph有x,y 轴，x轴一般总是时间序列，另外一个轴对应不同的item（采样项目），同时又一些graph的类型选择，以及图表大小的设置 Triggers Trigger 就是一个触发器，对于单独的一个item来说，如果设置了一些阀值,那么如果超过这个阀值，那么就会报警了.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Feb 22, 2016</time>
+      <h2 class="title">Mobile 性能测试关键点</h2>
+      <div class="summary">移动端性能测试的一些关键点 阅读了一些人的PPT，再这里记录一些移动端性能测试的一些关键点，每个关键点会在后续润色，细化. 移动端性能测试的方方面面 Android Monkey Memory Usage: /system/build.prop dalvik.vm.heapstartsize=8m # 堆分配的初始大小 dalvik.vm.heapgrowthlimit=64m adb shell procrank DDMS adb shell top 启动性能(首次，多次) 流量 应用占用量，cachesize，datasize，codesize 电量 CPU: active, idel memory leak, hprof, ddms dump hprof GPU 过度绘制 1.蓝色1x过度绘制 2.绿色2x过度绘制 3.淡红色3x过度绘制 4.红色超过4x过度绘制 gfxinfo systrace traceview tracer for OpenGL ES IOS instruments api business flow/scenario Performance Baseline comparison 颗粒度 Business flow Automation supporting poor network condition Security 混淆 加固 权限 本地数据库安全 ContentProvider共享 Activity注入风险 Tools Fiddler</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/6.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Feb 22, 2016</time>
+      <h2 class="title">JMETER 分布式测试</h2>
+      <div class="summary">JMETER DISTRIBUTION TESTING JMETER有时进行压力测试时，生成压力的机器性能不够，不能产生足够的压力，不过JMETER可以使用多个系统进行JMETER的压力测试，来解决这个问题. 使用多系统测试时需要注意： 关闭防火墙 client in the same subnet 服务器在同一个字网 Jmeter可以访问服务器 JMeter是同一版本的 JMETER Distribution Setting Master Setup config remote address: jmeter.properties: remote_host=ip1,ip2,ip3&hellip;.. salve setup running jmeter-server.bat/.sh 文件 modify jmeter-server file to change the rmiregistry location start TESTING Additional Resources JMETER FAQ REMOTE-TEST</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/4.jpg);"></div>
+    <div class="detail">
+      <time>Sat, Feb 13, 2016</time>
+      <h2 class="title">python yaml 使用介绍</h2>
+      <div class="summary">Python YAML 应用 YAML由于其可读性，越来越多的地方用它来做配置文件了来代替XML文件.下面就是用来介绍如何使用PYTHON来进行YAML的操作. 读取yaml或者写yaml，主要是用的是两个方法： load 读 dump 写 Read YAML to List 以下是读YAML 内容到python的list import yaml def load_list(): content = &quot;&quot;&quot; - config - domain - repository &quot;&quot;&quot; return yaml.load(content) Read YAML TO DICT load yaml to dict or a nest dict: import yaml def load_dict(): content = &quot;&quot;&quot; hello1: test hello2: test2 &quot;&quot;&quot; return yaml.load(content) def load_all_dict(): contents = &quot;&quot;&quot; hero: hp: 34 sp: 8 level: 4 orc: hp: 12 sp: 0 level: 2 &quot;&quot;&quot; return yaml.load(contents) print(load_dict()) print(load_all_dict()) Read YAML: auto type conversation yaml 对于格式要求比较严格的，： 后面注意加空格，同时python的原始类型通过load函数可以自动转化的.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/microservice/2016-02-01-microservice-try/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/19.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Feb 1, 2016</time>
+      <h2 class="title">01-微服务框架－Springboot/Flask,Hello World</h2>
+      <div class="summary">现在有很多的微服务框架，这里试用一下Java Springboot和Python的Flask. 本文分别试用SpringBoot和Flask完成了一个简单的Hello World服务来展示如何使用Springboot和Flask构建 一个简单的服务. 同时用AB进行了一个简单的压力测试。 SpringBoot Hello World Web Application Create a SpringBoot Application entry point add Beans into springboot startup life cycle 利用command-line runner的这个特性，再配合依赖注入，可以在应用程序启动时后首先引入一些依赖bean，例如data source、rpc服务或者其他模块等等，这些对象的初始化可以放在run方法中。不过，需要注意的是，在run方法中执行初始化动作的时候一旦遇到任何异常，都会使得应用程序停止运行，因此最好利用try/catch语句处理可能遇到的异常。 create HelloWorld Service All Codes for the simple hello world Service 以下代码的一些说明： - Web 应用的执行入口： main方法，里面的SpringApplication.run - StartupRunner 可以在SpringBoot Application启动过程中一些事情 - RestController注解表示了这个类是个Rest 风格的Controller pom.xml 中的唯一依赖，请指定版本或者parent指定为 &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;/dependency&gt; &lt;/dependencies&gt; @SpringBootApplication @RestController public class HelloWorldEndPoint { public static void main(String[] args) { SpringApplication.run(HelloWorldEndPoint.class,args); } public static class StartupRunner implements CommandLineRunner{ protected final Logger logger = LoggerFactory.getLogger(StartupRunner.class); @Override public void run(String...</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+    </div>
+  </div>
+
+  
+  <div class="section taxonomies">
+    <header><div class="title">category</div></header>
+    <div class="content">
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
+    </div>
+  </div>
+  
+  <div class="section taxonomies">
+    <header><div class="title">tag</div></header>
+    <div class="content">
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
+    </div>
+  </div>
+  
+
+</aside>
+
+    </div>
+
+  </div>
+
+      </div>
+
+    <footer class="site">
+      <p>&copy; 2016 Colored Hedwig: less is more</p>
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+      <p>Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+
+  </body>
+</html>
+
+</div>

@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/thoughts/2015-12-28-next-reading/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/3.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Dec 28, 2015</time>
+      <h2 class="title">下一步的技术了解</h2>
+      <div class="summary">Thoughtworks 发布了2015年技术雷达，看看他提到的东西可以长长见识。 技术篇 这里提到了几篇Martin Flower的文章，抽时间一定要看看。 Test Double nonDeterminism microservice 基本上他写的文章确实有必要看看的。 安全 －Thread Modeling 工具,语言，观念 graphiz hoodie couchdb Flux git as cms phoneix server functional reactive programing （FRP） Spark kylin.io TOTP 密码机制，two－factor authentication Deis.io H2O TSDB,OpenTSB,influxDB,Cassandra SPDY mountebank polly/brighter consul.io/DNS+HTTP,consulTemplate Hamms Rest-assured ZAP Kafka Blackbox Bokeh data visualization Vega /D3.js Gor NaCI Orgami PdfMaker SoundCloud Quick object C/swift security monkey</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/java/2015-12-23-ide_keyboards/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/24.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/true_stories/2015-11-19-talking_is_cheep/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/25.jpg);"></div>
-    <div class="detail">
-      <time>Thu, Nov 19, 2015</time>
-      <h2 class="title">Talking is Cheap,show me the code</h2>
-      <div class="summary">当看到如下的代码出现在production代码库的时候，不知道做何想法？无数的人动辄就谈客户需求，要触动痛点,是的没错，但是软件工程师还是要点工程追求的吧？如果这样的代码存在一些时候也就罢了，结果存在来Controller里面3-4年之久，情何以堪呀？指望用这样的代码去触动痛点？你是认真的吗？ 工程师首先是个匠人,先写好自己的代码，再去谈论这些虚幻的东西.看几本抽象的书，谁都可以高谈阔论，so what? Talking is Cheap,right? show me the code. protected String formatUserJSON(VSalary newSalary){ SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); String info = &quot;{\&quot;msg\&quot;:\&quot;&quot;+Constants.SUCCESS+&quot;\&quot;,\&quot;usercode\&quot;:\&quot;&quot;+newSalary.getUsercode()+&quot;\&quot;,\&quot;username\&quot;:\&quot;&quot;+newSalary.getUsername()+&quot;\&quot;,&quot; + &quot;\&quot;orgname\&quot;:\&quot;&quot;+newSalary.getOrgname()+&quot;\&quot;,\&quot;positionname\&quot;:\&quot;&quot;+newSalary.getPositionname()+&quot;\&quot;,\&quot;hasexperience\&quot;:\&quot;&quot;+newSalary.getHasexperience()+&quot;\&quot;,&quot; + &quot;\&quot;joindate\&quot;:\&quot;&quot;+sdf.format(newSalary.getJoindate())+&quot;\&quot;,\&quot;leavedate\&quot;:\&quot;&quot;+(newSalary.getLeavedate()==null?&quot;&quot;:sdf.format(newSalary.getLeavedate()))+&quot;\&quot;,&quot; + &quot;\&quot;lastmonthwage\&quot;:\&quot;&quot;+newSalary.getLastmonthwagestr()+&quot;\&quot;,\&quot;allowance\&quot;:\&quot;&quot;+newSalary.getAllowancestr()+&quot;\&quot;,&quot; + &quot;\&quot;basewage\&quot;:\&quot;&quot;+newSalary.getBasewagestr()+&quot;\&quot;,\&quot;totalwage\&quot;:\&quot;&quot;+newSalary.getTotalwagestr()+&quot;\&quot;,&quot; + &quot;\&quot;transferdays\&quot;:\&quot;&quot;+newSalary.getTransferdaysstr()+&quot;\&quot;,\&quot;paiddays\&quot;:\&quot;&quot;+newSalary.getPaiddaysstr()+&quot;\&quot;,&quot; + &quot;\&quot;leavehours\&quot;:\&quot;&quot;+newSalary.getLeavehoursstr()+&quot;\&quot;,\&quot;leavecost\&quot;:\&quot;&quot;+newSalary.getLeavecoststr()+&quot;\&quot;,&quot; + &quot;\&quot;illdaystotal\&quot;:\&quot;&quot;+newSalary.getIlldaystotalstr()+&quot;\&quot;,\&quot;illdays\&quot;:\&quot;&quot;+newSalary.getIlldaysstr()+&quot;\&quot;,&quot; + &quot;\&quot;illcost\&quot;:\&quot;&quot;+newSalary.getIllcoststr()+&quot;\&quot;,\&quot;latefreecount\&quot;:\&quot;&quot;+newSalary.getLatefreecountstr()+&quot;\&quot;,&quot; + &quot;\&quot;latecostcount\&quot;:\&quot;&quot;+newSalary.getLatecostcountstr()+&quot;\&quot;,\&quot;latecost\&quot;:\&quot;&quot;+newSalary.getLatecoststr()+&quot;\&quot;,&quot; + &quot;\&quot;leaveearly\&quot;:\&quot;&quot;+newSalary.getLeaveearlystr()+&quot;\&quot;,\&quot;leaveearlycost\&quot;:\&quot;&quot;+newSalary.getLeaveearlycoststr()+&quot;\&quot;,&quot; + &quot;\&quot;missclockfreecount\&quot;:\&quot;&quot;+newSalary.getMissclockfreecountstr()+&quot;\&quot;,\&quot;missclockcostcount\&quot;:\&quot;&quot;+newSalary.getMissclockcostcountstr()+&quot;\&quot;,&quot; + &quot;\&quot;missclockcost\&quot;:\&quot;&quot;+newSalary.getMissclockcoststr()+&quot;\&quot;,\&quot;absentcount\&quot;:\&quot;&quot;+newSalary.getAbsentcountstr()+&quot;\&quot;,&quot; + &quot;\&quot;absentcost\&quot;:\&quot;&quot;+newSalary.getAbsentcoststr()+&quot;\&quot;,\&quot;leavetotalcost\&quot;:\&quot;&quot;+newSalary.getLeavetotalcoststr()+&quot;\&quot;,&quot; + &quot;\&quot;bussallowance\&quot;:\&quot;&quot;+newSalary.getBussallowancestr()+&quot;\&quot;,\&quot;olderallowance\&quot;:\&quot;&quot;+newSalary.getOlderallowancestr()+&quot;\&quot;,&quot; + &quot;\&quot;petrolallowance\&quot;:\&quot;&quot;+newSalary.getPetrolallowancestr()+&quot;\&quot;,\&quot;otheradd\&quot;:\&quot;&quot;+newSalary.getOtheraddstr()+&quot;\&quot;,&quot; + &quot;\&quot;otheraddremark\&quot;:\&quot;&quot;+(newSalary.getOtheraddremark()==null?&quot;&quot;:newSalary.getOtheraddremark())+&quot;\&quot;,\&quot;othertotal\&quot;:\&quot;&quot;+newSalary.getOthertotalstr()+&quot;\&quot;,&quot; + &quot;\&quot;firededuction\&quot;:\&quot;&quot;+newSalary.getFiredeductionstr()+&quot;\&quot;,\&quot;notfulldeduction\&quot;:\&quot;&quot;+newSalary.getNotfulldeductionstr()+&quot;\&quot;,&quot; + &quot;\&quot;punishdeduction\&quot;:\&quot;&quot;+newSalary.getPunishdeductionstr()+&quot;\&quot;,\&quot;otherdeduction\&quot;:\&quot;&quot;+newSalary.getOtherdeductionstr()+&quot;\&quot;,&quot; + &quot;\&quot;otherdeductionremark\&quot;:\&quot;&quot;+(newSalary.getOtherdeductionremark()==null?&quot;&quot;:newSalary.getOtherdeductionremark())+&quot;\&quot;,\&quot;deductiontotal\&quot;:\&quot;&quot;+newSalary.getDeductiontotalstr()+&quot;\&quot;,&quot; + &quot;\&quot;shouldtotal\&quot;:\&quot;&quot;+newSalary.getShouldtotalstr()+&quot;\&quot;,\&quot;commission\&quot;:\&quot;&quot;+newSalary.getCommissionstr()+&quot;\&quot;,\&quot;commissionDecu\&quot;:\&quot;&quot;+newSalary.getCommissionDecustr()+&quot;\&quot;,\&quot;status\&quot;:\&quot;&quot;+newSalary.getStatus()+&quot;\&quot;,&quot;+ &quot;\&quot;insuredtype\&quot;:\&quot;&quot;+(newSalary.getInsuredtype()==null?&quot;&quot;:newSalary.getInsuredtype())+&quot;\&quot;,\&quot;insuredbase\&quot;:\&quot;&quot;+newSalary.getInsuredbasestr()+&quot;\&quot;,&quot; + &quot;\&quot;oldageinsurance\&quot;:\&quot;&quot;+newSalary.getOldageinsurancestr()+&quot;\&quot;,\&quot;medicalinsurance\&quot;:\&quot;&quot;+newSalary.getMedicalinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;unemployedinsurance\&quot;:\&quot;&quot;+newSalary.getUnemployedinsurancestr()+&quot;\&quot;,\&quot;accufundtype\&quot;:\&quot;&quot;+(newSalary.getAccufundtype()==null?&quot;&quot;:newSalary.getAccufundtype())+&quot;\&quot;,&quot; + &quot;\&quot;accufundbase\&quot;:\&quot;&quot;+newSalary.getAccufundbasestr()+&quot;\&quot;,\&quot;accufund\&quot;:\&quot;&quot;+newSalary.getAccufundstr()+&quot;\&quot;,&quot; + &quot;\&quot;socialinsurance\&quot;:\&quot;&quot;+newSalary.getSocialinsurancestr()+&quot;\&quot;,\&quot;taxtotal\&quot;:\&quot;&quot;+newSalary.getTaxtotalstr()+&quot;\&quot;,&quot; + &quot;\&quot;persontax\&quot;:\&quot;&quot;+newSalary.getPersontaxstr()+&quot;\&quot;,\&quot;financialdeduction\&quot;:\&quot;&quot;+newSalary.getFinancialdeductionstr()+&quot;\&quot;,&quot; + &quot;\&quot;finalwage\&quot;:\&quot;&quot;+newSalary.getFinalwagestr()+&quot;\&quot;,\&quot;reward\&quot;:\&quot;&quot;+ newSalary.getRewardstr()+ &quot;\&quot;,&quot; + &quot;\&quot;otherdeductionList\&quot;:&quot;+JSONArray.fromObject(newSalary.getOtherdeductionList()).toString()+ &quot;,&quot; + &quot;\&quot;negativeAmount\&quot;:\&quot;&quot;+newSalary.getNegativeAmountstr()+&quot;\&quot;,&quot; + &quot;\&quot;currentsocialinsurance\&quot;:\&quot;&quot;+newSalary.getCurrentsocialinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;surplussocialinsurance\&quot;:\&quot;&quot;+newSalary.getSurplussocialinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;currentaccufund\&quot;:\&quot;&quot;+newSalary.getCurrentaccufundstr()+&quot;\&quot;,&quot; + &quot;\&quot;surplusaccufund\&quot;:\&quot;&quot;+newSalary.getSurplusaccufundstr()+&quot;\&quot;,&quot; + &quot;\&quot;currentoldageinsurance\&quot;:\&quot;&quot;+newSalary.getCurrentoldageinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;surplusoldageinsurance\&quot;:\&quot;&quot;+newSalary.getSurplusoldageinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;currentmedicalinsurance\&quot;:\&quot;&quot;+newSalary.getCurrentmedicalinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;surplusmedicalinsurance\&quot;:\&quot;&quot;+newSalary.getSurplusmedicalinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;currentunemployedinsurance\&quot;:\&quot;&quot;+newSalary.getCurrentunemployedinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;surplusunemployedinsurance\&quot;:\&quot;&quot;+newSalary.getSurplusunemployedinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;withholdingAdd\&quot;:\&quot;&quot;+newSalary.getWithholdingAddstr()+&quot;\&quot;,&quot; + &quot;\&quot;withholdingDeduction\&quot;:\&quot;&quot;+newSalary.getWithholdingDeductionstr()+&quot;\&quot;,&quot; + &quot;\&quot;withholdingAddRemark\&quot;:\&quot;&quot;+(newSalary.getWithholdingAddRemark() == null ?</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -210,6 +210,18 @@
   <div class="section">
     <header><div class="title">LatestPosts</div></header>
     <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/ansible.png);"></div>
+    <div class="detail">
+      <time>Wed, Mar 30, 2016</time>
+      <h2 class="title">Ansible简单介绍</h2>
+      <div class="summary">Ansible 介绍 Ansible 目前都是使用在python2上面. installation 在MAC 上面安装ansible有两种方式： * pip pip install ansible brew brew install ansible ansible playbook 的简单使用 ansible 大概的一个框架图如下： 下面简单介绍一个使用ansible的例子： 配置hosts文件 在当前目录创建一个hosts文件： [jenkins] 192.168.3.50 配置ansible yml playbook文件 配置当前一个yml文件: - hosts: jenkins user: root accelerate:true tasks: - name: restart_nginx shell: sh /root/auto_publish_qadoc.sh 运行命令 ansible-playbook playbook.yml -i hosts -vv 就可以运行这些命令了,最简单的ansible就是这样上手非常容易. 不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实 过一下这个document估计也就是1天时间就可以上手干活了.</div>
+    </div>
+  </a>
+</article>
+</div>
       
       <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/" class="clearfix">
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/automation/2016-02-01-assertions/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/11.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Feb 1, 2016</time>
-      <h2 class="title">assertions</h2>
-      <div class="summary">由于一直都在进行测试的工作，所以会关注Assertion的工具，发现两个不错的Assertion 第三方包，准备在实践中使用. 这两个分别是： - Google Truth(http://google.github.io/truth/usage/) - assertj 这个里面有很多自己想实现的比较的功能。一下是一些简单的试用的代码。 Google Truth 基础的验证： @Test public void test_basic_truth(){ Set&lt;String&gt; foo = Sets.newHashSet(); assertThat(foo).isEmpty(); assertThat(foo).isNotNull(); assertThat(5).isEqualTo(5L); assertThat(5L).isEqualTo(5); assert_().that(50).isEqualTo(50); assertThat(&quot;test&quot;).isEqualTo(&quot;test&quot;); assertThat(&quot;test&quot;).contains(&quot;te&quot;); } Collections/Maps的验证: @Test public void test_basic_truth_maps_collections(){ Set&lt;String&gt; foo = Sets.newHashSet(); assertThat(foo).isEmpty(); assertThat(foo).isNotNull(); foo.add(&quot;test&quot;); foo.add(&quot;test1&quot;); foo.add(&quot;test2&quot;); assertThat(foo).contains(&quot;test&quot;); assertThat(foo).containsAllOf(&quot;test&quot;, &quot;test1&quot;); assertThat(foo).containsExactly(&quot;test2&quot;, &quot;test&quot;, &quot;test1&quot;); assertThat(foo).containsNoneOf(&quot;test889&quot;, &quot;test10&quot;); Map&lt;String,String&gt; maps = Maps.newHashMap(); maps.put(&quot;test&quot;, &quot;test1&quot;); maps.put(&quot;test1&quot;, &quot;test2&quot;); maps.put(&quot;test2&quot;, &quot;test3&quot;); assertThat(maps).containsKey(&quot;test1&quot;); assertThat(maps).containsEntry(&quot;test1&quot;, &quot;test2&quot;); assertThat(maps).doesNotContainEntry(&quot;test0&quot;, &quot;test0&quot;); } assertj 基础的验证： @Test public</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/git">git</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   
