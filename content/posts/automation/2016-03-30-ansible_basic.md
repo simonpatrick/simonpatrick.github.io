@@ -15,6 +15,7 @@ Ansible 目前都是使用在python2上面.
 ## installation
 
 在MAC 上面安装ansible有两种方式：
+
 * pip
 
 ```shell
@@ -30,7 +31,7 @@ brew install ansible
 ## ansible playbook 的简单使用
 
 ansible 大概的一个框架图如下：
-![img](../images/ansible.png)
+![img](/images/ansible.png)
 
 
 下面简单介绍一个使用ansible的例子：
