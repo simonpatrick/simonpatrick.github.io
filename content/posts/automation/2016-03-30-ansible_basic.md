@@ -30,7 +30,7 @@ brew install ansible
 ## ansible playbook 的简单使用
 
 ansible 大概的一个框架图如下：
-![img](ansible.png)
+![img](../images/ansible.png)
 
 
 下面简单介绍一个使用ansible的例子：
