@@ -15,14 +15,14 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
 
     
-    <title>True Stories: About Return Flag - Colored Hedwig: less is more</title>
-    <meta property='og:title' content="True Stories: About Return Flag - Colored Hedwig: less is more">
+    <title>VIM 使用小结 - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="VIM 使用小结 - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://testless.github.io/posts/true_stories/2015-10-24-return-flag/">
+    <meta property="og:url" content="http://testless.github.io/posts/shell/2016-04-05-VIM-%E6%80%BB%E7%BB%93/">
     
-    <meta property="og:image" content="http://testless.github.io/images/27.jpg">
+    <meta property="og:image" content="http://testless.github.io/images/vim.png">
 
   </head>
 
@@ -41,12 +41,12 @@
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
         <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
-        <meta itemprop="dateModified" content="2015-10-24T10:31:11&#43;08:00">
-        <meta itemprop="headline" content="True Stories: About Return Flag">
-        <meta itemprop="description" content="Return Flag 真实的一段代码片段： public boolean update(Inquiry inquiry) { boolean bUpdBaseInf = super.update(inquiry); solrService.syncUpdate(new SolrInquiry(inquiry.getInquiryId())); return bUpdBaseInfo; } 自己的思考： 这个返回的状态值没有完全体现整个函数的状态 如果solrService是个异步还可以理解这个返回值，但是名字是syncUpdate 直接是不是应该怀疑这是个异步更新？ solr的更新真的需要同步吗？solr的更新可能直接影响到整个业务的处理了&hellip;&hellip; 这里也许是留了点坑关于这个flag的 这个flag的命名是不是有点那个啥? 代码REVIEW 流程的思考 这样的代码,个人觉得代码REVIEW是需要检查出来的。也许这样的代码永远也不会出现问题，但是他的味道就是不好。 就算我是一个测试，也看出这里面不严谨的地方了,很多时候我们总是讲流程,流程，流程，但是有了流程又怎么样呢？ 一个好的技术团队是有他自己的品味的.呆过技术很好的公司,也呆过技术比较一般的公司,比较不同类别公司的开发， 很好的公司的开发更加注重这些细节,你可能觉得他们其实都在写差不多的代码,但是这种细节的常年累积,一个产品是否好维护就会出现很明显的差距了. 不容易维护的产品,有时可能已经资不抵债了. 如果想的更远一点的话,关于开发经常说到的工作无聊没有挑战的话题， 好公司的开发说的工作无聊和一般公司一些开发说的工作无聊可能是两个不同层次的无聊。 有些知道确实没有挑战而有些只是不知道其实自己写的代码挺烂的而已。我无意攻击任何人只是说说我真实的想法。">
-        <meta itemprop="url" content="http://testless.github.io/posts/true_stories/2015-10-24-return-flag/">
+        <meta itemprop="dateModified" content="2015-11-05T18:31:42&#43;00:00">
+        <meta itemprop="headline" content="VIM 使用小结">
+        <meta itemprop="description" content="VIM 用法 日常会不经意间使用VIM编辑器来处理一些文本编辑的事情。所以整理VIM的基本使用如下： 命令 说明 q 退出 i insert a append h 左移 k 上移 j 下移 l 右移 r 替换 u 撤销 x 删除光标位置字符 d^ 删除当前位置到行首 dd 删除当前行 d$ 删除当前位置到行尾 dw 删除当前位置到一个word尾 3dd 删除当前行下三行 p 粘贴 &lt;&lt; 当前行左移一个宽度 &gt;&gt; 当前行右移一个宽度 ％ 匹配的括号 ^ 行的开始 . 匹配单字符 * 匹配0个或多个之前的字符 $ 行的结束 [ 还是一系列的匹配 &lt;&gt; 一个字的结束或开始,/&lt;the&gt; 只匹配the f 向右移动到指定字符 F 向左移动到指定字符 ctrl&#43;b 向后回滚一页 ctrl＋d 向前滚动半个窗口 ctrl＋F 向前滚动一页 ctrl＋H 左移一个空格 ctrl＋J 下移一个空格 ( 移动到句子开头 ) 移动到句子句尾 { 前一个段落 &#43; 下一行非空字符 - 前一行非空字符 _ 当前行的非空字符 y和d的作用类似，不同的是y只提取文字而不删除文字 其他命令 - 缩写：ab test &ldquo;testing in tesitng&rdquo; - mapping, :map,:map!">
+        <meta itemprop="url" content="http://testless.github.io/posts/shell/2016-04-05-VIM-%E6%80%BB%E7%BB%93/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://testless.github.io/images/27.jpg" />
+          <meta itemprop="url" content="http://testless.github.io/images/vim.png" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -62,59 +62,234 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://testless.github.io/images/27.jpg);"></div>
+        <div class="image" style="background-image: url(http://testless.github.io/images/vim.png);"></div>
 
         <header class="article-header">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-10-24T10:31:11&#43;08:00">Sat, Oct 24, 2015</time>
-          <h1 class="article-title">True Stories: About Return Flag</h1>
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-11-05T18:31:42&#43;00:00">Thu, Nov 5, 2015</time>
+          <h1 class="article-title">VIM 使用小结</h1>
         </header>
 
         <div class="article-body" itemprop="articleBody">
           
 
-<h2 id="return-flag:081a6705e25a8c1a4cb7eb415ba38a3e">Return Flag</h2>
+<h1 id="vim-用法:00cdc123d50e9581bc8df92cf45aa452">VIM 用法</h1>
 
-<p>真实的一段代码片段：</p>
+<p>日常会不经意间使用VIM编辑器来处理一些文本编辑的事情。所以整理VIM的基本使用如下：</p>
 
-<pre><code class="language-java">
-public boolean update(Inquiry inquiry) {
-    boolean bUpdBaseInf = super.update(inquiry);
-    solrService.syncUpdate(new SolrInquiry(inquiry.getInquiryId()));
-    return bUpdBaseInfo;
-}
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
 
-</code></pre>
+<tbody>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
 
-<p>自己的思考：</p>
+<tr>
+<td>i</td>
+<td>insert</td>
+</tr>
 
-<ul>
-<li>这个返回的状态值没有完全体现整个函数的状态</li>
-<li>如果solrService是个异步还可以理解这个返回值，但是名字是syncUpdate
-直接是不是应该怀疑这是个异步更新？</li>
-<li>solr的更新真的需要同步吗？solr的更新可能直接影响到整个业务的处理了&hellip;&hellip;</li>
-<li>这里也许是留了点坑关于这个flag的</li>
-<li>这个flag的命名是不是有点那个啥?</li>
-</ul>
+<tr>
+<td>a</td>
+<td>append</td>
+</tr>
 
-<h2 id="代码review-流程的思考:081a6705e25a8c1a4cb7eb415ba38a3e">代码REVIEW 流程的思考</h2>
+<tr>
+<td>h</td>
+<td>左移</td>
+</tr>
 
-<p>这样的代码,个人觉得代码REVIEW是需要检查出来的。也许这样的代码永远也不会出现问题，但是他的味道就是不好。
-就算我是一个测试，也看出这里面不严谨的地方了,很多时候我们总是讲流程,流程，流程，但是有了流程又怎么样呢？</p>
+<tr>
+<td>k</td>
+<td>上移</td>
+</tr>
 
-<p>一个好的技术团队是有他自己的品味的.呆过技术很好的公司,也呆过技术比较一般的公司,比较不同类别公司的开发，
-很好的公司的开发更加注重这些细节,你可能觉得他们其实都在写差不多的代码,但是这种细节的常年累积,一个产品是否好维护就会出现很明显的差距了.
-不容易维护的产品,有时可能已经资不抵债了.</p>
+<tr>
+<td>j</td>
+<td>下移</td>
+</tr>
 
-<p>如果想的更远一点的话,关于开发经常说到的工作无聊没有挑战的话题，
-好公司的开发说的工作无聊和一般公司一些开发说的工作无聊可能是两个不同层次的无聊。
-有些知道确实没有挑战而有些只是不知道其实自己写的代码挺烂的而已。我无意攻击任何人只是说说我真实的想法。</p>
+<tr>
+<td>l</td>
+<td>右移</td>
+</tr>
+
+<tr>
+<td>r</td>
+<td>替换</td>
+</tr>
+
+<tr>
+<td>u</td>
+<td>撤销</td>
+</tr>
+
+<tr>
+<td>x</td>
+<td>删除光标位置字符</td>
+</tr>
+
+<tr>
+<td>d^</td>
+<td>删除当前位置到行首</td>
+</tr>
+
+<tr>
+<td>dd</td>
+<td>删除当前行</td>
+</tr>
+
+<tr>
+<td>d$</td>
+<td>删除当前位置到行尾</td>
+</tr>
+
+<tr>
+<td>dw</td>
+<td>删除当前位置到一个word尾</td>
+</tr>
+
+<tr>
+<td>3dd</td>
+<td>删除当前行下三行</td>
+</tr>
+
+<tr>
+<td>p</td>
+<td>粘贴</td>
+</tr>
+
+<tr>
+<td>&lt;&lt;</td>
+<td>当前行左移一个宽度</td>
+</tr>
+
+<tr>
+<td>&gt;&gt;</td>
+<td>当前行右移一个宽度</td>
+</tr>
+
+<tr>
+<td>％</td>
+<td>匹配的括号</td>
+</tr>
+
+<tr>
+<td>^</td>
+<td>行的开始</td>
+</tr>
+
+<tr>
+<td>.</td>
+<td>匹配单字符</td>
+</tr>
+
+<tr>
+<td>*</td>
+<td>匹配0个或多个之前的字符</td>
+</tr>
+
+<tr>
+<td>$</td>
+<td>行的结束</td>
+</tr>
+
+<tr>
+<td>[</td>
+<td>还是一系列的匹配</td>
+</tr>
+
+<tr>
+<td>&lt;&gt;</td>
+<td>一个字的结束或开始,/&lt;the&gt; 只匹配the</td>
+</tr>
+
+<tr>
+<td>f</td>
+<td>向右移动到指定字符</td>
+</tr>
+
+<tr>
+<td>F</td>
+<td>向左移动到指定字符</td>
+</tr>
+
+<tr>
+<td>ctrl+b</td>
+<td>向后回滚一页</td>
+</tr>
+
+<tr>
+<td>ctrl＋d</td>
+<td>向前滚动半个窗口</td>
+</tr>
+
+<tr>
+<td>ctrl＋F</td>
+<td>向前滚动一页</td>
+</tr>
+
+<tr>
+<td>ctrl＋H</td>
+<td>左移一个空格</td>
+</tr>
+
+<tr>
+<td>ctrl＋J</td>
+<td>下移一个空格</td>
+</tr>
+
+<tr>
+<td>(</td>
+<td>移动到句子开头</td>
+</tr>
+
+<tr>
+<td>)</td>
+<td>移动到句子句尾</td>
+</tr>
+
+<tr>
+<td>{</td>
+<td>前一个段落</td>
+</tr>
+
+<tr>
+<td>+</td>
+<td>下一行非空字符</td>
+</tr>
+
+<tr>
+<td>-</td>
+<td>前一行非空字符</td>
+</tr>
+
+<tr>
+<td>_</td>
+<td>当前行的非空字符</td>
+</tr>
+</tbody>
+</table>
+
+<p>y和d的作用类似，不同的是y只提取文字而不删除文字</p>
+
+<p>其他命令
+- 缩写：ab test &ldquo;testing in tesitng&rdquo;
+- mapping, :map,:map!
+- vim -r file_name.txt</p>
 
         </div>
 
 
         <aside>
           <div class="section">
-            <a href="http://testless.github.io/tags/truestories" class="tag">truestories</a>
+            <a href="http://testless.github.io/tags/shell" class="tag">shell</a>
             </div>
 
           <div class="section share">
@@ -140,11 +315,7 @@ public boolean update(Inquiry inquiry) {
     <header><div class="title">TableOfContents</div></header>
     <div class="list-default"><nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li><a href="#return-flag:081a6705e25a8c1a4cb7eb415ba38a3e">Return Flag</a></li>
-<li><a href="#代码review-流程的思考:081a6705e25a8c1a4cb7eb415ba38a3e">代码REVIEW 流程的思考</a></li>
-</ul></li>
+<li><a href="#vim-用法:00cdc123d50e9581bc8df92cf45aa452">VIM 用法</a></li>
 </ul>
 </nav></div>
   </div>
@@ -283,14 +454,14 @@ public boolean update(Inquiry inquiry) {
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   
