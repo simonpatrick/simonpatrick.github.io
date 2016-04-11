@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/java/2015-12-02-singleton/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/23.jpg);"></div>
+    <div class="detail">
+      <time>Wed, Dec 2, 2015</time>
+      <h2 class="title">Singleton 的不同写法</h2>
+      <div class="summary">Singleton是JAVA的一个非常常见的方式，不过不同写的方式会有不同的想法，下面就介绍一下这个模式 Singleton 懒汉式模式，线程不安全 一个基本的写法如下: private static LazySingleton instance; private LazySingleton(){} public static LazySingleton getInstance(){ if(instance==null){ instance=new LazySingleton(); } return instance; } 这个的一个问题是线程不安全，就是当instance是null的时候，可能有两个线程同时满足，这样就是两个实例产生 那么一个改进就是,加入synchronized public static LazySingleton getInstance(){ if(instance==null){ synchronized (LazySingleton.class){ instance=new LazySingleton(); } } return instance; } 来自网上的解释说这个也是有问题的: 这段代码看起来很完美，很可惜，它是有问题。主要在于instance = new Singleton()这句，这并非是一个原子操作，事实上在 JVM 中这句话大概做了下面 3 件事情。 给 instance 分配内存 调用 Singleton 的构造函数来初始化成员变量 将instance对象指向分配的内存空间（执行完这步 instance 就为非 null 了） 但是在 JVM 的即时编译器中存在指令重排序的优化。也就是说上面的第二步和第三步的顺序是不能保证的，最终的执行顺序可能是 1-2-3 也可能是 1-3-2。如果是后者，则在 3 执行完毕、2 未执行之前，被线程二抢占了，这时 instance 已经是非 null 了（但却没有初始化），所以线程二会直接返回 instance，然后使用，然后顺理成章地报错。 那么将instace定义为: private volatile static Singleton instance; //声明成 volatile 使用 volatile 的原因是可见性，也就是可以保证线程在本地不会存有instance 的副本，每次都是去主内存中读取。但其实是不对的。使用 volatile 的主要原因是其另一个特性：禁止指令重排序优化 读操作不会被重排序到内存屏障之前,从「先行发生原则」的角度理解的话，就是对于一个 volatile 变量的写操作都先行发生于后面对这个变量的读操作（这里的“后面”是时间上的先后顺序.</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/automation/2015-11-27-webservice-automation/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/7.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/9.jpg);"></div>
-    <div class="detail">
-      <time>Tue, Nov 3, 2015</time>
-      <h2 class="title">Refactoring-10-introduce method object, replace conditions with polymorphism</h2>
-      <div class="summary">将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。 public class Registration { public void create(double amount,String name, double credits){ //do work } } 重构后: //instroduce new Class public class RegistrationContext { double amount; String name; double credits; } //modify the method public void createRefactored(RegistrationContext context){ //do work } 多态替代条件判断 有时通过If&hellip;Else来判断不同的类型进行不同的处理，代码可读性不是很强，通过多态来替代这些 条件判断，同时抽取方法后，代码就会更加的具有可读性. public class OrderProcessor { public double processOrder(Customer cu,List&lt;Product&gt; products){ double orderTotal = products.parallelStream().mapToDouble(Product::getPrice).sum(); if(cu instanceof Employee){ orderTotal-=orderTotal*0.15; } if (cu instanceof NonEmployee){ orderTotal-=orderTotal*0.10; } return</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -210,6 +210,18 @@
   <div class="section">
     <header><div class="title">LatestPosts</div></header>
     <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/designpattern/2016-04-11-singleton/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Apr 11, 2016</time>
+      <h2 class="title">Java Singleton ENUM as instance HOLDER</h2>
+      <div class="summary">Singleton 单例设计模式 单例模式是产生一个类的唯一实例。 Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的： public class InitializingOnDemandHolderIdiom implements Serializable { private static final long serialVersionUID = 1L; private static class HelperHolder { public static final InitializingOnDemandHolderIdiom INSTANCE = new InitializingOnDemandHolderIdiom(); } public static InitializingOnDemandHolderIdiom getInstance() { return HelperHolder.INSTANCE; } private InitializingOnDemandHolderIdiom() { } protected Object readResolve() { return getInstance(); } }</div>
+    </div>
+  </a>
+</article>
+</div>
       
       <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/shell/2016-04-05-VIM-%E6%80%BB%E7%BB%93/" class="clearfix">
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/python/2016-02-13-python-yaml/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/4.jpg);"></div>
-    <div class="detail">
-      <time>Sat, Feb 13, 2016</time>
-      <h2 class="title">python yaml 使用介绍</h2>
-      <div class="summary">Python YAML 应用 YAML由于其可读性，越来越多的地方用它来做配置文件了来代替XML文件.下面就是用来介绍如何使用PYTHON来进行YAML的操作. 读取yaml或者写yaml，主要是用的是两个方法： load 读 dump 写 Read YAML to List 以下是读YAML 内容到python的list import yaml def load_list(): content = &quot;&quot;&quot; - config - domain - repository &quot;&quot;&quot; return yaml.load(content) Read YAML TO DICT load yaml to dict or a nest dict: import yaml def load_dict(): content = &quot;&quot;&quot; hello1: test hello2: test2 &quot;&quot;&quot; return yaml.load(content) def load_all_dict(): contents = &quot;&quot;&quot; hero: hp: 34 sp: 8 level: 4 orc: hp: 12 sp: 0 level: 2 &quot;&quot;&quot; return yaml.load(contents) print(load_dict()) print(load_all_dict()) Read YAML: auto type conversation yaml 对于格式要求比较严格的，： 后面注意加空格，同时python的原始类型通过load函数可以自动转化的.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/git">git</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/git">git</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/git">git</a>
     </div>
   </div>
   
