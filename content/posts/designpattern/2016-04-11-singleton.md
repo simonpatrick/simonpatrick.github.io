@@ -5,7 +5,7 @@ modified: null
 categories:
   - designpattern
   - java
-image: .jpg
+image: singleton.jpg
 tags:
   - designpattern
   - java
