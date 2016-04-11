@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/api/2015-12-02-api_contract_design/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/2.jpg);"></div>
+    <div class="detail">
+      <time>Wed, Dec 2, 2015</time>
+      <h2 class="title">True Stories: 从API的URL定义想到的</h2>
+      <div class="summary">关于REST API接口的设计没有了解太多，不过实际的测试中看到一些这样设计的接口资源路径URL，自己感觉就是怪怪的， 感觉这样的接口URL总是哪里不太对劲，所以自己就分析了一下： http://domain.org/api/v4/＊＊/coursePassed/{appCode}/{courseId}/{userCode} 自己的思考是感觉这个东西不是很理想，无法通过一个路径了解大概是个什么事情，自己的感觉或许这样会更清楚一点 http://domain.org/api/v4/app/{appCode}/user/course/{courseId} 感觉这样的URL说清楚了： － 哪个APP － 是用户的course的状态 － usercode可能不需要，应为已经使用了oAuth认证了 通过这样的命名的话，如果想获取一个用户所有的course的状态，或许就是： http://domain.org/api/v4/app/{appCode}/user/course/ 而我加上user的目的是表示这个是用户的课程考核状态，而不是course本身的状态。 原来的URL里面coursePassed上太具体了，可能本来这个接口其实是获取course的考核状态，如果写上这个coursePassed的话，或许只能返回true or false了，是不是有点太具体了，实际的实现和扩展非常有可能和这个有区别，而且如果有时需要一个接口提供的知识course考核的状态，那么难道再写一个API的接口来给状态，如果不是，那么coursePassed叫法就是值得商量的. 然后自己查了一下关于REST API设计原则的文章: rest api 虽然没有直接说明如何设计，但是看完之后我自己觉得我的想法没有太大错误.感觉好的原则就是应该合乎一个常理的，通顺的，有上下文逻辑的.</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/java/2015-12-02-singleton/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/23.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/thoughts/2015-11-03-Test-Tools/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/1.jpg);"></div>
-    <div class="detail">
-      <time>Wed, Nov 4, 2015</time>
-      <h2 class="title">测试用例-一些有意思的工具</h2>
-      <div class="summary">Automation Test Case Generate Tools Korat(structurally complex tests) Randoop (random testing) CERT Basic Fuzzing Framework ZZUF cert.org osate link</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -218,6 +218,18 @@
       <time>Mon, Apr 11, 2016</time>
       <h2 class="title">Java Singleton ENUM as instance HOLDER</h2>
       <div class="summary">Singleton 单例设计模式 单例模式是产生一个类的唯一实例。 Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的： public class InitializingOnDemandHolderIdiom implements Serializable { private static final long serialVersionUID = 1L; private static class HelperHolder { public static final InitializingOnDemandHolderIdiom INSTANCE = new InitializingOnDemandHolderIdiom(); } public static InitializingOnDemandHolderIdiom getInstance() { return HelperHolder.INSTANCE; } private InitializingOnDemandHolderIdiom() { } protected Object readResolve() { return getInstance(); } }</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/designpattern/2016-04-11-prototype-pattern/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/prototype.png);"></div>
+    <div class="detail">
+      <time>Mon, Apr 11, 2016</time>
+      <h2 class="title">Prototype Pattern</h2>
+      <div class="summary">prototype pattern 实际上是通过clone的方式创建出同一个类的不同对象. Java Prototype 一般Prototype模式中，又一个prototype的抽象类： public abstract class Prototype implements Cloneable{ @Override protected abstract Object clone() throws CloneNotSupportedException; } 这个抽象类的不同子类： public abstract class Beast extends Prototype { @Override public abstract Beast clone() throws CloneNotSupportedException; } public class ElfBeast extends Beast { public ElfBeast() { } public ElfBeast(ElfBeast beast) { } @Override public Beast clone() throws CloneNotSupportedException { return new ElfBeast(this); } @Override public String toString() { return &quot;Elven eagle&quot;;</div>
     </div>
   </a>
 </article>
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/6.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Feb 22, 2016</time>
-      <h2 class="title">JMETER 分布式测试</h2>
-      <div class="summary">JMETER DISTRIBUTION TESTING JMETER有时进行压力测试时，生成压力的机器性能不够，不能产生足够的压力，不过JMETER可以使用多个系统进行JMETER的压力测试，来解决这个问题. 使用多系统测试时需要注意： 关闭防火墙 client in the same subnet 服务器在同一个字网 Jmeter可以访问服务器 JMeter是同一版本的 JMETER Distribution Setting Master Setup config remote address: jmeter.properties: remote_host=ip1,ip2,ip3&hellip;.. salve setup running jmeter-server.bat/.sh 文件 modify jmeter-server file to change the rmiregistry location start TESTING Additional Resources JMETER FAQ REMOTE-TEST</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   
