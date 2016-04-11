@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/python/2015-05-16-svn_reviewboard_python/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/22.jpg);"></div>
+    <div class="detail">
+      <time>Sat, May 16, 2015</time>
+      <h2 class="title">Python完成简单的SVN Reviewboard Precommit的客户端</h2>
+      <div class="summary">最近公司需要使用review board进行代码pre-commit review(pre-commit:正式提交前review)，而公司的现状是： 1. 使用SVN作为代码版本管理工具 2. 开发工具有eclipse，idea 3. MAC 和windows 机器居多 考虑到开发eclipse和idea插件，连接review board我一个人无法完成，同时能力也不够来开发这两种插件， 所以就准备python写一个命令行工具，期间研究了一下taobao review board的插件，感觉有点复杂，这个也是 使用python来些命令行工具的一个理由,也考虑过使用node-webkit来写个客户端，不过由于时间上的限制也就先放弃了 实现 实现过程中，使用到主要的包和工具是： RBTools,review board 自带的工具，但是支持中文能力让人有点困惑 python，cmd 包(python自带)，requests包使用 pip install requests 安装 ConEmuPack(windows CMD的替代),主要为了支持window系统 SVN 最后实现了如下功能 - 选择更改的文件，提交Review Board 作为pre-commit review - 根据review request id 提交代码到SVN - python直接操作svn命令,可以通过简单的命令就提交代码(由于使用习惯的问题,个人觉得命令行比UI效率更高) svn命令有个问题就是如果操作delete或者add这种的话,如果文件没有直接放到svn work copy的话,提交需要两步操作, 而这个工具也解决了这个问题 Review Board 功能介绍 review board 是进行代码review的一个工具，目前公司主要用来做pre-commit的review，在review board针对pre-主要有如下概念： review request draft, draft里面包含了differ文件，描述，review的人等等 review request，在这个review request上面review review完毕，才可以提交代码 安装和配置 1.安装Python 和Requests包 下载安装最新版本的Python，确保在命令行中可以执行Python命令，如果打开命令行工具，执行python -v 失败，需要在环境变量中设置Python的执行路径 安装Python完成之后，在命令行中执行 pip install requests 安装requests包到全局。MAC可能需要使用: sudo pip install requests 2.</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/api/2015-01-24-api_as_document_tool/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/1.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/shell/2014-08-24-shell_101_env/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/13.jpg);"></div>
-    <div class="detail">
-      <time>Sun, Aug 24, 2014</time>
-      <h2 class="title">Shell Learning - 环境变量</h2>
-      <div class="summary">摘自：http://wklken.me/posts/2014/01/12/shell-script-base.html env env |grep keyword 修改环境变量 未在当前进程中定义，而是从父进程中继承而来的变量 export 设置环境变量,之后,从当前shell 执行的任何程序都会继承这个变量 PATH 查找可执行文件路径, 通常定义在/etc/environment or /ect/profile or ~/.bashrc export PYTHONPATH=$PYTHONPATH:/home/ken/workspace export PATH=$PATH:/new/path/ 常用的环境变量名： #!/bin/bash echo $HOME echo $PWD echo $USER echo $UID echo $SHELL #Result ╰─[:)] % sh env_variant.sh /Users/patrick /Users/patrick/workspace/works/shell_learning patrick 501 /bin/zsh 检查是否是root # root的UID=0 if [ $UID -ne 0 ] then echo &quot;not root user&quot; else echo &quot;root&quot; fi #result: ╰─[:)] % sh is_root.sh not root user ╭─[~/workspace/works/shell_learning]─[patrick@patrickdeMacBook-Pro]─[0]─[10192]</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -218,6 +218,18 @@
       <time>Mon, Apr 11, 2016</time>
       <h2 class="title">Java Singleton ENUM as instance HOLDER</h2>
       <div class="summary">Singleton 单例设计模式 单例模式是产生一个类的唯一实例。 Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的： public class InitializingOnDemandHolderIdiom implements Serializable { private static final long serialVersionUID = 1L; private static class HelperHolder { public static final InitializingOnDemandHolderIdiom INSTANCE = new InitializingOnDemandHolderIdiom(); } public static InitializingOnDemandHolderIdiom getInstance() { return HelperHolder.INSTANCE; } private InitializingOnDemandHolderIdiom() { } protected Object readResolve() { return getInstance(); } }</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/designpattern/2016-04-11-prototype-pattern/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/prototype.png);"></div>
+    <div class="detail">
+      <time>Mon, Apr 11, 2016</time>
+      <h2 class="title">Prototype Pattern</h2>
+      <div class="summary">prototype pattern 实际上是通过clone的方式创建出同一个类的不同对象. Java Prototype 一般Prototype模式中，又一个prototype的抽象类： public abstract class Prototype implements Cloneable{ @Override protected abstract Object clone() throws CloneNotSupportedException; } 这个抽象类的不同子类： public abstract class Beast extends Prototype { @Override public abstract Beast clone() throws CloneNotSupportedException; } public class ElfBeast extends Beast { public ElfBeast() { } public ElfBeast(ElfBeast beast) { } @Override public Beast clone() throws CloneNotSupportedException { return new ElfBeast(this); } @Override public String toString() { return &quot;Elven eagle&quot;;</div>
     </div>
   </a>
 </article>
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/6.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Feb 22, 2016</time>
-      <h2 class="title">JMETER 分布式测试</h2>
-      <div class="summary">JMETER DISTRIBUTION TESTING JMETER有时进行压力测试时，生成压力的机器性能不够，不能产生足够的压力，不过JMETER可以使用多个系统进行JMETER的压力测试，来解决这个问题. 使用多系统测试时需要注意： 关闭防火墙 client in the same subnet 服务器在同一个字网 Jmeter可以访问服务器 JMeter是同一版本的 JMETER Distribution Setting Master Setup config remote address: jmeter.properties: remote_host=ip1,ip2,ip3&hellip;.. salve setup running jmeter-server.bat/.sh 文件 modify jmeter-server file to change the rmiregistry location start TESTING Additional Resources JMETER FAQ REMOTE-TEST</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/git">git</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   

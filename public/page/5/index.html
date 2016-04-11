@@ -40,6 +40,20 @@
           
           <div class="col-sm-6">
             <article class="li">
+  <a href="http://testless.github.io/posts/thoughts/2015-11-03-Test-Tools/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/1.jpg);"></div>
+    <div class="detail">
+      <time>Wed, Nov 4, 2015</time>
+      <h2 class="title">测试用例-一些有意思的工具</h2>
+      <div class="summary">Automation Test Case Generate Tools Korat(structurally complex tests) Randoop (random testing) CERT Basic Fuzzing Framework ZZUF cert.org osate link</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-6">
+            <article class="li">
   <a href="http://testless.github.io/posts/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/9.jpg);"></div>
     <div class="detail">
@@ -80,7 +94,7 @@
 
           </div>
           
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <article class="li">
   <a href="http://testless.github.io/posts/ruby/2015-11-3-ruby-basic-dependecy-management/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/11.jpg);"></div>
@@ -164,20 +178,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/refactoring/2015-10-26-replace-inheritance-with-delegation/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Oct 26, 2015</time>
-      <h2 class="title">Refactoring-6-Replace Inheritance with Delegation</h2>
-      <div class="summary">Replace Inheritance with Delegation, 这种重构方式主要是继承有时 看起来不是那么合理，同时继承可能让程序的扩展性不好，所以可以改用委托 或者组合的形式重构。 代码实例 Refactor前: public class Sanitation { public String washHands(){ return &quot;Cleaned!&quot;; } } class Child extends Sanitation{ public static void main(String[] args) { System.out.println(new Child().washHands()); } } Refactor之后: 把继承关系拿掉，才有委托的方式: class ChildRefactor{ Sanitation s; public ChildRefactor() { s = new Sanitation(); } public String washHands(){ return s.washHands(); } } 好处的思考 逻辑上Sanitation(公共卫生)和Child没有那种继承关系,修改之后表达更加准确 Child的washHand方法实际更加灵活了 更加容易通过使用Dependency Injection注入</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -214,6 +214,18 @@
       <time>Mon, Apr 11, 2016</time>
       <h2 class="title">Java Singleton ENUM as instance HOLDER</h2>
       <div class="summary">Singleton 单例设计模式 单例模式是产生一个类的唯一实例。 Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的： public class InitializingOnDemandHolderIdiom implements Serializable { private static final long serialVersionUID = 1L; private static class HelperHolder { public static final InitializingOnDemandHolderIdiom INSTANCE = new InitializingOnDemandHolderIdiom(); } public static InitializingOnDemandHolderIdiom getInstance() { return HelperHolder.INSTANCE; } private InitializingOnDemandHolderIdiom() { } protected Object readResolve() { return getInstance(); } }</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/designpattern/2016-04-11-prototype-pattern/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/prototype.png);"></div>
+    <div class="detail">
+      <time>Mon, Apr 11, 2016</time>
+      <h2 class="title">Prototype Pattern</h2>
+      <div class="summary">prototype pattern 实际上是通过clone的方式创建出同一个类的不同对象. Java Prototype 一般Prototype模式中，又一个prototype的抽象类： public abstract class Prototype implements Cloneable{ @Override protected abstract Object clone() throws CloneNotSupportedException; } 这个抽象类的不同子类： public abstract class Beast extends Prototype { @Override public abstract Beast clone() throws CloneNotSupportedException; } public class ElfBeast extends Beast { public ElfBeast() { } public ElfBeast(ElfBeast beast) { } @Override public Beast clone() throws CloneNotSupportedException { return new ElfBeast(this); } @Override public String toString() { return &quot;Elven eagle&quot;;</div>
     </div>
   </a>
 </article>
@@ -315,18 +327,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/performance/2016-02-22-jmeter_distribution_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/6.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Feb 22, 2016</time>
-      <h2 class="title">JMETER 分布式测试</h2>
-      <div class="summary">JMETER DISTRIBUTION TESTING JMETER有时进行压力测试时，生成压力的机器性能不够，不能产生足够的压力，不过JMETER可以使用多个系统进行JMETER的压力测试，来解决这个问题. 使用多系统测试时需要注意： 关闭防火墙 client in the same subnet 服务器在同一个字网 Jmeter可以访问服务器 JMeter是同一版本的 JMETER Distribution Setting Master Setup config remote address: jmeter.properties: remote_host=ip1,ip2,ip3&hellip;.. salve setup running jmeter-server.bat/.sh 文件 modify jmeter-server file to change the rmiregistry location start TESTING Additional Resources JMETER FAQ REMOTE-TEST</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -334,14 +334,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   
