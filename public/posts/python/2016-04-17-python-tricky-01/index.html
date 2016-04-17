@@ -1,0 +1,956 @@
+<div class="single">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel='stylesheet' href='http://fonts.useso.com/css?family=Open+Sans|Marcellus+SC'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
+
+    
+    <title>Python Tricky-01 - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Python Tricky-01 - Colored Hedwig: less is more">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://testless.github.io/posts/python/2016-04-17-python-tricky-01/">
+    
+    <meta property="og:image" content="http://testless.github.io/images/18.jpg">
+
+  </head>
+
+  <body>
+
+    <header class="site">
+      <div class="title"><a href="http://testless.github.io/">Colored Hedwig: less is more</a></div>
+    </header>
+
+    <div class="container site">
+
+
+  <div class="row">
+    <div class="col-sm-9">
+
+      <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
+        <meta itemprop="dateModified" content="2016-04-17T10:41:15&#43;00:00">
+        <meta itemprop="headline" content="Python Tricky-01">
+        <meta itemprop="description" content="Python Tricky python tricky 是记录一些Python使用过程中一些神奇的小技巧. Argument Unpacking 一个argument unpacking的例子： def product(a, b): print(&quot;a is %d&quot; % a) print(&quot;b is %d&quot; % b) return a * b argument_tuple = (1, 2) argument_dict = {&#39;a&#39;: 1, &#39;b&#39;: 2} argument_list = [1,2] # interesting for unpacking print(product(*argument_list)) print(product(*argument_tuple)) print(product(**argument_dict)) python unpacking 这里指的是调用python函数的参数可以自动匹配： list: 顺序匹配函数参数，变量调用时以*开始 tuple：顺序匹配函数参数，变量调用时以*开始 dict: 根据key值来匹配，变量调用时以**开始 下面是一个可扩展unpacking的方式： *其实表示一个list &quot;&quot;&quot;allows collecting not explicitly assigned values into a placeholder variable&quot;&quot;&quot; a, *b, c = range(10) print(a, b, c) &quot;&quot;&quot;advanced example&quot;&quot;&quot; [(c, *d, [*e]), f, *g] = [[1, 2, 3, 4, [5, 5, 5]], 6, 7, 8] print(c, d, e, f, g) bool python 中的bool有True or False，python2中的True 或者False都可以改变对应的值： python中的True or False可以参加数学运算： a = 5 print(isinstance(a,int)&#43;(a&lt;10)) # interesting writing print([&quot;is odd&quot;,&quot;is even&quot;][a % 2 ==0]) print(&quot;is even&quot; if a % 2 ==0 else &quot;is odd&quot;) python中循环如果使用True会比使用1来的慢，不过一般肯定是使用True or False来做循环的： from timeit import timeit def test_true(): count = 100 while True: # Here is True if count &lt; 0: break count = -1 def test_1(): count = 100 while 1: break count -= 1 print(&#39;use True: %s&#39; %timeit(test_true, number=1000000)) print(&#39;use 1: %s&#39; % timeit(test_1, number=1000000)) 结果： use True: 0.21380468501592986 use 1: 0.1610587630129885 Property Cache python 的property可以通过__get__来获取，同时可以在运行时添加，改变属性的值 class PropertyCache: &quot;&quot;&quot; a decorator to cache property &quot;&quot;&quot; def __init__(self, func): self.func = func def __get__(self, obj, cls): if not obj: return self value = self.func(obj) # Magic Here, there is property_to_be_cached property there setattr(obj, self.func.__name__, value) return value class Foo: def __init__(self): self._property_to_be_cached = &#39;result&#39; @PropertyCache def property_to_be_cached(self): print(&#39;compute&#39;) return self._property_to_be_cached test = Foo() print(test.property_to_be_cached) print(test.property_to_be_cached) print(Foo().property_to_be_cached) 这里通过一个装饰器：PropertyCache 来装饰property_to_be_cached，在调用property_to_be_cached时，其实是通过PropertyCache的get来获取，那么： value = self.func(obj) 就是通过调用Foo中的property_to_be_cached函数，value就是property_to_be_cached的返回值 setattr(obj, self.func.name, value)： 就是将value付给了属性：property_to_be_cached，self.func.name 其实就是property_to_be_cached 这是一个挺有意思的例子来说明了动态语言的一些magic的方法 calculator 这里例子可以看出，python的函数的一些使用方法，函数也可以作为一种参数，活着变量 import operator ops = { &quot;&#43;&quot;: operator.add, &quot;-&quot;: operator.sub, &quot;/&quot;: operator.truediv, &quot;*&quot;: operator.mul } x = input(&quot;Enter an operator [OPTIONS: &#43;, -, *, /]: &quot;) y = int(input(&quot;Enter number: &quot;)) z = int(input(&quot;Enter number: &quot;)) # interesting to use function print (ops[x](y, z)) chained comparsion a = 10 print(1 &lt; a &lt; 50) print(10 == a &lt; 20) compile python 可以通过exec可以直接运行组装起来的字符串，当然其实很多语言都可以的&hellip;&hellip; import math # using sin, cos and sqrt for example &#39;&#39;&#39; Takes a code string and returns a ready-to-use function &#39;&#39;&#39; def compile_(s): code = &quot;&quot;&quot;def f(x):\n return {}&quot;&quot;&quot;.format(s) # wrap the string as a function f(x) scope = {&quot;sin&quot;: math.sin, &quot;cos&quot;: math.cos, &quot;sqrt&quot;: math.sqrt} # define the scope for the code to use exec(code, scope) # execute code inside the given scope # f(x) gets defined inside %vis% return scope[&quot;f&quot;] # now we only have to extract it and return f = compile_(&quot;x**2 &#43; 2*sin(x)&quot;) print(f(10)) &quot;&quot;&quot;exec can be used to execute Python code during runtime variables can be handed over as a dict &quot;&quot;&quot; exec(&quot;print(&#39;Hello &#39; &#43; s)&quot;, {&#39;s&#39;: &#39;World&#39;}) sequence sequence 其实是个list，如果遍历这个list，遍历时需要进行一些调用的话，那么下面例子提供了两个不同的方法.">
+        <meta itemprop="url" content="http://testless.github.io/posts/python/2016-04-17-python-tricky-01/">
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://testless.github.io/images/18.jpg" />
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="800">
+        </div>
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+          <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://testless.github.io/images/logo.jpg">
+            <meta itemprop="width" content="100">
+            <meta itemprop="height" content="100">
+          </div>
+          <meta itemprop="name" content="Colored Hedwig: less is more">
+        </div>
+        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <meta itemprop="name" content="">
+        </div>
+
+        <div class="image" style="background-image: url(http://testless.github.io/images/18.jpg);"></div>
+
+        <header class="article-header">
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-04-17T10:41:15&#43;00:00">Sun, Apr 17, 2016</time>
+          <h1 class="article-title">Python Tricky-01</h1>
+        </header>
+
+        <div class="article-body" itemprop="articleBody">
+          
+
+<h1 id="python-tricky:ef56bf75207028c7c1c18cd426e7fc88">Python Tricky</h1>
+
+<p>python tricky 是记录一些Python使用过程中一些神奇的小技巧.</p>
+
+<h2 id="argument-unpacking:ef56bf75207028c7c1c18cd426e7fc88">Argument Unpacking</h2>
+
+<p>一个argument unpacking的例子：</p>
+
+<pre><code class="language-python">def product(a, b):
+    print(&quot;a is %d&quot; % a)
+    print(&quot;b is %d&quot; % b)
+    return a * b
+
+
+argument_tuple = (1, 2)
+argument_dict = {'a': 1, 'b': 2}
+argument_list = [1,2]
+# interesting for unpacking
+print(product(*argument_list))
+print(product(*argument_tuple))
+print(product(**argument_dict))
+</code></pre>
+
+<p>python unpacking 这里指的是调用python函数的参数可以自动匹配：</p>
+
+<ul>
+<li>list: 顺序匹配函数参数，变量调用时以*开始</li>
+<li>tuple：顺序匹配函数参数，变量调用时以*开始</li>
+<li>dict: 根据key值来匹配，变量调用时以**开始</li>
+</ul>
+
+<p>下面是一个可扩展unpacking的方式： <code>*</code>其实表示一个list</p>
+
+<pre><code class="language-python">&quot;&quot;&quot;allows collecting not explicitly assigned values into
+a placeholder variable&quot;&quot;&quot;
+
+a, *b, c = range(10)
+print(a, b, c)
+
+&quot;&quot;&quot;advanced example&quot;&quot;&quot;
+
+[(c, *d, [*e]), f, *g] = [[1, 2, 3, 4, [5, 5, 5]], 6, 7, 8]
+print(c, d, e, f, g)
+</code></pre>
+
+<h2 id="bool:ef56bf75207028c7c1c18cd426e7fc88">bool</h2>
+
+<p>python 中的bool有True or False，python2中的True 或者False都可以改变对应的值：</p>
+
+<p>python中的True or False可以参加数学运算：</p>
+
+<pre><code class="language-python">a = 5
+print(isinstance(a,int)+(a&lt;10))
+# interesting writing
+print([&quot;is odd&quot;,&quot;is even&quot;][a % 2 ==0])
+print(&quot;is even&quot; if a % 2 ==0 else &quot;is odd&quot;)
+</code></pre>
+
+<p>python中循环如果使用True会比使用1来的慢，不过一般肯定是使用True or False来做循环的：</p>
+
+<pre><code class="language-python">from timeit import timeit
+
+
+def test_true():
+    count = 100
+    while True:  # Here is True
+        if count &lt; 0:
+            break
+        count = -1
+
+
+def test_1():
+    count = 100
+    while 1:
+        break
+    count -= 1
+
+
+print('use True: %s' %timeit(test_true, number=1000000))
+print('use 1: %s' % timeit(test_1, number=1000000))
+</code></pre>
+
+<p>结果：</p>
+
+<pre><code>use True: 0.21380468501592986
+use 1: 0.1610587630129885
+</code></pre>
+
+<h2 id="property-cache:ef56bf75207028c7c1c18cd426e7fc88">Property Cache</h2>
+
+<p>python 的property可以通过<code>__get__</code>来获取，同时可以在运行时添加，改变属性的值</p>
+
+<pre><code class="language-python">class PropertyCache:
+    &quot;&quot;&quot; a decorator to cache property
+    &quot;&quot;&quot;
+
+    def __init__(self, func):
+        self.func = func
+
+    def __get__(self, obj, cls):
+        if not obj:
+            return self
+        value = self.func(obj)
+        # Magic Here, there is property_to_be_cached property there
+        setattr(obj, self.func.__name__, value)
+        return value
+
+
+class Foo:
+    def __init__(self):
+        self._property_to_be_cached = 'result'
+
+    @PropertyCache
+    def property_to_be_cached(self):
+        print('compute')
+        return self._property_to_be_cached
+
+test = Foo()
+
+print(test.property_to_be_cached)
+print(test.property_to_be_cached)
+print(Foo().property_to_be_cached)
+</code></pre>
+
+<p>这里通过一个装饰器：PropertyCache 来装饰property_to_be_cached，在调用property_to_be_cached时，其实是通过PropertyCache的<strong>get</strong>来获取，那么：</p>
+
+<ul>
+<li>value = self.func(obj) 就是通过调用Foo中的property_to_be_cached函数，value就是property_to_be_cached的返回值</li>
+<li>setattr(obj, self.func.<strong>name</strong>, value)： 就是将value付给了属性：property_to_be_cached，self.func.<strong>name</strong> 其实就是property_to_be_cached</li>
+</ul>
+
+<p>这是一个挺有意思的例子来说明了动态语言的一些magic的方法</p>
+
+<h2 id="calculator:ef56bf75207028c7c1c18cd426e7fc88">calculator</h2>
+
+<p>这里例子可以看出，python的函数的一些使用方法，函数也可以作为一种参数，活着变量</p>
+
+<pre><code class="language-python">import operator
+ops = {
+    &quot;+&quot;: operator.add,
+    &quot;-&quot;: operator.sub,
+    &quot;/&quot;: operator.truediv,
+    &quot;*&quot;: operator.mul
+}
+
+x = input(&quot;Enter an operator [OPTIONS: +, -, *, /]: &quot;)
+y = int(input(&quot;Enter number: &quot;))
+z = int(input(&quot;Enter number: &quot;))
+
+# interesting to use function
+print (ops[x](y, z))
+</code></pre>
+
+<h2 id="chained-comparsion:ef56bf75207028c7c1c18cd426e7fc88">chained comparsion</h2>
+
+<pre><code class="language-python">a = 10
+print(1 &lt; a &lt; 50)
+print(10 == a &lt; 20)
+</code></pre>
+
+<h2 id="compile:ef56bf75207028c7c1c18cd426e7fc88">compile</h2>
+
+<p>python 可以通过<code>exec</code>可以直接运行组装起来的字符串，当然其实很多语言都可以的&hellip;&hellip;</p>
+
+<pre><code class="language-python">
+import math  # using sin, cos and sqrt for example
+
+''' Takes a code string and returns a ready-to-use function '''
+
+
+def compile_(s):
+    code = &quot;&quot;&quot;def f(x):\n  return {}&quot;&quot;&quot;.format(s)  # wrap the string as a function f(x)
+    scope = {&quot;sin&quot;: math.sin, &quot;cos&quot;: math.cos, &quot;sqrt&quot;: math.sqrt}  # define the scope for the code to use
+    exec(code, scope)  # execute code inside the given scope
+    # f(x) gets defined inside %vis%
+    return scope[&quot;f&quot;]  # now we only have to extract it and return
+
+
+f = compile_(&quot;x**2 + 2*sin(x)&quot;)
+print(f(10))
+</code></pre>
+
+<pre><code class="language-python">&quot;&quot;&quot;exec can be used to execute Python code during runtime
+variables can be handed over as a dict
+&quot;&quot;&quot;
+exec(&quot;print('Hello ' + s)&quot;, {'s': 'World'})
+</code></pre>
+
+<h2 id="sequence:ef56bf75207028c7c1c18cd426e7fc88">sequence</h2>
+
+<p>sequence 其实是个list，如果遍历这个list，遍历时需要进行一些调用的话，那么下面例子提供了两个不同的方法.</p>
+
+<pre><code class="language-python">import operator
+
+
+class Foo():
+    def bar(self, *args, **kwargs):
+        print('method bar works')
+
+
+sequence = [Foo() for i in range(5)]
+
+# in python3 map returns iterator so we must ask python to process elements by list()
+# in python2 map(operator.methodcaller('bar'), sequence) works perfectly
+list(map(operator.methodcaller('bar'), sequence))
+
+# there is another way more understandable
+[f.bar() for f in sequence]
+</code></pre>
+
+<h2 id="conditional-assignment:ef56bf75207028c7c1c18cd426e7fc88">Conditional assignment</h2>
+
+<p>python 的if else的另外一种写法：</p>
+
+<pre><code class="language-python">
+b = True print(True if b else False)
+b = None or False print(b)
+
+&quot;&quot;&quot;calling different functions with same arguments based on condition&quot;&quot;&quot;
+def product(a, b):     
+  return a * b
+
+def subtract(a, b):
+  return a - b
+
+b = True print((product if b else subtract)(1, 1))
+</code></pre>
+
+<h2 id="context-manager:ef56bf75207028c7c1c18cd426e7fc88">context manager</h2>
+
+<p>with 通过context manager来控制上下问，同时释放资源运行finally的内容</p>
+
+<pre><code class="language-python">&quot;&quot;&quot;Context managers are useful for automatically releasing resources once you are done with them.&quot;&quot;&quot;
+
+# common context manager that will close
+# a file when it has been read
+with open('README.md') as f:
+    contents = f.read()
+
+# make your own context manager
+import contextlib
+
+
+@contextlib.contextmanager
+def unlock(resource):
+    resource = &quot;unlocked&quot;
+    try:
+        yield resource
+    finally:
+        resource = &quot;locked&quot;
+
+
+# a resource that is locked
+resource = &quot;locked&quot;
+
+# test that it is indeed locked
+print(resource)
+
+# call your 'unlock' context manager with your resource
+with unlock(resource) as unlocked:
+    print(unlocked)  # check that it is unlocked
+
+# ensure it was re-locked when it left the 'unlock' context
+print(resource)
+</code></pre>
+
+<h2 id="controll-the-whitespace:ef56bf75207028c7c1c18cd426e7fc88">controll the whitespace</h2>
+
+<pre><code class="language-python">&quot;&quot;&quot;control the whitespaces in string&quot;&quot;&quot;
+
+s = 'The Little Price'
+
+# justify string to be at least width wide
+# by adding whitespaces
+width = 20
+s1 = s.ljust(width)
+s2 = s.rjust(width)
+s3 = s.center(width)
+print(s1)   # 'The Little Price    '
+print(s2)   # '    The Little Price'
+print(s3)   # '  The Little Price  '
+
+# strip whitespaces in two sides of string
+print(s3.lstrip())  # 'The Little Price  '
+print(s3.rstrip())  # '  The Little Price'
+print(s3.strip())   # 'The Little Price'
+</code></pre>
+
+<h2 id="copy-list:ef56bf75207028c7c1c18cd426e7fc88">copy list</h2>
+
+<p>python 的copy 和deep copy，list 的copy python3中也可以copy嵌套的list内容</p>
+
+<pre><code class="language-python">
+a = [1, 2, 3, 4, 5]
+print(a[:])
+
+&quot;&quot;&quot;using the list.copy() method (python3 only)&quot;&quot;&quot;
+
+a = [1, 2, 3, 4, 5]
+
+print(a.copy())
+
+
+&quot;&quot;&quot;copy nested lists using copy.deepcopy&quot;&quot;&quot;
+
+from copy import deepcopy
+
+l = [[1, 2], [3, 4]]
+
+l2 = deepcopy(l)
+print(l2)
+</code></pre>
+
+<h2 id="class-as-list:ef56bf75207028c7c1c18cd426e7fc88">class as list</h2>
+
+<p>下面个例子有个一些很好玩的地方：</p>
+
+<ul>
+<li>namedtuple</li>
+<li>两个列表正交产生集合</li>
+</ul>
+
+<pre><code class="language-python">self._cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks]
+</code></pre>
+
+<ul>
+<li><code>__getitem__</code> 在list的使用</li>
+</ul>
+
+<p>例子：</p>
+
+<pre><code class="language-python">&quot;&quot;&quot; How to use dunder methods to add behavior to objects.
+Here it's an example of how implement a french deck that can be used as a list&quot;&quot;&quot;
+
+import collections
+
+Card = collections.namedtuple('Card', ['rank', 'suit'])
+
+
+class Deck:
+
+    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+    suits = 'spades diamonds clubs hearts'.split()
+
+    def __init__(self):
+        self._cards = [Card(rank, suit) for suit in self.suits
+                                        for rank in self.ranks]
+
+    def __len__(self):
+        return len(self._cards)
+
+    def __getitem__(self, position):
+        return self._cards[position]
+
+card_a = Card('A', 'spades')
+print(card_a)
+
+deck = Deck()
+len(deck)
+
+print(deck[0])
+print(deck[-1])
+for card in deck:
+    print(card)
+</code></pre>
+
+<h2 id="default-value:ef56bf75207028c7c1c18cd426e7fc88">default value</h2>
+
+<p>python set default value for a dict</p>
+
+<pre><code class="language-python">
+&quot;&quot;&quot; builtin dict &quot;&quot;&quot;
+d = {}
+d.setdefault('a', []).append(1)
+d['b'] = d.get('b', 0) + 1
+
+print(d)
+
+
+&quot;&quot;&quot; with collections.defaultdict &quot;&quot;&quot;
+from collections import defaultdict
+
+d = defaultdict(list)
+d['a'].append(1)
+
+print(d)
+</code></pre>
+
+<p>python get value with a default value</p>
+
+<pre><code class="language-python">
+d = {'a': 1, 'b': 2}
+
+print(d.get('c', 3))
+</code></pre>
+
+<h2 id="sort-dict:ef56bf75207028c7c1c18cd426e7fc88">sort dict</h2>
+
+<p>sort dictionary by its values</p>
+
+<pre><code class="language-python">
+&quot;&quot;&quot; Sort a dictionary by its values with the built-in sorted() function and a 'key' argument. &quot;&quot;&quot;
+
+d = {'apple': 10, 'orange': 20, 'banana': 5, 'rotten tomato': 1}
+print(sorted(d.items(), key=lambda x: x[1]))
+
+
+&quot;&quot;&quot; Sort using operator.itemgetter as the sort key instead of a lambda&quot;&quot;&quot;
+
+
+from operator import itemgetter
+
+
+print(sorted(d.items(), key=itemgetter(1)))
+
+
+&quot;&quot;&quot;Sort dict keys by value&quot;&quot;&quot;
+
+
+print(sorted(d, key=d.get))
+</code></pre>
+
+<h2 id="easy-formating:ef56bf75207028c7c1c18cd426e7fc88">easy formating</h2>
+
+<p>python 字符串的formating，以下是python的几种方法,主要的思路其实就是：</p>
+
+<ul>
+<li>字符串模版</li>
+<li>外部变量使用dict的方式来填充相应的模版</li>
+</ul>
+
+<pre><code class="language-python">
+&quot;&quot;&quot;easy string formatting using dicts&quot;&quot;&quot;
+
+d = {'name': 'Jeff', 'age': 24}
+print(&quot;My name is %(name)s and I'm %(age)i years old.&quot; % d)
+
+&quot;&quot;&quot;for .format, use this method&quot;&quot;&quot;
+
+d = {'name': 'Jeff', 'age': 24}
+print(&quot;My name is {name} and I'm {age} years old.&quot;.format(**d))
+
+&quot;&quot;&quot;alternate .format method&quot;&quot;&quot;
+print(&quot;My name is {} and I'm {} years old.&quot;.format('Jeff','24'))
+
+&quot;&quot;&quot;dict string formatting&quot;&quot;&quot;
+c = {'email': 'jeff@usr.com', 'phone': '919-123-4567'}
+print('My name is {0[name]}, my email is {1[email]} and my phone number is {1[phone]}'.format(d, c))
+</code></pre>
+
+<h2 id="flatten-a-list:ef56bf75207028c7c1c18cd426e7fc88">flatten a list</h2>
+
+<p>flatten a list 就是将有嵌套的list转化为一个扁平没有嵌套的list</p>
+
+<pre><code class="language-python">
+&quot;&quot;&quot;
+Deep flattens a nested list
+
+Examples:
+    &gt;&gt;&gt; list(flatten_list([1, 2, [3, 4], [5, 6, [7]]]))
+    [1, 2, 3, 4, 5, 6, 7]
+    &gt;&gt;&gt; list(flatten_list(['apple', 'banana', ['orange', 'lemon']]))
+    ['apple', 'banana', 'orange', 'lemon']
+&quot;&quot;&quot;
+
+
+def flatten_list(L):
+    for item in L:
+        if isinstance(item, list):
+            yield from flatten_list(item)
+        else:
+            yield item
+
+&quot;&quot;&quot;In Python 2
+# from compiler.ast import flatten
+# flatten(L)
+
+
+# Flatten list of lists
+
+a = [[1, 2], [3, 4]]
+
+# Solutions:
+&quot;&quot;&quot;
+print([x for _list in a for x in _list])
+
+import itertools
+print(list(itertools.chain(*a)))
+
+print(list(itertools.chain.from_iterable(a)))
+
+&quot;&quot;&quot;
+# In Python 2
+# print(reduce(lambda x, y: x+y, a))
+&quot;&quot;&quot;
+
+print(sum(a, []))
+</code></pre>
+
+<h2 id="for-else:ef56bf75207028c7c1c18cd426e7fc88">for else</h2>
+
+<pre><code class="language-python">
+&quot;&quot;&quot;else gets called when for loop does not reach break statement&quot;&quot;&quot;
+a = [1, 2, 3, 4, 5]
+for el in a:
+    print(el)
+    if el == 0:
+        break
+else:
+    print('did not break out of for loop')
+</code></pre>
+
+<h2 id="key-default-dict:ef56bf75207028c7c1c18cd426e7fc88">key default dict</h2>
+
+<p>key default dict, if there is not key existing, the default key would be the return of the default_factory</p>
+
+<pre><code class="language-python">
+&quot;&quot;&quot;
+keydefaultdict with where the function receives the key.
+&quot;&quot;&quot;
+from collections import defaultdict
+
+
+class keydefaultdict(defaultdict):
+    def __missing__(self, key):
+        if self.default_factory is None:
+            raise KeyError(key)
+        else:
+            ret = self[key] = self.default_factory(key)
+            return ret
+
+
+def pow2(n):
+    return 1 &lt;&lt; n
+
+d = keydefaultdict(pow2)
+print(d[1])
+print(d[3])
+print(d[10])
+print(d)
+</code></pre>
+
+<h2 id="switch-alternatives:ef56bf75207028c7c1c18cd426e7fc88">switch alternatives</h2>
+
+<p>如何不写switch，下面是一个小小的参考：</p>
+
+<pre><code class="language-python">
+&quot;&quot;&quot;lightweight switch statement&quot;&quot;&quot;
+a = {
+    True: 1,
+    False: -1,
+    None: 0
+}
+print(a.get(False, 0))
+
+&quot;&quot;&quot;works with functions as well&quot;&quot;&quot;
+
+
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+b = {
+    '+': add,
+    '-': subtract
+}
+
+print(b['+'](1, 1))
+</code></pre>
+
+<h2 id="join-for-the-list:ef56bf75207028c7c1c18cd426e7fc88">join for the list</h2>
+
+<pre><code class="language-python">&quot;&quot;&quot;converts list to comma separated string&quot;&quot;&quot;
+
+items = ['foo', 'bar', 'xyz']
+
+print (','.join(items))
+
+&quot;&quot;&quot;list of numbers to comma separated&quot;&quot;&quot;
+numbers = [2, 3, 5, 10]
+
+print (','.join(map(str, numbers)))
+
+&quot;&quot;&quot;list of mix  data&quot;&quot;&quot;
+data = [2, 'hello', 3, 3.4]
+
+print (','.join(map(str, data)))
+</code></pre>
+
+<h2 id="loop-overlapping-keys:ef56bf75207028c7c1c18cd426e7fc88">loop overlapping keys</h2>
+
+<p>python使用&amp; 或者｜ 可以获取列表的交集或者合集</p>
+
+<pre><code class="language-python">
+&quot;&quot;&quot;loop over dicts that share (some) keys in Python2&quot;&quot;&quot;
+
+dctA = {'a': 1, 'b': 2, 'c': 3}
+dctB = {'b': 4, 'c': 3, 'd': 6}
+
+for ky in set(dctA) &amp; set(dctB):
+    print(ky)
+
+&quot;&quot;&quot;loop over dicts that share (some) keys in Python3&quot;&quot;&quot;
+for ky in dctA.keys() &amp; dctB.keys():
+    print(ky)
+
+&quot;&quot;&quot;loop over dicts that share (some) keys and values in Python3&quot;&quot;&quot;
+for item in dctA.items() &amp; dctB.items():
+    print(item
+
+&quot;&quot;&quot;
+the all keys(without duplication) in two dicts
+&quot;&quot;&quot;
+print(dctA.keys() | dctB.keys())
+</code></pre>
+
+<p>metatable: 例子实际上就是一个defaultkeydict</p>
+
+<pre><code class="language-python"># -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+metatable with where the function receives the dictionary and key.
+&quot;&quot;&quot;
+from collections import defaultdict
+
+
+class metatable(defaultdict):
+    def __missing__(self, key):
+        if self.default_factory is None:
+            raise KeyError(key)
+        else:
+            ret = self[key] = self.default_factory(self, key)
+            return ret
+
+
+def fib(d, n):
+    if n == 0 or n == 1:
+        return n
+    return d[n - 1] + d[n - 2]
+
+
+d = metatable(fib)
+print(d[1])
+print(d[3])
+print(d[10])
+print(d)
+</code></pre>
+
+        </div>
+
+
+        <aside>
+          <div class="section">
+            <a href="http://testless.github.io/tags/python" class="tag">python</a>
+            </div>
+
+          <div class="section share">
+            
+            
+            
+            
+          </div>
+
+          
+          
+          
+        </aside>
+
+      </article>
+    </div>
+
+    <div class="col-sm-3">
+      <aside class="site">
+
+  
+  <div class="section">
+    <header><div class="title">TableOfContents</div></header>
+    <div class="list-default"><nav id="TableOfContents">
+<ul>
+<li><a href="#python-tricky:ef56bf75207028c7c1c18cd426e7fc88">Python Tricky</a>
+<ul>
+<li><a href="#argument-unpacking:ef56bf75207028c7c1c18cd426e7fc88">Argument Unpacking</a></li>
+<li><a href="#bool:ef56bf75207028c7c1c18cd426e7fc88">bool</a></li>
+<li><a href="#property-cache:ef56bf75207028c7c1c18cd426e7fc88">Property Cache</a></li>
+<li><a href="#calculator:ef56bf75207028c7c1c18cd426e7fc88">calculator</a></li>
+<li><a href="#chained-comparsion:ef56bf75207028c7c1c18cd426e7fc88">chained comparsion</a></li>
+<li><a href="#compile:ef56bf75207028c7c1c18cd426e7fc88">compile</a></li>
+<li><a href="#sequence:ef56bf75207028c7c1c18cd426e7fc88">sequence</a></li>
+<li><a href="#conditional-assignment:ef56bf75207028c7c1c18cd426e7fc88">Conditional assignment</a></li>
+<li><a href="#context-manager:ef56bf75207028c7c1c18cd426e7fc88">context manager</a></li>
+<li><a href="#controll-the-whitespace:ef56bf75207028c7c1c18cd426e7fc88">controll the whitespace</a></li>
+<li><a href="#copy-list:ef56bf75207028c7c1c18cd426e7fc88">copy list</a></li>
+<li><a href="#class-as-list:ef56bf75207028c7c1c18cd426e7fc88">class as list</a></li>
+<li><a href="#default-value:ef56bf75207028c7c1c18cd426e7fc88">default value</a></li>
+<li><a href="#sort-dict:ef56bf75207028c7c1c18cd426e7fc88">sort dict</a></li>
+<li><a href="#easy-formating:ef56bf75207028c7c1c18cd426e7fc88">easy formating</a></li>
+<li><a href="#flatten-a-list:ef56bf75207028c7c1c18cd426e7fc88">flatten a list</a></li>
+<li><a href="#for-else:ef56bf75207028c7c1c18cd426e7fc88">for else</a></li>
+<li><a href="#key-default-dict:ef56bf75207028c7c1c18cd426e7fc88">key default dict</a></li>
+<li><a href="#switch-alternatives:ef56bf75207028c7c1c18cd426e7fc88">switch alternatives</a></li>
+<li><a href="#join-for-the-list:ef56bf75207028c7c1c18cd426e7fc88">join for the list</a></li>
+<li><a href="#loop-overlapping-keys:ef56bf75207028c7c1c18cd426e7fc88">loop overlapping keys</a></li>
+</ul></li>
+</ul>
+</nav></div>
+  </div>
+  
+
+  
+
+  <div class="section">
+    <header><div class="title">LatestPosts</div></header>
+    <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-04-17-python-tricky-01/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/18.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Apr 17, 2016</time>
+      <h2 class="title">Python Tricky-01</h2>
+      <div class="summary">Python Tricky python tricky 是记录一些Python使用过程中一些神奇的小技巧. Argument Unpacking 一个argument unpacking的例子： def product(a, b): print(&quot;a is %d&quot; % a) print(&quot;b is %d&quot; % b) return a * b argument_tuple = (1, 2) argument_dict = {'a': 1, 'b': 2} argument_list = [1,2] # interesting for unpacking print(product(*argument_list)) print(product(*argument_tuple)) print(product(**argument_dict)) python unpacking 这里指的是调用python函数的参数可以自动匹配： list: 顺序匹配函数参数，变量调用时以*开始 tuple：顺序匹配函数参数，变量调用时以*开始 dict: 根据key值来匹配，变量调用时以**开始 下面是一个可扩展unpacking的方式： *其实表示一个list &quot;&quot;&quot;allows collecting not explicitly assigned values into a placeholder variable&quot;&quot;&quot; a, *b, c = range(10) print(a, b, c) &quot;&quot;&quot;advanced example&quot;&quot;&quot; [(c, *d, [*e]), f, *g] = [[1, 2, 3, 4, [5, 5, 5]], 6, 7, 8] print(c, d, e, f, g) bool python 中的bool有True or False，python2中的True 或者False都可以改变对应的值： python中的True or False可以参加数学运算： a = 5 print(isinstance(a,int)+(a&lt;10)) # interesting writing print([&quot;is odd&quot;,&quot;is even&quot;][a % 2 ==0]) print(&quot;is even&quot; if a % 2 ==0 else &quot;is odd&quot;) python中循环如果使用True会比使用1来的慢，不过一般肯定是使用True or False来做循环的： from timeit import timeit def test_true(): count = 100 while True: # Here is True if count &lt; 0: break count = -1 def test_1(): count = 100 while 1: break count -= 1 print('use True: %s' %timeit(test_true, number=1000000)) print('use 1: %s' % timeit(test_1, number=1000000)) 结果： use True: 0.21380468501592986 use 1: 0.1610587630129885 Property Cache python 的property可以通过__get__来获取，同时可以在运行时添加，改变属性的值 class PropertyCache: &quot;&quot;&quot; a decorator to cache property &quot;&quot;&quot; def __init__(self, func): self.func = func def __get__(self, obj, cls): if not obj: return self value = self.func(obj) # Magic Here, there is property_to_be_cached property there setattr(obj, self.func.__name__, value) return value class Foo: def __init__(self): self._property_to_be_cached = 'result' @PropertyCache def property_to_be_cached(self): print('compute') return self._property_to_be_cached test = Foo() print(test.property_to_be_cached) print(test.property_to_be_cached) print(Foo().property_to_be_cached) 这里通过一个装饰器：PropertyCache 来装饰property_to_be_cached，在调用property_to_be_cached时，其实是通过PropertyCache的get来获取，那么： value = self.func(obj) 就是通过调用Foo中的property_to_be_cached函数，value就是property_to_be_cached的返回值 setattr(obj, self.func.name, value)： 就是将value付给了属性：property_to_be_cached，self.func.name 其实就是property_to_be_cached 这是一个挺有意思的例子来说明了动态语言的一些magic的方法 calculator 这里例子可以看出，python的函数的一些使用方法，函数也可以作为一种参数，活着变量 import operator ops = { &quot;+&quot;: operator.add, &quot;-&quot;: operator.sub, &quot;/&quot;: operator.truediv, &quot;*&quot;: operator.mul } x = input(&quot;Enter an operator [OPTIONS: +, -, *, /]: &quot;) y = int(input(&quot;Enter number: &quot;)) z = int(input(&quot;Enter number: &quot;)) # interesting to use function print (ops[x](y, z)) chained comparsion a = 10 print(1 &lt; a &lt; 50) print(10 == a &lt; 20) compile python 可以通过exec可以直接运行组装起来的字符串，当然其实很多语言都可以的&hellip;&hellip; import math # using sin, cos and sqrt for example ''' Takes a code string and returns a ready-to-use function ''' def compile_(s): code = &quot;&quot;&quot;def f(x):\n return {}&quot;&quot;&quot;.format(s) # wrap the string as a function f(x) scope = {&quot;sin&quot;: math.sin, &quot;cos&quot;: math.cos, &quot;sqrt&quot;: math.sqrt} # define the scope for the code to use exec(code, scope) # execute code inside the given scope # f(x) gets defined inside %vis% return scope[&quot;f&quot;] # now we only have to extract it and return f = compile_(&quot;x**2 + 2*sin(x)&quot;) print(f(10)) &quot;&quot;&quot;exec can be used to execute Python code during runtime variables can be handed over as a dict &quot;&quot;&quot; exec(&quot;print('Hello ' + s)&quot;, {'s': 'World'}) sequence sequence 其实是个list，如果遍历这个list，遍历时需要进行一些调用的话，那么下面例子提供了两个不同的方法.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-04-17-python-tricky-02/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Apr 17, 2016</time>
+      <h2 class="title">Python Tricky-01</h2>
+      <div class="summary">Python Tricky-2 max split &quot;&quot;&quot;split a string max times&quot;&quot;&quot; string = &quot;a_b_c_d_e&quot; print(string.split(&quot;_&quot;, 2)) &quot;&quot;&quot;use maxsplit with arbitrary whitespace&quot;&quot;&quot; s = &quot;foo bar foobar foo&quot; print(s.split(None, maxsplit=1)) min and max index 获取最大值，最小值的index &quot;&quot;&quot; Find Index of Min/Max Element. &quot;&quot;&quot; lst = [40, 10, 20, 30] def minIndex(lst): return min(range(len(lst)), key=lst.__getitem__) # use xrange if &lt; 2.7 def maxIndex(lst): return max(range(len(lst)), key=lst.__getitem__) # use xrange if &lt; 2.7 print(minIndex(lst)) print(maxIndex(lst)) nested function python 支持函数作为参数传递： &quot;&quot;&quot;nested functions&quot;&quot;&quot; def addBy(val): print(val) def func(inc): print(inc) return val + inc return func addFive = addBy(5) print(addFive(4)) addThree = addBy(3) print(addThree(7)) obj get attribute 通过getattr获取python的属性，可以是类级别的，也可以实例级别的，但是如果属性没有实例级别是先通过__getattribute__获取 class obj(): attr = 1 def __getattribute__(self, item): print('get attribute') return &quot;123&quot; def __get__(self, instance, owner): print(&quot;get&quot;) def __getattr__(self, item): print(&quot;get attribute1&quot;) foo = &quot;attr&quot; a = obj() print(a.test) print(getattr(obj, foo)) print(getattr(a, &quot;attr1&quot;)) remove duplicated values 这里面需要理解清楚的是： list，可以重复 set,没有重复 &quot;&quot;&quot;remove duplicate items from list.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/designpattern/2016-04-11-singleton/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/singleton.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Apr 11, 2016</time>
+      <h2 class="title">Java Singleton ENUM as instance HOLDER</h2>
+      <div class="summary">Singleton 单例设计模式 单例模式是产生一个类的唯一实例。 Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的： public class InitializingOnDemandHolderIdiom implements Serializable { private static final long serialVersionUID = 1L; private static class HelperHolder { public static final InitializingOnDemandHolderIdiom INSTANCE = new InitializingOnDemandHolderIdiom(); } public static InitializingOnDemandHolderIdiom getInstance() { return HelperHolder.INSTANCE; } private InitializingOnDemandHolderIdiom() { } protected Object readResolve() { return getInstance(); } }</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/designpattern/2016-04-11-prototype-pattern/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/prototype.png);"></div>
+    <div class="detail">
+      <time>Mon, Apr 11, 2016</time>
+      <h2 class="title">Prototype Pattern</h2>
+      <div class="summary">prototype pattern 实际上是通过clone的方式创建出同一个类的不同对象. Java Prototype 一般Prototype模式中，又一个prototype的抽象类： public abstract class Prototype implements Cloneable{ @Override protected abstract Object clone() throws CloneNotSupportedException; } 这个抽象类的不同子类： public abstract class Beast extends Prototype { @Override public abstract Beast clone() throws CloneNotSupportedException; } public class ElfBeast extends Beast { public ElfBeast() { } public ElfBeast(ElfBeast beast) { } @Override public Beast clone() throws CloneNotSupportedException { return new ElfBeast(this); } @Override public String toString() { return &quot;Elven eagle&quot;;</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/shell/2016-04-05-VIM-%E6%80%BB%E7%BB%93/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/vim.png);"></div>
+    <div class="detail">
+      <time>Tue, Apr 5, 2016</time>
+      <h2 class="title">VIM 使用小结</h2>
+      <div class="summary">VIM 用法 日常会不经意间使用VIM编辑器来处理一些文本编辑的事情。所以整理VIM的基本使用如下： 命令 说明 q 退出 i insert a append h 左移 k 上移 j 下移 l 右移 r 替换 u 撤销 x 删除光标位置字符 d^ 删除当前位置到行首 dd 删除当前行 d$ 删除当前位置到行尾 dw 删除当前位置到一个word尾 3dd 删除当前行下三行 p 粘贴 &lt;&lt; 当前行左移一个宽度 &gt;&gt; 当前行右移一个宽度 ％ 匹配的括号 ^ 行的开始 . 匹配单字符 * 匹配0个或多个之前的字符 $ 行的结束 [ 还是一系列的匹配 &lt;&gt; 一个字的结束或开始,/&lt;the&gt; 只匹配the f 向右移动到指定字符 F 向左移动到指定字符 ctrl+b 向后回滚一页 ctrl＋d 向前滚动半个窗口 ctrl＋F 向前滚动一页 ctrl＋H 左移一个空格 ctrl＋J 下移一个空格 ( 移动到句子开头 ) 移动到句子句尾 { 前一个段落 + 下一行非空字符 - 前一行非空字符 _ 当前行的非空字符 其他命令 y和d的作用类似，不同的是y只提取文字而不删除文字 缩写：ab test &ldquo;testing in tesitng&rdquo; mapping, :map,:map!</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/ansible.png);"></div>
+    <div class="detail">
+      <time>Wed, Mar 30, 2016</time>
+      <h2 class="title">Ansible简单介绍</h2>
+      <div class="summary">Ansible 介绍 Ansible 目前都是使用在python2上面. installation 在MAC 上面安装ansible有两种方式： pip pip install ansible brew brew install ansible ansible playbook 的简单使用 ansible 大概的一个框架图如下： 下面简单介绍一个使用ansible的例子： 配置hosts文件 在当前目录创建一个hosts文件： [jenkins] 192.168.3.50 配置ansible yml playbook文件 配置当前一个yml文件: - hosts: jenkins user: root accelerate:true tasks: - name: restart_nginx shell: sh /root/auto_publish_qadoc.sh 运行命令 ansible-playbook playbook.yml -i hosts -vv 就可以运行这些命令了,最简单的ansible就是这样上手非常容易. 不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实 过一下这个document估计也就是1天时间就可以上手干活了.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/jenkins.png);"></div>
+    <div class="detail">
+      <time>Wed, Mar 30, 2016</time>
+      <h2 class="title">Jenkins API的简单介绍</h2>
+      <div class="summary">Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情. From Jenkins Home Page Jenkins is an automation engine with an unparalleled plugin ecosystem to support all of your favorite tools in your delivery pipelines, whether your goal is continuous integration, automated testing, or continuous delivery. Jenkins 使用 关于Jenkins的基本使用网上有很多的教程，基本使用其事没有太多说的，它是个平台，可以集成很多不同的工具，脚本等等. 总结下来这些东西包括： jenkins parameter setting, string, choice, &hellip;&hellip; JAVA 的maven, ant, gradle 等打包工具，其他语言也有类似的build，deploy，依赖管理的工具 定制化的脚本，可以在一个Jenkins的build步骤中运行这些脚本如shell命令，python脚本 定制插件来完成自己的特殊的目的 这些内容非常庞大，自己也不可能完全都知道，如果遇到实际的一些问题需要解决的话, 大体的逻辑就是，如果遇到一些特殊需求，那么先去找插件看能不能完成，如果没有插件就再想shell，python脚本等不同的事情，或者自己开发插件. Jenkins 的实践问题 随着Jenkins里面的任务越来越多，管理的环境越来越多，变更越来愈多，手工管理就会遇到一些问题： 比如为了改一个IP地址，可能需要没一个任务都去改具体的配置，比如部署同一个war到不同的测试环境，就需要给不同的job改IP 为了不同的环境配置不同的任务，需要很多的人工的配置修改等等 如果需要迁移一个多应用的测试环境，那么需要很多的复制，修改工作 那么为了解决这些问题，个人觉得可以改善的地方是： - 定义一些类型项目的模版，抽象一些参数出来给Jenkins里面的Job做参数话，当然有时需要修改的是默认值 - 在定义了一些模版之后，就可以通过操作Jenkins API的方式来操作 - 在尝试了一些Jenkins API之后，感觉纯粹通过API的方式去操作，不一定比复制Jenkins 任务，然后修改来的快，但是通过Jenkins API的方式 来操作Jenkins 的好处是，如果这些东西融入到运维的流程中，那么它会提高生产率 一些体会是，可能代码方式的操作单个单个来看不一定会提高多少生产率(参数一样要设)，但是如果放在一个流程的角度看，那么他的效率是高的，比如你如果需要运维帮你建环境，那么你需要提供一些信息，而这些信息就可以直接建立Jenkins的Job了，那么作为用户你只提供一次信息，就可以完成你需要的所有事情，这样效率就高了.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/7.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Feb 28, 2016</time>
+      <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
+      <div class="summary">在前面的Zabbix API调用中我们看到了python的__getattr__的妙用，下面就探索一下这里面的道理,所以就聊聊python面向对象的基础知识. Python 面向对象 说到面向对象，就会说到类(class)，对象(object),那么什么是Class，Object呢？ Object： Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors -wagging, barking, eating. An object is an instance of a class. Class: A class can be defined as a template/blue print that describes the behaviors/states that object of its type support. 那么综合起来，class就是用来描述一系列对象的一个模版，抽象出了共同的东西(class)，object就是具体的某种情况下的一个例子(instance) 面向对象有如下基础概念： Polymorphism Inheritance Encapsulation Abstraction Classes Objects Instance Method Message Parsing Python Class and Object 的使用 看下例： - class Dog 定义了一个类 - __init__ 构造这个类的方法，就是创建出一个Dog的对象是通过这个方法 - name, 类的一个属性;eat(),也可以看成是类的一个属性，实际上它是一个dog的一个行为(behavior) - dog = Dog() 是创建了一个Dog(class)的新的的对象(object), 按照我们上面说的，dog是类Dog(class)的一个实例(instance) class Dog: def __init__(self): self.name='dog' def eat(): print('eating......') dog = Dog() print(dog.name) Python 对象的创建 参考上例，分别来说明对象的创建，访问.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/18.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Feb 28, 2016</time>
+      <h2 class="title">Simple Word Counter</h2>
+      <div class="summary">有时测试的面试题中会考点编程的内容，比如统计字符串中的相同字符数量，具体题目如下： 给定一个字符串，如MIssissippi 计算字符串中每一个不同字符出现的数量 Python 的解法 letter_count={} for letter in 'MIssissippi': letter[letter]=letter_count.get(letter,0)+1 print(letter_count) 运行结果： {'s': 4, 'M': 1, 'i': 3, 'I': 1, 'p': 2} Java 的解法 JAVA 8 中给Map加入了getOrDefault的方法，下面就分别介绍一下JAVA8之前和使用JAVA8的方法： JAVA8 之前： public Map&lt;String,Integer&gt; countCharacters(String source){ char[] chars = source.toCharArray(); Map&lt;String,Integer&gt; result = new HashMap&lt;&gt;(); for (char aChar : chars) { Integer existing_counter = result.get(String.valueOf(aChar)); int counter = existing_counter==null?0:existing_counter; result.put(String.valueOf(aChar),counter+1); } return result; } JAVA8 解法 public Map&lt;String,Integer&gt; countCharacters_JAVA8(String source){ char[] chars</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
+    <div class="detail">
+      <time>Fri, Feb 26, 2016</time>
+      <h2 class="title">Python 访问Zabbix API</h2>
+      <div class="summary">Zabbix API 访问 准备使用Python来访问一下Zabbix，首先当然阅读一下Zabbix的API Manual,抛开什么json rpc这样的问题之外，zabbix的API的分类还是很工整的，所以看起来比较舒服，在一定了解了zabbix基础之后，基本上就可以上手来写了，网上查了一下，找个一个python zabbix的调用的一个客户段代码，感觉不错，就开始行动了。 Zabbix API 客户端代码的实现 Zabbix API的主要的两个参数其实是method，params，params基本上就可以看作一些可变的参数，其实就是一个json或者map， 对于method来说，一般就是 resource.action 这种方式，所以python客户端使用重写了一个getattr来做,返回一个可以访问不同资源名称的客户端,具体的代码如下： class ZabbixClient: &quot;&quot;&quot; Generic Zabbix API Client - login - get auth &quot;&quot;&quot; globale_header = { &quot;Content-Type&quot;: &quot;application/json-rpc&quot; } def __init__(self, session=None, timeout=None): self.user_name, self.default_user_name = '1', '1' self.password, self.default_password = '123456', '123456' self.zabbix_api_url = 'http://{0}/api_jsonrpc.php'.format('abcd.http') if session: self.session = session else: self.session = requests.session() self.session.headers.update({ 'Content-Type': 'application/json-rpc', 'User-Agent': 'python-zabbix-client', 'Cache-Control': 'no-cache' }) self.auth = '' self.id = 0 self.timeout = timeout logger.info('JSON-RPC Server EndPoint: %s', self.zabbix_api_url) def login_in(self, user_name=None, password=None): &quot;&quot;&quot; login with given user_name and password, if None, use default user :param user_name: :param password: :return: result,auth key &quot;&quot;&quot; if user_name: self.user_name = user_name if password: self.password = password self.auth = self.user.login(user=self.user_name, password=self.password) def api_version(self): return self.apiinfo.version() # def confimport(self, format='', source='', rules=''): # &quot;&quot;&quot;Alias for configuration.import because it clashes with # Python's import reserved keyword&quot;&quot;&quot; # # return self.do_request( # method=&quot;configuration.import&quot;, # params={&quot;format&quot;: format, &quot;source&quot;: source, &quot;rules&quot;: rules} # )['result'] def do_request(self, method, params=None): request_json = { 'jsonrpc': '2.0', 'method': method, 'params': params or {}, 'id': self.id, } if method != 'apiinfo.version' and self.auth: request_json['auth'] = self.auth logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(',', ':'))) response = self.session.post( self.zabbix_api_url, data=json.dumps(request_json), timeout=self.timeout ) logger.debug(&quot;Response Code : %s&quot;, str(response.status_code)) response.raise_for_status() if not len(response.text): raise ZabbixAPIException(&quot;没有返回值&quot;) try: response_json = json.loads(response.text) except ValueError: raise ZabbixAPIException(&quot;不能解析JSON %s&quot; % response.text) logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(',', ':'))) self.id += 1 if 'error' in response_json: if 'data' not in response_json['error']: response_json['error']['data'] = 'No Data' msg = &quot;Error {code}: {message},{data}&quot;.format( code=response_json['error']['code'], message=response_json['error']['message'], data=response_json['error']['data'] ) raise ZabbixAPIException(msg, response_json['error']['code']) return response_json def __getattr__(self, item): &quot;&quot;&quot; auto create Zabbix API Client :param item: :return: &quot;&quot;&quot; return ZabbixAPIObjectClass(item, self) class ZabbixAPIObjectClass(object): def __init__(self, name, parent): self.name = name self.parent = parent def __getattr__(self, item): &quot;&quot;&quot; dynamic create a method (get,create,update,delete) :param item: :return: &quot;&quot;&quot; def fn(*args, **kwargs): if args and kwargs: raise TypeError('Found Both args and kwargs') return self.parent.do_request('{0}.{1}'.format(self.name, item), args or kwargs)['result'] return fn 基本上一个文件就搞定了，不过这个基本上参考了网上的一个代码实现的，这里使用getattr这种方式可以非常简洁的处理了这种请求非常类似的情况，这也是python的魅力吧.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+    </div>
+  </div>
+
+  
+  <div class="section taxonomies">
+    <header><div class="title">category</div></header>
+    <div class="content">
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
+    </div>
+  </div>
+  
+  <div class="section taxonomies">
+    <header><div class="title">tag</div></header>
+    <div class="content">
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a>
+    </div>
+  </div>
+  
+
+</aside>
+
+    </div>
+
+  </div>
+
+      </div>
+
+    <footer class="site">
+      <p>&copy; 2016 Colored Hedwig: less is more</p>
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+      <p>Theme <a href="https://github.com/dim0627/hugo_theme_robust" target="_blank">Robust</a> designed by <a href="http://yet.unresolved.xyz" target="_blank">Daisuke Tsuji</a></p>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+
+  <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258417648'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1258417648%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+  </body>
+</html>
+
+</div>
