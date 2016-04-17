@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python Tricky-01
+title: Python Tricky-02
 modified: null
 categories:
   - python
@@ -15,12 +15,9 @@ date: 2016-04-17T10:41:15.000Z
 ## max split
 
 ```python
-
 """split a string max times"""
 string = "a_b_c_d_e"
 print(string.split("_", 2))
-
-
 """use maxsplit with  arbitrary whitespace"""
 
 s = "foo    bar        foobar foo"
@@ -33,7 +30,6 @@ print(s.split(None, maxsplit=1))
 获取最大值，最小值的index
 
 ```python
-
 """
 Find Index of Min/Max Element.
 """
@@ -47,8 +43,6 @@ def minIndex(lst):
 
 def maxIndex(lst):
     return max(range(len(lst)), key=lst.__getitem__)  # use xrange if < 2.7
-
-
 print(minIndex(lst))
 print(maxIndex(lst))
 ```
@@ -58,8 +52,6 @@ print(maxIndex(lst))
 python 支持函数作为参数传递：
 
 ```python
-
-
 """nested functions"""
 def addBy(val):
     print(val)
