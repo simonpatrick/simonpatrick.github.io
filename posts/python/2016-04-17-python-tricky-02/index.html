@@ -15,8 +15,8 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
 
     
-    <title>Python Tricky-01 - Colored Hedwig: less is more</title>
-    <meta property='og:title' content="Python Tricky-01 - Colored Hedwig: less is more">
+    <title>Python Tricky-02 - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Python Tricky-02 - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
@@ -42,7 +42,7 @@
 
         <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
         <meta itemprop="dateModified" content="2016-04-17T10:41:15&#43;00:00">
-        <meta itemprop="headline" content="Python Tricky-01">
+        <meta itemprop="headline" content="Python Tricky-02">
         <meta itemprop="description" content="Python Tricky-2 max split &quot;&quot;&quot;split a string max times&quot;&quot;&quot; string = &quot;a_b_c_d_e&quot; print(string.split(&quot;_&quot;, 2)) &quot;&quot;&quot;use maxsplit with arbitrary whitespace&quot;&quot;&quot; s = &quot;foo bar foobar foo&quot; print(s.split(None, maxsplit=1)) min and max index 获取最大值，最小值的index &quot;&quot;&quot; Find Index of Min/Max Element. &quot;&quot;&quot; lst = [40, 10, 20, 30] def minIndex(lst): return min(range(len(lst)), key=lst.__getitem__) # use xrange if &lt; 2.7 def maxIndex(lst): return max(range(len(lst)), key=lst.__getitem__) # use xrange if &lt; 2.7 print(minIndex(lst)) print(maxIndex(lst)) nested function python 支持函数作为参数传递： &quot;&quot;&quot;nested functions&quot;&quot;&quot; def addBy(val): print(val) def func(inc): print(inc) return val &#43; inc return func addFive = addBy(5) print(addFive(4)) addThree = addBy(3) print(addThree(7)) obj get attribute 通过getattr获取python的属性，可以是类级别的，也可以实例级别的，但是如果属性没有实例级别是先通过__getattribute__获取 class obj(): attr = 1 def __getattribute__(self, item): print(&#39;get attribute&#39;) return &quot;123&quot; def __get__(self, instance, owner): print(&quot;get&quot;) def __getattr__(self, item): print(&quot;get attribute1&quot;) foo = &quot;attr&quot; a = obj() print(a.test) print(getattr(obj, foo)) print(getattr(a, &quot;attr1&quot;)) remove duplicated values 这里面需要理解清楚的是： list，可以重复 set,没有重复 &quot;&quot;&quot;remove duplicate items from list.">
         <meta itemprop="url" content="http://testless.github.io/posts/python/2016-04-17-python-tricky-02/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -66,7 +66,7 @@
 
         <header class="article-header">
           <time itemprop="datePublished" pubdate="pubdate" datetime="2016-04-17T10:41:15&#43;00:00">Sun, Apr 17, 2016</time>
-          <h1 class="article-title">Python Tricky-01</h1>
+          <h1 class="article-title">Python Tricky-02</h1>
         </header>
 
         <div class="article-body" itemprop="articleBody">
@@ -76,12 +76,9 @@
 
 <h2 id="max-split:718e7cf5b79371c67c4c62ac9ac47a9f">max split</h2>
 
-<pre><code class="language-python">
-&quot;&quot;&quot;split a string max times&quot;&quot;&quot;
+<pre><code class="language-python">&quot;&quot;&quot;split a string max times&quot;&quot;&quot;
 string = &quot;a_b_c_d_e&quot;
 print(string.split(&quot;_&quot;, 2))
-
-
 &quot;&quot;&quot;use maxsplit with  arbitrary whitespace&quot;&quot;&quot;
 
 s = &quot;foo    bar        foobar foo&quot;
@@ -93,8 +90,7 @@ print(s.split(None, maxsplit=1))
 
 <p>获取最大值，最小值的index</p>
 
-<pre><code class="language-python">
-&quot;&quot;&quot;
+<pre><code class="language-python">&quot;&quot;&quot;
 Find Index of Min/Max Element.
 &quot;&quot;&quot;
 
@@ -107,8 +103,6 @@ def minIndex(lst):
 
 def maxIndex(lst):
     return max(range(len(lst)), key=lst.__getitem__)  # use xrange if &lt; 2.7
-
-
 print(minIndex(lst))
 print(maxIndex(lst))
 </code></pre>
@@ -117,9 +111,7 @@ print(maxIndex(lst))
 
 <p>python 支持函数作为参数传递：</p>
 
-<pre><code class="language-python">
-
-&quot;&quot;&quot;nested functions&quot;&quot;&quot;
+<pre><code class="language-python">&quot;&quot;&quot;nested functions&quot;&quot;&quot;
 def addBy(val):
     print(val)
     def func(inc):
@@ -511,7 +503,7 @@ print(unique_lst)  # [item2, item3]
     <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
     <div class="detail">
       <time>Sun, Apr 17, 2016</time>
-      <h2 class="title">Python Tricky-01</h2>
+      <h2 class="title">Python Tricky-02</h2>
       <div class="summary">Python Tricky-2 max split &quot;&quot;&quot;split a string max times&quot;&quot;&quot; string = &quot;a_b_c_d_e&quot; print(string.split(&quot;_&quot;, 2)) &quot;&quot;&quot;use maxsplit with arbitrary whitespace&quot;&quot;&quot; s = &quot;foo bar foobar foo&quot; print(s.split(None, maxsplit=1)) min and max index 获取最大值，最小值的index &quot;&quot;&quot; Find Index of Min/Max Element. &quot;&quot;&quot; lst = [40, 10, 20, 30] def minIndex(lst): return min(range(len(lst)), key=lst.__getitem__) # use xrange if &lt; 2.7 def maxIndex(lst): return max(range(len(lst)), key=lst.__getitem__) # use xrange if &lt; 2.7 print(minIndex(lst)) print(maxIndex(lst)) nested function python 支持函数作为参数传递： &quot;&quot;&quot;nested functions&quot;&quot;&quot; def addBy(val): print(val) def func(inc): print(inc) return val + inc return func addFive = addBy(5) print(addFive(4)) addThree = addBy(3) print(addThree(7)) obj get attribute 通过getattr获取python的属性，可以是类级别的，也可以实例级别的，但是如果属性没有实例级别是先通过__getattribute__获取 class obj(): attr = 1 def __getattribute__(self, item): print('get attribute') return &quot;123&quot; def __get__(self, instance, owner): print(&quot;get&quot;) def __getattr__(self, item): print(&quot;get attribute1&quot;) foo = &quot;attr&quot; a = obj() print(a.test) print(getattr(obj, foo)) print(getattr(a, &quot;attr1&quot;)) remove duplicated values 这里面需要理解清楚的是： list，可以重复 set,没有重复 &quot;&quot;&quot;remove duplicate items from list.</div>
     </div>
   </a>
@@ -621,14 +613,14 @@ print(unique_lst)  # [item2, item3]
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a>
     </div>
   </div>
   
