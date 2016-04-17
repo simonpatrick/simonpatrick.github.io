@@ -302,6 +302,30 @@ element = this.locator.findElement();
     <div class="content">
       
       <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-04-17-python-tricky-01/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/18.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Apr 17, 2016</time>
+      <h2 class="title">Python Tricky-01</h2>
+      <div class="summary">Python Tricky python tricky 是记录一些Python使用过程中一些神奇的小技巧. Argument Unpacking 一个argument unpacking的例子： def product(a, b): print(&quot;a is %d&quot; % a) print(&quot;b is %d&quot; % b) return a * b argument_tuple = (1, 2) argument_dict = {'a': 1, 'b': 2} argument_list = [1,2] # interesting for unpacking print(product(*argument_list)) print(product(*argument_tuple)) print(product(**argument_dict)) python unpacking 这里指的是调用python函数的参数可以自动匹配： list: 顺序匹配函数参数，变量调用时以*开始 tuple：顺序匹配函数参数，变量调用时以*开始 dict: 根据key值来匹配，变量调用时以**开始 下面是一个可扩展unpacking的方式： *其实表示一个list &quot;&quot;&quot;allows collecting not explicitly assigned values into a placeholder variable&quot;&quot;&quot; a, *b, c = range(10) print(a, b, c) &quot;&quot;&quot;advanced example&quot;&quot;&quot; [(c, *d, [*e]), f, *g] = [[1, 2, 3, 4, [5, 5, 5]], 6, 7, 8] print(c, d, e, f, g) bool python 中的bool有True or False，python2中的True 或者False都可以改变对应的值： python中的True or False可以参加数学运算： a = 5 print(isinstance(a,int)+(a&lt;10)) # interesting writing print([&quot;is odd&quot;,&quot;is even&quot;][a % 2 ==0]) print(&quot;is even&quot; if a % 2 ==0 else &quot;is odd&quot;) python中循环如果使用True会比使用1来的慢，不过一般肯定是使用True or False来做循环的： from timeit import timeit def test_true(): count = 100 while True: # Here is True if count &lt; 0: break count = -1 def test_1(): count = 100 while 1: break count -= 1 print('use True: %s' %timeit(test_true, number=1000000)) print('use 1: %s' % timeit(test_1, number=1000000)) 结果： use True: 0.21380468501592986 use 1: 0.1610587630129885 Property Cache python 的property可以通过__get__来获取，同时可以在运行时添加，改变属性的值 class PropertyCache: &quot;&quot;&quot; a decorator to cache property &quot;&quot;&quot; def __init__(self, func): self.func = func def __get__(self, obj, cls): if not obj: return self value = self.func(obj) # Magic Here, there is property_to_be_cached property there setattr(obj, self.func.__name__, value) return value class Foo: def __init__(self): self._property_to_be_cached = 'result' @PropertyCache def property_to_be_cached(self): print('compute') return self._property_to_be_cached test = Foo() print(test.property_to_be_cached) print(test.property_to_be_cached) print(Foo().property_to_be_cached) 这里通过一个装饰器：PropertyCache 来装饰property_to_be_cached，在调用property_to_be_cached时，其实是通过PropertyCache的get来获取，那么： value = self.func(obj) 就是通过调用Foo中的property_to_be_cached函数，value就是property_to_be_cached的返回值 setattr(obj, self.func.name, value)： 就是将value付给了属性：property_to_be_cached，self.func.name 其实就是property_to_be_cached 这是一个挺有意思的例子来说明了动态语言的一些magic的方法 calculator 这里例子可以看出，python的函数的一些使用方法，函数也可以作为一种参数，活着变量 import operator ops = { &quot;+&quot;: operator.add, &quot;-&quot;: operator.sub, &quot;/&quot;: operator.truediv, &quot;*&quot;: operator.mul } x = input(&quot;Enter an operator [OPTIONS: +, -, *, /]: &quot;) y = int(input(&quot;Enter number: &quot;)) z = int(input(&quot;Enter number: &quot;)) # interesting to use function print (ops[x](y, z)) chained comparsion a = 10 print(1 &lt; a &lt; 50) print(10 == a &lt; 20) compile python 可以通过exec可以直接运行组装起来的字符串，当然其实很多语言都可以的&hellip;&hellip; import math # using sin, cos and sqrt for example ''' Takes a code string and returns a ready-to-use function ''' def compile_(s): code = &quot;&quot;&quot;def f(x):\n return {}&quot;&quot;&quot;.format(s) # wrap the string as a function f(x) scope = {&quot;sin&quot;: math.sin, &quot;cos&quot;: math.cos, &quot;sqrt&quot;: math.sqrt} # define the scope for the code to use exec(code, scope) # execute code inside the given scope # f(x) gets defined inside %vis% return scope[&quot;f&quot;] # now we only have to extract it and return f = compile_(&quot;x**2 + 2*sin(x)&quot;) print(f(10)) &quot;&quot;&quot;exec can be used to execute Python code during runtime variables can be handed over as a dict &quot;&quot;&quot; exec(&quot;print('Hello ' + s)&quot;, {'s': 'World'}) sequence sequence 其实是个list，如果遍历这个list，遍历时需要进行一些调用的话，那么下面例子提供了两个不同的方法.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-04-17-python-tricky-02/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Apr 17, 2016</time>
+      <h2 class="title">Python Tricky-01</h2>
+      <div class="summary">Python Tricky-2 max split &quot;&quot;&quot;split a string max times&quot;&quot;&quot; string = &quot;a_b_c_d_e&quot; print(string.split(&quot;_&quot;, 2)) &quot;&quot;&quot;use maxsplit with arbitrary whitespace&quot;&quot;&quot; s = &quot;foo bar foobar foo&quot; print(s.split(None, maxsplit=1)) min and max index 获取最大值，最小值的index &quot;&quot;&quot; Find Index of Min/Max Element. &quot;&quot;&quot; lst = [40, 10, 20, 30] def minIndex(lst): return min(range(len(lst)), key=lst.__getitem__) # use xrange if &lt; 2.7 def maxIndex(lst): return max(range(len(lst)), key=lst.__getitem__) # use xrange if &lt; 2.7 print(minIndex(lst)) print(maxIndex(lst)) nested function python 支持函数作为参数传递： &quot;&quot;&quot;nested functions&quot;&quot;&quot; def addBy(val): print(val) def func(inc): print(inc) return val + inc return func addFive = addBy(5) print(addFive(4)) addThree = addBy(3) print(addThree(7)) obj get attribute 通过getattr获取python的属性，可以是类级别的，也可以实例级别的，但是如果属性没有实例级别是先通过__getattribute__获取 class obj(): attr = 1 def __getattribute__(self, item): print('get attribute') return &quot;123&quot; def __get__(self, instance, owner): print(&quot;get&quot;) def __getattr__(self, item): print(&quot;get attribute1&quot;) foo = &quot;attr&quot; a = obj() print(a.test) print(getattr(obj, foo)) print(getattr(a, &quot;attr1&quot;)) remove duplicated values 这里面需要理解清楚的是： list，可以重复 set,没有重复 &quot;&quot;&quot;remove duplicate items from list.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/designpattern/2016-04-11-singleton/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/singleton.jpg);"></div>
     <div class="detail">
@@ -397,30 +421,6 @@ element = this.locator.findElement();
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/python/2016-02-26-zabbix_monitoring/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/25.jpg);"></div>
-    <div class="detail">
-      <time>Fri, Feb 26, 2016</time>
-      <h2 class="title">zabbix 基础</h2>
-      <div class="summary">抽空花了1个小时看了一下Zabbix的界面和简单的手册，了解了一下Zabbix的基础知识，下面是一个小小的记录,后面就写一些Python的脚本来直接调用Zabbix的API在进行一些自动化的操作. Zabbix 基础 Zabbix 是一个开源的监控系统，由于需要帮助运维写一些调用ZABBIX API的代码，所以就开始了解一下ZABBIX的一些基本概念. 简单的看了一下Zabbix的一个手册，大致了解Zabbix监控的一些概念，以下是Zabbix中比较重要的概念或者可以认为一些抽象的实体资源: Configuration HOST HOST GROUP Templates Monitor Application Items: keys Triggers Graphs Configuration:HOST HOST 就是Zabbix监控的对象，创建HOST可以通过一些预先定义好的模版来实现. 以Linux Group来说的话，HOST可能还有以下的一些属性： Agent Interface SNMP Interface JMX Interface IPMI Interface Monitory proxy Status Configuration: HOST GROUP 创建HOST的同时可以创建一个HOST GROUP，HOST GROUP实际上就是不同的HOST组合起来成一组. Configuration: Templates Templates 就是一些HOST的模版，相似的HOST可以通过模版继承，组合的方式创建 Monitor 从监控的层级来看，监控HOST的层级逻辑是： HOSTGROUP: HOST GROUP是可以认为不同HOST的容器 HOST: 监控的实体,监控的实体实际上有不同的监控模版组合而成 以下的APPLICATION，ITEM,TRIGGER,Graph 其实都是继承了模版的： APPLICATION,可以认为是一组监控的内容 ITEM: item就是监控的具体的一个数值,比如cl Loaded Class Count他的key是jmx[&quot;java.lang:type=ClassLoading&quot;,LoadedClassCount] 这个ITEM就是具体监控LoadedClass数目的一项，那么多个项目就可以组合成一个Application，ITEM 其实可以认为是采样数据的一个项 一个Template可以通过多个Application来组合而成，一个Application可以由Items来组合而成，一个HOST包含有多个监控的Template，一个HOST Group可以有多个HOST. 关于TEMPLATE的继承关系是： HOST 继承HOST GROUP的TEMPLATE Graph： 图表 Trigger： 触发器 这两个可以设置到模版级别的 Monitor: Application Application 可以认为是监控的一个大的项目，里面可能包括了不同的采样项目(item) create Application，可以参考一下API文档就可以 Monitor: Item Item创建首先需要创建一个key(在创建KEY之前可以先创建一个TEMPLATE)，key 相当于需要监控什么，如何设置？ - 监控客户端设置, 在zabbix_agentd.conf中需要添加UserParameter grep -v '#' /etc/zabbix/zabbix_agentd.conf|grep -v &quot;^$&quot; export UserParameter=&lt;key_name&gt;,&lt;shell_command&gt; &gt;&gt; &lt;configure_file_location&gt; ITEM的设置，可以设置ITEM的类型，同时使用一些表达是来完成需要的采样内容的设置 Graphs graph 就是图标，那么很明显，一个graph有x,y 轴，x轴一般总是时间序列，另外一个轴对应不同的item（采样项目），同时又一些graph的类型选择，以及图表大小的设置 Triggers Trigger 就是一个触发器，对于单独的一个item来说，如果设置了一些阀值,那么如果超过这个阀值，那么就会报警了.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/performance/2016-02-22-mobile_perf_testing/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Feb 22, 2016</time>
-      <h2 class="title">Mobile 性能测试关键点</h2>
-      <div class="summary">移动端性能测试的一些关键点 阅读了一些人的PPT，再这里记录一些移动端性能测试的一些关键点，每个关键点会在后续润色，细化. 移动端性能测试的方方面面 Android Monkey Memory Usage: /system/build.prop dalvik.vm.heapstartsize=8m # 堆分配的初始大小 dalvik.vm.heapgrowthlimit=64m adb shell procrank DDMS adb shell top 启动性能(首次，多次) 流量 应用占用量，cachesize，datasize，codesize 电量 CPU: active, idel memory leak, hprof, ddms dump hprof GPU 过度绘制 1.蓝色1x过度绘制 2.绿色2x过度绘制 3.淡红色3x过度绘制 4.红色超过4x过度绘制 gfxinfo systrace traceview tracer for OpenGL ES IOS instruments api business flow/scenario Performance Baseline comparison 颗粒度 Business flow Automation supporting poor network condition Security 混淆 加固 权限 本地数据库安全 ContentProvider共享 Activity注入风险 Tools Fiddler</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -428,14 +428,14 @@ element = this.locator.findElement();
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/git">git</a>
     </div>
   </div>
   
