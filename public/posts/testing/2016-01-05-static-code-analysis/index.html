@@ -138,6 +138,30 @@ checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检�
     <div class="content">
       
       <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/python/2016-04-19-python-tools/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/21.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Apr 19, 2016</time>
+      <h2 class="title">Python Tools- unittest,pip,pylint</h2>
+      <div class="summary">Python Tools 以下内容是Writing Solid Python Code-91 suggestions to improve your python program的 读书笔记。下面是关于第七章，使用工具辅助项目开发的笔记，这里提到了如下工具： pip/yolk setuptools paster nose flask-pypi-proxy pylint pyreverse PIP pip 是用来安装python第三方包，管理python第三包的工具。pip常用的方法有： Usage: pip &lt;command&gt; [options] Commands: install Install packages. download Download packages. uninstall Uninstall packages. freeze Output installed packages in requirements format. list List installed packages. show Show information about installed packages. search Search PyPI for packages. wheel Build wheels from your requirements. hash Compute hashes of package archives.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/java/2016-04-17-java-unittesting/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/24.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Apr 18, 2016</time>
+      <h2 class="title">JAVA Unit Testing</h2>
+      <div class="summary">Java Unit Testing 的一些收藏： springtestdbunit mockito powermock</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/python/2016-04-17-python-tricky-01/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/18.jpg);"></div>
     <div class="detail">
@@ -233,30 +257,6 @@ checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检�
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/python/2016-02-28-simple_word_count/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/18.jpg);"></div>
-    <div class="detail">
-      <time>Sun, Feb 28, 2016</time>
-      <h2 class="title">Simple Word Counter</h2>
-      <div class="summary">有时测试的面试题中会考点编程的内容，比如统计字符串中的相同字符数量，具体题目如下： 给定一个字符串，如MIssissippi 计算字符串中每一个不同字符出现的数量 Python 的解法 letter_count={} for letter in 'MIssissippi': letter[letter]=letter_count.get(letter,0)+1 print(letter_count) 运行结果： {'s': 4, 'M': 1, 'i': 3, 'I': 1, 'p': 2} Java 的解法 JAVA 8 中给Map加入了getOrDefault的方法，下面就分别介绍一下JAVA8之前和使用JAVA8的方法： JAVA8 之前： public Map&lt;String,Integer&gt; countCharacters(String source){ char[] chars = source.toCharArray(); Map&lt;String,Integer&gt; result = new HashMap&lt;&gt;(); for (char aChar : chars) { Integer existing_counter = result.get(String.valueOf(aChar)); int counter = existing_counter==null?0:existing_counter; result.put(String.valueOf(aChar),counter+1); } return result; } JAVA8 解法 public Map&lt;String,Integer&gt; countCharacters_JAVA8(String source){ char[] chars</div>
-    </div>
-  </a>
-</article>
-</div>
-      
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/python/2016-02-26-call_zabbix_api/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
-    <div class="detail">
-      <time>Fri, Feb 26, 2016</time>
-      <h2 class="title">Python 访问Zabbix API</h2>
-      <div class="summary">Zabbix API 访问 准备使用Python来访问一下Zabbix，首先当然阅读一下Zabbix的API Manual,抛开什么json rpc这样的问题之外，zabbix的API的分类还是很工整的，所以看起来比较舒服，在一定了解了zabbix基础之后，基本上就可以上手来写了，网上查了一下，找个一个python zabbix的调用的一个客户段代码，感觉不错，就开始行动了。 Zabbix API 客户端代码的实现 Zabbix API的主要的两个参数其实是method，params，params基本上就可以看作一些可变的参数，其实就是一个json或者map， 对于method来说，一般就是 resource.action 这种方式，所以python客户端使用重写了一个getattr来做,返回一个可以访问不同资源名称的客户端,具体的代码如下： class ZabbixClient: &quot;&quot;&quot; Generic Zabbix API Client - login - get auth &quot;&quot;&quot; globale_header = { &quot;Content-Type&quot;: &quot;application/json-rpc&quot; } def __init__(self, session=None, timeout=None): self.user_name, self.default_user_name = '1', '1' self.password, self.default_password = '123456', '123456' self.zabbix_api_url = 'http://{0}/api_jsonrpc.php'.format('abcd.http') if session: self.session = session else: self.session = requests.session() self.session.headers.update({ 'Content-Type': 'application/json-rpc', 'User-Agent': 'python-zabbix-client', 'Cache-Control': 'no-cache' }) self.auth = '' self.id = 0 self.timeout = timeout logger.info('JSON-RPC Server EndPoint: %s', self.zabbix_api_url) def login_in(self, user_name=None, password=None): &quot;&quot;&quot; login with given user_name and password, if None, use default user :param user_name: :param password: :return: result,auth key &quot;&quot;&quot; if user_name: self.user_name = user_name if password: self.password = password self.auth = self.user.login(user=self.user_name, password=self.password) def api_version(self): return self.apiinfo.version() # def confimport(self, format='', source='', rules=''): # &quot;&quot;&quot;Alias for configuration.import because it clashes with # Python's import reserved keyword&quot;&quot;&quot; # # return self.do_request( # method=&quot;configuration.import&quot;, # params={&quot;format&quot;: format, &quot;source&quot;: source, &quot;rules&quot;: rules} # )['result'] def do_request(self, method, params=None): request_json = { 'jsonrpc': '2.0', 'method': method, 'params': params or {}, 'id': self.id, } if method != 'apiinfo.version' and self.auth: request_json['auth'] = self.auth logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(',', ':'))) response = self.session.post( self.zabbix_api_url, data=json.dumps(request_json), timeout=self.timeout ) logger.debug(&quot;Response Code : %s&quot;, str(response.status_code)) response.raise_for_status() if not len(response.text): raise ZabbixAPIException(&quot;没有返回值&quot;) try: response_json = json.loads(response.text) except ValueError: raise ZabbixAPIException(&quot;不能解析JSON %s&quot; % response.text) logger.debug(&quot;sending: %s&quot;, json.dumps(request_json, indent=4, separators=(',', ':'))) self.id += 1 if 'error' in response_json: if 'data' not in response_json['error']: response_json['error']['data'] = 'No Data' msg = &quot;Error {code}: {message},{data}&quot;.format( code=response_json['error']['code'], message=response_json['error']['message'], data=response_json['error']['data'] ) raise ZabbixAPIException(msg, response_json['error']['code']) return response_json def __getattr__(self, item): &quot;&quot;&quot; auto create Zabbix API Client :param item: :return: &quot;&quot;&quot; return ZabbixAPIObjectClass(item, self) class ZabbixAPIObjectClass(object): def __init__(self, name, parent): self.name = name self.parent = parent def __getattr__(self, item): &quot;&quot;&quot; dynamic create a method (get,create,update,delete) :param item: :return: &quot;&quot;&quot; def fn(*args, **kwargs): if args and kwargs: raise TypeError('Found Both args and kwargs') return self.parent.do_request('{0}.{1}'.format(self.name, item), args or kwargs)['result'] return fn 基本上一个文件就搞定了，不过这个基本上参考了网上的一个代码实现的，这里使用getattr这种方式可以非常简洁的处理了这种请求非常类似的情况，这也是python的魅力吧.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -264,14 +264,14 @@ checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检�
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/git">git</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   

@@ -15,14 +15,14 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
 
     
-    <title>Java 并发死锁实践－1 - Colored Hedwig: less is more</title>
-    <meta property='og:title' content="Java 并发死锁实践－1 - Colored Hedwig: less is more">
+    <title>Python Tools- unittest,pip,pylint - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Python Tools- unittest,pip,pylint - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://testless.github.io/posts/java/2015-11-18-concurrence_dead_lock/">
+    <meta property="og:url" content="http://testless.github.io/posts/python/2016-04-19-python-tools/">
     
-    <meta property="og:image" content="http://testless.github.io/images/22.jpg">
+    <meta property="og:image" content="http://testless.github.io/images/21.jpg">
 
   </head>
 
@@ -41,12 +41,12 @@
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
         <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
-        <meta itemprop="dateModified" content="2015-11-18T08:57:44&#43;00:00">
-        <meta itemprop="headline" content="Java 并发死锁实践－1">
-        <meta itemprop="description" content="写点学习Java 并发死锁实践的来记录一下学习JAVA 并发的经历. ## 什么是JAVA的死锁(dead lock) 死锁就是两个线程一直相互等待. 实例代码如下: public class ThreadDeadlock { public static void main(String[] args) throws InterruptedException { Object obj1 = new Object(); Object obj2 = new Object(); Thread t1 = new Thread(new SyncThread(obj1, obj2), &quot;t1&quot;); Thread t2 = new Thread(new SyncThread(obj2, obj1), &quot;t2&quot;); t1.start(); Thread.sleep(1000); t2.start(); } } public class SyncThread implements Runnable{ private Object obj1; private Object obj2; public SyncThread(Object o1, Object o2){ this.obj1=o1; this.obj2=o2; } @Override public void run() { String name = Thread.currentThread().getName(); System.out.println(name &#43; &quot; acquiring lock on object 1&quot;&#43;obj1); synchronized (obj1) { System.out.println(name &#43; &quot; acquired lock on object 1&quot;&#43;obj1); work(); System.out.println(name &#43; &quot; acquiring lock on object 2&quot;&#43;obj2); synchronized (obj2) { System.out.println(name &#43; &quot; acquired lock on object 2&quot;&#43;obj2); work(); } System.out.println(name &#43; &quot; released lock on object 2&quot;&#43;obj2); } System.out.println(name &#43; &quot; released lock on object 1&quot;&#43;obj1); System.out.println(name &#43; &quot; finished execution.&quot;); } private void work() { try { Thread.sleep(3000); } catch (InterruptedException e) { e.printStackTrace(); } } } running result: t1 acquiring lock on java.lang.Object@370cd189 t1 acquired lock on java.lang.Object@370cd189 -- lock object1 t2 acquiring lock on java.lang.Object@509afc84 t2 acquired lock on java.lang.Object@509afc84 -- lock object2 t1 acquiring lock on java.lang.Object@509afc84 -- try to lock object 2 waiting object 2 released t2 acquiring lock on java.lang.Object@3165be7c -- try to lock object1 waiting object 1 released Thread1 lock object1 waiting object2 released to release object1 Thread2 lock object2 waiting object1 released to release object2 Thread1-&gt;Thread2-&gt;Thread1 所以死循环了，所以这就是死锁了。出现死锁后，线程就停止在那里一致等待了。 容器里面可能就有一只无法释放的线程堆积 使用JVisualVM可以看到如下的ThreadDump: Found one Java-level deadlock: ============================= &quot;t2&quot;: waiting to lock monitor 0x00007ff1288332a8 (object 0x000000074001d9a8, a java.lang.Object), which is held by &quot;t1&quot; &quot;t1&quot;: waiting to lock monitor 0x00007ff128830758 (object 0x000000074001d9b8, a java.lang.Object), which is held by &quot;t2&quot; Java stack information for the threads listed above: =================================================== &quot;t2&quot;: at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20) - waiting to lock &lt;0x000000074001d9a8&gt; (a java.lang.Object) - locked &lt;0x000000074001d9b8&gt; (a java.lang.Object) at java.lang.Thread.run(Thread.java:745) &quot;t1&quot;: at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20) - waiting to lock &lt;0x000000074001d9b8&gt; (a java.lang.Object) - locked &lt;0x000000074001d9a8&gt; (a java.lang.Object) at java.lang.Thread.run(Thread.java:745) Found 1 deadlock.">
-        <meta itemprop="url" content="http://testless.github.io/posts/java/2015-11-18-concurrence_dead_lock/">
+        <meta itemprop="dateModified" content="2016-04-19T10:41:15&#43;00:00">
+        <meta itemprop="headline" content="Python Tools- unittest,pip,pylint">
+        <meta itemprop="description" content="Python Tools 以下内容是Writing Solid Python Code-91 suggestions to improve your python program的 读书笔记。下面是关于第七章，使用工具辅助项目开发的笔记，这里提到了如下工具： pip/yolk setuptools paster nose flask-pypi-proxy pylint pyreverse PIP pip 是用来安装python第三方包，管理python第三包的工具。pip常用的方法有： Usage: pip &lt;command&gt; [options] Commands: install Install packages. download Download packages. uninstall Uninstall packages. freeze Output installed packages in requirements format. list List installed packages. show Show information about installed packages. search Search PyPI for packages. wheel Build wheels from your requirements. hash Compute hashes of package archives.">
+        <meta itemprop="url" content="http://testless.github.io/posts/python/2016-04-19-python-tools/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://testless.github.io/images/22.jpg" />
+          <meta itemprop="url" content="http://testless.github.io/images/21.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -62,132 +62,200 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://testless.github.io/images/22.jpg);"></div>
+        <div class="image" style="background-image: url(http://testless.github.io/images/21.jpg);"></div>
 
         <header class="article-header">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-11-18T08:57:44&#43;00:00">Wed, Nov 18, 2015</time>
-          <h1 class="article-title">Java 并发死锁实践－1</h1>
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-04-19T10:41:15&#43;00:00">Tue, Apr 19, 2016</time>
+          <h1 class="article-title">Python Tools- unittest,pip,pylint</h1>
         </header>
 
         <div class="article-body" itemprop="articleBody">
           
 
-<p>写点学习Java 并发死锁实践的来记录一下学习JAVA 并发的经历.</p>
+<h1 id="python-tools:e690553c34998df79c36d5d8620e9fd0">Python Tools</h1>
 
-<p>## 什么是JAVA的死锁(dead lock)
- 死锁就是两个线程一直相互等待.</p>
-
-<p><img src="http://incdn1.b0.upaiyun.com/2014/04/c9a8bba45f37b6dcfe1684867cb2a3e9-300x207.png" alt="img" /></p>
-
-<p>实例代码如下:</p>
-
-<pre><code class="language-java">public class ThreadDeadlock {
-
-    public static void main(String[] args) throws InterruptedException {
-        Object obj1 = new Object();
-        Object obj2 = new Object();
-        Thread t1 = new Thread(new SyncThread(obj1, obj2), &quot;t1&quot;);
-        Thread t2 = new Thread(new SyncThread(obj2, obj1), &quot;t2&quot;);
-        t1.start();
-        Thread.sleep(1000);
-        t2.start();
-    }
-}
-
-public class SyncThread implements Runnable{
-    private Object obj1;
-    private Object obj2;
-
-    public SyncThread(Object o1, Object o2){
-        this.obj1=o1;
-        this.obj2=o2;
-    }
-    @Override
-    public void run() {
-        String name = Thread.currentThread().getName();
-        System.out.println(name + &quot; acquiring lock on object 1&quot;+obj1);
-        synchronized (obj1) {
-         System.out.println(name + &quot; acquired lock on object 1&quot;+obj1);
-         work();
-         System.out.println(name + &quot; acquiring lock on object 2&quot;+obj2);
-         synchronized (obj2) {
-            System.out.println(name + &quot; acquired lock on  object 2&quot;+obj2);
-            work();
-        }
-         System.out.println(name + &quot; released lock on object 2&quot;+obj2);
-        }
-        System.out.println(name + &quot; released lock on object 1&quot;+obj1);
-        System.out.println(name + &quot; finished execution.&quot;);
-    }
-
-    private void work() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
-</code></pre>
-
-<p>running result:</p>
-
-<pre><code>t1 acquiring lock on java.lang.Object@370cd189
-t1 acquired lock on java.lang.Object@370cd189  -- lock object1
-t2 acquiring lock on java.lang.Object@509afc84
-t2 acquired lock on java.lang.Object@509afc84 -- lock object2
-t1 acquiring lock on java.lang.Object@509afc84  -- try to lock object 2 waiting object 2 released
-t2 acquiring lock on java.lang.Object@3165be7c -- try to lock object1  waiting object 1 released
-
-</code></pre>
-
-<p>Thread1 lock object1 waiting object2 released to release object1
-Thread2 lock object2 waiting object1 released to release object2</p>
-
-<p>Thread1-&gt;Thread2-&gt;Thread1  所以死循环了，所以这就是死锁了。出现死锁后，线程就停止在那里一致等待了。
-容器里面可能就有一只无法释放的线程堆积</p>
-
-<p>使用JVisualVM可以看到如下的ThreadDump:</p>
-
-<pre><code>Found one Java-level deadlock:
-=============================
-&quot;t2&quot;:
-  waiting to lock monitor 0x00007ff1288332a8 (object 0x000000074001d9a8, a java.lang.Object),
-  which is held by &quot;t1&quot;
-&quot;t1&quot;:
-  waiting to lock monitor 0x00007ff128830758 (object 0x000000074001d9b8, a java.lang.Object),
-  which is held by &quot;t2&quot;
-
-Java stack information for the threads listed above:
-===================================================
-&quot;t2&quot;:
-	at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20)
-	- waiting to lock &lt;0x000000074001d9a8&gt; (a java.lang.Object)
-	- locked &lt;0x000000074001d9b8&gt; (a java.lang.Object)
-	at java.lang.Thread.run(Thread.java:745)
-&quot;t1&quot;:
-	at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20)
-	- waiting to lock &lt;0x000000074001d9b8&gt; (a java.lang.Object)
-	- locked &lt;0x000000074001d9a8&gt; (a java.lang.Object)
-	at java.lang.Thread.run(Thread.java:745)
-
-Found 1 deadlock.
-</code></pre>
-
-<h2 id="避免死锁:6bc1e2bd5786f1a03041d1f0acc83029">避免死锁</h2>
+<p>以下内容是Writing Solid Python Code-91 suggestions to improve your python program的 读书笔记。下面是关于第七章，使用工具辅助项目开发的笔记，这里提到了如下工具：</p>
 
 <ul>
-<li>避免嵌套封锁, 在这个例子中可以之对一个object加锁</li>
-<li>只对有请求的进行封锁</li>
-<li>避免无限期的等待</li>
+<li>pip/yolk</li>
+<li>setuptools</li>
+<li>paster</li>
+<li>nose</li>
+<li>flask-pypi-proxy</li>
+<li>pylint</li>
+<li>pyreverse</li>
 </ul>
+
+<h2 id="pip:e690553c34998df79c36d5d8620e9fd0">PIP</h2>
+
+<p>pip 是用来安装python第三方包，管理python第三包的工具。pip常用的方法有：</p>
+
+<pre><code class="language-shell">Usage:
+  pip &lt;command&gt; [options]
+
+Commands:
+  install                     Install packages.
+  download                    Download packages.
+  uninstall                   Uninstall packages.
+  freeze                      Output installed packages in requirements format.
+  list                        List installed packages.
+  show                        Show information about installed packages.
+  search                      Search PyPI for packages.
+  wheel                       Build wheels from your requirements.
+  hash                        Compute hashes of package archives.
+  completion                  A helper command used for command completion
+  help                        Show help for commands.
+
+General Options:
+  -h, --help                  Show help.
+  --isolated                  Run pip in an isolated mode, ignoring
+                              environment variables and user configuration.
+  -v, --verbose               Give more output. Option is additive, and can
+                              be used up to 3 times.
+  -V, --version               Show version and exit.
+  -q, --quiet                 Give less output.
+  --log &lt;path&gt;                Path to a verbose appending log.
+  --proxy &lt;proxy&gt;             Specify a proxy in the form
+                              [user:passwd@]proxy.server:port.
+  --retries &lt;retries&gt;         Maximum number of retries each connection
+                              should attempt (default 5 times).
+  --timeout &lt;sec&gt;             Set the socket timeout (default 60.0
+                              seconds).
+  --exists-action &lt;action&gt;    Default action when a path already exists:
+                              (s)witch, (i)gnore, (w)ipe, (b)ackup.
+  --trusted-host &lt;hostname&gt;   Mark this host as trusted, even though it
+                              does not have valid or any HTTPS.
+  --cert &lt;path&gt;               Path to alternate CA bundle.
+  --client-cert &lt;path&gt;        Path to SSL client certificate, a single file
+                              containing the private key and the
+                              certificate in PEM format.
+  --cache-dir &lt;dir&gt;           Store the cache data in &lt;dir&gt;.
+  --no-cache-dir              Disable the cache.
+  --disable-pip-version-check
+                              Don't periodically check PyPI to determine
+                              whether a new version of pip is available for
+                              download. Implied with --no-index.
+</code></pre>
+
+<p>这里其实已经非常清楚的表示了pip的用法，比如安装：</p>
+
+<pre><code class="language-shell">pip install requests
+</code></pre>
+
+<p>比如卸载：</p>
+
+<pre><code class="language-shell">pip uninstall requests
+</code></pre>
+
+<p>比如生成requirement 文件</p>
+
+<pre><code class="language-shell">pip freeze -requirements.txt
+</code></pre>
+
+<p>如果想获得每一个命令的的详细帮助，则：</p>
+
+<pre><code class="language-shell">pip freeze -h
+</code></pre>
+
+<h2 id="python-单元测试和nose:e690553c34998df79c36d5d8620e9fd0">python 单元测试和nose</h2>
+
+<p>单元测试的目的：</p>
+
+<ul>
+<li>提高代码质量，减少潜在bug</li>
+<li>减少修复成本</li>
+<li>集成测试保证</li>
+</ul>
+
+<p>有效的单元测试：(只是读书笔记)</p>
+
+<ul>
+<li>测试先行</li>
+<li>编写用例，准备数据</li>
+<li>测试脚本</li>
+<li>编写被测代码</li>
+<li>修改代码，通过单元测试</li>
+</ul>
+
+<p>单元测试基本原则：</p>
+
+<ul>
+<li>一致性</li>
+<li>原子性</li>
+<li>单一职责：基于场景</li>
+<li>隔离性</li>
+</ul>
+
+<p>单元测试相关概念：</p>
+
+<ul>
+<li>测试固件(test fixture)</li>
+<li>测试用例(test case)</li>
+<li>测试用例集(test suite)</li>
+<li>测试运行器(test runner)</li>
+</ul>
+
+<p>以下是一个python的单元测试例子：一个add函数</p>
+
+<pre><code class="language-python"># 单元测试
+class TestCalculator(TestCase):
+
+    def setUp(self):
+        self.calculator=Calculator()
+
+    def test_add(self):
+        result = self.calculator.add(1,2)
+        self.assertEqual(result,3)
+
+    def test_add_string(self):
+        result= self.calculator.add('1','sd')
+        self.assertEqual(result,'1sd')
+
+    def test_add_list_exception(self):
+        with self.assertRaises(TypeError) as context:
+            result=self.calculator.add(['12','2'],'dd')
+        print(context)
+        self.assertEqual(TypeError,type(context.exception))
+</code></pre>
+
+<p>补上add实现：</p>
+
+<pre><code class="language-python">class Calculator(object):
+    def __init__(self):
+        pass
+
+    def add(self, a, b):
+        return a+b
+</code></pre>
+
+<p>这样一个简单的单元测试例子就完成了，当然实际使用要比这个负责的多的多.</p>
+
+<h2 id="pylint:e690553c34998df79c36d5d8620e9fd0">pylint</h2>
+
+<p>pylint 主要是用来进行代码风格的检查：</p>
+
+<ul>
+<li>代码风格审查</li>
+<li>代码错误检查</li>
+<li>重复或者设计不合理代码</li>
+</ul>
+
+<p>pylint中集成了pyreverser，可以生成uml图，pylint的安装如下：</p>
+
+<pre><code class="language-python">pip install pylint
+</code></pre>
+
+<p>使用pylint：</p>
+
+<pre><code class="language-shell">pylint sample.py
+</code></pre>
 
         </div>
 
 
         <aside>
           <div class="section">
-            <a href="http://testless.github.io/tags/java" class="tag">java</a>
+            <a href="http://testless.github.io/tags/python" class="tag">python</a>
             </div>
 
           <div class="section share">
@@ -213,9 +281,11 @@ Found 1 deadlock.
     <header><div class="title">TableOfContents</div></header>
     <div class="list-default"><nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#python-tools:e690553c34998df79c36d5d8620e9fd0">Python Tools</a>
 <ul>
-<li><a href="#避免死锁:6bc1e2bd5786f1a03041d1f0acc83029">避免死锁</a></li>
+<li><a href="#pip:e690553c34998df79c36d5d8620e9fd0">PIP</a></li>
+<li><a href="#python-单元测试和nose:e690553c34998df79c36d5d8620e9fd0">python 单元测试和nose</a></li>
+<li><a href="#pylint:e690553c34998df79c36d5d8620e9fd0">pylint</a></li>
 </ul></li>
 </ul>
 </nav></div>
@@ -362,7 +432,7 @@ Found 1 deadlock.
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   

@@ -15,14 +15,14 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
 
     
-    <title>Java 并发死锁实践－1 - Colored Hedwig: less is more</title>
-    <meta property='og:title' content="Java 并发死锁实践－1 - Colored Hedwig: less is more">
+    <title>JAVA Unit Testing - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="JAVA Unit Testing - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://testless.github.io/posts/java/2015-11-18-concurrence_dead_lock/">
+    <meta property="og:url" content="http://testless.github.io/posts/java/2016-04-17-java-unittesting/">
     
-    <meta property="og:image" content="http://testless.github.io/images/22.jpg">
+    <meta property="og:image" content="http://testless.github.io/images/24.jpg">
 
   </head>
 
@@ -41,12 +41,12 @@
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
         <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
-        <meta itemprop="dateModified" content="2015-11-18T08:57:44&#43;00:00">
-        <meta itemprop="headline" content="Java 并发死锁实践－1">
-        <meta itemprop="description" content="写点学习Java 并发死锁实践的来记录一下学习JAVA 并发的经历. ## 什么是JAVA的死锁(dead lock) 死锁就是两个线程一直相互等待. 实例代码如下: public class ThreadDeadlock { public static void main(String[] args) throws InterruptedException { Object obj1 = new Object(); Object obj2 = new Object(); Thread t1 = new Thread(new SyncThread(obj1, obj2), &quot;t1&quot;); Thread t2 = new Thread(new SyncThread(obj2, obj1), &quot;t2&quot;); t1.start(); Thread.sleep(1000); t2.start(); } } public class SyncThread implements Runnable{ private Object obj1; private Object obj2; public SyncThread(Object o1, Object o2){ this.obj1=o1; this.obj2=o2; } @Override public void run() { String name = Thread.currentThread().getName(); System.out.println(name &#43; &quot; acquiring lock on object 1&quot;&#43;obj1); synchronized (obj1) { System.out.println(name &#43; &quot; acquired lock on object 1&quot;&#43;obj1); work(); System.out.println(name &#43; &quot; acquiring lock on object 2&quot;&#43;obj2); synchronized (obj2) { System.out.println(name &#43; &quot; acquired lock on object 2&quot;&#43;obj2); work(); } System.out.println(name &#43; &quot; released lock on object 2&quot;&#43;obj2); } System.out.println(name &#43; &quot; released lock on object 1&quot;&#43;obj1); System.out.println(name &#43; &quot; finished execution.&quot;); } private void work() { try { Thread.sleep(3000); } catch (InterruptedException e) { e.printStackTrace(); } } } running result: t1 acquiring lock on java.lang.Object@370cd189 t1 acquired lock on java.lang.Object@370cd189 -- lock object1 t2 acquiring lock on java.lang.Object@509afc84 t2 acquired lock on java.lang.Object@509afc84 -- lock object2 t1 acquiring lock on java.lang.Object@509afc84 -- try to lock object 2 waiting object 2 released t2 acquiring lock on java.lang.Object@3165be7c -- try to lock object1 waiting object 1 released Thread1 lock object1 waiting object2 released to release object1 Thread2 lock object2 waiting object1 released to release object2 Thread1-&gt;Thread2-&gt;Thread1 所以死循环了，所以这就是死锁了。出现死锁后，线程就停止在那里一致等待了。 容器里面可能就有一只无法释放的线程堆积 使用JVisualVM可以看到如下的ThreadDump: Found one Java-level deadlock: ============================= &quot;t2&quot;: waiting to lock monitor 0x00007ff1288332a8 (object 0x000000074001d9a8, a java.lang.Object), which is held by &quot;t1&quot; &quot;t1&quot;: waiting to lock monitor 0x00007ff128830758 (object 0x000000074001d9b8, a java.lang.Object), which is held by &quot;t2&quot; Java stack information for the threads listed above: =================================================== &quot;t2&quot;: at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20) - waiting to lock &lt;0x000000074001d9a8&gt; (a java.lang.Object) - locked &lt;0x000000074001d9b8&gt; (a java.lang.Object) at java.lang.Thread.run(Thread.java:745) &quot;t1&quot;: at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20) - waiting to lock &lt;0x000000074001d9b8&gt; (a java.lang.Object) - locked &lt;0x000000074001d9a8&gt; (a java.lang.Object) at java.lang.Thread.run(Thread.java:745) Found 1 deadlock.">
-        <meta itemprop="url" content="http://testless.github.io/posts/java/2015-11-18-concurrence_dead_lock/">
+        <meta itemprop="dateModified" content="2016-04-18T23:28:22&#43;00:00">
+        <meta itemprop="headline" content="JAVA Unit Testing">
+        <meta itemprop="description" content="Java Unit Testing 的一些收藏： springtestdbunit mockito powermock">
+        <meta itemprop="url" content="http://testless.github.io/posts/java/2016-04-17-java-unittesting/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://testless.github.io/images/22.jpg" />
+          <meta itemprop="url" content="http://testless.github.io/images/24.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -62,124 +62,20 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://testless.github.io/images/22.jpg);"></div>
+        <div class="image" style="background-image: url(http://testless.github.io/images/24.jpg);"></div>
 
         <header class="article-header">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-11-18T08:57:44&#43;00:00">Wed, Nov 18, 2015</time>
-          <h1 class="article-title">Java 并发死锁实践－1</h1>
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-04-18T23:28:22&#43;00:00">Mon, Apr 18, 2016</time>
+          <h1 class="article-title">JAVA Unit Testing</h1>
         </header>
 
         <div class="article-body" itemprop="articleBody">
-          
-
-<p>写点学习Java 并发死锁实践的来记录一下学习JAVA 并发的经历.</p>
-
-<p>## 什么是JAVA的死锁(dead lock)
- 死锁就是两个线程一直相互等待.</p>
-
-<p><img src="http://incdn1.b0.upaiyun.com/2014/04/c9a8bba45f37b6dcfe1684867cb2a3e9-300x207.png" alt="img" /></p>
-
-<p>实例代码如下:</p>
-
-<pre><code class="language-java">public class ThreadDeadlock {
-
-    public static void main(String[] args) throws InterruptedException {
-        Object obj1 = new Object();
-        Object obj2 = new Object();
-        Thread t1 = new Thread(new SyncThread(obj1, obj2), &quot;t1&quot;);
-        Thread t2 = new Thread(new SyncThread(obj2, obj1), &quot;t2&quot;);
-        t1.start();
-        Thread.sleep(1000);
-        t2.start();
-    }
-}
-
-public class SyncThread implements Runnable{
-    private Object obj1;
-    private Object obj2;
-
-    public SyncThread(Object o1, Object o2){
-        this.obj1=o1;
-        this.obj2=o2;
-    }
-    @Override
-    public void run() {
-        String name = Thread.currentThread().getName();
-        System.out.println(name + &quot; acquiring lock on object 1&quot;+obj1);
-        synchronized (obj1) {
-         System.out.println(name + &quot; acquired lock on object 1&quot;+obj1);
-         work();
-         System.out.println(name + &quot; acquiring lock on object 2&quot;+obj2);
-         synchronized (obj2) {
-            System.out.println(name + &quot; acquired lock on  object 2&quot;+obj2);
-            work();
-        }
-         System.out.println(name + &quot; released lock on object 2&quot;+obj2);
-        }
-        System.out.println(name + &quot; released lock on object 1&quot;+obj1);
-        System.out.println(name + &quot; finished execution.&quot;);
-    }
-
-    private void work() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
-</code></pre>
-
-<p>running result:</p>
-
-<pre><code>t1 acquiring lock on java.lang.Object@370cd189
-t1 acquired lock on java.lang.Object@370cd189  -- lock object1
-t2 acquiring lock on java.lang.Object@509afc84
-t2 acquired lock on java.lang.Object@509afc84 -- lock object2
-t1 acquiring lock on java.lang.Object@509afc84  -- try to lock object 2 waiting object 2 released
-t2 acquiring lock on java.lang.Object@3165be7c -- try to lock object1  waiting object 1 released
-
-</code></pre>
-
-<p>Thread1 lock object1 waiting object2 released to release object1
-Thread2 lock object2 waiting object1 released to release object2</p>
-
-<p>Thread1-&gt;Thread2-&gt;Thread1  所以死循环了，所以这就是死锁了。出现死锁后，线程就停止在那里一致等待了。
-容器里面可能就有一只无法释放的线程堆积</p>
-
-<p>使用JVisualVM可以看到如下的ThreadDump:</p>
-
-<pre><code>Found one Java-level deadlock:
-=============================
-&quot;t2&quot;:
-  waiting to lock monitor 0x00007ff1288332a8 (object 0x000000074001d9a8, a java.lang.Object),
-  which is held by &quot;t1&quot;
-&quot;t1&quot;:
-  waiting to lock monitor 0x00007ff128830758 (object 0x000000074001d9b8, a java.lang.Object),
-  which is held by &quot;t2&quot;
-
-Java stack information for the threads listed above:
-===================================================
-&quot;t2&quot;:
-	at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20)
-	- waiting to lock &lt;0x000000074001d9a8&gt; (a java.lang.Object)
-	- locked &lt;0x000000074001d9b8&gt; (a java.lang.Object)
-	at java.lang.Thread.run(Thread.java:745)
-&quot;t1&quot;:
-	at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20)
-	- waiting to lock &lt;0x000000074001d9b8&gt; (a java.lang.Object)
-	- locked &lt;0x000000074001d9a8&gt; (a java.lang.Object)
-	at java.lang.Thread.run(Thread.java:745)
-
-Found 1 deadlock.
-</code></pre>
-
-<h2 id="避免死锁:6bc1e2bd5786f1a03041d1f0acc83029">避免死锁</h2>
+          <p>Java Unit Testing 的一些收藏：</p>
 
 <ul>
-<li>避免嵌套封锁, 在这个例子中可以之对一个object加锁</li>
-<li>只对有请求的进行封锁</li>
-<li>避免无限期的等待</li>
+<li><a href="https://github.com/springtestdbunit/spring-test-dbunit">springtestdbunit</a></li>
+<li>mockito</li>
+<li>powermock</li>
 </ul>
 
         </div>
@@ -211,14 +107,7 @@ Found 1 deadlock.
   
   <div class="section">
     <header><div class="title">TableOfContents</div></header>
-    <div class="list-default"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#避免死锁:6bc1e2bd5786f1a03041d1f0acc83029">避免死锁</a></li>
-</ul></li>
-</ul>
-</nav></div>
+    <div class="list-default"></div>
   </div>
   
 
@@ -362,7 +251,7 @@ Found 1 deadlock.
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a>
     </div>
   </div>
   
