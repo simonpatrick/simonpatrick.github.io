@@ -3,8 +3,18 @@
   
   <url>
     <loc>http://testless.github.io/</loc>
-    <lastmod>2016-04-17T10:41:15+00:00</lastmod>
+    <lastmod>2016-04-19T10:41:15+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://testless.github.io/posts/python/2016-04-19-python-tools/</loc>
+    <lastmod>2016-04-19T10:41:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://testless.github.io/posts/java/2016-04-17-java-unittesting/</loc>
+    <lastmod>2016-04-18T23:28:22+00:00</lastmod>
   </url>
   
   <url>
