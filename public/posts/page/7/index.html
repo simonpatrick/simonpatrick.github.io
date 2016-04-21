@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/designpattern/2015-10-22-Functional-Programming-pattern/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/12.jpg);"></div>
+    <div class="detail">
+      <time>Fri, Oct 23, 2015</time>
+      <h2 class="title">Functional Patterns</h2>
+      <div class="summary">记录一个关于函数式设计模式 Functional patterns Core Principles of FP design Functions Types Composition Functions as parameters Abstraction,Dependency injection Partial application, Continuations,Folds Chaining Functions Error handling, Async Monads Dealing with wrapped data Lifting,Functors Validation with applicatives Aggregating data and operations Monoids Functional programming is scary Functors applicatives currying catamorphism Monad Monoid chainable aggregatable mappable Object oriented programming is scary Generic Polymorphism Interface Inheritance SOLID: SRP,OCP,LSP,ISP,DIP,&hellip;&hellip; Covariance IOC,DI,MVC OO Patterns VS FP Patterns OO pattern/principle • Single Responsibility Principle • Open/Closed principle • Dependency Inversion Principle • Interface Segregation Principle • Factory pattern • Strategy pattern • Decorator pattern • Visitor pattern FP pattern/principle • Functions • Functions • Functions, also • Functions • Yes, functions • Oh my, functions again!</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/interview/2015-10-22-python_interview_questions/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/20.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/shell/2014-08-24-shell_101_concept/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/11.jpg);"></div>
-    <div class="detail">
-      <time>Sun, Aug 24, 2014</time>
-      <h2 class="title">Shell Learning - Concept</h2>
-      <div class="summary">摘自：http://wklken.me/posts/2014/01/12/shell-script-base.html 标准IO 文件描述符 0 标准输入 默认键盘 1 标准输出 默认终端 2 标准错误 默认终端 重定向 &gt; 输出重定向 &gt;&gt; 追加到输出重定向 &lt; 输入重定向 &lt;&lt; 追加到输入重定向 ls -l &gt; /tmp/a cmd &gt;/dev/null #输出到垃圾桶 dev是设备(device)的英文缩写。/dev这个目录对所有的用户都十分重要。因为在这个目录中包含了所有Linux系统中使用的外部设备。但是这里并不是放的外部设备的驱动程序，这一点和windows,dos操作系统不一样。它实际上是一个访问这些外部设备的端口。我们可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。 /dev/null 它是空设备，也称为位桶（bit bucket）或者黑洞(black hole)。你可以向它输入任何数据，但任何写入它的数据都会被抛弃。通常用于处理不需要的输出流。（当然，它也可以作为空的输入流 dev/zero 该设备无穷尽地提供空字符（ASCII NUL, 0x00），可以使用任何你需要的数目。它通常用于向设备或文件写入字符串0，用于初始化数据存储。（当然，也可作为输出流的接受容器） 管道 前后连接两个命令 ls -l | grep test 引号 双引号：可以除了字符$`\外地任何字符或字符串 单引号：忽略任何引用值，将引号里的所有字符作为一个字符串 $var 不能被解析 反引号：设置系统命令输出到变量 命令执行 shell脚本识别三种基本命令：内建命令，shell函数和外部命令 基本的命令查找:shell会沿着查找路径$PATH来寻找命令 echo $PATH 可以在.profile文件中修改 export PATH=$PATH:$HOME/bin and/or expression1 &amp;&amp; expression2 &amp;&amp; expression3 只有前面一条命令执行成功，才执行下一条 expression1执行成功，才执行expression2 串联的 expression1 || expression2</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -210,6 +210,18 @@
   <div class="section">
     <header><div class="title">LatestPosts</div></header>
     <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/interview/2016-04-20-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/Maximum_Subarray_Visualization.svg);"></div>
+    <div class="detail">
+      <time>Wed, Apr 20, 2016</time>
+      <h2 class="title">Maximum SubArray sum</h2>
+      <div class="summary">Maximum SubArray 数组中有正,有负,求下面子集的最大和的思路是: 假设: 数组Items: A B C D E 这里有两个标记值: 最大和maxSum,最大和结束的位置maxEndingHere 开始扫描数组: A 的时候: 最大就是A,最大和,最大和结束的位置都在位置A,maxSum和maxEndingHere都是A B 的时候: maxEndingHere就是(A+B),如果maxEndingHere &gt; B 那么就继续累加计算,否则就是B就是maxEndingHere,也就是从B开始重新开始累加计算. 如果这个时候的maxSum比maxEndingHere大,那么maxSum就还是那个maxSum,否则maxSum就是maxEndingHere 这里的逻辑是可以想成这样: 如果A是负数,B是正数,那么计算应该从B开始,推到小区就是累加的值如果比下一个小了,那么就直接从下一个开始计算 如果A是正数,B是正数,那么计算还是从A开始,然后继续累加 如果A是正数,B是负数,那么计算还是从A开始,继续累加累加,但是最大和还是在A这个位置计算的,直到累加得到超过这个最大和或者遇到第一种情况,重新开始累加计算 C 的时候: 继续在B的时候的动作 综合起来,在进行一次累加的时候需要确定的是: 是否从新还是计算累加,进行重新累加的标准是,前面所有的累积和不如当前的这个元素,那么就是当前元素开始累加,重新计算 保留历次累加的最大值,如果此类累加超过这个最大值,则替换,否者就保留,寻找下一个可能的最大累加值 所以Java代码实现如下: List&lt;Integer&gt; subArrays = Lists.newArrayList(-2, 1, -3, 4, -1, 2, 1, -5, 4); Integer maxEndingHere = 0; Integer maxSumSoFar = 0; for (Integer item : subArrays) { maxEndingHere = max(item,maxEndingHere+item); maxSumSoFar=max(maxSumSoFar,maxEndingHere); } System.out.println(maxSumSoFar); python 的实现: def maximum_subarray_sum(array=[]):</div>
+    </div>
+  </a>
+</article>
+</div>
       
       <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/python/2016-04-19-python-tools/" class="clearfix">
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/7.jpg);"></div>
-    <div class="detail">
-      <time>Sun, Feb 28, 2016</time>
-      <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
-      <div class="summary">在前面的Zabbix API调用中我们看到了python的__getattr__的妙用，下面就探索一下这里面的道理,所以就聊聊python面向对象的基础知识. Python 面向对象 说到面向对象，就会说到类(class)，对象(object),那么什么是Class，Object呢？ Object： Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors -wagging, barking, eating. An object is an instance of a class. Class: A class can be defined as a template/blue print that describes the behaviors/states that object of its type support. 那么综合起来，class就是用来描述一系列对象的一个模版，抽象出了共同的东西(class)，object就是具体的某种情况下的一个例子(instance) 面向对象有如下基础概念： Polymorphism Inheritance Encapsulation Abstraction Classes Objects Instance Method Message Parsing Python Class and Object 的使用 看下例： - class Dog 定义了一个类 - __init__ 构造这个类的方法，就是创建出一个Dog的对象是通过这个方法 - name, 类的一个属性;eat(),也可以看成是类的一个属性，实际上它是一个dog的一个行为(behavior) - dog = Dog() 是创建了一个Dog(class)的新的的对象(object), 按照我们上面说的，dog是类Dog(class)的一个实例(instance) class Dog: def __init__(self): self.name='dog' def eat(): print('eating......') dog = Dog() print(dog.name) Python 对象的创建 参考上例，分别来说明对象的创建，访问.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a>
     </div>
   </div>
   
