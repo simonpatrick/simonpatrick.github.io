@@ -15,14 +15,14 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
 
     
-    <title>JAVA Unit Testing - Colored Hedwig: less is more</title>
-    <meta property='og:title' content="JAVA Unit Testing - Colored Hedwig: less is more">
+    <title>Maximum SubArray sum - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="Maximum SubArray sum - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://testless.github.io/posts/java/2016-04-17-java-unittesting/">
+    <meta property="og:url" content="http://testless.github.io/posts/interview/2016-04-20-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/">
     
-    <meta property="og:image" content="http://testless.github.io/images/24.jpg">
+    <meta property="og:image" content="http://testless.github.io/images/Maximum_Subarray_Visualization.svg">
 
   </head>
 
@@ -41,12 +41,12 @@
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
         <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
-        <meta itemprop="dateModified" content="2016-04-18T23:28:22&#43;00:00">
-        <meta itemprop="headline" content="JAVA Unit Testing">
-        <meta itemprop="description" content="Java Unit Testing 的一些收藏： springtestdbunit mockito powermock">
-        <meta itemprop="url" content="http://testless.github.io/posts/java/2016-04-17-java-unittesting/">
+        <meta itemprop="dateModified" content="2016-04-20T02:31:11&#43;00:00">
+        <meta itemprop="headline" content="Maximum SubArray sum">
+        <meta itemprop="description" content="Maximum SubArray 数组中有正,有负,求下面子集的最大和的思路是: 假设: 数组Items: A B C D E 这里有两个标记值: 最大和maxSum,最大和结束的位置maxEndingHere 开始扫描数组: A 的时候: 最大就是A,最大和,最大和结束的位置都在位置A,maxSum和maxEndingHere都是A B 的时候: maxEndingHere就是(A&#43;B),如果maxEndingHere &gt; B 那么就继续累加计算,否则就是B就是maxEndingHere,也就是从B开始重新开始累加计算. 如果这个时候的maxSum比maxEndingHere大,那么maxSum就还是那个maxSum,否则maxSum就是maxEndingHere 这里的逻辑是可以想成这样: 如果A是负数,B是正数,那么计算应该从B开始,推到小区就是累加的值如果比下一个小了,那么就直接从下一个开始计算 如果A是正数,B是正数,那么计算还是从A开始,然后继续累加 如果A是正数,B是负数,那么计算还是从A开始,继续累加累加,但是最大和还是在A这个位置计算的,直到累加得到超过这个最大和或者遇到第一种情况,重新开始累加计算 C 的时候: 继续在B的时候的动作 综合起来,在进行一次累加的时候需要确定的是: 是否从新还是计算累加,进行重新累加的标准是,前面所有的累积和不如当前的这个元素,那么就是当前元素开始累加,重新计算 保留历次累加的最大值,如果此类累加超过这个最大值,则替换,否者就保留,寻找下一个可能的最大累加值 所以Java代码实现如下: List&lt;Integer&gt; subArrays = Lists.newArrayList(-2, 1, -3, 4, -1, 2, 1, -5, 4); Integer maxEndingHere = 0; Integer maxSumSoFar = 0; for (Integer item : subArrays) { maxEndingHere = max(item,maxEndingHere&#43;item); maxSumSoFar=max(maxSumSoFar,maxEndingHere); } System.out.println(maxSumSoFar); python 的实现: def maximum_subarray_sum(array=[]):">
+        <meta itemprop="url" content="http://testless.github.io/posts/interview/2016-04-20-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://testless.github.io/images/24.jpg" />
+          <meta itemprop="url" content="http://testless.github.io/images/Maximum_Subarray_Visualization.svg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -62,28 +62,77 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://testless.github.io/images/24.jpg);"></div>
+        <div class="image" style="background-image: url(http://testless.github.io/images/Maximum_Subarray_Visualization.svg);"></div>
 
         <header class="article-header">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-04-18T23:28:22&#43;00:00">Mon, Apr 18, 2016</time>
-          <h1 class="article-title">JAVA Unit Testing</h1>
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-04-20T02:31:11&#43;00:00">Wed, Apr 20, 2016</time>
+          <h1 class="article-title">Maximum SubArray sum</h1>
         </header>
 
         <div class="article-body" itemprop="articleBody">
-          <p>Java Unit Testing 的一些收藏：</p>
+          
+
+<h1 id="maximum-subarray:59b25359b982ce692a4b35af283ded59">Maximum SubArray</h1>
+
+<p>数组中有正,有负,求下面子集的最大和的思路是:</p>
+
+<p>假设: 数组Items: A B C D E 这里有两个标记值: 最大和maxSum,最大和结束的位置maxEndingHere 开始扫描数组:</p>
 
 <ul>
-<li><a href="https://github.com/springtestdbunit/spring-test-dbunit">springtestdbunit</a></li>
-<li>mockito</li>
-<li>powermock</li>
+<li>A 的时候: 最大就是A,最大和,最大和结束的位置都在位置A,maxSum和maxEndingHere都是A</li>
+
+<li><p>B 的时候: maxEndingHere就是(A+B),如果maxEndingHere &gt; B 那么就继续累加计算,否则就是B就是maxEndingHere,也就是从B开始重新开始累加计算. 如果这个时候的maxSum比maxEndingHere大,那么maxSum就还是那个maxSum,否则maxSum就是maxEndingHere 这里的逻辑是可以想成这样:</p></li>
+
+<li><p>如果A是负数,B是正数,那么计算应该从B开始,推到小区就是累加的值如果比下一个小了,那么就直接从下一个开始计算</p></li>
+
+<li><p>如果A是正数,B是正数,那么计算还是从A开始,然后继续累加</p></li>
+
+<li><p>如果A是正数,B是负数,那么计算还是从A开始,继续累加累加,但是最大和还是在A这个位置计算的,直到累加得到超过这个最大和或者遇到第一种情况,重新开始累加计算</p></li>
+
+<li><p>C 的时候: 继续在B的时候的动作</p></li>
 </ul>
+
+<p>综合起来,在进行一次累加的时候需要确定的是:</p>
+
+<ul>
+<li>是否从新还是计算累加,进行重新累加的标准是,前面所有的累积和不如当前的这个元素,那么就是当前元素开始累加,重新计算</li>
+<li>保留历次累加的最大值,如果此类累加超过这个最大值,则替换,否者就保留,寻找下一个可能的最大累加值</li>
+</ul>
+
+<p>所以Java代码实现如下:</p>
+
+<pre><code class="language-java">  List&lt;Integer&gt; subArrays = Lists.newArrayList(-2, 1, -3, 4, -1, 2, 1, -5, 4);
+        Integer maxEndingHere = 0;
+        Integer maxSumSoFar = 0;
+        for (Integer item : subArrays) {
+
+            maxEndingHere = max(item,maxEndingHere+item);
+            maxSumSoFar=max(maxSumSoFar,maxEndingHere);
+        }
+        System.out.println(maxSumSoFar);
+</code></pre>
+
+<p>python 的实现:</p>
+
+<pre><code class="language-python">def maximum_subarray_sum(array=[]):
+    max_ending_here = max_so_far = array[0]
+    for item in array[1:]:
+        max_ending_here = max(0, max_ending_here + item)
+        max_so_far = max(max_so_far, max_ending_here)
+    return max_so_far
+
+
+print(maximum_subarray_sum([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+</code></pre>
+
+<p>参考,学习: <a href="https://en.wikipedia.org/wiki/Maximum_subarray_problem">Maximum_subarray_problem</a></p>
 
         </div>
 
 
         <aside>
           <div class="section">
-            <a href="http://testless.github.io/tags/java" class="tag">java</a>
+            <a href="http://testless.github.io/tags/interview" class="tag">interview</a>
             </div>
 
           <div class="section share">
@@ -107,7 +156,11 @@
   
   <div class="section">
     <header><div class="title">TableOfContents</div></header>
-    <div class="list-default"></div>
+    <div class="list-default"><nav id="TableOfContents">
+<ul>
+<li><a href="#maximum-subarray:59b25359b982ce692a4b35af283ded59">Maximum SubArray</a></li>
+</ul>
+</nav></div>
   </div>
   
 
@@ -244,14 +297,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   

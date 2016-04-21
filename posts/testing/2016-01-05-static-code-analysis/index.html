@@ -138,6 +138,18 @@ checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检�
     <div class="content">
       
       <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/interview/2016-04-20-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/Maximum_Subarray_Visualization.svg);"></div>
+    <div class="detail">
+      <time>Wed, Apr 20, 2016</time>
+      <h2 class="title">Maximum SubArray sum</h2>
+      <div class="summary">Maximum SubArray 数组中有正,有负,求下面子集的最大和的思路是: 假设: 数组Items: A B C D E 这里有两个标记值: 最大和maxSum,最大和结束的位置maxEndingHere 开始扫描数组: A 的时候: 最大就是A,最大和,最大和结束的位置都在位置A,maxSum和maxEndingHere都是A B 的时候: maxEndingHere就是(A+B),如果maxEndingHere &gt; B 那么就继续累加计算,否则就是B就是maxEndingHere,也就是从B开始重新开始累加计算. 如果这个时候的maxSum比maxEndingHere大,那么maxSum就还是那个maxSum,否则maxSum就是maxEndingHere 这里的逻辑是可以想成这样: 如果A是负数,B是正数,那么计算应该从B开始,推到小区就是累加的值如果比下一个小了,那么就直接从下一个开始计算 如果A是正数,B是正数,那么计算还是从A开始,然后继续累加 如果A是正数,B是负数,那么计算还是从A开始,继续累加累加,但是最大和还是在A这个位置计算的,直到累加得到超过这个最大和或者遇到第一种情况,重新开始累加计算 C 的时候: 继续在B的时候的动作 综合起来,在进行一次累加的时候需要确定的是: 是否从新还是计算累加,进行重新累加的标准是,前面所有的累积和不如当前的这个元素,那么就是当前元素开始累加,重新计算 保留历次累加的最大值,如果此类累加超过这个最大值,则替换,否者就保留,寻找下一个可能的最大累加值 所以Java代码实现如下: List&lt;Integer&gt; subArrays = Lists.newArrayList(-2, 1, -3, 4, -1, 2, 1, -5, 4); Integer maxEndingHere = 0; Integer maxSumSoFar = 0; for (Integer item : subArrays) { maxEndingHere = max(item,maxEndingHere+item); maxSumSoFar=max(maxSumSoFar,maxEndingHere); } System.out.println(maxSumSoFar); python 的实现: def maximum_subarray_sum(array=[]):</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/python/2016-04-19-python-tools/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/21.jpg);"></div>
     <div class="detail">
@@ -245,18 +257,6 @@ checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检�
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/python/2016-02-28-python_oop_attributes/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/7.jpg);"></div>
-    <div class="detail">
-      <time>Sun, Feb 28, 2016</time>
-      <h2 class="title">Python 面向对象，以及访问对象属性基础</h2>
-      <div class="summary">在前面的Zabbix API调用中我们看到了python的__getattr__的妙用，下面就探索一下这里面的道理,所以就聊聊python面向对象的基础知识. Python 面向对象 说到面向对象，就会说到类(class)，对象(object),那么什么是Class，Object呢？ Object： Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors -wagging, barking, eating. An object is an instance of a class. Class: A class can be defined as a template/blue print that describes the behaviors/states that object of its type support. 那么综合起来，class就是用来描述一系列对象的一个模版，抽象出了共同的东西(class)，object就是具体的某种情况下的一个例子(instance) 面向对象有如下基础概念： Polymorphism Inheritance Encapsulation Abstraction Classes Objects Instance Method Message Parsing Python Class and Object 的使用 看下例： - class Dog 定义了一个类 - __init__ 构造这个类的方法，就是创建出一个Dog的对象是通过这个方法 - name, 类的一个属性;eat(),也可以看成是类的一个属性，实际上它是一个dog的一个行为(behavior) - dog = Dog() 是创建了一个Dog(class)的新的的对象(object), 按照我们上面说的，dog是类Dog(class)的一个实例(instance) class Dog: def __init__(self): self.name='dog' def eat(): print('eating......') dog = Dog() print(dog.name) Python 对象的创建 参考上例，分别来说明对象的创建，访问.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -264,14 +264,14 @@ checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检�
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a>
     </div>
   </div>
   
