@@ -416,6 +416,30 @@ Http Fox <a href="https://addons.mozilla.org/en-US/firefox/addon/6647">https://a
     <div class="content">
       
       <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/interview/2016-04-20-Linux%E5%9F%BA%E7%A1%80/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/Linux);"></div>
+    <div class="detail">
+      <time>Thu, Apr 21, 2016</time>
+      <h2 class="title">Linux 基础</h2>
+      <div class="summary">Linux 的使用的一些基本知识 Linux LVM 硬盘挂载 Linux 的用户安全 Linux 网络监控 Linux LVM 硬盘挂载 使用sda硬盘挂在到/var 目录，当硬盘用完之后就没有办法再挂载到/var 下面了，那么如何解决呢？ 使用LVM. LVM是磁盘分区和文件系统之间添加一个逻辑层，来为文件系统屏蔽磁盘分区布局，提供一个抽象的盘卷。 LVM术语： physical media,/dev/hda1,/dev/sda，物理存储介质 physical volume, 物理卷，和物力存储介质相比较包含了LVM的管理参数 volume group,LVM 卷组类似非LVM系统的物理硬盘，可以创建多个物理卷 logic volume，逻辑卷LVM逻辑卷类似于非LVM系统的硬盘分区 physical extend：一个物理卷physical extends的基本单元，LVM寻址的最小单位 logic extend：逻辑卷被划分为称为LE的可被寻址的基本单位 PV:是物理的磁盘分区 VG:LVM中的物理的磁盘分区，也就是PV，必须加入VG，可以将VG理解为一个仓库或者是几个大的硬盘。 LV：也就是从VG中划分的逻辑分区 Linux 的用户安全 root sudo 分组 权限 Linux的-rwxrwxrwx权限管理也可谓人尽皆知 先rwx的权限管理是基于用户和组的，并且只是大致的分为owner|group|other这三类，无法再作更加细粒度的划分。有鉴于此，Linux目前默认是有ACL(Access Control List)管理的，所谓ACL就是能够提供更加细粒度的用户和组管理，比如可以明确哪个user可以有什么样的权限。如下示例 getfacl abcd PAM PAM只需要简单了解就行，是一个可插拔的认证模块,开发Linux的极客们搞出来的可复用的一个组件。举个例子，现在有一个app，想要验证当前的登录用户是否有权限操作某个目录，那么在PAM里面有现成的模块，app只需要include这个模块，给出一个配置文件，就可以了。有一个非常好的关于PAM的视频教程，请看这里 PAM是应用程序用来进行身份验证的。早期的身份验证和应用程序本身耦合，后来把身份验证单独抽出来，通过PAM来进行管理 /etc/pam.d/xxx 是能用pam来进行管理的应用程序PAM设置，在安装应用程序的时候安装。/etc/security/mmm, /lib/security/pam_mmm是一套。 Linux 网络监控 iptables router netstat Linux的文件系统 Linux的Service /etc/init.d /usr/bin,/usr/sbin,/usr/local/bin log /var/log/messages Linux Disk df -lah fdisk -l LVM vmstat,top Linux 网络 网络的坑很多，需要把网络搞通没个3，4年很难。下面从网络的配置文件着手，简单理一下网络方面的内容。网络最难的方面应该是如何搭建一个合理的高效的局域网或者城域网，这个需要有专业的网络知识。 配置文件 /etc/hosts私有IP对应主机名 /etc/resolv.confnameserver DNS的IP /etc/sysconfig/network其中NETWORKING=要不要有网络，HOSTNAME=主机名，NETWORKING_IPV6=支持ipv6 /etc/sysconfig/network-scripts/ifcfg-xxx其中DEVICE=网卡代号，BOOTPROTO=是否使用dhcp，HWADDR，IPADDR，NETMASK，ONBOOT，GATEWAY 与网络有关的一些命令 router -n查看路由的命令，特别是要看带G的，表示gateway，而带U的表示up。 netstat -anp查看所有启动的tcp,udp,unix stream的应用程序，以及他们的状态，具体可以参考TCP/IP,JavaSocket简单分析一文。 工具 一个好的Linux命令参考网站 CPU top 特别注意load ps aux和ps -ef 特别注意进程状态 vmstat 1表示每秒采集一次 sar -u 1 查看所有cpu相关的运行时间 Memory free vmstat 1 注意其中的swap ram block之间的关系 sar -r 1 内存使用率 sar -W 1 查看swap，查询是否由于内存不足产生大量内存交换 IO lsof -i:port 查询哪个进程占用了这个端口号 lsof -u username 用户打开的文件 lsof -p pid 进程打开的文件 #!/bin/bash ################################################# # author huachao # date 2015-12-09 # email i@huachao.me # web blog.huachao.me ################################################# flagFile=&quot;/root/centos6-init.executed&quot; precheck(){ if [[ &quot;$(whoami)&quot; != &quot;root&quot; ]]; then echo &quot;please run this script as root .&quot; &gt;&amp;2 exit 1 fi if [ -f &quot;$flagFile&quot; ]; then echo &quot;this script had been executed, please do not execute again!!&quot; &gt;&amp;2 exit 1 fi echo -e &quot;\033[31m WARNING!</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/interview/2016-04-20-%E7%9B%91%E6%8E%A7%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/monitor.jpg);"></div>
+    <div class="detail">
+      <time>Thu, Apr 21, 2016</time>
+      <h2 class="title">Web监控基础</h2>
+      <div class="summary">监控工具收藏: ELK:github elastic Logstash Kibana Datadog Ruxit Takipi Rollbar Sensu Graphite grafana influxdb Linux 监控命令和工具 top htop atop nmon glance</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/interview/2016-04-20-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/Maximum_Subarray_Visualization.svg);"></div>
     <div class="detail">
@@ -511,30 +535,6 @@ Http Fox <a href="https://addons.mozilla.org/en-US/firefox/addon/6647">https://a
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/ansible.png);"></div>
-    <div class="detail">
-      <time>Wed, Mar 30, 2016</time>
-      <h2 class="title">Ansible简单介绍</h2>
-      <div class="summary">Ansible 介绍 Ansible 目前都是使用在python2上面. installation 在MAC 上面安装ansible有两种方式： pip pip install ansible brew brew install ansible ansible playbook 的简单使用 ansible 大概的一个框架图如下： 下面简单介绍一个使用ansible的例子： 配置hosts文件 在当前目录创建一个hosts文件： [jenkins] 192.168.3.50 配置ansible yml playbook文件 配置当前一个yml文件: - hosts: jenkins user: root accelerate:true tasks: - name: restart_nginx shell: sh /root/auto_publish_qadoc.sh 运行命令 ansible-playbook playbook.yml -i hosts -vv 就可以运行这些命令了,最简单的ansible就是这样上手非常容易. 不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实 过一下这个document估计也就是1天时间就可以上手干活了.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/jenkins.png);"></div>
-    <div class="detail">
-      <time>Wed, Mar 30, 2016</time>
-      <h2 class="title">Jenkins API的简单介绍</h2>
-      <div class="summary">Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情. From Jenkins Home Page Jenkins is an automation engine with an unparalleled plugin ecosystem to support all of your favorite tools in your delivery pipelines, whether your goal is continuous integration, automated testing, or continuous delivery. Jenkins 使用 关于Jenkins的基本使用网上有很多的教程，基本使用其事没有太多说的，它是个平台，可以集成很多不同的工具，脚本等等. 总结下来这些东西包括： jenkins parameter setting, string, choice, &hellip;&hellip; JAVA 的maven, ant, gradle 等打包工具，其他语言也有类似的build，deploy，依赖管理的工具 定制化的脚本，可以在一个Jenkins的build步骤中运行这些脚本如shell命令，python脚本 定制插件来完成自己的特殊的目的 这些内容非常庞大，自己也不可能完全都知道，如果遇到实际的一些问题需要解决的话, 大体的逻辑就是，如果遇到一些特殊需求，那么先去找插件看能不能完成，如果没有插件就再想shell，python脚本等不同的事情，或者自己开发插件. Jenkins 的实践问题 随着Jenkins里面的任务越来越多，管理的环境越来越多，变更越来愈多，手工管理就会遇到一些问题： 比如为了改一个IP地址，可能需要没一个任务都去改具体的配置，比如部署同一个war到不同的测试环境，就需要给不同的job改IP 为了不同的环境配置不同的任务，需要很多的人工的配置修改等等 如果需要迁移一个多应用的测试环境，那么需要很多的复制，修改工作 那么为了解决这些问题，个人觉得可以改善的地方是： - 定义一些类型项目的模版，抽象一些参数出来给Jenkins里面的Job做参数话，当然有时需要修改的是默认值 - 在定义了一些模版之后，就可以通过操作Jenkins API的方式来操作 - 在尝试了一些Jenkins API之后，感觉纯粹通过API的方式去操作，不一定比复制Jenkins 任务，然后修改来的快，但是通过Jenkins API的方式 来操作Jenkins 的好处是，如果这些东西融入到运维的流程中，那么它会提高生产率 一些体会是，可能代码方式的操作单个单个来看不一定会提高多少生产率(参数一样要设)，但是如果放在一个流程的角度看，那么他的效率是高的，比如你如果需要运维帮你建环境，那么你需要提供一些信息，而这些信息就可以直接建立Jenkins的Job了，那么作为用户你只提供一次信息，就可以完成你需要的所有事情，这样效率就高了.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -542,14 +542,14 @@ Http Fox <a href="https://addons.mozilla.org/en-US/firefox/addon/6647">https://a
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a>
     </div>
   </div>
   
