@@ -44,6 +44,34 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/thoughts/2015-12-28-next-reading/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/3.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Dec 28, 2015</time>
+      <h2 class="title">下一步的技术了解</h2>
+      <div class="summary">Thoughtworks 发布了2015年技术雷达，看看他提到的东西可以长长见识。 技术篇 这里提到了几篇Martin Flower的文章，抽时间一定要看看。 Test Double nonDeterminism microservice 基本上他写的文章确实有必要看看的。 安全 －Thread Modeling 工具,语言，观念 graphiz hoodie couchdb Flux git as cms phoneix server functional reactive programing （FRP） Spark kylin.io TOTP 密码机制，two－factor authentication Deis.io H2O TSDB,OpenTSB,influxDB,Cassandra SPDY mountebank polly/brighter consul.io/DNS+HTTP,consulTemplate Hamms Rest-assured ZAP Kafka Blackbox Bokeh data visualization Vega /D3.js Gor NaCI Orgami PdfMaker SoundCloud Quick object C/swift security monkey</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
+  <a href="http://testless.github.io/posts/java/2015-12-23-ide_keyboards/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/24.jpg);"></div>
+    <div class="detail">
+      <time>Wed, Dec 23, 2015</time>
+      <h2 class="title">JAVA IDE 快捷键指南</h2>
+      <div class="summary">JAVA开发离不开IDE，IDE使用也离不开快捷键，一下是一些常用的快捷键. IDEA 快捷键 Search 快捷键对比 Code navigation 快捷键对比 Code completion快捷键对比 windows actions 快捷键对比 refactor 快捷键对比 universary access 快捷键对比</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/automation/2015-12-23-http_status_code/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/8.jpg);"></div>
     <div class="detail">
@@ -154,34 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/true_stories/2015-11-19-talking_is_cheep/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/25.jpg);"></div>
-    <div class="detail">
-      <time>Thu, Nov 19, 2015</time>
-      <h2 class="title">Talking is Cheap,show me the code</h2>
-      <div class="summary">当看到如下的代码出现在production代码库的时候，不知道做何想法？无数的人动辄就谈客户需求，要触动痛点,是的没错，但是软件工程师还是要点工程追求的吧？如果这样的代码存在一些时候也就罢了，结果存在来Controller里面3-4年之久，情何以堪呀？指望用这样的代码去触动痛点？你是认真的吗？ 工程师首先是个匠人,先写好自己的代码，再去谈论这些虚幻的东西.看几本抽象的书，谁都可以高谈阔论，so what? Talking is Cheap,right? show me the code. protected String formatUserJSON(VSalary newSalary){ SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;); String info = &quot;{\&quot;msg\&quot;:\&quot;&quot;+Constants.SUCCESS+&quot;\&quot;,\&quot;usercode\&quot;:\&quot;&quot;+newSalary.getUsercode()+&quot;\&quot;,\&quot;username\&quot;:\&quot;&quot;+newSalary.getUsername()+&quot;\&quot;,&quot; + &quot;\&quot;orgname\&quot;:\&quot;&quot;+newSalary.getOrgname()+&quot;\&quot;,\&quot;positionname\&quot;:\&quot;&quot;+newSalary.getPositionname()+&quot;\&quot;,\&quot;hasexperience\&quot;:\&quot;&quot;+newSalary.getHasexperience()+&quot;\&quot;,&quot; + &quot;\&quot;joindate\&quot;:\&quot;&quot;+sdf.format(newSalary.getJoindate())+&quot;\&quot;,\&quot;leavedate\&quot;:\&quot;&quot;+(newSalary.getLeavedate()==null?&quot;&quot;:sdf.format(newSalary.getLeavedate()))+&quot;\&quot;,&quot; + &quot;\&quot;lastmonthwage\&quot;:\&quot;&quot;+newSalary.getLastmonthwagestr()+&quot;\&quot;,\&quot;allowance\&quot;:\&quot;&quot;+newSalary.getAllowancestr()+&quot;\&quot;,&quot; + &quot;\&quot;basewage\&quot;:\&quot;&quot;+newSalary.getBasewagestr()+&quot;\&quot;,\&quot;totalwage\&quot;:\&quot;&quot;+newSalary.getTotalwagestr()+&quot;\&quot;,&quot; + &quot;\&quot;transferdays\&quot;:\&quot;&quot;+newSalary.getTransferdaysstr()+&quot;\&quot;,\&quot;paiddays\&quot;:\&quot;&quot;+newSalary.getPaiddaysstr()+&quot;\&quot;,&quot; + &quot;\&quot;leavehours\&quot;:\&quot;&quot;+newSalary.getLeavehoursstr()+&quot;\&quot;,\&quot;leavecost\&quot;:\&quot;&quot;+newSalary.getLeavecoststr()+&quot;\&quot;,&quot; + &quot;\&quot;illdaystotal\&quot;:\&quot;&quot;+newSalary.getIlldaystotalstr()+&quot;\&quot;,\&quot;illdays\&quot;:\&quot;&quot;+newSalary.getIlldaysstr()+&quot;\&quot;,&quot; + &quot;\&quot;illcost\&quot;:\&quot;&quot;+newSalary.getIllcoststr()+&quot;\&quot;,\&quot;latefreecount\&quot;:\&quot;&quot;+newSalary.getLatefreecountstr()+&quot;\&quot;,&quot; + &quot;\&quot;latecostcount\&quot;:\&quot;&quot;+newSalary.getLatecostcountstr()+&quot;\&quot;,\&quot;latecost\&quot;:\&quot;&quot;+newSalary.getLatecoststr()+&quot;\&quot;,&quot; + &quot;\&quot;leaveearly\&quot;:\&quot;&quot;+newSalary.getLeaveearlystr()+&quot;\&quot;,\&quot;leaveearlycost\&quot;:\&quot;&quot;+newSalary.getLeaveearlycoststr()+&quot;\&quot;,&quot; + &quot;\&quot;missclockfreecount\&quot;:\&quot;&quot;+newSalary.getMissclockfreecountstr()+&quot;\&quot;,\&quot;missclockcostcount\&quot;:\&quot;&quot;+newSalary.getMissclockcostcountstr()+&quot;\&quot;,&quot; + &quot;\&quot;missclockcost\&quot;:\&quot;&quot;+newSalary.getMissclockcoststr()+&quot;\&quot;,\&quot;absentcount\&quot;:\&quot;&quot;+newSalary.getAbsentcountstr()+&quot;\&quot;,&quot; + &quot;\&quot;absentcost\&quot;:\&quot;&quot;+newSalary.getAbsentcoststr()+&quot;\&quot;,\&quot;leavetotalcost\&quot;:\&quot;&quot;+newSalary.getLeavetotalcoststr()+&quot;\&quot;,&quot; + &quot;\&quot;bussallowance\&quot;:\&quot;&quot;+newSalary.getBussallowancestr()+&quot;\&quot;,\&quot;olderallowance\&quot;:\&quot;&quot;+newSalary.getOlderallowancestr()+&quot;\&quot;,&quot; + &quot;\&quot;petrolallowance\&quot;:\&quot;&quot;+newSalary.getPetrolallowancestr()+&quot;\&quot;,\&quot;otheradd\&quot;:\&quot;&quot;+newSalary.getOtheraddstr()+&quot;\&quot;,&quot; + &quot;\&quot;otheraddremark\&quot;:\&quot;&quot;+(newSalary.getOtheraddremark()==null?&quot;&quot;:newSalary.getOtheraddremark())+&quot;\&quot;,\&quot;othertotal\&quot;:\&quot;&quot;+newSalary.getOthertotalstr()+&quot;\&quot;,&quot; + &quot;\&quot;firededuction\&quot;:\&quot;&quot;+newSalary.getFiredeductionstr()+&quot;\&quot;,\&quot;notfulldeduction\&quot;:\&quot;&quot;+newSalary.getNotfulldeductionstr()+&quot;\&quot;,&quot; + &quot;\&quot;punishdeduction\&quot;:\&quot;&quot;+newSalary.getPunishdeductionstr()+&quot;\&quot;,\&quot;otherdeduction\&quot;:\&quot;&quot;+newSalary.getOtherdeductionstr()+&quot;\&quot;,&quot; + &quot;\&quot;otherdeductionremark\&quot;:\&quot;&quot;+(newSalary.getOtherdeductionremark()==null?&quot;&quot;:newSalary.getOtherdeductionremark())+&quot;\&quot;,\&quot;deductiontotal\&quot;:\&quot;&quot;+newSalary.getDeductiontotalstr()+&quot;\&quot;,&quot; + &quot;\&quot;shouldtotal\&quot;:\&quot;&quot;+newSalary.getShouldtotalstr()+&quot;\&quot;,\&quot;commission\&quot;:\&quot;&quot;+newSalary.getCommissionstr()+&quot;\&quot;,\&quot;commissionDecu\&quot;:\&quot;&quot;+newSalary.getCommissionDecustr()+&quot;\&quot;,\&quot;status\&quot;:\&quot;&quot;+newSalary.getStatus()+&quot;\&quot;,&quot;+ &quot;\&quot;insuredtype\&quot;:\&quot;&quot;+(newSalary.getInsuredtype()==null?&quot;&quot;:newSalary.getInsuredtype())+&quot;\&quot;,\&quot;insuredbase\&quot;:\&quot;&quot;+newSalary.getInsuredbasestr()+&quot;\&quot;,&quot; + &quot;\&quot;oldageinsurance\&quot;:\&quot;&quot;+newSalary.getOldageinsurancestr()+&quot;\&quot;,\&quot;medicalinsurance\&quot;:\&quot;&quot;+newSalary.getMedicalinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;unemployedinsurance\&quot;:\&quot;&quot;+newSalary.getUnemployedinsurancestr()+&quot;\&quot;,\&quot;accufundtype\&quot;:\&quot;&quot;+(newSalary.getAccufundtype()==null?&quot;&quot;:newSalary.getAccufundtype())+&quot;\&quot;,&quot; + &quot;\&quot;accufundbase\&quot;:\&quot;&quot;+newSalary.getAccufundbasestr()+&quot;\&quot;,\&quot;accufund\&quot;:\&quot;&quot;+newSalary.getAccufundstr()+&quot;\&quot;,&quot; + &quot;\&quot;socialinsurance\&quot;:\&quot;&quot;+newSalary.getSocialinsurancestr()+&quot;\&quot;,\&quot;taxtotal\&quot;:\&quot;&quot;+newSalary.getTaxtotalstr()+&quot;\&quot;,&quot; + &quot;\&quot;persontax\&quot;:\&quot;&quot;+newSalary.getPersontaxstr()+&quot;\&quot;,\&quot;financialdeduction\&quot;:\&quot;&quot;+newSalary.getFinancialdeductionstr()+&quot;\&quot;,&quot; + &quot;\&quot;finalwage\&quot;:\&quot;&quot;+newSalary.getFinalwagestr()+&quot;\&quot;,\&quot;reward\&quot;:\&quot;&quot;+ newSalary.getRewardstr()+ &quot;\&quot;,&quot; + &quot;\&quot;otherdeductionList\&quot;:&quot;+JSONArray.fromObject(newSalary.getOtherdeductionList()).toString()+ &quot;,&quot; + &quot;\&quot;negativeAmount\&quot;:\&quot;&quot;+newSalary.getNegativeAmountstr()+&quot;\&quot;,&quot; + &quot;\&quot;currentsocialinsurance\&quot;:\&quot;&quot;+newSalary.getCurrentsocialinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;surplussocialinsurance\&quot;:\&quot;&quot;+newSalary.getSurplussocialinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;currentaccufund\&quot;:\&quot;&quot;+newSalary.getCurrentaccufundstr()+&quot;\&quot;,&quot; + &quot;\&quot;surplusaccufund\&quot;:\&quot;&quot;+newSalary.getSurplusaccufundstr()+&quot;\&quot;,&quot; + &quot;\&quot;currentoldageinsurance\&quot;:\&quot;&quot;+newSalary.getCurrentoldageinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;surplusoldageinsurance\&quot;:\&quot;&quot;+newSalary.getSurplusoldageinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;currentmedicalinsurance\&quot;:\&quot;&quot;+newSalary.getCurrentmedicalinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;surplusmedicalinsurance\&quot;:\&quot;&quot;+newSalary.getSurplusmedicalinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;currentunemployedinsurance\&quot;:\&quot;&quot;+newSalary.getCurrentunemployedinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;surplusunemployedinsurance\&quot;:\&quot;&quot;+newSalary.getSurplusunemployedinsurancestr()+&quot;\&quot;,&quot; + &quot;\&quot;withholdingAdd\&quot;:\&quot;&quot;+newSalary.getWithholdingAddstr()+&quot;\&quot;,&quot; + &quot;\&quot;withholdingDeduction\&quot;:\&quot;&quot;+newSalary.getWithholdingDeductionstr()+&quot;\&quot;,&quot; + &quot;\&quot;withholdingAddRemark\&quot;:\&quot;&quot;+(newSalary.getWithholdingAddRemark() == null ?</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/java/2015-11-18-concurrence_dead_lock/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/22.jpg);"></div>
-    <div class="detail">
-      <time>Wed, Nov 18, 2015</time>
-      <h2 class="title">Java 并发死锁实践－1</h2>
-      <div class="summary">写点学习Java 并发死锁实践的来记录一下学习JAVA 并发的经历. ## 什么是JAVA的死锁(dead lock) 死锁就是两个线程一直相互等待. 实例代码如下: public class ThreadDeadlock { public static void main(String[] args) throws InterruptedException { Object obj1 = new Object(); Object obj2 = new Object(); Thread t1 = new Thread(new SyncThread(obj1, obj2), &quot;t1&quot;); Thread t2 = new Thread(new SyncThread(obj2, obj1), &quot;t2&quot;); t1.start(); Thread.sleep(1000); t2.start(); } } public class SyncThread implements Runnable{ private Object obj1; private Object obj2; public SyncThread(Object o1, Object o2){ this.obj1=o1; this.obj2=o2; } @Override public void run() { String name = Thread.currentThread().getName(); System.out.println(name + &quot; acquiring lock on object 1&quot;+obj1); synchronized (obj1) { System.out.println(name + &quot; acquired lock on object 1&quot;+obj1); work(); System.out.println(name + &quot; acquiring lock on object 2&quot;+obj2); synchronized (obj2) { System.out.println(name + &quot; acquired lock on object 2&quot;+obj2); work(); } System.out.println(name + &quot; released lock on object 2&quot;+obj2); } System.out.println(name + &quot; released lock on object 1&quot;+obj1); System.out.println(name + &quot; finished execution.&quot;); } private void work() { try { Thread.sleep(3000); } catch (InterruptedException e) { e.printStackTrace(); } } } running result: t1 acquiring lock on java.lang.Object@370cd189 t1 acquired lock on java.lang.Object@370cd189 -- lock object1 t2 acquiring lock on java.lang.Object@509afc84 t2 acquired lock on java.lang.Object@509afc84 -- lock object2 t1 acquiring lock on java.lang.Object@509afc84 -- try to lock object 2 waiting object 2 released t2 acquiring lock on java.lang.Object@3165be7c -- try to lock object1 waiting object 1 released Thread1 lock object1 waiting object2 released to release object1 Thread2 lock object2 waiting object1 released to release object2 Thread1-&gt;Thread2-&gt;Thread1 所以死循环了，所以这就是死锁了。出现死锁后，线程就停止在那里一致等待了。 容器里面可能就有一只无法释放的线程堆积 使用JVisualVM可以看到如下的ThreadDump: Found one Java-level deadlock: ============================= &quot;t2&quot;: waiting to lock monitor 0x00007ff1288332a8 (object 0x000000074001d9a8, a java.lang.Object), which is held by &quot;t1&quot; &quot;t1&quot;: waiting to lock monitor 0x00007ff128830758 (object 0x000000074001d9b8, a java.lang.Object), which is held by &quot;t2&quot; Java stack information for the threads listed above: =================================================== &quot;t2&quot;: at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20) - waiting to lock &lt;0x000000074001d9a8&gt; (a java.lang.Object) - locked &lt;0x000000074001d9b8&gt; (a java.lang.Object) at java.lang.Thread.run(Thread.java:745) &quot;t1&quot;: at com.hedwig.concurrence.deadlocksample.SyncThread.run(SyncThread.java:20) - waiting to lock &lt;0x000000074001d9b8&gt; (a java.lang.Object) - locked &lt;0x000000074001d9a8&gt; (a java.lang.Object) at java.lang.Thread.run(Thread.java:745) Found 1 deadlock.</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -210,6 +210,30 @@
   <div class="section">
     <header><div class="title">LatestPosts</div></header>
     <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/interview/2016-04-20-Linux%E5%9F%BA%E7%A1%80/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/Linux);"></div>
+    <div class="detail">
+      <time>Thu, Apr 21, 2016</time>
+      <h2 class="title">Linux 基础</h2>
+      <div class="summary">Linux 的使用的一些基本知识 Linux LVM 硬盘挂载 Linux 的用户安全 Linux 网络监控 Linux LVM 硬盘挂载 使用sda硬盘挂在到/var 目录，当硬盘用完之后就没有办法再挂载到/var 下面了，那么如何解决呢？ 使用LVM. LVM是磁盘分区和文件系统之间添加一个逻辑层，来为文件系统屏蔽磁盘分区布局，提供一个抽象的盘卷。 LVM术语： physical media,/dev/hda1,/dev/sda，物理存储介质 physical volume, 物理卷，和物力存储介质相比较包含了LVM的管理参数 volume group,LVM 卷组类似非LVM系统的物理硬盘，可以创建多个物理卷 logic volume，逻辑卷LVM逻辑卷类似于非LVM系统的硬盘分区 physical extend：一个物理卷physical extends的基本单元，LVM寻址的最小单位 logic extend：逻辑卷被划分为称为LE的可被寻址的基本单位 PV:是物理的磁盘分区 VG:LVM中的物理的磁盘分区，也就是PV，必须加入VG，可以将VG理解为一个仓库或者是几个大的硬盘。 LV：也就是从VG中划分的逻辑分区 Linux 的用户安全 root sudo 分组 权限 Linux的-rwxrwxrwx权限管理也可谓人尽皆知 先rwx的权限管理是基于用户和组的，并且只是大致的分为owner|group|other这三类，无法再作更加细粒度的划分。有鉴于此，Linux目前默认是有ACL(Access Control List)管理的，所谓ACL就是能够提供更加细粒度的用户和组管理，比如可以明确哪个user可以有什么样的权限。如下示例 getfacl abcd PAM PAM只需要简单了解就行，是一个可插拔的认证模块,开发Linux的极客们搞出来的可复用的一个组件。举个例子，现在有一个app，想要验证当前的登录用户是否有权限操作某个目录，那么在PAM里面有现成的模块，app只需要include这个模块，给出一个配置文件，就可以了。有一个非常好的关于PAM的视频教程，请看这里 PAM是应用程序用来进行身份验证的。早期的身份验证和应用程序本身耦合，后来把身份验证单独抽出来，通过PAM来进行管理 /etc/pam.d/xxx 是能用pam来进行管理的应用程序PAM设置，在安装应用程序的时候安装。/etc/security/mmm, /lib/security/pam_mmm是一套。 Linux 网络监控 iptables router netstat Linux的文件系统 Linux的Service /etc/init.d /usr/bin,/usr/sbin,/usr/local/bin log /var/log/messages Linux Disk df -lah fdisk -l LVM vmstat,top Linux 网络 网络的坑很多，需要把网络搞通没个3，4年很难。下面从网络的配置文件着手，简单理一下网络方面的内容。网络最难的方面应该是如何搭建一个合理的高效的局域网或者城域网，这个需要有专业的网络知识。 配置文件 /etc/hosts私有IP对应主机名 /etc/resolv.confnameserver DNS的IP /etc/sysconfig/network其中NETWORKING=要不要有网络，HOSTNAME=主机名，NETWORKING_IPV6=支持ipv6 /etc/sysconfig/network-scripts/ifcfg-xxx其中DEVICE=网卡代号，BOOTPROTO=是否使用dhcp，HWADDR，IPADDR，NETMASK，ONBOOT，GATEWAY 与网络有关的一些命令 router -n查看路由的命令，特别是要看带G的，表示gateway，而带U的表示up。 netstat -anp查看所有启动的tcp,udp,unix stream的应用程序，以及他们的状态，具体可以参考TCP/IP,JavaSocket简单分析一文。 工具 一个好的Linux命令参考网站 CPU top 特别注意load ps aux和ps -ef 特别注意进程状态 vmstat 1表示每秒采集一次 sar -u 1 查看所有cpu相关的运行时间 Memory free vmstat 1 注意其中的swap ram block之间的关系 sar -r 1 内存使用率 sar -W 1 查看swap，查询是否由于内存不足产生大量内存交换 IO lsof -i:port 查询哪个进程占用了这个端口号 lsof -u username 用户打开的文件 lsof -p pid 进程打开的文件 #!/bin/bash ################################################# # author huachao # date 2015-12-09 # email i@huachao.me # web blog.huachao.me ################################################# flagFile=&quot;/root/centos6-init.executed&quot; precheck(){ if [[ &quot;$(whoami)&quot; != &quot;root&quot; ]]; then echo &quot;please run this script as root .&quot; &gt;&amp;2 exit 1 fi if [ -f &quot;$flagFile&quot; ]; then echo &quot;this script had been executed, please do not execute again!!&quot; &gt;&amp;2 exit 1 fi echo -e &quot;\033[31m WARNING!</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/interview/2016-04-20-%E7%9B%91%E6%8E%A7%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/monitor.jpg);"></div>
+    <div class="detail">
+      <time>Thu, Apr 21, 2016</time>
+      <h2 class="title">Web监控基础</h2>
+      <div class="summary">监控工具收藏: ELK:github elastic Logstash Kibana Datadog Ruxit Takipi Rollbar Sensu Graphite grafana influxdb Linux 监控命令和工具 top htop atop nmon glance</div>
+    </div>
+  </a>
+</article>
+</div>
       
       <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/interview/2016-04-20-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/" class="clearfix">
@@ -307,30 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/automation/2016-03-30-ansible_basic/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/ansible.png);"></div>
-    <div class="detail">
-      <time>Wed, Mar 30, 2016</time>
-      <h2 class="title">Ansible简单介绍</h2>
-      <div class="summary">Ansible 介绍 Ansible 目前都是使用在python2上面. installation 在MAC 上面安装ansible有两种方式： pip pip install ansible brew brew install ansible ansible playbook 的简单使用 ansible 大概的一个框架图如下： 下面简单介绍一个使用ansible的例子： 配置hosts文件 在当前目录创建一个hosts文件： [jenkins] 192.168.3.50 配置ansible yml playbook文件 配置当前一个yml文件: - hosts: jenkins user: root accelerate:true tasks: - name: restart_nginx shell: sh /root/auto_publish_qadoc.sh 运行命令 ansible-playbook playbook.yml -i hosts -vv 就可以运行这些命令了,最简单的ansible就是这样上手非常容易. 不过仔细看看他的帮助文档的话，其实对于python不熟的人还是会有一定难度，不过如果写过程序的人，写过python东西的人来说，其实 过一下这个document估计也就是1天时间就可以上手干活了.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/automation/2016-03-30-jenkins_basic/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/jenkins.png);"></div>
-    <div class="detail">
-      <time>Wed, Mar 30, 2016</time>
-      <h2 class="title">Jenkins API的简单介绍</h2>
-      <div class="summary">Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情. From Jenkins Home Page Jenkins is an automation engine with an unparalleled plugin ecosystem to support all of your favorite tools in your delivery pipelines, whether your goal is continuous integration, automated testing, or continuous delivery. Jenkins 使用 关于Jenkins的基本使用网上有很多的教程，基本使用其事没有太多说的，它是个平台，可以集成很多不同的工具，脚本等等. 总结下来这些东西包括： jenkins parameter setting, string, choice, &hellip;&hellip; JAVA 的maven, ant, gradle 等打包工具，其他语言也有类似的build，deploy，依赖管理的工具 定制化的脚本，可以在一个Jenkins的build步骤中运行这些脚本如shell命令，python脚本 定制插件来完成自己的特殊的目的 这些内容非常庞大，自己也不可能完全都知道，如果遇到实际的一些问题需要解决的话, 大体的逻辑就是，如果遇到一些特殊需求，那么先去找插件看能不能完成，如果没有插件就再想shell，python脚本等不同的事情，或者自己开发插件. Jenkins 的实践问题 随着Jenkins里面的任务越来越多，管理的环境越来越多，变更越来愈多，手工管理就会遇到一些问题： 比如为了改一个IP地址，可能需要没一个任务都去改具体的配置，比如部署同一个war到不同的测试环境，就需要给不同的job改IP 为了不同的环境配置不同的任务，需要很多的人工的配置修改等等 如果需要迁移一个多应用的测试环境，那么需要很多的复制，修改工作 那么为了解决这些问题，个人觉得可以改善的地方是： - 定义一些类型项目的模版，抽象一些参数出来给Jenkins里面的Job做参数话，当然有时需要修改的是默认值 - 在定义了一些模版之后，就可以通过操作Jenkins API的方式来操作 - 在尝试了一些Jenkins API之后，感觉纯粹通过API的方式去操作，不一定比复制Jenkins 任务，然后修改来的快，但是通过Jenkins API的方式 来操作Jenkins 的好处是，如果这些东西融入到运维的流程中，那么它会提高生产率 一些体会是，可能代码方式的操作单个单个来看不一定会提高多少生产率(参数一样要设)，但是如果放在一个流程的角度看，那么他的效率是高的，比如你如果需要运维帮你建环境，那么你需要提供一些信息，而这些信息就可以直接建立Jenkins的Job了，那么作为用户你只提供一次信息，就可以完成你需要的所有事情，这样效率就高了.</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/git">git</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/ruby">ruby</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   

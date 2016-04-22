@@ -3,8 +3,18 @@
   
   <url>
     <loc>http://testless.github.io/</loc>
-    <lastmod>2016-04-20T02:31:11+00:00</lastmod>
+    <lastmod>2016-04-21T02:31:11+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://testless.github.io/posts/interview/2016-04-20-Linux%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2016-04-21T02:31:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://testless.github.io/posts/interview/2016-04-20-%E7%9B%91%E6%8E%A7%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2016-04-21T02:31:11+00:00</lastmod>
   </url>
   
   <url>
@@ -415,6 +425,11 @@
   <url>
     <loc>http://testless.github.io/posts/git/2013-02-24-git/</loc>
     <lastmod>2013-02-24T10:31:11+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://testless.github.io/posts/git/2016-04-22-git-history/</loc>
+    <lastmod>2013-02-24T02:31:11+00:00</lastmod>
   </url>
   
   <url>
