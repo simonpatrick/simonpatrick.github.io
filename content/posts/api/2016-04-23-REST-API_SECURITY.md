@@ -51,7 +51,7 @@ API Key 是用户通过身份认证之后服务端给客户端分配一个API Ke
 
 ## JWT: JSON Web Token
 
-JWT 是JSON Web Token,用于发送可通过数字签名和认证的东西,它包含一个紧凑的,URL安全的 JSON对象,服务端可通过解析该值来验证是否有操作权限,是否过期等安全性检查。由于其紧凑的特点, 可放在url中或者 HTTP Authorization头中,具体的算法就如下图 ![img](JWT.jpg)
+JWT 是JSON Web Token,用于发送可通过数字签名和认证的东西,它包含一个紧凑的,URL安全的 JSON对象,服务端可通过解析该值来验证是否有操作权限,是否过期等安全性检查。由于其紧凑的特点, 可放在url中或者 HTTP Authorization头中,具体的算法就如下图 ![img](/images/JWT.jpg)
 
 ## 授权
 
