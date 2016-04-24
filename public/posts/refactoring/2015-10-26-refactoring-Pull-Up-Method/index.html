@@ -178,6 +178,18 @@
     <div class="content">
       
       <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/git/2016-04-22-git-history/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/18.jpg);"></div>
+    <div class="detail">
+      <time>Fri, Apr 22, 2016</time>
+      <h2 class="title">Git 基本使用－2</h2>
+      <div class="summary">GIT 基本使用 git log -p git diff git add git diff HEAD git commit -m &ldquo;Add something&rdquo; git branch git checkout -b feature-A git branch git merge &ndash;no-ff feature-A git log &ndash;graph git reset git reflog git merge &ndash;no-ff fix-b git rebase -i HEAD-2 git remote add git push git push -u origin feature-D git fetch -all git fetch origin refspeec GIT Flow git-flow-cheatsheet A cheatsheet on the usage of git flow, visit http://danielkummer.github.com/git-flow-cheatsheet/ GIT FLOW Git extensions to provide high-level repository operations for Vincent Driessen&rsquo;s branching model.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/interview/2016-04-20-Linux%E5%9F%BA%E7%A1%80/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/Linux);"></div>
     <div class="detail">
@@ -262,36 +274,24 @@
 </div>
       
       <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/api/2016-04-23-REST-API_SECURITY/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/2.jpg);"></div>
+    <div class="detail">
+      <time>Tue, Apr 12, 2016</time>
+      <h2 class="title">Rest API Security</h2>
+      <div class="summary">REST API REST: Representational State Transfer REST 提倡无需Session，每次请求都带上身份认证，同样 REST基于HTTP的也是无状态的.不过REST API的安全性都需要自己实现.REST WEB SERVICE 的核心是RESOURCE(资源).资源可以使用URI来表示，一般REST风格的请求对应关系如下： HTTP 方法 行为 实例 GET 获取资源信息 http://example.com/api/v1/orders GET 获取某个特定资源信息 http://example.com/api/v1/orders/123 POST 创建新资源 http://example.com/api/v1/orders PUT 更新资源 http://example.com/api/v1/orders/123 DELTE 删除资源 http://example.com/api/v1/orders/123 对于请求数据一般用jSON或者XMl来表示，一般使用JSON 身份认证 HTTP Basic HTTP Digest API Key oAuth JWK HTTP Basic HTTP Basic 其实就看下面例子就可以了: base64编码前:Basic admin:admin base64编码后:Basic YWRtaW46YWRtaW4= 放到Header中:Authorization: Basic YWRtaW46YWRtaW4= API Key API Key 是用户通过身份认证之后服务端给客户端分配一个API Key Oauth1.0 Oauth2 JWT: JSON Web Token JWT 是JSON Web Token,用于发送可通过数字签名和认证的东西,它包含一个紧凑的,URL安全的 JSON对象,服务端可通过解析该值来验证是否有操作权限,是否过期等安全性检查。由于其紧凑的特点, 可放在url中或者 HTTP Authorization头中,具体的算法就如下图 授权 身份认证之后就是授权，不同的用户，授予不同的访问权限，如Admin，Normal，Auditor 等.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/designpattern/2016-04-11-singleton/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/singleton.jpg);"></div>
     <div class="detail">
       <time>Mon, Apr 11, 2016</time>
       <h2 class="title">Java Singleton ENUM as instance HOLDER</h2>
       <div class="summary">Singleton 单例设计模式 单例模式是产生一个类的唯一实例。 Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的： public class InitializingOnDemandHolderIdiom implements Serializable { private static final long serialVersionUID = 1L; private static class HelperHolder { public static final InitializingOnDemandHolderIdiom INSTANCE = new InitializingOnDemandHolderIdiom(); } public static InitializingOnDemandHolderIdiom getInstance() { return HelperHolder.INSTANCE; } private InitializingOnDemandHolderIdiom() { } protected Object readResolve() { return getInstance(); } }</div>
-    </div>
-  </a>
-</article>
-</div>
-      
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/designpattern/2016-04-11-prototype-pattern/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/prototype.png);"></div>
-    <div class="detail">
-      <time>Mon, Apr 11, 2016</time>
-      <h2 class="title">Prototype Pattern</h2>
-      <div class="summary">prototype pattern 实际上是通过clone的方式创建出同一个类的不同对象. Java Prototype 一般Prototype模式中，又一个prototype的抽象类： public abstract class Prototype implements Cloneable{ @Override protected abstract Object clone() throws CloneNotSupportedException; } 这个抽象类的不同子类： public abstract class Beast extends Prototype { @Override public abstract Beast clone() throws CloneNotSupportedException; } public class ElfBeast extends Beast { public ElfBeast() { } public ElfBeast(ElfBeast beast) { } @Override public Beast clone() throws CloneNotSupportedException { return new ElfBeast(this); } @Override public String toString() { return &quot;Elven eagle&quot;;</div>
-    </div>
-  </a>
-</article>
-</div>
-      
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/shell/2016-04-05-VIM-%E6%80%BB%E7%BB%93/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/vim.png);"></div>
-    <div class="detail">
-      <time>Tue, Apr 5, 2016</time>
-      <h2 class="title">VIM 使用小结</h2>
-      <div class="summary">VIM 用法 日常会不经意间使用VIM编辑器来处理一些文本编辑的事情。所以整理VIM的基本使用如下： 命令 说明 q 退出 i insert a append h 左移 k 上移 j 下移 l 右移 r 替换 u 撤销 x 删除光标位置字符 d^ 删除当前位置到行首 dd 删除当前行 d$ 删除当前位置到行尾 dw 删除当前位置到一个word尾 3dd 删除当前行下三行 p 粘贴 &lt;&lt; 当前行左移一个宽度 &gt;&gt; 当前行右移一个宽度 ％ 匹配的括号 ^ 行的开始 . 匹配单字符 * 匹配0个或多个之前的字符 $ 行的结束 [ 还是一系列的匹配 &lt;&gt; 一个字的结束或开始,/&lt;the&gt; 只匹配the f 向右移动到指定字符 F 向左移动到指定字符 ctrl+b 向后回滚一页 ctrl＋d 向前滚动半个窗口 ctrl＋F 向前滚动一页 ctrl＋H 左移一个空格 ctrl＋J 下移一个空格 ( 移动到句子开头 ) 移动到句子句尾 { 前一个段落 + 下一行非空字符 - 前一行非空字符 _ 当前行的非空字符 其他命令 y和d的作用类似，不同的是y只提取文字而不删除文字 缩写：ab test &ldquo;testing in tesitng&rdquo; mapping, :map,:map!</div>
     </div>
   </a>
 </article>
@@ -304,14 +304,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/rest-api">rest-api</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/rest-api">rest-api</a>
     </div>
   </div>
   
