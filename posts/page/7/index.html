@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/refactoring/2015-10-26-replace-inheritance-with-delegation/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/10.jpg);"></div>
+    <div class="detail">
+      <time>Mon, Oct 26, 2015</time>
+      <h2 class="title">Refactoring-6-Replace Inheritance with Delegation</h2>
+      <div class="summary">Replace Inheritance with Delegation, 这种重构方式主要是继承有时 看起来不是那么合理，同时继承可能让程序的扩展性不好，所以可以改用委托 或者组合的形式重构。 代码实例 Refactor前: public class Sanitation { public String washHands(){ return &quot;Cleaned!&quot;; } } class Child extends Sanitation{ public static void main(String[] args) { System.out.println(new Child().washHands()); } } Refactor之后: 把继承关系拿掉，才有委托的方式: class ChildRefactor{ Sanitation s; public ChildRefactor() { s = new Sanitation(); } public String washHands(){ return s.washHands(); } } 好处的思考 逻辑上Sanitation(公共卫生)和Child没有那种继承关系,修改之后表达更加准确 Child的washHand方法实际更加灵活了 更加容易通过使用Dependency Injection注入</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/refactoring/2015-10-26-refactoring-Extract-Interface-Method/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/3.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/python/2015-05-16-svn_reviewboard_python/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/22.jpg);"></div>
-    <div class="detail">
-      <time>Sat, May 16, 2015</time>
-      <h2 class="title">Python完成简单的SVN Reviewboard Precommit的客户端</h2>
-      <div class="summary">最近公司需要使用review board进行代码pre-commit review(pre-commit:正式提交前review)，而公司的现状是： 1. 使用SVN作为代码版本管理工具 2. 开发工具有eclipse，idea 3. MAC 和windows 机器居多 考虑到开发eclipse和idea插件，连接review board我一个人无法完成，同时能力也不够来开发这两种插件， 所以就准备python写一个命令行工具，期间研究了一下taobao review board的插件，感觉有点复杂，这个也是 使用python来些命令行工具的一个理由,也考虑过使用node-webkit来写个客户端，不过由于时间上的限制也就先放弃了 实现 实现过程中，使用到主要的包和工具是： RBTools,review board 自带的工具，但是支持中文能力让人有点困惑 python，cmd 包(python自带)，requests包使用 pip install requests 安装 ConEmuPack(windows CMD的替代),主要为了支持window系统 SVN 最后实现了如下功能 - 选择更改的文件，提交Review Board 作为pre-commit review - 根据review request id 提交代码到SVN - python直接操作svn命令,可以通过简单的命令就提交代码(由于使用习惯的问题,个人觉得命令行比UI效率更高) svn命令有个问题就是如果操作delete或者add这种的话,如果文件没有直接放到svn work copy的话,提交需要两步操作, 而这个工具也解决了这个问题 Review Board 功能介绍 review board 是进行代码review的一个工具，目前公司主要用来做pre-commit的review，在review board针对pre-主要有如下概念： review request draft, draft里面包含了differ文件，描述，review的人等等 review request，在这个review request上面review review完毕，才可以提交代码 安装和配置 1.安装Python 和Requests包 下载安装最新版本的Python，确保在命令行中可以执行Python命令，如果打开命令行工具，执行python -v 失败，需要在环境变量中设置Python的执行路径 安装Python完成之后，在命令行中执行 pip install requests 安装requests包到全局。MAC可能需要使用: sudo pip install requests 2.</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -210,6 +210,18 @@
   <div class="section">
     <header><div class="title">LatestPosts</div></header>
     <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/interview/2016-04-24-12factors/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/monitor.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Apr 24, 2016</time>
+      <h2 class="title">12 factors Application</h2>
+      <div class="summary">12 Factors Application One Codebase，multiple deployments how to do that? Maven,Profile,Configuration Dependency 依赖 显示依赖第三方包. 配置 configuration 配置存储于环境变量，env，vars 后端服务 backend as services 后端服务看成是资源，不管资源是什么，在哪里，都可以加入使用 build,deploy,run build, deploy,run 三个步骤严格区分，类似于capistrano发布工具 进程 process，一个或者多个无状态进程运行应用 jammit django-compressor build Port Binding concurrency 并发 进程模型进行扩展，JVM提供了超级进程储备了大量资源，通过多线程管理. 进程需要无共享，水平分区特性 易处理 最小启动时间 终止信号 SIGTERM 幂等 Crash-only design 开发环境和线上环境等价 Logging 日志 logging 是事件流 Logplex,Fluent,Splunk,Hadoop/Hive 管理进程 process formation 数据迁移 控制台 依赖隔离，不同的技术采用不同的依赖隔离</div>
+    </div>
+  </a>
+</article>
+</div>
       
       <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/git/2016-04-22-git-history/" class="clearfix">
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/designpattern/2016-04-11-singleton/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/singleton.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Apr 11, 2016</time>
-      <h2 class="title">Java Singleton ENUM as instance HOLDER</h2>
-      <div class="summary">Singleton 单例设计模式 单例模式是产生一个类的唯一实例。 Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的： public class InitializingOnDemandHolderIdiom implements Serializable { private static final long serialVersionUID = 1L; private static class HelperHolder { public static final InitializingOnDemandHolderIdiom INSTANCE = new InitializingOnDemandHolderIdiom(); } public static InitializingOnDemandHolderIdiom getInstance() { return HelperHolder.INSTANCE; } private InitializingOnDemandHolderIdiom() { } protected Object readResolve() { return getInstance(); } }</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/rest-api">rest-api</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/rest-api">rest-api</a><a href="http://testless.github.io/categories/ruby">ruby</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/rest-api">rest-api</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/rest-api">rest-api</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a>
     </div>
   </div>
   

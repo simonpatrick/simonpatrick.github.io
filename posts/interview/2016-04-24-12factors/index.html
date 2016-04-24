@@ -15,14 +15,14 @@
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://testless.github.io//index.xml">
 
     
-    <title>Refactoring-2-Move Method - Colored Hedwig: less is more</title>
-    <meta property='og:title' content="Refactoring-2-Move Method - Colored Hedwig: less is more">
+    <title>12 factors Application - Colored Hedwig: less is more</title>
+    <meta property='og:title' content="12 factors Application - Colored Hedwig: less is more">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://testless.github.io/posts/refactoring/2015-10-26-refactoring-Move-Method/">
+    <meta property="og:url" content="http://testless.github.io/posts/interview/2016-04-24-12factors/">
     
-    <meta property="og:image" content="http://testless.github.io/images/4.jpg">
+    <meta property="og:image" content="http://testless.github.io/images/monitor.jpg">
 
   </head>
 
@@ -41,12 +41,12 @@
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
         <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://testless.github.io/"/>
-        <meta itemprop="dateModified" content="2015-10-26T10:31:11&#43;08:00">
-        <meta itemprop="headline" content="Refactoring-2-Move Method">
-        <meta itemprop="description" content="Move Method 重构实际上比较简单，一个简单的描述就是: - 如果有一个方法在一个类里面出现的频率很高，但他不在这个类里面 - 那么Move Method就是把这个方法移动到出现频率高的这个类里面 Before Move Method public class BankAccountOrigin { private int accountAge; private int creditScore; private AccountInterestOrigin accountInterest; public double calculateInterestRate(){ if(creditScore&gt;800){ return 0.02; } if(accountAge&gt;10){ return 0.03; } return 0.05; } ..... getter/setter } public class AccountInterestOrigin { private BankAccountOrigin ba; private double interestRate =ba.calculateInterestRate(); private boolean introductorRate; public AccountInterestOrigin(BankAccountOrigin ba) { this.ba = ba; } public boolean isIntroductorRate() { return ba.calculateInterestRate()&lt;0.05; } public void setIntroductorRate(boolean introductorRate) { this.introductorRate = introductorRate; } } After Move Method public class AccountInterestRefactored { private BankAccountRefactored ba; private double interestRate =calculateInterestRate(); private boolean introductorRate; public AccountInterestRefactored(BankAccountRefactored ba) { this.ba = ba; } public boolean isIntroductorRate() { return calculateInterestRate()&lt;0.05; } private double calculateInterestRate(){ if(ba.getCreditScore()&gt;800){ return 0.02; } if(ba.getAccountAge()&gt;10){ return 0.03; } return 0.05; } } 关于有什么好处的思考 Move Method just move method to different location.">
-        <meta itemprop="url" content="http://testless.github.io/posts/refactoring/2015-10-26-refactoring-Move-Method/">
+        <meta itemprop="dateModified" content="2016-04-24T02:31:11&#43;00:00">
+        <meta itemprop="headline" content="12 factors Application">
+        <meta itemprop="description" content="12 Factors Application One Codebase，multiple deployments how to do that? Maven,Profile,Configuration Dependency 依赖 显示依赖第三方包. 配置 configuration 配置存储于环境变量，env，vars 后端服务 backend as services 后端服务看成是资源，不管资源是什么，在哪里，都可以加入使用 build,deploy,run build, deploy,run 三个步骤严格区分，类似于capistrano发布工具 进程 process，一个或者多个无状态进程运行应用 jammit django-compressor build Port Binding concurrency 并发 进程模型进行扩展，JVM提供了超级进程储备了大量资源，通过多线程管理. 进程需要无共享，水平分区特性 易处理 最小启动时间 终止信号 SIGTERM 幂等 Crash-only design 开发环境和线上环境等价 Logging 日志 logging 是事件流 Logplex,Fluent,Splunk,Hadoop/Hive 管理进程 process formation 数据迁移 控制台 依赖隔离，不同的技术采用不同的依赖隔离">
+        <meta itemprop="url" content="http://testless.github.io/posts/interview/2016-04-24-12factors/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://testless.github.io/images/4.jpg" />
+          <meta itemprop="url" content="http://testless.github.io/images/monitor.jpg" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -62,100 +62,91 @@
           <meta itemprop="name" content="">
         </div>
 
-        <div class="image" style="background-image: url(http://testless.github.io/images/4.jpg);"></div>
+        <div class="image" style="background-image: url(http://testless.github.io/images/monitor.jpg);"></div>
 
         <header class="article-header">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-10-26T10:31:11&#43;08:00">Mon, Oct 26, 2015</time>
-          <h1 class="article-title">Refactoring-2-Move Method</h1>
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-04-24T02:31:11&#43;00:00">Sun, Apr 24, 2016</time>
+          <h1 class="article-title">12 factors Application</h1>
         </header>
 
         <div class="article-body" itemprop="articleBody">
           
 
-<p>Move Method 重构实际上比较简单，一个简单的描述就是:
-- 如果有一个方法在一个类里面出现的频率很高，但他不在这个类里面
-- 那么Move Method就是把这个方法移动到出现频率高的这个类里面</p>
+<h1 id="12-factors-application:8a1b8c6867ca21658a291e567ad56f6d">12 Factors Application</h1>
 
-<h2 id="before-move-method:b7ce0c948eb782e6e3f0e0900e5f67ab">Before Move Method</h2>
+<ul>
+<li><p>One Codebase，multiple deployments</p>
 
-<pre><code class="language-java">public class BankAccountOrigin {
+<ul>
+<li>how to do that? Maven,Profile,Configuration</li>
+</ul></li>
 
-    private int accountAge;
-    private int creditScore;
-    private AccountInterestOrigin accountInterest;
+<li><p>Dependency 依赖</p></li>
+</ul>
 
-    public double calculateInterestRate(){
-        if(creditScore&gt;800){
-            return 0.02;
-        }
-        if(accountAge&gt;10){
-            return 0.03;
-        }
-        return 0.05;
-    }
-    ..... getter/setter
-}
+<p>显示依赖第三方包.</p>
 
-public class AccountInterestOrigin {
-    private BankAccountOrigin ba;
+<ul>
+<li>配置 configuration</li>
+</ul>
 
-    private double interestRate =ba.calculateInterestRate();
-    private boolean introductorRate;
+<p>配置存储于环境变量，env，vars</p>
 
-    public AccountInterestOrigin(BankAccountOrigin ba) {
-        this.ba = ba;
-    }
-    public boolean isIntroductorRate() {
-        return ba.calculateInterestRate()&lt;0.05;
-    }
+<ul>
+<li><p>后端服务 backend as services 后端服务看成是资源，不管资源是什么，在哪里，都可以加入使用</p></li>
 
-    public void setIntroductorRate(boolean introductorRate) {
-        this.introductorRate = introductorRate;
-    }
-}  
+<li><p>build,deploy,run</p></li>
+</ul>
 
-</code></pre>
+<p>build, deploy,run 三个步骤严格区分，类似于capistrano发布工具</p>
 
-<h2 id="after-move-method:b7ce0c948eb782e6e3f0e0900e5f67ab">After Move Method</h2>
+<ul>
+<li><p>进程 process，一个或者多个无状态进程运行应用</p>
 
-<pre><code class="language-java">public class AccountInterestRefactored {
-    private BankAccountRefactored ba;
+<ul>
+<li>jammit</li>
+<li>django-compressor</li>
+<li>build</li>
+</ul></li>
 
-    private double interestRate =calculateInterestRate();
-    private boolean introductorRate;
+<li><p>Port Binding</p></li>
 
-    public AccountInterestRefactored(BankAccountRefactored ba) {
-        this.ba = ba;
-    }
+<li><p>concurrency 并发 进程模型进行扩展，JVM提供了超级进程储备了大量资源，通过多线程管理. 进程需要无共享，水平分区特性</p></li>
 
-    public boolean isIntroductorRate() {
-        return calculateInterestRate()&lt;0.05;
-    }
+<li><p>易处理</p>
 
-    private double calculateInterestRate(){
-        if(ba.getCreditScore()&gt;800){
-            return 0.02;
-        }
-        if(ba.getAccountAge()&gt;10){
-            return 0.03;
-        }
-        return 0.05;
-    }
-}
-</code></pre>
+<ul>
+<li>最小启动时间</li>
+<li>终止信号 SIGTERM</li>
+<li>幂等</li>
+<li>Crash-only design</li>
+</ul></li>
 
-<h2 id="关于有什么好处的思考:b7ce0c948eb782e6e3f0e0900e5f67ab">关于有什么好处的思考</h2>
+<li><p>开发环境和线上环境等价</p></li>
 
-<p>Move Method just move method to different location.
-本身其实很难说有多少好处.经常整理自己抽屉的孩子，也不会把床搞得太乱.可能就是
-这个道理。</p>
+<li><p>Logging 日志</p>
+
+<ul>
+<li>logging 是事件流</li>
+<li>Logplex,Fluent,Splunk,Hadoop/Hive</li>
+</ul></li>
+
+<li><p>管理进程</p>
+
+<ul>
+<li>process formation</li>
+<li>数据迁移</li>
+<li>控制台</li>
+<li>依赖隔离，不同的技术采用不同的依赖隔离</li>
+</ul></li>
+</ul>
 
         </div>
 
 
         <aside>
           <div class="section">
-            <a href="http://testless.github.io/tags/refactoring" class="tag">refactoring</a>
+            <a href="http://testless.github.io/tags/interview" class="tag">interview</a>
             </div>
 
           <div class="section share">
@@ -181,12 +172,7 @@ public class AccountInterestOrigin {
     <header><div class="title">TableOfContents</div></header>
     <div class="list-default"><nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li><a href="#before-move-method:b7ce0c948eb782e6e3f0e0900e5f67ab">Before Move Method</a></li>
-<li><a href="#after-move-method:b7ce0c948eb782e6e3f0e0900e5f67ab">After Move Method</a></li>
-<li><a href="#关于有什么好处的思考:b7ce0c948eb782e6e3f0e0900e5f67ab">关于有什么好处的思考</a></li>
-</ul></li>
+<li><a href="#12-factors-application:8a1b8c6867ca21658a291e567ad56f6d">12 Factors Application</a></li>
 </ul>
 </nav></div>
   </div>
@@ -325,14 +311,14 @@ public class AccountInterestOrigin {
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/rest-api">rest-api</a><a href="http://testless.github.io/categories/ruby">ruby</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/rest-api">rest-api</a><a href="http://testless.github.io/categories/ruby">ruby</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/rest-api">rest-api</a><a href="http://testless.github.io/tags/ruby">ruby</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/rest-api">rest-api</a>
     </div>
   </div>
   

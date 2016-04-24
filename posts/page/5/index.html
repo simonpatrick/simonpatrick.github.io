@@ -44,6 +44,20 @@
           
           <div class="col-sm-4">
             <article class="li">
+  <a href="http://testless.github.io/posts/api/2015-12-02-api_contract_design/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/2.jpg);"></div>
+    <div class="detail">
+      <time>Wed, Dec 2, 2015</time>
+      <h2 class="title">True Stories: 从API的URL定义想到的</h2>
+      <div class="summary">关于REST API接口的设计没有了解太多，不过实际的测试中看到一些这样设计的接口资源路径URL，自己感觉就是怪怪的， 感觉这样的接口URL总是哪里不太对劲，所以自己就分析了一下： http://domain.org/api/v4/＊＊/coursePassed/{appCode}/{courseId}/{userCode} 自己的思考是感觉这个东西不是很理想，无法通过一个路径了解大概是个什么事情，自己的感觉或许这样会更清楚一点 http://domain.org/api/v4/app/{appCode}/user/course/{courseId} 感觉这样的URL说清楚了： － 哪个APP － 是用户的course的状态 － usercode可能不需要，应为已经使用了oAuth认证了 通过这样的命名的话，如果想获取一个用户所有的course的状态，或许就是： http://domain.org/api/v4/app/{appCode}/user/course/ 而我加上user的目的是表示这个是用户的课程考核状态，而不是course本身的状态。 原来的URL里面coursePassed上太具体了，可能本来这个接口其实是获取course的考核状态，如果写上这个coursePassed的话，或许只能返回true or false了，是不是有点太具体了，实际的实现和扩展非常有可能和这个有区别，而且如果有时需要一个接口提供的知识course考核的状态，那么难道再写一个API的接口来给状态，如果不是，那么coursePassed叫法就是值得商量的. 然后自己查了一下关于REST API设计原则的文章: rest api 虽然没有直接说明如何设计，但是看完之后我自己觉得我的想法没有太大错误.感觉好的原则就是应该合乎一个常理的，通顺的，有上下文逻辑的.</div>
+    </div>
+  </a>
+</article>
+
+          </div>
+          
+          <div class="col-sm-4">
+            <article class="li">
   <a href="http://testless.github.io/posts/java/2015-12-02-singleton/" class="clearfix">
     <div class="image" style="background-image: url(http://testless.github.io/images/23.jpg);"></div>
     <div class="detail">
@@ -168,20 +182,6 @@
 
           </div>
           
-          <div class="col-sm-4">
-            <article class="li">
-  <a href="http://testless.github.io/posts/thoughts/2015-11-03-Test-Tools/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/1.jpg);"></div>
-    <div class="detail">
-      <time>Wed, Nov 4, 2015</time>
-      <h2 class="title">测试用例-一些有意思的工具</h2>
-      <div class="summary">Automation Test Case Generate Tools Korat(structurally complex tests) Randoop (random testing) CERT Basic Fuzzing Framework ZZUF cert.org osate link</div>
-    </div>
-  </a>
-</article>
-
-          </div>
-          
         </div>
       </div>
 
@@ -210,6 +210,18 @@
   <div class="section">
     <header><div class="title">LatestPosts</div></header>
     <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://testless.github.io/posts/interview/2016-04-24-12factors/" class="clearfix">
+    <div class="image" style="background-image: url(http://testless.github.io/images/monitor.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Apr 24, 2016</time>
+      <h2 class="title">12 factors Application</h2>
+      <div class="summary">12 Factors Application One Codebase，multiple deployments how to do that? Maven,Profile,Configuration Dependency 依赖 显示依赖第三方包. 配置 configuration 配置存储于环境变量，env，vars 后端服务 backend as services 后端服务看成是资源，不管资源是什么，在哪里，都可以加入使用 build,deploy,run build, deploy,run 三个步骤严格区分，类似于capistrano发布工具 进程 process，一个或者多个无状态进程运行应用 jammit django-compressor build Port Binding concurrency 并发 进程模型进行扩展，JVM提供了超级进程储备了大量资源，通过多线程管理. 进程需要无共享，水平分区特性 易处理 最小启动时间 终止信号 SIGTERM 幂等 Crash-only design 开发环境和线上环境等价 Logging 日志 logging 是事件流 Logplex,Fluent,Splunk,Hadoop/Hive 管理进程 process formation 数据迁移 控制台 依赖隔离，不同的技术采用不同的依赖隔离</div>
+    </div>
+  </a>
+</article>
+</div>
       
       <div class="sm"><article class="li">
   <a href="http://testless.github.io/posts/git/2016-04-22-git-history/" class="clearfix">
@@ -319,18 +331,6 @@
 </article>
 </div>
       
-      <div class="sm"><article class="li">
-  <a href="http://testless.github.io/posts/designpattern/2016-04-11-singleton/" class="clearfix">
-    <div class="image" style="background-image: url(http://testless.github.io/images/singleton.jpg);"></div>
-    <div class="detail">
-      <time>Mon, Apr 11, 2016</time>
-      <h2 class="title">Java Singleton ENUM as instance HOLDER</h2>
-      <div class="summary">Singleton 单例设计模式 单例模式是产生一个类的唯一实例。 Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的： public class InitializingOnDemandHolderIdiom implements Serializable { private static final long serialVersionUID = 1L; private static class HelperHolder { public static final InitializingOnDemandHolderIdiom INSTANCE = new InitializingOnDemandHolderIdiom(); } public static InitializingOnDemandHolderIdiom getInstance() { return HelperHolder.INSTANCE; } private InitializingOnDemandHolderIdiom() { } protected Object readResolve() { return getInstance(); } }</div>
-    </div>
-  </a>
-</article>
-</div>
-      
     </div>
   </div>
 
@@ -338,14 +338,14 @@
   <div class="section taxonomies">
     <header><div class="title">category</div></header>
     <div class="content">
-      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/rest-api">rest-api</a><a href="http://testless.github.io/categories/ruby">ruby</a><a href="http://testless.github.io/categories/js">js</a>
+      <a href="http://testless.github.io/categories/python">python</a><a href="http://testless.github.io/categories/refactoring">refactoring</a><a href="http://testless.github.io/categories/automation">automation</a><a href="http://testless.github.io/categories/shell">shell</a><a href="http://testless.github.io/categories/java">java</a><a href="http://testless.github.io/categories/testing">testing</a><a href="http://testless.github.io/categories/interview">interview</a><a href="http://testless.github.io/categories/designpattern">designpattern</a><a href="http://testless.github.io/categories/microservice">microservice</a><a href="http://testless.github.io/categories/thoughts">thoughts</a><a href="http://testless.github.io/categories/truestories">truestories</a><a href="http://testless.github.io/categories/git">git</a><a href="http://testless.github.io/categories/tools">tools</a><a href="http://testless.github.io/categories/performance">performance</a><a href="http://testless.github.io/categories/js">js</a><a href="http://testless.github.io/categories/rest-api">rest-api</a><a href="http://testless.github.io/categories/ruby">ruby</a>
     </div>
   </div>
   
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content">
-      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/rest-api">rest-api</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/ruby">ruby</a>
+      <a href="http://testless.github.io/tags/python">python</a><a href="http://testless.github.io/tags/automation">automation</a><a href="http://testless.github.io/tags/refactoring">refactoring</a><a href="http://testless.github.io/tags/shell">shell</a><a href="http://testless.github.io/tags/testing">testing</a><a href="http://testless.github.io/tags/java">java</a><a href="http://testless.github.io/tags/designpattern">designpattern</a><a href="http://testless.github.io/tags/interview">interview</a><a href="http://testless.github.io/tags/thoughts">thoughts</a><a href="http://testless.github.io/tags/microservice">microservice</a><a href="http://testless.github.io/tags/truestories">truestories</a><a href="http://testless.github.io/tags/performance">performance</a><a href="http://testless.github.io/tags/tools">tools</a><a href="http://testless.github.io/tags/git">git</a><a href="http://testless.github.io/tags/ruby">ruby</a><a href="http://testless.github.io/tags/js">js</a><a href="http://testless.github.io/tags/rest-api">rest-api</a>
     </div>
   </div>
   
